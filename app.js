@@ -4,6 +4,7 @@ const state = {
   bank: null,
   screen: "setup",
   selected: new Set(),
+  types: new Set(["mcq", "tf"]),
   mode: "all",
   n: 20,
   quiz: [],
@@ -18,8 +19,18 @@ function sectionTitle(id) {
   return section ? section.title : id;
 }
 
+function questionType(question) {
+  return question.type || "mcq";
+}
+
+function lettersFor(question) {
+  return questionType(question) === "tf" ? ["T", "F"] : ["A", "B", "C", "D"];
+}
+
 function pool() {
-  return state.bank.questions.filter((question) => state.selected.has(question.sectionId));
+  return state.bank.questions.filter((question) => (
+    state.selected.has(question.sectionId) && state.types.has(questionType(question))
+  ));
 }
 
 function shuffle(items) {
@@ -45,6 +56,7 @@ function saveSession() {
   const payload = {
     screen: state.screen,
     selected: Array.from(state.selected),
+    types: Array.from(state.types),
     mode: state.mode,
     n: state.n,
     quizIds: state.quiz.map((question) => question.id),
@@ -63,6 +75,7 @@ function restoreSession() {
   try {
     const saved = JSON.parse(raw);
     state.selected = new Set(saved.selected || []);
+    state.types = new Set(Array.isArray(saved.types) && saved.types.length ? saved.types : ["mcq", "tf"]);
     state.mode = saved.mode === "random" ? "random" : "all";
     state.n = Number.isFinite(saved.n) ? saved.n : 20;
     state.answers = saved.answers || {};
@@ -152,6 +165,14 @@ function pick(letter) {
   render();
 }
 
+function shownAnswer(question, letter) {
+  if (!letter) {
+    return "none";
+  }
+  const text = question.choices[letter];
+  return text ? `${letter}. ${text}` : letter;
+}
+
 function escapeHtml(value) {
   return String(value)
     .replaceAll("&", "&amp;")
@@ -171,7 +192,9 @@ function renderSetup() {
   const groupsHtml = groups.map(([kind, label]) => {
     const items = state.bank.sections.filter((section) => section.kind === kind);
     const list = items.map((section) => {
-      const count = state.bank.questions.filter((q) => q.sectionId === section.id).length;
+      const count = state.bank.questions.filter((q) => (
+        q.sectionId === section.id && state.types.has(questionType(q))
+      )).length;
       const checked = state.selected.has(section.id) ? "checked" : "";
       return `<li><label><input type="checkbox" data-section="${section.id}" ${checked}>
         <span>${escapeHtml(section.title)} <span class="meta">(${count})</span></span></label></li>`;
@@ -187,6 +210,13 @@ function renderSetup() {
       <button type="button" id="clear-all">Clear</button>
     </div>
     ${groupsHtml}
+    <h2>Question type</h2>
+    <div class="card">
+      <div class="mode">
+        <label><input type="checkbox" data-type="mcq" ${state.types.has("mcq") ? "checked" : ""}> Multiple choice</label>
+        <label><input type="checkbox" data-type="tf" ${state.types.has("tf") ? "checked" : ""}> True / false</label>
+      </div>
+    </div>
     <h2>Session</h2>
     <div class="card">
       <div class="mode">
@@ -223,6 +253,17 @@ function renderSetup() {
       render();
     });
   });
+  app.querySelectorAll("[data-type]").forEach((input) => {
+    input.addEventListener("change", () => {
+      if (input.checked) {
+        state.types.add(input.dataset.type);
+      } else {
+        state.types.delete(input.dataset.type);
+      }
+      saveSession();
+      render();
+    });
+  });
   app.querySelectorAll('input[name="mode"]').forEach((input) => {
     input.addEventListener("change", () => {
       state.mode = input.value;
@@ -247,7 +288,7 @@ function renderQuiz() {
   const picked = state.answers[question.id] || "";
   const width = Math.round(((state.index + 1) / total) * 100);
   const last = state.index === total - 1;
-  const choices = ["A", "B", "C", "D"].map((letter) => `
+  const choices = lettersFor(question).map((letter) => `
     <button type="button" class="choice ${picked === letter ? "picked" : ""}" data-letter="${letter}">
       <span class="letter">${letter}</span>
       <span>${escapeHtml(question.choices[letter])}</span>
@@ -284,7 +325,7 @@ function renderResults() {
     if (ok) {
       correct += 1;
     }
-    const choices = ["A", "B", "C", "D"].map((letter) => {
+    const choices = lettersFor(question).map((letter) => {
       const marks = [];
       if (letter === question.answer) {
         marks.push("correct");
@@ -304,7 +345,7 @@ function renderResults() {
         <p class="meta">${escapeHtml(sectionTitle(question.sectionId))} · ${escapeHtml(question.id)}</p>
         <p>${escapeHtml(question.stem)}</p>
         <ul>${choices}</ul>
-        <p>Your answer: <span class="yours">${yours || "none"}</span>. Correct answer: <span class="key">${question.answer}</span>.</p>
+        <p>Your answer: <span class="yours">${escapeHtml(shownAnswer(question, yours))}</span>. Correct answer: <span class="key">${escapeHtml(shownAnswer(question, question.answer))}</span>.</p>
         <p class="hint">${escapeHtml(question.explanation)}</p>
       </article>
     `;

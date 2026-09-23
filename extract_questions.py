@@ -1,4 +1,4 @@
-"""Extract Study MCQs.md into questions.json for the static quiz site."""
+"""Extract Study MCQs.md and Study TF.md into questions.json for the static quiz site."""
 
 from __future__ import annotations
 
@@ -8,6 +8,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 SOURCE = ROOT.parent / "Study MCQs.md"
+TF_SOURCE = ROOT.parent / "Study TF.md"
 OUTPUT = ROOT / "questions.json"
 
 # Section ids in source order. Titles fill from ## headers when present.
@@ -34,13 +35,15 @@ SECTION_META = [
 ]
 
 Q_HEAD = re.compile(r"^### ([A-Za-z0-9]+-Q\d+)\s*$")
+T_HEAD = re.compile(r"^### ([A-Za-z0-9]+-T\d+)\s*$")
 CHOICE = re.compile(r"^([A-D])\.\s+(.*)$")
 ANSWER = re.compile(r"^\*\*([A-Za-z0-9]+-Q\d+):\*\*\s+([A-D])\.\s+(.*)$")
+TF_ANSWER = re.compile(r"^\*\*([A-Za-z0-9]+-T\d+):\*\*\s+([TF])\.\s+(.*)$")
 SECTION_HEAD = re.compile(r"^## (.+)$")
 
 
 def section_id_from_qid(qid: str) -> str:
-    return qid.rsplit("-Q", 1)[0]
+    return re.split(r"-[QT]", qid, maxsplit=1)[0]
 
 
 def parse(text: str) -> dict:
@@ -83,6 +86,7 @@ def parse(text: str) -> dict:
             current = {
                 "id": qid,
                 "sectionId": sid,
+                "type": "mcq",
                 "stem": "",
                 "choices": {"A": "", "B": "", "C": "", "D": ""},
             }
@@ -137,15 +141,99 @@ def parse(text: str) -> dict:
     return {"sections": sections, "questions": questions}
 
 
+def parse_tf(text: str) -> list[dict]:
+    body, _, appendix = text.partition("# Appendix: Answers")
+    if not appendix:
+        raise SystemExit("True/false appendix heading not found")
+
+    known = {sid for sid, _, _ in SECTION_META}
+    questions: list[dict] = []
+    current: dict | None = None
+
+    def flush() -> None:
+        nonlocal current
+        if current is None:
+            return
+        if not current["stem"].strip():
+            raise SystemExit(f"{current['id']} has empty stem")
+        questions.append(current)
+        current = None
+
+    for raw in body.splitlines():
+        line = raw.rstrip()
+        head = T_HEAD.match(line)
+        if head:
+            flush()
+            qid = head.group(1)
+            sid = section_id_from_qid(qid)
+            if sid not in known:
+                raise SystemExit(f"Unknown section id {sid} from {qid}")
+            current = {
+                "id": qid,
+                "sectionId": sid,
+                "type": "tf",
+                "stem": "",
+                "choices": {"T": "True", "F": "False"},
+            }
+            continue
+        if current is None or not line.strip() or line.startswith("#") or line.strip() == "---":
+            continue
+        stem = current["stem"]
+        current["stem"] = (stem + " " + line.strip()).strip() if stem else line.strip()
+
+    flush()
+
+    answers: dict[str, tuple[str, str]] = {}
+    for raw in appendix.splitlines():
+        match = TF_ANSWER.match(raw.strip())
+        if not match:
+            continue
+        answers[match.group(1)] = (match.group(2), match.group(3).strip())
+
+    for question in questions:
+        found = answers.get(question["id"])
+        if not found:
+            raise SystemExit(f"No appendix answer for {question['id']}")
+        question["answer"] = found[0]
+        question["explanation"] = found[1]
+
+    extra = set(answers) - {q["id"] for q in questions}
+    if extra:
+        raise SystemExit(f"True/false answers without questions: {sorted(extra)}")
+
+    per_section: dict[str, int] = {}
+    balance: dict[str, list[int]] = {}
+    for question in questions:
+        per_section[question["sectionId"]] = per_section.get(question["sectionId"], 0) + 1
+        tally = balance.setdefault(question["sectionId"], [0, 0])
+        tally[0 if question["answer"] == "T" else 1] += 1
+    for sid, _, _ in SECTION_META:
+        count = per_section.get(sid, 0)
+        if count != 10:
+            raise SystemExit(f"{sid} has {count} true/false items, expected 10")
+        trues, falses = balance[sid]
+        if trues != 5 or falses != 5:
+            raise SystemExit(f"{sid} true/false balance is {trues} true and {falses} false")
+    return questions
+
+
 def main() -> None:
     data = parse(SOURCE.read_text(encoding="utf-8"))
+    tf_questions = parse_tf(TF_SOURCE.read_text(encoding="utf-8"))
+    mcq_ids = {question["id"] for question in data["questions"]}
+    overlap = mcq_ids & {question["id"] for question in tf_questions}
+    if overlap:
+        raise SystemExit(f"Duplicate ids: {sorted(overlap)}")
+    data["questions"].extend(tf_questions)
     OUTPUT.write_text(json.dumps(data, indent=2, ensure_ascii=True) + "\n", encoding="utf-8")
-    counts: dict[str, int] = {}
+    counts: dict[str, list[int]] = {}
     for question in data["questions"]:
-        counts[question["sectionId"]] = counts.get(question["sectionId"], 0) + 1
+        tally = counts.setdefault(question["sectionId"], [0, 0])
+        tally[0 if question["type"] == "mcq" else 1] += 1
     print(f"Wrote {len(data['questions'])} questions to {OUTPUT}")
     for section in data["sections"]:
-        print(f"  {section['id']}: {counts.get(section['id'], 0)}  {section['title']}")
+        mcq, tf = counts.get(section["id"], [0, 0])
+        print(f"  {section['id']}: {mcq} mcq, {tf} tf  {section['title']}")
 
 
 if __name__ == "__main__":

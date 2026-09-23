@@ -100,6 +100,7 @@
     {
       "id": "L1-Q01",
       "sectionId": "L1",
+      "type": "mcq",
       "stem": "Alan Turing's 1950 operational test for intelligent behaviour is commonly known as which of the following?",
       "choices": {
         "A": "The Dartmouth Conference",
@@ -113,6 +114,7 @@
     {
       "id": "L1-Q02",
       "sectionId": "L1",
+      "type": "mcq",
       "stem": "Which four capability areas are listed as prerequisites for a machine to pass the Turing Test?",
       "choices": {
         "A": "Computer vision, robotics, databases, and cryptography",
@@ -126,6 +128,7 @@
     {
       "id": "L1-Q03",
       "sectionId": "L1",
+      "type": "mcq",
       "stem": "In the four dimensions of AI, \"acting rationally\" emphasises which idea?",
       "choices": {
         "A": "Matching human cognitive errors and biases",
@@ -139,6 +142,7 @@
     {
       "id": "L1-Q04",
       "sectionId": "L1",
+      "type": "mcq",
       "stem": "Cognitive science (thinking humanly) is described as which kind of approach?",
       "choices": {
         "A": "Top-down using computer models and experimental psychology",
@@ -152,6 +156,7 @@
     {
       "id": "L1-Q05",
       "sectionId": "L1",
+      "type": "mcq",
       "stem": "Where and when was the term \"Artificial Intelligence\" officially adopted?",
       "choices": {
         "A": "IBM labs, 1997",
@@ -165,6 +170,7 @@
     {
       "id": "L1-Q06",
       "sectionId": "L1",
+      "type": "mcq",
       "stem": "IBM Deep Blue defeating Kasparov (1997) is presented as a milestone mainly for which technique class?",
       "choices": {
         "A": "Search algorithms",
@@ -178,6 +184,7 @@
     {
       "id": "L1-Q07",
       "sectionId": "L1",
+      "type": "mcq",
       "stem": "AlphaGo defeating Lee Sedol (2016) is attributed in the slides primarily to demonstrating the power of what?",
       "choices": {
         "A": "Deep Reinforcement Learning",
@@ -191,6 +198,7 @@
     {
       "id": "L1-Q08",
       "sectionId": "L1",
+      "type": "mcq",
       "stem": "Which comparison is correct for Symbolic AI (GOFAI)?",
       "choices": {
         "A": "Pros: black-box accuracy; Cons: needs no training data",
@@ -204,6 +212,7 @@
     {
       "id": "L1-Q09",
       "sectionId": "L1",
+      "type": "mcq",
       "stem": "A main limit of subsymbolic (deep learning) systems highlighted in the slides is that they are:",
       "choices": {
         "A": "Unable to process unstructured inputs",
@@ -217,6 +226,7 @@
     {
       "id": "L1-Q10",
       "sectionId": "L1",
+      "type": "mcq",
       "stem": "In the agent definition from the slides, an agent equals which combination?",
       "choices": {
         "A": "Sensors + PEAS",
@@ -230,6 +240,7 @@
     {
       "id": "L1-Q11",
       "sectionId": "L1",
+      "type": "mcq",
       "stem": "For a robotic agent, which of the following is listed as a sensor rather than an actuator?",
       "choices": {
         "A": "Electric stepper motors",
@@ -243,6 +254,7 @@
     {
       "id": "L1-Q12",
       "sectionId": "L1",
+      "type": "mcq",
       "stem": "PEAS stands for which four elements?",
       "choices": {
         "A": "Performance, Environment, Actuators, Sensors",
@@ -256,6 +268,7 @@
     {
       "id": "L1-Q13",
       "sectionId": "L1",
+      "type": "mcq",
       "stem": "In the automated taxi PEAS example, which item belongs under Actuators?",
       "choices": {
         "A": "Steering, throttle, brakes, horns, and displays",
@@ -269,6 +282,7 @@
     {
       "id": "L1-Q14",
       "sectionId": "L1",
+      "type": "mcq",
       "stem": "In the automated taxi PEAS example, \"obeying traffic laws\" and \"reaching destination\" are primarily which PEAS element?",
       "choices": {
         "A": "Sensors",
@@ -282,6 +296,7 @@
     {
       "id": "L1-Q15",
       "sectionId": "L1",
+      "type": "mcq",
       "stem": "For the shopping agent PEAS table, which are listed as Sensors?",
       "choices": {
         "A": "Form fills and URL redirection",
@@ -295,6 +310,7 @@
     {
       "id": "L1-Q16",
       "sectionId": "L1",
+      "type": "mcq",
       "stem": "Which statement best matches the course framing of Intelligent Systems / AI content?",
       "choices": {
         "A": "Only neural networks; no search",
@@ -308,6 +324,7 @@
     {
       "id": "L1-Q17",
       "sectionId": "L1",
+      "type": "mcq",
       "stem": "According to the course assessment overview, the final exam weight and pass threshold stated are:",
       "choices": {
         "A": "40%, at least 40 out of 100 points to pass the course",
@@ -321,6 +338,7 @@
     {
       "id": "L1-Q18",
       "sectionId": "L1",
+      "type": "mcq",
       "stem": "Late penalties for assignments (unless an extension is granted) are stated as:",
       "choices": {
         "A": "1% per day for 30 days",
@@ -334,6 +352,7 @@
     {
       "id": "L1-Q19",
       "sectionId": "L1",
+      "type": "mcq",
       "stem": "Plagiarism is described in the slides as which of the following?",
       "choices": {
         "A": "Citing Russell and Norvig correctly",
@@ -347,6 +366,7 @@
     {
       "id": "L1-Q20",
       "sectionId": "L1",
+      "type": "mcq",
       "stem": "Recommended textbook for the course overview material is:",
       "choices": {
         "A": "Goodfellow, Bengio, and Courville only",
@@ -360,6 +380,7 @@
     {
       "id": "L2-Q01",
       "sectionId": "L2",
+      "type": "mcq",
       "stem": "A search problem formulation includes which five items?",
       "choices": {
         "A": "PEAS, Turing Test, sensors, actuators, and architecture",
@@ -373,6 +394,7 @@
     {
       "id": "L2-Q02",
       "sectionId": "L2",
+      "type": "mcq",
       "stem": "In the Romania driving example, the initial state and goal are respectively:",
       "choices": {
         "A": "Arad; Bucharest",
@@ -386,6 +408,7 @@
     {
       "id": "L2-Q03",
       "sectionId": "L2",
+      "type": "mcq",
       "stem": "In the Romania example, path cost is measured as:",
       "choices": {
         "A": "Number of cities visited only",
@@ -399,6 +422,7 @@
     {
       "id": "L2-Q04",
       "sectionId": "L2",
+      "type": "mcq",
       "stem": "In the vacuum world example, how many possible states are listed, and which are goal states?",
       "choices": {
         "A": "4 states; states 1 and 2 are goals",
@@ -412,6 +436,7 @@
     {
       "id": "L2-Q05",
       "sectionId": "L2",
+      "type": "mcq",
       "stem": "Vacuum world actions and path cost unit are:",
       "choices": {
         "A": "Up, Down, Clean; cost = distance in km",
@@ -425,6 +450,7 @@
     {
       "id": "L2-Q06",
       "sectionId": "L2",
+      "type": "mcq",
       "stem": "A node in search bookkeeping stores which four fields?",
       "choices": {
         "A": "Heuristic, frontier, explored, and goal",
@@ -438,6 +464,7 @@
     {
       "id": "L2-Q07",
       "sectionId": "L2",
+      "type": "mcq",
       "stem": "In the general search strategy, a strategy is defined by:",
       "choices": {
         "A": "The PEAS performance measure only",
@@ -451,6 +478,7 @@
     {
       "id": "L2-Q08",
       "sectionId": "L2",
+      "type": "mcq",
       "stem": "After expanding Arad in the Romania tree-search example, the frontier becomes:",
       "choices": {
         "A": "(Bucharest)",
@@ -464,6 +492,7 @@
     {
       "id": "L2-Q09",
       "sectionId": "L2",
+      "type": "mcq",
       "stem": "Breadth-first search (BFS) expands which nodes and implements the frontier how?",
       "choices": {
         "A": "Deepest nodes; LIFO stack",
@@ -477,6 +506,7 @@
     {
       "id": "L2-Q10",
       "sectionId": "L2",
+      "type": "mcq",
       "stem": "BFS completeness and optimality (as stated for equal step costs) are:",
       "choices": {
         "A": "Incomplete and never optimal",
@@ -490,6 +520,7 @@
     {
       "id": "L2-Q11",
       "sectionId": "L2",
+      "type": "mcq",
       "stem": "BFS time and space complexity (standard slide summary) are both:",
       "choices": {
         "A": "O(bd) time and O(bd) space",
@@ -503,6 +534,7 @@
     {
       "id": "L2-Q12",
       "sectionId": "L2",
+      "type": "mcq",
       "stem": "A key practical problem with BFS emphasised in the slides is:",
       "choices": {
         "A": "It never finds shallow goals",
@@ -516,6 +548,7 @@
     {
       "id": "L2-Q13",
       "sectionId": "L2",
+      "type": "mcq",
       "stem": "BFS finds the shortest path in terms of number of transitions. Relative to least cost paths when costs differ, BFS:",
       "choices": {
         "A": "Always finds the least cost path",
@@ -529,6 +562,7 @@
     {
       "id": "L2-Q14",
       "sectionId": "L2",
+      "type": "mcq",
       "stem": "Uniform-Cost Search (UCS) differs from BFS mainly because:",
       "choices": {
         "A": "Frontier is a LIFO stack",
@@ -542,6 +576,7 @@
     {
       "id": "L2-Q15",
       "sectionId": "L2",
+      "type": "mcq",
       "stem": "UCS completeness and optimality conditions stated include:",
       "choices": {
         "A": "Never complete; never optimal",
@@ -555,6 +590,7 @@
     {
       "id": "L2-Q16",
       "sectionId": "L2",
+      "type": "mcq",
       "stem": "Depth-first search (DFS) implements the frontier as:",
       "choices": {
         "A": "FIFO queue",
@@ -568,6 +604,7 @@
     {
       "id": "L2-Q17",
       "sectionId": "L2",
+      "type": "mcq",
       "stem": "DFS properties as summarised: complete? optimal? space?",
       "choices": {
         "A": "Yes; yes; O(bd)",
@@ -581,6 +618,7 @@
     {
       "id": "L2-Q18",
       "sectionId": "L2",
+      "type": "mcq",
       "stem": "Depth-limited search is:",
       "choices": {
         "A": "BFS with a cost limit",
@@ -594,6 +632,7 @@
     {
       "id": "L2-Q19",
       "sectionId": "L2",
+      "type": "mcq",
       "stem": "Iterative-deepening search (IDS) works by:",
       "choices": {
         "A": "Keeping increasing the depth limit l until a solution is found",
@@ -607,6 +646,7 @@
     {
       "id": "L2-Q20",
       "sectionId": "L2",
+      "type": "mcq",
       "stem": "Practical guidance from the uninformed search summary includes:",
       "choices": {
         "A": "Prefer DFS when solutions are short; prefer BFS when many solutions",
@@ -620,6 +660,7 @@
     {
       "id": "L3-Q01",
       "sectionId": "L3",
+      "type": "mcq",
       "stem": "Among uninformed strategies listed in the Week 3 recap, which is the (only) one that returns a lowest-cost path?",
       "choices": {
         "A": "BFS always",
@@ -633,6 +674,7 @@
     {
       "id": "L3-Q02",
       "sectionId": "L3",
+      "type": "mcq",
       "stem": "A heuristic evaluation function is intended to:",
       "choices": {
         "A": "Replace the goal test entirely",
@@ -646,6 +688,7 @@
     {
       "id": "L3-Q03",
       "sectionId": "L3",
+      "type": "mcq",
       "stem": "Best-first search expands the unexpanded node with:",
       "choices": {
         "A": "Highest f(n)",
@@ -659,6 +702,7 @@
     {
       "id": "L3-Q04",
       "sectionId": "L3",
+      "type": "mcq",
       "stem": "Greedy best-first search uses which evaluation function?",
       "choices": {
         "A": "f(n) = g(n) only",
@@ -672,6 +716,7 @@
     {
       "id": "L3-Q05",
       "sectionId": "L3",
+      "type": "mcq",
       "stem": "In the Romania greedy example, hSLD(n) means:",
       "choices": {
         "A": "Straight-line distance from n to Bucharest",
@@ -685,6 +730,7 @@
     {
       "id": "L3-Q06",
       "sectionId": "L3",
+      "type": "mcq",
       "stem": "Greedy best-first from Arad can yield Arad-Sibiu-Fagaras-Bucharest with cost 450, while a shorter journey exists at 418 via:",
       "choices": {
         "A": "Arad-Zerind-Oradea only",
@@ -698,6 +744,7 @@
     {
       "id": "L3-Q07",
       "sectionId": "L3",
+      "type": "mcq",
       "stem": "Properties of greedy best-first search include:",
       "choices": {
         "A": "Not complete in general (can loop); not optimal",
@@ -711,6 +758,7 @@
     {
       "id": "L3-Q08",
       "sectionId": "L3",
+      "type": "mcq",
       "stem": "A* search evaluation function is:",
       "choices": {
         "A": "f(n) = h(n) only",
@@ -724,6 +772,7 @@
     {
       "id": "L3-Q09",
       "sectionId": "L3",
+      "type": "mcq",
       "stem": "In A*, g(n) and h(n) mean respectively:",
       "choices": {
         "A": "Estimated cost to goal; cost so far",
@@ -737,6 +786,7 @@
     {
       "id": "L3-Q10",
       "sectionId": "L3",
+      "type": "mcq",
       "stem": "A heuristic h(n) is admissible if:",
       "choices": {
         "A": "h(n) <= h*(n) for every n (never overestimates)",
@@ -750,6 +800,7 @@
     {
       "id": "L3-Q11",
       "sectionId": "L3",
+      "type": "mcq",
       "stem": "Straight-line distance to Bucharest is admissible because:",
       "choices": {
         "A": "It never overestimates the actual road distance",
@@ -763,6 +814,7 @@
     {
       "id": "L3-Q12",
       "sectionId": "L3",
+      "type": "mcq",
       "stem": "Consistency (monotonicity) requires that for every n and successor n':",
       "choices": {
         "A": "h(n) >= cost(n,n') + h(n')",
@@ -776,6 +828,7 @@
     {
       "id": "L3-Q13",
       "sectionId": "L3",
+      "type": "mcq",
       "stem": "If h is consistent, then along any path f is:",
       "choices": {
         "A": "Strictly decreasing",
@@ -789,6 +842,7 @@
     {
       "id": "L3-Q14",
       "sectionId": "L3",
+      "type": "mcq",
       "stem": "For graph-search A*, which condition is stated to guarantee optimality when repeated nodes are checked?",
       "choices": {
         "A": "Admissibility alone is always enough",
@@ -802,6 +856,7 @@
     {
       "id": "L3-Q15",
       "sectionId": "L3",
+      "type": "mcq",
       "stem": "For the 8-puzzle start state S in the slides, h1 (misplaced tiles) and h2 (Manhattan) are:",
       "choices": {
         "A": "h1(S) = 18 and h2(S) = 8",
@@ -815,6 +870,7 @@
     {
       "id": "L3-Q16",
       "sectionId": "L3",
+      "type": "mcq",
       "stem": "How is h2(S) = 18 obtained in the slide example?",
       "choices": {
         "A": "8 misplaced tiles counted twice",
@@ -828,6 +884,7 @@
     {
       "id": "L3-Q17",
       "sectionId": "L3",
+      "type": "mcq",
       "stem": "If both heuristics are admissible and h2(n) >= h1(n) for all n, then:",
       "choices": {
         "A": "h1 dominates h2",
@@ -841,6 +898,7 @@
     {
       "id": "L3-Q18",
       "sectionId": "L3",
+      "type": "mcq",
       "stem": "For 8-puzzle with d = 12, typical nodes expanded in the slides are approximately:",
       "choices": {
         "A": "IDS 73; A*(h1) 227; A*(h2) 3,644,035",
@@ -854,6 +912,7 @@
     {
       "id": "L3-Q19",
       "sectionId": "L3",
+      "type": "mcq",
       "stem": "Admissible heuristics can be derived from:",
       "choices": {
         "A": "Exact solution cost of a relaxed version of the problem",
@@ -867,6 +926,7 @@
     {
       "id": "L3-Q20",
       "sectionId": "L3",
+      "type": "mcq",
       "stem": "IDA* reduces A* memory use by using a cutoff on:",
       "choices": {
         "A": "Depth only, never f-cost",
@@ -880,6 +940,7 @@
     {
       "id": "L4A-Q01",
       "sectionId": "L4A",
+      "type": "mcq",
       "stem": "A key difference of local search / optimisation versus earlier path-finding search is that we care mainly about:",
       "choices": {
         "A": "The description of the final configuration X*, not how we got there",
@@ -893,6 +954,7 @@
     {
       "id": "L4A-Q02",
       "sectionId": "L4A",
+      "type": "mcq",
       "stem": "For N-Queens local search, the evaluation function is:",
       "choices": {
         "A": "Straight-line distance to Bucharest",
@@ -906,6 +968,7 @@
     {
       "id": "L4A-Q03",
       "sectionId": "L4A",
+      "type": "mcq",
       "stem": "In local search, Neighbours(X) is:",
       "choices": {
         "A": "The explored set from graph search",
@@ -919,6 +982,7 @@
     {
       "id": "L4A-Q04",
       "sectionId": "L4A",
+      "type": "mcq",
       "stem": "A local optimum (for maximisation) means:",
       "choices": {
         "A": "Eval(X*) >= Eval(X) for all X in the entire state space",
@@ -932,6 +996,7 @@
     {
       "id": "L4A-Q05",
       "sectionId": "L4A",
+      "type": "mcq",
       "stem": "Hill climbing is described as:",
       "choices": {
         "A": "An uninformed complete optimal search like UCS",
@@ -945,6 +1010,7 @@
     {
       "id": "L4A-Q06",
       "sectionId": "L4A",
+      "type": "mcq",
       "stem": "In the hill-climb pseudocode, when is the current state returned?",
       "choices": {
         "A": "When the best neighbour is not better than current",
@@ -958,6 +1024,7 @@
     {
       "id": "L4A-Q07",
       "sectionId": "L4A",
+      "type": "mcq",
       "stem": "For 8-queens, a global solution corresponds to:",
       "choices": {
         "A": "h = 14",
@@ -971,6 +1038,7 @@
     {
       "id": "L4A-Q08",
       "sectionId": "L4A",
+      "type": "mcq",
       "stem": "Steepest-ascent hill climbing on 8-queens from random starts: success rate stated is:",
       "choices": {
         "A": "Solves 86%; stuck 14%",
@@ -984,6 +1052,7 @@
     {
       "id": "L4A-Q09",
       "sectionId": "L4A",
+      "type": "mcq",
       "stem": "When steepest-ascent succeeds / fails on 8-queens, average steps stated are about:",
       "choices": {
         "A": "21 success, 64 failure",
@@ -997,6 +1066,7 @@
     {
       "id": "L4A-Q10",
       "sectionId": "L4A",
+      "type": "mcq",
       "stem": "Approximate size of the 8-queens state space given in the slides is:",
       "choices": {
         "A": "8 states",
@@ -1010,6 +1080,7 @@
     {
       "id": "L4A-Q11",
       "sectionId": "L4A",
+      "type": "mcq",
       "stem": "Allowing sideways moves (with a limit) is intended mainly to:",
       "choices": {
         "A": "Escape from a shoulder / plateau",
@@ -1023,6 +1094,7 @@
     {
       "id": "L4A-Q12",
       "sectionId": "L4A",
+      "type": "mcq",
       "stem": "With sideways moves limited to 100 consecutive, 8-queens success improves:",
       "choices": {
         "A": "From 94% to 14%",
@@ -1036,6 +1108,7 @@
     {
       "id": "L4A-Q13",
       "sectionId": "L4A",
+      "type": "mcq",
       "stem": "With that sideways limit, average steps become approximately:",
       "choices": {
         "A": "4 success, 3 failure",
@@ -1049,6 +1122,7 @@
     {
       "id": "L4A-Q14",
       "sectionId": "L4A",
+      "type": "mcq",
       "stem": "A ridge landscape feature is problematic because:",
       "choices": {
         "A": "BFS cannot use FIFO queues",
@@ -1062,6 +1136,7 @@
     {
       "id": "L4A-Q15",
       "sectionId": "L4A",
+      "type": "mcq",
       "stem": "Random-restart hill climbing does which of the following?",
       "choices": {
         "A": "A series of hill-climbing searches from random initial states until a goal is found",
@@ -1075,6 +1150,7 @@
     {
       "id": "L4A-Q16",
       "sectionId": "L4A",
+      "type": "mcq",
       "stem": "For 8-queens with p = 0.14 success, expected number of restarts is about:",
       "choices": {
         "A": "0.14",
@@ -1088,6 +1164,7 @@
     {
       "id": "L4A-Q17",
       "sectionId": "L4A",
+      "type": "mcq",
       "stem": "Expected steps to goal for plain random-restart (p=0.14, 4 success / 3 fail steps) is about:",
       "choices": {
         "A": "4 steps",
@@ -1101,6 +1178,7 @@
     {
       "id": "L4A-Q18",
       "sectionId": "L4A",
+      "type": "mcq",
       "stem": "With sideways moves (p=0.94), expected restarts and steps are about:",
       "choices": {
         "A": "1.06 restarts and about 25 steps",
@@ -1114,6 +1192,7 @@
     {
       "id": "L4A-Q19",
       "sectionId": "L4A",
+      "type": "mcq",
       "stem": "Stochastic hill climbing, in the N-queens neighbourhood illustration, may:",
       "choices": {
         "A": "Pick 1 out of the neighbour states randomly (e.g., among 56)",
@@ -1127,6 +1206,7 @@
     {
       "id": "L4A-Q20",
       "sectionId": "L4A",
+      "type": "mcq",
       "stem": "For TSP local search move operators, the slides note that:",
       "choices": {
         "A": "4-opt is always best despite cost",
@@ -1140,6 +1220,7 @@
     {
       "id": "L4B-Q01",
       "sectionId": "L4B",
+      "type": "mcq",
       "stem": "In a CSP, a state is defined by:",
       "choices": {
         "A": "A black-box arbitrary data structure only",
@@ -1153,6 +1234,7 @@
     {
       "id": "L4B-Q02",
       "sectionId": "L4B",
+      "type": "mcq",
       "stem": "In the Australia map-colouring example, variables include:",
       "choices": {
         "A": "WA, NT, Q, NSW, V, SA, T",
@@ -1166,6 +1248,7 @@
     {
       "id": "L4B-Q03",
       "sectionId": "L4B",
+      "type": "mcq",
       "stem": "Map-colouring domains and adjacency constraint are:",
       "choices": {
         "A": "Domains {0,1}; same colours required",
@@ -1179,6 +1262,7 @@
     {
       "id": "L4B-Q04",
       "sectionId": "L4B",
+      "type": "mcq",
       "stem": "An example complete consistent colouring given in the slides is:",
       "choices": {
         "A": "WA=red, NT=green, Q=red, NSW=green, V=red, SA=blue, T=green",
@@ -1192,6 +1276,7 @@
     {
       "id": "L4B-Q05",
       "sectionId": "L4B",
+      "type": "mcq",
       "stem": "In a binary CSP constraint graph:",
       "choices": {
         "A": "Nodes are constraints; arcs are variables",
@@ -1205,6 +1290,7 @@
     {
       "id": "L4B-Q06",
       "sectionId": "L4B",
+      "type": "mcq",
       "stem": "Which is a unary constraint example from the slides?",
       "choices": {
         "A": "SA != WA",
@@ -1218,6 +1304,7 @@
     {
       "id": "L4B-Q07",
       "sectionId": "L4B",
+      "type": "mcq",
       "stem": "Cryptarithmetic SEND+MORE=MONEY style constraints in the slides include:",
       "choices": {
         "A": "Only map colouring inequalities",
@@ -1231,6 +1318,7 @@
     {
       "id": "L4B-Q08",
       "sectionId": "L4B",
+      "type": "mcq",
       "stem": "In the incremental CSP search formulation, every solution appears at depth:",
       "choices": {
         "A": "1 always",
@@ -1244,6 +1332,7 @@
     {
       "id": "L4B-Q09",
       "sectionId": "L4B",
+      "type": "mcq",
       "stem": "Because CSP assignments are commutative, backtracking considers:",
       "choices": {
         "A": "Assignments to a single variable at each node (branching factor b = d)",
@@ -1257,6 +1346,7 @@
     {
       "id": "L4B-Q10",
       "sectionId": "L4B",
+      "type": "mcq",
       "stem": "Backtracking search is described as:",
       "choices": {
         "A": "Breadth-first search for CSPs",
@@ -1270,6 +1360,7 @@
     {
       "id": "L4B-Q11",
       "sectionId": "L4B",
+      "type": "mcq",
       "stem": "Minimum Remaining Values (MRV) chooses:",
       "choices": {
         "A": "The variable with the most legal values",
@@ -1283,6 +1374,7 @@
     {
       "id": "L4B-Q12",
       "sectionId": "L4B",
+      "type": "mcq",
       "stem": "The Degree Heuristic (DH) is used mainly as:",
       "choices": {
         "A": "A replacement for LCV always",
@@ -1296,6 +1388,7 @@
     {
       "id": "L4B-Q13",
       "sectionId": "L4B",
+      "type": "mcq",
       "stem": "Least Constraining Value (LCV) chooses the value that:",
       "choices": {
         "A": "Rules out the fewest values in the remaining variables",
@@ -1309,6 +1402,7 @@
     {
       "id": "L4B-Q14",
       "sectionId": "L4B",
+      "type": "mcq",
       "stem": "Combining MRV, DH, and LCV is said to make which problem size feasible?",
       "choices": {
         "A": "1000 queens",
@@ -1322,6 +1416,7 @@
     {
       "id": "L4B-Q15",
       "sectionId": "L4B",
+      "type": "mcq",
       "stem": "Forward checking mainly:",
       "choices": {
         "A": "Tracks remaining legal values for unassigned variables and fails when a domain is empty",
@@ -1335,6 +1430,7 @@
     {
       "id": "L4B-Q16",
       "sectionId": "L4B",
+      "type": "mcq",
       "stem": "Arc X -> Y is consistent iff:",
       "choices": {
         "A": "X and Y have the same domain size always",
@@ -1348,6 +1444,7 @@
     {
       "id": "L4B-Q17",
       "sectionId": "L4B",
+      "type": "mcq",
       "stem": "Compared with forward checking, arc consistency:",
       "choices": {
         "A": "Detects fewer failures",
@@ -1361,6 +1458,7 @@
     {
       "id": "L4B-Q18",
       "sectionId": "L4B",
+      "type": "mcq",
       "stem": "AC-3 maintains a queue of arcs and, after revising (X,Y) and X loses a value:",
       "choices": {
         "A": "Deletes the entire CSP",
@@ -1374,6 +1472,7 @@
     {
       "id": "L4B-Q19",
       "sectionId": "L4B",
+      "type": "mcq",
       "stem": "Min-conflicts for CSPs selects a value that:",
       "choices": {
         "A": "Maximises the number of violated constraints",
@@ -1387,6 +1486,7 @@
     {
       "id": "L4B-Q20",
       "sectionId": "L4B",
+      "type": "mcq",
       "stem": "For n-queens with min-conflicts from a random start, the slides claim it can solve:",
       "choices": {
         "A": "Only n <= 8",
@@ -1400,6 +1500,7 @@
     {
       "id": "L5-Q01",
       "sectionId": "L5",
+      "type": "mcq",
       "stem": "Machine learning is characterised as programming computers to:",
       "choices": {
         "A": "Hard-code payroll rules only",
@@ -1413,6 +1514,7 @@
     {
       "id": "L5-Q02",
       "sectionId": "L5",
+      "type": "mcq",
       "stem": "Learning is especially used when:",
       "choices": {
         "A": "Human expertise does not exist, cannot be explained, solutions change, or must adapt",
@@ -1426,6 +1528,7 @@
     {
       "id": "L5-Q03",
       "sectionId": "L5",
+      "type": "mcq",
       "stem": "Supervised learning primarily means:",
       "choices": {
         "A": "Learning to predict output given input-output training pairs",
@@ -1439,6 +1542,7 @@
     {
       "id": "L5-Q04",
       "sectionId": "L5",
+      "type": "mcq",
       "stem": "In the house-price notation, a training example (xi, yi) pairs:",
       "choices": {
         "A": "Heuristic and path cost",
@@ -1452,6 +1556,7 @@
     {
       "id": "L5-Q05",
       "sectionId": "L5",
+      "type": "mcq",
       "stem": "Regression vs classification (as defined in the slides):",
       "choices": {
         "A": "Regression: discrete targets; Classification: continuous targets",
@@ -1465,6 +1570,7 @@
     {
       "id": "L5-Q06",
       "sectionId": "L5",
+      "type": "mcq",
       "stem": "Predicting whether a house sells above or below asking price (from size/price data) converts regression into:",
       "choices": {
         "A": "Clustering",
@@ -1478,6 +1584,7 @@
     {
       "id": "L5-Q07",
       "sectionId": "L5",
+      "type": "mcq",
       "stem": "Given a photo, predicting age vs predicting legal voting age is respectively:",
       "choices": {
         "A": "Classification then regression",
@@ -1491,6 +1598,7 @@
     {
       "id": "L5-Q08",
       "sectionId": "L5",
+      "type": "mcq",
       "stem": "Nearest-neighbour classification chooses:",
       "choices": {
         "A": "The mean of all labels in the training set",
@@ -1504,6 +1612,7 @@
     {
       "id": "L5-Q09",
       "sectionId": "L5",
+      "type": "mcq",
       "stem": "k-nearest-neighbour classification chooses:",
       "choices": {
         "A": "A random class",
@@ -1517,6 +1626,7 @@
     {
       "id": "L5-Q10",
       "sectionId": "L5",
+      "type": "mcq",
       "stem": "Unsupervised learning is needed in practice largely because:",
       "choices": {
         "A": "Labels are always free and abundant",
@@ -1530,6 +1640,7 @@
     {
       "id": "L5-Q11",
       "sectionId": "L5",
+      "type": "mcq",
       "stem": "Clustering is described as:",
       "choices": {
         "A": "Predicting a continuous y with MSE",
@@ -1543,6 +1654,7 @@
     {
       "id": "L5-Q12",
       "sectionId": "L5",
+      "type": "mcq",
       "stem": "An association rule example from market baskets is:",
       "choices": {
         "A": "{onions, potatoes} => {burger}",
@@ -1556,6 +1668,7 @@
     {
       "id": "L5-Q13",
       "sectionId": "L5",
+      "type": "mcq",
       "stem": "Semi-supervised learning combines:",
       "choices": {
         "A": "A small amount of labeled data with a large amount of unlabeled data",
@@ -1569,6 +1682,7 @@
     {
       "id": "L5-Q14",
       "sectionId": "L5",
+      "type": "mcq",
       "stem": "In reinforcement learning, the agent learns by:",
       "choices": {
         "A": "Memorising labeled (x,y) pairs only",
@@ -1582,6 +1696,7 @@
     {
       "id": "L5-Q15",
       "sectionId": "L5",
+      "type": "mcq",
       "stem": "In the taxi RL tip example, the tip mainly gives:",
       "choices": {
         "A": "An immediate supervised label for every steering angle",
@@ -1595,6 +1710,7 @@
     {
       "id": "L5-Q16",
       "sectionId": "L5",
+      "type": "mcq",
       "stem": "A hypothesis generalises well if it:",
       "choices": {
         "A": "Fits training noise perfectly only",
@@ -1608,6 +1724,7 @@
     {
       "id": "L5-Q17",
       "sectionId": "L5",
+      "type": "mcq",
       "stem": "Ockham's razor, as used in the slides, says to prefer:",
       "choices": {
         "A": "The most complex consistent hypothesis",
@@ -1621,6 +1738,7 @@
     {
       "id": "L5-Q18",
       "sectionId": "L5",
+      "type": "mcq",
       "stem": "The slides' tradeoff note is that complex consistent hypotheses versus simpler inconsistent ones:",
       "choices": {
         "A": "Complex always generalise better",
@@ -1634,6 +1752,7 @@
     {
       "id": "L5-Q19",
       "sectionId": "L5",
+      "type": "mcq",
       "stem": "In the triple trade-off (Dietterich), as training set size N increases:",
       "choices": {
         "A": "Generalisation error E increases",
@@ -1647,6 +1766,7 @@
     {
       "id": "L5-Q20",
       "sectionId": "L5",
+      "type": "mcq",
       "stem": "Overfitting means:",
       "choices": {
         "A": "The model is too simple to fit training data at all",
@@ -1660,6 +1780,7 @@
     {
       "id": "L6-Q01",
       "sectionId": "L6",
+      "type": "mcq",
       "stem": "In the simplified house-price linear regression model, predicted price is:",
       "choices": {
         "A": "A product of all features with no bias",
@@ -1673,6 +1794,7 @@
     {
       "id": "L6-Q02",
       "sectionId": "L6",
+      "type": "mcq",
       "stem": "Vectorized linear regression output is written as:",
       "choices": {
         "A": "y = <w, x> + b (dot product plus bias)",
@@ -1686,6 +1808,7 @@
     {
       "id": "L6-Q03",
       "sectionId": "L6",
+      "type": "mcq",
       "stem": "L2 (squared) loss for a true y and estimate y-hat:",
       "choices": {
         "A": "|y - y-hat|",
@@ -1699,6 +1822,7 @@
     {
       "id": "L6-Q04",
       "sectionId": "L6",
+      "type": "mcq",
       "stem": "Training loss for linear regression in the slides is Mean Squared Error (MSE):",
       "choices": {
         "A": "Average of absolute errors only",
@@ -1712,6 +1836,7 @@
     {
       "id": "L6-Q05",
       "sectionId": "L6",
+      "type": "mcq",
       "stem": "Parameters for linear regression are learned by:",
       "choices": {
         "A": "Maximising MSE",
@@ -1725,6 +1850,7 @@
     {
       "id": "L6-Q06",
       "sectionId": "L6",
+      "type": "mcq",
       "stem": "The gradient of a function points:",
       "choices": {
         "A": "Opposite to steepest slope always for maximisation only",
@@ -1738,6 +1864,7 @@
     {
       "id": "L6-Q07",
       "sectionId": "L6",
+      "type": "mcq",
       "stem": "After folding bias into weights, the closed-form linear regression solution is:",
       "choices": {
         "A": "w* = X y",
@@ -1751,6 +1878,7 @@
     {
       "id": "L6-Q08",
       "sectionId": "L6",
+      "type": "mcq",
       "stem": "Closed-form linear regression may be problematic because:",
       "choices": {
         "A": "Loss is never convex",
@@ -1764,6 +1892,7 @@
     {
       "id": "L6-Q09",
       "sectionId": "L6",
+      "type": "mcq",
       "stem": "Gradient descent weight update has the form:",
       "choices": {
         "A": "w_t = w_{t-1} - eta * partial(loss)/partial(w)",
@@ -1777,6 +1906,7 @@
     {
       "id": "L6-Q10",
       "sectionId": "L6",
+      "type": "mcq",
       "stem": "Stochastic gradient descent (SGD) approximates the gradient using:",
       "choices": {
         "A": "A small random mini-batch of examples each step",
@@ -1790,6 +1920,7 @@
     {
       "id": "L6-Q11",
       "sectionId": "L6",
+      "type": "mcq",
       "stem": "Common mini-batch sizes mentioned are on the order of:",
       "choices": {
         "A": "1 only",
@@ -1803,6 +1934,7 @@
     {
       "id": "L6-Q12",
       "sectionId": "L6",
+      "type": "mcq",
       "stem": "For seismic earthquake vs explosion data, a linear decision boundary example given is equivalent to:",
       "choices": {
         "A": "Softmax with 1000 ImageNet classes",
@@ -1816,6 +1948,7 @@
     {
       "id": "L6-Q13",
       "sectionId": "L6",
+      "type": "mcq",
       "stem": "A perceptron combines a linear score with:",
       "choices": {
         "A": "Softmax over many classes",
@@ -1829,6 +1962,7 @@
     {
       "id": "L6-Q14",
       "sectionId": "L6",
+      "type": "mcq",
       "stem": "Why is plain gradient descent awkward for the classical perceptron threshold loss?",
       "choices": {
         "A": "MSE is undefined",
@@ -1842,6 +1976,7 @@
     {
       "id": "L6-Q15",
       "sectionId": "L6",
+      "type": "mcq",
       "stem": "The perceptron weight update rule (slide form) is:",
       "choices": {
         "A": "wi <- wi + alpha (y - hw(x)) xi",
@@ -1855,6 +1990,7 @@
     {
       "id": "L6-Q16",
       "sectionId": "L6",
+      "type": "mcq",
       "stem": "The Perceptron Convergence Theorem states that if the training set is linearly separable, then:",
       "choices": {
         "A": "The algorithm may cycle forever",
@@ -1868,6 +2004,7 @@
     {
       "id": "L6-Q17",
       "sectionId": "L6",
+      "type": "mcq",
       "stem": "Logistic regression is described as:",
       "choices": {
         "A": "Linear function squashed by the logistic (sigmoid) function to outputs in (0,1)",
@@ -1881,6 +2018,7 @@
     {
       "id": "L6-Q18",
       "sectionId": "L6",
+      "type": "mcq",
       "stem": "For logistic regression binary decisions, a common threshold on g(z) is:",
       "choices": {
         "A": "0.0 always meaning class 1",
@@ -1894,6 +2032,7 @@
     {
       "id": "L6-Q19",
       "sectionId": "L6",
+      "type": "mcq",
       "stem": "Softmax regression is used for:",
       "choices": {
         "A": "Pure continuous regression with one real output only",
@@ -1907,6 +2046,7 @@
     {
       "id": "L6-Q20",
       "sectionId": "L6",
+      "type": "mcq",
       "stem": "In multi-class scoring without calibrated probabilities, a simple decision rule is:",
       "choices": {
         "A": "Always pick class 0",
@@ -1920,6 +2060,7 @@
     {
       "id": "L7-Q01",
       "sectionId": "L7",
+      "type": "mcq",
       "stem": "XOR(0,0), XOR(1,0), XOR(0,1), XOR(1,1) equal which outputs respectively?",
       "choices": {
         "A": "0, 0, 1, 1",
@@ -1933,6 +2074,7 @@
     {
       "id": "L7-Q02",
       "sectionId": "L7",
+      "type": "mcq",
       "stem": "Why can a single perceptron not learn XOR (Minsky and Papert, 1969)?",
       "choices": {
         "A": "XOR requires real-valued regression outputs",
@@ -1946,6 +2088,7 @@
     {
       "id": "L7-Q03",
       "sectionId": "L7",
+      "type": "mcq",
       "stem": "In the lecture MLP with a single hidden layer, the input x is a column vector of size 4. What are the stated sizes of W1 and b1?",
       "choices": {
         "A": "W1 is 4x5 and b1 has size 5",
@@ -1959,6 +2102,7 @@
     {
       "id": "L7-Q04",
       "sectionId": "L7",
+      "type": "mcq",
       "stem": "For that same MLP sketch, the forward pass for the hidden layer is written as which of the following?",
       "choices": {
         "A": "h = W1x + b1 (no activation)",
@@ -1972,6 +2116,7 @@
     {
       "id": "L7-Q05",
       "sectionId": "L7",
+      "type": "mcq",
       "stem": "For multiclass classification in the lecture, after computing o = W2 h + b2 (as in the multiclass forward pass), the class probabilities are obtained by:",
       "choices": {
         "A": "thresholding each oi at 0",
@@ -1985,6 +2130,7 @@
     {
       "id": "L7-Q06",
       "sectionId": "L7",
+      "type": "mcq",
       "stem": "The perceptron learning rule given in the lecture is:",
       "choices": {
         "A": "wi <- wi - alpha (y - hw(x)) xi",
@@ -1998,6 +2144,7 @@
     {
       "id": "L7-Q07",
       "sectionId": "L7",
+      "type": "mcq",
       "stem": "In standard gradient descent, the weight update has which form?",
       "choices": {
         "A": "w(t) = w(t-1) + eta * gradient of the loss",
@@ -2011,6 +2158,7 @@
     {
       "id": "L7-Q08",
       "sectionId": "L7",
+      "type": "mcq",
       "stem": "For sigmoid backprop, when node j is an output node, the error term delta_j is defined as:",
       "choices": {
         "A": "delta_j = (z_j - y_j)",
@@ -2024,6 +2172,7 @@
     {
       "id": "L7-Q09",
       "sectionId": "L7",
+      "type": "mcq",
       "stem": "For a hidden sigmoid node j that feeds into later nodes with (updated) weights w'_k and error terms delta'_k, delta_j equals:",
       "choices": {
         "A": "sum_k delta'_k w'_k only",
@@ -2037,6 +2186,7 @@
     {
       "id": "L7-Q10",
       "sectionId": "L7",
+      "type": "mcq",
       "stem": "The sigmoid weight-update rule in the lecture is written as:",
       "choices": {
         "A": "w_ij = w_ij - eta * delta_j * y_i",
@@ -2050,6 +2200,7 @@
     {
       "id": "L7-Q11",
       "sectionId": "L7",
+      "type": "mcq",
       "stem": "In the worked BP example, the training example is given as which input (with target)?",
       "choices": {
         "A": "(0, 1, 0, 1)",
@@ -2063,6 +2214,7 @@
     {
       "id": "L7-Q12",
       "sectionId": "L7",
+      "type": "mcq",
       "stem": "In that example, the net input (weighted sum) into hidden unit 4 is:",
       "choices": {
         "A": "-0.3",
@@ -2076,6 +2228,7 @@
     {
       "id": "L7-Q13",
       "sectionId": "L7",
+      "type": "mcq",
       "stem": "After the squash, the lecture computes y4 for unit 4 as approximately:",
       "choices": {
         "A": "0.525",
@@ -2089,6 +2242,7 @@
     {
       "id": "L7-Q14",
       "sectionId": "L7",
+      "type": "mcq",
       "stem": "For unit 5 in the same example, the weighted sum and squash output are:",
       "choices": {
         "A": "-0.3 and 0.574",
@@ -2102,6 +2256,7 @@
     {
       "id": "L7-Q15",
       "sectionId": "L7",
+      "type": "mcq",
       "stem": "For output unit 6, the lecture gives weighted sum 0.11 and squash output approximately:",
       "choices": {
         "A": "0.574",
@@ -2115,6 +2270,7 @@
     {
       "id": "L7-Q16",
       "sectionId": "L7",
+      "type": "mcq",
       "stem": "Weights in the MLP are initialised (per the lecture) to random numbers from which interval?",
       "choices": {
         "A": "[0, 1]",
@@ -2128,6 +2284,7 @@
     {
       "id": "L7-Q17",
       "sectionId": "L7",
+      "type": "mcq",
       "stem": "Rumelhart et al. (1986) suggested adding a momentum term. Which update form matches the lecture?",
       "choices": {
         "A": "w_ij(t+1) = w_ij(t) + eta * delta_j * x_i + eta * (w_ij(t) - w_ij(t-1))",
@@ -2141,6 +2298,7 @@
     {
       "id": "L7-Q18",
       "sectionId": "L7",
+      "type": "mcq",
       "stem": "A stated benefit of adding a momentum term is that:",
       "choices": {
         "A": "VC-dimension becomes exactly 3",
@@ -2154,6 +2312,7 @@
     {
       "id": "L7-Q19",
       "sectionId": "L7",
+      "type": "mcq",
       "stem": "The squared-error loss for a 3-input, 2-output network with no hidden layer is written (up to the factor 1/2) using which idea?",
       "choices": {
         "A": "Sum of squared differences between targets and predictions",
@@ -2167,6 +2326,7 @@
     {
       "id": "L7-Q20",
       "sectionId": "L7",
+      "type": "mcq",
       "stem": "In the voice-recognition MLP sketch, the architecture listed is:",
       "choices": {
         "A": "2 inputs, 60 hidden, 6 outputs",
@@ -2180,6 +2340,7 @@
     {
       "id": "L8-Q01",
       "sectionId": "L8",
+      "type": "mcq",
       "stem": "In the loan-default story, all 5 people who defaulted wore blue shirts. What is the lecture's warning?",
       "choices": {
         "A": "Blue shirts cause default, so use shirt colour as a hard rule",
@@ -2193,6 +2354,7 @@
     {
       "id": "L8-Q02",
       "sectionId": "L8",
+      "type": "mcq",
       "stem": "Which statement about validation and test datasets matches the lecture?",
       "choices": {
         "A": "Test data may be reused freely to tune hyperparameters",
@@ -2206,6 +2368,7 @@
     {
       "id": "L8-Q03",
       "sectionId": "L8",
+      "type": "mcq",
       "stem": "Training error low but test/generalisation error high is called:",
       "choices": {
         "A": "underfitting",
@@ -2219,6 +2382,7 @@
     {
       "id": "L8-Q04",
       "sectionId": "L8",
+      "type": "mcq",
       "stem": "Underfitting is described as:",
       "choices": {
         "A": "training error too high (and test error high too), often because the model is too simple",
@@ -2232,6 +2396,7 @@
     {
       "id": "L8-Q05",
       "sectionId": "L8",
+      "type": "mcq",
       "stem": "K-fold cross validation partitions training data into K parts and, for each i:",
       "choices": {
         "A": "trains on the i-th part only and ignores the rest",
@@ -2245,6 +2410,7 @@
     {
       "id": "L8-Q06",
       "sectionId": "L8",
+      "type": "mcq",
       "stem": "Popular choices of K stated in the lecture are:",
       "choices": {
         "A": "K = 2 or 3",
@@ -2258,6 +2424,7 @@
     {
       "id": "L8-Q07",
       "sectionId": "L8",
+      "type": "mcq",
       "stem": "Model capacity is described as:",
       "choices": {
         "A": "the ability to fit a variety of functions",
@@ -2271,6 +2438,7 @@
     {
       "id": "L8-Q08",
       "sectionId": "L8",
+      "type": "mcq",
       "stem": "For a 2-D perceptron (linear classifier in 2D), the lecture states VC-dimension equals:",
       "choices": {
         "A": "1",
@@ -2284,6 +2452,7 @@
     {
       "id": "L8-Q09",
       "sectionId": "L8",
+      "type": "mcq",
       "stem": "The lecture links VC-dim = 3 for the 2-D perceptron to which geometric claim?",
       "choices": {
         "A": "It can shatter any number of points on a line",
@@ -2297,6 +2466,7 @@
     {
       "id": "L8-Q10",
       "sectionId": "L8",
+      "type": "mcq",
       "stem": "A listed practical limitation of VC-dimension for deep learning is that:",
       "choices": {
         "A": "it is illegal to compute for linear models",
@@ -2310,6 +2480,7 @@
     {
       "id": "L8-Q11",
       "sectionId": "L8",
+      "type": "mcq",
       "stem": "Which set of techniques is listed under regularisation?",
       "choices": {
         "A": "Softmax, ReLU, sigmoid, tanh",
@@ -2323,6 +2494,7 @@
     {
       "id": "L8-Q12",
       "sectionId": "L8",
+      "type": "mcq",
       "stem": "Early stopping monitors validation performance and typically:",
       "choices": {
         "A": "stops when training loss first becomes zero",
@@ -2336,6 +2508,7 @@
     {
       "id": "L8-Q13",
       "sectionId": "L8",
+      "type": "mcq",
       "stem": "In squared-norm regularisation as a soft constraint, lambda = 0 means:",
       "choices": {
         "A": "no regularisation effect from that term",
@@ -2349,6 +2522,7 @@
     {
       "id": "L8-Q14",
       "sectionId": "L8",
+      "type": "mcq",
       "stem": "As lambda tends to infinity in weight-decay regularisation, the lecture states:",
       "choices": {
         "A": "training error must increase without bound",
@@ -2362,6 +2536,7 @@
     {
       "id": "L8-Q15",
       "sectionId": "L8",
+      "type": "mcq",
       "stem": "The weight-decay style update in the lecture is:",
       "choices": {
         "A": "w_{t+1} = w_t + eta * lambda * w_t",
@@ -2375,6 +2550,7 @@
     {
       "id": "L8-Q16",
       "sectionId": "L8",
+      "type": "mcq",
       "stem": "Typical dropout rates stated for hidden layers and the input layer are:",
       "choices": {
         "A": "hidden 0.9-0.99, input 0.5",
@@ -2388,6 +2564,7 @@
     {
       "id": "L8-Q17",
       "sectionId": "L8",
+      "type": "mcq",
       "stem": "A residual connection provides another path so that a block can compute (when dimensions match):",
       "choices": {
         "A": "F(x) * x only",
@@ -2401,6 +2578,7 @@
     {
       "id": "L8-Q18",
       "sectionId": "L8",
+      "type": "mcq",
       "stem": "If F(x) and x have different dimensions, the lecture rewrites the residual as:",
       "choices": {
         "A": "F(x) / x",
@@ -2414,6 +2592,7 @@
     {
       "id": "L8-Q19",
       "sectionId": "L8",
+      "type": "mcq",
       "stem": "Which remark about residual connections matches the lecture summary?",
       "choices": {
         "A": "RC is the same thing as L2 weight decay",
@@ -2427,6 +2606,7 @@
     {
       "id": "L8-Q20",
       "sectionId": "L8",
+      "type": "mcq",
       "stem": "In some cases it is easier to learn a residual than the full mapping. The lecture phrases this as preferring to learn:",
       "choices": {
         "A": "only the bias terms and freeze all weights",
@@ -2440,6 +2620,7 @@
     {
       "id": "L9-Q01",
       "sectionId": "L9",
+      "type": "mcq",
       "stem": "Binary (Boolean) classification means each example is labelled as:",
       "choices": {
         "A": "a real-valued regression target only",
@@ -2453,6 +2634,7 @@
     {
       "id": "L9-Q02",
       "sectionId": "L9",
+      "type": "mcq",
       "stem": "In a decision tree, each internal node corresponds to:",
       "choices": {
         "A": "a leaf output value only",
@@ -2466,6 +2648,7 @@
     {
       "id": "L9-Q03",
       "sectionId": "L9",
+      "type": "mcq",
       "stem": "ID3 builds the tree by recursively selecting:",
       "choices": {
         "A": "a random attribute at each node",
@@ -2479,6 +2662,7 @@
     {
       "id": "L9-Q04",
       "sectionId": "L9",
+      "type": "mcq",
       "stem": "If remaining examples at a node are all positive or all negative, the recursive step should:",
       "choices": {
         "A": "choose another attribute anyway",
@@ -2492,6 +2676,7 @@
     {
       "id": "L9-Q05",
       "sectionId": "L9",
+      "type": "mcq",
       "stem": "If no examples are left, the algorithm returns:",
       "choices": {
         "A": "a random class from {Yes, No}",
@@ -2505,6 +2690,7 @@
     {
       "id": "L9-Q06",
       "sectionId": "L9",
+      "type": "mcq",
       "stem": "If no attributes are left but both positive and negative examples remain, return:",
       "choices": {
         "A": "the attribute Type",
@@ -2518,6 +2704,7 @@
     {
       "id": "L9-Q07",
       "sectionId": "L9",
+      "type": "mcq",
       "stem": "In the restaurant waiting example, which attribute split does a good job of separating positives and negatives?",
       "choices": {
         "A": "Type",
@@ -2531,6 +2718,7 @@
     {
       "id": "L9-Q08",
       "sectionId": "L9",
+      "type": "mcq",
       "stem": "Splitting on Type in that example is described as:",
       "choices": {
         "A": "perfect: all-positive and all-negative subsets",
@@ -2544,6 +2732,7 @@
     {
       "id": "L9-Q09",
       "sectionId": "L9",
+      "type": "mcq",
       "stem": "For the training set with p = n = 6, the prior entropy I(6/12, 6/12) equals:",
       "choices": {
         "A": "0",
@@ -2557,6 +2746,7 @@
     {
       "id": "L9-Q10",
       "sectionId": "L9",
+      "type": "mcq",
       "stem": "Information gain chooses the attribute that:",
       "choices": {
         "A": "maximises IG (largest reduction in entropy)",
@@ -2570,6 +2760,7 @@
     {
       "id": "L9-Q11",
       "sectionId": "L9",
+      "type": "mcq",
       "stem": "Among the restaurant attributes discussed, Patrons is chosen as the root because:",
       "choices": {
         "A": "it has the lowest IG of all attributes",
@@ -2583,6 +2774,7 @@
     {
       "id": "L9-Q12",
       "sectionId": "L9",
+      "type": "mcq",
       "stem": "In the classification-error example with root Credit predicting the majority class Safe, the root error is:",
       "choices": {
         "A": "4/22 = 0.18",
@@ -2596,6 +2788,7 @@
     {
       "id": "L9-Q13",
       "sectionId": "L9",
+      "type": "mcq",
       "stem": "A perfect attribute for splitting would produce subsets that are:",
       "choices": {
         "A": "mixed 50/50 in every branch",
@@ -2609,6 +2802,7 @@
     {
       "id": "L9-Q14",
       "sectionId": "L9",
+      "type": "mcq",
       "stem": "Entropy of a coin that always lands heads is:",
       "choices": {
         "A": "1 bit",
@@ -2622,6 +2816,7 @@
     {
       "id": "L9-Q15",
       "sectionId": "L9",
+      "type": "mcq",
       "stem": "Entropy of a fair coin (equal heads/tails) is described as:",
       "choices": {
         "A": "0",
@@ -2635,6 +2830,7 @@
     {
       "id": "L9-Q16",
       "sectionId": "L9",
+      "type": "mcq",
       "stem": "At an intermediate mixed node in practice, prediction often uses:",
       "choices": {
         "A": "a random leaf label",
@@ -2648,6 +2844,7 @@
     {
       "id": "L9-Q17",
       "sectionId": "L9",
+      "type": "mcq",
       "stem": "Decision-tree pruning is presented as a way to combat:",
       "choices": {
         "A": "underfitting only",
@@ -2661,6 +2858,7 @@
     {
       "id": "L9-Q18",
       "sectionId": "L9",
+      "type": "mcq",
       "stem": "A problem with plain information gain is preferring attributes with very high branching (e.g. a unique ID). A stated remedy is:",
       "choices": {
         "A": "gain ratio (IG relative to the attribute's own information content)",
@@ -2674,6 +2872,7 @@
     {
       "id": "L9-Q19",
       "sectionId": "L9",
+      "type": "mcq",
       "stem": "When should you consider decision trees (per the lecture checklist)?",
       "choices": {
         "A": "Only when the target is continuous and attributes are images",
@@ -2687,6 +2886,7 @@
     {
       "id": "L9-Q20",
       "sectionId": "L9",
+      "type": "mcq",
       "stem": "The IMPORTANCE function in the DT learning algorithm selects:",
       "choices": {
         "A": "a random unused attribute",
@@ -2700,6 +2900,7 @@
     {
       "id": "L10-Q01",
       "sectionId": "L10",
+      "type": "mcq",
       "stem": "A random variable is described as:",
       "choices": {
         "A": "a fixed constant with no uncertainty",
@@ -2713,6 +2914,7 @@
     {
       "id": "L10-Q02",
       "sectionId": "L10",
+      "type": "mcq",
       "stem": "A joint distribution over X1,...,Xn specifies:",
       "choices": {
         "A": "only the marginal of X1",
@@ -2726,6 +2928,7 @@
     {
       "id": "L10-Q03",
       "sectionId": "L10",
+      "type": "mcq",
       "stem": "If n variables each have domain size d, the size of a full joint distribution is on the order of:",
       "choices": {
         "A": "O(n d)",
@@ -2739,6 +2942,7 @@
     {
       "id": "L10-Q04",
       "sectionId": "L10",
+      "type": "mcq",
       "stem": "Marginalisation means:",
       "choices": {
         "A": "deleting variables from the graph permanently",
@@ -2752,6 +2956,7 @@
     {
       "id": "L10-Q05",
       "sectionId": "L10",
+      "type": "mcq",
       "stem": "The definition of conditional probability used in the lecture relates P(a|b) to:",
       "choices": {
         "A": "P(a) + P(b)",
@@ -2765,6 +2970,7 @@
     {
       "id": "L10-Q06",
       "sectionId": "L10",
+      "type": "mcq",
       "stem": "Bayes' rule is highlighted because it lets us:",
       "choices": {
         "A": "avoid all conditional probabilities",
@@ -2778,6 +2984,7 @@
     {
       "id": "L10-Q07",
       "sectionId": "L10",
+      "type": "mcq",
       "stem": "In Bayes net graphical notation, absence of an arc encodes:",
       "choices": {
         "A": "that the variables are always observed",
@@ -2791,6 +2998,7 @@
     {
       "id": "L10-Q08",
       "sectionId": "L10",
+      "type": "mcq",
       "stem": "Bayes net syntax requires:",
       "choices": {
         "A": "an undirected cyclic graph only",
@@ -2804,6 +3012,7 @@
     {
       "id": "L10-Q09",
       "sectionId": "L10",
+      "type": "mcq",
       "stem": "In the Alarm network, P(B=true) is given as:",
       "choices": {
         "A": "0.001",
@@ -2817,6 +3026,7 @@
     {
       "id": "L10-Q10",
       "sectionId": "L10",
+      "type": "mcq",
       "stem": "P(E=true) in the Alarm network is:",
       "choices": {
         "A": "0.002",
@@ -2830,6 +3040,7 @@
     {
       "id": "L10-Q11",
       "sectionId": "L10",
+      "type": "mcq",
       "stem": "Given Burglary and Earthquake, P(A=true | B=true, E=false) is:",
       "choices": {
         "A": "0.95",
@@ -2843,6 +3054,7 @@
     {
       "id": "L10-Q12",
       "sectionId": "L10",
+      "type": "mcq",
       "stem": "The lecture computes P(b, not e, a, not j, not m) as the product:",
       "choices": {
         "A": "P(b) + P(e) + P(a) + P(j) + P(m)",
@@ -2856,6 +3068,7 @@
     {
       "id": "L10-Q13",
       "sectionId": "L10",
+      "type": "mcq",
       "stem": "That product evaluates numerically to:",
       "choices": {
         "A": "0.28",
@@ -2869,6 +3082,7 @@
     {
       "id": "L10-Q14",
       "sectionId": "L10",
+      "type": "mcq",
       "stem": "Number of free parameters in a CPT: with parent domain sizes d1,...,dk and child domain size d, each row sums to 1, so the count is:",
       "choices": {
         "A": "d * d1 * ... * dk",
@@ -2882,6 +3096,7 @@
     {
       "id": "L10-Q15",
       "sectionId": "L10",
+      "type": "mcq",
       "stem": "For sparse Bayes nets (n variables, max domain d, max parents k), BN size scales as:",
       "choices": {
         "A": "O(n * d^k)",
@@ -2895,6 +3110,7 @@
     {
       "id": "L10-Q16",
       "sectionId": "L10",
+      "type": "mcq",
       "stem": "Global semantics of a Bayes net state that:",
       "choices": {
         "A": "P(X1,...,Xn) = product_i P(Xi | Parents(Xi))",
@@ -2908,6 +3124,7 @@
     {
       "id": "L10-Q17",
       "sectionId": "L10",
+      "type": "mcq",
       "stem": "Every variable is conditionally independent of its non-descendants given:",
       "choices": {
         "A": "its parents",
@@ -2921,6 +3138,7 @@
     {
       "id": "L10-Q18",
       "sectionId": "L10",
+      "type": "mcq",
       "stem": "Inference by enumeration for P(B | j, m) is written in the lecture as proportional to:",
       "choices": {
         "A": "P(B) alone",
@@ -2934,6 +3152,7 @@
     {
       "id": "L10-Q19",
       "sectionId": "L10",
+      "type": "mcq",
       "stem": "A key computational problem with naive enumeration is:",
       "choices": {
         "A": "sums of exponentially many products",
@@ -2947,6 +3166,7 @@
     {
       "id": "L10-Q20",
       "sectionId": "L10",
+      "type": "mcq",
       "stem": "Factoring repeated subexpressions (as in rewriting uwy+... as (u+v)(w+x)(y+z)) motivates:",
       "choices": {
         "A": "that exact inference is always impossible",
@@ -2960,6 +3180,7 @@
     {
       "id": "L11-Q01",
       "sectionId": "L11",
+      "type": "mcq",
       "stem": "An MDP is defined by states, actions, and which transition and reward objects (among other elements)?",
       "choices": {
         "A": "only a supervised label y for each s",
@@ -2973,6 +3194,7 @@
     {
       "id": "L11-Q02",
       "sectionId": "L11",
+      "type": "mcq",
       "stem": "Discounted utilities use a discount factor gamma. The infinite geometric series 1 + gamma + gamma^2 + ... equals:",
       "choices": {
         "A": "1 / (1 - gamma) (for |gamma| < 1)",
@@ -2986,6 +3208,7 @@
     {
       "id": "L11-Q03",
       "sectionId": "L11",
+      "type": "mcq",
       "stem": "In reinforcement learning versus a known MDP, the new twist is that:",
       "choices": {
         "A": "T and/or R are unknown, so the agent must try actions and observe outcomes",
@@ -2999,6 +3222,7 @@
     {
       "id": "L11-Q04",
       "sectionId": "L11",
+      "type": "mcq",
       "stem": "Exploration versus exploitation means:",
       "choices": {
         "A": "only storing the MDP model offline",
@@ -3012,6 +3236,7 @@
     {
       "id": "L11-Q05",
       "sectionId": "L11",
+      "type": "mcq",
       "stem": "Model-based RL (as in the lecture) roughly:",
       "choices": {
         "A": "never estimates T or R",
@@ -3025,6 +3250,7 @@
     {
       "id": "L11-Q06",
       "sectionId": "L11",
+      "type": "mcq",
       "stem": "In the model-based grid example, after the listed episodes, T(B, east, C) is estimated as:",
       "choices": {
         "A": "0.25",
@@ -3038,6 +3264,7 @@
     {
       "id": "L11-Q07",
       "sectionId": "L11",
+      "type": "mcq",
       "stem": "In that same learned model, T(C, east, D) and T(C, east, A) are:",
       "choices": {
         "A": "1.00 and 0.00",
@@ -3051,6 +3278,7 @@
     {
       "id": "L11-Q08",
       "sectionId": "L11",
+      "type": "mcq",
       "stem": "Passive RL with a fixed policy means the learner:",
       "choices": {
         "A": "chooses exploratory actions freely to optimise regret",
@@ -3064,6 +3292,7 @@
     {
       "id": "L11-Q09",
       "sectionId": "L11",
+      "type": "mcq",
       "stem": "Direct evaluation estimates V^pi(s) by:",
       "choices": {
         "A": "solving Bellman equations with known T and R",
@@ -3077,6 +3306,7 @@
     {
       "id": "L11-Q10",
       "sectionId": "L11",
+      "type": "mcq",
       "stem": "A listed weakness of direct evaluation is that:",
       "choices": {
         "A": "it requires exact knowledge of T",
@@ -3090,6 +3320,7 @@
     {
       "id": "L11-Q11",
       "sectionId": "L11",
+      "type": "mcq",
       "stem": "Temporal-difference (TD) learning updates V(s) when?",
       "choices": {
         "A": "only after the entire dataset is collected offline with no interaction",
@@ -3103,6 +3334,7 @@
     {
       "id": "L11-Q12",
       "sectionId": "L11",
+      "type": "mcq",
       "stem": "In the TD example with gamma = 1 and alpha = 1/2, after transition B,east,C with reward -2 (starting from zeros), V(B) becomes:",
       "choices": {
         "A": "0",
@@ -3116,6 +3348,7 @@
     {
       "id": "L11-Q13",
       "sectionId": "L11",
+      "type": "mcq",
       "stem": "Q(s,a) is described as:",
       "choices": {
         "A": "expected value of taking action a in s then behaving optimally thereafter",
@@ -3129,6 +3362,7 @@
     {
       "id": "L11-Q14",
       "sectionId": "L11",
+      "type": "mcq",
       "stem": "The Q-learning sample update incorporates the target:",
       "choices": {
         "A": "r only, with no bootstrap term",
@@ -3142,6 +3376,7 @@
     {
       "id": "L11-Q15",
       "sectionId": "L11",
+      "type": "mcq",
       "stem": "After Q-values are learned, a greedy policy is:",
       "choices": {
         "A": "pi(s) = argmax_a Q(s,a)",
@@ -3155,6 +3390,7 @@
     {
       "id": "L11-Q16",
       "sectionId": "L11",
+      "type": "mcq",
       "stem": "Q-learning is called off-policy because:",
       "choices": {
         "A": "it can converge to the optimal Q even if behaviour is suboptimal (with enough exploration and suitable alpha)",
@@ -3168,6 +3404,7 @@
     {
       "id": "L11-Q17",
       "sectionId": "L11",
+      "type": "mcq",
       "stem": "Epsilon-greedy exploration means: with probability epsilon act randomly, and with probability 1-epsilon:",
       "choices": {
         "A": "exit the episode immediately",
@@ -3181,6 +3418,7 @@
     {
       "id": "L11-Q18",
       "sectionId": "L11",
+      "type": "mcq",
       "stem": "A problem with keeping epsilon fixed (random exploration forever) is:",
       "choices": {
         "A": "you never explore at all",
@@ -3194,6 +3432,7 @@
     {
       "id": "L11-Q19",
       "sectionId": "L11",
+      "type": "mcq",
       "stem": "Regret measures:",
       "choices": {
         "A": "the total mistake cost versus acting optimally throughout (including youthful suboptimality)",
@@ -3207,6 +3446,7 @@
     {
       "id": "L11-Q20",
       "sectionId": "L11",
+      "type": "mcq",
       "stem": "Approximate Q-learning with linear features adjusts weights so that unexpected outcomes:",
       "choices": {
         "A": "are ignored unless the exact state was seen before",
@@ -3220,6 +3460,7 @@
     {
       "id": "Lab5-Q01",
       "sectionId": "Lab5",
+      "type": "mcq",
       "stem": "A bank trains a model on historical loan records that include income, credit score, and a known default/no-default label. Which learning type best fits this scenario?",
       "choices": {
         "A": "Unsupervised clustering",
@@ -3233,6 +3474,7 @@
     {
       "id": "Lab5-Q02",
       "sectionId": "Lab5",
+      "type": "mcq",
       "stem": "A streaming service groups users by viewing behaviour with no predefined viewer-type labels. This is best described as:",
       "choices": {
         "A": "Supervised classification",
@@ -3246,6 +3488,7 @@
     {
       "id": "Lab5-Q03",
       "sectionId": "Lab5",
+      "type": "mcq",
       "stem": "A data-centre controller adjusts CPU and memory allocation, receives response-time and energy signals, and updates its policy to improve long-run performance. This matches:",
       "choices": {
         "A": "Reinforcement learning",
@@ -3259,6 +3502,7 @@
     {
       "id": "Lab5-Q04",
       "sectionId": "Lab5",
+      "type": "mcq",
       "stem": "A hospital has a few hundred clinician-labelled records and a large pool of unlabelled patient records. The intended approach is:",
       "choices": {
         "A": "Semi-supervised learning using both labelled and unlabelled data",
@@ -3272,6 +3516,7 @@
     {
       "id": "Lab5-Q05",
       "sectionId": "Lab5",
+      "type": "mcq",
       "stem": "Predicting continuous daily building energy consumption (kWh) from temperature, occupancy, time of day, and day of week is:",
       "choices": {
         "A": "Supervised classification",
@@ -3285,6 +3530,7 @@
     {
       "id": "Lab5-Q06",
       "sectionId": "Lab5",
+      "type": "mcq",
       "stem": "Why is energy consumption treated as a regression target rather than a classification target in the lab example?",
       "choices": {
         "A": "Because temperature is categorical",
@@ -3298,6 +3544,7 @@
     {
       "id": "Lab5-Q07",
       "sectionId": "Lab5",
+      "type": "mcq",
       "stem": "In the lab's linear energy model, Energy (kWh) = 302.26 + (-6.19) * T. What does the intercept 302.26 represent?",
       "choices": {
         "A": "Energy reduction per degree Celsius",
@@ -3311,6 +3558,7 @@
     {
       "id": "Lab5-Q08",
       "sectionId": "Lab5",
+      "type": "mcq",
       "stem": "In Energy = 302.26 + (-6.19) * T, the coefficient -6.19 means:",
       "choices": {
         "A": "Energy rises by about 6.19 kWh for each 1 degree C increase in outdoor temperature",
@@ -3324,6 +3572,7 @@
     {
       "id": "Lab5-Q09",
       "sectionId": "Lab5",
+      "type": "mcq",
       "stem": "Using Energy = 302.26 + (-6.19) * T, the predicted consumption at T = 15 degrees C is closest to:",
       "choices": {
         "A": "92.85 kWh",
@@ -3337,6 +3586,7 @@
     {
       "id": "Lab5-Q10",
       "sectionId": "Lab5",
+      "type": "mcq",
       "stem": "The lab reports R-squared = 0.948 for the temperature-only linear fit. This means the model explains about:",
       "choices": {
         "A": "5.2 percent of variation in energy on the training data",
@@ -3350,6 +3600,7 @@
     {
       "id": "Lab5-Q11",
       "sectionId": "Lab5",
+      "type": "mcq",
       "stem": "A high training R-squared alone does not guarantee good deployment performance mainly because:",
       "choices": {
         "A": "R-squared cannot be computed for regression",
@@ -3363,6 +3614,7 @@
     {
       "id": "Lab5-Q12",
       "sectionId": "Lab5",
+      "type": "mcq",
       "stem": "The lab warns that true temperature-energy relationships are often U-shaped. Why does that matter for a linear model?",
       "choices": {
         "A": "Linear models only work when R-squared is below 0.5",
@@ -3376,6 +3628,7 @@
     {
       "id": "Lab5-Q13",
       "sectionId": "Lab5",
+      "type": "mcq",
       "stem": "On mild days around 18-22 degrees C, a U-shaped building energy curve typically shows:",
       "choices": {
         "A": "Relatively low energy demand for both heating and cooling",
@@ -3389,6 +3642,7 @@
     {
       "id": "Lab5-Q14",
       "sectionId": "Lab5",
+      "type": "mcq",
       "stem": "If training data include hot days with high cooling loads, a purely linear decreasing temperature model will tend to:",
       "choices": {
         "A": "Underestimate energy on very hot days and overestimate on mild days relative to the true U-shape",
@@ -3402,6 +3656,7 @@
     {
       "id": "Lab5-Q15",
       "sectionId": "Lab5",
+      "type": "mcq",
       "stem": "Which feature role is correctly matched in the energy forecasting discussion?",
       "choices": {
         "A": "Outdoor temperature: typically a weak, irrelevant predictor",
@@ -3415,6 +3670,7 @@
     {
       "id": "Lab5-Q16",
       "sectionId": "Lab5",
+      "type": "mcq",
       "stem": "Good generalisation for the energy model means:",
       "choices": {
         "A": "Perfect memorisation of every training row",
@@ -3428,6 +3684,7 @@
     {
       "id": "Lab5-Q17",
       "sectionId": "Lab5",
+      "type": "mcq",
       "stem": "Overfitting in the energy context is best described as:",
       "choices": {
         "A": "Learning the general temperature-consumption relationship",
@@ -3441,6 +3698,7 @@
     {
       "id": "Lab5-Q18",
       "sectionId": "Lab5",
+      "type": "mcq",
       "stem": "Labelling only a few hundred clinical cases is often insufficient for a reliable fully supervised diagnostic classifier because:",
       "choices": {
         "A": "Expert labels are expensive and scarce relative to the complexity of the task",
@@ -3454,6 +3712,7 @@
     {
       "id": "Lab5-Q19",
       "sectionId": "Lab5",
+      "type": "mcq",
       "stem": "Reinforcement learning differs from supervised learning primarily because:",
       "choices": {
         "A": "It never uses numeric rewards",
@@ -3467,6 +3726,7 @@
     {
       "id": "Lab5-Q20",
       "sectionId": "Lab5",
+      "type": "mcq",
       "stem": "A practical fix when linearity fails for temperature and energy is to:",
       "choices": {
         "A": "Discard all outdoor temperature features",
@@ -3480,6 +3740,7 @@
     {
       "id": "Lab6-Q01",
       "sectionId": "Lab6",
+      "type": "mcq",
       "stem": "Linear regression is unsuitable as a direct probability model for binary classification mainly because:",
       "choices": {
         "A": "It cannot use continuous features",
@@ -3493,6 +3754,7 @@
     {
       "id": "Lab6-Q02",
       "sectionId": "Lab6",
+      "type": "mcq",
       "stem": "Logistic regression obtains a probability by:",
       "choices": {
         "A": "Thresholding the linear score with a hard step at zero only",
@@ -3506,6 +3768,7 @@
     {
       "id": "Lab6-Q03",
       "sectionId": "Lab6",
+      "type": "mcq",
       "stem": "If sigmoid(z) = 0.8 for an example, the usual interpretation is:",
       "choices": {
         "A": "The example is 80 percent of the training set",
@@ -3519,6 +3782,7 @@
     {
       "id": "Lab6-Q04",
       "sectionId": "Lab6",
+      "type": "mcq",
       "stem": "How does the perceptron differ from logistic regression in its output?",
       "choices": {
         "A": "The perceptron outputs a continuous probability in (0, 1)",
@@ -3532,6 +3796,7 @@
     {
       "id": "Lab6-Q05",
       "sectionId": "Lab6",
+      "type": "mcq",
       "stem": "A dataset is linearly separable if:",
       "choices": {
         "A": "Every feature is binary",
@@ -3545,6 +3810,7 @@
     {
       "id": "Lab6-Q06",
       "sectionId": "Lab6",
+      "type": "mcq",
       "stem": "The perceptron convergence theorem guarantees that if training data are linearly separable, then:",
       "choices": {
         "A": "One pass through the data is always enough",
@@ -3558,6 +3824,7 @@
     {
       "id": "Lab6-Q07",
       "sectionId": "Lab6",
+      "type": "mcq",
       "stem": "If data are not linearly separable, the classical perceptron typically:",
       "choices": {
         "A": "Still converges to zero training error",
@@ -3571,6 +3838,7 @@
     {
       "id": "Lab6-Q08",
       "sectionId": "Lab6",
+      "type": "mcq",
       "stem": "Minsky and Papert's classic result highlighted that a single-layer perceptron cannot learn:",
       "choices": {
         "A": "Linearly separable AND",
@@ -3584,6 +3852,7 @@
     {
       "id": "Lab6-Q09",
       "sectionId": "Lab6",
+      "type": "mcq",
       "stem": "When does the perceptron update rule change the weights?",
       "choices": {
         "A": "Only on misclassified examples",
@@ -3597,6 +3866,7 @@
     {
       "id": "Lab6-Q10",
       "sectionId": "Lab6",
+      "type": "mcq",
       "stem": "With labels in {+1, -1}, a common perceptron update on a mistake is:",
       "choices": {
         "A": "w <- w - learning_rate * x always",
@@ -3610,6 +3880,7 @@
     {
       "id": "Lab6-Q11",
       "sectionId": "Lab6",
+      "type": "mcq",
       "stem": "In the lab weight-trace setup with [w1,w2,w3] = [0.5, -0.5, -1] and z = 0.5*x1 - 0.5*x2 - 1, point x=[1,1,1], y=0 yields z = -1. The prediction is:",
       "choices": {
         "A": "Wrong, because z < 0 but y = 0 requires z >= 0",
@@ -3623,6 +3894,7 @@
     {
       "id": "Lab6-Q12",
       "sectionId": "Lab6",
+      "type": "mcq",
       "stem": "With the same weights [0.5, -0.5, -1], point x=[3,2,1], true y=1 gives z = -0.5. This example is:",
       "choices": {
         "A": "Misclassified (predicted 0, true 1)",
@@ -3636,6 +3908,7 @@
     {
       "id": "Lab6-Q13",
       "sectionId": "Lab6",
+      "type": "mcq",
       "stem": "Starting from [0, 0, -1], after misclassifying x=[3,2,1], y=1 with learning rate 0.5, the lab update produces:",
       "choices": {
         "A": "[1.5, 1, -0.5]",
@@ -3649,6 +3922,7 @@
     {
       "id": "Lab6-Q14",
       "sectionId": "Lab6",
+      "type": "mcq",
       "stem": "Later in the same trace, after updating on the y=0 mistake at x=[2,3,1], the final weights become:",
       "choices": {
         "A": "[1.5, 1, -0.5]",
@@ -3662,6 +3936,7 @@
     {
       "id": "Lab6-Q15",
       "sectionId": "Lab6",
+      "type": "mcq",
       "stem": "After one pass ending at [0.5, -0.5, -1], the lab concludes that:",
       "choices": {
         "A": "The data are not linearly separable",
@@ -3675,6 +3950,7 @@
     {
       "id": "Lab6-Q16",
       "sectionId": "Lab6",
+      "type": "mcq",
       "stem": "A key reason logistic regression is preferred over the perceptron in many applications is that:",
       "choices": {
         "A": "It cannot use gradient descent",
@@ -3688,6 +3964,7 @@
     {
       "id": "Lab6-Q17",
       "sectionId": "Lab6",
+      "type": "mcq",
       "stem": "Compared with the perceptron's fixed mistake correction, gradient descent on logistic (cross-entropy) loss:",
       "choices": {
         "A": "Ignores how wrong the prediction was",
@@ -3701,6 +3978,7 @@
     {
       "id": "Lab6-Q18",
       "sectionId": "Lab6",
+      "type": "mcq",
       "stem": "Why is the sigmoid's differentiability important for logistic regression training?",
       "choices": {
         "A": "It makes the decision boundary non-linear in feature space",
@@ -3714,6 +3992,7 @@
     {
       "id": "Lab6-Q19",
       "sectionId": "Lab6",
+      "type": "mcq",
       "stem": "If two scripts receive perceptron labels \"not profitable\" but logistic outputs 0.12 and 0.48, the practical advantage is:",
       "choices": {
         "A": "The borderline 0.48 case can be prioritised for human review while 0.12 is a clearer reject",
@@ -3727,6 +4006,7 @@
     {
       "id": "Lab6-Q20",
       "sectionId": "Lab6",
+      "type": "mcq",
       "stem": "Running until no misclassifications occur in a complete pass is a practical signal that:",
       "choices": {
         "A": "The learning rate must be increased to 100",
@@ -3740,6 +4020,7 @@
     {
       "id": "Lab7-Q01",
       "sectionId": "Lab7",
+      "type": "mcq",
       "stem": "For the lab network with x = (0.5, -0.5), hidden neuron 1 uses W11=1.0, W12=0.5, b1=0.5. The pre-activation z1 equals:",
       "choices": {
         "A": "-0.75",
@@ -3753,6 +4034,7 @@
     {
       "id": "Lab7-Q02",
       "sectionId": "Lab7",
+      "type": "mcq",
       "stem": "With z1 = 0.75 and ReLU activation, a1 equals:",
       "choices": {
         "A": "0",
@@ -3766,6 +4048,7 @@
     {
       "id": "Lab7-Q03",
       "sectionId": "Lab7",
+      "type": "mcq",
       "stem": "For hidden neuron 2 with z2 = -2.0 and ReLU, a2 equals:",
       "choices": {
         "A": "-2.0",
@@ -3779,6 +4062,7 @@
     {
       "id": "Lab7-Q04",
       "sectionId": "Lab7",
+      "type": "mcq",
       "stem": "With a1 = 0.75, a2 = 0, W1_out = 1.5, W2_out = -1.0, b_out = 0.5, and linear output activation, the network output is:",
       "choices": {
         "A": "0.75",
@@ -3792,6 +4076,7 @@
     {
       "id": "Lab7-Q05",
       "sectionId": "Lab7",
+      "type": "mcq",
       "stem": "If the true target is y = 1.0 and the prediction is o = 1.625, the signed error (o - y) is:",
       "choices": {
         "A": "0.625",
@@ -3805,6 +4090,7 @@
     {
       "id": "Lab7-Q06",
       "sectionId": "Lab7",
+      "type": "mcq",
       "stem": "Using L = (1/2) * (o - y)^2 with o = 1.625 and y = 1.0, the loss equals:",
       "choices": {
         "A": "0.625",
@@ -3818,6 +4104,7 @@
     {
       "id": "Lab7-Q07",
       "sectionId": "Lab7",
+      "type": "mcq",
       "stem": "Why does the lab use the 1/2 factor in half squared error?",
       "choices": {
         "A": "It simplifies the derivative so the factor of 2 from squaring cancels cleanly",
@@ -3831,6 +4118,7 @@
     {
       "id": "Lab7-Q08",
       "sectionId": "Lab7",
+      "type": "mcq",
       "stem": "During the lab update with eta = 0.1 and dL/dW1(2) = 0.46875, W1(2) changes from 1.5 to:",
       "choices": {
         "A": "1.453125",
@@ -3844,6 +4132,7 @@
     {
       "id": "Lab7-Q09",
       "sectionId": "Lab7",
+      "type": "mcq",
       "stem": "A positive gradient for a weight means gradient descent should:",
       "choices": {
         "A": "Increase the weight to reduce loss",
@@ -3857,6 +4146,7 @@
     {
       "id": "Lab7-Q10",
       "sectionId": "Lab7",
+      "type": "mcq",
       "stem": "Why do none of hidden neuron 2's weights receive an update for this example when a2 = 0 from ReLU(z2) with z2 < 0?",
       "choices": {
         "A": "Because the learning rate is zero",
@@ -3870,6 +4160,7 @@
     {
       "id": "Lab7-Q11",
       "sectionId": "Lab7",
+      "type": "mcq",
       "stem": "The dying ReLU problem refers to:",
       "choices": {
         "A": "Units that stay inactive (negative pre-activations) so outputs and gradients remain zero and weights stop learning",
@@ -3883,6 +4174,7 @@
     {
       "id": "Lab7-Q12",
       "sectionId": "Lab7",
+      "type": "mcq",
       "stem": "Leaky ReLU and ELU were motivated partly by:",
       "choices": {
         "A": "Removing all non-linearity",
@@ -3896,6 +4188,7 @@
     {
       "id": "Lab7-Q13",
       "sectionId": "Lab7",
+      "type": "mcq",
       "stem": "In the forward pass, ReLU(z) = max(0, z). If z is positive, ReLU:",
       "choices": {
         "A": "Outputs zero",
@@ -3909,6 +4202,7 @@
     {
       "id": "Lab7-Q14",
       "sectionId": "Lab7",
+      "type": "mcq",
       "stem": "Hidden neuron 2 being \"switched off\" for the example means:",
       "choices": {
         "A": "Its weights are deleted from the network permanently after one zero",
@@ -3922,6 +4216,7 @@
     {
       "id": "Lab7-Q15",
       "sectionId": "Lab7",
+      "type": "mcq",
       "stem": "The network prediction 1.625 versus target 1.0 is described as:",
       "choices": {
         "A": "Overshooting by 0.625",
@@ -3935,6 +4230,7 @@
     {
       "id": "Lab7-Q16",
       "sectionId": "Lab7",
+      "type": "mcq",
       "stem": "Which statement about this lab MLP step is correct?",
       "choices": {
         "A": "Only output-layer weights can have gradients",
@@ -3948,6 +4244,7 @@
     {
       "id": "Lab7-Q17",
       "sectionId": "Lab7",
+      "type": "mcq",
       "stem": "If a ReLU unit receives negative pre-activations on every training example, then:",
       "choices": {
         "A": "It will eventually learn via large MSE alone",
@@ -3961,6 +4258,7 @@
     {
       "id": "Lab7-Q18",
       "sectionId": "Lab7",
+      "type": "mcq",
       "stem": "The loss value 0.1953125 measures:",
       "choices": {
         "A": "Classification accuracy",
@@ -3974,6 +4272,7 @@
     {
       "id": "Lab7-Q19",
       "sectionId": "Lab7",
+      "type": "mcq",
       "stem": "Backpropagation multiplies upstream gradients by the local activation derivative. For ReLU at z <= 0 that local derivative is:",
       "choices": {
         "A": "0",
@@ -3987,6 +4286,7 @@
     {
       "id": "Lab7-Q20",
       "sectionId": "Lab7",
+      "type": "mcq",
       "stem": "A takeaway linking Labs 7 and later multilayer training is that:",
       "choices": {
         "A": "Single-layer perceptrons always beat MLPs on XOR",
@@ -4000,6 +4300,7 @@
     {
       "id": "Lab8-Q01",
       "sectionId": "Lab8",
+      "type": "mcq",
       "stem": "For the XOR dataset in the lab, the four inputs and targets are arranged so that:",
       "choices": {
         "A": "Targets are 0,1,1,0 for inputs (0,0),(0,1),(1,0),(1,1)",
@@ -4013,6 +4314,7 @@
     {
       "id": "Lab8-Q02",
       "sectionId": "Lab8",
+      "type": "mcq",
       "stem": "In the lab XOR network, W1 is initialised with shape:",
       "choices": {
         "A": "(4, 2)",
@@ -4026,6 +4328,7 @@
     {
       "id": "Lab8-Q03",
       "sectionId": "Lab8",
+      "type": "mcq",
       "stem": "W2 for the XOR MLP has shape:",
       "choices": {
         "A": "(2, 4)",
@@ -4039,6 +4342,7 @@
     {
       "id": "Lab8-Q04",
       "sectionId": "Lab8",
+      "type": "mcq",
       "stem": "Why initialise hidden weights randomly rather than all zeros?",
       "choices": {
         "A": "Zero weights maximise sigmoid derivatives",
@@ -4052,6 +4356,7 @@
     {
       "id": "Lab8-Q05",
       "sectionId": "Lab8",
+      "type": "mcq",
       "stem": "Biases may start at zero because:",
       "choices": {
         "A": "Biases also suffer the same symmetry collapse as shared weights",
@@ -4065,6 +4370,7 @@
     {
       "id": "Lab8-Q06",
       "sectionId": "Lab8",
+      "type": "mcq",
       "stem": "Forward shapes for X of shape (4, 2) and W1 of shape (2, 4) produce Z1 / A1 of shape:",
       "choices": {
         "A": "(2, 2)",
@@ -4078,6 +4384,7 @@
     {
       "id": "Lab8-Q07",
       "sectionId": "Lab8",
+      "type": "mcq",
       "stem": "If W1 were incorrectly shaped (4, 2) for X @ W1 with X shaped (4, 2), NumPy would:",
       "choices": {
         "A": "Silently transpose and train correctly",
@@ -4091,6 +4398,7 @@
     {
       "id": "Lab8-Q08",
       "sectionId": "Lab8",
+      "type": "mcq",
       "stem": "The sigmoid derivative used in the lab, given sigmoid output s, is:",
       "choices": {
         "A": "s^2",
@@ -4104,6 +4412,7 @@
     {
       "id": "Lab8-Q09",
       "sectionId": "Lab8",
+      "type": "mcq",
       "stem": "sigmoid(0) equals:",
       "choices": {
         "A": "0.5",
@@ -4117,6 +4426,7 @@
     {
       "id": "Lab8-Q10",
       "sectionId": "Lab8",
+      "type": "mcq",
       "stem": "The maximum of s*(1-s) for sigmoid outputs occurs at s = 0.5 and equals:",
       "choices": {
         "A": "1",
@@ -4130,6 +4440,7 @@
     {
       "id": "Lab8-Q11",
       "sectionId": "Lab8",
+      "type": "mcq",
       "stem": "Sigmoid saturation for large |x| contributes to vanishing gradients because:",
       "choices": {
         "A": "s*(1-s) becomes large near 0 and 1",
@@ -4143,6 +4454,7 @@
     {
       "id": "Lab8-Q12",
       "sectionId": "Lab8",
+      "type": "mcq",
       "stem": "The lab MSE loss uses np.mean(0.5 * (A2 - y) ** 2). The 0.5 factor is there primarily to:",
       "choices": {
         "A": "Simplify the gradient so d/dA2 of 0.5*(A2-y)^2 is (A2-y)",
@@ -4156,6 +4468,7 @@
     {
       "id": "Lab8-Q13",
       "sectionId": "Lab8",
+      "type": "mcq",
       "stem": "grad(compute_loss) from autograd returns a function that:",
       "choices": {
         "A": "Only prints shapes",
@@ -4169,6 +4482,7 @@
     {
       "id": "Lab8-Q14",
       "sectionId": "Lab8",
+      "type": "mcq",
       "stem": "Why must compute_loss be a pure function of params for autograd?",
       "choices": {
         "A": "Pure functions train faster on GPUs only",
@@ -4182,6 +4496,7 @@
     {
       "id": "Lab8-Q15",
       "sectionId": "Lab8",
+      "type": "mcq",
       "stem": "After grads = calculate_gradients(params), a typical update is:",
       "choices": {
         "A": "params[i] -= learning_rate * grads[i]",
@@ -4195,6 +4510,7 @@
     {
       "id": "Lab8-Q16",
       "sectionId": "Lab8",
+      "type": "mcq",
       "stem": "Compared with Lab 7's hand-supplied gradient values, Lab 8's autograd approach:",
       "choices": {
         "A": "Automates the chain-rule gradient computation you previously applied by hand",
@@ -4208,6 +4524,7 @@
     {
       "id": "Lab8-Q17",
       "sectionId": "Lab8",
+      "type": "mcq",
       "stem": "A two-layer network with hidden sigmoid units can learn XOR, whereas a single-layer perceptron cannot, primarily because:",
       "choices": {
         "A": "XOR is linearly separable",
@@ -4221,6 +4538,7 @@
     {
       "id": "Lab8-Q18",
       "sectionId": "Lab8",
+      "type": "mcq",
       "stem": "A healthy XOR learning curve with a suitable learning rate typically shows:",
       "choices": {
         "A": "Loss rising smoothly to 1",
@@ -4234,6 +4552,7 @@
     {
       "id": "Lab8-Q19",
       "sectionId": "Lab8",
+      "type": "mcq",
       "stem": "Oscillating or increasing XOR training loss often indicates:",
       "choices": {
         "A": "Learning rate exactly zero",
@@ -4247,6 +4566,7 @@
     {
       "id": "Lab8-Q20",
       "sectionId": "Lab8",
+      "type": "mcq",
       "stem": "Parameter count for the lab XOR net (2-4-1 with biases) is:",
       "choices": {
         "A": "8",
@@ -4260,6 +4580,7 @@
     {
       "id": "Lab9-Q01",
       "sectionId": "Lab9",
+      "type": "mcq",
       "stem": "The house-rent ID3 lab is best classified as:",
       "choices": {
         "A": "Unsupervised clustering",
@@ -4273,6 +4594,7 @@
     {
       "id": "Lab9-Q02",
       "sectionId": "Lab9",
+      "type": "mcq",
       "stem": "Which features are used as inputs in the five-house training set?",
       "choices": {
         "A": "Price, suburb, and year built only",
@@ -4286,6 +4608,7 @@
     {
       "id": "Lab9-Q03",
       "sectionId": "Lab9",
+      "type": "mcq",
       "stem": "In a decision tree, leaf nodes represent:",
       "choices": {
         "A": "Tests on a feature",
@@ -4299,6 +4622,7 @@
     {
       "id": "Lab9-Q04",
       "sectionId": "Lab9",
+      "type": "mcq",
       "stem": "ID3 selects the feature to split on by maximising:",
       "choices": {
         "A": "Training R-squared",
@@ -4312,6 +4636,7 @@
     {
       "id": "Lab9-Q05",
       "sectionId": "Lab9",
+      "type": "mcq",
       "stem": "Entropy H = 0 for a subset means:",
       "choices": {
         "A": "Maximum uncertainty (half Yes, half No)",
@@ -4325,6 +4650,7 @@
     {
       "id": "Lab9-Q06",
       "sectionId": "Lab9",
+      "type": "mcq",
       "stem": "For binary classification, entropy = 1 typically indicates:",
       "choices": {
         "A": "A pure Yes set",
@@ -4338,6 +4664,7 @@
     {
       "id": "Lab9-Q07",
       "sectionId": "Lab9",
+      "type": "mcq",
       "stem": "For the full training set S with 3 Yes and 2 No out of 5, H(S) is given as approximately:",
       "choices": {
         "A": "0.020",
@@ -4351,6 +4678,7 @@
     {
       "id": "Lab9-Q08",
       "sectionId": "Lab9",
+      "type": "mcq",
       "stem": "Information gain for Furniture on S is approximately:",
       "choices": {
         "A": "0.420",
@@ -4364,6 +4692,7 @@
     {
       "id": "Lab9-Q09",
       "sectionId": "Lab9",
+      "type": "mcq",
       "stem": "Information gain for Nr rooms on S is approximately:",
       "choices": {
         "A": "0.020",
@@ -4377,6 +4706,7 @@
     {
       "id": "Lab9-Q10",
       "sectionId": "Lab9",
+      "type": "mcq",
       "stem": "Information gain for New kitchen on S is approximately:",
       "choices": {
         "A": "0.171",
@@ -4390,6 +4720,7 @@
     {
       "id": "Lab9-Q11",
       "sectionId": "Lab9",
+      "type": "mcq",
       "stem": "Therefore the root feature selected by ID3 is:",
       "choices": {
         "A": "Nr rooms",
@@ -4403,6 +4734,7 @@
     {
       "id": "Lab9-Q12",
       "sectionId": "Lab9",
+      "type": "mcq",
       "stem": "Why does Nr rooms win at the root?",
       "choices": {
         "A": "It has the lowest information gain",
@@ -4416,6 +4748,7 @@
     {
       "id": "Lab9-Q13",
       "sectionId": "Lab9",
+      "type": "mcq",
       "stem": "On the Nr rooms = 4 branch, ID3 creates:",
       "choices": {
         "A": "Another split on Furniture",
@@ -4429,6 +4762,7 @@
     {
       "id": "Lab9-Q14",
       "sectionId": "Lab9",
+      "type": "mcq",
       "stem": "On the impure Nr rooms = 3 subset, the next split chosen is:",
       "choices": {
         "A": "Furniture (IG about 0.918)",
@@ -4442,6 +4776,7 @@
     {
       "id": "Lab9-Q15",
       "sectionId": "Lab9",
+      "type": "mcq",
       "stem": "Furniture does not appear in the final tree because:",
       "choices": {
         "A": "It was never provided in the dataset",
@@ -4455,6 +4790,7 @@
     {
       "id": "Lab9-Q16",
       "sectionId": "Lab9",
+      "type": "mcq",
       "stem": "Which classification rule is consistent with the lab tree?",
       "choices": {
         "A": "IF Nr rooms = 4 THEN Rent = No",
@@ -4468,6 +4804,7 @@
     {
       "id": "Lab9-Q17",
       "sectionId": "Lab9",
+      "type": "mcq",
       "stem": "IF Nr rooms = 3 AND New kitchen = No THEN the tree predicts:",
       "choices": {
         "A": "Rent = Yes",
@@ -4481,6 +4818,7 @@
     {
       "id": "Lab9-Q18",
       "sectionId": "Lab9",
+      "type": "mcq",
       "stem": "ID3 is a greedy algorithm, which means:",
       "choices": {
         "A": "It guarantees the globally smallest possible tree",
@@ -4494,6 +4832,7 @@
     {
       "id": "Lab9-Q19",
       "sectionId": "Lab9",
+      "type": "mcq",
       "stem": "A new house H1 with Nr rooms = 4 is classified Yes because:",
       "choices": {
         "A": "Furniture must be Yes",
@@ -4507,6 +4846,7 @@
     {
       "id": "Lab9-Q20",
       "sectionId": "Lab9",
+      "type": "mcq",
       "stem": "Interpretability of decision trees is highlighted because:",
       "choices": {
         "A": "Each prediction follows an explicit sequence of feature tests to a leaf",
@@ -4520,6 +4860,7 @@
     {
       "id": "A1-Q01",
       "sectionId": "A1",
+      "type": "mcq",
       "stem": "Assignment 1 Task 1 requires implementing which maze search algorithms?",
       "choices": {
         "A": "BFS, DFS, and UCS only",
@@ -4533,6 +4874,7 @@
     {
       "id": "A1-Q02",
       "sectionId": "A1",
+      "type": "mcq",
       "stem": "In the maze task, legal moves are:",
       "choices": {
         "A": "Any of eight directions including diagonals",
@@ -4546,6 +4888,7 @@
     {
       "id": "A1-Q03",
       "sectionId": "A1",
+      "type": "mcq",
       "stem": "\"All moves cost the same\" implies that path cost equals:",
       "choices": {
         "A": "The number of moves (path length)",
@@ -4559,6 +4902,7 @@
     {
       "id": "A1-Q04",
       "sectionId": "A1",
+      "type": "mcq",
       "stem": "IDS finds an optimal maze path under equal step costs because:",
       "choices": {
         "A": "It exhausts shallower depths before deeper ones, so the first goal found has minimal depth/cost",
@@ -4572,6 +4916,7 @@
     {
       "id": "A1-Q05",
       "sectionId": "A1",
+      "type": "mcq",
       "stem": "A* orders nodes by:",
       "choices": {
         "A": "f(n) = h(n) only",
@@ -4585,6 +4930,7 @@
     {
       "id": "A1-Q06",
       "sectionId": "A1",
+      "type": "mcq",
       "stem": "Manhattan distance h(n) = |dr| + |dc| is admissible here because:",
       "choices": {
         "A": "Each move changes one coordinate by one at cost 1, so true remaining cost is at least |dr|+|dc|",
@@ -4598,6 +4944,7 @@
     {
       "id": "A1-Q07",
       "sectionId": "A1",
+      "type": "mcq",
       "stem": "Admissibility of a heuristic means:",
       "choices": {
         "A": "It never underestimates the true cost to the goal",
@@ -4611,6 +4958,7 @@
     {
       "id": "A1-Q08",
       "sectionId": "A1",
+      "type": "mcq",
       "stem": "Consistency (monotonicity) of Manhattan distance on this grid supports that:",
       "choices": {
         "A": "A* may need to re-expand a state infinitely often",
@@ -4624,6 +4972,7 @@
     {
       "id": "A1-Q09",
       "sectionId": "A1",
+      "type": "mcq",
       "stem": "IDA* differs from IDS by using:",
       "choices": {
         "A": "Breadth-first expansion only",
@@ -4637,6 +4986,7 @@
     {
       "id": "A1-Q10",
       "sectionId": "A1",
+      "type": "mcq",
       "stem": "If the destination is fully blocked/unreachable, a correct solver should:",
       "choices": {
         "A": "Report no solution (and still terminate)",
@@ -4650,6 +5000,7 @@
     {
       "id": "A1-Q11",
       "sectionId": "A1",
+      "type": "mcq",
       "stem": "Compared with IDS on long optimal paths, A* with a good heuristic typically:",
       "choices": {
         "A": "Explores far more states",
@@ -4663,6 +5014,7 @@
     {
       "id": "A1-Q12",
       "sectionId": "A1",
+      "type": "mcq",
       "stem": "In the crossword CSP formulation, variables are:",
       "choices": {
         "A": "Individual letter cells only with no slots",
@@ -4676,6 +5028,7 @@
     {
       "id": "A1-Q13",
       "sectionId": "A1",
+      "type": "mcq",
       "stem": "enforce_node_consistency primarily ensures:",
       "choices": {
         "A": "Domain words have length matching the slot length",
@@ -4689,6 +5042,7 @@
     {
       "id": "A1-Q14",
       "sectionId": "A1",
+      "type": "mcq",
       "stem": "revise(x, y) makes x arc-consistent with y by:",
       "choices": {
         "A": "Adding random words to x",
@@ -4702,6 +5056,7 @@
     {
       "id": "A1-Q15",
       "sectionId": "A1",
+      "type": "mcq",
       "stem": "AC-3 enforces arc consistency by:",
       "choices": {
         "A": "Training a neural net",
@@ -4715,6 +5070,7 @@
     {
       "id": "A1-Q16",
       "sectionId": "A1",
+      "type": "mcq",
       "stem": "MRV (minimum remaining values) selects the unassigned variable that:",
       "choices": {
         "A": "Has the fewest remaining legal values (fail-first)",
@@ -4728,6 +5084,7 @@
     {
       "id": "A1-Q17",
       "sectionId": "A1",
+      "type": "mcq",
       "stem": "The degree heuristic, used to break MRV ties, prefers the variable that:",
       "choices": {
         "A": "Has the fewest constraints",
@@ -4741,6 +5098,7 @@
     {
       "id": "A1-Q18",
       "sectionId": "A1",
+      "type": "mcq",
       "stem": "LCV (least constraining value) orders values to try first those that:",
       "choices": {
         "A": "Eliminate the most options from neighbours",
@@ -4754,6 +5112,7 @@
     {
       "id": "A1-Q19",
       "sectionId": "A1",
+      "type": "mcq",
       "stem": "Node consistency is a unary filter; arc consistency is about:",
       "choices": {
         "A": "Binary constraints between pairs of variables (for example overlapping letters)",
@@ -4767,6 +5126,7 @@
     {
       "id": "A1-Q20",
       "sectionId": "A1",
+      "type": "mcq",
       "stem": "assignment_complete returns true when:",
       "choices": {
         "A": "At least one variable is assigned",
@@ -4780,6 +5140,7 @@
     {
       "id": "A1-Q21",
       "sectionId": "A1",
+      "type": "mcq",
       "stem": "consistent for a partial assignment should reject cases where:",
       "choices": {
         "A": "Words have correct lengths and distinct strings with matching overlaps",
@@ -4793,6 +5154,7 @@
     {
       "id": "A1-Q22",
       "sectionId": "A1",
+      "type": "mcq",
       "stem": "Backtracking search for the crossword:",
       "choices": {
         "A": "Tries values, recurses, and undoes on failure until a full satisfying assignment or exhaustion",
@@ -4806,6 +5168,7 @@
     {
       "id": "A1-Q23",
       "sectionId": "A1",
+      "type": "mcq",
       "stem": "Why can heuristics still help even if a naive backtracker is correct?",
       "choices": {
         "A": "They change the constraint definitions",
@@ -4819,6 +5182,7 @@
     {
       "id": "A1-Q24",
       "sectionId": "A1",
+      "type": "mcq",
       "stem": "Equal step costs in the maze are important because they justify:",
       "choices": {
         "A": "Using an inconsistent heuristic only",
@@ -4832,6 +5196,7 @@
     {
       "id": "A1-Q25",
       "sectionId": "A1",
+      "type": "mcq",
       "stem": "A transferable exam contrast: informed maze search uses heuristics over path cost, while crossword solving uses:",
       "choices": {
         "A": "The same Manhattan heuristic on letters",
@@ -4845,6 +5210,7 @@
     {
       "id": "A2-Q01",
       "sectionId": "A2",
+      "type": "mcq",
       "stem": "Fashion-MNIST images are 28 x 28 grayscale, so the input dimensionality for the networks is:",
       "choices": {
         "A": "28",
@@ -4858,6 +5224,7 @@
     {
       "id": "A2-Q02",
       "sectionId": "A2",
+      "type": "mcq",
       "stem": "How many clothing classes are in Fashion-MNIST for this assignment?",
       "choices": {
         "A": "2",
@@ -4871,6 +5238,7 @@
     {
       "id": "A2-Q03",
       "sectionId": "A2",
+      "type": "mcq",
       "stem": "The required Softmax regression architecture is denoted:",
       "choices": {
         "A": "784-30-10",
@@ -4884,6 +5252,7 @@
     {
       "id": "A2-Q04",
       "sectionId": "A2",
+      "type": "mcq",
       "stem": "The required two-layer MLP architecture is:",
       "choices": {
         "A": "784-10",
@@ -4897,6 +5266,7 @@
     {
       "id": "A2-Q05",
       "sectionId": "A2",
+      "type": "mcq",
       "stem": "The deepest required style of model is:",
       "choices": {
         "A": "784-10 only",
@@ -4910,6 +5280,7 @@
     {
       "id": "A2-Q06",
       "sectionId": "A2",
+      "type": "mcq",
       "stem": "Which libraries are explicitly not allowed for implementing the learning algorithms?",
       "choices": {
         "A": "NumPy and autograd",
@@ -4923,6 +5294,7 @@
     {
       "id": "A2-Q07",
       "sectionId": "A2",
+      "type": "mcq",
       "stem": "Default training hyperparameters in the brief include:",
       "choices": {
         "A": "20 epochs, lr 0.01, batch size 4",
@@ -4936,6 +5308,7 @@
     {
       "id": "A2-Q08",
       "sectionId": "A2",
+      "type": "mcq",
       "stem": "Softmax converts logits into:",
       "choices": {
         "A": "Unbounded scores",
@@ -4949,6 +5322,7 @@
     {
       "id": "A2-Q09",
       "sectionId": "A2",
+      "type": "mcq",
       "stem": "Cross-entropy loss for classification primarily penalises:",
       "choices": {
         "A": "High probability on the correct class",
@@ -4962,6 +5336,7 @@
     {
       "id": "A2-Q10",
       "sectionId": "A2",
+      "type": "mcq",
       "stem": "Gradient descent updates parameters as:",
       "choices": {
         "A": "params <- params - lr * grads",
@@ -4975,6 +5350,7 @@
     {
       "id": "A2-Q11",
       "sectionId": "A2",
+      "type": "mcq",
       "stem": "For LinearClassifier, default shapes for a batch are X:(batch,784), W:(784,10), b:(10,), logits:",
       "choices": {
         "A": "(10, batch)",
@@ -4988,6 +5364,7 @@
     {
       "id": "A2-Q12",
       "sectionId": "A2",
+      "type": "mcq",
       "stem": "For TwoLayerMLP 784-30-10, W1 and W2 shapes are:",
       "choices": {
         "A": "W1 (30,784), W2 (10,30)",
@@ -5001,6 +5378,7 @@
     {
       "id": "A2-Q13",
       "sectionId": "A2",
+      "type": "mcq",
       "stem": "Approximate parameter count for default 784-30-10 (including biases) is:",
       "choices": {
         "A": "7,850",
@@ -5014,6 +5392,7 @@
     {
       "id": "A2-Q14",
       "sectionId": "A2",
+      "type": "mcq",
       "stem": "For the residual 784-30-30-10 model, hidden widths must match because:",
       "choices": {
         "A": "Softmax requires square matrices",
@@ -5027,6 +5406,7 @@
     {
       "id": "A2-Q15",
       "sectionId": "A2",
+      "type": "mcq",
       "stem": "A residual connection in this assignment adds:",
       "choices": {
         "A": "Raw pixels to the logits",
@@ -5040,6 +5420,7 @@
     {
       "id": "A2-Q16",
       "sectionId": "A2",
+      "type": "mcq",
       "stem": "Validation data should be used to:",
       "choices": {
         "A": "Compute the only gradients for weight updates",
@@ -5053,6 +5434,7 @@
     {
       "id": "A2-Q17",
       "sectionId": "A2",
+      "type": "mcq",
       "stem": "Test data should be used to:",
       "choices": {
         "A": "Provide a final independent evaluation after model selection on validation",
@@ -5066,6 +5448,7 @@
     {
       "id": "A2-Q18",
       "sectionId": "A2",
+      "type": "mcq",
       "stem": "With validation ratio 0.2 on the full 60,000 training file, the split sizes are about:",
       "choices": {
         "A": "10,000 train and 50,000 val",
@@ -5079,6 +5462,7 @@
     {
       "id": "A2-Q19",
       "sectionId": "A2",
+      "type": "mcq",
       "stem": "Pixel normalisation in the framework typically maps 0..255 values to:",
       "choices": {
         "A": "0..1 by dividing by 255",
@@ -5092,6 +5476,7 @@
     {
       "id": "A2-Q20",
       "sectionId": "A2",
+      "type": "mcq",
       "stem": "One-hot encoding a label such as 3 produces a length-10 vector with:",
       "choices": {
         "A": "All ones",
@@ -5105,6 +5490,7 @@
     {
       "id": "A2-Q21",
       "sectionId": "A2",
+      "type": "mcq",
       "stem": "Without a non-linear hidden activation, stacking linear layers:",
       "choices": {
         "A": "Always solves XOR-style problems in pixel space",
@@ -5118,6 +5504,7 @@
     {
       "id": "A2-Q22",
       "sectionId": "A2",
+      "type": "mcq",
       "stem": "A learning rate that is far too large may cause:",
       "choices": {
         "A": "Guaranteed maximum test accuracy",
@@ -5131,6 +5518,7 @@
     {
       "id": "A2-Q23",
       "sectionId": "A2",
+      "type": "mcq",
       "stem": "Holding epochs fixed, batch size 1 versus a larger batch typically means:",
       "choices": {
         "A": "Fewer parameter updates per epoch for batch size 1",
@@ -5144,6 +5532,7 @@
     {
       "id": "A2-Q24",
       "sectionId": "A2",
+      "type": "mcq",
       "stem": "Autograd is used in this assignment to:",
       "choices": {
         "A": "Replace NumPy entirely for data loading",
@@ -5157,6 +5546,7 @@
     {
       "id": "A2-Q25",
       "sectionId": "A2",
+      "type": "mcq",
       "stem": "A transferable exam point from Assignment 2 is that model selection on validation (not test) matters because:",
       "choices": {
         "A": "Test-set selection biases final reported performance; validation guides selection while test remains a final check",
@@ -5166,6 +5556,2286 @@
       },
       "answer": "A",
       "explanation": "Avoid selecting on the test set."
+    },
+    {
+      "id": "L1-T01",
+      "sectionId": "L1",
+      "type": "tf",
+      "stem": "The Turing Test is also called the Imitation Game.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Turing's 1950 test is the Imitation Game."
+    },
+    {
+      "id": "L1-T02",
+      "sectionId": "L1",
+      "type": "tf",
+      "stem": "Cognitive science, in the four dimensions of AI, is the bottom-up study of the physical brain.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "Cognitive science is the top-down thinking-humanly cell. Neuroscience is bottom-up."
+    },
+    {
+      "id": "L1-T03",
+      "sectionId": "L1",
+      "type": "tf",
+      "stem": "Acting rationally means achieving the best expected outcome given the information available.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Rational action is the best expected outcome given the available information."
+    },
+    {
+      "id": "L1-T04",
+      "sectionId": "L1",
+      "type": "tf",
+      "stem": "Deep Blue beating Kasparov is presented on the slides as a win for deep reinforcement learning.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "Deep Blue is presented as a search result. AlphaGo is the deep RL milestone."
+    },
+    {
+      "id": "L1-T05",
+      "sectionId": "L1",
+      "type": "tf",
+      "stem": "PEAS stands for Performance, Environment, Actuators, and Sensors.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Performance, Environment, Actuators, Sensors."
+    },
+    {
+      "id": "L1-T06",
+      "sectionId": "L1",
+      "type": "tf",
+      "stem": "An agent is defined as sensors plus actuators, with no separate program.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "An agent is architecture plus program."
+    },
+    {
+      "id": "L1-T07",
+      "sectionId": "L1",
+      "type": "tf",
+      "stem": "The main advantage of symbolic AI on the slides is that it learns weights from raw pixels.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "Symbolic AI is explainable and does not need a training set. Learning from raw data is the subsymbolic advantage."
+    },
+    {
+      "id": "L1-T08",
+      "sectionId": "L1",
+      "type": "tf",
+      "stem": "High-resolution cameras are listed as robotic sensors, not actuators.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Cameras are listed with robotic sensors. Motors and speakers are actuators."
+    },
+    {
+      "id": "L1-T09",
+      "sectionId": "L1",
+      "type": "tf",
+      "stem": "The term Artificial Intelligence was officially adopted at IBM in 1997.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "The term was adopted at the 1956 Dartmouth meeting. 1997 is Deep Blue."
+    },
+    {
+      "id": "L1-T10",
+      "sectionId": "L1",
+      "type": "tf",
+      "stem": "Shopping-agent sensors on the slides include HTML, scripts, JSON, and page layout.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Shopping sensors are HTML, scripts, JSON, and page layout."
+    },
+    {
+      "id": "L2-T01",
+      "sectionId": "L2",
+      "type": "tf",
+      "stem": "A search problem in this course is the 5-tuple of initial state, actions, transition model, goal test, and step cost.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "The 5-tuple is S0, A, T, G, C."
+    },
+    {
+      "id": "L2-T02",
+      "sectionId": "L2",
+      "type": "tf",
+      "stem": "In the Romania example, the start is Arad and the goal is Bucharest.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Start Arad, goal Bucharest."
+    },
+    {
+      "id": "L2-T03",
+      "sectionId": "L2",
+      "type": "tf",
+      "stem": "A node is the same object as a state.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "A node stores state, parent, action, and path cost. The state is only one field."
+    },
+    {
+      "id": "L2-T04",
+      "sectionId": "L2",
+      "type": "tf",
+      "stem": "Uniform-cost search applies the goal test when a node is selected for expansion, not when it is first generated.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "UCS tests the goal on expansion so a cheaper path is not missed."
+    },
+    {
+      "id": "L2-T05",
+      "sectionId": "L2",
+      "type": "tf",
+      "stem": "Breadth-first search is optimal even when step costs differ.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "BFS is optimal only when every step cost is equal."
+    },
+    {
+      "id": "L2-T06",
+      "sectionId": "L2",
+      "type": "tf",
+      "stem": "Depth-first search removes nodes from a FIFO queue.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "DFS uses a LIFO stack. BFS uses the FIFO queue."
+    },
+    {
+      "id": "L2-T07",
+      "sectionId": "L2",
+      "type": "tf",
+      "stem": "Iterative deepening raises the depth limit until a solution is found.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "The depth limit runs 0, 1, 2, ... until a solution appears."
+    },
+    {
+      "id": "L2-T08",
+      "sectionId": "L2",
+      "type": "tf",
+      "stem": "Breadth-first search uses linear space in the depth, which is why memory is rarely the problem.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "BFS stores the frontier and the explored set, so space is O(b^d). Space is the practical problem."
+    },
+    {
+      "id": "L2-T09",
+      "sectionId": "L2",
+      "type": "tf",
+      "stem": "The vacuum world on the slides has eight states, and each action costs 1.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Eight vacuum states, actions Left, Right, and Suck, unit cost."
+    },
+    {
+      "id": "L2-T10",
+      "sectionId": "L2",
+      "type": "tf",
+      "stem": "Graph search can discard a later path to a repeated state without any risk of losing a cheaper path.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "Dropping a repeated state can drop a cheaper path. UCS needs a test that keeps the better frontier path."
+    },
+    {
+      "id": "L3-T01",
+      "sectionId": "L3",
+      "type": "tf",
+      "stem": "A* ranks nodes by f(n) = g(n) + h(n).",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "A* uses f = g + h."
+    },
+    {
+      "id": "L3-T02",
+      "sectionId": "L3",
+      "type": "tf",
+      "stem": "Greedy best-first search is optimal because it always expands the node that looks closest to the goal.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "Greedy search uses h only and is not optimal. Romania: it takes 450 km when 418 km exists."
+    },
+    {
+      "id": "L3-T03",
+      "sectionId": "L3",
+      "type": "tf",
+      "stem": "An admissible heuristic never overestimates the true cost from a node to a goal.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Admissible means h(n) <= h*(n) for every node."
+    },
+    {
+      "id": "L3-T04",
+      "sectionId": "L3",
+      "type": "tf",
+      "stem": "Admissibility alone is enough to guarantee that A* graph search is optimal.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "Admissibility gives optimal tree search. Graph search needs consistency."
+    },
+    {
+      "id": "L3-T05",
+      "sectionId": "L3",
+      "type": "tf",
+      "stem": "Every consistent heuristic is admissible.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Consistency is stronger than admissibility, so every consistent heuristic is admissible."
+    },
+    {
+      "id": "L3-T06",
+      "sectionId": "L3",
+      "type": "tf",
+      "stem": "On the 8-puzzle, the misplaced-tile heuristic dominates Manhattan distance.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "Manhattan distance dominates misplaced tiles: h2 >= h1 and both are admissible."
+    },
+    {
+      "id": "L3-T07",
+      "sectionId": "L3",
+      "type": "tf",
+      "stem": "Straight-line distance to Bucharest is admissible because a road cannot be shorter than the straight line.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "A road cannot be shorter than the straight line, so straight-line distance does not overestimate."
+    },
+    {
+      "id": "L3-T08",
+      "sectionId": "L3",
+      "type": "tf",
+      "stem": "IDA* cuts off on depth, in the same way as ordinary iterative deepening.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "IDA* cuts off on f-cost. IDS cuts off on depth."
+    },
+    {
+      "id": "L3-T09",
+      "sectionId": "L3",
+      "type": "tf",
+      "stem": "At the 8-puzzle start state on the slide, h1 is 8 and h2 is 18.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "The slide start has 8 misplaced tiles and Manhattan distance 18."
+    },
+    {
+      "id": "L3-T10",
+      "sectionId": "L3",
+      "type": "tf",
+      "stem": "Greedy search on the Romania example selects the 418 km path rather than the 450 km path.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "Greedy search takes Arad-Sibiu-Fagaras-Bucharest at 450 km. The 418 km path is better."
+    },
+    {
+      "id": "L4A-T01",
+      "sectionId": "L4A",
+      "type": "tf",
+      "stem": "Local search cares about the final configuration. The path used to reach it does not matter.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Local search optimises the configuration. The path is irrelevant."
+    },
+    {
+      "id": "L4A-T02",
+      "sectionId": "L4A",
+      "type": "tf",
+      "stem": "A local optimum is the best configuration in the whole space.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "A local optimum is best only inside its neighbourhood. A global optimum is best over all configurations."
+    },
+    {
+      "id": "L4A-T03",
+      "sectionId": "L4A",
+      "type": "tf",
+      "stem": "Steepest-ascent hill climbing succeeds on about 14% of random 8-queens starts.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Steepest ascent succeeds on 14% of random 8-queens starts and gets stuck on 86%."
+    },
+    {
+      "id": "L4A-T04",
+      "sectionId": "L4A",
+      "type": "tf",
+      "stem": "Allowing a limited number of sideways moves drops 8-queens success from 14% to about 4%.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "A cap of 100 sideways moves raises success from 14% to 94%."
+    },
+    {
+      "id": "L4A-T05",
+      "sectionId": "L4A",
+      "type": "tf",
+      "stem": "If each random climb succeeds with probability p, the expected number of restarts is about 1/p.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Expected restarts are about 1/p."
+    },
+    {
+      "id": "L4A-T06",
+      "sectionId": "L4A",
+      "type": "tf",
+      "stem": "Simulated annealing is worked through in detail in this lecture.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "Simulated annealing is named and explicitly not taught in detail."
+    },
+    {
+      "id": "L4A-T07",
+      "sectionId": "L4A",
+      "type": "tf",
+      "stem": "The 8-queens state space size given on the slides is 8^8, about 17 million states.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "8^8 is about 17 million 8-queens states."
+    },
+    {
+      "id": "L4A-T08",
+      "sectionId": "L4A",
+      "type": "tf",
+      "stem": "For 8-queens, the evaluation counts attacking pairs, and a solution has that count equal to 0.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Eval counts attacking pairs, and a solution has h = 0."
+    },
+    {
+      "id": "L4A-T09",
+      "sectionId": "L4A",
+      "type": "tf",
+      "stem": "A plateau is the same failure as a local maximum: every neighbour is strictly worse.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "A local maximum has every neighbour worse. A plateau is flat, and a shoulder still has an exit."
+    },
+    {
+      "id": "L4A-T10",
+      "sectionId": "L4A",
+      "type": "tf",
+      "stem": "For TSP, 4-opt is preferred to 3-opt because the extra search time is always worth it.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "3-opt beats 2-opt. 4-opt is not worth the extra time."
+    },
+    {
+      "id": "L4B-T01",
+      "sectionId": "L4B",
+      "type": "tf",
+      "stem": "A CSP solution is a complete assignment that satisfies the constraints.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "A solution is complete and consistent."
+    },
+    {
+      "id": "L4B-T02",
+      "sectionId": "L4B",
+      "type": "tf",
+      "stem": "Because assignments are commutative, giving WA red and then NT green is the same state as the reverse order.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Order of assignment does not create a new state."
+    },
+    {
+      "id": "L4B-T03",
+      "sectionId": "L4B",
+      "type": "tf",
+      "stem": "Backtracking assigns every remaining variable at the root, so the leaf count stays n! times d^n.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "Backtracking assigns one variable per depth, so there are d^n complete assignments, not n! * d^n leaves."
+    },
+    {
+      "id": "L4B-T04",
+      "sectionId": "L4B",
+      "type": "tf",
+      "stem": "MRV chooses the unassigned variable with the fewest legal values left.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "MRV is fail-first: fewest remaining legal values."
+    },
+    {
+      "id": "L4B-T05",
+      "sectionId": "L4B",
+      "type": "tf",
+      "stem": "LCV is a variable-ordering heuristic, not a value-ordering heuristic.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "LCV orders values. MRV, with the degree heuristic as a tie-break, orders variables."
+    },
+    {
+      "id": "L4B-T06",
+      "sectionId": "L4B",
+      "type": "tf",
+      "stem": "Arc X to Y is consistent when every remaining value of X has at least one allowed value of Y.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "That supporting-value test is arc consistency."
+    },
+    {
+      "id": "L4B-T07",
+      "sectionId": "L4B",
+      "type": "tf",
+      "stem": "Min-conflicts starts from the empty assignment and fills one variable at a time.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "Min-conflicts starts from a complete assignment and repairs violated constraints."
+    },
+    {
+      "id": "L4B-T08",
+      "sectionId": "L4B",
+      "type": "tf",
+      "stem": "A tree-structured CSP can be solved in time linear in the number of variables.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "A tree-structured constraint graph is solvable in time linear in the number of variables."
+    },
+    {
+      "id": "L4B-T09",
+      "sectionId": "L4B",
+      "type": "tf",
+      "stem": "Forward checking always catches the failure in which NT and SA both have only blue left.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "Forward checking can miss that case. Arc consistency detects it earlier."
+    },
+    {
+      "id": "L4B-T10",
+      "sectionId": "L4B",
+      "type": "tf",
+      "stem": "The map-colouring domain on the slides is four colours.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "The domain is {red, green, blue}."
+    },
+    {
+      "id": "L5-T01",
+      "sectionId": "L5",
+      "type": "tf",
+      "stem": "Regression predicts a continuous target. Classification predicts a discrete label.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Continuous y is regression. Discrete y is classification."
+    },
+    {
+      "id": "L5-T02",
+      "sectionId": "L5",
+      "type": "tf",
+      "stem": "Nearest neighbour with k = 1 is less sensitive to one odd training point than a larger k.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "k = 1 follows one neighbour, so a single odd point can decide the label."
+    },
+    {
+      "id": "L5-T03",
+      "sectionId": "L5",
+      "type": "tf",
+      "stem": "A consistent hypothesis agrees with every training pair.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Consistent means every training pair is fit."
+    },
+    {
+      "id": "L5-T04",
+      "sectionId": "L5",
+      "type": "tf",
+      "stem": "Ockham's razor prefers the consistent hypothesis that makes more assumptions.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "Ockham's razor prefers fewer assumptions."
+    },
+    {
+      "id": "L5-T05",
+      "sectionId": "L5",
+      "type": "tf",
+      "stem": "Overfitting means the fit is too close to one data set and then fails on new data.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "That training-set fit with poor new-data performance is overfitting."
+    },
+    {
+      "id": "L5-T06",
+      "sectionId": "L5",
+      "type": "tf",
+      "stem": "Unsupervised clustering is trained on labelled input-output pairs.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "Clustering has inputs and no output labels."
+    },
+    {
+      "id": "L5-T07",
+      "sectionId": "L5",
+      "type": "tf",
+      "stem": "0-1 loss is 0 when the prediction matches the label and 1 otherwise.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "0-1 loss counts mistakes and ignores how large a numeric error is."
+    },
+    {
+      "id": "L5-T08",
+      "sectionId": "L5",
+      "type": "tf",
+      "stem": "The test set may be the same rows as the training set, provided the rows are shuffled.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "The test set must be distinct from the training set."
+    },
+    {
+      "id": "L5-T09",
+      "sectionId": "L5",
+      "type": "tf",
+      "stem": "High bias means inaccurate on average but stable. High variance means accurate on average but unstable across samples.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Those are the lecture's bias and variance descriptions."
+    },
+    {
+      "id": "L5-T10",
+      "sectionId": "L5",
+      "type": "tf",
+      "stem": "Arthur Samuel coined the term machine learning in the early 1990s.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "Samuel coined the term in the early 1960s."
+    },
+    {
+      "id": "L6-T01",
+      "sectionId": "L6",
+      "type": "tf",
+      "stem": "Mean squared error on n examples is (1/n) times the sum of squared residuals.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "MSE averages the squared residuals."
+    },
+    {
+      "id": "L6-T02",
+      "sectionId": "L6",
+      "type": "tf",
+      "stem": "The gradient of a loss points in the direction of steepest decrease.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "The gradient points toward steepest increase, so descent subtracts it."
+    },
+    {
+      "id": "L6-T03",
+      "sectionId": "L6",
+      "type": "tf",
+      "stem": "With the bias folded into w, the linear-regression closed form is w* = (X^T X)^(-1) X^T y.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "That normal equation is the closed form once bias is absorbed into w."
+    },
+    {
+      "id": "L6-T04",
+      "sectionId": "L6",
+      "type": "tf",
+      "stem": "A learning rate that is too large only slows gradient descent. It does not cause divergence.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "Too large an eta causes divergence or oscillation. Too small an eta is the slow case."
+    },
+    {
+      "id": "L6-T05",
+      "sectionId": "L6",
+      "type": "tf",
+      "stem": "The perceptron step function is not trained by ordinary gradient descent, because its gradient is 0 almost everywhere.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "The step is flat except at 0, where the derivative is undefined."
+    },
+    {
+      "id": "L6-T06",
+      "sectionId": "L6",
+      "type": "tf",
+      "stem": "Passing a linear score through a sigmoid makes the logistic-regression decision boundary non-linear.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "The sigmoid gives a probability. The decision boundary of logistic regression is still linear."
+    },
+    {
+      "id": "L6-T07",
+      "sectionId": "L6",
+      "type": "tf",
+      "stem": "Softmax regression predicts the class with the largest score.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "The predicted class is argmax of the class scores."
+    },
+    {
+      "id": "L6-T08",
+      "sectionId": "L6",
+      "type": "tf",
+      "stem": "Full gradient descent updates from a mini-batch of 32 to 512 examples.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "Full gradient descent uses every training example. Mini-batches belong to stochastic gradient descent."
+    },
+    {
+      "id": "L6-T09",
+      "sectionId": "L6",
+      "type": "tf",
+      "stem": "If the training set is not linearly separable, perceptron weights need not converge.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "The convergence theorem needs linear separability."
+    },
+    {
+      "id": "L6-T10",
+      "sectionId": "L6",
+      "type": "tf",
+      "stem": "The lecture treats squared error as the loss for multi-class classification.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "Squared error is the regression loss. Multi-class classification uses cross-entropy."
+    },
+    {
+      "id": "L7-T01",
+      "sectionId": "L7",
+      "type": "tf",
+      "stem": "Without a non-linear activation, a stack of linear layers collapses to one linear map.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Non-linearity is what stops the stack collapsing to one linear map."
+    },
+    {
+      "id": "L7-T02",
+      "sectionId": "L7",
+      "type": "tf",
+      "stem": "XOR becomes linearly separable once a single perceptron is given a bias term.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "XOR is not linearly separable. A bias does not fix a single perceptron."
+    },
+    {
+      "id": "L7-T03",
+      "sectionId": "L7",
+      "type": "tf",
+      "stem": "For a sigmoid output y, the factor y(1-y) is largest at y = 0.5, where it equals 0.25.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "The sigmoid derivative s(1-s) peaks at 0.25 when s = 0.5."
+    },
+    {
+      "id": "L7-T04",
+      "sectionId": "L7",
+      "type": "tf",
+      "stem": "The momentum term on the slide uses the next weight, w(t+1) - w(t+2).",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "Momentum adds eta * (w(t) - w(t-1)), the previous step."
+    },
+    {
+      "id": "L7-T05",
+      "sectionId": "L7",
+      "type": "tf",
+      "stem": "Back-propagation is gradient descent together with the chain rule.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Errors are sent backward with the chain rule, and weights step by gradient descent."
+    },
+    {
+      "id": "L7-T06",
+      "sectionId": "L7",
+      "type": "tf",
+      "stem": "The voice-recognition sketch uses 6 inputs, 60 hidden units, and 2 outputs.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "The sketch is 60 inputs, 6 hidden units, and 2 outputs."
+    },
+    {
+      "id": "L7-T07",
+      "sectionId": "L7",
+      "type": "tf",
+      "stem": "The lecture initialises weights to random numbers in [-1, 1].",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "The stated initialisation range is [-1, 1]."
+    },
+    {
+      "id": "L7-T08",
+      "sectionId": "L7",
+      "type": "tf",
+      "stem": "The output-unit delta is y(1-y)(y - z), where y is the target and z is the sigmoid output.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "For an output unit, delta = y(1-y)(z-y), where y is the sigmoid output and z is the target."
+    },
+    {
+      "id": "L7-T09",
+      "sectionId": "L7",
+      "type": "tf",
+      "stem": "The factor 1/2 in the squared-error loss makes the derivative equal to (prediction - target) rather than twice that.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "The 1/2 cancels the 2 from differentiating a square."
+    },
+    {
+      "id": "L7-T10",
+      "sectionId": "L7",
+      "type": "tf",
+      "stem": "Each neuron in these feed-forward nets connects to only one neuron in the next layer.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "The feed-forward nets in the lecture are fully connected."
+    },
+    {
+      "id": "L8-T01",
+      "sectionId": "L8",
+      "type": "tf",
+      "stem": "Validation error is for choosing hyperparameters. The test set should be used once.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Do not tune on the test set."
+    },
+    {
+      "id": "L8-T02",
+      "sectionId": "L8",
+      "type": "tf",
+      "stem": "Overfitting means training error and test error are both high because the model is too simple.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "That pattern is underfitting. Overfitting is low training error and high test error."
+    },
+    {
+      "id": "L8-T03",
+      "sectionId": "L8",
+      "type": "tf",
+      "stem": "A perceptron in two dimensions has VC dimension 3.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "It can shatter 3 points and cannot realise XOR on 4 points."
+    },
+    {
+      "id": "L8-T04",
+      "sectionId": "L8",
+      "type": "tf",
+      "stem": "Early stopping keeps the weights from the last epoch, because that is when training loss is lowest.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "Keep the weights from the best validation epoch. Patience then restores those weights."
+    },
+    {
+      "id": "L8-T05",
+      "sectionId": "L8",
+      "type": "tf",
+      "stem": "Soft weight decay adds (lambda/2) times the squared weight norm to the loss.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "The soft penalty is (lambda/2) * ||w||^2."
+    },
+    {
+      "id": "L8-T06",
+      "sectionId": "L8",
+      "type": "tf",
+      "stem": "As lambda goes to infinity, the optimal weights grow without bound.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "As lambda goes to infinity, the optimal weights go to 0."
+    },
+    {
+      "id": "L8-T07",
+      "sectionId": "L8",
+      "type": "tf",
+      "stem": "Typical dropout rates on the slides are about 0.2 to 0.5 on hidden layers.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Hidden-layer dropout on the slides is about 0.2 to 0.5. Input dropout is about 0.1."
+    },
+    {
+      "id": "L8-T08",
+      "sectionId": "L8",
+      "type": "tf",
+      "stem": "A residual connection is one of the four regularisation methods in this lecture.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "Residual connections help optimisation. They are not one of the four regularisers."
+    },
+    {
+      "id": "L8-T09",
+      "sectionId": "L8",
+      "type": "tf",
+      "stem": "In K-fold cross-validation, each fold is trained on the other K-1 parts, and the K validation errors are averaged.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Typical K is 5 or 10, and the reported figure is the average validation error."
+    },
+    {
+      "id": "L8-T10",
+      "sectionId": "L8",
+      "type": "tf",
+      "stem": "In the blue-shirt loan story, a spurious feature cannot make training error look good.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "Training error can look excellent while the shirt-colour rule fails on new applicants."
+    },
+    {
+      "id": "L9-T01",
+      "sectionId": "L9",
+      "type": "tf",
+      "stem": "ID3 splits on the attribute with the largest information gain.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "IMPORTANCE in this lecture is maximum information gain."
+    },
+    {
+      "id": "L9-T02",
+      "sectionId": "L9",
+      "type": "tf",
+      "stem": "A pure set of labels has entropy 1 bit.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "A pure set has entropy 0. An even Boolean split has entropy 1."
+    },
+    {
+      "id": "L9-T03",
+      "sectionId": "L9",
+      "type": "tf",
+      "stem": "Information gain is the parent entropy minus the weighted average of the child entropies.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Gain is I(parent) minus the size-weighted child entropies."
+    },
+    {
+      "id": "L9-T04",
+      "sectionId": "L9",
+      "type": "tf",
+      "stem": "ID3 returns a tree that is guaranteed to be the smallest possible tree.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "The search is greedy. The result is a small consistent tree, not a proven smallest tree."
+    },
+    {
+      "id": "L9-T05",
+      "sectionId": "L9",
+      "type": "tf",
+      "stem": "Gain ratio divides information gain by a term that penalises attributes with many values.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "The extra division penalises attributes such as a unique identifier."
+    },
+    {
+      "id": "L9-T06",
+      "sectionId": "L9",
+      "type": "tf",
+      "stem": "If no attributes remain and the remaining examples are mixed, ID3 returns the positive class.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "Mixed examples with no attributes left return the majority class."
+    },
+    {
+      "id": "L9-T07",
+      "sectionId": "L9",
+      "type": "tf",
+      "stem": "In the restaurant example, Patrons is chosen as the root because it has the highest gain.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "With p = n = 6, parent entropy is 1, and Patrons has the highest gain."
+    },
+    {
+      "id": "L9-T08",
+      "sectionId": "L9",
+      "type": "tf",
+      "stem": "A fair coin has entropy 0.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "A fair coin has entropy 1 bit. A coin that always lands heads has entropy 0."
+    },
+    {
+      "id": "L9-T09",
+      "sectionId": "L9",
+      "type": "tf",
+      "stem": "Refusing a split whose information gain is below a threshold is one way to limit overfitting.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "A gain threshold, and pruning, both limit splits that only fit the training sample."
+    },
+    {
+      "id": "L9-T10",
+      "sectionId": "L9",
+      "type": "tf",
+      "stem": "Continuous numeric outputs are the ordinary target for the classification trees in this lecture.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "Continuous outputs take the method outside ordinary classification trees."
+    },
+    {
+      "id": "L10-T01",
+      "sectionId": "L10",
+      "type": "tf",
+      "stem": "Each probability is at least 0, and the probabilities in one distribution sum to 1.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Non-negativity and summing to 1 are required of a distribution."
+    },
+    {
+      "id": "L10-T02",
+      "sectionId": "L10",
+      "type": "tf",
+      "stem": "A joint table over n variables, each with domain size d, has n times d entries.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "The joint table has d^n entries, which is why it is impractical."
+    },
+    {
+      "id": "L10-T03",
+      "sectionId": "L10",
+      "type": "tf",
+      "stem": "The definition P(a|b) = P(a, b) / P(b) is the one used in the lecture.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "That quotient is the definition used to get conditionals from the joint."
+    },
+    {
+      "id": "L10-T04",
+      "sectionId": "L10",
+      "type": "tf",
+      "stem": "In the weather table, P(hot, sun) = 0.4 and P(hot, rain) = 0.1, so P(hot) = 0.4.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "P(hot) = 0.4 + 0.1 = 0.5. P(sun | hot) is the 0.8 figure."
+    },
+    {
+      "id": "L10-T05",
+      "sectionId": "L10",
+      "type": "tf",
+      "stem": "A missing arc in a Bayes net asserts a conditional independence.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Missing arcs are the conditional independences encoded by the graph."
+    },
+    {
+      "id": "L10-T06",
+      "sectionId": "L10",
+      "type": "tf",
+      "stem": "In the alarm network, P(burglary) = 0.01.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "P(B) = 0.001, so P(not B) = 0.999."
+    },
+    {
+      "id": "L10-T07",
+      "sectionId": "L10",
+      "type": "tf",
+      "stem": "A Boolean child with two Boolean parents has 4 free CPT parameters.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Free parameters are (d-1) times the product of the parent domain sizes: 1 * 2 * 2 = 4."
+    },
+    {
+      "id": "L10-T08",
+      "sectionId": "L10",
+      "type": "tf",
+      "stem": "The Bayes-net chain rule multiplies P(Xi given every earlier variable), with no reduction to the parents.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "The net factorises as the product of P(Xi | Parents(Xi))."
+    },
+    {
+      "id": "L10-T09",
+      "sectionId": "L10",
+      "type": "tf",
+      "stem": "In the alarm network, P(John calls | alarm) = 0.90 and P(John calls | no alarm) = 0.05.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Those are the John CPT rows."
+    },
+    {
+      "id": "L10-T10",
+      "sectionId": "L10",
+      "type": "tf",
+      "stem": "Exact inference by enumerating the hidden variables is linear in the number of variables for every network.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "The naive sum has exponentially many terms. A tree of local causes is the case that stays small."
+    },
+    {
+      "id": "L11-T01",
+      "sectionId": "L11",
+      "type": "tf",
+      "stem": "An MDP specifies states, actions, a transition probability T(s, a, s'), and a reward on the transition.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Those four, plus a start state and discounted additive utility, define the MDP."
+    },
+    {
+      "id": "L11-T02",
+      "sectionId": "L11",
+      "type": "tf",
+      "stem": "The discount gamma must be 1, otherwise the infinite sum 1/(1-gamma) is not defined.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "gamma is in [0, 1). The sum 1/(1-gamma) is for a discount strictly below 1."
+    },
+    {
+      "id": "L11-T03",
+      "sectionId": "L11",
+      "type": "tf",
+      "stem": "In reinforcement learning the agent does not know the transition model or the reward function and must try actions.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Learning uses samples (s, a, s', r) because T and R are unknown."
+    },
+    {
+      "id": "L11-T04",
+      "sectionId": "L11",
+      "type": "tf",
+      "stem": "Passive learning chooses which action to try next.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "Passive learning evaluates a fixed policy. The agent does not choose actions."
+    },
+    {
+      "id": "L11-T05",
+      "sectionId": "L11",
+      "type": "tf",
+      "stem": "Temporal-difference learning moves V(s) toward the one-step sample r + gamma * V(s') after each transition.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "The update is a running average toward that one-step target."
+    },
+    {
+      "id": "L11-T06",
+      "sectionId": "L11",
+      "type": "tf",
+      "stem": "The Q table has one entry per state, the same size as the V table.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "Q has one entry per state-action pair, so the table is larger than V."
+    },
+    {
+      "id": "L11-T07",
+      "sectionId": "L11",
+      "type": "tf",
+      "stem": "The max over the next state's actions is what makes the Q-learning update off-policy.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "The max looks one optimal step ahead, so the data-collection policy need not be optimal."
+    },
+    {
+      "id": "L11-T08",
+      "sectionId": "L11",
+      "type": "tf",
+      "stem": "Epsilon-greedy with a high fixed epsilon stops taking random actions once the values have settled.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "A high fixed epsilon keeps acting at random after the values are known. Lower it over time."
+    },
+    {
+      "id": "L11-T09",
+      "sectionId": "L11",
+      "type": "tf",
+      "stem": "Regret is the gap between the rewards actually collected and the rewards of always acting optimally.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Regret includes the cost of early mistakes."
+    },
+    {
+      "id": "L11-T10",
+      "sectionId": "L11",
+      "type": "tf",
+      "stem": "Direct evaluation shares successor values between states, which is why it learns quickly.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "Direct evaluation learns each state's returns separately and wastes the links between states."
+    },
+    {
+      "id": "Lab5-T01",
+      "sectionId": "Lab5",
+      "type": "tf",
+      "stem": "Predicting loan default from records with known outcomes is supervised classification.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Known default outcomes make this supervised classification."
+    },
+    {
+      "id": "Lab5-T02",
+      "sectionId": "Lab5",
+      "type": "tf",
+      "stem": "Grouping viewers from behaviour, with no labels, is supervised regression.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "No labels means unsupervised clustering."
+    },
+    {
+      "id": "Lab5-T03",
+      "sectionId": "Lab5",
+      "type": "tf",
+      "stem": "Allocating CPU and memory, with a score based on response time and energy, is reinforcement learning.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "The score is a reward for a sequence of allocation actions."
+    },
+    {
+      "id": "Lab5-T04",
+      "sectionId": "Lab5",
+      "type": "tf",
+      "stem": "Predicting energy in kWh is a classification task because the inputs are numeric.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "kWh is continuous, so the energy task is supervised regression."
+    },
+    {
+      "id": "Lab5-T05",
+      "sectionId": "Lab5",
+      "type": "tf",
+      "stem": "The fitted energy line in the solution is energy = 302.26 - 6.19 * temperature.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "That is the solution line. The negative slope is a heating-dominated building."
+    },
+    {
+      "id": "Lab5-T06",
+      "sectionId": "Lab5",
+      "type": "tf",
+      "stem": "At 15 degrees C that line predicts about 302 kWh.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "302.26 - 6.19 * 15 = 209.41 kWh."
+    },
+    {
+      "id": "Lab5-T07",
+      "sectionId": "Lab5",
+      "type": "tf",
+      "stem": "R^2 = 0.948 means 94.8% of the variation in the training data is explained. It does not score new days.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "R^2 here is an in-sample figure. It does not measure a future day."
+    },
+    {
+      "id": "Lab5-T08",
+      "sectionId": "Lab5",
+      "type": "tf",
+      "stem": "A negative temperature coefficient means warmer days use more energy.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "The negative coefficient means warmer days use less energy."
+    },
+    {
+      "id": "Lab5-T09",
+      "sectionId": "Lab5",
+      "type": "tf",
+      "stem": "A few clinician-labelled records plus many unlabelled records is a semi-supervised setting.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "A small labelled set plus a large unlabelled set is semi-supervised learning."
+    },
+    {
+      "id": "Lab5-T10",
+      "sectionId": "Lab5",
+      "type": "tf",
+      "stem": "On this linear model, equal steps in temperature produce unequal steps in predicted energy.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "A linear model changes the prediction by the same amount for each equal temperature step."
+    },
+    {
+      "id": "Lab6-T01",
+      "sectionId": "Lab6",
+      "type": "tf",
+      "stem": "Logistic regression outputs a probability in (0, 1). A perceptron outputs a hard class.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Those are the lab's output types for the two classifiers."
+    },
+    {
+      "id": "Lab6-T02",
+      "sectionId": "Lab6",
+      "type": "tf",
+      "stem": "XOR is linearly separable, so one perceptron can represent it.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "XOR is the standard non-separable case. One perceptron cannot represent it."
+    },
+    {
+      "id": "Lab6-T03",
+      "sectionId": "Lab6",
+      "type": "tf",
+      "stem": "The perceptron convergence theorem applies when the training set is linearly separable.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Linear separability is the condition for a finite number of updates."
+    },
+    {
+      "id": "Lab6-T04",
+      "sectionId": "Lab6",
+      "type": "tf",
+      "stem": "That theorem also promises that the separator it finds is the unique optimal one.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "The separator need not be unique, and one pass need not be enough."
+    },
+    {
+      "id": "Lab6-T05",
+      "sectionId": "Lab6",
+      "type": "tf",
+      "stem": "In the lab update rule, a correct prediction leaves the weights unchanged.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "The update is proportional to (y - prediction), which is 0 when the prediction is correct."
+    },
+    {
+      "id": "Lab6-T06",
+      "sectionId": "Lab6",
+      "type": "tf",
+      "stem": "The learning trace starts from weights [1, 1, 1].",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "The trace starts at [0, 0, -1]."
+    },
+    {
+      "id": "Lab6-T07",
+      "sectionId": "Lab6",
+      "type": "tf",
+      "stem": "After the misclassified point [3, 2, 1] with learning rate 0.5, the weights are [1.5, 1, -0.5].",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "The update is 0.5 * (1 - 0) * [3, 2, 1] added to [0, 0, -1]."
+    },
+    {
+      "id": "Lab6-T08",
+      "sectionId": "Lab6",
+      "type": "tf",
+      "stem": "One pass over the five lab points is enough to finish learning.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "The fixed weights [0.5, -0.5, -1] still miss points, and further epochs are required."
+    },
+    {
+      "id": "Lab6-T09",
+      "sectionId": "Lab6",
+      "type": "tf",
+      "stem": "Linear regression can output any real number and is trained with squared error.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "That row of the lab comparison is linear regression."
+    },
+    {
+      "id": "Lab6-T10",
+      "sectionId": "Lab6",
+      "type": "tf",
+      "stem": "Logistic regression uses a non-linear decision boundary.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "Logistic regression's boundary is linear. The sigmoid changes the output into a probability."
+    },
+    {
+      "id": "Lab7-T01",
+      "sectionId": "Lab7",
+      "type": "tf",
+      "stem": "With input (0.5, -0.5), the first hidden pre-activation is 0.75 and ReLU leaves it at 0.75.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "z1 = 1.0*0.5 + 0.5*(-0.5) + 0.5 = 0.75, and ReLU keeps it."
+    },
+    {
+      "id": "Lab7-T02",
+      "sectionId": "Lab7",
+      "type": "tf",
+      "stem": "The second hidden pre-activation is -2, so ReLU returns -2.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "ReLU(-2) = 0. The unit is off on this example."
+    },
+    {
+      "id": "Lab7-T03",
+      "sectionId": "Lab7",
+      "type": "tf",
+      "stem": "The linear network output on this step is 1.625.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "z = 1.5*0.75 + (-1)*0 + 0.5 = 1.625, and the output is linear."
+    },
+    {
+      "id": "Lab7-T04",
+      "sectionId": "Lab7",
+      "type": "tf",
+      "stem": "The half squared loss on this step is about 1.625.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "L = 0.5 * (1.625 - 1)^2 = 0.1953125."
+    },
+    {
+      "id": "Lab7-T05",
+      "sectionId": "Lab7",
+      "type": "tf",
+      "stem": "A positive partial derivative means the gradient step subtracts from that weight.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "The worked step subtracts eta times a positive gradient."
+    },
+    {
+      "id": "Lab7-T06",
+      "sectionId": "Lab7",
+      "type": "tf",
+      "stem": "The derivative of ReLU is 1 for every negative input.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "ReLU's derivative is 0 for z <= 0."
+    },
+    {
+      "id": "Lab7-T07",
+      "sectionId": "Lab7",
+      "type": "tf",
+      "stem": "Hidden unit 2 gets a zero gradient on this example, so its weights do not change.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "A zero ReLU blocks both the activation and the gradient on this step."
+    },
+    {
+      "id": "Lab7-T08",
+      "sectionId": "Lab7",
+      "type": "tf",
+      "stem": "Leaky ReLU also has derivative 0 on negative inputs.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "Leaky ReLU and ELU keep a small gradient for negative inputs."
+    },
+    {
+      "id": "Lab7-T09",
+      "sectionId": "Lab7",
+      "type": "tf",
+      "stem": "The target on this worked example is 1.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "The worked target is y = 1."
+    },
+    {
+      "id": "Lab7-T10",
+      "sectionId": "Lab7",
+      "type": "tf",
+      "stem": "The output pre-activation 1.5 * 0.75 + (-1) * 0 + 0.5 equals 0.75.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "That expression equals 1.625, which is the network output."
+    },
+    {
+      "id": "Lab8-T01",
+      "sectionId": "Lab8",
+      "type": "tf",
+      "stem": "For the 2-4-1 XOR net, W1 has shape (2, 4) and W2 has shape (4, 1).",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "X is (4, 2), so W1 must be (2, 4). W2 maps 4 hidden units to 1 output."
+    },
+    {
+      "id": "Lab8-T02",
+      "sectionId": "Lab8",
+      "type": "tf",
+      "stem": "This lab implements dropout and weight decay from the model-selection lecture.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "The lab trains the XOR network from Lecture 7. Dropout and weight decay are Lecture 8 theory."
+    },
+    {
+      "id": "Lab8-T03",
+      "sectionId": "Lab8",
+      "type": "tf",
+      "stem": "If every weight starts at the same value, hidden units receive the same gradient. That is the symmetry problem.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Equal initial weights make the hidden units learn the same feature."
+    },
+    {
+      "id": "Lab8-T04",
+      "sectionId": "Lab8",
+      "type": "tf",
+      "stem": "sigmoid(0) equals 0.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "sigmoid(0) = 0.5."
+    },
+    {
+      "id": "Lab8-T05",
+      "sectionId": "Lab8",
+      "type": "tf",
+      "stem": "The derivative of the sigmoid is at most 0.25.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "s(1-s) reaches 0.25 at s = 0.5 and is smaller elsewhere."
+    },
+    {
+      "id": "Lab8-T06",
+      "sectionId": "Lab8",
+      "type": "tf",
+      "stem": "The 2-4-1 XOR net has 23,860 parameters.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "The XOR net has 2*4 + 4 + 4*1 + 1 = 17 parameters. 23,860 is the larger 784-30-10 example."
+    },
+    {
+      "id": "Lab8-T07",
+      "sectionId": "Lab8",
+      "type": "tf",
+      "stem": "The lab loss is the mean of 0.5 * (output - target)^2, so the output gradient simplifies to (output - target).",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "The 1/2 cancels the 2 from differentiating the square, leaving (A2 - y)."
+    },
+    {
+      "id": "Lab8-T08",
+      "sectionId": "Lab8",
+      "type": "tf",
+      "stem": "Thresholding the learned XOR outputs at 0.5 fails to recover the four target labels.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "The learned outputs are about 0.03, 0.97, 0.97, 0.03, so a 0.5 threshold recovers 0, 1, 1, 0."
+    },
+    {
+      "id": "Lab8-T09",
+      "sectionId": "Lab8",
+      "type": "tf",
+      "stem": "Biases may start at 0, because each unit has its own bias.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "The symmetry warning is about equal weights. Distinct biases can start at 0."
+    },
+    {
+      "id": "Lab8-T10",
+      "sectionId": "Lab8",
+      "type": "tf",
+      "stem": "A NaN loss in this lab usually means the learning rate is too small.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "NaN usually means overflow from a huge learning rate or a missing factor in the loss."
+    },
+    {
+      "id": "Lab9-T01",
+      "sectionId": "Lab9",
+      "type": "tf",
+      "stem": "The five-house set has 3 Yes and 2 No labels, so its entropy is about 0.971 bits.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "H = -(0.6 log2 0.6) - (0.4 log2 0.4) = 0.971 bits."
+    },
+    {
+      "id": "Lab9-T02",
+      "sectionId": "Lab9",
+      "type": "tf",
+      "stem": "Furniture has the highest information gain at the root.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "Furniture gains 0.020 bits. Number of rooms gains 0.420."
+    },
+    {
+      "id": "Lab9-T03",
+      "sectionId": "Lab9",
+      "type": "tf",
+      "stem": "The root test is number of rooms, with information gain about 0.420 bits.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Rooms beats New kitchen (0.171) and Furniture (0.020)."
+    },
+    {
+      "id": "Lab9-T04",
+      "sectionId": "Lab9",
+      "type": "tf",
+      "stem": "The rooms = 4 branch is mixed, so the tree next tests Furniture there.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "Houses 3 and 5 are both Yes, so rooms = 4 is a Yes leaf."
+    },
+    {
+      "id": "Lab9-T05",
+      "sectionId": "Lab9",
+      "type": "tf",
+      "stem": "On the rooms = 3 subset, New kitchen has higher information gain than Furniture.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "On that subset the gains are 0.918 for New kitchen and 0.251 for Furniture."
+    },
+    {
+      "id": "Lab9-T06",
+      "sectionId": "Lab9",
+      "type": "tf",
+      "stem": "A new house with 4 rooms and no new kitchen is predicted No.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "Four rooms is Yes regardless of the other features."
+    },
+    {
+      "id": "Lab9-T07",
+      "sectionId": "Lab9",
+      "type": "tf",
+      "stem": "Furniture does not appear in the learned tree.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "The second split is New kitchen, and Furniture is unused."
+    },
+    {
+      "id": "Lab9-T08",
+      "sectionId": "Lab9",
+      "type": "tf",
+      "stem": "The learned tree misclassifies house 5.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "House 5 has 4 rooms and falls in the Yes leaf. All five training rows are classified."
+    },
+    {
+      "id": "Lab9-T09",
+      "sectionId": "Lab9",
+      "type": "tf",
+      "stem": "A prediction is a walk from the root to a leaf.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Each internal node is one test, and the leaf is the prediction."
+    },
+    {
+      "id": "Lab9-T10",
+      "sectionId": "Lab9",
+      "type": "tf",
+      "stem": "At the root, New kitchen has higher information gain than number of rooms.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "At the root, rooms (0.420) beats New kitchen (0.171)."
+    },
+    {
+      "id": "A1-T01",
+      "sectionId": "A1",
+      "type": "tf",
+      "stem": "Assignment 1's maze task requires IDS, A*, and IDA*.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "The required maze algorithms are IDS, A*, and IDA*."
+    },
+    {
+      "id": "A1-T02",
+      "sectionId": "A1",
+      "type": "tf",
+      "stem": "Legal maze moves include diagonal steps.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "Moves are one step to an adjacent open cell. Diagonals and walls are forbidden."
+    },
+    {
+      "id": "A1-T03",
+      "sectionId": "A1",
+      "type": "tf",
+      "stem": "When every move has the same cost, path cost equals the number of moves.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Unit step costs make cost equal to path length."
+    },
+    {
+      "id": "A1-T04",
+      "sectionId": "A1",
+      "type": "tf",
+      "stem": "IDA* bounds each iteration by depth alone, exactly as IDS does.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "IDA* raises an f = g + h bound. IDS raises a depth bound."
+    },
+    {
+      "id": "A1-T05",
+      "sectionId": "A1",
+      "type": "tf",
+      "stem": "An admissible maze heuristic never overestimates the true remaining cost.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Admissible means a lower bound on the remaining cost."
+    },
+    {
+      "id": "A1-T06",
+      "sectionId": "A1",
+      "type": "tf",
+      "stem": "Crossword variables are the individual letter cells, with no word slots.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "Variables are word slots, the maximal across and down sequences."
+    },
+    {
+      "id": "A1-T07",
+      "sectionId": "A1",
+      "type": "tf",
+      "stem": "MRV selects the variable with the fewest remaining legal values.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Fewest remaining values is the fail-first variable order."
+    },
+    {
+      "id": "A1-T08",
+      "sectionId": "A1",
+      "type": "tf",
+      "stem": "LCV tries first the value that rules out the most options in neighbouring variables.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "LCV tries the value that eliminates the fewest options in neighbouring domains."
+    },
+    {
+      "id": "A1-T09",
+      "sectionId": "A1",
+      "type": "tf",
+      "stem": "AC-3 keeps revising queued arcs until no domain shrinks further, or some domain becomes empty.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "AC-3 processes the arc queue until a fixed point or an empty domain."
+    },
+    {
+      "id": "A1-T10",
+      "sectionId": "A1",
+      "type": "tf",
+      "stem": "If the maze destination is fully blocked, a correct solver should still return a path through walls.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "An unreachable destination should be reported as no solution, and the search should stop."
+    },
+    {
+      "id": "A2-T01",
+      "sectionId": "A2",
+      "type": "tf",
+      "stem": "A 28 by 28 grayscale image gives 784 input features.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "28 * 28 = 784 features."
+    },
+    {
+      "id": "A2-T02",
+      "sectionId": "A2",
+      "type": "tf",
+      "stem": "Fashion-MNIST in this assignment has 2 classes.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "There are ten Fashion-MNIST classes."
+    },
+    {
+      "id": "A2-T03",
+      "sectionId": "A2",
+      "type": "tf",
+      "stem": "The required softmax regression model is 784-10.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Softmax regression here is a 784-10 model."
+    },
+    {
+      "id": "A2-T04",
+      "sectionId": "A2",
+      "type": "tf",
+      "stem": "The required two-layer MLP is 784-30-30-10.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "The two-layer MLP is 784-30-10 with a sigmoid hidden layer. 784-30-30-10 is the deeper net."
+    },
+    {
+      "id": "A2-T05",
+      "sectionId": "A2",
+      "type": "tf",
+      "stem": "The assignment forbids sklearn, PyTorch, and TensorFlow for the learning algorithms.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Those libraries are disallowed for the algorithms."
+    },
+    {
+      "id": "A2-T06",
+      "sectionId": "A2",
+      "type": "tf",
+      "stem": "The test set is the right split on which to choose the final architecture.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "Choose on validation. The test set is a final check, used once."
+    },
+    {
+      "id": "A2-T07",
+      "sectionId": "A2",
+      "type": "tf",
+      "stem": "Pixel values are scaled by dividing by 255.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Inputs are scaled by dividing pixel values by 255."
+    },
+    {
+      "id": "A2-T08",
+      "sectionId": "A2",
+      "type": "tf",
+      "stem": "A residual addition works when the two hidden widths differ, with no extra projection.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "A residual add needs matching widths."
+    },
+    {
+      "id": "A2-T09",
+      "sectionId": "A2",
+      "type": "tf",
+      "stem": "Autograd is used to differentiate the loss with respect to the parameters for the gradient step.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Autograd supplies the derivatives of the loss for the gradient update."
+    },
+    {
+      "id": "A2-T10",
+      "sectionId": "A2",
+      "type": "tf",
+      "stem": "Choosing the model on the test set is preferred, because that is the number that will be reported.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "Selecting on the test set biases the reported result. Validation is for selection."
     }
   ]
 }

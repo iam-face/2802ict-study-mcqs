@@ -1,6 +1,6 @@
 # 2802ICT Study MCQ quiz
 
-Static quiz for the questions in `../Study MCQs.md`. It runs in the browser only. There is no account and no saved history beyond the current tab session (a refresh keeps the sitting you are in).
+Static quiz for the multiple-choice questions in `../Study MCQs.md` and the true/false questions in `../Study TF.md`. It runs in the browser only. There is no account and no saved history beyond the current tab session (a refresh keeps the sitting you are in).
 
 ## Use it locally
 
@@ -15,14 +15,15 @@ Open `http://localhost:8080/`. Loading `index.html` as a file will fail, because
 ## Quiz
 
 1. Tick the lectures, labs, and assignments you want. Select all and Clear apply to every section.
-2. Choose every question in those sections, or a random sample of n. n is limited to the size of the selected pool.
-3. Answer one question at a time. Next stays disabled until you pick A, B, C, or D. On the last question, Next becomes Submit.
-4. The results page shows correct / total, a percentage, and each question marked correct or incorrect, with your letter, the right letter, the choice text, and the short appendix note.
-5. Retry same set keeps the same questions and order. New setup returns to the section list.
+2. Tick multiple choice, true/false, or both. Counts next to each section follow that filter.
+3. Choose every question in those sections, or a random sample of n. n is limited to the size of the selected pool.
+4. Answer one question at a time. Multiple choice uses A to D. True/false uses True and False. Next stays disabled until you choose. On the last question, Next becomes Submit.
+5. The results page shows correct / total, a percentage, and each question marked correct or incorrect, with your choice, the right choice, and the short appendix note.
+6. Retry same set keeps the same questions and order. New setup returns to the section list.
 
 ## Update the question bank
 
-After you edit `Study MCQs.md`:
+After you edit `Study MCQs.md` or `Study TF.md`:
 
 ```
 python extract_questions.py
