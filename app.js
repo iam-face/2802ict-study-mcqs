@@ -204,6 +204,10 @@ function renderSetup() {
 
   app.innerHTML = `
     <h1>2802ICT Study MCQs</h1>
+    <aside class="disclaimer">
+      <p>This is an unofficial revision aid made by a student. It is not affiliated with, endorsed by, or provided by Griffith University, the 2802ICT convenor, or the teaching team.</p>
+      <p>The questions, answers, and study guide were drafted with AI from the author's own notes. They can be wrong, incomplete, or out of date. Use them as a guide only, and check anything you rely on against the lectures, labs, and assignment briefs.</p>
+    </aside>
     <p class="lede">Choose sections, then work through the set. Scoring happens after you submit.</p>
     <div class="row-actions">
       <button type="button" id="select-all">Select all</button>
