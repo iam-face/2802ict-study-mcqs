@@ -23,13 +23,15 @@ Open `http://localhost:8080/`. Loading `index.html` as a file will fail, because
 
 ## Update the question bank
 
-After you edit `Study MCQs.md` or `Study TF.md`:
+The home page links to the study guide. That page is `guide.html`, which renders `study-guide.md`.
+
+After you edit `Study MCQs.md`, `Study TF.md`, or `Study Guide.md`:
 
 ```
 python extract_questions.py
 ```
 
-That rewrites `questions.json`. Commit the new JSON with the site. GitHub Pages does not run the Python script.
+That rewrites `questions.json` and copies `Study Guide.md` to `study-guide.md`. Commit those files with the site. GitHub Pages does not run the Python script.
 
 ## GitHub Pages
 

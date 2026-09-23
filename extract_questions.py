@@ -4,11 +4,14 @@ from __future__ import annotations
 
 import json
 import re
+import shutil
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 SOURCE = ROOT.parent / "Study MCQs.md"
 TF_SOURCE = ROOT.parent / "Study TF.md"
+GUIDE_SOURCE = ROOT.parent / "Study Guide.md"
+GUIDE_OUTPUT = ROOT / "study-guide.md"
 OUTPUT = ROOT / "questions.json"
 
 # Section ids in source order. Titles fill from ## headers when present.
@@ -230,7 +233,9 @@ def main() -> None:
     for question in data["questions"]:
         tally = counts.setdefault(question["sectionId"], [0, 0])
         tally[0 if question["type"] == "mcq" else 1] += 1
+    shutil.copyfile(GUIDE_SOURCE, GUIDE_OUTPUT)
     print(f"Wrote {len(data['questions'])} questions to {OUTPUT}")
+    print(f"Copied study guide to {GUIDE_OUTPUT}")
     for section in data["sections"]:
         mcq, tf = counts.get(section["id"], [0, 0])
         print(f"  {section['id']}: {mcq} mcq, {tf} tf  {section['title']}")
