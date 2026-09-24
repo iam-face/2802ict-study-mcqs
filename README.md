@@ -21,6 +21,8 @@ Open `http://localhost:8080/`. Loading `index.html` as a file will fail, because
 5. The results page shows correct / total, a percentage, and each question marked correct or incorrect, with your choice, the right choice, and the short appendix note.
 6. Retry same set keeps the same questions and order. New setup returns to the section list.
 
+The Exam drill section is the mixed paper in `Study MCQs.md`: 20 multiple choice and 20 true/false. The two short-response prompts stay in that file and are not scored here.
+
 ## Update the question bank
 
 The home page links to the study guide. That page is `guide.html`, which renders `study-guide.md`.

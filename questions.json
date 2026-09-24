@@ -94,6 +94,11 @@
       "id": "A2",
       "title": "Assignment 2",
       "kind": "assignment"
+    },
+    {
+      "id": "EX",
+      "title": "Final exam drill",
+      "kind": "exam"
     }
   ],
   "questions": [
@@ -5899,13 +5904,293 @@
       "type": "mcq",
       "stem": "If a residual three-layer model is constructed with unequal hidden widths, the constructor:",
       "choices": {
-        "A": "True",
-        "B": "False",
+        "A": "Raises `ValueError`",
+        "B": "Silently turns the residual connection off",
         "C": "Pads the smaller layer with zeros",
-        "D": "Uses softmax to make the shapes match ### A2-T01 True or false: the test set is used to choose which epoch is saved."
+        "D": "Uses softmax to make the shapes match"
       },
       "answer": "A",
       "explanation": "Residual addition requires equal hidden widths."
+    },
+    {
+      "id": "EX-Q01",
+      "sectionId": "EX",
+      "type": "mcq",
+      "stem": "An algorithm returns a solution whenever one exists. The path it returns can cost more than another path to a goal. Which properties does it have?",
+      "choices": {
+        "A": "It is complete, and it is not necessarily optimal",
+        "B": "It is optimal, and it is not necessarily complete",
+        "C": "It is both complete and optimal",
+        "D": "It is neither complete nor optimal"
+      },
+      "answer": "A",
+      "explanation": "Complete means a solution is found when one exists. Optimal means that solution is a cheapest one. The second sentence denies optimality."
+    },
+    {
+      "id": "EX-Q02",
+      "sectionId": "EX",
+      "type": "mcq",
+      "stem": "Step costs are positive and not all equal. Uniform-cost search has just generated a goal node with path cost g = 12. Another node on the frontier has g = 9 and has not been expanded. What should the search do?",
+      "choices": {
+        "A": "Return the goal now, because a goal node has been generated",
+        "B": "Leave the goal on the frontier, and return it only if it is later selected for expansion",
+        "C": "Discard the goal, because a cheaper node is still unexpanded",
+        "D": "Switch to breadth-first search, because the costs are unequal"
+      },
+      "answer": "B",
+      "explanation": "Uniform-cost search tests the goal when the node is selected for expansion. Until then a cheaper path may still be on the frontier. The goal is kept, not discarded."
+    },
+    {
+      "id": "EX-Q03",
+      "sectionId": "EX",
+      "type": "mcq",
+      "stem": "Iterative deepening runs depth-limited search with limit 0, then 1, then 2, and so on, until a goal is found. Which statement is correct?",
+      "choices": {
+        "A": "It stores every generated layer, so its memory matches breadth-first search",
+        "B": "It is optimal for unequal positive step costs, because the first goal found has the smallest g",
+        "C": "Regenerating shallow nodes costs only a small factor, because most nodes are in the last layer and that layer is generated once. Memory is O(bd), as in depth-first search",
+        "D": "It is incomplete, because a finite depth limit can never reach a goal"
+      },
+      "answer": "C",
+      "explanation": "The last layer dominates the node count and is generated only once, so the repeated shallow work is a small factor. The stored frontier is a depth-first path, O(bd). Unequal step costs remove the optimality claim."
+    },
+    {
+      "id": "EX-Q04",
+      "sectionId": "EX",
+      "type": "mcq",
+      "stem": "A heuristic h never exceeds the true remaining cost to a goal. On at least one edge, h(n) > cost(n, n') + h(n'). A* may be run as tree search, or as graph search that drops repeated states. Which conclusion follows?",
+      "choices": {
+        "A": "h is consistent, so both tree search and graph search are optimal",
+        "B": "h is inadmissible, so neither version is optimal",
+        "C": "h is consistent but not admissible, so only graph search is optimal",
+        "D": "h is admissible but not consistent. Tree-search A* is optimal. Graph-search A* is not guaranteed to be optimal"
+      },
+      "answer": "D",
+      "explanation": "h <= true cost is admissibility, which is enough for optimal tree search. The broken triangle inequality means h is not consistent, so graph search can close a state before the cheaper path arrives."
+    },
+    {
+      "id": "EX-Q05",
+      "sectionId": "EX",
+      "type": "mcq",
+      "stem": "h1 and h2 are both admissible, and h2(n) >= h1(n) for every node, with h2 not identical to h1. For A* on the same problem, which claim holds?",
+      "choices": {
+        "A": "A* with h2 expands no more nodes than A* with h1, except possibly some nodes whose f equals the optimal cost, and h2 is still admissible",
+        "B": "h2 is inadmissible, because a larger heuristic must overestimate somewhere",
+        "C": "A* with h1 expands fewer nodes, because a smaller heuristic is more accurate",
+        "D": "h2 is inconsistent, because dominance breaks the triangle inequality"
+      },
+      "answer": "A",
+      "explanation": "A larger admissible heuristic is closer to the true cost without crossing it, so it expands no more nodes except possibly on the f = C* contour."
+    },
+    {
+      "id": "EX-Q06",
+      "sectionId": "EX",
+      "type": "mcq",
+      "stem": "For the 8-puzzle, consider the relaxation that keeps \"move to an adjacent square\" and drops \"the destination must be blank\". The exact cost of that relaxed puzzle is used as h. Which heuristic is that, and why is it admissible?",
+      "choices": {
+        "A": "The number of misplaced tiles. It is admissible because each wrong tile costs at least one move",
+        "B": "Manhattan distance. It is admissible because every legal solution of the real puzzle is also a solution of the relaxed puzzle, so the relaxed cost is a lower bound",
+        "C": "The path cost g. It is admissible because g is exact",
+        "D": "The true remaining solution length. A* then expands only the goal"
+      },
+      "answer": "B",
+      "explanation": "Dropping only the blank precondition makes each tile's cost the Manhattan distance. The relaxed optimum cannot exceed the real optimum, so h does not overestimate."
+    },
+    {
+      "id": "EX-Q07",
+      "sectionId": "EX",
+      "type": "mcq",
+      "stem": "Random-restart hill climbing repeats independent climbs until the first success. Each climb succeeds with probability 0.2. A successful climb takes 5 steps. A failed climb takes 4 steps. The expected number of failures before the first success is (1 - 0.2) / 0.2. What is the expected number of steps?",
+      "choices": {
+        "A": "5",
+        "B": "20",
+        "C": "21",
+        "D": "25"
+      },
+      "answer": "C",
+      "explanation": "Expected failures are 0.8 / 0.2 = 4. Expected steps are 1 success times 5, plus 4 failures times 4, which is 21."
+    },
+    {
+      "id": "EX-Q08",
+      "sectionId": "EX",
+      "type": "mcq",
+      "stem": "Backtracking is choosing the next variable. X and Y each have 2 legal values left. X shares constraints with 3 other unassigned variables. Y shares a constraint with 1 other unassigned variable. Which choice matches the course heuristics?",
+      "choices": {
+        "A": "Choose Y, because least-constraining value prefers the variable that rules out the least",
+        "B": "Choose Y, because fewer constraints means the search will fail sooner",
+        "C": "Choose either. The degree heuristic is used only when the remaining domain sizes differ",
+        "D": "Choose X. Minimum remaining values ties, and the degree heuristic then picks the variable with more constraints on unassigned variables"
+      },
+      "answer": "D",
+      "explanation": "Minimum remaining values ties at 2. Degree then prefers X, the variable constrained with more unassigned variables. Least constraining value orders values, not variables."
+    },
+    {
+      "id": "EX-Q09",
+      "sectionId": "EX",
+      "type": "mcq",
+      "stem": "Domain of X is {1, 2}. Domain of Y is {2}. The only constraint is X != Y. Revising the arc X -> Y deletes any value of X that has no supporting value in Y. What is the domain of X after that revision?",
+      "choices": {
+        "A": "{1}",
+        "B": "{2}",
+        "C": "empty, so this constraint alone proves the CSP has no solution",
+        "D": "{1, 2}, because arc consistency only deletes values from Y"
+      },
+      "answer": "A",
+      "explanation": "Value 1 is supported by Y = 2, because 1 != 2. Value 2 has no support. X becomes {1}. The problem is not yet empty."
+    },
+    {
+      "id": "EX-Q10",
+      "sectionId": "EX",
+      "type": "mcq",
+      "stem": "Labels are 0 and 1. Predict 1 when w \u00b7 x >= 0, otherwise 0. Update only when the prediction is wrong: w <- w + alpha * (y - y_hat) * x. Now w = [1, -1, 0], x = [2, 1, 1], y = 0, and alpha = 0.5. The third component is the bias, and the third feature is 1. What is w after this example?",
+      "choices": {
+        "A": "[1, -1, 0]",
+        "B": "[0, -1.5, -0.5]",
+        "C": "[2, -0.5, 0.5]",
+        "D": "[0, -2, -1]"
+      },
+      "answer": "B",
+      "explanation": "The dot product is 2 - 1 + 0 = 1, so the prediction is 1 and the label 0 is a mistake. Add 0.5 * (0 - 1) * [2, 1, 1], which subtracts [1, 0.5, 0.5] and leaves [0, -1.5, -0.5]."
+    },
+    {
+      "id": "EX-Q11",
+      "sectionId": "EX",
+      "type": "mcq",
+      "stem": "A hidden unit uses ReLU. On this training example its pre-activation is z = -1.5, so its output is 0. It has a non-zero weight into the next layer. For this example, what is the gradient of the loss with respect to the weights that feed this hidden unit?",
+      "choices": {
+        "A": "Equal to that outgoing weight, because the chain rule multiplies by it",
+        "B": "Equal to -1.5, the pre-activation",
+        "C": "Zero, because the ReLU derivative is 0 for a negative pre-activation, which blocks the gradient into the unit",
+        "D": "Undefined, because ReLU has no derivative for any input"
+      },
+      "answer": "C",
+      "explanation": "ReLU(-1.5) = 0 and the local derivative is 0, so every upstream gradient for this unit is multiplied by 0 on this example. The outgoing weight does not restore that blocked path."
+    },
+    {
+      "id": "EX-Q12",
+      "sectionId": "EX",
+      "type": "mcq",
+      "stem": "A feed-forward net computes h = W1 x + b1 and then y = W2 h + b2. There is no non-linearity between the two layers. Which conclusion follows?",
+      "choices": {
+        "A": "The hidden layer can separate XOR, because two matrices are more expressive than one",
+        "B": "The map is non-linear, because matrix multiplication does not commute",
+        "C": "The parameter count is smaller than one linear layer with the same input and output sizes, so the net must generalise better",
+        "D": "y is an affine function of x, the same family as a single linear layer, so this net cannot represent XOR"
+      },
+      "answer": "D",
+      "explanation": "W2 (W1 x + b1) + b2 is one affine map. Without a non-linearity the hidden layer does not add bend, and XOR is not linearly separable."
+    },
+    {
+      "id": "EX-Q13",
+      "sectionId": "EX",
+      "type": "mcq",
+      "stem": "Soft weight decay uses w <- (1 - eta * lambda) * w - eta * (data-loss gradient), provided eta * lambda < 1. Here eta = 0.1, lambda = 2, the data-loss gradient of this weight is 4, and the current weight is 3. What is the updated weight?",
+      "choices": {
+        "A": "2",
+        "B": "2.4",
+        "C": "2.6",
+        "D": "-1.6"
+      },
+      "answer": "A",
+      "explanation": "(1 - 0.1 * 2) * 3 - 0.1 * 4 = 0.8 * 3 - 0.4 = 2. The 2.6 figure forgets the decay factor. The 2.4 figure forgets the data gradient."
+    },
+    {
+      "id": "EX-Q14",
+      "sectionId": "EX",
+      "type": "mcq",
+      "stem": "Early stopping watches validation loss and keeps the weights from the best validation epoch. Patience is 10: stop after 10 epochs with no improvement, then restore the saved weights. Training loss is still falling. Validation loss was best at epoch 12 and has risen at epochs 13, 14, 15, and 16. What should happen at epoch 16?",
+      "choices": {
+        "A": "Stop now and keep the epoch-16 weights, because training loss is still improving",
+        "B": "Keep training. The saved weights stay those from epoch 12, and patience is not used up yet",
+        "C": "Stop now and restore epoch 12, because any rise in validation loss ends training",
+        "D": "Add the validation rows back into the training set, refit, and report the old validation score as the test score"
+      },
+      "answer": "B",
+      "explanation": "Four epochs of no improvement are still inside patience 10. The checkpoint remains epoch 12. Training loss is not the stopping signal."
+    },
+    {
+      "id": "EX-Q15",
+      "sectionId": "EX",
+      "type": "mcq",
+      "stem": "Information gain is parent entropy minus the size-weighted average of the child entropies. The parent entropy is 1. Attribute A splits the rows into two children of equal size, and each child has entropy 0.811. Attribute B splits the rows into two children of equal size, and each child has entropy 0. Which attribute should ID3 pick at this node?",
+      "choices": {
+        "A": "A, with gain about 0.811",
+        "B": "A, with gain about 0.189",
+        "C": "B, with gain 1",
+        "D": "B, with gain 0"
+      },
+      "answer": "C",
+      "explanation": "Gain(A) = 1 - 0.811 = 0.189. Gain(B) = 1 - 0 = 1. The pure split wins. Gain 0 would mean the children were as mixed as the parent."
+    },
+    {
+      "id": "EX-Q16",
+      "sectionId": "EX",
+      "type": "mcq",
+      "stem": "A Bayes-net node is binary and has three binary parents. Its conditional probability table has one distribution for each parent assignment, and each of those distributions sums to 1. How many free parameters does the table have?",
+      "choices": {
+        "A": "3",
+        "B": "7",
+        "C": "16",
+        "D": "8"
+      },
+      "answer": "D",
+      "explanation": "Eight parent assignments, and a binary row has 2 - 1 = 1 free number, so 8. Sixteen counts both entries in every row. The row sum removes one of them."
+    },
+    {
+      "id": "EX-Q17",
+      "sectionId": "EX",
+      "type": "mcq",
+      "stem": "A Bayes net's joint probability is the product of one local conditional per node. For one assignment the factors are P(B) = 0.001, P(not E) = 0.998, P(A | B, not E) = 0.94, P(not J | A) = 0.1, and P(not M | A) = 0.3. What is that joint probability, rounded to six decimal places?",
+      "choices": {
+        "A": "0.000028",
+        "B": "0.000281",
+        "C": "0.002814",
+        "D": "0.028144"
+      },
+      "answer": "A",
+      "explanation": "0.001 * 0.998 * 0.94 * 0.1 * 0.3 = 0.0000281436, which rounds to 0.000028."
+    },
+    {
+      "id": "EX-Q18",
+      "sectionId": "EX",
+      "type": "mcq",
+      "stem": "The Q-learning update is Q(s, a) <- (1 - alpha) * Q(s, a) + alpha * [r + gamma * max over a' of Q(s', a')]. Use alpha = 0.5 and gamma = 0.9. Before the update, Q(s, a) = 2. The sample is r = 1 and next state s'. Q(s', left) = 4 and Q(s', right) = 1. The behaviour policy took right in s'. What is Q(s, a) after the update?",
+      "choices": {
+        "A": "1.95",
+        "B": "3.3",
+        "C": "4.6",
+        "D": "2.8"
+      },
+      "answer": "B",
+      "explanation": "The max in s' is 4, even though the behaviour policy took right. Target = 1 + 0.9 * 4 = 4.6. New Q = 0.5 * 2 + 0.5 * 4.6 = 3.3. Using right instead of the max gives 1.95."
+    },
+    {
+      "id": "EX-Q19",
+      "sectionId": "EX",
+      "type": "mcq",
+      "stem": "The discount factor is gamma = 0.5. From now on, every step returns reward +1, and the process never ends. The return is the sum from t = 0 to infinity of (gamma^t) * 1. What is that return?",
+      "choices": {
+        "A": "Infinite",
+        "B": "0.5",
+        "C": "2",
+        "D": "1"
+      },
+      "answer": "C",
+      "explanation": "The infinite geometric sum 1 + 0.5 + 0.25 + ... equals 1 / (1 - 0.5) = 2. Gamma must be below 1 for that sum to be finite."
+    },
+    {
+      "id": "EX-Q20",
+      "sectionId": "EX",
+      "type": "mcq",
+      "stem": "The VC dimension of a classifier family is the size of the largest set of points that family can shatter: for every way of labelling those points, some classifier in the family labels them perfectly. In this course a perceptron in the plane has VC dimension 3. Which reading matches that definition?",
+      "choices": {
+        "A": "Any training set of 3 points is memorised, so the test error on those points is zero, and this is how you choose a learning rate",
+        "B": "The gap between training error and test error is 3 percent",
+        "C": "XOR is linearly separable, because a VC dimension of 3 is only a bound on training time",
+        "D": "Three points that are not on one pathological line can receive every labelling from some perceptron, and four points in an XOR arrangement cannot be shattered"
+      },
+      "answer": "D",
+      "explanation": "Shattering three points in general position, and failing on an XOR labelling of four points, is the VC-dimension-3 fact for a planar perceptron. It is not a recipe for setting the learning rate."
     },
     {
       "id": "L1-T01",
@@ -8186,6 +8471,246 @@
       },
       "answer": "F",
       "explanation": "The zip contains the four Python files. The CSV is created by run_experiments.py."
+    },
+    {
+      "id": "EX-T01",
+      "sectionId": "EX",
+      "type": "tf",
+      "stem": "A hypothesis is consistent when it matches every training pair. Among consistent hypotheses, Ockham's razor prefers the one with fewer assumptions. A hypothesis can be consistent and still be a poor predictor on new data.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Consistency is a training-set property. Ockham then prefers the simpler consistent hypothesis. A curve through every noisy point can still fail on the next point."
+    },
+    {
+      "id": "EX-T02",
+      "sectionId": "EX",
+      "type": "tf",
+      "stem": "Every consistent heuristic is admissible. Consistency is the further requirement used to guarantee that A* graph search is optimal.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "The triangle inequality implies the heuristic never overestimates, so consistency is the stronger condition. Graph search needs that stronger condition."
+    },
+    {
+      "id": "EX-T03",
+      "sectionId": "EX",
+      "type": "tf",
+      "stem": "Iterative deepening uses O(bd) memory. When every step cost is equal, it is optimal.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Iterative deepening stores one depth-first path, O(bd), and with equal step costs the first goal it reaches is a shallowest, hence cheapest, goal."
+    },
+    {
+      "id": "EX-T04",
+      "sectionId": "EX",
+      "type": "tf",
+      "stem": "A CSP solution is an assignment that gives every variable a value and breaks no constraint. A partial assignment that breaks nothing is not yet a solution.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "The course definition requires both words: complete, and consistent. A legal partial assignment is unfinished."
+    },
+    {
+      "id": "EX-T05",
+      "sectionId": "EX",
+      "type": "tf",
+      "stem": "In CSP backtracking, minimum remaining values and the degree heuristic choose the next variable. Least constraining value chooses the next value for the variable already chosen.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Minimum remaining values, with degree as the tie break, selects the variable. Least constraining value orders the values of that variable."
+    },
+    {
+      "id": "EX-T06",
+      "sectionId": "EX",
+      "type": "tf",
+      "stem": "If the training set is linearly separable, the perceptron reaches some separating weights after a finite number of updates. That theorem does not promise that one pass is enough, and it does not promise a unique separator.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Separability gives finite convergence to some separator. It does not give one-epoch convergence or a unique line."
+    },
+    {
+      "id": "EX-T07",
+      "sectionId": "EX",
+      "type": "tf",
+      "stem": "For a sigmoid output s, the local derivative factor s(1 - s) is at most 0.25. Stacking several sigmoid layers can therefore make the gradient that reaches the earliest layer very small.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "s(1 - s) peaks at 0.25 when s = 0.5, and is near 0 when s is near 0 or 1. Each sigmoid layer can multiply the backward signal by at most 1/4."
+    },
+    {
+      "id": "EX-T08",
+      "sectionId": "EX",
+      "type": "tf",
+      "stem": "In a Bayes net, once a variable's parents are known, that variable is conditionally independent of its non-descendants.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "That is the local independence claim that lets the joint equal the product of P(variable | its parents)."
+    },
+    {
+      "id": "EX-T09",
+      "sectionId": "EX",
+      "type": "tf",
+      "stem": "If ID3 has no attributes left and the remaining examples still contain both class labels, it returns the majority class of those remaining examples.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Mixed labels with no attribute left are labelled by the majority of the rows still at that node. An empty set of rows would instead use the parent's majority."
+    },
+    {
+      "id": "EX-T10",
+      "sectionId": "EX",
+      "type": "tf",
+      "stem": "The Q-learning target is r + gamma * max over a' of Q(s', a'). It uses the best next action in the table, not whichever action the behaviour policy takes in s'.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "The max is what makes the update off-policy. The action actually taken in s' is not the action inside the target."
+    },
+    {
+      "id": "EX-T11",
+      "sectionId": "EX",
+      "type": "tf",
+      "stem": "Breadth-first search is optimal for every set of positive step costs, because it expands the tree one layer at a time.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "Layer order minimises the number of steps. If step costs differ, fewer steps can cost more, so breadth-first search is not optimal."
+    },
+    {
+      "id": "EX-T12",
+      "sectionId": "EX",
+      "type": "tf",
+      "stem": "An admissible heuristic is enough to guarantee that A* graph search returns an optimal path.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "Admissibility is the tree-search condition. Graph search can discard a repeated state along a path whose f looked good only because h was inconsistent."
+    },
+    {
+      "id": "EX-T13",
+      "sectionId": "EX",
+      "type": "tf",
+      "stem": "Hill climbing that is allowed to move sideways, with no cap on how many sideways moves it may take, is guaranteed to leave every plateau.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "A shoulder can have an uphill exit, but a flat plateau may not. With no cap, sideways moves can also loop. The course caps sideways moves, for example at 100."
+    },
+    {
+      "id": "EX-T14",
+      "sectionId": "EX",
+      "type": "tf",
+      "stem": "The directed arc X -> Y is consistent when every remaining value of Y has at least one remaining value of X that satisfies the constraint.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "The arc X -> Y constrains the tail. Every remaining value of X must have a support in Y. The statement runs the check in the other direction."
+    },
+    {
+      "id": "EX-T15",
+      "sectionId": "EX",
+      "type": "tf",
+      "stem": "Temporal-difference policy evaluation needs a known transition model T. Without T it cannot form the target r + gamma * V(s').",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "The sampled next state stands in for the unknown transition. Temporal-difference policy evaluation does not need T. It also cannot, by itself, choose between actions."
+    },
+    {
+      "id": "EX-T16",
+      "sectionId": "EX",
+      "type": "tf",
+      "stem": "Full gradient descent steps on a mini-batch of 32 to 512 rows. Stochastic gradient descent waits until the gradient has been computed on every training row, then steps once.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "The two methods are swapped. Full gradient descent uses every training row for one step. A mini-batch of 32 to 512 is stochastic gradient descent, as the slides use that term."
+    },
+    {
+      "id": "EX-T17",
+      "sectionId": "EX",
+      "type": "tf",
+      "stem": "Early stopping keeps the weights from the epoch with the lowest training loss.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "The checkpoint is the best validation epoch. Training loss can keep falling after that point, which is the overfitting signal."
+    },
+    {
+      "id": "EX-T18",
+      "sectionId": "EX",
+      "type": "tf",
+      "stem": "A residual connection is a regulariser. Its job is to shrink the gap between training error and test error.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "A residual connection is an optimisation device: the block learns a change added to its input, and the skip path helps the gradient. It is not, by itself, a regulariser."
+    },
+    {
+      "id": "EX-T19",
+      "sectionId": "EX",
+      "type": "tf",
+      "stem": "Raw information gain is a safe score for an attribute such as a unique student identifier. Pure children are exactly what ID3 should reward, so that attribute should be the root.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "A unique identifier splits the rows into pure singletons, so raw gain looks perfect and the tree memorises identities. Gain ratio penalises attributes with many values."
+    },
+    {
+      "id": "EX-T20",
+      "sectionId": "EX",
+      "type": "tf",
+      "stem": "With discount gamma = 1, an infinite sequence of rewards equal to +1 has total utility 1.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "With gamma = 1 the sum 1 + 1 + 1 + ... does not converge. The closed form 1 / (1 - gamma) needs gamma < 1."
     }
   ]
 }

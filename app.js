@@ -183,6 +183,7 @@ function escapeHtml(value) {
 
 function renderSetup() {
   const groups = [
+    ["exam", "Exam drill"],
     ["lecture", "Lectures"],
     ["lab", "Labs"],
     ["assignment", "Assignments"],
@@ -191,6 +192,7 @@ function renderSetup() {
   const nValue = available ? clampN(state.n, available) : state.n;
   const groupsHtml = groups.map(([kind, label]) => {
     const items = state.bank.sections.filter((section) => section.kind === kind);
+    if (!items.length) return "";
     const list = items.map((section) => {
       const count = state.bank.questions.filter((q) => (
         q.sectionId === section.id && state.types.has(questionType(q))

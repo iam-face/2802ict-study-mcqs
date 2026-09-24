@@ -35,10 +35,12 @@ SECTION_META = [
     ("Lab9", "Lab Week 9", "lab"),
     ("A1", "Assignment 1", "assignment"),
     ("A2", "Assignment 2", "assignment"),
+    ("EX", "Final exam drill", "exam"),
 ]
 
 Q_HEAD = re.compile(r"^### ([A-Za-z0-9]+-Q\d+)\s*$")
 T_HEAD = re.compile(r"^### ([A-Za-z0-9]+-T\d+)\s*$")
+EX_T_HEAD = re.compile(r"^### (EX-T\d+)\s*$")
 CHOICE = re.compile(r"^([A-D])\.\s+(.*)$")
 ANSWER = re.compile(r"^\*\*([A-Za-z0-9]+-Q\d+):\*\*\s+([A-D])\.\s+(.*)$")
 TF_ANSWER = re.compile(r"^\*\*([A-Za-z0-9]+-T\d+):\*\*\s+([TF])\.\s+(.*)$")
@@ -60,6 +62,7 @@ def parse(text: str) -> dict:
     questions: list[dict] = []
     current: dict | None = None
     choice_letter: str | None = None
+    skipping = False
 
     def flush() -> None:
         nonlocal current, choice_letter
@@ -78,6 +81,7 @@ def parse(text: str) -> dict:
         line = raw.rstrip()
         head = Q_HEAD.match(line)
         if head:
+            skipping = False
             flush()
             qid = head.group(1)
             sid = section_id_from_qid(qid)
@@ -96,12 +100,19 @@ def parse(text: str) -> dict:
             choice_letter = None
             continue
 
+        if line.startswith("### "):
+            # True/false and short-response blocks share this file. They are not MCQs.
+            flush()
+            skipping = True
+            continue
+
         sec = SECTION_HEAD.match(line)
         if sec and not line.startswith("###"):
             pending_title = sec.group(1).strip()
+            skipping = False
             continue
 
-        if current is None or not line.strip() or line.strip() == "---":
+        if skipping or current is None or not line.strip() or line.strip() == "---":
             continue
 
         choice = CHOICE.match(line.strip())
@@ -210,7 +221,9 @@ def parse_tf(text: str) -> list[dict]:
         per_section[question["sectionId"]] = per_section.get(question["sectionId"], 0) + 1
         tally = balance.setdefault(question["sectionId"], [0, 0])
         tally[0 if question["answer"] == "T" else 1] += 1
-    for sid, _, _ in SECTION_META:
+    for sid, _, kind in SECTION_META:
+        if kind == "exam":
+            continue
         count = per_section.get(sid, 0)
         if count != 10:
             raise SystemExit(f"{sid} has {count} true/false items, expected 10")
@@ -220,14 +233,87 @@ def parse_tf(text: str) -> list[dict]:
     return questions
 
 
+def parse_exam_tf(text: str) -> list[dict]:
+    """True/false items for the exam drill live in Study MCQs.md, not Study TF.md."""
+    body, _, appendix = text.partition("# Appendix: Answers")
+    if not appendix:
+        raise SystemExit("Appendix heading not found")
+
+    questions: list[dict] = []
+    current: dict | None = None
+
+    def flush() -> None:
+        nonlocal current
+        if current is None:
+            return
+        if not current["stem"].strip():
+            raise SystemExit(f"{current['id']} has empty stem")
+        questions.append(current)
+        current = None
+
+    for raw in body.splitlines():
+        line = raw.rstrip()
+        head = EX_T_HEAD.match(line)
+        if head:
+            flush()
+            qid = head.group(1)
+            current = {
+                "id": qid,
+                "sectionId": "EX",
+                "type": "tf",
+                "stem": "",
+                "choices": {"T": "True", "F": "False"},
+            }
+            continue
+        if current is None or not line.strip() or line.startswith("#") or line.strip() == "---":
+            if current is not None and (line.startswith("#") or line.strip() == "---"):
+                flush()
+            continue
+        stem = current["stem"]
+        current["stem"] = (stem + " " + line.strip()).strip() if stem else line.strip()
+
+    flush()
+
+    answers: dict[str, tuple[str, str]] = {}
+    for raw in appendix.splitlines():
+        match = TF_ANSWER.match(raw.strip())
+        if not match or not match.group(1).startswith("EX-"):
+            continue
+        answers[match.group(1)] = (match.group(2), match.group(3).strip())
+
+    if len(questions) != 20:
+        raise SystemExit(f"Exam drill has {len(questions)} true/false items, expected 20")
+
+    for question in questions:
+        found = answers.get(question["id"])
+        if not found:
+            raise SystemExit(f"No appendix answer for {question['id']}")
+        question["answer"] = found[0]
+        question["explanation"] = found[1]
+
+    extra = set(answers) - {q["id"] for q in questions}
+    if extra:
+        raise SystemExit(f"Exam true/false answers without questions: {sorted(extra)}")
+
+    trues = sum(1 for question in questions if question["answer"] == "T")
+    if trues != 10:
+        raise SystemExit(f"Exam true/false balance is {trues} true and {20 - trues} false")
+    return questions
+
+
 def main() -> None:
-    data = parse(SOURCE.read_text(encoding="utf-8"))
+    source_text = SOURCE.read_text(encoding="utf-8")
+    data = parse(source_text)
     tf_questions = parse_tf(TF_SOURCE.read_text(encoding="utf-8"))
+    exam_tf = parse_exam_tf(source_text)
     mcq_ids = {question["id"] for question in data["questions"]}
     overlap = mcq_ids & {question["id"] for question in tf_questions}
+    overlap |= mcq_ids & {question["id"] for question in exam_tf}
+    overlap |= {question["id"] for question in tf_questions} & {question["id"] for question in exam_tf}
     if overlap:
         raise SystemExit(f"Duplicate ids: {sorted(overlap)}")
     data["questions"].extend(tf_questions)
+    data["questions"].extend(exam_tf)
     OUTPUT.write_text(json.dumps(data, indent=2, ensure_ascii=True) + "\n", encoding="utf-8")
     counts: dict[str, list[int]] = {}
     for question in data["questions"]:
