@@ -5558,6 +5558,356 @@
       "explanation": "Avoid selecting on the test set."
     },
     {
+      "id": "A2-Q26",
+      "sectionId": "A2",
+      "type": "mcq",
+      "stem": "The default linear classifier, including biases, has how many parameters?",
+      "choices": {
+        "A": "784",
+        "B": "23,860",
+        "C": "7,850",
+        "D": "24,790"
+      },
+      "answer": "C",
+      "explanation": "784*10 + 10 = 7,850."
+    },
+    {
+      "id": "A2-Q27",
+      "sectionId": "A2",
+      "type": "mcq",
+      "stem": "The default three-layer MLP, including biases, has how many parameters?",
+      "choices": {
+        "A": "7,850",
+        "B": "24,790",
+        "C": "23,860",
+        "D": "30,000"
+      },
+      "answer": "B",
+      "explanation": "24,790 parameters."
+    },
+    {
+      "id": "A2-Q28",
+      "sectionId": "A2",
+      "type": "mcq",
+      "stem": "`get_params` and `set_params` must use the same order because:",
+      "choices": {
+        "A": "A mismatched slice can put a value or gradient into the wrong weight matrix or bias",
+        "B": "Softmax requires parameters in alphabetical order",
+        "C": "Autograd only accepts parameters sorted by size",
+        "D": "The validation split depends on parameter order"
+      },
+      "answer": "A",
+      "explanation": "Order keeps each slice aligned with its parameter."
+    },
+    {
+      "id": "A2-Q29",
+      "sectionId": "A2",
+      "type": "mcq",
+      "stem": "Which parameter-flattening method was already implemented in the starter?",
+      "choices": {
+        "A": "`ThreeLayerMLP.get_params`",
+        "B": "`TwoLayerMLP.get_params`",
+        "C": "Both MLP `get_params` methods",
+        "D": "`LinearClassifier.get_params`, which concatenates `W` then `b`"
+      },
+      "answer": "D",
+      "explanation": "Only the linear `get_params` was supplied complete."
+    },
+    {
+      "id": "A2-Q30",
+      "sectionId": "A2",
+      "type": "mcq",
+      "stem": "Differentiable forward and loss calculations use:",
+      "choices": {
+        "A": "`sklearn.neural_network`",
+        "B": "`autograd.numpy` imported as `anp`",
+        "C": "Ordinary `np.dot` only, with manual backpropagation",
+        "D": "PyTorch tensors"
+      },
+      "answer": "B",
+      "explanation": "Use `anp` where Autograd must record the operations."
+    },
+    {
+      "id": "A2-Q31",
+      "sectionId": "A2",
+      "type": "mcq",
+      "stem": "The submitted cross-entropy adds `1e-12` inside the logarithm in order to:",
+      "choices": {
+        "A": "Prevent `log(0)` if a probability underflows to zero",
+        "B": "Convert logits into a one-hot vector",
+        "C": "Increase the learning rate by `1e-12`",
+        "D": "Make the ten class probabilities sum to 10"
+      },
+      "answer": "A",
+      "explanation": "Avoid `log(0)` after underflow."
+    },
+    {
+      "id": "A2-Q32",
+      "sectionId": "A2",
+      "type": "mcq",
+      "stem": "For the MLPs, softmax is applied:",
+      "choices": {
+        "A": "Inside `forward`, before the logits are returned",
+        "B": "Only on the test set",
+        "C": "In `predict` and in the loss, not inside `forward`",
+        "D": "To the hidden sigmoid activations"
+      },
+      "answer": "C",
+      "explanation": "Softmax is in `predict` and the loss."
+    },
+    {
+      "id": "A2-Q33",
+      "sectionId": "A2",
+      "type": "mcq",
+      "stem": "`best_epoch` stored in the training history is:",
+      "choices": {
+        "A": "Always 20",
+        "B": "A one-based epoch number",
+        "C": "The test-set epoch with the lowest loss",
+        "D": "A zero-based index; the printed epoch and the plot use `best_epoch + 1`"
+      },
+      "answer": "D",
+      "explanation": "Stored index is zero-based; display adds 1."
+    },
+    {
+      "id": "A2-Q34",
+      "sectionId": "A2",
+      "type": "mcq",
+      "stem": "The submitted code prints \"New best validation accuracy\" when:",
+      "choices": {
+        "A": "Validation accuracy strictly improves on the stored best",
+        "B": "Validation accuracy equals the stored best, including a tie",
+        "C": "Test accuracy improves",
+        "D": "Training loss decreases"
+      },
+      "answer": "A",
+      "explanation": "Strict improvement only. The starter also printed on a tie."
+    },
+    {
+      "id": "A2-Q35",
+      "sectionId": "A2",
+      "type": "mcq",
+      "stem": "If the default full-data two-layer run is reused across the three experiment groups, how many distinct runs are required?",
+      "choices": {
+        "A": "12",
+        "B": "19",
+        "C": "21",
+        "D": "60"
+      },
+      "answer": "B",
+      "explanation": "12 baseline runs, plus 4 extra learning rates, plus 3 extra batch sizes."
+    },
+    {
+      "id": "A2-Q36",
+      "sectionId": "A2",
+      "type": "mcq",
+      "stem": "On the two-layer MLP learning-rate study, the highest test accuracy was:",
+      "choices": {
+        "A": "81.86 percent at learning rate 0.001",
+        "B": "81.18 percent at learning rate 1.0",
+        "C": "86.95 percent at learning rate 0.01",
+        "D": "10.00 percent at learning rate 100"
+      },
+      "answer": "C",
+      "explanation": "Learning rate 0.01, 86.95 percent test accuracy."
+    },
+    {
+      "id": "A2-Q37",
+      "sectionId": "A2",
+      "type": "mcq",
+      "stem": "Learning rates 10 and 100 are reported as totally unstable because they produced:",
+      "choices": {
+        "A": "`NaN` loss and constant 10 percent accuracy",
+        "B": "The highest validation accuracy",
+        "C": "A slow but finite improvement through epoch 20",
+        "D": "A lower runtime only"
+      },
+      "answer": "A",
+      "explanation": "Overflow, `NaN` loss, and 10 percent accuracy."
+    },
+    {
+      "id": "A2-Q38",
+      "sectionId": "A2",
+      "type": "mcq",
+      "stem": "Learning rate 1.0 on the two-layer MLP should be described as:",
+      "choices": {
+        "A": "Totally unstable, with `NaN` loss",
+        "B": "The best rate in the study",
+        "C": "Identical to learning rate 0.001",
+        "D": "Finite but oscillating, not totally unstable"
+      },
+      "answer": "D",
+      "explanation": "Rate 1.0 oscillated but stayed finite."
+    },
+    {
+      "id": "A2-Q39",
+      "sectionId": "A2",
+      "type": "mcq",
+      "stem": "The highest baseline selected-model test accuracy was:",
+      "choices": {
+        "A": "85.45 percent, softmax regression on full data",
+        "B": "87.36 percent, residual three-layer MLP on full data",
+        "C": "86.22 percent, two-layer MLP on the 50 percent data",
+        "D": "83.54 percent, softmax regression on the 10 percent data"
+      },
+      "answer": "B",
+      "explanation": "Residual three-layer MLP, full data, 87.36 percent."
+    },
+    {
+      "id": "A2-Q40",
+      "sectionId": "A2",
+      "type": "mcq",
+      "stem": "On the 10 percent dataset, the ordinary three-layer MLP:",
+      "choices": {
+        "A": "Stayed at 10 percent accuracy, while the residual model reached 80.83 percent",
+        "B": "Reached 87.36 percent",
+        "C": "Was the best of the four architectures",
+        "D": "Had a lower loss than `log(10)` from epoch 1"
+      },
+      "answer": "A",
+      "explanation": "10 percent versus 80.83 percent. The report does not isolate the exact cause."
+    },
+    {
+      "id": "A2-Q41",
+      "sectionId": "A2",
+      "type": "mcq",
+      "stem": "The best selected-model test accuracy on the 10 percent dataset was:",
+      "choices": {
+        "A": "The residual three-layer MLP at 80.83 percent",
+        "B": "The ordinary three-layer MLP at 82.40 percent",
+        "C": "Softmax regression at 83.54 percent",
+        "D": "The two-layer MLP at 86.95 percent"
+      },
+      "answer": "C",
+      "explanation": "Softmax regression, 83.54 percent."
+    },
+    {
+      "id": "A2-Q42",
+      "sectionId": "A2",
+      "type": "mcq",
+      "stem": "The best selected-model test accuracy on the 50 percent dataset was:",
+      "choices": {
+        "A": "Softmax regression at 85.45 percent",
+        "B": "The ordinary three-layer MLP at 82.40 percent",
+        "C": "The residual three-layer MLP at 87.36 percent",
+        "D": "The two-layer MLP at 86.22 percent"
+      },
+      "answer": "D",
+      "explanation": "Two-layer MLP, 86.22 percent."
+    },
+    {
+      "id": "A2-Q43",
+      "sectionId": "A2",
+      "type": "mcq",
+      "stem": "With 48,000 training samples, batch size 4, and 20 epochs, the number of parameter updates is:",
+      "choices": {
+        "A": "240,000",
+        "B": "48,000",
+        "C": "24,000",
+        "D": "960,000"
+      },
+      "answer": "A",
+      "explanation": "48,000/4 updates per epoch, times 20."
+    },
+    {
+      "id": "A2-Q44",
+      "sectionId": "A2",
+      "type": "mcq",
+      "stem": "On the full dataset with 20 fixed epochs, batch size 1 compared with batch size 16:",
+      "choices": {
+        "A": "Made the same number of updates and finished faster",
+        "B": "Made 16 times as many updates, and was both the most accurate and the slowest",
+        "C": "Made fewer updates and reached 10 percent accuracy",
+        "D": "Was unstable because the learning rate was 10"
+      },
+      "answer": "B",
+      "explanation": "960,000 updates versus 60,000; 87.82 percent and 651.69 seconds."
+    },
+    {
+      "id": "A2-Q45",
+      "sectionId": "A2",
+      "type": "mcq",
+      "stem": "The test accuracy reported for a run is:",
+      "choices": {
+        "A": "The test accuracy at epoch 20, even if an earlier epoch had higher validation accuracy",
+        "B": "The training accuracy of the last batch",
+        "C": "The test accuracy after restoring the parameters from the best validation epoch",
+        "D": "The validation accuracy itself"
+      },
+      "answer": "C",
+      "explanation": "Restore the best validation parameters, then measure test accuracy."
+    },
+    {
+      "id": "A2-Q46",
+      "sectionId": "A2",
+      "type": "mcq",
+      "stem": "The submitted code zip contains:",
+      "choices": {
+        "A": "`nn.py`, `train.py`, `run_experiments.py`, and `plot_results.py` only",
+        "B": "The four Python files plus `results/summary.csv`",
+        "C": "The virtual environment and the datasets",
+        "D": "`tests/test_assignment2.py` and the starter files"
+      },
+      "answer": "A",
+      "explanation": "Four Python files only."
+    },
+    {
+      "id": "A2-Q47",
+      "sectionId": "A2",
+      "type": "mcq",
+      "stem": "`results/summary.csv` is:",
+      "choices": {
+        "A": "One of the four files required by the assignment brief",
+        "B": "The Fashion-MNIST training set",
+        "C": "Created by `train.py` before any experiment is run",
+        "D": "Created by `run_experiments.py` and used to draw the report figures; it is not a required upload"
+      },
+      "answer": "D",
+      "explanation": "Local experiment output, not a required upload."
+    },
+    {
+      "id": "A2-Q48",
+      "sectionId": "A2",
+      "type": "mcq",
+      "stem": "The console figures in the report are:",
+      "choices": {
+        "A": "Photographs of the marker's screen",
+        "B": "Matplotlib drawings of selected lines from the saved logs",
+        "C": "Copies of the training-history plots",
+        "D": "Output from sklearn"
+      },
+      "answer": "B",
+      "explanation": "Generated from log text, not a terminal capture."
+    },
+    {
+      "id": "A2-Q49",
+      "sectionId": "A2",
+      "type": "mcq",
+      "stem": "Appendix A tells a marker to reproduce the experiments by:",
+      "choices": {
+        "A": "Running the unit tests from the zip, which includes the `tests` folder",
+        "B": "Opening `results/summary.csv` from the zip",
+        "C": "Placing the four `.csv.gz` files in `data/` beside the scripts, then running `python run_experiments.py` and `python plot_results.py`",
+        "D": "Training only the linear model for one epoch"
+      },
+      "answer": "C",
+      "explanation": "Dataset in `data/`, then the two Python commands."
+    },
+    {
+      "id": "A2-Q50",
+      "sectionId": "A2",
+      "type": "mcq",
+      "stem": "If a residual three-layer model is constructed with unequal hidden widths, the constructor:",
+      "choices": {
+        "A": "True",
+        "B": "False",
+        "C": "Pads the smaller layer with zeros",
+        "D": "Uses softmax to make the shapes match ### A2-T01 True or false: the test set is used to choose which epoch is saved."
+      },
+      "answer": "A",
+      "explanation": "Residual addition requires equal hidden widths."
+    },
+    {
       "id": "L1-T01",
       "sectionId": "L1",
       "type": "tf",
@@ -7733,13 +8083,13 @@
       "id": "A2-T02",
       "sectionId": "A2",
       "type": "tf",
-      "stem": "Fashion-MNIST in this assignment has 2 classes.",
+      "stem": "The submitted training-history plot starts its x-axis at epoch 0.",
       "choices": {
         "T": "True",
         "F": "False"
       },
       "answer": "F",
-      "explanation": "There are ten Fashion-MNIST classes."
+      "explanation": "The submitted plot uses epoch numbers starting at 1. The stored best_epoch index is zero-based."
     },
     {
       "id": "A2-T03",
@@ -7757,13 +8107,13 @@
       "id": "A2-T04",
       "sectionId": "A2",
       "type": "tf",
-      "stem": "The required two-layer MLP is 784-30-30-10.",
+      "stem": "Learning rate 1.0 was totally unstable and produced NaN loss.",
       "choices": {
         "T": "True",
         "F": "False"
       },
       "answer": "F",
-      "explanation": "The two-layer MLP is 784-30-10 with a sigmoid hidden layer. 784-30-30-10 is the deeper net."
+      "explanation": "Rate 1.0 stayed finite but oscillated. Rates 10 and 100 produced NaN loss."
     },
     {
       "id": "A2-T05",
@@ -7781,13 +8131,13 @@
       "id": "A2-T06",
       "sectionId": "A2",
       "type": "tf",
-      "stem": "The test set is the right split on which to choose the final architecture.",
+      "stem": "The console figures in the report are screenshots captured from a terminal window.",
       "choices": {
         "T": "True",
         "F": "False"
       },
       "answer": "F",
-      "explanation": "Choose on validation. The test set is a final check, used once."
+      "explanation": "plot_results.py draws selected log lines with Matplotlib."
     },
     {
       "id": "A2-T07",
@@ -7811,31 +8161,31 @@
         "F": "False"
       },
       "answer": "F",
-      "explanation": "A residual add needs matching widths."
+      "explanation": "A residual add needs matching widths, or the constructor raises ValueError."
     },
     {
       "id": "A2-T09",
       "sectionId": "A2",
       "type": "tf",
-      "stem": "Autograd is used to differentiate the loss with respect to the parameters for the gradient step.",
+      "stem": "Reusing the default full-data two-layer run leaves 19 distinct experiment runs.",
       "choices": {
         "T": "True",
         "F": "False"
       },
       "answer": "T",
-      "explanation": "Autograd supplies the derivatives of the loss for the gradient update."
+      "explanation": "12 baseline runs, plus 4 extra learning rates, plus 3 extra batch sizes."
     },
     {
       "id": "A2-T10",
       "sectionId": "A2",
       "type": "tf",
-      "stem": "Choosing the model on the test set is preferred, because that is the number that will be reported.",
+      "stem": "The submitted code zip must include results/summary.csv.",
       "choices": {
         "T": "True",
         "F": "False"
       },
       "answer": "F",
-      "explanation": "Selecting on the test set biases the reported result. Validation is for selection."
+      "explanation": "The zip contains the four Python files. The CSV is created by run_experiments.py."
     }
   ]
 }
