@@ -277,10 +277,19 @@ function renderSetup() {
   });
   const nInput = app.querySelector("#sample-n");
   if (nInput) {
-    nInput.addEventListener("change", () => {
-      state.n = clampN(nInput.value, pool().length || 1);
+    const applyN = () => {
+      const availableNow = pool().length || 1;
+      state.n = clampN(nInput.value, availableNow);
+      nInput.value = String(state.n);
       saveSession();
-      render();
+    };
+    nInput.addEventListener("change", applyN);
+    nInput.addEventListener("keydown", (event) => {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        applyN();
+        startQuiz();
+      }
     });
   }
   app.querySelector("#start").addEventListener("click", startQuiz);
