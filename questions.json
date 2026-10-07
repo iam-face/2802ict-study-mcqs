@@ -332,13 +332,13 @@
       "type": "mcq",
       "stem": "According to the course assessment overview, the final exam weight and pass threshold stated are:",
       "choices": {
-        "A": "40%, at least 40 out of 100 points to pass the course",
+        "A": "40 marks for the exam, and at least 16 of those 40 (40 percent) to pass the course",
         "B": "30%, any mark passes",
         "C": "50%, open book only",
         "D": "20%, optional interview only"
       },
       "answer": "A",
-      "explanation": "Final exam 40%; need >=40/100 to pass course"
+      "explanation": "The exam is 40 marks. The hurdle is 40 percent of the exam, which is 16 marks."
     },
     {
       "id": "L1-Q18",
@@ -358,29 +358,29 @@
       "id": "L1-Q19",
       "sectionId": "L1",
       "type": "mcq",
-      "stem": "Plagiarism is described in the slides as which of the following?",
+      "stem": "Why is this course called Intelligent Systems rather than Artificial Intelligence?",
       "choices": {
-        "A": "Citing Russell and Norvig correctly",
-        "B": "Using PEAS to specify an agent",
-        "C": "Gaining credit for work that is not your property, idea, or work",
-        "D": "Expanding frontier nodes in BFS"
+        "A": "The content is robotics only, so the name AI could not be used",
+        "B": "During the AI winter the name AI had a poor reputation, so the course was titled differently. The content is still an introduction to AI",
+        "C": "Intelligent Systems means unsupervised learning only",
+        "D": "The name was changed in 2012, when AlexNet was published"
       },
-      "answer": "C",
-      "explanation": "Credit for others' work = plagiarism"
+      "answer": "B",
+      "explanation": "The AI winter made the name AI unpopular. The course is still an introduction to AI."
     },
     {
       "id": "L1-Q20",
       "sectionId": "L1",
       "type": "mcq",
-      "stem": "Recommended textbook for the course overview material is:",
+      "stem": "In this course, how does a textbook agent differ from an agentic system?",
       "choices": {
-        "A": "Goodfellow, Bengio, and Courville only",
-        "B": "Knuth, The Art of Computer Programming",
-        "C": "No textbook is recommended",
-        "D": "S. Russell and P. Norvig, Artificial Intelligence: A Modern Approach, 3rd Ed."
+        "A": "They are the same thing: any program with a PEAS description",
+        "B": "A textbook agent perceives and acts. Agentic, as he used the word, means a model that breaks a task into steps and calls tools",
+        "C": "A textbook agent is a language model, and an agentic system is a vacuum robot",
+        "D": "Agentic systems are the only agents that have sensors"
       },
-      "answer": "D",
-      "explanation": "AIMA Russell & Norvig 3rd Ed."
+      "answer": "B",
+      "explanation": "A textbook agent perceives and acts. Agentic means steps, tools, and revising its own work."
     },
     {
       "id": "L2-Q01",
@@ -526,15 +526,15 @@
       "id": "L2-Q11",
       "sectionId": "L2",
       "type": "mcq",
-      "stem": "BFS time and space complexity (standard slide summary) are both:",
+      "stem": "Which claim matches what was said about search in week 2?",
       "choices": {
-        "A": "O(bd) time and O(bd) space",
-        "B": "O(bm) time and O(bm) space",
-        "C": "O(1) time and O(n) space",
-        "D": "O(C*/epsilon) only"
+        "A": "The exam asks you to derive the time and space formulas from scratch",
+        "B": "Search matters only for mazes. Training a model is not a search problem",
+        "C": "Fitting a model is a search for parameters that reduce a loss, and you will not be asked to derive the complexity formulas",
+        "D": "The complexity bounds are not worth knowing, because search is unused after week 2"
       },
-      "answer": "A",
-      "explanation": "Time and space O(bd)"
+      "answer": "C",
+      "explanation": "Fitting a model is a search over parameters that reduce a loss. Know the bounds, such as BFS time and space O(b^d). Do not expect to derive them."
     },
     {
       "id": "L2-Q12",
@@ -904,15 +904,15 @@
       "id": "L3-Q18",
       "sectionId": "L3",
       "type": "mcq",
-      "stem": "For 8-puzzle with d = 12, typical nodes expanded in the slides are approximately:",
+      "stem": "From S the direct edge to the goal costs 5. The path S to A to the goal costs 1 + 3 = 4. The heuristic sets h(A) = 6, so f(A) = 7, while f on the direct goal is 5. What does A* do?",
       "choices": {
-        "A": "IDS 73; A*(h1) 227; A*(h2) 3,644,035",
-        "B": "All three expand exactly 12 nodes",
-        "C": "Only UCS expands fewer than A*",
-        "D": "IDS 3,644,035; A*(h1) 227; A*(h2) 73"
+        "A": "It returns the path of cost 4, because 4 is the true cheaper cost",
+        "B": "It expands the direct goal first and returns cost 5. The heuristic overestimated the remaining cost from A, which is really 3",
+        "C": "It refuses to expand either node until h is consistent",
+        "D": "It returns both paths and averages the costs"
       },
-      "answer": "D",
-      "explanation": "IDS huge; A* h2 fewest nodes"
+      "answer": "B",
+      "explanation": "A* returns cost 5. h(A) = 6 overestimates the true remaining cost, which is 3, so f(A) = 7 loses to the direct edge."
     },
     {
       "id": "L3-Q19",
@@ -932,15 +932,15 @@
       "id": "L3-Q20",
       "sectionId": "L3",
       "type": "mcq",
-      "stem": "IDA* reduces A* memory use by using a cutoff on:",
+      "stem": "The lecture's practical fix when an A* frontier grows to about a million nodes is to:",
       "choices": {
-        "A": "Depth only, never f-cost",
-        "B": "Learning rate eta",
-        "C": "Number of CSP variables n",
-        "D": "f-cost (rather than depth as in IDS)"
+        "A": "Keep every node, because dropping any node is required for optimality",
+        "B": "Keep only about the best 100 or 1000 nodes by smallest f, and drop the rest. This can lose completeness or optimality",
+        "C": "Change the cutoff from f to depth and call the result uniform-cost search",
+        "D": "Store only the goal and discard g"
       },
-      "answer": "D",
-      "explanation": "IDA* cuts off on f-cost"
+      "answer": "B",
+      "explanation": "Keep the best 100 or 1000 frontier nodes by smallest f. Dropping the rest can lose completeness or optimality."
     },
     {
       "id": "L4A-Q01",
@@ -1198,15 +1198,15 @@
       "id": "L4A-Q19",
       "sectionId": "L4A",
       "type": "mcq",
-      "stem": "Stochastic hill climbing, in the N-queens neighbourhood illustration, may:",
+      "stem": "Why introduce local search after A*, as the lecture framed it?",
       "choices": {
-        "A": "Pick 1 out of the neighbour states randomly (e.g., among 56)",
-        "B": "Always pick the globally best neighbour",
-        "C": "Use FIFO BFS expansion",
-        "D": "Require consistent heuristics"
+        "A": "A* is incomplete on every finite map, so it cannot be used",
+        "B": "Scoring every generated state fails when the frontier is huge. Local search looks only at neighbours, and completeness is what you give up",
+        "C": "Local search is optimal whenever A* is not",
+        "D": "Local search stores the whole path and the whole frontier"
       },
-      "answer": "A",
-      "explanation": "Random neighbour among candidates"
+      "answer": "B",
+      "explanation": "A huge frontier is what fails. Local search only scores neighbours, and completeness is the cost."
     },
     {
       "id": "L4A-Q20",
@@ -1492,15 +1492,15 @@
       "id": "L4B-Q20",
       "sectionId": "L4B",
       "type": "mcq",
-      "stem": "For n-queens with min-conflicts from a random start, the slides claim it can solve:",
+      "stem": "What did he say about MRV and arc consistency in the exam?",
       "choices": {
-        "A": "Only n <= 8",
-        "B": "Only tree-structured CSPs",
-        "C": "Almost constant time for arbitrary n with high probability (e.g., n = 10,000,000)",
-        "D": "Never more than 25 queens"
+        "A": "You must recite the algorithms word for word. The definitions will not be printed",
+        "B": "If a question needs MRV, the definition will be on the paper. Know what the heuristic is for, not a memorised script",
+        "C": "MRV is not in this course",
+        "D": "Arc consistency is the same algorithm as A*"
       },
-      "answer": "C",
-      "explanation": "Scales to huge n with high probability"
+      "answer": "B",
+      "explanation": "The definition will be printed. MRV picks the variable with the fewest legal values. Degree breaks ties. LCV orders the values."
     },
     {
       "id": "L5-Q01",
@@ -2038,29 +2038,29 @@
       "id": "L6-Q19",
       "sectionId": "L6",
       "type": "mcq",
-      "stem": "Softmax regression is used for:",
+      "stem": "Which account of softmax and of the image datasets matches the lecture?",
       "choices": {
-        "A": "Pure continuous regression with one real output only",
-        "B": "Map colouring with three colours only",
-        "C": "Uninformed DFS",
-        "D": "Multi-class classification; softmax gives class probabilities; cross-entropy loss"
+        "A": "Softmax is for one continuous output, and ImageNet is a 10-class linear problem",
+        "B": "Softmax is used for map colouring",
+        "C": "This course develops convolutional nets for ImageNet and does not use softmax",
+        "D": "Softmax is for several classes, with cross-entropy. MNIST and Fashion-MNIST have 10 classes. ImageNet, about 1000 classes, was his example of a problem that wants a convolutional net, which this course does not develop"
       },
       "answer": "D",
-      "explanation": "Multi-class probs via softmax + CE"
+      "explanation": "Softmax plus cross-entropy is the multi-class head. MNIST and Fashion-MNIST are 10 classes. ImageNet, about 1000 classes, was the convolutional-net example, and that architecture is not developed here. Recurrent nets were the matching remark for language."
     },
     {
       "id": "L6-Q20",
       "sectionId": "L6",
       "type": "mcq",
-      "stem": "In multi-class scoring without calibrated probabilities, a simple decision rule is:",
+      "stem": "The training set is not linearly separable. What did the lecture say about still running the perceptron?",
       "choices": {
-        "A": "Always pick class 0",
-        "B": "Expand shallowest node",
-        "C": "Minimise attacking pairs only",
-        "D": "Predicted class = argmax_i (o_i) (largest output wins)"
+        "A": "The convergence theorem still promises a unique best line within one pass",
+        "B": "You can run the update with a step limit, such as 100 steps. You may get a usable line, and you do not get a guarantee",
+        "C": "The update is illegal unless the data are separable",
+        "D": "Non-separable data should be solved with uniform-cost search"
       },
-      "answer": "D",
-      "explanation": "Argmax over class scores"
+      "answer": "B",
+      "explanation": "If the data are not separable, cap the updates, for example at about 100 steps. There is no guarantee of a best line."
     },
     {
       "id": "L7-Q01",
@@ -2206,21 +2206,21 @@
       "id": "L7-Q11",
       "sectionId": "L7",
       "type": "mcq",
-      "stem": "In the worked BP example, the training example is given as which input (with target)?",
+      "stem": "When you back-propagate, in what order do you use the weights?",
       "choices": {
-        "A": "(0, 1, 0, 1)",
-        "B": "(1, 1, 0, 0)",
-        "C": "(0, 0, 1, 1)",
-        "D": "(1, 0, 1, 1)"
+        "A": "Overwrite each weight as soon as its delta is known, then use the new weight for the units behind it",
+        "B": "Update the first layer first, then send the error backward",
+        "C": "Skip the deltas and change every weight by the learning rate alone",
+        "D": "Compute the deltas from the weights used on the forward pass, then change the weights. A hidden unit inherits its delta from the units it feeds"
       },
       "answer": "D",
-      "explanation": "Training example (1, 0, 1, 1)."
+      "explanation": "Compute deltas from the forward-pass weights, then change the weights. A hidden delta is inherited from the units it feeds."
     },
     {
       "id": "L7-Q12",
       "sectionId": "L7",
       "type": "mcq",
-      "stem": "In that example, the net input (weighted sum) into hidden unit 4 is:",
+      "stem": "In the lecture's worked backprop example, the net input (weighted sum) into hidden unit 4 is:",
       "choices": {
         "A": "-0.3",
         "B": "0.2",
@@ -2248,29 +2248,29 @@
       "id": "L7-Q14",
       "sectionId": "L7",
       "type": "mcq",
-      "stem": "For unit 5 in the same example, the weighted sum and squash output are:",
+      "stem": "What did the lecture say a hidden unit does, and why a feed-forward net is a poor fit for a long sentence?",
       "choices": {
-        "A": "-0.3 and 0.574",
-        "B": "0.11 and 0.527",
-        "C": "-0.1 and 0.525",
-        "D": "0.2 and 0.450"
+        "A": "Each hidden unit must be given a name you can interpret, or the layer is invalid. A feed-forward net is the right model for a long sentence",
+        "B": "Hidden units only copy the input. Recurrent nets are developed in full in this lecture",
+        "C": "You often cannot name a hidden unit. It remaps the inputs so a later linear cut can work. Early tokens can disappear in a deep feed-forward stack. Recurrent nets were the contrast, and they are not developed here",
+        "D": "OR and XOR are both impossible once a hidden layer is added"
       },
       "answer": "C",
-      "explanation": "Unit 5: -0.1 then y5 approx 0.525."
+      "explanation": "A hidden unit remaps inputs even if you cannot name it. A feed-forward stack can lose early tokens. Recurrent nets were named and not developed."
     },
     {
       "id": "L7-Q15",
       "sectionId": "L7",
       "type": "mcq",
-      "stem": "For output unit 6, the lecture gives weighted sum 0.11 and squash output approximately:",
+      "stem": "Boolean OR on two bits, compared with XOR:",
       "choices": {
-        "A": "0.574",
-        "B": "0.525",
-        "C": "0.527",
-        "D": "0.110"
+        "A": "Neither pattern can be separated by one straight line",
+        "B": "OR can be separated by one straight line. XOR cannot, which is why a hidden layer is introduced",
+        "C": "XOR can be separated by one line, and OR cannot",
+        "D": "Both become separable once a single perceptron is given a bias term"
       },
-      "answer": "C",
-      "explanation": "Unit 6: sum 0.11, y6 approx 0.527."
+      "answer": "B",
+      "explanation": "OR is linearly separable. XOR is not, so a hidden layer is introduced."
     },
     {
       "id": "L7-Q16",
@@ -2332,15 +2332,15 @@
       "id": "L7-Q20",
       "sectionId": "L7",
       "type": "mcq",
-      "stem": "In the voice-recognition MLP sketch, the architecture listed is:",
+      "stem": "Why did the lecture prefer ReLU in a large network, and what is tanh?",
       "choices": {
-        "A": "2 inputs, 60 hidden, 6 outputs",
-        "B": "60 inputs, 6 hidden, 2 outputs",
-        "C": "6 inputs, 2 hidden, 60 outputs",
-        "D": "4 inputs, 5 hidden, 3 outputs"
+        "A": "ReLU is an exponential, so it is cheaper than a comparison. Tanh outputs probabilities that sum to 1",
+        "B": "ReLU is max(0, z), so it is a comparison and is cheap next to a sigmoid. Tanh is an S-shape with outputs in (-1, 1)",
+        "C": "ReLU and tanh are regularisers, not activation functions",
+        "D": "Tanh is max(0, z), and ReLU is used only as the loss"
       },
       "answer": "B",
-      "explanation": "60-6-2 voice network architecture."
+      "explanation": "ReLU is max(0, z), a comparison, so it is cheap next to a sigmoid. Tanh outputs in (-1, 1)."
     },
     {
       "id": "L8-Q01",
@@ -2612,15 +2612,15 @@
       "id": "L8-Q20",
       "sectionId": "L8",
       "type": "mcq",
-      "stem": "In some cases it is easier to learn a residual than the full mapping. The lecture phrases this as preferring to learn:",
+      "stem": "What was the lecture's reason for a residual connection?",
       "choices": {
-        "A": "only the bias terms and freeze all weights",
-        "B": "H(x) - x rather than H(x) itself (then recover H via the residual form)",
-        "C": "a linear separator for XOR in one layer",
-        "D": "the full joint distribution of all weights"
+        "A": "It is one of the four regularisers, and it helps most on a net with only two hidden layers",
+        "B": "Each layer remaps its input, so early information can disappear. The skip keeps a copy. A shallow net may not need it, and the skip is not itself regularisation",
+        "C": "It replaces the activation and guarantees a lower training error on every epoch",
+        "D": "It stores the A* frontier"
       },
       "answer": "B",
-      "explanation": "Easier to learn residual H(x)-x than H(x) in some cases."
+      "explanation": "A deep stack can lose early detail. The skip keeps a copy. A shallow net may not need it, and the skip is not regularisation."
     },
     {
       "id": "L9-Q01",
@@ -2780,15 +2780,15 @@
       "id": "L9-Q12",
       "sectionId": "L9",
       "type": "mcq",
-      "stem": "In the classification-error example with root Credit predicting the majority class Safe, the root error is:",
+      "stem": "How does classification error choose an attribute, as opposed to information gain?",
       "choices": {
-        "A": "4/22 = 0.18",
-        "B": "18/22 = 0.45",
-        "C": "11/22 = 0.50",
-        "D": "22/22 = 1.00"
+        "A": "Label each child with its majority class, count the mistakes, divide by the number of rows, and pick the smallest error. Information gain instead picks the largest gain",
+        "B": "Pick the attribute with the largest classification error",
+        "C": "The two scores always select the same attribute, so either formula should be memorised",
+        "D": "Classification error is the parent entropy minus the weighted child entropies"
       },
-      "answer": "B",
-      "explanation": "Root error 18/22 = 0.45."
+      "answer": "A",
+      "explanation": "Majority label on each child, mistakes over the number of rows, pick the smallest error. Information gain picks the largest gain, and ID3 uses gain."
     },
     {
       "id": "L9-Q13",
@@ -2892,15 +2892,15 @@
       "id": "L9-Q20",
       "sectionId": "L9",
       "type": "mcq",
-      "stem": "The IMPORTANCE function in the DT learning algorithm selects:",
+      "stem": "What did he say to do about missing values in a decision-tree data set?",
       "choices": {
-        "A": "a random unused attribute",
-        "B": "the most important / most significant attribute for the split",
-        "C": "the attribute with the largest domain only",
-        "D": "the leaf plurality value"
+        "A": "Missing values make ID3 undefined, so the algorithm cannot run",
+        "B": "Drop the incomplete rows, or fill them in when dropping would throw away too much of the set",
+        "C": "Treat every missing value as a new class and split on it first",
+        "D": "Ignore them, because a classification tree requires a continuous target"
       },
       "answer": "B",
-      "explanation": "IMPORTANCE picks the most significant attribute."
+      "explanation": "Drop incomplete rows, or fill them when dropping would throw away too much."
     },
     {
       "id": "L10-Q01",
@@ -3144,15 +3144,15 @@
       "id": "L10-Q18",
       "sectionId": "L10",
       "type": "mcq",
-      "stem": "Inference by enumeration for P(B | j, m) is written in the lecture as proportional to:",
+      "stem": "P(B | j, m) asks for a cause given evidence further down the network. He called that the hard direction. The lecture writes the query as proportional to:",
       "choices": {
         "A": "P(B) alone",
         "B": "P(j) P(m) with B ignored",
-        "C": "sum over e,a of P(B, e, a, j, m)",
-        "D": "the VC-dimension of the Alarm graph"
+        "C": "sum over e, a of P(B, e, a, j, m)",
+        "D": "the VC-dimension of the alarm graph"
       },
       "answer": "C",
-      "explanation": "Enumerate by summing joint factors over e,a."
+      "explanation": "The query runs against the arrows, which is the hard direction. Enumerate by summing the joint factors over e and a."
     },
     {
       "id": "L10-Q19",
@@ -3312,15 +3312,15 @@
       "id": "L11-Q10",
       "sectionId": "L11",
       "type": "mcq",
-      "stem": "A listed weakness of direct evaluation is that:",
+      "stem": "In the four-episode direct-evaluation example, the averaged returns were:",
       "choices": {
-        "A": "it requires exact knowledge of T",
-        "B": "it wastes information about connections between states; each state is learned separately",
-        "C": "it cannot use sample transitions at all",
-        "D": "it always diverges when gamma = 1"
+        "A": "8 from B, and 4 from C. The returns from C were 9, 9, 9, and -11",
+        "B": "4 from B, and 8 from C",
+        "C": "0 from both, because each state is copied from its successor",
+        "D": "10 from both, which is the exit reward"
       },
-      "answer": "B",
-      "explanation": "Ignores state structure; slow separate learning."
+      "answer": "A",
+      "explanation": "Returns from B average to 8. Returns from C are 9, 9, 9, and -11, which average to 4. Each state is averaged on its own."
     },
     {
       "id": "L11-Q11",
@@ -3340,15 +3340,15 @@
       "id": "L11-Q12",
       "sectionId": "L11",
       "type": "mcq",
-      "stem": "In the TD example with gamma = 1 and alpha = 1/2, after transition B,east,C with reward -2 (starting from zeros), V(B) becomes:",
+      "stem": "A plan and a policy differ because:",
       "choices": {
-        "A": "0",
-        "B": "-2",
-        "C": "8",
-        "D": "-1"
+        "A": "A plan is one sequence of actions. A policy says which action to take in every state, including a state you reach by slipping",
+        "B": "A plan maps every state to an action, and a policy is one fixed sequence",
+        "C": "They are two names for the same object",
+        "D": "A policy cannot be used inside an MDP"
       },
-      "answer": "D",
-      "explanation": "With alpha=1/2, gamma=1, V(B) <- 0.5*(-2 + 0) = -1."
+      "answer": "A",
+      "explanation": "A plan is one action sequence. A policy names an action in every state, including states a slip can reach."
     },
     {
       "id": "L11-Q13",
@@ -3438,29 +3438,29 @@
       "id": "L11-Q19",
       "sectionId": "L11",
       "type": "mcq",
-      "stem": "Regret measures:",
+      "stem": "When the policy, the transitions, and the rewards are known, what comes before temporal difference?",
       "choices": {
-        "A": "the total mistake cost versus acting optimally throughout (including youthful suboptimality)",
-        "B": "only the final policy's training loss",
-        "C": "the size of the Q-table",
-        "D": "the number of residual connections in the network"
+        "A": "Average sampled returns, and do not use T",
+        "B": "Start from V = 0 and repeatedly apply the one-step expected backup. He called this the Bellman update. Temporal difference replaces that expectation with one sample when T is unknown",
+        "C": "Skip values and call tools, which is the agentic setting from week 1",
+        "D": "Set every unseen transition probability to 1"
       },
-      "answer": "A",
-      "explanation": "Cumulative cost of mistakes vs always-optimal rewards."
+      "answer": "B",
+      "explanation": "With known policy, T, and R, start at V = 0 and repeat the one-step Bellman backup. Temporal difference is the one-sample version used when T is unknown."
     },
     {
       "id": "L11-Q20",
       "sectionId": "L11",
       "type": "mcq",
-      "stem": "Approximate Q-learning with linear features adjusts weights so that unexpected outcomes:",
+      "stem": "Why did he say an MDP is not just another Bayes net?",
       "choices": {
-        "A": "are ignored unless the exact state was seen before",
-        "B": "require storing a full Q-table for every Pacman screen",
-        "C": "replace rewards with supervised labels from ID3",
-        "D": "blame/credit active features, generalising to similar states"
+        "A": "A Bayes net already chooses actions, so an MDP adds nothing",
+        "B": "An MDP cannot represent uncertainty, while a Bayes net can",
+        "C": "They are the same graph. The only difference is the name",
+        "D": "A Bayes net is for uncertain variables. It is not the picture for what happens if you act. That dynamics, repeated over time, is what an MDP is for"
       },
       "answer": "D",
-      "explanation": "Feature weights generalise experience across similar states."
+      "explanation": "A Bayes net is for uncertain variables, not for action dynamics repeated over time."
     },
     {
       "id": "Lab5-Q01",
@@ -6193,6 +6193,20 @@
       "explanation": "Shattering three points in general position, and failing on an XOR labelling of four points, is the VC-dimension-3 fact for a planar perceptron. It is not a recipe for setting the learning rate."
     },
     {
+      "id": "EX-Q21",
+      "sectionId": "EX",
+      "type": "mcq",
+      "stem": "In Assignment 1, `revise(x, y)` makes `x` arc-consistent with `y`. Which contract matches the function you were asked to write?",
+      "choices": {
+        "A": "It returns a new domain for `x` and leaves `self.domains[x]` unchanged",
+        "B": "It removes unsupported values from `self.domains[x]` in place, and returns true if at least one value was removed and false if the domain was unchanged",
+        "C": "It removes unsupported values from `y`, and returns the number of values deleted",
+        "D": "It returns true only when the domain of `x` becomes empty"
+      },
+      "answer": "B",
+      "explanation": "`revise` deletes unsupported values from the domain of `x` in place. It returns true when that domain changed and false when it did not. AC-3 uses the boolean to decide whether neighbouring arcs go back on the queue."
+    },
+    {
       "id": "L1-T01",
       "sectionId": "L1",
       "type": "tf",
@@ -6292,13 +6306,13 @@
       "id": "L1-T09",
       "sectionId": "L1",
       "type": "tf",
-      "stem": "The term Artificial Intelligence was officially adopted at IBM in 1997.",
+      "stem": "The term Artificial Intelligence was adopted at IBM in 1997, and the lecture's 2012 break was that same symbolic result.",
       "choices": {
         "T": "True",
         "F": "False"
       },
       "answer": "F",
-      "explanation": "The term was adopted at the 1956 Dartmouth meeting. 1997 is Deep Blue."
+      "explanation": "Dartmouth 1956: McCarthy and about ten researchers. Two camps were already there, symbolic and connectionist. Winters he named: UK funding around 1973, and the Fifth Generation around 1987-88. The 2012 break was AlexNet, a convolutional net from Hinton's group. 1997 is Deep Blue."
     },
     {
       "id": "L1-T10",
@@ -6616,13 +6630,13 @@
       "id": "L4A-T06",
       "sectionId": "L4A",
       "type": "tf",
-      "stem": "Simulated annealing is worked through in detail in this lecture.",
+      "stem": "Simulated annealing and beam search are developed in full in this lecture.",
       "choices": {
         "T": "True",
         "F": "False"
       },
       "answer": "F",
-      "explanation": "Simulated annealing is named and explicitly not taught in detail."
+      "explanation": "Simulated annealing and beam search were named and deferred. They are not taught later."
     },
     {
       "id": "L4A-T07",
@@ -7018,7 +7032,7 @@
         "F": "False"
       },
       "answer": "T",
-      "explanation": "The convergence theorem needs linear separability."
+      "explanation": "The convergence theorem needs linear separability. If the data are not separable, cap the steps, for example at about 100. There is no guarantee."
     },
     {
       "id": "L6-T10",
@@ -7096,13 +7110,13 @@
       "id": "L7-T06",
       "sectionId": "L7",
       "type": "tf",
-      "stem": "The voice-recognition sketch uses 6 inputs, 60 hidden units, and 2 outputs.",
+      "stem": "Passing this course requires you to derive the chain-rule formula for every weight by hand.",
       "choices": {
         "T": "True",
         "F": "False"
       },
       "answer": "F",
-      "explanation": "The sketch is 60 inputs, 6 hidden units, and 2 outputs."
+      "explanation": "Know the update. Deriving the chain rule for every weight is not required in order to pass. Assignment 2 may use automatic gradients."
     },
     {
       "id": "L7-T07",
@@ -7384,13 +7398,13 @@
       "id": "L9-T10",
       "sectionId": "L9",
       "type": "tf",
-      "stem": "Continuous numeric outputs are the ordinary target for the classification trees in this lecture.",
+      "stem": "A decision tree is harder to read than a deep network, and it scales further on a very large data set.",
       "choices": {
         "T": "True",
         "F": "False"
       },
       "answer": "F",
-      "explanation": "Continuous outputs take the method outside ordinary classification trees."
+      "explanation": "A tree can be read as rules. That is the advantage. It does not scale like deep learning on a very large set."
     },
     {
       "id": "L10-T01",
@@ -7504,13 +7518,13 @@
       "id": "L10-T10",
       "sectionId": "L10",
       "type": "tf",
-      "stem": "Exact inference by enumerating the hidden variables is linear in the number of variables for every network.",
+      "stem": "A graph with a directed cycle is still a Bayes net, and the cycle keeps the joint as compact as an acyclic net.",
       "choices": {
         "T": "True",
         "F": "False"
       },
       "answer": "F",
-      "explanation": "The naive sum has exponentially many terms. A tree of local causes is the case that stays small."
+      "explanation": "A directed cycle is not a Bayes net in the useful sense. The joint is not simplified."
     },
     {
       "id": "L11-T01",
@@ -7600,13 +7614,13 @@
       "id": "L11-T08",
       "sectionId": "L11",
       "type": "tf",
-      "stem": "Epsilon-greedy with a high fixed epsilon stops taking random actions once the values have settled.",
+      "stem": "If a fixed policy never samples a transition, the learned model sets that probability to 1.",
       "choices": {
         "T": "True",
         "F": "False"
       },
       "answer": "F",
-      "explanation": "A high fixed epsilon keeps acting at random after the values are known. Lower it over time."
+      "explanation": "No count means you cannot estimate that transition. Treat it as unseen."
     },
     {
       "id": "L11-T09",
@@ -8711,6 +8725,30 @@
       },
       "answer": "F",
       "explanation": "With gamma = 1 the sum 1 + 1 + 1 + ... does not converge. The closed form 1 / (1 - gamma) needs gamma < 1."
+    },
+    {
+      "id": "EX-T21",
+      "sectionId": "EX",
+      "type": "tf",
+      "stem": "If an information-gain calculation appears on the exam, it is a simple case and the entropy and gain formulas are given. You are not expected to memorise those formulas or to compute a large table.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "He said a gain calculation, if one appears, is simple and the formula is supplied. Memorising the formula is not the task."
+    },
+    {
+      "id": "EX-T22",
+      "sectionId": "EX",
+      "type": "tf",
+      "stem": "A Bayes-net probability is marked down when the value is correct but the working uses a longer expansion than the shortest factorisation.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "He said a correct value from a correct expansion is full marks. A shorter factorisation is encouraged and is not required."
     }
   ]
 }

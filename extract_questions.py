@@ -281,8 +281,8 @@ def parse_exam_tf(text: str) -> list[dict]:
             continue
         answers[match.group(1)] = (match.group(2), match.group(3).strip())
 
-    if len(questions) != 20:
-        raise SystemExit(f"Exam drill has {len(questions)} true/false items, expected 20")
+    if len(questions) != 22:
+        raise SystemExit(f"Exam drill has {len(questions)} true/false items, expected 22")
 
     for question in questions:
         found = answers.get(question["id"])
@@ -296,8 +296,8 @@ def parse_exam_tf(text: str) -> list[dict]:
         raise SystemExit(f"Exam true/false answers without questions: {sorted(extra)}")
 
     trues = sum(1 for question in questions if question["answer"] == "T")
-    if trues != 10:
-        raise SystemExit(f"Exam true/false balance is {trues} true and {20 - trues} false")
+    if trues != 11:
+        raise SystemExit(f"Exam true/false balance is {trues} true and {len(questions) - trues} false")
     return questions
 
 

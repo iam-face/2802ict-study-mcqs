@@ -1,6 +1,6 @@
 # 2802ICT Intelligent Systems: Lecture Study Guide
 
-These notes follow the lecture PDFs and the lab solutions in this folder. They are written so you can learn the idea, not only recognise the name. Pair them with the [quiz](Study%20MCQs.md) when you want to test recall.
+These notes follow the lecture PDFs, the spoken lectures, and the lab solutions in this folder. They are written so you can learn the idea, not only recognise the name. Pair them with the [quiz](Study%20MCQs.md) when you want to test recall.
 
 Textbook: Russell and Norvig, *Artificial Intelligence: A Modern Approach*, 3rd edition.
 
@@ -19,6 +19,7 @@ Lecture numbers below match the PDF titles. Week 1's tentative timetable put dec
 ## Contents
 
 - [Course map](#course-map)
+- [What he said about the exam](#what-he-said-about-the-exam)
 - [Search algorithms at a glance](#search-algorithms-at-a-glance)
 - [Learning tasks at a glance](#learning-tasks-at-a-glance)
 - [Lecture 1: Introduction and agents](#lecture-1-introduction-and-agents)
@@ -50,9 +51,34 @@ Lecture numbers below match the PDF titles. Week 1's tentative timetable put dec
 | 10 | 10 | Probability and Bayes nets |  | None |
 | 11 | 11 | MDPs and Q-learning |  | None |
 
-From the week 1 slides: Assignment 1 and Assignment 2 are 30% each. The final exam is 40%, closed book, and you need at least 40/100 on the exam to pass the course. The exam window on the slides is 15-24 October 2026. Late work loses 5% per day for up to 7 days, unless an extension is granted.
+From the week 1 lecture: each assignment is 30 marks, and the final exam is 40 marks. Late work loses 5% per day for up to 7 days, unless an extension is granted. The week 1 slides put the exam window at 15-24 October 2026. In week 10 he said most students sit on 19 October, with different start times, and that the slot is booked in ProctorU.
 
 The course has two strands, and the lectures follow them in order. Weeks 1 to 4 are classical AI: you write the rules and the program searches. Weeks 5 to 11 are learning: you give examples, or rewards, and the program finds the rule.
+
+## What he said about the exam
+
+This is from the spoken lectures, mainly weeks 9, 10, and 11, while he had the sample paper and the exam system on screen. The sample paper shows the shape of the questions. It does not show which topics will appear. A search question on the sample may be a machine learning question on the real paper.
+
+The paper:
+
+- 40 marks. The hurdle is 40% of the exam. He worked that out as 16 marks. Below 16/40 you do not pass the course, whatever the assignments scored.
+- 2 hours, plus 10 minutes of reading. You may write during the reading. Treat the sitting as 2 hours 10 minutes.
+- 22 questions: 10 true/false, 10 multiple choice, and 2 longer answers. He said that is enough time.
+- Strict closed book, and proctored online. He first told a student that no notes were allowed. He then checked the system and said one blank sheet is allowed for notes. The exam office sets the time. He writes the questions.
+
+Where the questions come from, in his words: the lecture examples, the weekly exercises, and the lab exercises. There may also be a multiple-choice question about what an assignment function does. The example he read out was Assignment 1 `revise(x, y)`: it deletes unsupported values from the domain of `x` in place, and it returns true if that domain changed and false if it did not. He said that if you wrote the assignments yourself, that style of question is manageable. Most questions are not programming.
+
+What he said you do not have to memorise:
+
+- Time and space complexity. He told the class, while on uniform-cost search, that you will not be asked to derive those bounds. Knowing what the bound means is enough.
+- The exact wording of arc consistency, MRV, and the degree heuristic. If a question needs MRV, the definition will be printed on the paper. Know what each heuristic is for.
+- The information-gain formula. A calculation, if one appears, will be a simple case and the formula will be given. Do not memorise it. Understand what a larger gain means.
+- The chain-rule derivation of back-propagation. He said that if your aim is to pass, you need the idea of the update, not the calculus. Assignment 2 is allowed to use automatic gradients.
+- A shortest Bayes-net factorisation. A correct probability from a correct expansion scores fully even if a shorter factorisation exists. There is no penalty for the longer correct method.
+
+Week 11 is on the paper. He said twice that reinforcement learning is no more than about 4 marks, and that the question will be relatively simple. Transformers, and the deeper network material he pointed at 3008ICT, are not in this course.
+
+His own pass advice from week 1: the textbook is for depth. The course site notes, short videos, weekly exercises, labs, and the assignments are what he said are enough if the aim is to pass.
 
 ## Search algorithms at a glance
 
@@ -92,7 +118,7 @@ Ask two questions of any problem. "Do I have the right answer for each example?"
 | --- | --- | --- | --- |
 | Classification | Yes | Discrete class | Loan default, rain or no rain, digit recognition |
 | Regression | Yes | Continuous number | House price, energy use in kWh |
-| Clustering | No | Groups | Essay grouping, viewer segments |
+| Clustering | No | Groups | Essay grouping, viewer segments. Separating voices in a mixed recording is unsupervised too, and it is not clustering |
 | Association rules | No predefined class | Co-occurrence rules | `{onions, potatoes} => {burger}` |
 | Semi-supervised | A few labels, many unlabelled | Usually a class | Pseudo-labelling, medical images |
 | Reinforcement learning | No input-output pairs | A policy | Delayed reward, credit assignment |
@@ -130,7 +156,8 @@ The four dimensions come from two questions. Does the system **think** or **act*
 
 Milestones the slides want you to attach to a technique:
 
-- 1956, Dartmouth College: the name Artificial Intelligence is adopted. This is the birth label, not a technical result.
+- 1956, Dartmouth College: John McCarthy gathered about ten researchers, partly to make a funding case. They were still arguing what "intelligence" meant. The name Artificial Intelligence was the label for the aim, not a technical result. Two camps were already there: symbolic or logical AI, and connectionism.
+- After that, symbolic AI dominated, then funding collapsed. He cited UK support withdrawn around 1973, and Japan's Fifth Generation project failing around 1987-88. Those are the AI winters. A statistical period followed and still struggled with large unstructured data. The break he named was 2012: AlexNet, a convolutional net from Hinton's group, lifted computer vision, and deep learning then took over vision and language.
 - 1997, Deep Blue beats Kasparov: search, not learning.
 - 2016, AlphaGo beats Lee Sedol: deep reinforcement learning. The Go state space on the slide is about `10^170`, which is why brute-force search is hopeless and learning a policy matters.
 - 2021-2026 on the slides, in order: generative models (DALL-E, ChatGPT, GPT-4, Sora), then reasoning models (o3, DeepSeek R1), then agentic systems that break a long task into steps, call tools, and revise their own work. You do not need the product names beyond being able to place "search", "deep RL", and "agents" on the timeline.
@@ -146,6 +173,8 @@ An **agent** is anything that senses an environment and acts on it. The slide eq
 - Architecture is the body: processors, cameras, wheels, power.
 - Program is the software that computes the agent function.
 - The agent function is the mapping from what has been perceived to the action to take now.
+
+That textbook meaning is old. "Agentic" on the later slides is a different use of the same word: a model that splits a long task into steps, calls tools, and revises its own work. Do not answer a PEAS question with a chatbot product name, and do not answer an agentic-systems question with "anything that has sensors."
 
 A **state** is a complete snapshot of the agent and the world together. If your state leaves out "is the door open?", no algorithm can plan around the door. The representation is a ceiling on what the system can do. Choose the smallest state that still contains everything the decision depends on. That idea returns in search (week 2) and in approximate Q-learning (week 11), where a state is replaced by a few features.
 
@@ -164,6 +193,8 @@ Sensors take the world in. Actuators push the world out.
 Shopping agent, so you have a second example that is not a robot: performance is price, quality, recommendation quality, and speed. Environment is websites, shops, and shipping APIs. Actuators are form fills, redirects, and checkout requests. Sensors are HTML, scripts, JSON, and page layout.
 
 When you write PEAS, performance measures must be things you could score. "Be intelligent" is not a performance measure. "Reach the destination without a collision" is.
+
+The course is called Intelligent Systems, not Artificial Intelligence, for a reason he gave in week 1. During the AI winter, roughly twenty years before this course was designed, people avoided the name AI because the field had promised more than it had delivered. Computer vision and language people would say they were not doing AI. The name Intelligent Systems is that older label. The content is an introduction to AI. The winter is over in the sense that everyone now claims the name, but the course title was not renamed.
 
 ### Memory hooks
 
@@ -188,6 +219,8 @@ Reading: AIMA Chapter 3, pages 64-91. No lab solution in this folder. Assignment
 You are in a building you have never seen. You know the room you started in, you can try doors, and you will recognise the exit when you enter it. You do not have a map and you do not have a hint about which corridor is "toward" the exit. That absence of a hint is what "uninformed" means. The only choice left is the order in which you open doors.
 
 Solving the problem is three jobs, in order: formulate it (turn the story into states and actions), search (find a sequence of actions), execute (actually do them). In this course, one solution is enough when a solution exists. Optimal means the cheapest of those solutions, and only some algorithms promise that.
+
+He answered "why learn search if we have language models?" in this lecture. Training a model is defining a loss and hunting for parameters that make it small. That hunt is search over candidate settings. The algorithms in this week are not only for mazes.
 
 ### Need to know
 
@@ -247,6 +280,8 @@ UCS is complete if every step costs at least some `epsilon > 0`. Without that, a
 
 The summary on the slides is worth memorising as advice, not as a theorem. Formulate by throwing away real-world detail until the state space can actually be searched. Prefer BFS when solutions are short. Prefer DFS when many solutions exist. Prefer iterative deepening when you want a shallow solution and you cannot store the BFS frontier.
 
+He answered a direct question in this lecture: you do not have to derive the time or space complexity of these algorithms in the exam. The bounds above are there so you can compare the algorithms. You are not asked to produce the formulas from scratch.
+
 ### Memory hooks
 
 - Five parts: "Where do I start, what can I do, where does that land me, how do I know I am done, what did it cost?"
@@ -291,6 +326,8 @@ Greedy is not optimal. The slides' numbers: Arad-Sibiu-Fagaras-Bucharest is 450 
 
 A* is not automatically optimal. If `h` says "almost there" and the truth is "still a long way", A* may commit to a bad path and announce success too soon. The repair is a restriction on `h`.
 
+His worked counterexample: from `S` there is a direct edge to the goal costing 5, and a path `S` to `A` to the goal costing `1 + 3 = 4`. The heuristic puts `h(A) = 6`, so `f(A) = 1 + 6 = 7`, while `f` on the direct goal is `5 + 0 = 5`. A* expands the direct goal first, stops, and returns cost 5. The cheaper path is still sitting there. The true remaining cost from `A` is 3, and 6 overestimates it. That is the whole point of admissibility.
+
 **Admissible** means `h(n) <= h*(n)` for every node, where `h*(n)` is the true cheapest cost from `n` to a goal. The guess never overestimates. It is optimistic: it may think the goal is closer than it is, but it never thinks the goal is farther than it is. Straight-line distance is admissible because a road cannot be shorter than the straight line. Theorem from the slides: if `h` is admissible, A* **tree search** (no repeated-state check) is optimal. Admissibility is not enough once you start deleting repeated states. Graph search can close off a state along a path whose `f` looked good only because of an inconsistent guess, and then refuse the better path when it arrives.
 
 **Consistent** (also called monotonic) is the stronger condition. For every node `n` and every successor `n'`:
@@ -319,7 +356,7 @@ Why is the relaxed cost admissible? Any legal solution of the real puzzle is als
 
 A* with the weaker heuristic still crushes iterative deepening. The stronger heuristic crushes the weaker one. "It all depends on `h` and the shape of the space" is the slide's conclusion.
 
-Memory is A*'s practical failure. Three names, and the slides point the detail at AIMA section 3.5.3:
+Memory is A*'s practical failure. He walked a fix in the lecture before naming the textbook variants: if the frontier reaches about a million nodes, keep only the 100 or 1000 with the smallest `f` and drop the rest. You can raise that cap the way iterative deepening raises a depth limit, except the limit is frontier size, not depth. The trade-off is the one he stated: you may lose completeness or optimality. Three names, and the slides point the detail at AIMA section 3.5.3:
 
 - IDA* is iterative deepening with a cutoff on `f`, not on depth.
 - RBFS is recursive best-first search.
@@ -350,7 +387,7 @@ Reading: AIMA Chapter 4, pages 120-129. No lab solution in this folder. Assignme
 
 ### How to picture it
 
-Weeks 2 and 3 hunt for a path. This week often does not care about the path at all. For 8 queens, the answer is a board where no two queens attack. Nobody asks which queen you moved first. That is local search: walk from configuration to configuration, keep the one with the best score, and throw the route away.
+Weeks 2 and 3 hunt for a path. This week often does not care about the path at all. For 8 queens, the answer is a board where no two queens attack. Nobody asks which queen you moved first. That is local search: walk from configuration to configuration, keep the one with the best score, and throw the route away. The other reason he gave is memory. A* has to score every generated state. In a game map, or any space with millions of states, that frontier is the thing that fails. Local search only looks at neighbours, like climbing in fog where you can see a few metres. Completeness is what you give up.
 
 CSPs are the other half of the week. The state is no longer a black box. It is a form with blanks (variables), a list of allowed answers for each blank (domains), and rules about which combinations are legal (constraints). Once the problem has that shape, you can use algorithms that know about variables, instead of a generic tree search that does not.
 
@@ -395,7 +432,7 @@ Read those two results together. Sideways moves make one climb much more reliabl
 
 **Stochastic** hill climbing does not take the best neighbour. It picks one of them at random. The slide says 1 of 56 neighbour states. You trade greed for a chance of not always walking into the same local optimum.
 
-**Simulated annealing** is named in the outline and then the summary says it is not taught in this course. If an exam item mentions it, the expected fact is "a hill-climbing variant that sometimes accepts a worse move, not developed here." Do not invent a cooling schedule.
+**Simulated annealing** and **beam search** were named at the end of the lecture. He said he had not introduced them and would do so next time. Later lectures do not come back to them. If an exam item mentions annealing, the expected fact is "a hill-climbing variant that sometimes accepts a worse move, not developed here." Do not invent a cooling schedule or a beam width.
 
 TSP (travelling salesman): a tour that visits each city once and returns. A 2-opt move deletes two edges and reconnects the tour. A 3-opt move deletes three. On the slides, 3-opt beats 2-opt, and 4-opt is not worth the extra time. Random restart helps. Quality is reported as percent above an estimated minimum cost, not only as "did we find the optimum?", because you often do not know the optimum.
 
@@ -451,6 +488,8 @@ Three heuristics, and you must know which one picks the variable and which one p
 - **LCV**, least constraining value: once the variable is chosen, try first the value that rules out the fewest options for the other variables. You want the current partial assignment to stay alive. MRV is pessimistic about variables (tackle the tight one). LCV is optimistic about values (try the gentle one).
 
 The slides say MRV, degree, and LCV together make 1000-queens feasible. Plain backtracking stopped around 25.
+
+He said in this lecture that the exam tests the idea, not a memorised script. You do not need the arc-consistency algorithm, or the exact wording of MRV and the degree heuristic, off by heart. If a question uses MRV, the definition will be on the paper. Know which heuristic picks the variable, which picks the value, and why.
 
 **Forward checking** keeps, for every unassigned variable, the values that are still legal. When you assign WA red, delete red from NT's list. If any variable's list becomes empty, stop this branch now. You have proved failure without assigning the rest.
 
@@ -647,7 +686,7 @@ What the theorem does not say:
 
 - It does not promise one pass (one epoch) is enough.
 - It does not promise a unique separator, or the "best" one. Any separating line counts.
-- If the data are not separable, it need not stop. The weights can cycle forever.
+- If the data are not separable, it need not stop. The weights can cycle forever. You can still run the update. In practice you set a step limit, and he gave 100 steps as the sort of cap. You may get a usable line. You do not get a guarantee, and you do not get a promise that it is the best separator.
 
 XOR is the standard inseparable pattern: `(0,0)` and `(1,1)` in one class, `(0,1)` and `(1,0)` in the other. No straight line separates them. Minsky and Papert (1969) used this to show the single perceptron's limit. That limit is why week 7 adds a hidden layer.
 
@@ -659,7 +698,9 @@ Any real `z` becomes a number strictly between 0 and 1. Large positive `z` goes 
 
 The loss is binary cross-entropy, not squared error. Training is gradient descent. The sigmoid is smooth, so a gradient exists. The perceptron step does not have one.
 
-**Softmax regression** is the multi-class version. One linear score per class. Softmax turns the scores into positive numbers that sum to 1, so they can be read as class probabilities. The predicted class is the argmax, the class with the largest score. The loss is cross-entropy: it is small when the probability on the true class is near 1. Examples on the slides: MNIST has 10 digit classes, ImageNet has 1000, a protein image task has 28, a malware task has 9. Squared error is the natural loss when there is one continuous target. It is a poor match when you need a confident pick among many classes.
+**Softmax regression** is the multi-class version. One linear score per class. Softmax turns the scores into positive numbers that sum to 1, so they can be read as class probabilities. The predicted class is the argmax, the class with the largest score. The loss is cross-entropy: it is small when the probability on the true class is near 1. Examples on the slides: MNIST has 10 digit classes, ImageNet has 1000, a protein image task has 28, a malware task has 9. He added Fashion-MNIST, also 10 classes, as a teaching set alongside MNIST. Linear models and the small networks in this course can take those 10-class sets. ImageNet is the example he used for "this wants a convolutional net." Recurrent nets are the matching remark for language. Neither architecture is developed here. Squared error is the natural loss when there is one continuous target. It is a poor match when you need a confident pick among many classes.
+
+Linear models are here because later networks are built by stacking the same idea, and because a straight model is still what you use when the data really are straight. If you cannot say what a perceptron does, the hidden layer in week 7 has nothing to sit on.
 
 The summary slide also lists Huber regression as "linear function plus an activation," without a formula. Know the name sits with the robust-regression family. Do not invent the threshold.
 
@@ -706,7 +747,7 @@ Reading: AIMA section 21.1. Lab week 7 is the hand calculation. Lab week 8 codes
 
 ### How to picture it
 
-A perceptron draws one straight cut. XOR needs two cuts, or equivalently a bend. A hidden layer builds new features that are combinations of the inputs. A second layer then draws a straight cut in that new feature space. The bend appears in the original space. The non-linearity is the whole trick. Without it, two linear layers multiply into one linear layer, and you are back to a perceptron with more arithmetic.
+A perceptron draws one straight cut. Boolean OR on two bits is three positive corners and one negative corner, and one line can separate them, so a perceptron can learn OR. XOR needs two cuts, or equivalently a bend: the two corners where exactly one input is 1 share a label, and no straight line works. A hidden layer builds new features that are combinations of the inputs. You often cannot name what a hidden unit means. Its job is still to remap the inputs into a space where a later linear cut works. A second layer then draws that cut. The bend appears in the original space. The non-linearity is the whole trick. Without it, two linear layers multiply into one linear layer, and you are back to a perceptron with more arithmetic. A feed-forward stack is a poor fit for a long sentence, because each layer only sees the remapped previous layer and early tokens can disappear. Recurrent nets were his contrast. They are not developed in this course.
 
 ### Need to know
 
@@ -729,7 +770,7 @@ The first formula line on the architecture slide writes `W2 x` for the output. T
 3. Backward pass: start from the output error and send a share of the blame back to each weight that helped cause it.
 4. Stop after a set number of iterations, or when an error measure such as RMS is small enough. Test on held-out data while you train, so you notice overfitting. Week 8 turns that advice into early stopping.
 
-One unit, in words: take the outputs of the previous layer, multiply by this unit's weights, add the bias, then apply `f`. The thing inside `f` is the pre-activation, often called `z`. The thing after `f` is the activation.
+One unit, in words: take the outputs of the previous layer, multiply by this unit's weights, add the bias, then apply `f`. The thing inside `f` is the pre-activation, often called `z`. The thing after `f` is the activation. Which `f` you use depends on the model and the application. The hand derivation in this lecture uses the sigmoid. Tanh is the same S-shape with outputs in `(-1, 1)`, for when you want a signed range. He also introduced ReLU, `max(0, z)`, because comparing with zero is much cheaper than evaluating an exponential, which is why it shows up in vision networks. Softmax stays the usual last step when there are several classes. The lab works a ReLU example, including a unit whose gradient is zero.
 
 **Sigmoid backprop**, the version the lecture derives by hand. Sigmoid output `y = 1 / (1 + exp(-z))` lies in `(0, 1)`. Its derivative is `y * (1 - y)`, which you can compute from the output you already stored. The largest value of `y(1-y)` is 0.25, at `y = 0.5`. Near 0 or near 1 the derivative is near 0. A saturated sigmoid unit almost stops learning. Stack several of them and the early layers receive a gradient that has been multiplied by 0.25 or less at every stage. That is the vanishing gradient.
 
@@ -746,7 +787,7 @@ Squared error for a small net is often written with a `1/2`:
 
 The `1/2` cancels the 2 from differentiating a square, so the derivative with respect to the prediction is simply `(prediction - target)` or the reverse, depending on which way you subtract. It does not change which network is best. It changes the scale of the gradient, which you could also have absorbed into `eta`.
 
-Chain rule, the one calculus fact the course actually uses: if the loss depends on `y` and `y` depends on `x`, then `d(loss)/dx = d(loss)/dy * dy/dx`. Backprop is that sentence applied at every layer, from the loss backward to the first weight.
+Chain rule, the one calculus fact the course actually uses: if the loss depends on `y` and `y` depends on `x`, then `d(loss)/dx = d(loss)/dy * dy/dx`. Backprop is that sentence applied at every layer, from the loss backward to the first weight. He was explicit that this derivation is not required in order to pass. Know the update `new weight = old weight + eta * delta * incoming activation`, and that a hidden unit inherits its delta from the units it feeds. Assignment 2 is allowed to use automatic gradients, so you do not hand-derive the chain rule there either.
 
 Worked sigmoid values on the slide, so you recognise the arithmetic:
 
@@ -876,7 +917,7 @@ provided `eta*lambda < 1`. Each step multiplies the old weight by a number sligh
 
 **Dropout.** During training, ignore a random subset of units on each step (their outputs treated as zero). A hidden unit cannot rely on one specific partner always being present, so features have to be individually useful. Typical rates on the slide: 0.2 to 0.5 for hidden layers, about 0.1 for the input layer. The motivation given: a good model should tolerate modest damage to its input, and dropout injects that kind of noise inside the net. At test time you use the full net (standard practice; the slide focuses on the training noise).
 
-**Residual connections are not regularisation.** Say that explicitly if asked. Regularisation targets generalisation. A residual connection targets optimisation: very deep nets are hard to train because the gradient has a long path. In a plain feed-forward net, layer `n` sees only what layer `n-1` computed. A residual block also passes `x` forward unchanged and adds a learned residual:
+**Residual connections are not regularisation.** Say that explicitly if asked. Regularisation targets generalisation. A residual connection targets optimisation: very deep nets are hard to train because the gradient has a long path, and because each layer remaps its input, so early detail can be gone by a late layer. His picture was a long sequence where you can no longer recall an early step. The skip keeps a copy. On a shallow net, two hidden layers for example, that problem is small, so a skip may not help. In a plain feed-forward net, layer `n` sees only what layer `n-1` computed. A residual block also passes `x` forward unchanged and adds a learned residual:
 
 output `= F(x) + x`,
 
@@ -943,6 +984,10 @@ Conventions: a pure set has entropy 0. There is nothing left to learn. Do not ev
 
 The weights are the fraction of rows that go down each branch. A child with two rows should not count as much as a child with fifty. Pick the attribute with the largest gain. In the restaurant set, 6 positive and 6 negative, so `H = 1`. Patrons has the highest gain, so Patrons is the root.
 
+Classification error is the other score, and it runs the other way. For a candidate attribute, label each child with its majority class, count the rows that label gets wrong, add those counts, and divide by the number of rows. Pick the attribute with the smallest error. It is easier to say than entropy, and it is the weaker of the two. The exercises are there to show the difference. Information gain is what ID3 and the lab use.
+
+He said you will not be given a long information-gain calculation, and you do not need to memorise the entropy or gain formulas. If a simple case appears, the formula will be on the paper. The lab is where you practise using it. Gain is at least 0: splitting cannot increase the average entropy. ID3 is still greedy, so a larger training set usually helps and is not a guarantee.
+
 Accuracy tends to rise as the training set grows. One curve on the slides is around 95% and still climbing. A learning curve trains on larger and larger subsets and always tests on the same held-out test set. The slide's lesson: every learning bias makes some functions easier and others harder. A tree bias (axis-aligned questions, one attribute at a time) suits diagnosis rules and suits a diagonal boundary in the plane badly.
 
 Problems you should be able to name:
@@ -950,9 +995,9 @@ Problems you should be able to name:
 - **Overfitting.** The tree matches training rows, including noisy ones, and misses the test set. Pruning deletes nodes that are not clearly helping. A simple stop: do not split if the best gain is below a threshold. Otherwise you will split on noise.
 - **Gain favours many-valued attributes.** A student ID or a timestamp splits the data into singletons, and each singleton is pure, so the gain looks perfect. The tree has memorised identities. **Gain ratio** divides information gain by the intrinsic information of the attribute (how mixed the attribute's own values are). Attributes with huge domains are penalised. The slide says the denominator is smaller for attributes with smaller domains, which is why a modest attribute can win on gain ratio even when raw gain liked the huge one.
 - **One feature at a time.** Some patterns need two attributes together. The slides call this the Costanza party problem and say there is no obvious easy fix inside basic ID3.
-- Missing values, attributes with very many values, infinite domains, and continuous targets. A continuous target is regression, and ordinary ID3 as taught here is for discrete class labels. Extensions exist. The course wants you to know these are the known limits.
+- Missing values, attributes with very many values, infinite domains, and continuous targets. A continuous target is regression, and ordinary ID3 as taught here is for discrete class labels. For missing values he named two practical moves: drop the incomplete rows, or fill them in when dropping would throw away too much of the set. Extensions exist. The course wants you to know these are the known limits.
 
-Use a tree when rows are attribute-value pairs, the target is a discrete class, a disjunction of rules is an acceptable hypothesis ("rent if rooms = 4, or if rooms = 3 and new kitchen"), and the data may be noisy. Examples: equipment faults, medical diagnosis, credit risk.
+Use a tree when rows are attribute-value pairs, the target is a discrete class, a disjunction of rules is an acceptable hypothesis ("rent if rooms = 4, or if rooms = 3 and new kitchen"), and the data may be noisy. Examples: equipment faults, medical diagnosis, credit risk. The advantage he closed on is that you can read the rule. The disadvantage against deep learning is scale: a tree does not keep up on a very large set.
 
 ### Lab week 9
 
@@ -1097,6 +1142,8 @@ Why is this product equal to the chain rule? The ordinary chain rule is `P(Xi | 
 
 In words: **a variable is conditionally independent of its non-descendants, given its parents.** Given whether the alarm is ringing, John's call does not depend on the burglary. The burglary already did its work by affecting the alarm. Choose parents that "shield" the node from the other earlier variables. If you forget an arrow that is a real influence, the independence claim is false and the product is the wrong joint.
 
+Following the arrows is the easy direction. Asking for a cause given something downstream is the hard direction. `P(B | j, m)` is that harder question: John and Mary called, and you want the burglary, which sits above the alarm. Enumeration is how the lecture does it, and it is heavy because you sum the hidden variables.
+
 **Inference by enumeration** answers a query by summing the hidden variables out of that product. Both neighbours call. What is the probability of a burglary?
 
 `P(B | j, m) = alpha * sum over e and a of P(B) P(e) P(a | B, e) P(j | a) P(m | a)`.
@@ -1105,7 +1152,7 @@ You compute the sum twice, once for `B = true` and once for `B = false`. Those t
 
 `uwy + uwz + uxy + uxz + vwy + vwz + vxy + vxz`
 
-which is 16 multiplies and 7 adds, as `(u+v)(w+x)(y+z)`, which is 2 multiplies and 3 adds. Shared pieces of the Bayes net product should be computed once. You are not expected to finish a variable-elimination trace unless a question sets one up. You are expected to expand one assignment as a product and to say why enumeration is exponential.
+which is 16 multiplies and 7 adds, as `(u+v)(w+x)(y+z)`, which is 2 multiplies and 3 adds. Shared pieces of the Bayes net product should be computed once. You are not expected to finish a variable-elimination trace unless a question sets one up. You are expected to expand one assignment as a product and to say why enumeration is exponential. He said a correct value from a correct formula is full marks even if you did not find the shortest factorisation. There is no penalty for the longer correct method. A Bayes net also has to be acyclic. A cycle does not simplify the joint, and he said that graph is not a Bayes net.
 
 ### Memory hooks
 
@@ -1127,7 +1174,7 @@ which is 16 multiplies and 7 adds, as `(u+v)(w+x)(y+z)`, which is 2 multiplies a
 
 ## Lecture 11: MDPs and reinforcement learning
 
-No lab solution in this folder. Week 5 introduced the loop. This lecture is the formal version.
+No lab solution in this folder. Week 5 introduced the loop. This lecture is the formal version. He said twice that this topic is on the exam, for no more than about 4 marks, and that the question will be relatively simple. Know the pieces of an MDP, what a policy is, and the shape of the Q update. A long derivation is not what he described.
 
 ### How to picture it
 
@@ -1154,7 +1201,9 @@ An **MDP** (Markov decision process) has:
 
 If every step paid +1 forever, the total utility would be `1 / (1 - gamma)`, not infinity. `gamma` near 1 means you care about the distant future. `gamma` near 0 means you are shortsighted. The grid examples in the lecture often set `gamma = 1` for a finite episode that is guaranteed to end, where the sum cannot run forever.
 
-A **policy** `pi(s)` says which action to take in state `s`. The optimal policy maximises expected utility. "Expected" matters because transitions are random: you average over the slips.
+A **plan** is one sequence of actions: up, up, left. If a slip puts you in a cell the sequence did not expect, the plan has nothing to say. A **policy** `pi(s)` says which action to take in every state, including the ones you reach by accident. The optimal policy maximises expected utility. "Expected" matters because transitions are random: you average over the slips.
+
+He asked why this is not another Bayes net. A Bayes net is the right picture for uncertain variables. It is not the picture for "if I act, where do I land next, and what do I get?" That dynamics, repeated over time, is what an MDP is for.
 
 **Reinforcement learning** keeps the MDP and removes the agent's knowledge of `T` and `R`. The agent must try actions. Every update is based on samples `(s, a, s', r)` that actually happened. The environment returns the next state and the reward. The agent does not get to rewind and resample the same state at will.
 
@@ -1167,11 +1216,13 @@ Four words the slides want paired with a meaning:
 
 **Passive** learning evaluates a fixed policy. The agent does not choose. It is "along for the ride," executes `pi`, and learns the values. This is not offline planning. The actions happen in the world.
 
-**Model-based** passive learning builds a mini MDP from counts. For each pair `(s, a)`, the fraction of times you next saw `s'` is your estimate of `T(s, a, s')`. The rewards you saw estimate `R`. Then you solve that learned MDP as if the estimates were true. In the slide's grid, `gamma = 1`: from the episodes, `T(B, east, C) = 1.00` (every east from B went to C), `T(C, east, D) = 0.75`, `T(C, east, A) = 0.25` (three of four east moves from C went to D, one went to A), ordinary steps reward `-1`, and `R(D, exit) = +10`. Advantage: each trip updates a model, and the model connects states, so one experience informs many values when you solve the MDP. Limit: you learn one state-action pair at a time, and if `|S|` is huge you cannot store or solve the table.
+When the policy, `T`, and `R` are known, you do not need samples. Start with `V = 0` and repeatedly replace each state's value by the one-step backup under the fixed policy: the expected reward of the action `pi` chooses, plus `gamma` times the value of where that action lands. He called this the Bellman update. It is the step before temporal difference. Temporal difference is what you do when `T` is unknown and one sample has to stand in for that expectation.
+
+**Model-based** passive learning builds a mini MDP from counts. For each pair `(s, a)`, the fraction of times you next saw `s'` is your estimate of `T(s, a, s')`. The rewards you saw estimate `R`. Then you solve that learned MDP as if the estimates were true. In the slide's grid, `gamma = 1`: from the episodes, `T(B, east, C) = 1.00` (every east from B went to C), `T(C, east, D) = 0.75`, `T(C, east, A) = 0.25` (three of four east moves from C went to D, one went to A), ordinary steps reward `-1`, and `R(D, exit) = +10`. If the fixed policy never takes a transition, you have no count for it, so you cannot estimate it. Treat it as unseen. Advantage: each trip updates a model, and the model connects states, so one experience informs many values when you solve the MDP. Limit: you learn one state-action pair at a time, and if `|S|` is huge you cannot store or solve the table.
 
 The age analogy: if you know the distribution of ages, compute the expectation from the distribution. That is model-based. If you do not, average the ages you sampled. Samples show up in proportion to their probability, so the average converges. That is model-free.
 
-**Direct evaluation** is the crude model-free method. Follow `pi`. Each time you leave a state, write down the sum of discounted rewards from there to the end of the episode. Average those sums. You need no `T` or `R`. Eventually the averages are right. You waste the connections: learning `C` does not help `B`, even if `B` always goes to `C`. In the sample output, B and E can show different values even though both move to C under the policy, because each state's samples are averaged in isolation. Learning is slow.
+**Direct evaluation** is the crude model-free method. Follow `pi`. Each time you leave a state, write down the sum of discounted rewards from there to the end of the episode. Average those sums. You need no `T` or `R`. Eventually the averages are right. In the four-episode example he had the class average, the returns from `B` came to 8, and the returns from `C` were 9, 9, 9, and -11, which average to 4. You waste the connections: learning `C` does not help `B`, even if `B` always goes to `C`. In the sample output, B and E can show different values even though both move to C under the policy, because each state's samples are averaged in isolation. Learning is slow.
 
 **Temporal-difference (TD)** learning fixes that waste without building `T`. On every transition `(s, a, s', r)`, nudge `V(s)` toward the one-step target `r + gamma * V(s')`:
 
@@ -1251,9 +1302,13 @@ Learning:
 - Closed form: `w* = (X^T X)^(-1) X^T y`, bias folded into `w`.
 - Gradient step: `w <- w - eta * gradient`.
 - Perceptron: if wrong, `w <- w + alpha * (y - y_hat) * x`.
-- Sigmoid: `1 / (1 + exp(-z))`. Derivative: `s * (1 - s)`.
+- Sigmoid: `1 / (1 + exp(-z))`. Derivative: `s * (1 - s)`. Tanh is the signed cousin, range `(-1, 1)`.
+- ReLU: `max(0, z)`. Derivative 1 when `z > 0`, and 0 when `z < 0`.
 - Sigmoid output error: `y(1-y)(target - y)`, then `delta * previous activation` updates the weight.
-- Entropy: `sum -p log2 p`. Gain: parent entropy minus the size-weighted child entropies.
-- Bayes net: joint equals the product of `P(variable | its parents)`.
+- Softmax: one score per class, turned into positive numbers that sum to 1. Predict the largest. Train with cross-entropy, not squared error.
+- Weight decay step: `w <- (1 - eta*lambda) * w - eta * (data gradient)`, when `eta*lambda < 1`.
+- Entropy: `sum -p log2 p`. Gain: parent entropy minus the size-weighted child entropies. Classification error: majority-class mistakes in the children, divided by the number of rows. Smallest error wins.
+- Bayes net: joint equals the product of `P(variable | its parents)`. No directed cycles.
+- Known model, fixed policy: repeatedly replace `V(s)` by the one-step expected backup. That is the Bellman step. TD replaces the expectation with one sample.
 - Q update: `(1 - alpha) * Q(s, a) + alpha * [r + gamma * max Q(next, a')]`.
 - Infinite discounted sum of 1: `1 / (1 - gamma)`.
