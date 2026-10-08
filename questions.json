@@ -2766,15 +2766,15 @@
       "id": "L9-Q11",
       "sectionId": "L9",
       "type": "mcq",
-      "stem": "Among the restaurant attributes discussed, Patrons is chosen as the root because:",
+      "stem": "A learning curve is intended to show how predictive performance changes as more training data is used. Which procedure is valid?",
       "choices": {
-        "A": "it has the lowest IG of all attributes",
-        "B": "it has the highest IG of all attributes considered",
-        "C": "it is the alphabetically first attribute",
-        "D": "Type has IG exactly 1 and Patrons has IG 0"
+        "A": "Train once on all rows, then plot training accuracy several times",
+        "B": "Train on increasingly large training subsets and evaluate every model on the same held-out test set",
+        "C": "Move difficult test rows into training after each point",
+        "D": "Use a different target label for each training-set size"
       },
       "answer": "B",
-      "explanation": "Patrons has highest IG, chosen as root."
+      "explanation": "Only the amount of training data should change. Reusing one held-out test set makes the points comparable without training on the evaluation rows."
     },
     {
       "id": "L9-Q12",
@@ -3018,15 +3018,15 @@
       "id": "L10-Q09",
       "sectionId": "L10",
       "type": "mcq",
-      "stem": "In the Alarm network, P(B=true) is given as:",
+      "stem": "Enumeration gives unnormalised weights 0.06 for `B` and 0.24 for `not B` after observing evidence `e`. What is `P(B | e)` after normalisation?",
       "choices": {
-        "A": "0.001",
-        "B": "0.002",
-        "C": "0.94",
-        "D": "0.9"
+        "A": "0.20",
+        "B": "0.06",
+        "C": "0.25",
+        "D": "0.80"
       },
       "answer": "A",
-      "explanation": "P(B=true) = 0.001."
+      "explanation": "Normalise by the total weight: `0.06 / (0.06 + 0.24) = 0.20`. The scale of the two unnormalised values does not matter after division by their sum."
     },
     {
       "id": "L10-Q10",
@@ -3256,15 +3256,15 @@
       "id": "L11-Q06",
       "sectionId": "L11",
       "type": "mcq",
-      "stem": "In the model-based grid example, after the listed episodes, T(B, east, C) is estimated as:",
+      "stem": "Which statement expresses the Markov property required by an MDP?",
       "choices": {
-        "A": "0.25",
-        "B": "0.75",
-        "C": "0.00",
-        "D": "1.00"
+        "A": "Given the current state and action, the next-state distribution does not depend on the earlier history",
+        "B": "The next state is always deterministic",
+        "C": "Rewards cannot depend on the transition",
+        "D": "The agent must remember every previous state as a separate input"
       },
-      "answer": "D",
-      "explanation": "All B,east outcomes went to C: T=1.00."
+      "answer": "A",
+      "explanation": "The current state must contain the information needed to predict the next-state distribution. If earlier history still changes that distribution, the state representation is incomplete."
     },
     {
       "id": "L11-Q07",
