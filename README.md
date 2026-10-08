@@ -14,14 +14,15 @@ Open `http://localhost:8080/`. Loading `index.html` as a file will fail, because
 
 ## Quiz
 
-1. Tick the lectures, labs, and assignments you want. Select all and Clear apply to every section.
-2. Tick multiple choice, true/false, or both. Counts next to each section follow that filter.
-3. Choose every question in those sections, or a random sample of n. n is limited to the size of the selected pool.
-4. Answer one question at a time. Multiple choice uses A to D. True/false uses True and False. Next stays disabled until you choose. On the last question, Next becomes Submit.
-5. The results page shows correct / total, a percentage, and each question marked correct or incorrect, with your choice, the right choice, and the short appendix note.
-6. Retry same set keeps the same questions and order. New setup returns to the section list.
+1. Learn one topic in the study guide and answer its Check yourself questions from memory.
+2. Tick the matching lecture, lab, or assignment. Select all and Clear apply to every section.
+3. Tick multiple choice, true/false, or both. Counts next to each section follow that filter.
+4. Choose every question, a random sample, or balanced objective practice. Balanced practice draws 10 multiple-choice and 10 true/false questions across the selected sections.
+5. Answer one question at a time. Next stays disabled until you choose. On the last question, Next becomes Submit.
+6. The results page shows the score, each answer, an explanation, and a link back to the matching guide section.
+7. Explain each mistake before retrying it. Retry same set keeps the questions and order. New setup returns to the section list.
 
-The Exam drill section is the mixed paper in `Study MCQs.md`: 21 multiple choice and 22 true/false. The two short-response prompts stay in that file and are not scored here. The setup page states the paper shape he described in the lectures: 10 true/false, 10 multiple choice, 2 longer answers, 40 marks with a 16-mark hurdle.
+The Exam drill is the more applied readiness set: 21 multiple choice and 22 true/false. The study guide includes the two unscored long-response prompts. The setup page states the paper shape described in the lectures: 10 true/false, 10 multiple choice, 2 longer answers, 40 marks with a 16-mark hurdle.
 
 ## Update the question bank
 

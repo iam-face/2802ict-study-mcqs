@@ -20,16 +20,21 @@ Lecture numbers below match the PDF titles. Week 1's tentative timetable put dec
 
 - [Course map](#course-map)
 - [What he said about the exam](#what-he-said-about-the-exam)
+- [Exam preparation path](#exam-preparation-path)
+- [Core skill checklist](#core-skill-checklist)
+- [How to show working](#how-to-show-working)
 - [Search algorithms at a glance](#search-algorithms-at-a-glance)
 - [Learning tasks at a glance](#learning-tasks-at-a-glance)
 - [Lecture 1: Introduction and agents](#lecture-1-introduction-and-agents)
 - [Lecture 2: Uninformed search](#lecture-2-uninformed-search)
 - [Lecture 3: Informed search](#lecture-3-informed-search)
 - [Lecture 4: Local search and CSPs](#lecture-4-local-search-and-csps)
+- [Assignment 1: Maze search and crossword CSP](#assignment-1-maze-search-and-crossword-csp)
 - [Lecture 5: Machine learning basics](#lecture-5-machine-learning-basics)
 - [Lecture 6: Linear models](#lecture-6-linear-models)
 - [Lecture 7: Feed-forward neural networks](#lecture-7-feed-forward-neural-networks)
 - [Lecture 8: Model selection and regularisation](#lecture-8-model-selection-and-regularisation)
+- [Assignment 2: Fashion-MNIST networks](#assignment-2-fashion-mnist-networks)
 - [Lecture 9: Decision trees](#lecture-9-decision-trees)
 - [Lecture 10: Bayes nets](#lecture-10-bayes-nets)
 - [Lecture 11: MDPs and reinforcement learning](#lecture-11-mdps-and-reinforcement-learning)
@@ -79,6 +84,65 @@ What he said you do not have to memorise:
 Week 11 is on the paper. He said twice that reinforcement learning is no more than about 4 marks, and that the question will be relatively simple. Transformers, and the deeper network material he pointed at 3008ICT, are not in this course.
 
 His own pass advice from week 1: the textbook is for depth. The course site notes, short videos, weekly exercises, labs, and the assignments are what he said are enough if the aim is to pass.
+
+## Exam preparation path
+
+The quiz bank contains more questions than one sitting should use. Work in three passes.
+
+1. Learn one lecture from this guide. Cover the answers in **Check yourself** and answer from memory.
+2. In the quiz, select that lecture and its matching lab. Use a random set of 15 to 20 questions. For every mistake, explain why your answer fails before reading the stored explanation.
+3. Use the final exam drill after several lectures are secure. It contains longer, applied questions and is a better readiness check than repeating definition questions.
+
+The objective part of the real paper has 10 true/false and 10 multiple-choice questions. A useful timed rehearsal is 10 of each in about 45 minutes. That leaves most of the sitting for the two longer answers and checking. The exact mark allocation of each question is not stated in the sources, so this is a practice allocation, not an exam rule.
+
+For true/false, rewrite a false statement so it becomes true. This catches the single changed condition that these questions often test: equal instead of unequal step costs, generated instead of expanded, admissible instead of consistent, training instead of validation, or value instead of action value.
+
+For multiple choice, answer before reading the options when possible. Then reject each distractor using one condition from the course. Recognition alone is a weak test because several options may contain familiar words.
+
+For a longer answer:
+
+1. Name the method and the property being tested.
+2. State the rule or formula, and name every symbol you use.
+3. Apply it to the values in the question.
+4. Interpret the result in one sentence.
+5. Check the boundary condition that commonly changes the answer.
+
+The two sample long-answer prompts in the study material are worth writing under time:
+
+- Explain admissible versus consistent heuristics, match each condition to A* tree search or graph search, and explain how graph search can lose an optimal path when the heuristic is admissible but inconsistent.
+- Given training and validation curves, decide what early stopping should do, name two other regularisers and their mechanisms, and explain why a residual connection is an optimisation device rather than a regulariser in this course.
+
+## Core skill checklist
+
+Use this as a coverage check. A topic is ready when you can do the action without looking at the guide.
+
+- Lecture 1: place the four approaches to AI on the human/rational and thinking/acting grid; distinguish symbolic and subsymbolic AI; write a measurable PEAS description.
+- Lecture 2: formulate `<S0, A, T, G, C>`; distinguish a state from a node; trace BFS, DFS, UCS, depth-limited search, and iterative deepening; state when each is complete or optimal.
+- Lecture 3: calculate `g`, `h`, and `f`; trace greedy search and A*; test admissibility and consistency; explain a relaxed-problem heuristic and dominance.
+- Lecture 4: diagnose a local maximum, plateau, shoulder, or ridge; calculate expected random-restart work; formulate a CSP; apply MRV, degree, LCV, forward checking, arc consistency, and min-conflicts.
+- Lecture 5: identify the learning setting and target type from a scenario; separate training, validation, and test use; diagnose bias, variance, underfitting, and overfitting.
+- Lecture 6: calculate a linear score and MSE; perform a perceptron update; explain the separability condition; distinguish linear regression, logistic regression, perceptron, and softmax regression.
+- Lecture 7: check matrix shapes; perform a forward pass; explain why a hidden non-linearity is needed; follow one back-propagation update; diagnose vanishing sigmoid gradients and dying ReLUs.
+- Lecture 8: read training and validation curves; carry out one fold of cross-validation; explain early stopping, augmentation, weight decay, and dropout; distinguish residual connections from regularisation.
+- Lecture 9: calculate entropy and information gain for a small split; trace ID3's stopping cases; explain overfitting, pruning, and the many-valued-attribute problem.
+- Lecture 10: marginalise and condition a small joint table; apply Bayes' rule; count free CPT parameters; expand one Bayes-net assignment as a product; explain the conditional independence encoded by a missing arc.
+- Lecture 11: distinguish a plan from a policy and an MDP from reinforcement learning; interpret `gamma`; distinguish direct evaluation, TD, and Q-learning; perform one Q update; explain exploration, exploitation, off-policy learning, and approximate Q-learning.
+- Assignment 1: state what IDS, A*, IDA*, `revise`, AC-3, `assignment_complete`, `consistent`, MRV, degree, and LCV do in the submitted problem.
+- Assignment 2: check the shapes and parameter counts of the required models; explain softmax and cross-entropy; separate train, validation, and test roles; interpret the learning-rate, batch-size, and residual-model experiments without memorising isolated percentages.
+
+## How to show working
+
+Short working is easier to mark and easier to check. Keep the same order every time.
+
+**Search trace.** Write the frontier ordering rule first. For each expansion, record the chosen node and its score. Use `g` for UCS, `h` for greedy search, and `g + h` for A*. Do not stop UCS or A* when a goal is generated. Stop when the goal is selected from the frontier under the required optimality conditions.
+
+**Perceptron update.** Compute `score = w . x`, apply the question's threshold, compare `y_hat` with `y`, then use `w <- w + alpha(y - y_hat)x`. State "no update" when the prediction is correct. Keep the bias feature in the vector if the question supplies one.
+
+**Information gain.** Count the parent labels, calculate parent entropy, calculate each child entropy, weight each child by its fraction of rows, then subtract. A pure child has entropy 0. Select the largest gain.
+
+**Bayes net.** Write one factor per node, conditioned only on its parents. Substitute the matching CPT entry, including complements such as `P(not J | A) = 1 - P(J | A)`, then multiply. For a posterior, calculate the unnormalised value for each query value and normalise at the end.
+
+**Q-learning.** First calculate the target `r + gamma * max_a' Q(s', a')`. Then blend it with the old value: `(1 - alpha)Q(s,a) + alpha*target`. The action used to collect the sample does not replace the `max` in the target.
 
 ## Search algorithms at a glance
 
@@ -262,7 +326,7 @@ Four properties, and they are not synonyms:
 - Time: how many nodes are generated. Usually `O(b^d)` or `O(b^m)`.
 - Space: how many nodes are stored at once.
 
-**BFS** expands the shallowest node, implemented as a FIFO queue. New children join the back. It is complete when `b` and `d` are finite: every layer is finite, and you will reach depth `d`. It is optimal only when every action has the same cost, because then "fewest steps" and "lowest cost" are the same thing. If one step costs 100 and another costs 1, the path with fewer steps can cost more. Time is the sum of a geometric series: `1 + b + b^2 + ... + b^d = (b^(d+1) - 1) / (b - 1) = O(b^d)`. Space is also `O(b^d)`, because the explored set holds about `O(b^(d-1))` nodes and the frontier holds about `O(b^d)`. The slides say space, not time, is what stops BFS in practice. You run out of memory while still having CPU left.
+**BFS** expands the shallowest node, implemented as a FIFO queue. New children join the back. It is complete when `b` is finite and a solution exists at a finite depth `d`: every layer before the goal is finite, so the search eventually reaches depth `d`. It is optimal only when every action has the same cost, because then "fewest steps" and "lowest cost" are the same thing. If one step costs 100 and another costs 1, the path with fewer steps can cost more. Time is the sum of a geometric series: `1 + b + b^2 + ... + b^d = (b^(d+1) - 1) / (b - 1) = O(b^d)`. Space is also `O(b^d)`, because the explored set holds about `O(b^(d-1))` nodes and the frontier holds about `O(b^d)`. The slides say space, not time, is what stops BFS in practice. You run out of memory while still having CPU left.
 
 **UCS** (uniform-cost search) expands the node with the smallest path cost `g`. The frontier is a priority queue ordered by `g`. If every step costs the same, UCS and BFS expand in the same order. Three differences from BFS matter in exams:
 
@@ -518,6 +582,55 @@ He said in this lecture that the exam tests the idea, not a memorised script. Yo
 
 ---
 
+## Assignment 1: Maze search and crossword CSP
+
+### How to picture it
+
+The assignment joins lectures 2 to 4. The maze asks for a path, so the sequence and its cost matter. The crossword asks for one complete legal arrangement, so the order used to fill slots does not matter. IDS, A*, and IDA* solve the first shape. Arc consistency and backtracking solve the second.
+
+### Need to know
+
+The maze is an `N` by `M` grid. A state is the agent's cell. Legal actions move one cell left, up, right, or down into a non-wall cell. Diagonal moves are illegal. Every move costs 1, so path cost equals path length. The goal is the destination cell. A correct solver must report "no solution" when the destination is blocked or unreachable.
+
+The required algorithms make different memory and ordering choices:
+
+- IDS repeats depth-limited depth-first search with limits 0, 1, 2, and so on. Unit costs make a shallowest path an optimal path.
+- A* orders the frontier by `f = g + h`. The report had to explain why the chosen maze heuristic is admissible and consistent.
+- IDA* repeats a depth-first search with an `f`-cost bound. When a search exceeds the current bound, the next iteration uses the smallest exceeded `f` as the new bound. It keeps depth-first memory while using heuristic guidance.
+
+The crossword variables are whole across or down word slots, not individual cells. A domain is the candidate words still available for one slot. Unary constraints enforce the slot length. Binary constraints enforce matching letters where two slots overlap. The all-different constraint prevents the same word being used twice.
+
+The required function contracts:
+
+- `enforce_node_consistency` removes every word whose length differs from its slot.
+- `revise(x, y)` examines values in `x`'s domain. It removes an `x` value when no value in `y`'s domain gives the same letter at the overlap. It changes `x`'s domain in place and returns whether the domain changed.
+- `ac3` processes directed arcs. When `revise(x, y)` changes `x`, it requeues arcs from other neighbours into `x`. It returns failure if any domain becomes empty.
+- `assignment_complete` checks that every crossword variable has a value.
+- `consistent` accepts a partial assignment only when every assigned word has the correct length, assigned words are distinct, and assigned neighbours agree at their overlapping characters.
+- `order_domain_values` applies LCV: try first the word that removes the fewest values from unassigned neighbours.
+- `select_unassigned_variable` applies MRV, with degree as the tie-break: fewest remaining words first, then the slot constraining the most unassigned neighbours.
+- `backtrack` tries an ordered value, recurses, and removes that choice when the deeper call fails. It returns a complete consistent assignment or failure.
+
+Node consistency, arc consistency, and search solve different amounts of the problem. Node consistency only checks one slot at a time. AC-3 removes values that lack pairwise support, but an arc-consistent CSP can still have no complete solution. Backtracking makes the choices that remain.
+
+The assignment's heuristic comparison asks the right exam question: adding LCV, MRV, and degree does not change which assignments count as solutions. It changes how quickly the solver finds a solution or proves there is none.
+
+### Memory hooks
+
+- Maze: path matters, unit moves, `g` is the number of moves.
+- Crossword: slots are variables, words are values, overlaps are binary constraints.
+- `revise(x, y)` deletes from `x`, and its return value reports whether `x` changed.
+- IDS limits depth. IDA* limits `f`.
+
+### Check yourself
+
+- Why is IDS optimal on the assignment maze? **Answer.** Every move costs 1, so the first solution depth reached is also the lowest path cost.
+- What exactly makes `revise(x, y)` return true? **Answer.** At least one value was removed from `x`'s domain. An unchanged domain returns false.
+- Can AC-3 replace backtracking? **Answer.** No. It enforces pairwise support but may leave several values that cannot be combined into one complete assignment.
+- MRV ties for two slots. What happens next? **Answer.** The degree heuristic chooses the slot with more constraints on other unassigned slots.
+
+---
+
 ## Lecture 5: Machine learning basics
 
 No set textbook pages on the title slide. Lab week 5 matches this lecture.
@@ -586,7 +699,7 @@ Loss functions, the score of "how wrong":
 
 - 0-1 loss: 0 if the label matches, 1 otherwise. It counts mistakes. It does not say whether you were close.
 - L1 loss: absolute error `|actual - predicted|`.
-- L2 loss: squared error `(actual - predicted)^2`. Big mistakes dominate, because a error of 10 contributes 100.
+- L2 loss: squared error `(actual - predicted)^2`. Big mistakes dominate, because an error of 10 contributes 100.
 
 ### Lab week 5
 
@@ -721,7 +834,7 @@ Lab trace. Labels are 0 and 1. Learning rate `alpha = 0.5`. The third weight is 
 - `[3, 4, 1]`, truth 1. Score `1.5*3 + 4 - 0.5 = 8`. Predict 1. Correct. No change.
 - `[2, 3, 1]`, truth 0. Score `1.5*2 + 1*3 - 0.5 = 5.5`. Predict 1. Wrong. Add `0.5 * (0 - 1) * [2, 3, 1]`, which subtracts `[1, 1.5, 0.5]`. Weights become `[0.5, -0.5, -1]`.
 
-A separate check with those final weights on the five points gets only 2 right (points 2, 3, and 4 still wrong). One epoch was not enough. The theorem still applies if the movies are separable: more passes will reach a separator. It will not tell you which separator, and it will not help if they are not separable.
+A separate check with those final weights on the five points gets only 2 right (points 2, 3, and 4 still wrong). One epoch was not enough. The theorem still applies if the points are linearly separable: more passes will reach a separator. It will not tell you which separator, and it will not help if they are not separable.
 
 The lab's comparison of the update with logistic gradient descent: the perceptron applies a fixed-direction kick when wrong, and the size does not grow with "how negative" the score was. A score of -0.01 and a score of -100 can trigger the same perceptron update. Gradient descent on cross-entropy scales the step by the gradient, so a very wrong probability moves the weights more than a slightly wrong one.
 
@@ -789,13 +902,13 @@ The `1/2` cancels the 2 from differentiating a square, so the derivative with re
 
 Chain rule, the one calculus fact the course actually uses: if the loss depends on `y` and `y` depends on `x`, then `d(loss)/dx = d(loss)/dy * dy/dx`. Backprop is that sentence applied at every layer, from the loss backward to the first weight. He was explicit that this derivation is not required in order to pass. Know the update `new weight = old weight + eta * delta * incoming activation`, and that a hidden unit inherits its delta from the units it feeds. Assignment 2 is allowed to use automatic gradients, so you do not hand-derive the chain rule there either.
 
-Worked sigmoid values on the slide, so you recognise the arithmetic:
+The worked sigmoid slide contains a sign error. Use the defined function `sigmoid(z) = 1 / (1 + exp(-z))`:
 
-- Weighted sum `-0.3` gives `1 / (1 + exp(0.3)) = 0.574`.
-- Weighted sum `-0.1` gives `1 / (1 + exp(0.1)) = 0.525`.
-- Weighted sum `0.11` gives `1 / (1 + exp(-0.11)) = 0.527`.
+- `sigmoid(-0.3) = 1 / (1 + exp(0.3))`, about `0.426`.
+- `sigmoid(-0.1) = 1 / (1 + exp(0.1))`, about `0.475`.
+- `sigmoid(0.11) = 1 / (1 + exp(-0.11))`, about `0.527`.
 
-Notice `exp(-z)` in the sigmoid. If `z` is negative, you negate it again and the exponent becomes positive. Students drop that sign and get a number on the wrong side of 0.5.
+The slide prints `0.574` for `-0.3` and `0.525` for `-0.1`, which are the values for positive `0.3` and positive `0.1`. The sign check is simple: a negative input must produce a sigmoid output below `0.5`; a positive input must produce one above `0.5`.
 
 Picking `eta`: try values spaced by factors, not by 0.001. Find one that is clearly too small (loss falls, very slowly, smooth) and one that is clearly too large (loss oscillates or diverges). Search between them. A schedule that shrinks `eta` over time is mentioned as an optional extra.
 
@@ -939,6 +1052,65 @@ often then a ReLU. If `F(x)` and `x` have different lengths, use `F(x) + W x` wi
 
 ---
 
+## Assignment 2: Fashion-MNIST networks
+
+### How to picture it
+
+The assignment turns lectures 6 to 8 into one pipeline. Pixels enter a model, the model produces ten class scores, softmax turns them into probabilities, cross-entropy measures the error, and autograd supplies the gradient used by mini-batch gradient descent. Validation accuracy chooses a checkpoint. The test set measures that chosen checkpoint once.
+
+### Need to know
+
+Fashion-MNIST has 28 by 28 greyscale images, so each flattened input has `28*28 = 784` features. There are 10 clothing classes. Pixel values in the files run from 0 to 255. The data includes 60,000 training rows and 10,000 test rows, and the framework makes a 20% validation split from the 60,000 training rows.
+
+The required model families:
+
+| Model | Architecture | Mechanism |
+| --- | --- | --- |
+| Softmax regression | `784-10` | One affine map produces ten logits. |
+| Two-layer MLP | `784-30-10` | A sigmoid hidden layer adds a non-linearity before the output logits. |
+| Three-layer MLP | `784-30-30-10` | Two hidden transformations add capacity. |
+| Residual three-layer MLP | `784-30-30-10` | The first hidden activation is added to the second hidden transformation. Equal widths let the vectors be added directly. |
+
+For a batch with `B` rows, the softmax-regression input has shape `(B, 784)`, its weight matrix has shape `(784, 10)`, and its logits have shape `(B, 10)`. A `784-30-10` MLP uses `W1` with shape `(784, 30)` and `W2` with shape `(30, 10)`. Check the inner dimensions before debugging the learning rule.
+
+Parameter counts include biases:
+
+- `784-10`: `784*10 + 10 = 7,850`.
+- `784-30-10`: `784*30 + 30 + 30*10 + 10 = 23,860`.
+- `784-30-30-10`: `784*30 + 30 + 30*30 + 30 + 30*10 + 10 = 24,790`.
+
+The forward pass returns logits. Softmax is applied when probabilities are needed for prediction or cross-entropy. For one row and true class `y`, cross-entropy is `-log p_y`. Assigning a small probability to the true class produces a large loss. The implementation adds a small constant inside the logarithm to avoid `log(0)` after numerical underflow.
+
+Autograd records operations performed with `autograd.numpy` and applies reverse-mode automatic differentiation to the scalar loss. It does the chain-rule bookkeeping. It does not choose the architecture, define the loss, or update the parameters. `get_params` and `set_params` must flatten and restore parameters in the same order, or a gradient slice will be applied to the wrong matrix or bias.
+
+The required default settings are 20 epochs, learning rate 0.01, and mini-batch size 4. The experiments vary three things:
+
+- model family and training-set size (full, 50%, and 10%),
+- learning rate (`0.001`, `0.01`, `1.0`, `10`, `100`),
+- mini-batch size (`1`, `4`, `8`, `16`).
+
+A learning rate that is too small makes slow progress. A moderately large value may oscillate while remaining finite. A very large value can overflow and produce `NaN`. Batch size changes both gradient noise and the number of updates per epoch. With a fixed number of epochs, batch size 1 makes sixteen times as many parameter updates as batch size 16, so comparing wall time without counting updates is misleading.
+
+Model selection uses validation performance. Save the parameters when validation accuracy improves, restore the best saved parameters, and then measure test accuracy. Selecting the epoch from test accuracy leaks test information into the model choice.
+
+The residual experiment must be interpreted carefully. A skip can make a deeper model easier to optimise by preserving an identity path. It does not guarantee higher accuracy, and it is not one of the regularisation methods from lecture 8. Dataset size, initialisation, learning rate, and the number of updates can all change the observed ranking.
+
+### Memory hooks
+
+- Logits first, softmax when probabilities are needed.
+- Autograd differentiates the loss. Gradient descent still performs the update.
+- Validation chooses. Test reports.
+- Residual adds a path. Weight decay adds a penalty.
+
+### Check yourself
+
+- Why is `W1` shaped `(784, 30)`? **Answer.** Each of the 30 hidden units needs one weight for each of the 784 input features, and `(B,784) @ (784,30)` produces `(B,30)`.
+- What does cross-entropy punish? **Answer.** A low predicted probability on the true class.
+- What breaks if `get_params` and `set_params` disagree on order? **Answer.** Values and gradients are restored into the wrong parameters, so training updates a different model from the one whose loss was differentiated.
+- Why can batch size 1 be slower over 20 epochs? **Answer.** It performs one update per row. A larger batch performs fewer updates per epoch and uses vectorised work.
+
+---
+
 ## Lecture 9: Decision trees
 
 Lab week 9 matches this lecture.
@@ -995,7 +1167,7 @@ Problems you should be able to name:
 - **Overfitting.** The tree matches training rows, including noisy ones, and misses the test set. Pruning deletes nodes that are not clearly helping. A simple stop: do not split if the best gain is below a threshold. Otherwise you will split on noise.
 - **Gain favours many-valued attributes.** A student ID or a timestamp splits the data into singletons, and each singleton is pure, so the gain looks perfect. The tree has memorised identities. **Gain ratio** divides information gain by the intrinsic information of the attribute (how mixed the attribute's own values are). Attributes with huge domains are penalised. The slide says the denominator is smaller for attributes with smaller domains, which is why a modest attribute can win on gain ratio even when raw gain liked the huge one.
 - **One feature at a time.** Some patterns need two attributes together. The slides call this the Costanza party problem and say there is no obvious easy fix inside basic ID3.
-- Missing values, attributes with very many values, infinite domains, and continuous targets. A continuous target is regression, and ordinary ID3 as taught here is for discrete class labels. For missing values he named two practical moves: drop the incomplete rows, or fill them in when dropping would throw away too much of the set. Extensions exist. The course wants you to know these are the known limits.
+- Missing values, attributes with very many values, infinite domains, and continuous targets. A continuous target is regression, and ordinary ID3 as taught here is for discrete class labels. For missing values he named two practical moves: drop the incomplete rows, or impute the missing entries when dropping would throw away too much of the set. He did not prescribe one imputation method. Extensions exist. The course wants you to know these are the known limits.
 
 Use a tree when rows are attribute-value pairs, the target is a discrete class, a disjunction of rules is an acceptable hypothesis ("rent if rooms = 4, or if rooms = 3 and new kitchen"), and the data may be noisy. Examples: equipment faults, medical diagnosis, credit risk. The advantage he closed on is that you can read the rule. The disadvantage against deep learning is scale: a tree does not keep up on a very large set.
 
@@ -1222,7 +1394,7 @@ When the policy, `T`, and `R` are known, you do not need samples. Start with `V 
 
 The age analogy: if you know the distribution of ages, compute the expectation from the distribution. That is model-based. If you do not, average the ages you sampled. Samples show up in proportion to their probability, so the average converges. That is model-free.
 
-**Direct evaluation** is the crude model-free method. Follow `pi`. Each time you leave a state, write down the sum of discounted rewards from there to the end of the episode. Average those sums. You need no `T` or `R`. Eventually the averages are right. In the four-episode example he had the class average, the returns from `B` came to 8, and the returns from `C` were 9, 9, 9, and -11, which average to 4. You waste the connections: learning `C` does not help `B`, even if `B` always goes to `C`. In the sample output, B and E can show different values even though both move to C under the policy, because each state's samples are averaged in isolation. Learning is slow.
+**Direct evaluation** is the crude model-free method. Follow `pi`. Each time you leave a state, write down the sum of discounted rewards from there to the end of the episode. Average those sums. You need no `T` or `R`. Eventually the averages are right. In the four-episode example, the returns from `B` average to 8, and the returns from `C` are 9, 9, 9, and -11, which average to 4. The slide's later "Output Values" table shows `B = 4` and `C = 10`, which does not match those worked return averages. Use `B = 8` and `C = 4` for the direct-evaluation calculation. You waste the connections: learning `C` does not help `B`, even if `B` always goes to `C`. In the sample output, B and E can show different values even though both move to C under the policy, because each state's samples are averaged in isolation. Learning is slow.
 
 **Temporal-difference (TD)** learning fixes that waste without building `T`. On every transition `(s, a, s', r)`, nudge `V(s)` toward the one-step target `r + gamma * V(s')`:
 
@@ -1283,8 +1455,10 @@ Search:
 - Problem: `<S0, A, T, G, C>`. Start, actions, transition, goal, cost.
 - Node: state, parent, action, path cost. The parent chain is the solution.
 - BFS time: `(b^(d+1) - 1) / (b - 1)`.
-- UCS: expand smallest `g`. Test the goal when the node is selected, not when it is generated.
+- UCS: expand smallest `g`. Test the goal when the node is selected, not when it is generated. Time and space: `O(b^(C*/epsilon))`.
+- Greedy: expand smallest `h`. It ignores `g`, so it is not optimal.
 - A*: `f = g + h`. Admissible: `h <= true remaining cost`. Consistent: `h(n) <= step cost + h(next)`.
+- IDS raises a depth limit. IDA* raises an `f`-cost limit.
 
 Local search and CSP:
 
@@ -1304,7 +1478,7 @@ Learning:
 - Perceptron: if wrong, `w <- w + alpha * (y - y_hat) * x`.
 - Sigmoid: `1 / (1 + exp(-z))`. Derivative: `s * (1 - s)`. Tanh is the signed cousin, range `(-1, 1)`.
 - ReLU: `max(0, z)`. Derivative 1 when `z > 0`, and 0 when `z < 0`.
-- Sigmoid output error: `y(1-y)(target - y)`, then `delta * previous activation` updates the weight.
+- Sigmoid output error: `y(1-y)(z-y)`, where `y` is the sigmoid output and `z` is the target. Then `delta * previous activation` updates the weight.
 - Softmax: one score per class, turned into positive numbers that sum to 1. Predict the largest. Train with cross-entropy, not squared error.
 - Weight decay step: `w <- (1 - eta*lambda) * w - eta * (data gradient)`, when `eta*lambda < 1`.
 - Entropy: `sum -p log2 p`. Gain: parent entropy minus the size-weighted child entropies. Classification error: majority-class mistakes in the children, divided by the number of rows. Smallest error wins.

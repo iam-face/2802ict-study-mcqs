@@ -128,6 +128,14 @@ function renderMarkdown(source) {
   return out.join("\n");
 }
 
+function scrollToHash() {
+  const id = decodeURIComponent(window.location.hash.slice(1));
+  if (!id) {
+    return;
+  }
+  document.getElementById(id)?.scrollIntoView();
+}
+
 async function init() {
   try {
     const response = await fetch("study-guide.md");
@@ -135,10 +143,12 @@ async function init() {
       throw new Error(`Could not load study-guide.md (${response.status})`);
     }
     guide.innerHTML = renderMarkdown(await response.text());
+    scrollToHash();
   } catch (err) {
     guide.innerHTML = `<h1>Study guide</h1><p class="error">${escapeHtml(err.message)}</p>
       <p class="hint">Open this folder through a local server or GitHub Pages. A file:// address cannot load the guide.</p>`;
   }
 }
 
+window.addEventListener("hashchange", scrollToHash);
 init();

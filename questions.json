@@ -512,15 +512,15 @@
       "id": "L2-Q10",
       "sectionId": "L2",
       "type": "mcq",
-      "stem": "BFS completeness and optimality (as stated for equal step costs) are:",
+      "stem": "BFS completeness and optimality are:",
       "choices": {
         "A": "Incomplete and never optimal",
         "B": "Complete only in infinite spaces; optimal always for uneven costs",
         "C": "Complete for DFS only; optimal for greedy search",
-        "D": "Complete if b and d finite; optimal if step costs are all equal"
+        "D": "Complete when the branching factor is finite and a solution exists at a finite depth; optimal when all step costs are equal"
       },
       "answer": "D",
-      "explanation": "Complete (finite b,d); optimal if equal costs"
+      "explanation": "With finite branching, BFS eventually reaches any goal at a finite depth. It returns a shallowest goal, which is cheapest only when every step has the same cost."
     },
     {
       "id": "L2-Q11",
@@ -666,15 +666,15 @@
       "id": "L3-Q01",
       "sectionId": "L3",
       "type": "mcq",
-      "stem": "Among uninformed strategies listed in the Week 3 recap, which is the (only) one that returns a lowest-cost path?",
+      "stem": "When positive step costs may differ, which uninformed strategy is guaranteed to return a lowest-cost path?",
       "choices": {
-        "A": "BFS always",
+        "A": "BFS, because minimum depth always means minimum cost",
         "B": "DFS",
         "C": "Depth-limited search",
         "D": "UCS"
       },
       "answer": "D",
-      "explanation": "UCS returns lowest-cost path"
+      "explanation": "UCS expands by path cost and is optimal for positive step costs. BFS is also optimal when all step costs are equal, but not when they differ."
     },
     {
       "id": "L3-Q02",
@@ -752,13 +752,13 @@
       "type": "mcq",
       "stem": "Properties of greedy best-first search include:",
       "choices": {
-        "A": "Not complete in general (can loop); not optimal",
+        "A": "Not complete in general and not optimal; with repeated-state checking it is complete on a finite graph",
         "B": "Always complete and always optimal",
         "C": "Same guarantees as A* with any h",
         "D": "Linear space like IDS always"
       },
       "answer": "A",
-      "explanation": "Incomplete (loops); not optimal"
+      "explanation": "Greedy search can loop and can choose an expensive path because it uses h alone. Repeated-state checking makes it complete on a finite graph, but not optimal."
     },
     {
       "id": "L3-Q08",
@@ -876,15 +876,15 @@
       "id": "L3-Q16",
       "sectionId": "L3",
       "type": "mcq",
-      "stem": "How is h2(S) = 18 obtained in the slide example?",
+      "stem": "UCS has state X on its frontier with path cost 9. Expanding another node finds a new path to X with cost 6. What repair preserves UCS's lowest-cost-path guarantee?",
       "choices": {
-        "A": "8 misplaced tiles counted twice",
-        "B": "Path cost from Arad to Bucharest",
-        "C": "Sum 3+1+2+2+2+3+3+2 of Manhattan distances",
-        "D": "Number of attacking queen pairs"
+        "A": "Keep both nodes and expand the cost-9 copy first",
+        "B": "Discard the new path because X is already on the frontier",
+        "C": "Replace or update the frontier entry for X so its cost is 6",
+        "D": "Move X directly to the explored set without expansion"
       },
       "answer": "C",
-      "explanation": "Manhattan sum given on slide"
+      "explanation": "A frontier duplicate must keep the cheaper path. Otherwise the later cost-6 route could be lost behind the cost-9 entry."
     },
     {
       "id": "L3-Q17",
@@ -932,15 +932,15 @@
       "id": "L3-Q20",
       "sectionId": "L3",
       "type": "mcq",
-      "stem": "The lecture's practical fix when an A* frontier grows to about a million nodes is to:",
+      "stem": "Which statement correctly distinguishes the memory-bounded search methods named in the lecture?",
       "choices": {
-        "A": "Keep every node, because dropping any node is required for optimality",
-        "B": "Keep only about the best 100 or 1000 nodes by smallest f, and drop the rest. This can lose completeness or optimality",
-        "C": "Change the cutoff from f to depth and call the result uniform-cost search",
-        "D": "Store only the goal and discard g"
+        "A": "IDA* raises a depth bound, while IDS raises an f-cost bound",
+        "B": "IDA* raises an f-cost bound; RBFS is recursive best-first search; SMA* is simplified memory-bounded A*",
+        "C": "RBFS and SMA* are names for greedy search with h = 0",
+        "D": "All three keep the complete A* frontier in memory"
       },
       "answer": "B",
-      "explanation": "Keep the best 100 or 1000 frontier nodes by smallest f. Dropping the rest can lose completeness or optimality."
+      "explanation": "IDS raises a depth limit, while IDA* raises an `f` threshold. RBFS and SMA* are the named memory-bounded A* variants."
     },
     {
       "id": "L4A-Q01",
@@ -1032,13 +1032,13 @@
       "type": "mcq",
       "stem": "For 8-queens, a global solution corresponds to:",
       "choices": {
-        "A": "h = 14",
-        "B": "h = 86",
-        "C": "h = 0",
-        "D": "h = 18"
+        "A": "Eval = 14 attacking pairs",
+        "B": "Eval = 86 attacking pairs",
+        "C": "Eval = 0 attacking pairs",
+        "D": "Eval = 18 attacking pairs"
       },
       "answer": "C",
-      "explanation": "Global solution h=0"
+      "explanation": "Eval counts attacking queen pairs. A solution has no attacking pair, so Eval = 0. This objective is separate from the A* heuristic h."
     },
     {
       "id": "L4A-Q08",
@@ -1058,15 +1058,15 @@
       "id": "L4A-Q09",
       "sectionId": "L4A",
       "type": "mcq",
-      "stem": "When steepest-ascent succeeds / fails on 8-queens, average steps stated are about:",
+      "stem": "How does stochastic hill climbing differ from steepest-ascent hill climbing in the N-queens illustration?",
       "choices": {
-        "A": "21 success, 64 failure",
-        "B": "100 and 100",
-        "C": "7 and 22 only for sideways moves",
-        "D": "4 steps when it succeeds, 3 when it gets stuck"
+        "A": "It selects a neighbour randomly instead of always taking the best-valued neighbour",
+        "B": "It stores every frontier layer in a FIFO queue",
+        "C": "It guarantees the global optimum by testing every configuration",
+        "D": "It replaces the evaluation function with A* path cost"
       },
-      "answer": "D",
-      "explanation": "~4 success / ~3 stuck"
+      "answer": "A",
+      "explanation": "Stochastic hill climbing samples a neighbour instead of scanning for the globally best neighbour at every move."
     },
     {
       "id": "L4A-Q10",
@@ -1408,15 +1408,15 @@
       "id": "L4B-Q14",
       "sectionId": "L4B",
       "type": "mcq",
-      "stem": "Combining MRV, DH, and LCV is said to make which problem size feasible?",
+      "stem": "Which comparison between backtracking and min-conflicts matches the lecture?",
       "choices": {
-        "A": "1000 queens",
-        "B": "8-queens only",
-        "C": "Only 4-queens",
-        "D": "Map colouring with 2 colours only"
+        "A": "Backtracking starts with a complete conflicting assignment, while min-conflicts builds a partial assignment",
+        "B": "MRV, degree, and LCV make backtracking feasible for around 1000 queens, while min-conflicts can handle much larger n-queens instances with high probability",
+        "C": "Min-conflicts is complete and must prove that no solution exists",
+        "D": "Both methods expand nodes in increasing A* f-cost"
       },
-      "answer": "A",
-      "explanation": "1000-queens feasible with heuristics"
+      "answer": "B",
+      "explanation": "Backtracking builds a legal partial assignment. Min-conflicts starts complete and repairs conflicts, and scales much further on n-queens with high probability."
     },
     {
       "id": "L4B-Q15",
@@ -1527,8 +1527,8 @@
         "C": "Only PEAS is needed",
         "D": "Problems are trivial arithmetic with fixed rules only"
       },
-      "answer": "D",
-      "explanation": "Expertise missing/unexplainable/changing/adaptive"
+      "answer": "A",
+      "explanation": "Learning is useful when a rule is unavailable, cannot be written clearly, changes over time, or must adapt to a person. A fixed task such as payroll should use the known rule."
     },
     {
       "id": "L5-Q03",
@@ -1604,7 +1604,7 @@
       "id": "L5-Q08",
       "sectionId": "L5",
       "type": "mcq",
-      "stem": "Nearest-neighbour classification chooses:",
+      "stem": "One-nearest-neighbour classification (`k = 1`) chooses:",
       "choices": {
         "A": "The mean of all labels in the training set",
         "B": "Softmax over all classes always",
@@ -1612,7 +1612,7 @@
         "D": "The class of the nearest data point to the input"
       },
       "answer": "D",
-      "explanation": "Class of single nearest neighbour"
+      "explanation": "With k = 1, the single closest training point supplies the class. A larger k uses a majority vote and is less sensitive to one oddly labelled neighbour."
     },
     {
       "id": "L5-Q09",
@@ -1632,15 +1632,15 @@
       "id": "L5-Q10",
       "sectionId": "L5",
       "type": "mcq",
-      "stem": "Unsupervised learning is needed in practice largely because:",
+      "stem": "Which sequence describes pseudo-labelling in semi-supervised learning?",
       "choices": {
-        "A": "Labels are always free and abundant",
-        "B": "Unlabeled data is cheap/abundant while labeled data is expensive/scarce",
-        "C": "Rewards are provided every step by a teacher",
-        "D": "Domains are always size 3"
+        "A": "Cluster all rows, give every cluster a random name, and stop",
+        "B": "Train on labelled rows, predict unlabelled rows, keep confident predictions as labels, and train again",
+        "C": "Remove the labelled rows and train only on rewards",
+        "D": "Copy every prediction into the test set before evaluation"
       },
       "answer": "B",
-      "explanation": "Labels scarce; unlabeled abundant"
+      "explanation": "Pseudo-labelling trains on the labelled rows, predicts the unlabelled pool, keeps confident predictions as temporary labels, and retrains."
     },
     {
       "id": "L5-Q11",
@@ -1660,15 +1660,15 @@
       "id": "L5-Q12",
       "sectionId": "L5",
       "type": "mcq",
-      "stem": "An association rule example from market baskets is:",
+      "stem": "Which loss is L1 loss for a numeric prediction?",
       "choices": {
-        "A": "{onions, potatoes} => {burger}",
-        "B": "Arad -> Sibiu -> Bucharest",
-        "C": "h1(S) = 8",
-        "D": "w <- w - eta * gradient"
+        "A": "`|actual - predicted|`",
+        "B": "`(actual - predicted)^2`",
+        "C": "0 when correct and 1 otherwise",
+        "D": "`-log P(correct class)`"
       },
       "answer": "A",
-      "explanation": "Classic basket association example"
+      "explanation": "L1 is absolute error. L2 is squared error, 0-1 counts classification mistakes, and cross-entropy scores class probabilities."
     },
     {
       "id": "L5-Q13",
@@ -1744,29 +1744,29 @@
       "id": "L5-Q18",
       "sectionId": "L5",
       "type": "mcq",
-      "stem": "The slides' tradeoff note is that complex consistent hypotheses versus simpler inconsistent ones:",
+      "stem": "A team fits weights on the training set, chooses the learning rate using a validation set, and reports performance on a test set. Which use is correct?",
       "choices": {
-        "A": "Complex always generalise better",
-        "B": "Consistency guarantees best test error always",
-        "C": "Hypothesis complexity never matters",
-        "D": "There is a tradeoff; simpler inconsistent hypotheses may generalise better"
+        "A": "Fit on training, choose on validation, report once on test",
+        "B": "Choose every hyperparameter on the test set",
+        "C": "Fit the weights on all three sets before reporting the same test score",
+        "D": "Use validation only after the final test result is known"
       },
-      "answer": "D",
-      "explanation": "Complexity vs consistency tradeoff"
+      "answer": "A",
+      "explanation": "Parameters are fitted on training data, hyperparameters and checkpoints are chosen on validation data, and the test set is used once for the final report."
     },
     {
       "id": "L5-Q19",
       "sectionId": "L5",
       "type": "mcq",
-      "stem": "In the triple trade-off (Dietterich), as training set size N increases:",
+      "stem": "In Dietterich's trade-off, what usually happens to generalisation error E as hypothesis-space complexity c(H) increases from very low to very high while the data size is fixed?",
       "choices": {
-        "A": "Generalisation error E increases",
-        "B": "Complexity c(H) must be zero",
-        "C": "Overfitting is impossible",
-        "D": "Generalisation error E decreases"
+        "A": "E can first fall as underfitting is reduced, then rise as the model gains enough capacity to fit noise",
+        "B": "E must fall continuously to zero",
+        "C": "E cannot change because only the training set matters",
+        "D": "E rises continuously from the simplest model"
       },
-      "answer": "D",
-      "explanation": "Larger N tends to lower E"
+      "answer": "A",
+      "explanation": "Too little capacity underfits. More capacity can reduce that error, but excessive capacity can fit noise and raise generalisation error."
     },
     {
       "id": "L5-Q20",
@@ -1875,10 +1875,10 @@
         "A": "w* = X y",
         "B": "w* = softplus(X)",
         "C": "w* = 0 always",
-        "D": "w* = (X^T X)^{-1} X y  (normal equations form as on slides)"
+        "D": "w* = (X^T X)^{-1} X^T y"
       },
       "answer": "D",
-      "explanation": "Normal equation closed form"
+      "explanation": "The normal equation is `(X^T X)^(-1) X^T y` when the bias has been folded into the design matrix. The second transpose is required for the matrix dimensions to match."
     },
     {
       "id": "L6-Q08",
@@ -2234,15 +2234,15 @@
       "id": "L7-Q13",
       "sectionId": "L7",
       "type": "mcq",
-      "stem": "After the squash, the lecture computes y4 for unit 4 as approximately:",
+      "stem": "The worked slide gives hidden unit 4 a weighted sum of -0.3. Using the standard sigmoid `1 / (1 + exp(-z))`, what should its output be?",
       "choices": {
-        "A": "0.525",
-        "B": "0.527",
-        "C": "0.574",
-        "D": "0.300"
+        "A": "0.574",
+        "B": "0.475",
+        "C": "0.426",
+        "D": "0.527"
       },
       "answer": "C",
-      "explanation": "y4 = 1/(1+exp(0.3)) approx 0.574."
+      "explanation": "`sigmoid(-0.3) = 1/(1+exp(0.3))`, which is about 0.426. The slide prints 0.574, the value for positive 0.3. A negative sigmoid input must produce an output below 0.5."
     },
     {
       "id": "L7-Q14",
@@ -2360,15 +2360,15 @@
       "id": "L8-Q02",
       "sectionId": "L8",
       "type": "mcq",
-      "stem": "Which statement about validation and test datasets matches the lecture?",
+      "stem": "After fitting a model, a student adds the validation rows to the training data and then quotes the old validation score as held-out performance. What is wrong?",
       "choices": {
-        "A": "Test data may be reused freely to tune hyperparameters",
-        "B": "Validation evaluates the model for tuning; the test set should be used once",
-        "C": "Validation data may be mixed into training without harm",
-        "D": "Validation and test are the same dataset under two names"
+        "A": "Nothing; a score stays independent after its rows are used for fitting",
+        "B": "Those rows are no longer held out, so the old validation score is not an independent performance estimate",
+        "C": "Validation rows may only be used for unsupervised learning",
+        "D": "The student should tune on the test set instead"
       },
       "answer": "B",
-      "explanation": "Validation for tuning; test used once (e.g. future exam / private LB)."
+      "explanation": "Once validation rows are used to fit the weights, their old score is no longer held out. A separate test set is needed for the final estimate."
     },
     {
       "id": "L8-Q03",
@@ -2416,29 +2416,29 @@
       "id": "L8-Q06",
       "sectionId": "L8",
       "type": "mcq",
-      "stem": "Popular choices of K stated in the lecture are:",
+      "stem": "Which proposed data augmentation is invalid because it can change the label?",
       "choices": {
-        "A": "K = 2 or 3",
-        "B": "K = 50 or 100",
-        "C": "K = 5 or 10",
-        "D": "K = n (leave-one-out only)"
+        "A": "Slightly changing brightness in a natural image",
+        "B": "Adding mild background noise to speech",
+        "C": "Flipping a digit 6 so that it becomes a 9",
+        "D": "Cropping a small border while keeping the object visible"
       },
       "answer": "C",
-      "explanation": "Popular K = 5 or 10."
+      "explanation": "Augmentation must preserve the label. A transformation that turns a 6 into a 9 creates a wrongly labelled example."
     },
     {
       "id": "L8-Q07",
       "sectionId": "L8",
       "type": "mcq",
-      "stem": "Model capacity is described as:",
+      "stem": "A one-hidden-layer network has d inputs, m hidden units, and k outputs. Including biases, how many parameters does it have?",
       "choices": {
-        "A": "the ability to fit a variety of functions",
-        "B": "the size of the test dataset",
-        "C": "the learning rate eta",
-        "D": "the number of folds in cross validation"
+        "A": "`d + m + k`",
+        "B": "`(d + 1)m + (m + 1)k`",
+        "C": "`dmk`",
+        "D": "`d^m + m^k`"
       },
-      "answer": "A",
-      "explanation": "Capacity = ability to fit a variety of functions."
+      "answer": "B",
+      "explanation": "Input-to-hidden parameters are `dm + m` and hidden-to-output parameters are `mk + k`, giving `(d+1)m + (m+1)k`."
     },
     {
       "id": "L8-Q08",
@@ -2614,13 +2614,13 @@
       "type": "mcq",
       "stem": "What was the lecture's reason for a residual connection?",
       "choices": {
-        "A": "It is one of the four regularisers, and it helps most on a net with only two hidden layers",
-        "B": "Each layer remaps its input, so early information can disappear. The skip keeps a copy. A shallow net may not need it, and the skip is not itself regularisation",
-        "C": "It replaces the activation and guarantees a lower training error on every epoch",
-        "D": "It stores the A* frontier"
+        "A": "It penalises large weights to reduce capacity",
+        "B": "It preserves a short identity path for information and gradients",
+        "C": "It removes the need for non-linear activations",
+        "D": "It randomly drops hidden units during training"
       },
       "answer": "B",
-      "explanation": "A deep stack can lose early detail. The skip keeps a copy. A shallow net may not need it, and the skip is not regularisation."
+      "explanation": "The identity path lets information and gradients bypass several transformations. It is an optimisation device, not weight decay or dropout."
     },
     {
       "id": "L9-Q01",
@@ -2780,29 +2780,29 @@
       "id": "L9-Q12",
       "sectionId": "L9",
       "type": "mcq",
-      "stem": "How does classification error choose an attribute, as opposed to information gain?",
+      "stem": "Candidate A sends 10 rows into children whose majority labels make 2 mistakes in total. Candidate B makes 3 mistakes. Which statement is correct?",
       "choices": {
-        "A": "Label each child with its majority class, count the mistakes, divide by the number of rows, and pick the smallest error. Information gain instead picks the largest gain",
-        "B": "Pick the attribute with the largest classification error",
-        "C": "The two scores always select the same attribute, so either formula should be memorised",
-        "D": "Classification error is the parent entropy minus the weighted child entropies"
+        "A": "A has classification error 0.2 and should be preferred to B, whose error is 0.3",
+        "B": "B should be preferred because classification error is maximised",
+        "C": "A and B tie because both use the same parent",
+        "D": "A has classification error 2.0 because the count is not divided by the number of rows"
       },
       "answer": "A",
-      "explanation": "Majority label on each child, mistakes over the number of rows, pick the smallest error. Information gain picks the largest gain, and ID3 uses gain."
+      "explanation": "Classification error is majority-label mistakes divided by the number of rows. Candidate A gives 2/10 = 0.2, which is lower than 3/10 = 0.3. Information gain uses a different score and is maximised."
     },
     {
       "id": "L9-Q13",
       "sectionId": "L9",
       "type": "mcq",
-      "stem": "A perfect attribute for splitting would produce subsets that are:",
+      "stem": "A perfect attribute for splitting would produce children that are:",
       "choices": {
         "A": "mixed 50/50 in every branch",
-        "B": "all positive in one set and all negative in the other (for a binary split ideal)",
+        "B": "pure, with every example in each child belonging to one class",
         "C": "identical to the parent class counts in every child",
         "D": "empty for every attribute value"
       },
       "answer": "B",
-      "explanation": "Ideal: pure positive vs pure negative subsets."
+      "explanation": "Every branch of a perfect split is pure. A multi-valued attribute can have more than two pure children."
     },
     {
       "id": "L9-Q14",
@@ -3032,15 +3032,15 @@
       "id": "L10-Q10",
       "sectionId": "L10",
       "type": "mcq",
-      "stem": "P(E=true) in the Alarm network is:",
+      "stem": "The lecture's weather joint table gives P(hot, sun) = 0.4 and P(hot, rain) = 0.1. What is P(sun | hot)?",
       "choices": {
-        "A": "0.002",
-        "B": "0.001",
-        "C": "0.29",
-        "D": "0.7"
+        "A": "0.4",
+        "B": "0.5",
+        "C": "0.8",
+        "D": "0.9"
       },
-      "answer": "A",
-      "explanation": "P(E=true) = 0.002."
+      "answer": "C",
+      "explanation": "`P(sun | hot) = P(hot, sun) / P(hot) = 0.4 / (0.4 + 0.1) = 0.8`."
     },
     {
       "id": "L10-Q11",
@@ -3202,13 +3202,13 @@
       "type": "mcq",
       "stem": "Discounted utilities use a discount factor gamma. The infinite geometric series 1 + gamma + gamma^2 + ... equals:",
       "choices": {
-        "A": "1 / (1 - gamma) (for |gamma| < 1)",
+        "A": "1 / (1 - gamma) for 0 <= gamma < 1",
         "B": "1 - gamma",
         "C": "gamma / (1 + gamma)",
         "D": "infinity for every gamma in (0,1)"
       },
       "answer": "A",
-      "explanation": "Geometric sum 1/(1-gamma)."
+      "explanation": "The discounted sum is 1/(1-gamma) for the course range 0 <= gamma < 1. With gamma = 1, an infinite stream of positive rewards does not converge."
     },
     {
       "id": "L11-Q03",
@@ -3314,13 +3314,13 @@
       "type": "mcq",
       "stem": "In the four-episode direct-evaluation example, the averaged returns were:",
       "choices": {
-        "A": "8 from B, and 4 from C. The returns from C were 9, 9, 9, and -11",
+        "A": "B = 8 and C = 4",
         "B": "4 from B, and 8 from C",
         "C": "0 from both, because each state is copied from its successor",
         "D": "10 from both, which is the exit reward"
       },
       "answer": "A",
-      "explanation": "Returns from B average to 8. Returns from C are 9, 9, 9, and -11, which average to 4. Each state is averaged on its own."
+      "explanation": "Returns from B average to 8. Returns from C are 9, 9, 9, and -11, which average to 4. Each state is averaged on its own. A slide output table shows different values; use the worked return averages from the lecture explanation."
     },
     {
       "id": "L11-Q11",
@@ -3441,12 +3441,12 @@
       "stem": "When the policy, the transitions, and the rewards are known, what comes before temporal difference?",
       "choices": {
         "A": "Average sampled returns, and do not use T",
-        "B": "Start from V = 0 and repeatedly apply the one-step expected backup. He called this the Bellman update. Temporal difference replaces that expectation with one sample when T is unknown",
+        "B": "Repeatedly apply the one-step expected Bellman backup to V",
         "C": "Skip values and call tools, which is the agentic setting from week 1",
         "D": "Set every unseen transition probability to 1"
       },
       "answer": "B",
-      "explanation": "With known policy, T, and R, start at V = 0 and repeat the one-step Bellman backup. Temporal difference is the one-sample version used when T is unknown."
+      "explanation": "With known policy, T, and R, start at V = 0 and repeat the one-step expected Bellman backup. Temporal difference replaces that expectation with a sampled successor when T is unknown."
     },
     {
       "id": "L11-Q20",
@@ -3454,13 +3454,13 @@
       "type": "mcq",
       "stem": "Why did he say an MDP is not just another Bayes net?",
       "choices": {
-        "A": "A Bayes net already chooses actions, so an MDP adds nothing",
-        "B": "An MDP cannot represent uncertainty, while a Bayes net can",
-        "C": "They are the same graph. The only difference is the name",
-        "D": "A Bayes net is for uncertain variables. It is not the picture for what happens if you act. That dynamics, repeated over time, is what an MDP is for"
+        "A": "Bayes nets already optimise action sequences",
+        "B": "MDPs cannot represent uncertain outcomes",
+        "C": "The two models differ only in notation",
+        "D": "MDPs represent action-dependent transitions and rewards over time"
       },
       "answer": "D",
-      "explanation": "A Bayes net is for uncertain variables, not for action dynamics repeated over time."
+      "explanation": "A Bayes net represents uncertain variables and their dependencies. An MDP adds choices, action-dependent state transitions, rewards, and repeated decisions over time."
     },
     {
       "id": "Lab5-Q01",
@@ -4770,7 +4770,7 @@
       "type": "mcq",
       "stem": "On the impure Nr rooms = 3 subset, the next split chosen is:",
       "choices": {
-        "A": "Furniture (IG about 0.918)",
+        "A": "Furniture",
         "B": "Nr rooms again",
         "C": "New kitchen (IG about 0.918)",
         "D": "Softmax"
@@ -5706,99 +5706,99 @@
       "id": "A2-Q36",
       "sectionId": "A2",
       "type": "mcq",
-      "stem": "On the two-layer MLP learning-rate study, the highest test accuracy was:",
+      "stem": "A learning curve falls smoothly but only by a tiny amount over 20 epochs. Which diagnosis should be checked first?",
       "choices": {
-        "A": "81.86 percent at learning rate 0.001",
-        "B": "81.18 percent at learning rate 1.0",
-        "C": "86.95 percent at learning rate 0.01",
-        "D": "10.00 percent at learning rate 100"
+        "A": "The learning rate may be too small",
+        "B": "The learning rate is too large and causing repeated overshooting",
+        "C": "The weights must be frozen, so no update is occurring",
+        "D": "The model has already converged because any decreasing curve is finished"
       },
-      "answer": "C",
-      "explanation": "Learning rate 0.01, 86.95 percent test accuracy."
+      "answer": "A",
+      "explanation": "Smooth but very slow progress is evidence that the step size may be too small."
     },
     {
       "id": "A2-Q37",
       "sectionId": "A2",
       "type": "mcq",
-      "stem": "Learning rates 10 and 100 are reported as totally unstable because they produced:",
+      "stem": "Training loss becomes `NaN` and accuracy stays near chance. Which explanation best fits the learning-rate experiment?",
       "choices": {
-        "A": "`NaN` loss and constant 10 percent accuracy",
-        "B": "The highest validation accuracy",
-        "C": "A slow but finite improvement through epoch 20",
-        "D": "A lower runtime only"
+        "A": "The learning rate is so large that updates overflow or diverge",
+        "B": "The learning rate is too small to move the weights",
+        "C": "Cross-entropy has reached its exact optimum",
+        "D": "The run is stable because chance accuracy is expected during convergence"
       },
       "answer": "A",
-      "explanation": "Overflow, `NaN` loss, and 10 percent accuracy."
+      "explanation": "A very large learning rate can send values outside the finite numeric range, producing `NaN` and chance-level predictions."
     },
     {
       "id": "A2-Q38",
       "sectionId": "A2",
       "type": "mcq",
-      "stem": "Learning rate 1.0 on the two-layer MLP should be described as:",
+      "stem": "Loss oscillates but remains finite and sometimes improves. How should the run be described?",
       "choices": {
-        "A": "Totally unstable, with `NaN` loss",
-        "B": "The best rate in the study",
-        "C": "Identical to learning rate 0.001",
-        "D": "Finite but oscillating, not totally unstable"
+        "A": "Converged smoothly",
+        "B": "Finite but unstable or overshooting, not the same as numerical overflow",
+        "C": "Guaranteed to give the best test result",
+        "D": "Evidence that the learning rate is too small"
       },
-      "answer": "D",
-      "explanation": "Rate 1.0 oscillated but stayed finite."
+      "answer": "B",
+      "explanation": "Finite oscillation suggests repeated overshooting. It is unstable behaviour, but distinct from overflow to `NaN`."
     },
     {
       "id": "A2-Q39",
       "sectionId": "A2",
       "type": "mcq",
-      "stem": "The highest baseline selected-model test accuracy was:",
+      "stem": "To compare four architectures fairly in the baseline experiment, what should be held constant?",
       "choices": {
-        "A": "85.45 percent, softmax regression on full data",
-        "B": "87.36 percent, residual three-layer MLP on full data",
-        "C": "86.22 percent, two-layer MLP on the 50 percent data",
-        "D": "83.54 percent, softmax regression on the 10 percent data"
+        "A": "Dataset split, epoch count, learning rate, batch size, and evaluation procedure",
+        "B": "Only the final test accuracy",
+        "C": "Each model's best test-selected epoch",
+        "D": "A different random subset and learning rate for every model"
       },
-      "answer": "B",
-      "explanation": "Residual three-layer MLP, full data, 87.36 percent."
+      "answer": "A",
+      "explanation": "Fair comparison changes the architecture while holding the data and training/evaluation protocol fixed."
     },
     {
       "id": "A2-Q40",
       "sectionId": "A2",
       "type": "mcq",
-      "stem": "On the 10 percent dataset, the ordinary three-layer MLP:",
+      "stem": "One deep model stays near chance on the 10 percent dataset while another trains. What can be concluded from that run alone?",
       "choices": {
-        "A": "Stayed at 10 percent accuracy, while the residual model reached 80.83 percent",
-        "B": "Reached 87.36 percent",
-        "C": "Was the best of the four architectures",
-        "D": "Had a lower loss than `log(10)` from epoch 1"
+        "A": "The failed configuration did not train successfully under those settings; the run alone does not prove that all deeper models fail on small data",
+        "B": "Depth can never work with Fashion-MNIST",
+        "C": "Residual connections always guarantee the best test accuracy",
+        "D": "Every model with the same number of layers will fail under every learning rate"
       },
       "answer": "A",
-      "explanation": "10 percent versus 80.83 percent. The report does not isolate the exact cause."
+      "explanation": "A failed run is evidence about that configuration and run. It does not establish a universal rule about depth."
     },
     {
       "id": "A2-Q41",
       "sectionId": "A2",
       "type": "mcq",
-      "stem": "The best selected-model test accuracy on the 10 percent dataset was:",
+      "stem": "Why can reducing the training set from full data to 10 percent increase variance in the measured result?",
       "choices": {
-        "A": "The residual three-layer MLP at 80.83 percent",
-        "B": "The ordinary three-layer MLP at 82.40 percent",
-        "C": "Softmax regression at 83.54 percent",
-        "D": "The two-layer MLP at 86.95 percent"
+        "A": "Fewer examples make the fitted parameters and selected checkpoint more sensitive to which rows were sampled",
+        "B": "Sampling variance is unchanged because the examples still come from Fashion-MNIST",
+        "C": "Fewer examples force every optimiser to reach the same parameter values",
+        "D": "The validation result becomes deterministic when the training set is smaller"
       },
-      "answer": "C",
-      "explanation": "Softmax regression, 83.54 percent."
+      "answer": "A",
+      "explanation": "With fewer examples, sampling differences have more influence, so repeated runs can vary more."
     },
     {
       "id": "A2-Q42",
       "sectionId": "A2",
       "type": "mcq",
-      "stem": "The best selected-model test accuracy on the 50 percent dataset was:",
+      "stem": "What is the defensible conclusion if the residual model beats the plain three-layer model in one controlled run?",
       "choices": {
-        "A": "Softmax regression at 85.45 percent",
-        "B": "The ordinary three-layer MLP at 82.40 percent",
-        "C": "The residual three-layer MLP at 87.36 percent",
-        "D": "The two-layer MLP at 86.22 percent"
+        "A": "The skip helped optimisation in that run; repeated runs are needed before claiming a general advantage",
+        "B": "Residual connections are proven to be regularisers",
+        "C": "The residual model must win on every dataset and seed",
+        "D": "The plain model cannot represent any function the residual model represents"
       },
-      "answer": "D",
-      "explanation": "Two-layer MLP, 86.22 percent."
+      "answer": "A",
+      "explanation": "One result supports a run-specific optimisation claim. A general claim needs repeated seeds or further controlled evidence."
     },
     {
       "id": "A2-Q43",
@@ -5820,13 +5820,13 @@
       "type": "mcq",
       "stem": "On the full dataset with 20 fixed epochs, batch size 1 compared with batch size 16:",
       "choices": {
-        "A": "Made the same number of updates and finished faster",
-        "B": "Made 16 times as many updates, and was both the most accurate and the slowest",
-        "C": "Made fewer updates and reached 10 percent accuracy",
-        "D": "Was unstable because the learning rate was 10"
+        "A": "Makes the same number of parameter updates",
+        "B": "Makes 16 times as many parameter updates and is usually slower in wall time",
+        "C": "Makes one-sixteenth as many updates because each batch contains fewer rows",
+        "D": "Makes an update count determined only by the model's hidden width"
       },
       "answer": "B",
-      "explanation": "960,000 updates versus 60,000; 87.82 percent and 651.69 seconds."
+      "explanation": "For the same examples and epochs, batch size 1 performs one update per example, while batch size 16 performs about one update per 16 examples."
     },
     {
       "id": "A2-Q45",
@@ -5846,57 +5846,57 @@
       "id": "A2-Q46",
       "sectionId": "A2",
       "type": "mcq",
-      "stem": "The submitted code zip contains:",
+      "stem": "Why should test accuracy not be used to choose the best epoch?",
       "choices": {
-        "A": "`nn.py`, `train.py`, `run_experiments.py`, and `plot_results.py` only",
-        "B": "The four Python files plus `results/summary.csv`",
-        "C": "The virtual environment and the datasets",
-        "D": "`tests/test_assignment2.py` and the starter files"
+        "A": "Repeated choices adapt the model-selection process to the test rows, so the final score is optimistic",
+        "B": "Test accuracy remains independent even after it guides repeated choices",
+        "C": "The epoch with the highest test score is unbiased if every epoch used the same test rows",
+        "D": "Validation and test sets are interchangeable whenever they have equal size"
       },
       "answer": "A",
-      "explanation": "Four Python files only."
+      "explanation": "Choosing from repeated test results leaks test information into model selection. Use validation for the choice and reserve test for the final report."
     },
     {
       "id": "A2-Q47",
       "sectionId": "A2",
       "type": "mcq",
-      "stem": "`results/summary.csv` is:",
+      "stem": "Why are the 50 percent and 10 percent training sets useful in the assignment?",
       "choices": {
-        "A": "One of the four files required by the assignment brief",
-        "B": "The Fashion-MNIST training set",
-        "C": "Created by `train.py` before any experiment is run",
-        "D": "Created by `run_experiments.py` and used to draw the report figures; it is not a required upload"
+        "A": "They test how model performance and stability change when fewer training examples are available",
+        "B": "They isolate the effect of batch size while holding the number of training examples fixed",
+        "C": "They allow validation and test rows to be added to training without leakage",
+        "D": "They test whether reducing the training rows also reduces the input dimension"
       },
-      "answer": "D",
-      "explanation": "Local experiment output, not a required upload."
+      "answer": "A",
+      "explanation": "Pruned datasets expose data-efficiency and stability differences that may be hidden with the full training set."
     },
     {
       "id": "A2-Q48",
       "sectionId": "A2",
       "type": "mcq",
-      "stem": "The console figures in the report are:",
+      "stem": "`forward` returns logits rather than probabilities. Where should softmax be applied?",
       "choices": {
-        "A": "Photographs of the marker's screen",
-        "B": "Matplotlib drawings of selected lines from the saved logs",
-        "C": "Copies of the training-history plots",
-        "D": "Output from sklearn"
+        "A": "When probabilities are required by prediction or cross-entropy",
+        "B": "Before every hidden affine transformation",
+        "C": "Inside `get_params`, so the flattened weights sum to 1",
+        "D": "After converting the class label to a probability"
       },
-      "answer": "B",
-      "explanation": "Generated from log text, not a terminal capture."
+      "answer": "A",
+      "explanation": "The model's affine output is logits. Apply softmax only where class probabilities are needed; a combined cross-entropy implementation may consume logits directly."
     },
     {
       "id": "A2-Q49",
       "sectionId": "A2",
       "type": "mcq",
-      "stem": "Appendix A tells a marker to reproduce the experiments by:",
+      "stem": "Why should the loss function avoid changing parameters in place while autograd is tracing it?",
       "choices": {
-        "A": "Running the unit tests from the zip, which includes the `tests` folder",
-        "B": "Opening `results/summary.csv` from the zip",
-        "C": "Placing the four `.csv.gz` files in `data/` beside the scripts, then running `python run_experiments.py` and `python plot_results.py`",
-        "D": "Training only the linear model for one epoch"
+        "A": "Mutation can corrupt the computational graph used to compute the gradient",
+        "B": "Mutation guarantees that every gradient is zero",
+        "C": "Mutation changes cross-entropy into mean squared error",
+        "D": "Mutation prevents the forward pass from producing logits"
       },
-      "answer": "C",
-      "explanation": "Dataset in `data/`, then the two Python commands."
+      "answer": "A",
+      "explanation": "Autograd needs the forward operations and saved values unchanged so it can apply the chain rule correctly."
     },
     {
       "id": "A2-Q50",
@@ -6660,7 +6660,7 @@
         "F": "False"
       },
       "answer": "T",
-      "explanation": "Eval counts attacking pairs, and a solution has h = 0."
+      "explanation": "Eval counts attacking pairs, and a solution has Eval = 0. This objective is separate from the A* heuristic h."
     },
     {
       "id": "L4A-T09",

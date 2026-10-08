@@ -1,4 +1,25 @@
 const STORAGE_KEY = "mcq-quiz-session";
+const GUIDE_ANCHORS = {
+  L1: "lecture-1-introduction-and-agents",
+  L2: "lecture-2-uninformed-search",
+  L3: "lecture-3-informed-search",
+  L4A: "lecture-4-local-search-and-csps",
+  L4B: "lecture-4-local-search-and-csps",
+  L5: "lecture-5-machine-learning-basics",
+  L6: "lecture-6-linear-models",
+  L7: "lecture-7-feed-forward-neural-networks",
+  L8: "lecture-8-model-selection-and-regularisation",
+  L9: "lecture-9-decision-trees",
+  L10: "lecture-10-bayes-nets",
+  L11: "lecture-11-mdps-and-reinforcement-learning",
+  Lab5: "lecture-5-machine-learning-basics",
+  Lab6: "lecture-6-linear-models",
+  Lab7: "lecture-7-feed-forward-neural-networks",
+  Lab8: "lecture-7-feed-forward-neural-networks",
+  Lab9: "lecture-9-decision-trees",
+  A1: "lecture-4-local-search-and-csps",
+  A2: "lecture-8-model-selection-and-regularisation",
+};
 
 const state = {
   bank: null,
@@ -44,6 +65,41 @@ function shuffle(items) {
   return copy;
 }
 
+function balancedSample(questions, type, count) {
+  const groups = new Map();
+  questions
+    .filter((question) => questionType(question) === type)
+    .forEach((question) => {
+      if (!groups.has(question.sectionId)) {
+        groups.set(question.sectionId, []);
+      }
+      groups.get(question.sectionId).push(question);
+    });
+
+  groups.forEach((items, id) => groups.set(id, shuffle(items)));
+  const sectionIds = shuffle(Array.from(groups.keys()));
+  const chosen = [];
+  let round = 0;
+  while (chosen.length < count) {
+    let added = false;
+    for (const id of sectionIds) {
+      const items = groups.get(id);
+      if (round < items.length) {
+        chosen.push(items[round]);
+        added = true;
+        if (chosen.length === count) {
+          break;
+        }
+      }
+    }
+    if (!added) {
+      break;
+    }
+    round += 1;
+  }
+  return chosen;
+}
+
 function clampN(value, max) {
   const parsed = Number.parseInt(value, 10);
   if (!Number.isFinite(parsed) || parsed < 1) {
@@ -76,7 +132,7 @@ function restoreSession() {
     const saved = JSON.parse(raw);
     state.selected = new Set(saved.selected || []);
     state.types = new Set(Array.isArray(saved.types) && saved.types.length ? saved.types : ["mcq", "tf"]);
-    state.mode = saved.mode === "random" ? "random" : "all";
+    state.mode = ["all", "random", "balanced"].includes(saved.mode) ? saved.mode : "all";
     state.n = Number.isFinite(saved.n) ? saved.n : 20;
     state.answers = saved.answers || {};
     state.index = saved.index || 0;
@@ -105,6 +161,13 @@ function startQuiz() {
     const count = clampN(state.n, available.length);
     state.n = count;
     chosen = shuffle(available).slice(0, count);
+  } else if (state.mode === "balanced") {
+    const mcqs = balancedSample(available, "mcq", 10);
+    const trueFalse = balancedSample(available, "tf", 10);
+    if (mcqs.length < 10 || trueFalse.length < 10) {
+      return;
+    }
+    chosen = shuffle([...mcqs, ...trueFalse]);
   }
   state.quiz = chosen;
   state.answers = {};
@@ -189,6 +252,9 @@ function renderSetup() {
     ["assignment", "Assignments"],
   ];
   const available = pool().length;
+  const availableMcq = pool().filter((question) => questionType(question) === "mcq").length;
+  const availableTf = pool().filter((question) => questionType(question) === "tf").length;
+  const balancedReady = availableMcq >= 10 && availableTf >= 10;
   const nValue = available ? clampN(state.n, available) : state.n;
   const groupsHtml = groups.map(([kind, label]) => {
     const items = state.bank.sections.filter((section) => section.kind === kind);
@@ -214,7 +280,7 @@ function renderSetup() {
       <p><strong>Exam, as said in the lectures.</strong> 22 questions: 10 true/false, 10 multiple choice, 2 longer answers. 2 hours plus 10 minutes reading, and you may write during the reading. The paper is 40 marks, and you need 16 of those 40 to pass the course. Closed book, one blank sheet. The sample paper shows the format, not which topics will appear. Most students sit on 19 October. Book the slot in ProctorU.</p>
       <p>Questions follow the labs, the lecture examples, and the weekly exercises. There may be one on what an assignment function does. The example he read out was Assignment 1 <code>revise</code>: it changes the domain of x in place and returns whether that domain changed. You are not asked to derive complexity, to memorise the information-gain formula, or to recite MRV. Week 11 is about 4 marks and is meant to be simple. A correct Bayes-net calculation is accepted even if a shorter one exists.</p>
     </aside>
-    <p class="lede">Choose sections, then work through the set. Scoring happens after you submit.</p>
+    <p class="lede">Learn a topic in the guide, practise it here, then use a balanced session or the final exam drill to check whether you can apply it. Scoring happens after you submit.</p>
     <div class="row-actions">
       <button type="button" id="select-all">Select all</button>
       <button type="button" id="clear-all">Clear</button>
@@ -232,13 +298,14 @@ function renderSetup() {
       <div class="mode">
         <label><input type="radio" name="mode" value="all" ${state.mode === "all" ? "checked" : ""}> All questions in the selected sections</label>
         <label><input type="radio" name="mode" value="random" ${state.mode === "random" ? "checked" : ""}> Random sample</label>
+        <label><input type="radio" name="mode" value="balanced" ${state.mode === "balanced" ? "checked" : ""}> Balanced objective practice: 10 multiple choice and 10 true/false, spread across the selected sections</label>
       </div>
       <div class="n-field" ${state.mode === "random" ? "" : "hidden"}>
         <label for="sample-n">Number of questions</label>
         <input id="sample-n" type="number" min="1" max="${Math.max(available, 1)}" value="${nValue}">
       </div>
-      <p class="hint" id="pool-hint">${available} question${available === 1 ? "" : "s"} in the selected pool.</p>
-      <button type="button" class="primary" id="start" ${available ? "" : "disabled"}>Start quiz</button>
+      <p class="hint" id="pool-hint">${available} question${available === 1 ? "" : "s"} in the selected pool. ${state.mode === "balanced" ? `${availableMcq} multiple choice and ${availableTf} true/false are available; at least 10 of each are required.` : ""}</p>
+      <button type="button" class="primary" id="start" ${available && (state.mode !== "balanced" || balancedReady) ? "" : "disabled"}>Start quiz</button>
     </div>
   `;
 
@@ -315,7 +382,7 @@ function renderQuiz() {
   `).join("");
 
   app.innerHTML = `
-    <p class="meta">${escapeHtml(sectionTitle(question.sectionId))} · ${escapeHtml(question.id)}</p>
+    <p class="meta">${escapeHtml(sectionTitle(question.sectionId))} | ${escapeHtml(question.id)}</p>
     <p class="meta">Question ${state.index + 1} of ${total}</p>
     <div class="progress" aria-hidden="true"><span style="width:${width}%"></span></div>
     <div class="card">
@@ -358,14 +425,19 @@ function renderResults() {
       const note = marks.length ? ` (${marks.join(", ")})` : "";
       return `<li><strong>${letter}.</strong> ${escapeHtml(question.choices[letter])}${note}</li>`;
     }).join("");
+    const guideAnchor = GUIDE_ANCHORS[question.sectionId];
+    const reviewLink = guideAnchor
+      ? `<p><a href="guide.html#${guideAnchor}">Review this topic in the study guide</a></p>`
+      : "";
     return `
       <article class="card review ${ok ? "correct" : "incorrect"}">
         <div class="badge">${ok ? "Correct" : "Incorrect"}</div>
-        <p class="meta">${escapeHtml(sectionTitle(question.sectionId))} · ${escapeHtml(question.id)}</p>
+        <p class="meta">${escapeHtml(sectionTitle(question.sectionId))} | ${escapeHtml(question.id)}</p>
         <p>${escapeHtml(question.stem)}</p>
         <ul>${choices}</ul>
         <p>Your answer: <span class="yours">${escapeHtml(shownAnswer(question, yours))}</span>. Correct answer: <span class="key">${escapeHtml(shownAnswer(question, question.answer))}</span>.</p>
         <p class="hint">${escapeHtml(question.explanation)}</p>
+        ${reviewLink}
       </article>
     `;
   }).join("");
