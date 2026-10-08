@@ -1,6 +1,6 @@
 # 2802ICT Study MCQ quiz
 
-Static quiz for the multiple-choice questions in `../Study MCQs.md` and the true/false questions in `../Study TF.md`. It runs in the browser only. There is no account and no saved history beyond the current tab session (a refresh keeps the sitting you are in).
+Static quiz for the 768 objective questions in `../Study MCQs.md` and `../Study TF.md`. It includes lecture, lab, workshop, assignment, and final-exam-drill sections. It runs in the browser only. There is no account and no saved history beyond the current tab session (a refresh keeps the sitting you are in).
 
 ## Use it locally
 

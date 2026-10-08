@@ -61,6 +61,26 @@
       "kind": "lecture"
     },
     {
+      "id": "Lab2",
+      "title": "Lab Week 2: Uninformed search traces",
+      "kind": "lab"
+    },
+    {
+      "id": "Lab3A",
+      "title": "Lab Week 3.1: Search strategies on a weighted graph",
+      "kind": "lab"
+    },
+    {
+      "id": "Lab3B",
+      "title": "Lab Week 3.2: Heuristic design for the 8-puzzle",
+      "kind": "lab"
+    },
+    {
+      "id": "Lab4",
+      "title": "Lab Week 4: CSP search and propagation",
+      "kind": "lab"
+    },
+    {
       "id": "Lab5",
       "title": "Lab 5: Learning paradigms and energy regression",
       "kind": "lab"
@@ -83,6 +103,16 @@
     {
       "id": "Lab9",
       "title": "Lab Week 9",
+      "kind": "lab"
+    },
+    {
+      "id": "Lab10",
+      "title": "Lab Week 10: Bayesian networks",
+      "kind": "lab"
+    },
+    {
+      "id": "Lab11",
+      "title": "Workshop Week 11: Q-learning",
       "kind": "lab"
     },
     {
@@ -694,15 +724,15 @@
       "id": "L3-Q03",
       "sectionId": "L3",
       "type": "mcq",
-      "stem": "Best-first search expands the unexpanded node with:",
+      "stem": "Two admissible heuristics give values 4 and 7 for the same state. Which combined heuristic dominates both while remaining admissible?",
       "choices": {
-        "A": "Highest f(n)",
-        "B": "Random neighbour only",
-        "C": "Lowest estimate f(n)",
-        "D": "Deepest node only"
+        "A": "Their sum, 11",
+        "B": "Their average, 5.5",
+        "C": "Their maximum, 7",
+        "D": "Their minimum, 4"
       },
       "answer": "C",
-      "explanation": "Expand lowest f estimate"
+      "explanation": "The maximum of admissible lower bounds remains admissible and dominates both inputs."
     },
     {
       "id": "L3-Q04",
@@ -722,15 +752,15 @@
       "id": "L3-Q05",
       "sectionId": "L3",
       "type": "mcq",
-      "stem": "In the Romania greedy example, hSLD(n) means:",
+      "stem": "Which move rule defines Gaschnig's relaxed 8-puzzle heuristic?",
       "choices": {
-        "A": "Straight-line distance from n to Bucharest",
-        "B": "Sum of step costs so far",
-        "C": "Number of misplaced tiles",
-        "D": "Manhattan distance of queens"
+        "A": "Any tile may move directly into the blank, even when it is not adjacent",
+        "B": "Any tile may move to any square without using the blank",
+        "C": "A tile may move only when adjacent to the blank",
+        "D": "Every misplaced tile costs its Manhattan distance"
       },
       "answer": "A",
-      "explanation": "Straight-line distance to Bucharest"
+      "explanation": "Gaschnig allows any tile to move directly into the blank."
     },
     {
       "id": "L3-Q06",
@@ -934,13 +964,13 @@
       "type": "mcq",
       "stem": "Which statement correctly distinguishes the memory-bounded search methods named in the lecture?",
       "choices": {
-        "A": "IDA* raises a depth bound, while IDS raises an f-cost bound",
-        "B": "IDA* raises an f-cost bound; RBFS is recursive best-first search; SMA* is simplified memory-bounded A*",
-        "C": "RBFS and SMA* are names for greedy search with h = 0",
-        "D": "All three keep the complete A* frontier in memory"
+        "A": "IDA* raises a depth bound and stores the full frontier",
+        "B": "RBFS follows the best branch until its backed-up score loses to the best alternative; SMA* forgets the worst leaf when memory is full and backs its score into the parent",
+        "C": "RBFS and SMA* become greedy search by discarding `g`",
+        "D": "SMA* never regenerates a forgotten branch"
       },
       "answer": "B",
-      "explanation": "IDS raises a depth limit, while IDA* raises an `f` threshold. RBFS and SMA* are the named memory-bounded A* variants."
+      "explanation": "RBFS compares a branch's backed-up score with its best alternative; SMA* forgets a worst leaf and records its score for possible regeneration."
     },
     {
       "id": "L4A-Q01",
@@ -1060,13 +1090,13 @@
       "type": "mcq",
       "stem": "How does stochastic hill climbing differ from steepest-ascent hill climbing in the N-queens illustration?",
       "choices": {
-        "A": "It selects a neighbour randomly instead of always taking the best-valued neighbour",
+        "A": "It samples among improving neighbours, often favouring larger improvements, instead of deterministically taking the best one",
         "B": "It stores every frontier layer in a FIFO queue",
         "C": "It guarantees the global optimum by testing every configuration",
         "D": "It replaces the evaluation function with A* path cost"
       },
       "answer": "A",
-      "explanation": "Stochastic hill climbing samples a neighbour instead of scanning for the globally best neighbour at every move."
+      "explanation": "Stochastic hill climbing samples among improving neighbours instead of always selecting the steepest improvement."
     },
     {
       "id": "L4A-Q10",
@@ -1618,15 +1648,15 @@
       "id": "L5-Q09",
       "sectionId": "L5",
       "type": "mcq",
-      "stem": "k-nearest-neighbour classification chooses:",
+      "stem": "A k-NN classifier performs well in two dimensions but poorly after many irrelevant features are added. What is the best explanation and response?",
       "choices": {
-        "A": "A random class",
-        "B": "Only the furthest point's class",
-        "C": "The most common class among the k nearest data points",
-        "D": "Always class 0"
+        "A": "The curse of dimensionality makes distances less informative; select features and choose `k` with validation or cross-validation",
+        "B": "k-NN becomes a linear classifier; increase the test-set size",
+        "C": "More dimensions make every neighbour identical; set `k=1` using test accuracy",
+        "D": "Lazy learning cannot use numeric inputs; replace Euclidean distance with entropy"
       },
-      "answer": "C",
-      "explanation": "Majority among k neighbours"
+      "answer": "A",
+      "explanation": "Extra dimensions weaken distance contrast; validate feature choices and `k` without touching the test set."
     },
     {
       "id": "L5-Q10",
@@ -2010,15 +2040,15 @@
       "id": "L6-Q17",
       "sectionId": "L6",
       "type": "mcq",
-      "stem": "Logistic regression is described as:",
+      "stem": "For softmax probabilities `p` and a one-hot target `y`, what is the cross-entropy gradient with respect to output logit `o_i`?",
       "choices": {
-        "A": "Linear function squashed by the logistic (sigmoid) function to outputs in (0,1)",
-        "B": "Linear function only with hard threshold",
-        "C": "k-NN with k=5",
-        "D": "UCS with priority on g"
+        "A": "`p_i - y_i`",
+        "B": "`p_i(1-p_i)`",
+        "C": "`(p_i-y_i)^2`",
+        "D": "`argmax_i p_i`"
       },
       "answer": "A",
-      "explanation": "Linear + sigmoid squash"
+      "explanation": "Softmax with cross-entropy gives output-logit gradient `p_i-y_i`."
     },
     {
       "id": "L6-Q18",
@@ -2556,15 +2586,15 @@
       "id": "L8-Q16",
       "sectionId": "L8",
       "type": "mcq",
-      "stem": "Typical dropout rates stated for hidden layers and the input layer are:",
+      "stem": "In inverted dropout with drop probability `p=0.25`, what happens to a surviving activation during training and at inference?",
       "choices": {
-        "A": "hidden 0.9-0.99, input 0.5",
-        "B": "hidden 0.01, input 0.8",
-        "C": "always exactly 0.5 for every layer",
-        "D": "hidden 0.2-0.5, input about 0.1"
+        "A": "Multiply it by 0.25 during training and drop it at inference",
+        "B": "Divide it by 0.75 during training; use all units with no dropout scaling at inference",
+        "C": "Leave it unchanged during training and divide it by 0.75 at inference",
+        "D": "Divide it by 0.25 in both phases"
       },
-      "answer": "D",
-      "explanation": "Hidden 0.2-0.5; input about 0.1."
+      "answer": "B",
+      "explanation": "Inverted dropout scales kept training activations by `1/(1-p)` and uses the full unscaled network at inference."
     },
     {
       "id": "L8-Q17",
@@ -2640,15 +2670,15 @@
       "id": "L9-Q02",
       "sectionId": "L9",
       "type": "mcq",
-      "stem": "In a decision tree, each internal node corresponds to:",
+      "stem": "A parent has classification error 0.4. A candidate split has weighted child error 0.25. What is its error reduction?",
       "choices": {
-        "A": "a leaf output value only",
-        "B": "a random sample of training rows",
-        "C": "a test of one input attribute",
-        "D": "the plurality class of the whole dataset always"
+        "A": "0.10",
+        "B": "0.15",
+        "C": "0.25",
+        "D": "0.65"
       },
-      "answer": "C",
-      "explanation": "Internal node = test on one attribute."
+      "answer": "B",
+      "explanation": "Error reduction is `0.4-0.25=0.15`."
     },
     {
       "id": "L9-Q03",
@@ -2780,29 +2810,29 @@
       "id": "L9-Q12",
       "sectionId": "L9",
       "type": "mcq",
-      "stem": "Candidate A sends 10 rows into children whose majority labels make 2 mistakes in total. Candidate B makes 3 mistakes. Which statement is correct?",
+      "stem": "Two remaining attributes tie for the largest information gain. What should the learner do?",
       "choices": {
-        "A": "A has classification error 0.2 and should be preferred to B, whose error is 0.3",
-        "B": "B should be preferred because classification error is maximised",
-        "C": "A and B tie because both use the same parent",
-        "D": "A has classification error 2.0 because the count is not divided by the number of rows"
+        "A": "Claim that both must generate the same tree",
+        "B": "Apply a stated tie rule, fixed for reproducibility or random if variation is intended",
+        "C": "Add their information gains and split on both simultaneously",
+        "D": "Return a leaf even when the stopping rule permits a split"
       },
-      "answer": "A",
-      "explanation": "Classification error is majority-label mistakes divided by the number of rows. Candidate A gives 2/10 = 0.2, which is lower than 3/10 = 0.3. Information gain uses a different score and is maximised."
+      "answer": "B",
+      "explanation": "A stated tie rule determines which equally scored attribute is selected."
     },
     {
       "id": "L9-Q13",
       "sectionId": "L9",
       "type": "mcq",
-      "stem": "A perfect attribute for splitting would produce children that are:",
+      "stem": "Why can basic greedy ID3 fail on a noise-free XOR dataset?",
       "choices": {
-        "A": "mixed 50/50 in every branch",
-        "B": "pure, with every example in each child belonging to one class",
-        "C": "identical to the parent class counts in every child",
-        "D": "empty for every attribute value"
+        "A": "Each individual input has zero information gain at the root even though the pair determines the label",
+        "B": "XOR has a continuous target",
+        "C": "Every XOR branch is pure before a split",
+        "D": "Entropy cannot represent binary labels"
       },
-      "answer": "B",
-      "explanation": "Every branch of a perfect split is pure. A multi-valued attribute can have more than two pure children."
+      "answer": "A",
+      "explanation": "XOR has a pure interaction that no single input reveals through root information gain."
     },
     {
       "id": "L9-Q14",
@@ -3463,6 +3493,566 @@
       "explanation": "A Bayes net represents uncertain variables and their dependencies. An MDP adds choices, action-dependent state transitions, rewards, and repeated decisions over time."
     },
     {
+      "id": "Lab2-Q01",
+      "sectionId": "Lab2",
+      "type": "mcq",
+      "stem": "A three-room vacuum state records the agent in room B, with A dirty and B and C clean. Which state description contains all information needed for search?",
+      "choices": {
+        "A": "Agent room only",
+        "B": "Which rooms have ever been visited",
+        "C": "Agent room plus the clean/dirty status of A, B, and C",
+        "D": "The current frontier order only"
+      },
+      "answer": "C",
+      "explanation": "The state must determine legal actions, transitions, and whether every room is clean."
+    },
+    {
+      "id": "Lab2-Q02",
+      "sectionId": "Lab2",
+      "type": "mcq",
+      "stem": "In the lab vacuum world, when should the goal test succeed?",
+      "choices": {
+        "A": "As soon as the agent reaches room C",
+        "B": "When all three rooms are clean, wherever the agent is",
+        "C": "Only when all rooms are clean and the agent returns to A",
+        "D": "After exactly three actions"
+      },
+      "answer": "B",
+      "explanation": "The goal is all rooms clean; the final agent room is irrelevant."
+    },
+    {
+      "id": "Lab2-Q03",
+      "sectionId": "Lab2",
+      "type": "mcq",
+      "stem": "The BFS open list currently contains nodes `[N1, N2, N3]` from front to back. Expanding N1 generates children C1 and C2. What is the next open list?",
+      "choices": {
+        "A": "`[C2, C1, N2, N3]`",
+        "B": "`[N2, N3, C1, C2]`",
+        "C": "`[C1, C2, N2, N3]`",
+        "D": "`[N3, N2, C1, C2]`"
+      },
+      "answer": "B",
+      "explanation": "BFS removes from the front and appends generated children at the back."
+    },
+    {
+      "id": "Lab2-Q04",
+      "sectionId": "Lab2",
+      "type": "mcq",
+      "stem": "Why does the hand trace keep both an open list and a closed list?",
+      "choices": {
+        "A": "The open list holds generated nodes waiting for expansion; the closed list records expanded states so repeats can be rejected",
+        "B": "The open list stores only goals; the closed list stores only failures",
+        "C": "The open list is for BFS and the closed list is for DFS",
+        "D": "Both lists store the same nodes to provide a backup"
+      },
+      "answer": "A",
+      "explanation": "Open is the frontier; closed records expanded states for repeated-state checking."
+    },
+    {
+      "id": "Lab2-Q05",
+      "sectionId": "Lab2",
+      "type": "mcq",
+      "stem": "A generated child has a state already represented on the open list. What should graph search do in the lab trace?",
+      "choices": {
+        "A": "Add it again because its node object is different",
+        "B": "Move the matching open node to the closed list",
+        "C": "Treat it as a repeated-state dead end unless the algorithm has a defined cheaper-path replacement rule",
+        "D": "Return it as a solution"
+      },
+      "answer": "C",
+      "explanation": "Reject a repeated state unless the algorithm explicitly replaces an existing frontier path with a cheaper one."
+    },
+    {
+      "id": "Lab2-Q06",
+      "sectionId": "Lab2",
+      "type": "mcq",
+      "stem": "The supplied maze program uses a stack frontier. Which search strategy does this implement?",
+      "choices": {
+        "A": "Breadth-first search",
+        "B": "Uniform-cost search",
+        "C": "Greedy best-first search",
+        "D": "Depth-first search"
+      },
+      "answer": "D",
+      "explanation": "A stack is LIFO, so the program performs DFS."
+    },
+    {
+      "id": "Lab2-Q07",
+      "sectionId": "Lab2",
+      "type": "mcq",
+      "stem": "Why can the DFS maze program return a valid path that is longer than another available path?",
+      "choices": {
+        "A": "DFS orders nodes by heuristic value",
+        "B": "DFS follows the newest branch first and has no optimality guarantee",
+        "C": "DFS ignores walls",
+        "D": "DFS stops before testing the goal"
+      },
+      "answer": "B",
+      "explanation": "DFS follows one newest branch and does not guarantee a shortest or cheapest route."
+    },
+    {
+      "id": "Lab2-Q08",
+      "sectionId": "Lab2",
+      "type": "mcq",
+      "stem": "What information is used to reconstruct the route after the maze goal is found?",
+      "choices": {
+        "A": "Parent pointers and the action stored in each search node",
+        "B": "The final closed-list size only",
+        "C": "The image pixels in `maze.png`",
+        "D": "The branching factor and maximum depth"
+      },
+      "answer": "A",
+      "explanation": "Parent pointers and stored actions recover the route from goal to start."
+    },
+    {
+      "id": "Lab2-Q09",
+      "sectionId": "Lab2",
+      "type": "mcq",
+      "stem": "Two maze runs report 18 and 30 explored states. What can be concluded from those counts alone?",
+      "choices": {
+        "A": "The 18-state run definitely found the cheapest path",
+        "B": "The 30-state run definitely used BFS",
+        "C": "The 18-state run expanded fewer states, but the path costs must be checked separately",
+        "D": "Both runs found paths of equal length"
+      },
+      "answer": "C",
+      "explanation": "Explored count measures search effort, not path optimality."
+    },
+    {
+      "id": "Lab2-Q10",
+      "sectionId": "Lab2",
+      "type": "mcq",
+      "stem": "If DFS adds legal actions in the opposite order, what is the most likely effect?",
+      "choices": {
+        "A": "It becomes BFS",
+        "B": "It can follow a different first branch and return a different valid route",
+        "C": "It becomes optimal for unequal step costs",
+        "D": "Its frontier becomes a priority queue"
+      },
+      "answer": "B",
+      "explanation": "DFS action order changes which branch is followed first."
+    },
+    {
+      "id": "Lab3A-Q01",
+      "sectionId": "Lab3A",
+      "type": "mcq",
+      "stem": "On a graph with unequal edge costs, which uninformed method should be the cost-optimal benchmark?",
+      "choices": {
+        "A": "DFS",
+        "B": "BFS",
+        "C": "Uniform-cost search",
+        "D": "Greedy best-first search"
+      },
+      "answer": "C",
+      "explanation": "UCS is optimal for positive step costs and orders by accumulated cost."
+    },
+    {
+      "id": "Lab3A-Q02",
+      "sectionId": "Lab3A",
+      "type": "mcq",
+      "stem": "The frontier contains X at depth 2 with path cost 9 and Y at depth 3 with path cost 5. Which node does UCS select?",
+      "choices": {
+        "A": "X, because it is shallower",
+        "B": "Y, because its `g` value is smaller",
+        "C": "X, because its `h` value is unknown",
+        "D": "Whichever node was generated last"
+      },
+      "answer": "B",
+      "explanation": "UCS selects the smaller `g`, so it chooses Y despite Y being deeper."
+    },
+    {
+      "id": "Lab3A-Q03",
+      "sectionId": "Lab3A",
+      "type": "mcq",
+      "stem": "For a greedy best-first trace, which value should be written beside each frontier node?",
+      "choices": {
+        "A": "`g(n)`",
+        "B": "depth only",
+        "C": "`g(n) + h(n)`",
+        "D": "`h(n)`"
+      },
+      "answer": "D",
+      "explanation": "Greedy best-first search orders the frontier by `h`."
+    },
+    {
+      "id": "Lab3A-Q04",
+      "sectionId": "Lab3A",
+      "type": "mcq",
+      "stem": "For an A* trace, node P has `g=6, h=4` and node Q has `g=8, h=1`. Which node is selected next?",
+      "choices": {
+        "A": "P, because its `f` is 10 while Q's is 9",
+        "B": "Q, because its `f` is 9 while P's is 10",
+        "C": "P, because A* ignores `h`",
+        "D": "Q, because A* uses `h` only"
+      },
+      "answer": "B",
+      "explanation": "Q has `f=8+1=9`, smaller than P's `f=6+4=10`."
+    },
+    {
+      "id": "Lab3A-Q05",
+      "sectionId": "Lab3A",
+      "type": "mcq",
+      "stem": "Why can BFS return a more expensive route than UCS on the lab's weighted graph?",
+      "choices": {
+        "A": "BFS minimises edge count, while UCS minimises accumulated path cost",
+        "B": "BFS uses `h` but UCS does not",
+        "C": "BFS cannot represent a goal",
+        "D": "UCS always chooses the deepest node"
+      },
+      "answer": "A",
+      "explanation": "BFS minimises steps; UCS minimises the sum of edge costs."
+    },
+    {
+      "id": "Lab3A-Q06",
+      "sectionId": "Lab3A",
+      "type": "mcq",
+      "stem": "What must happen when iterative deepening moves from depth limit 2 to depth limit 3?",
+      "choices": {
+        "A": "Continue with the old frontier from limit 2",
+        "B": "Keep the old explored set but clear the frontier",
+        "C": "Restart depth-limited DFS from the start with the new limit",
+        "D": "Change the depth score to an edge-cost score"
+      },
+      "answer": "C",
+      "explanation": "Each IDS limit is a fresh depth-limited DFS from the start."
+    },
+    {
+      "id": "Lab3A-Q07",
+      "sectionId": "Lab3A",
+      "type": "mcq",
+      "stem": "Greedy search reaches a goal before UCS in one trace. Which conclusion is justified?",
+      "choices": {
+        "A": "Greedy must have found the cheapest path",
+        "B": "Greedy used fewer expansions in this trace, but its path cost still needs comparison",
+        "C": "UCS is incomplete",
+        "D": "The heuristic is necessarily consistent"
+      },
+      "answer": "B",
+      "explanation": "Reaching the goal sooner in the trace says nothing by itself about path cost."
+    },
+    {
+      "id": "Lab3A-Q08",
+      "sectionId": "Lab3A",
+      "type": "mcq",
+      "stem": "Why should UCS and A* agree on the optimal path cost when the supplied A* heuristic satisfies the required condition?",
+      "choices": {
+        "A": "Both order solely by depth",
+        "B": "Both ignore the real edge costs",
+        "C": "A* may change the expansion order but its valid heuristic preserves optimality",
+        "D": "A* becomes identical to DFS"
+      },
+      "answer": "C",
+      "explanation": "A valid A* heuristic changes expansion order without losing the optimality guarantee."
+    },
+    {
+      "id": "Lab3A-Q09",
+      "sectionId": "Lab3A",
+      "type": "mcq",
+      "stem": "A goal node is generated with cost 12 while another frontier node has `g=8`. What should UCS do?",
+      "choices": {
+        "A": "Return the generated goal immediately",
+        "B": "Expand the cost-8 node first",
+        "C": "Delete the cost-8 node",
+        "D": "Switch to greedy search"
+      },
+      "answer": "B",
+      "explanation": "UCS tests a goal when selected; the cost-8 frontier node must be expanded first."
+    },
+    {
+      "id": "Lab3A-Q10",
+      "sectionId": "Lab3A",
+      "type": "mcq",
+      "stem": "Which comparison isolates the one ordering rule that changes across UCS, greedy search, and A*?",
+      "choices": {
+        "A": "UCS uses `g`, greedy uses `h`, and A* uses `g+h`",
+        "B": "UCS uses a stack, greedy uses a queue, and A* uses no frontier",
+        "C": "UCS uses `h`, greedy uses `g`, and A* uses depth",
+        "D": "All three use the same score and differ only in goal tests"
+      },
+      "answer": "A",
+      "explanation": "UCS uses `g`, greedy uses `h`, and A* uses `g+h`."
+    },
+    {
+      "id": "Lab3B-Q01",
+      "sectionId": "Lab3B",
+      "type": "mcq",
+      "stem": "Which relaxed move rule defines Gaschnig's heuristic?",
+      "choices": {
+        "A": "Any tile can move directly into the blank, even when not adjacent",
+        "B": "A tile can move only if it is adjacent to the blank",
+        "C": "Any tile can move to any square without using the blank",
+        "D": "Only correctly placed tiles may move"
+      },
+      "answer": "A",
+      "explanation": "Gaschnig drops adjacency but still moves a tile into the blank."
+    },
+    {
+      "id": "Lab3B-Q02",
+      "sectionId": "Lab3B",
+      "type": "mcq",
+      "stem": "When calculating Gaschnig's heuristic, the blank is not in its goal square. Which tile should be swapped into it?",
+      "choices": {
+        "A": "Any correctly placed tile",
+        "B": "The tile that belongs in the blank's current square",
+        "C": "The tile with the largest Manhattan distance",
+        "D": "The lowest-numbered tile"
+      },
+      "answer": "B",
+      "explanation": "Put the tile that belongs in the blank's current square into that square."
+    },
+    {
+      "id": "Lab3B-Q03",
+      "sectionId": "Lab3B",
+      "type": "mcq",
+      "stem": "When calculating Gaschnig's heuristic, the blank is already in its goal square but tiles remain misplaced. What is the next step?",
+      "choices": {
+        "A": "Stop with heuristic 0",
+        "B": "Move the blank outside the board",
+        "C": "Swap the blank with any misplaced tile and continue",
+        "D": "Add every Manhattan distance at once"
+      },
+      "answer": "C",
+      "explanation": "Move any misplaced tile into the goal-position blank, then continue the swaps."
+    },
+    {
+      "id": "Lab3B-Q04",
+      "sectionId": "Lab3B",
+      "type": "mcq",
+      "stem": "For the lab's worked state, the heuristic values are `h1=2`, `h2=2`, and `h3=3`. Which estimate is most informed on that state?",
+      "choices": {
+        "A": "`h1`",
+        "B": "`h2`",
+        "C": "All three tie",
+        "D": "`h3`"
+      },
+      "answer": "D",
+      "explanation": "On this state, `h3=3` is the largest admissible estimate."
+    },
+    {
+      "id": "Lab3B-Q05",
+      "sectionId": "Lab3B",
+      "type": "mcq",
+      "stem": "Why is the exact solution cost of a relaxed puzzle admissible for the original puzzle?",
+      "choices": {
+        "A": "The relaxation adds extra restrictions",
+        "B": "Every real solution is allowed in the easier problem, so the easier optimum cannot exceed the real optimum",
+        "C": "It always equals the real solution cost",
+        "D": "It is calculated after reaching the goal"
+      },
+      "answer": "B",
+      "explanation": "Relaxation adds legal moves, so its optimum cannot cost more than the real optimum."
+    },
+    {
+      "id": "Lab3B-Q06",
+      "sectionId": "Lab3B",
+      "type": "mcq",
+      "stem": "Gaschnig's heuristic dominates misplaced tiles because:",
+      "choices": {
+        "A": "`h3(n) >= h1(n)` for every state, and both are admissible",
+        "B": "`h3` always equals Manhattan distance",
+        "C": "`h1` can overestimate while `h3` cannot",
+        "D": "`h3` ignores the blank"
+      },
+      "answer": "A",
+      "explanation": "Gaschnig is at least misplaced tiles on every state, with both admissible."
+    },
+    {
+      "id": "Lab3B-Q07",
+      "sectionId": "Lab3B",
+      "type": "mcq",
+      "stem": "Two admissible heuristics give `hA=5` and `hB=7` for one state. What value does `max(hA,hB)` return, and why is it admissible?",
+      "choices": {
+        "A": "5, because the smaller estimate is always safer",
+        "B": "6, because admissible heuristics must be averaged",
+        "C": "7, because the larger of two lower bounds is still a lower bound",
+        "D": "12, because combining means adding"
+      },
+      "answer": "C",
+      "explanation": "The maximum is 7, and the maximum of lower bounds is still a lower bound."
+    },
+    {
+      "id": "Lab3B-Q08",
+      "sectionId": "Lab3B",
+      "type": "mcq",
+      "stem": "Why is adding two admissible heuristics not automatically admissible?",
+      "choices": {
+        "A": "Their sum can exceed the true remaining cost by counting some work twice",
+        "B": "Admissible heuristics cannot be arithmetic values",
+        "C": "Addition always produces a value smaller than each input",
+        "D": "A* accepts only one named heuristic"
+      },
+      "answer": "A",
+      "explanation": "A sum can count the same required work twice and overestimate."
+    },
+    {
+      "id": "Lab3B-Q09",
+      "sectionId": "Lab3B",
+      "type": "mcq",
+      "stem": "Which statement correctly compares Manhattan distance and Gaschnig's heuristic?",
+      "choices": {
+        "A": "Gaschnig always dominates Manhattan distance",
+        "B": "Manhattan distance always dominates Gaschnig",
+        "C": "They come from different relaxations and can be stronger on different states",
+        "D": "They are identical on every 8-puzzle state"
+      },
+      "answer": "C",
+      "explanation": "Manhattan and Gaschnig come from different relaxations; neither universally dominates the other."
+    },
+    {
+      "id": "Lab3B-Q10",
+      "sectionId": "Lab3B",
+      "type": "mcq",
+      "stem": "A student observes `h3 > h1` on one board and claims this proves dominance. What is missing?",
+      "choices": {
+        "A": "A proof that the inequality holds for every state, supplied by the relaxation relationship",
+        "B": "A larger value on that one board",
+        "C": "A proof that both heuristics overestimate",
+        "D": "A DFS trace"
+      },
+      "answer": "A",
+      "explanation": "Dominance is an all-states claim, proved here by the relaxation relationship."
+    },
+    {
+      "id": "Lab4-Q01",
+      "sectionId": "Lab4",
+      "type": "mcq",
+      "stem": "Which is a complete CSP formulation for Australian map colouring?",
+      "choices": {
+        "A": "States are colours, with no variables",
+        "B": "Variables are regions, domains are colours, and constraints require adjacent regions to differ",
+        "C": "Variables are search depths, and the goal is a shortest path",
+        "D": "Variables are edges, and every edge must have the same colour"
+      },
+      "answer": "B",
+      "explanation": "Regions are variables, colours are domains, and borders create not-equal constraints."
+    },
+    {
+      "id": "Lab4-Q02",
+      "sectionId": "Lab4",
+      "type": "mcq",
+      "stem": "Plain backtracking assigns `WA=red`, then later finds that every value for a deeper variable fails. What must it do next?",
+      "choices": {
+        "A": "Keep the failed assignment and change the goal",
+        "B": "Return the partial assignment as a solution",
+        "C": "Undo the most recent choice and try its next value",
+        "D": "Restart with BFS"
+      },
+      "answer": "C",
+      "explanation": "Backtracking undoes the latest failed choice and tries another value."
+    },
+    {
+      "id": "Lab4-Q03",
+      "sectionId": "Lab4",
+      "type": "mcq",
+      "stem": "Under MRV, unassigned variable X has one legal value and Y has three. Which variable is selected?",
+      "choices": {
+        "A": "X, because it is most likely to fail soon",
+        "B": "Y, because it has more choices",
+        "C": "Whichever has the smallest name",
+        "D": "Both are assigned simultaneously"
+      },
+      "answer": "A",
+      "explanation": "MRV selects X to expose failure as early as possible."
+    },
+    {
+      "id": "Lab4-Q04",
+      "sectionId": "Lab4",
+      "type": "mcq",
+      "stem": "Two variables tie under MRV. Variable X constrains four unassigned neighbours and Y constrains two. What does the degree tie-break choose?",
+      "choices": {
+        "A": "Y, because it is less connected",
+        "B": "X, because it constrains more remaining variables",
+        "C": "Either value of Y",
+        "D": "The variable with the largest domain"
+      },
+      "answer": "B",
+      "explanation": "The degree tie-break chooses the variable constraining more unassigned neighbours."
+    },
+    {
+      "id": "Lab4-Q05",
+      "sectionId": "Lab4",
+      "type": "mcq",
+      "stem": "After a variable is chosen, what does LCV order?",
+      "choices": {
+        "A": "Unassigned variables by domain size",
+        "B": "Constraints by age",
+        "C": "Values by how few options they remove from neighbouring domains",
+        "D": "Complete assignments by path cost"
+      },
+      "answer": "C",
+      "explanation": "LCV tries the value that removes the fewest neighbour options."
+    },
+    {
+      "id": "Lab4-Q06",
+      "sectionId": "Lab4",
+      "type": "mcq",
+      "stem": "After assigning `SA=red`, what does forward checking do first?",
+      "choices": {
+        "A": "Removes red from each unassigned neighbour's domain",
+        "B": "Assigns red to every neighbour",
+        "C": "Restores every deleted colour",
+        "D": "Checks only Tasmania"
+      },
+      "answer": "A",
+      "explanation": "Forward checking removes red from every unassigned neighbour of SA."
+    },
+    {
+      "id": "Lab4-Q07",
+      "sectionId": "Lab4",
+      "type": "mcq",
+      "stem": "Forward checking empties the domain of NT. What follows?",
+      "choices": {
+        "A": "Continue because NT is not assigned yet",
+        "B": "Declare the whole CSP impossible without considering other branches",
+        "C": "Backtrack immediately from the current branch",
+        "D": "Add a fourth colour automatically"
+      },
+      "answer": "C",
+      "explanation": "An empty domain proves the current branch cannot complete, so backtrack."
+    },
+    {
+      "id": "Lab4-Q08",
+      "sectionId": "Lab4",
+      "type": "mcq",
+      "stem": "Why can LCV and forward checking produce a different trace from MRV alone?",
+      "choices": {
+        "A": "LCV changes which problem is being solved",
+        "B": "LCV changes value order, and forward checking updates future domains after each choice",
+        "C": "MRV is a path-cost algorithm",
+        "D": "Forward checking ignores constraints"
+      },
+      "answer": "B",
+      "explanation": "LCV changes value order and forward checking changes the later domains."
+    },
+    {
+      "id": "Lab4-Q09",
+      "sectionId": "Lab4",
+      "type": "mcq",
+      "stem": "Which limitation separates forward checking from AC-3?",
+      "choices": {
+        "A": "Forward checking updates immediate unassigned neighbours but may miss conflicts between two unassigned domains",
+        "B": "Forward checking cannot detect an empty domain",
+        "C": "AC-3 never removes values",
+        "D": "AC-3 applies only after a complete assignment"
+      },
+      "answer": "A",
+      "explanation": "Forward checking can miss conflicts entirely between unassigned variables; AC-3 propagates them."
+    },
+    {
+      "id": "Lab4-Q10",
+      "sectionId": "Lab4",
+      "type": "mcq",
+      "stem": "What should a trace record to make a heuristic backtracking decision checkable?",
+      "choices": {
+        "A": "Only the final colour map",
+        "B": "The chosen variable, ordered values, domain deletions, and any undo",
+        "C": "Only the number of recursive calls",
+        "D": "The search complexity formula"
+      },
+      "answer": "B",
+      "explanation": "Those records show why each branch, deletion, and undo occurred."
+    },
+    {
       "id": "Lab5-Q01",
       "sectionId": "Lab5",
       "type": "mcq",
@@ -3788,15 +4378,15 @@
       "id": "Lab6-Q04",
       "sectionId": "Lab6",
       "type": "mcq",
-      "stem": "How does the perceptron differ from logistic regression in its output?",
+      "stem": "How do the lab's perceptron and logistic updates react to a very wrong prediction compared with a barely wrong one?",
       "choices": {
-        "A": "The perceptron outputs a continuous probability in (0, 1)",
-        "B": "The perceptron cannot use a bias term",
-        "C": "The perceptron applies a hard threshold and outputs a binary class (for example +1/-1), not a probability",
-        "D": "The perceptron only works for multi-class problems"
+        "A": "The perceptron can apply the same fixed kick to both; the logistic cross-entropy gradient scales with predicted error",
+        "B": "Logistic regression never updates on a wrong prediction",
+        "C": "The perceptron step is always proportional to the raw score magnitude",
+        "D": "Both methods use exactly the same gradient"
       },
-      "answer": "C",
-      "explanation": "Hard threshold binary decision, no probability."
+      "answer": "A",
+      "explanation": "The perceptron kick need not reflect confidence; logistic cross-entropy supplies a graded error signal."
     },
     {
       "id": "Lab6-Q05",
@@ -4418,15 +5008,15 @@
       "id": "Lab8-Q09",
       "sectionId": "Lab8",
       "type": "mcq",
-      "stem": "sigmoid(0) equals:",
+      "stem": "Which implementation choice matches the supplied XOR lab?",
       "choices": {
-        "A": "0.5",
-        "B": "0",
-        "C": "1",
-        "D": "0.25"
+        "A": "Create `grad(compute_loss)` once outside the loop, use seed 42, learning rate 0.5, and 10,000 epochs",
+        "B": "Recreate the gradient function after every parameter update and use no random seed",
+        "C": "Update parameters inside `compute_loss`",
+        "D": "Initialise every hidden weight to the same value"
       },
       "answer": "A",
-      "explanation": "Midpoint 0.5."
+      "explanation": "Those seed, learning-rate, epoch, and gradient-function choices match the supplied lab."
     },
     {
       "id": "Lab8-Q10",
@@ -4656,15 +5246,15 @@
       "id": "Lab9-Q06",
       "sectionId": "Lab9",
       "type": "mcq",
-      "stem": "For binary classification, entropy = 1 typically indicates:",
+      "stem": "Why can information gain distinguish candidate splits that tie on classification error?",
       "choices": {
-        "A": "A pure Yes set",
-        "B": "Zero training examples",
-        "C": "Linear separability",
-        "D": "A perfectly mixed set (equal class proportions)"
+        "A": "Entropy measures how mixed each child remains, while classification error keeps only each child's majority mistake count",
+        "B": "Information gain ignores child sizes",
+        "C": "Classification error uses logarithms but entropy does not",
+        "D": "Information gain always chooses the attribute with the most values"
       },
-      "answer": "D",
-      "explanation": "Maximum binary mixture uncertainty."
+      "answer": "A",
+      "explanation": "Entropy retains within-child mixture information that majority error discards."
     },
     {
       "id": "Lab9-Q07",
@@ -4712,15 +5302,15 @@
       "id": "Lab9-Q10",
       "sectionId": "Lab9",
       "type": "mcq",
-      "stem": "Information gain for New kitchen on S is approximately:",
+      "stem": "How can a decision tree use a continuous attribute such as temperature?",
       "choices": {
-        "A": "0.171",
-        "B": "0.020",
-        "C": "0.420",
-        "D": "0.918"
+        "A": "It cannot; every tree input must be binary before training",
+        "B": "It creates one branch for every real number",
+        "C": "It evaluates candidate thresholds such as `temperature <= 18.5` and keeps the best split",
+        "D": "It replaces information gain with gradient descent"
       },
-      "answer": "A",
-      "explanation": "IG(New kitchen) ~= 0.171."
+      "answer": "C",
+      "explanation": "Tree learners can search sorted candidate thresholds and use the best binary split."
     },
     {
       "id": "Lab9-Q11",
@@ -4861,6 +5451,286 @@
       },
       "answer": "A",
       "explanation": "Transparent feature-test path."
+    },
+    {
+      "id": "Lab10-Q01",
+      "sectionId": "Lab10",
+      "type": "mcq",
+      "stem": "In the wellbeing network, E and M are roots, S has parents E and M, and B has parent M. Which factorisation is correct?",
+      "choices": {
+        "A": "`P(E)P(M)P(S|E,M)P(B|M)`",
+        "B": "`P(E|S)P(M|B)P(S)P(B)`",
+        "C": "`P(E,M)P(S,B)`",
+        "D": "`P(E|M)P(M|S)P(S|B)P(B|E)`"
+      },
+      "answer": "A",
+      "explanation": "Multiply one factor per node, conditioned only on its parents."
+    },
+    {
+      "id": "Lab10-Q02",
+      "sectionId": "Lab10",
+      "type": "mcq",
+      "stem": "A full joint table for four binary variables needs 15 independent numbers. How many does the lab network need?",
+      "choices": {
+        "A": "4",
+        "B": "8",
+        "C": "12",
+        "D": "16"
+      },
+      "answer": "B",
+      "explanation": "The CPT counts are `1+1+4+2=8`, compared with 15 for the full joint."
+    },
+    {
+      "id": "Lab10-Q03",
+      "sectionId": "Lab10",
+      "type": "mcq",
+      "stem": "Why are E and M independent before any evidence is observed?",
+      "choices": {
+        "A": "They have equal prior probabilities",
+        "B": "Every pair of root variables is independent in any graph",
+        "C": "Their only path is `E -> S <- M`, which is blocked at the unobserved collider S",
+        "D": "B is unobserved"
+      },
+      "answer": "C",
+      "explanation": "The unobserved collider S blocks the only path between E and M."
+    },
+    {
+      "id": "Lab10-Q04",
+      "sectionId": "Lab10",
+      "type": "mcq",
+      "stem": "Using the lab CPTs, what is `P(-e,-s,-m,-b)`?",
+      "choices": {
+        "A": "`0.6*0.9*0.9*0.9 = 0.4374`",
+        "B": "`0.4*0.1*1.0*1.0 = 0.0400`",
+        "C": "`0.6+0.9+0.9+0.9 = 3.3000`",
+        "D": "`0.9^4 = 0.6561`"
+      },
+      "answer": "A",
+      "explanation": "Use `P(-e)P(-m)P(-s|-e,-m)P(-b|-m)=0.4374`."
+    },
+    {
+      "id": "Lab10-Q05",
+      "sectionId": "Lab10",
+      "type": "mcq",
+      "stem": "Why does computing `P(+b)` require summing over M but not over E and S?",
+      "choices": {
+        "A": "E and S are observed",
+        "B": "M is B's only ancestor; the unobserved E and S factors sum out to 1",
+        "C": "M has no CPT",
+        "D": "B is independent of M"
+      },
+      "answer": "B",
+      "explanation": "B has only M as an ancestor; unobserved descendants and unrelated roots sum away."
+    },
+    {
+      "id": "Lab10-Q06",
+      "sectionId": "Lab10",
+      "type": "mcq",
+      "stem": "The lab obtains `P(+b)=0.19`. Which calculation gives `P(+m|+b)`?",
+      "choices": {
+        "A": "`0.19/0.1 = 1.9`",
+        "B": "`0.1*0.19 = 0.019`",
+        "C": "`(0.1*1.0)/0.19 = 0.5263`",
+        "D": "`0.1/1.0 = 0.1`"
+      },
+      "answer": "C",
+      "explanation": "Bayes' rule gives `(0.1*1.0)/0.19=0.5263`."
+    },
+    {
+      "id": "Lab10-Q07",
+      "sectionId": "Lab10",
+      "type": "mcq",
+      "stem": "The lab calculates `P(+s)=0.4` and `P(+e,+s)=0.328`. What is `P(+e|+s)`?",
+      "choices": {
+        "A": "0.3280",
+        "B": "0.4000",
+        "C": "0.7462",
+        "D": "`0.328/0.4 = 0.8200`"
+      },
+      "answer": "D",
+      "explanation": "Conditional probability gives `0.328/0.4=0.82`."
+    },
+    {
+      "id": "Lab10-Q08",
+      "sectionId": "Lab10",
+      "type": "mcq",
+      "stem": "Why does `P(+e|+s,+m)=0.6897` fall below `P(+e|+s)=0.82`?",
+      "choices": {
+        "A": "Observing M provides another explanation for S, so E becomes less necessary",
+        "B": "E and M become mutually exclusive",
+        "C": "S blocks every path after it is observed",
+        "D": "The prior for E changes permanently"
+      },
+      "answer": "A",
+      "explanation": "The known migraine explains away some evidence that skipping supplied for exam week."
+    },
+    {
+      "id": "Lab10-Q09",
+      "sectionId": "Lab10",
+      "type": "mcq",
+      "stem": "Which statement matches the d-separation results?",
+      "choices": {
+        "A": "`E` and `B` are dependent with no evidence and independent given `S`",
+        "B": "`E` and `B` are independent with no evidence, but observing collider `S` opens their path",
+        "C": "`S` and `B` remain dependent after conditioning on common cause `M`",
+        "D": "Observing any variable blocks every path through it"
+      },
+      "answer": "B",
+      "explanation": "The collider blocks the path until S, or its descendant, is observed."
+    },
+    {
+      "id": "Lab10-Q10",
+      "sectionId": "Lab10",
+      "type": "mcq",
+      "stem": "Blurred vision alone leaves `P(+e|+b)=0.4`, but observing both skipping and blurred vision gives `P(+e|+s,+b)=0.7462`. What changed?",
+      "choices": {
+        "A": "B became a parent of E",
+        "B": "The CPT for E was replaced",
+        "C": "Observing S activated collider path `E -> S <- M -> B`, so B now carries evidence about M and hence E",
+        "D": "E and M stopped being binary"
+      },
+      "answer": "C",
+      "explanation": "Observing S opens the collider path, so B becomes indirect evidence about E."
+    },
+    {
+      "id": "Lab11-Q01",
+      "sectionId": "Lab11",
+      "type": "mcq",
+      "stem": "With all Q values initially 0, `alpha=0.5`, and `gamma=1`, what does sample `(A,right,B,2)` produce?",
+      "choices": {
+        "A": "`Q(A,right)=0.5`",
+        "B": "`Q(A,right)=1.0`",
+        "C": "`Q(A,right)=2.0`",
+        "D": "`Q(B,right)=1.0`"
+      },
+      "answer": "B",
+      "explanation": "The target is 2 and the half-step from 0 gives 1.0."
+    },
+    {
+      "id": "Lab11-Q02",
+      "sectionId": "Lab11",
+      "type": "mcq",
+      "stem": "After `Q(C,left)=1.0`, the sample `(B,right,C,-2)` arrives. What is its target?",
+      "choices": {
+        "A": "`-2 + max(1,0) = -1`",
+        "B": "`-2 + min(1,0) = -2`",
+        "C": "`2 + max(1,0) = 3`",
+        "D": "`-2` because the next state is ignored"
+      },
+      "answer": "A",
+      "explanation": "The best action value at C is 1, so the target is `-2+1=-1`."
+    },
+    {
+      "id": "Lab11-Q03",
+      "sectionId": "Lab11",
+      "type": "mcq",
+      "stem": "Using `alpha=0.5`, old `Q(B,right)=0`, and target `-1`, what is the updated value?",
+      "choices": {
+        "A": "-1.0",
+        "B": "0.5",
+        "C": "-0.5",
+        "D": "1.0"
+      },
+      "answer": "C",
+      "explanation": "Halfway from 0 to -1 is -0.5."
+    },
+    {
+      "id": "Lab11-Q04",
+      "sectionId": "Lab11",
+      "type": "mcq",
+      "stem": "Before the fourth sample, `Q(A,right)=1.0`, `Q(B,left)=0`, and `Q(B,right)=-0.5`. What does `(A,right,B,4)` produce?",
+      "choices": {
+        "A": "2.0",
+        "B": "4.0",
+        "C": "1.5",
+        "D": "`0.5*1.0 + 0.5*(4+0) = 2.5`"
+      },
+      "answer": "D",
+      "explanation": "Blend old 1.0 with target 4 to obtain 2.5."
+    },
+    {
+      "id": "Lab11-Q05",
+      "sectionId": "Lab11",
+      "type": "mcq",
+      "stem": "Which policy is extracted at A after the four samples?",
+      "choices": {
+        "A": "Right, because `Q(A,right)=2.5` is greater than `Q(A,left)=0`",
+        "B": "Left, because untried actions are always optimal",
+        "C": "Both actions, because Q values are ignored",
+        "D": "No policy can be extracted from Q values"
+      },
+      "answer": "A",
+      "explanation": "Policy extraction chooses the action with the largest Q value."
+    },
+    {
+      "id": "Lab11-Q06",
+      "sectionId": "Lab11",
+      "type": "mcq",
+      "stem": "Why does the extracted policy choose left at B?",
+      "choices": {
+        "A": "Left was sampled more often",
+        "B": "`Q(B,left)=0` is greater than the learned `Q(B,right)=-0.5`",
+        "C": "Negative Q values are deleted",
+        "D": "The transition model forces left"
+      },
+      "answer": "B",
+      "explanation": "The initial estimate 0 for left exceeds the learned -0.5 for right."
+    },
+    {
+      "id": "Lab11-Q07",
+      "sectionId": "Lab11",
+      "type": "mcq",
+      "stem": "Why must the four workshop samples be processed in order?",
+      "choices": {
+        "A": "Later targets use Q values changed by earlier samples",
+        "B": "Q-learning averages all samples simultaneously",
+        "C": "The state labels are alphabetical",
+        "D": "Processing order never affects a finite intermediate table"
+      },
+      "answer": "A",
+      "explanation": "Each sample can change a later sample's bootstrap target."
+    },
+    {
+      "id": "Lab11-Q08",
+      "sectionId": "Lab11",
+      "type": "mcq",
+      "stem": "An oracle supplies `V*(s)` but no transition or reward model. Why is that insufficient to choose an optimal action directly?",
+      "choices": {
+        "A": "State values are always negative",
+        "B": "`V*` applies only to terminal states",
+        "C": "Action choice needs one-step lookahead through `T` and `R`",
+        "D": "`V*` contains too many entries"
+      },
+      "answer": "C",
+      "explanation": "Acting from `V*` needs expected one-step outcomes computed from T and R."
+    },
+    {
+      "id": "Lab11-Q09",
+      "sectionId": "Lab11",
+      "type": "mcq",
+      "stem": "Which formula extracts the optimal action directly from an optimal action-value function?",
+      "choices": {
+        "A": "`argmin_a V*(s)`",
+        "B": "`sum_s' T(s,a,s')`",
+        "C": "`R(s,a,s') + V*(s)`",
+        "D": "`argmax_a Q*(s,a)`"
+      },
+      "answer": "D",
+      "explanation": "`argmax_a Q*(s,a)` directly selects the best action."
+    },
+    {
+      "id": "Lab11-Q10",
+      "sectionId": "Lab11",
+      "type": "mcq",
+      "stem": "Which methods contain enough information at convergence to extract an optimal policy without separately being given T and R?",
+      "choices": {
+        "A": "Direct evaluation and TD state-value learning",
+        "B": "Model-based learning of T and R, and Q-learning",
+        "C": "Direct evaluation only",
+        "D": "Every method that estimates V"
+      },
+      "answer": "B",
+      "explanation": "A learned model can plan, and Q values already store action-specific lookahead."
     },
     {
       "id": "A1-Q01",
@@ -7647,6 +8517,486 @@
       "explanation": "Direct evaluation learns each state's returns separately and wastes the links between states."
     },
     {
+      "id": "Lab2-T01",
+      "sectionId": "Lab2",
+      "type": "tf",
+      "stem": "A complete vacuum state includes the agent's room and the clean/dirty status of all three rooms.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "The state needs position plus all three dirt statuses."
+    },
+    {
+      "id": "Lab2-T02",
+      "sectionId": "Lab2",
+      "type": "tf",
+      "stem": "The vacuum goal requires every room to be clean and the agent to finish in room A.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "Every room must be clean; the final agent room is unrestricted."
+    },
+    {
+      "id": "Lab2-T03",
+      "sectionId": "Lab2",
+      "type": "tf",
+      "stem": "In a BFS trace, newly generated children join the back of the open list.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "FIFO order appends BFS children behind existing frontier nodes."
+    },
+    {
+      "id": "Lab2-T04",
+      "sectionId": "Lab2",
+      "type": "tf",
+      "stem": "The closed list contains nodes that have been generated but are still waiting for expansion.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "The open list waits for expansion. The closed list records expanded states."
+    },
+    {
+      "id": "Lab2-T05",
+      "sectionId": "Lab2",
+      "type": "tf",
+      "stem": "The supplied maze program's stack frontier makes its search depth-first.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "A stack is LIFO and implements DFS."
+    },
+    {
+      "id": "Lab2-T06",
+      "sectionId": "Lab2",
+      "type": "tf",
+      "stem": "Changing the legal-action order cannot change the route returned by DFS.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "Action order can change which DFS branch and route appears first."
+    },
+    {
+      "id": "Lab2-T07",
+      "sectionId": "Lab2",
+      "type": "tf",
+      "stem": "Parent pointers let the maze solver reconstruct a route after it finds the goal.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Following parents backwards recovers the solution route."
+    },
+    {
+      "id": "Lab2-T08",
+      "sectionId": "Lab2",
+      "type": "tf",
+      "stem": "A run that explores fewer states must have returned the cheapest path.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "Fewer expansions do not prove a cheaper route."
+    },
+    {
+      "id": "Lab2-T09",
+      "sectionId": "Lab2",
+      "type": "tf",
+      "stem": "Graph search checks repeated states rather than only comparing node-object identities.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Repeat detection compares represented states, not node identities alone."
+    },
+    {
+      "id": "Lab2-T10",
+      "sectionId": "Lab2",
+      "type": "tf",
+      "stem": "DFS is guaranteed to find a shortest route in an unweighted maze.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "DFS has no shortest-path guarantee."
+    },
+    {
+      "id": "Lab3A-T01",
+      "sectionId": "Lab3A",
+      "type": "tf",
+      "stem": "UCS orders a weighted-graph frontier by accumulated path cost `g`.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "UCS expands the frontier node with smallest `g`."
+    },
+    {
+      "id": "Lab3A-T02",
+      "sectionId": "Lab3A",
+      "type": "tf",
+      "stem": "BFS is cost-optimal on any weighted graph because it expands shallow nodes first.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "BFS is cost-optimal only when step costs are equal."
+    },
+    {
+      "id": "Lab3A-T03",
+      "sectionId": "Lab3A",
+      "type": "tf",
+      "stem": "Greedy best-first search uses `h`, while A* uses `g+h`.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Greedy uses the remaining-cost guess; A* adds cost already paid."
+    },
+    {
+      "id": "Lab3A-T04",
+      "sectionId": "Lab3A",
+      "type": "tf",
+      "stem": "IDS carries the frontier from one depth limit into the next iteration.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "IDS restarts depth-limited DFS from the start for every new limit."
+    },
+    {
+      "id": "Lab3A-T05",
+      "sectionId": "Lab3A",
+      "type": "tf",
+      "stem": "A greedy trace can expand fewer nodes than UCS and still return a more expensive path.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Expansion count and returned path cost are separate measures."
+    },
+    {
+      "id": "Lab3A-T06",
+      "sectionId": "Lab3A",
+      "type": "tf",
+      "stem": "UCS should return a goal as soon as that goal is generated.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "UCS returns a goal when it is selected as the cheapest frontier node."
+    },
+    {
+      "id": "Lab3A-T07",
+      "sectionId": "Lab3A",
+      "type": "tf",
+      "stem": "With a valid heuristic, A* can change the expansion order while preserving the optimal path cost.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "The heuristic guides order while the required condition preserves optimality."
+    },
+    {
+      "id": "Lab3A-T08",
+      "sectionId": "Lab3A",
+      "type": "tf",
+      "stem": "DFS and BFS use the edge weights as their frontier priorities.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "BFS uses FIFO and DFS uses LIFO, not edge-cost priorities."
+    },
+    {
+      "id": "Lab3A-T09",
+      "sectionId": "Lab3A",
+      "type": "tf",
+      "stem": "Writing each node's score beside it makes a priority-frontier trace checkable.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "The recorded score justifies each priority-queue selection."
+    },
+    {
+      "id": "Lab3A-T10",
+      "sectionId": "Lab3A",
+      "type": "tf",
+      "stem": "If A* and UCS return different costs under the required heuristic condition, both traces must still be correct.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "Under the stated conditions both should return the same optimal cost; a mismatch signals an error or broken assumption."
+    },
+    {
+      "id": "Lab3B-T01",
+      "sectionId": "Lab3B",
+      "type": "tf",
+      "stem": "Gaschnig's relaxation lets any tile move directly into the blank.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Gaschnig keeps the blank requirement and drops adjacency."
+    },
+    {
+      "id": "Lab3B-T02",
+      "sectionId": "Lab3B",
+      "type": "tf",
+      "stem": "Gaschnig's heuristic stops as soon as the blank reaches its goal square, even if tiles remain misplaced.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "If tiles remain misplaced, swap the blank with a misplaced tile and continue."
+    },
+    {
+      "id": "Lab3B-T03",
+      "sectionId": "Lab3B",
+      "type": "tf",
+      "stem": "The optimal cost of a relaxed problem is a lower bound on the original problem's optimal cost.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Extra legal moves can only make the relaxed optimum no larger."
+    },
+    {
+      "id": "Lab3B-T04",
+      "sectionId": "Lab3B",
+      "type": "tf",
+      "stem": "Adding any two admissible heuristics always gives another admissible heuristic.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "The sum can count the same work twice and overestimate."
+    },
+    {
+      "id": "Lab3B-T05",
+      "sectionId": "Lab3B",
+      "type": "tf",
+      "stem": "The maximum of two admissible heuristics is admissible and dominates each input.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "The larger of two lower bounds remains a lower bound and is at least each input."
+    },
+    {
+      "id": "Lab3B-T06",
+      "sectionId": "Lab3B",
+      "type": "tf",
+      "stem": "The lab's values `h1=2`, `h2=2`, and `h3=3` prove that `h3` dominates `h1` on every possible board.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "One state illustrates the inequality; dominance needs an all-states proof."
+    },
+    {
+      "id": "Lab3B-T07",
+      "sectionId": "Lab3B",
+      "type": "tf",
+      "stem": "Gaschnig's heuristic dominates misplaced tiles because its relaxation keeps more of the real move restrictions.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Keeping more constraints makes Gaschnig no smaller than the fully relaxed misplaced-tiles cost."
+    },
+    {
+      "id": "Lab3B-T08",
+      "sectionId": "Lab3B",
+      "type": "tf",
+      "stem": "Manhattan distance and Gaschnig's heuristic are identical on every 8-puzzle state.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "The heuristics come from different relaxations and can rank states differently."
+    },
+    {
+      "id": "Lab3B-T09",
+      "sectionId": "Lab3B",
+      "type": "tf",
+      "stem": "A dominance claim requires an inequality that holds for every state.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Dominance means `hA(n)>=hB(n)` for every state."
+    },
+    {
+      "id": "Lab3B-T10",
+      "sectionId": "Lab3B",
+      "type": "tf",
+      "stem": "A relaxed puzzle is useful only when its optimal cost is greater than the original puzzle's cost.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "A relaxed optimum must be no greater than the original optimum to be a lower bound."
+    },
+    {
+      "id": "Lab4-T01",
+      "sectionId": "Lab4",
+      "type": "tf",
+      "stem": "Map-colouring variables are regions, and neighbouring regions have not-equal constraints.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Adjacent regions create binary not-equal constraints."
+    },
+    {
+      "id": "Lab4-T02",
+      "sectionId": "Lab4",
+      "type": "tf",
+      "stem": "MRV chooses the value that removes the fewest options from neighbouring variables.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "MRV chooses a variable. LCV chooses the least constraining value."
+    },
+    {
+      "id": "Lab4-T03",
+      "sectionId": "Lab4",
+      "type": "tf",
+      "stem": "The degree heuristic breaks an MRV tie by preferring the variable that constrains more unassigned neighbours.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Degree prefers the variable affecting more of the remaining CSP."
+    },
+    {
+      "id": "Lab4-T04",
+      "sectionId": "Lab4",
+      "type": "tf",
+      "stem": "Forward checking waits until every variable is assigned before deleting any domain values.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "Forward checking deletes inconsistent neighbour values after each assignment."
+    },
+    {
+      "id": "Lab4-T05",
+      "sectionId": "Lab4",
+      "type": "tf",
+      "stem": "An empty unassigned-variable domain proves that the current branch must backtrack.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "No remaining value means this partial assignment cannot be completed."
+    },
+    {
+      "id": "Lab4-T06",
+      "sectionId": "Lab4",
+      "type": "tf",
+      "stem": "LCV intentionally tries the value that eliminates the most neighbour options.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "LCV eliminates the fewest neighbour options."
+    },
+    {
+      "id": "Lab4-T07",
+      "sectionId": "Lab4",
+      "type": "tf",
+      "stem": "Plain backtracking must undo an assignment when every continuation below it fails.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Undoing failed choices is the defining backtracking step."
+    },
+    {
+      "id": "Lab4-T08",
+      "sectionId": "Lab4",
+      "type": "tf",
+      "stem": "Forward checking detects every conflict that AC-3 can detect.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "AC-3 propagates between unassigned variables and can detect more."
+    },
+    {
+      "id": "Lab4-T09",
+      "sectionId": "Lab4",
+      "type": "tf",
+      "stem": "Adding MRV, degree, and LCV can change the trace without changing which complete assignments are solutions.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Heuristics change ordering and pruning, not the constraints defining a solution."
+    },
+    {
+      "id": "Lab4-T10",
+      "sectionId": "Lab4",
+      "type": "tf",
+      "stem": "Tasmania must be selected first because it has the highest degree in the Australian map.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "Tasmania has few constraints; degree prefers a more connected variable."
+    },
+    {
       "id": "Lab5-T01",
       "sectionId": "Lab5",
       "type": "tf",
@@ -8245,6 +9595,246 @@
       },
       "answer": "F",
       "explanation": "At the root, rooms (0.420) beats New kitchen (0.171)."
+    },
+    {
+      "id": "Lab10-T01",
+      "sectionId": "Lab10",
+      "type": "tf",
+      "stem": "The wellbeing network factorises as `P(E)P(M)P(S|E,M)P(B|M)`.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Each node contributes one factor conditioned on its parents."
+    },
+    {
+      "id": "Lab10-T02",
+      "sectionId": "Lab10",
+      "type": "tf",
+      "stem": "The network needs all 15 independent parameters from the full four-binary-variable joint table.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "The network needs 8 independent parameters instead of 15."
+    },
+    {
+      "id": "Lab10-T03",
+      "sectionId": "Lab10",
+      "type": "tf",
+      "stem": "With S unobserved, the collider path `E -> S <- M` is blocked.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "An unobserved collider blocks information flow between its causes."
+    },
+    {
+      "id": "Lab10-T04",
+      "sectionId": "Lab10",
+      "type": "tf",
+      "stem": "Observing a collider always blocks a path that was previously open.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "Observing a collider opens the path."
+    },
+    {
+      "id": "Lab10-T05",
+      "sectionId": "Lab10",
+      "type": "tf",
+      "stem": "The lab obtains `P(+b)=0.19` by summing over M.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "`0.1*1.0 + 0.9*0.1 = 0.19`."
+    },
+    {
+      "id": "Lab10-T06",
+      "sectionId": "Lab10",
+      "type": "tf",
+      "stem": "Because E and M are roots, observing S cannot make them dependent.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "Observing shared effect S opens the collider and makes E and M dependent."
+    },
+    {
+      "id": "Lab10-T07",
+      "sectionId": "Lab10",
+      "type": "tf",
+      "stem": "The decrease from `P(+e|+s)=0.82` to `P(+e|+s,+m)=0.6897` is explaining away.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Migraine accounts for some evidence supplied by skipping."
+    },
+    {
+      "id": "Lab10-T08",
+      "sectionId": "Lab10",
+      "type": "tf",
+      "stem": "Blurred vision alone changes `P(+e)` from 0.4 to 0.7462.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "Blurred vision alone leaves `P(+e|+b)=P(+e)=0.4`; 0.7462 conditions on both S and B."
+    },
+    {
+      "id": "Lab10-T09",
+      "sectionId": "Lab10",
+      "type": "tf",
+      "stem": "Conditioning on M blocks the common-cause path `S <- M -> B`.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Observing the common cause M blocks that fork path."
+    },
+    {
+      "id": "Lab10-T10",
+      "sectionId": "Lab10",
+      "type": "tf",
+      "stem": "Normalisation is unnecessary when an enumeration query produces unnormalised values for both values of the query variable.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "Divide by the sum of the unnormalised values to obtain a distribution."
+    },
+    {
+      "id": "Lab11-T01",
+      "sectionId": "Lab11",
+      "type": "tf",
+      "stem": "With initial Q values 0 and `alpha=0.5`, sample `(A,right,B,2)` sets `Q(A,right)` to 1.0.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "The target is 2, and the half-step gives 1.0."
+    },
+    {
+      "id": "Lab11-T02",
+      "sectionId": "Lab11",
+      "type": "tf",
+      "stem": "The sample `(B,right,C,-2)` has target -2 even after `Q(C,left)` has become 1.0.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "The current best at C is 1.0, so the target is `-2+1=-1`."
+    },
+    {
+      "id": "Lab11-T03",
+      "sectionId": "Lab11",
+      "type": "tf",
+      "stem": "After the four workshop samples, `Q(A,right)=2.5`.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "The fourth update blends old 1.0 with target 4 to obtain 2.5."
+    },
+    {
+      "id": "Lab11-T04",
+      "sectionId": "Lab11",
+      "type": "tf",
+      "stem": "The extracted policy chooses right at B because right was the only sampled action.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "Left has value 0, greater than right's -0.5, so the extracted action is left."
+    },
+    {
+      "id": "Lab11-T05",
+      "sectionId": "Lab11",
+      "type": "tf",
+      "stem": "Finite-sample Q results can depend on sample order because later targets use the current table.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Q-learning bootstraps from the values present when each sample is processed."
+    },
+    {
+      "id": "Lab11-T06",
+      "sectionId": "Lab11",
+      "type": "tf",
+      "stem": "Knowing `V*` alone lets a model-free agent choose an optimal action without T or R.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "Choosing from `V*` requires a one-step expectation using T and R."
+    },
+    {
+      "id": "Lab11-T07",
+      "sectionId": "Lab11",
+      "type": "tf",
+      "stem": "Knowing `Q*` is enough to choose `argmax_a Q*(s,a)` directly.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "`Q*` stores a value per action, so argmax is enough."
+    },
+    {
+      "id": "Lab11-T08",
+      "sectionId": "Lab11",
+      "type": "tf",
+      "stem": "Direct evaluation of `V` directly identifies the best action in each state without a model.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "A state value does not identify which action reaches good successors without a model."
+    },
+    {
+      "id": "Lab11-T09",
+      "sectionId": "Lab11",
+      "type": "tf",
+      "stem": "A model-based learner can extract a policy after estimating T and R and solving the learned MDP.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "The estimated model supports planning and policy extraction."
+    },
+    {
+      "id": "Lab11-T10",
+      "sectionId": "Lab11",
+      "type": "tf",
+      "stem": "An untried action with initial Q value 0 is known to have true value 0.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "Zero is only the initial estimate for the untried action, not its known true value."
     },
     {
       "id": "A1-T01",
