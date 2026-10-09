@@ -265,10 +265,6 @@ function renderSetup() {
       <p>This is an unofficial revision aid made by a student. It is not affiliated with, endorsed by, or provided by Griffith University, the 2802ICT convenor, or the teaching team.</p>
       <p>The questions and answers were drafted with AI from the author's own notes. They can be wrong, incomplete, or out of date. Check anything you rely on against the lectures, labs, and assignment briefs.</p>
     </aside>
-    <aside class="exam-note">
-      <p><strong>Exam, as said in the lectures.</strong> 22 questions: 10 true/false, 10 multiple choice, 2 longer answers. 2 hours plus 10 minutes reading, and you may write during the reading. The paper is 40 marks, and you need 16 of those 40 to pass the course. Closed book, one blank sheet. The sample paper shows the format, not which topics will appear. Most students sit on 19 October. Book the slot in ProctorU.</p>
-      <p>Questions follow the labs, the lecture examples, and the weekly exercises. There may be one on what an assignment function does. The example he read out was Assignment 1 <code>revise</code>: it changes the domain of x in place and returns whether that domain changed. You are not asked to derive complexity, to memorise the information-gain formula, or to recite MRV. Week 11 is about 4 marks and is meant to be simple. A correct Bayes-net calculation is accepted even if a shorter one exists.</p>
-    </aside>
     <p class="lede">Practise one topic at a time, then use a balanced session or the final exam drill to check whether you can apply it. Each answer is explained immediately, and the overall score appears at the end.</p>
     <div class="row-actions">
       <button type="button" id="select-all">Select all</button>

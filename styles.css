@@ -67,22 +67,6 @@ h2 {
   margin-top: 8px;
 }
 
-.exam-note {
-  background: #e7f0f8;
-  border: 1px solid #b7cbe0;
-  border-radius: 10px;
-  padding: 12px 14px;
-  margin: 0 0 16px;
-}
-
-.exam-note p {
-  margin: 0;
-}
-
-.exam-note p + p {
-  margin-top: 8px;
-}
-
 .card {
   background: var(--card);
   border: 1px solid var(--line);

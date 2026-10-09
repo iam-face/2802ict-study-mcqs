@@ -22,7 +22,7 @@ Open `http://localhost:8080/`. Loading `index.html` as a file will fail, because
 6. The results page still shows the overall score and a review of every answer.
 7. Retry same set keeps the questions and order. New setup returns to the section list.
 
-The Exam drill is the more applied readiness set: 21 multiple choice and 22 true/false. The setup page states the paper shape described in the lectures: 10 true/false, 10 multiple choice, 2 longer answers, 40 marks with a 16-mark hurdle.
+The Exam drill is the more applied readiness set: 21 multiple choice and 22 true/false.
 
 ## Update the question bank
 
