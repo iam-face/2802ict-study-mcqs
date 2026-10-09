@@ -1,31 +1,4 @@
 const STORAGE_KEY = "mcq-quiz-session";
-const GUIDE_ANCHORS = {
-  L1: "lecture-1-introduction-and-agents",
-  L2: "lecture-2-uninformed-search",
-  L3: "lecture-3-informed-search",
-  L4A: "lecture-4-local-search-and-csps",
-  L4B: "lecture-4-local-search-and-csps",
-  L5: "lecture-5-machine-learning-basics",
-  L6: "lecture-6-linear-models",
-  L7: "lecture-7-feed-forward-neural-networks",
-  L8: "lecture-8-model-selection-and-regularisation",
-  L9: "lecture-9-decision-trees",
-  L10: "lecture-10-bayes-nets",
-  L11: "lecture-11-mdps-and-reinforcement-learning",
-  Lab2: "lab-week-2",
-  Lab3A: "lab-week-31",
-  Lab3B: "lab-week-32",
-  Lab4: "lab-week-4",
-  Lab5: "lecture-5-machine-learning-basics",
-  Lab6: "lecture-6-linear-models",
-  Lab7: "lecture-7-feed-forward-neural-networks",
-  Lab8: "lecture-7-feed-forward-neural-networks",
-  Lab9: "lecture-9-decision-trees",
-  Lab10: "lab-week-10",
-  Lab11: "workshop-week-11",
-  A1: "lecture-4-local-search-and-csps",
-  A2: "lecture-8-model-selection-and-regularisation",
-};
 
 const state = {
   bank: null,
@@ -200,6 +173,13 @@ function newSetup() {
   render();
 }
 
+function cancelQuiz() {
+  const confirmed = window.confirm("Cancel this quiz? Your answers and progress will be discarded.");
+  if (confirmed) {
+    newSetup();
+  }
+}
+
 function currentAnswered() {
   const question = state.quiz[state.index];
   return Boolean(question && state.answers[question.id]);
@@ -229,6 +209,9 @@ function goPrev() {
 
 function pick(letter) {
   const question = state.quiz[state.index];
+  if (!question || state.answers[question.id]) {
+    return;
+  }
   state.answers[question.id] = letter;
   saveSession();
   render();
@@ -280,13 +263,13 @@ function renderSetup() {
     <h1>2802ICT Study MCQs</h1>
     <aside class="disclaimer">
       <p>This is an unofficial revision aid made by a student. It is not affiliated with, endorsed by, or provided by Griffith University, the 2802ICT convenor, or the teaching team.</p>
-      <p>The questions, answers, and study guide were drafted with AI from the author's own notes. They can be wrong, incomplete, or out of date. Use them as a guide only, and check anything you rely on against the lectures, labs, and assignment briefs.</p>
+      <p>The questions and answers were drafted with AI from the author's own notes. They can be wrong, incomplete, or out of date. Check anything you rely on against the lectures, labs, and assignment briefs.</p>
     </aside>
     <aside class="exam-note">
       <p><strong>Exam, as said in the lectures.</strong> 22 questions: 10 true/false, 10 multiple choice, 2 longer answers. 2 hours plus 10 minutes reading, and you may write during the reading. The paper is 40 marks, and you need 16 of those 40 to pass the course. Closed book, one blank sheet. The sample paper shows the format, not which topics will appear. Most students sit on 19 October. Book the slot in ProctorU.</p>
       <p>Questions follow the labs, the lecture examples, and the weekly exercises. There may be one on what an assignment function does. The example he read out was Assignment 1 <code>revise</code>: it changes the domain of x in place and returns whether that domain changed. You are not asked to derive complexity, to memorise the information-gain formula, or to recite MRV. Week 11 is about 4 marks and is meant to be simple. A correct Bayes-net calculation is accepted even if a shorter one exists.</p>
     </aside>
-    <p class="lede">Learn a topic in the guide, practise it here, then use a balanced session or the final exam drill to check whether you can apply it. Scoring happens after you submit.</p>
+    <p class="lede">Practise one topic at a time, then use a balanced session or the final exam drill to check whether you can apply it. Each answer is explained immediately, and the overall score appears at the end.</p>
     <div class="row-actions">
       <button type="button" id="select-all">Select all</button>
       <button type="button" id="clear-all">Clear</button>
@@ -378,33 +361,54 @@ function renderQuiz() {
   const question = state.quiz[state.index];
   const total = state.quiz.length;
   const picked = state.answers[question.id] || "";
+  const answered = Boolean(picked);
+  const correct = answered && picked === question.answer;
   const width = Math.round(((state.index + 1) / total) * 100);
   const last = state.index === total - 1;
-  const choices = lettersFor(question).map((letter) => `
-    <button type="button" class="choice ${picked === letter ? "picked" : ""}" data-letter="${letter}">
+  const choices = lettersFor(question).map((letter) => {
+    const resultClass = answered && letter === question.answer
+      ? "correct"
+      : answered && letter === picked
+        ? "incorrect"
+        : "";
+    return `
+    <button type="button" class="choice ${picked === letter ? "picked" : ""} ${resultClass}" data-letter="${letter}" ${answered ? "disabled" : ""}>
       <span class="letter">${letter}</span>
       <span>${escapeHtml(question.choices[letter])}</span>
     </button>
-  `).join("");
+  `;
+  }).join("");
+  const feedback = answered ? `
+    <aside class="feedback ${correct ? "correct" : "incorrect"}" aria-live="polite">
+      <div class="badge">${correct ? "Correct" : "Incorrect"}</div>
+      <p><strong>Correct answer:</strong> ${escapeHtml(shownAnswer(question, question.answer))}</p>
+      <p>${escapeHtml(question.explanation)}</p>
+    </aside>
+  ` : "";
 
   app.innerHTML = `
+    <div class="quiz-toolbar">
+      <button type="button" class="danger" id="cancel">Cancel quiz</button>
+    </div>
     <p class="meta">${escapeHtml(sectionTitle(question.sectionId))} | ${escapeHtml(question.id)}</p>
     <p class="meta">Question ${state.index + 1} of ${total}</p>
     <div class="progress" aria-hidden="true"><span style="width:${width}%"></span></div>
     <div class="card">
       <p class="stem">${escapeHtml(question.stem)}</p>
       <div class="choices">${choices}</div>
+      ${feedback}
     </div>
     <div class="nav">
       <button type="button" id="prev" ${state.index === 0 ? "disabled" : ""}>Previous</button>
-      <button type="button" class="primary" id="next" ${picked ? "" : "disabled"}>${last ? "Submit" : "Next"}</button>
+      <button type="button" class="primary" id="next" ${answered ? "" : "disabled"}>${last ? "View results" : "Next"}</button>
     </div>
-    <p class="hint">${picked ? "" : "Choose an answer to continue."}</p>
+    <p class="hint">${answered ? "Review the explanation, then continue." : "Choose an answer to continue."}</p>
   `;
 
   app.querySelectorAll("[data-letter]").forEach((button) => {
     button.addEventListener("click", () => pick(button.dataset.letter));
   });
+  app.querySelector("#cancel").addEventListener("click", cancelQuiz);
   app.querySelector("#prev").addEventListener("click", goPrev);
   app.querySelector("#next").addEventListener("click", goNext);
 }
@@ -431,10 +435,6 @@ function renderResults() {
       const note = marks.length ? ` (${marks.join(", ")})` : "";
       return `<li><strong>${letter}.</strong> ${escapeHtml(question.choices[letter])}${note}</li>`;
     }).join("");
-    const guideAnchor = GUIDE_ANCHORS[question.sectionId];
-    const reviewLink = guideAnchor
-      ? `<p><a href="guide.html#${guideAnchor}">Review this topic in the study guide</a></p>`
-      : "";
     return `
       <article class="card review ${ok ? "correct" : "incorrect"}">
         <div class="badge">${ok ? "Correct" : "Incorrect"}</div>
@@ -443,7 +443,6 @@ function renderResults() {
         <ul>${choices}</ul>
         <p>Your answer: <span class="yours">${escapeHtml(shownAnswer(question, yours))}</span>. Correct answer: <span class="key">${escapeHtml(shownAnswer(question, question.answer))}</span>.</p>
         <p class="hint">${escapeHtml(question.explanation)}</p>
-        ${reviewLink}
       </article>
     `;
   }).join("");
