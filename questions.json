@@ -186,9 +186,9 @@
       "stem": "Cognitive science (thinking humanly) is described as which kind of approach?",
       "choices": {
         "A": "Top-down using computer models and experimental psychology",
-        "B": "Bottom-up using neurological imaging",
-        "C": "Purely symbolic rule acquisition without data",
-        "D": "Weight optimisation across neural layers"
+        "B": "Bottom-up, starting from neurological imaging of brain tissue",
+        "C": "Purely symbolic rule acquisition, with psychological data left out",
+        "D": "Weight optimisation across neural layers fitted by gradient descent"
       },
       "answer": "A",
       "explanation": "Cognitive science described as top-down"
@@ -241,9 +241,9 @@
       "type": "mcq",
       "stem": "Which comparison is correct for Symbolic AI (GOFAI)?",
       "choices": {
-        "A": "Pros: black-box accuracy; Cons: needs no training data",
-        "B": "Pros: learns from raw pixels; Cons: fully explainable always",
-        "C": "Pros: stochastic weight matrices only; Cons: no ontologies",
+        "A": "Pros: black-box accuracy on benchmarks; Cons: needs no training data and no rules",
+        "B": "Pros: learns from raw pixels; Cons: every decision is fully explainable",
+        "C": "Pros: uses only stochastic weight matrices; Cons: ontologies are never used",
         "D": "Pros: transparent, verifiable logic; Cons: hard to scale to unstructured data"
       },
       "answer": "D",
@@ -255,9 +255,9 @@
       "type": "mcq",
       "stem": "A main limit of subsymbolic (deep learning) systems highlighted in the slides is that they are:",
       "choices": {
-        "A": "Unable to process unstructured inputs",
-        "B": "Fully explainable without training data",
-        "C": "Restricted to unary CSP constraints",
+        "A": "Unable to take unstructured inputs such as images, audio, or raw text",
+        "B": "Fully explainable from the weights, and able to train with no labels",
+        "C": "Restricted to unary CSP constraints, so they cannot learn from examples",
         "D": "Often opaque (\"black box\") and need large labelled datasets"
       },
       "answer": "D",
@@ -298,9 +298,9 @@
       "stem": "PEAS stands for which four elements?",
       "choices": {
         "A": "Performance, Environment, Actuators, Sensors",
-        "B": "Path, Environment, Actions, Successors",
-        "C": "Policy, Evaluation, Agent, State",
-        "D": "Problem, Expansion, Arc, Search"
+        "B": "Path cost, Environment, Actions, and the Successor function",
+        "C": "Policy, Evaluation function, Agent program, and State",
+        "D": "Problem formulation, Expansion, Arc consistency, and Search"
       },
       "answer": "A",
       "explanation": "Performance, Environment, Actuators, Sensors"
@@ -312,9 +312,9 @@
       "stem": "In the automated taxi PEAS example, which item belongs under Actuators?",
       "choices": {
         "A": "Steering, throttle, brakes, horns, and displays",
-        "B": "Cameras and GPS",
-        "C": "Urban roads and pedestrians",
-        "D": "Safety and profits as measures"
+        "B": "Cameras, GPS, speedometer, and the other engine sensors",
+        "C": "Urban roads, traffic, and the pedestrians in the environment",
+        "D": "Safety, legality, profits, and passenger comfort as the measures"
       },
       "answer": "A",
       "explanation": "Taxi actuators: steer/throttle/brake/horn/display"
@@ -339,10 +339,10 @@
       "type": "mcq",
       "stem": "For the shopping agent PEAS table, which are listed as Sensors?",
       "choices": {
-        "A": "Form fills and URL redirection",
-        "B": "Minimising price and transaction speed",
+        "A": "Form fills, button clicks, and URL redirection sent to the shop",
+        "B": "Minimising the price, maximising speed, and avoiding a bad transaction",
         "C": "Web HTML, scripts, JSON API responses, and page layout streams",
-        "D": "Steering wheels and radar"
+        "D": "Steering, radar, and the brake pedal carried over from the taxi"
       },
       "answer": "C",
       "explanation": "Shopping sensors = HTML/scripts/JSON/layouts"
@@ -353,9 +353,9 @@
       "type": "mcq",
       "stem": "Which statement best matches the course framing of Intelligent Systems / AI content?",
       "choices": {
-        "A": "Only neural networks; no search",
-        "B": "Only reinforcement learning and RLHF",
-        "C": "Only CSPs and map colouring",
+        "A": "Only neural networks trained on pixels, with search and logic left out",
+        "B": "Only reinforcement learning and RLHF, with no search and no CSPs",
+        "C": "Only constraint satisfaction and map colouring, with machine learning and knowledge representation left out",
         "D": "Traditional AI (search, representation, reasoning) plus machine learning (data-driven)"
       },
       "answer": "D",
@@ -368,9 +368,9 @@
       "stem": "According to the course assessment overview, the final exam weight and pass threshold stated are:",
       "choices": {
         "A": "40 marks for the exam, and at least 16 of those 40 (40 percent) to pass the course",
-        "B": "30%, any mark passes",
-        "C": "50%, open book only",
-        "D": "20%, optional interview only"
+        "B": "30 percent of the course, and any exam mark is enough to pass",
+        "C": "50 percent of the course, and the exam is open book with no hurdle and there is no separate mark required on the exam",
+        "D": "20 percent of the course, and the exam is an optional interview"
       },
       "answer": "A",
       "explanation": "The exam is 40 marks. The hurdle is 40 percent of the exam, which is 16 marks."
@@ -395,10 +395,10 @@
       "type": "mcq",
       "stem": "Why is this course called Intelligent Systems rather than Artificial Intelligence?",
       "choices": {
-        "A": "The content is robotics only, so the name AI could not be used",
+        "A": "The content is robotics only, so the name Artificial Intelligence could not be used, and search and learning are outside the syllabus",
         "B": "During the AI winter the name AI had a poor reputation, so the course was titled differently. The content is still an introduction to AI",
-        "C": "Intelligent Systems means unsupervised learning only",
-        "D": "The name was changed in 2012, when AlexNet was published"
+        "C": "Intelligent Systems means unsupervised learning only, so the title was chosen because the course never sets a labelled prediction task",
+        "D": "The name was changed in 2012, when AlexNet was published, because the old title no longer matched a course built around convolutional nets"
       },
       "answer": "B",
       "explanation": "The AI winter made the name AI unpopular. The course is still an introduction to AI."
@@ -409,10 +409,10 @@
       "type": "mcq",
       "stem": "In this course, how does a textbook agent differ from an agentic system?",
       "choices": {
-        "A": "They are the same thing: any program with a PEAS description",
+        "A": "They are the same thing: any program with a PEAS description is both a textbook agent and an agentic system",
         "B": "A textbook agent perceives and acts. Agentic, as he used the word, means a model that breaks a task into steps and calls tools",
-        "C": "A textbook agent is a language model, and an agentic system is a vacuum robot",
-        "D": "Agentic systems are the only agents that have sensors"
+        "C": "A textbook agent is a language model that calls tools, and an agentic system is a vacuum robot with no model of its task or its environment",
+        "D": "Agentic systems are the only agents that have sensors, and a textbook agent is a program that never receives a percept"
       },
       "answer": "B",
       "explanation": "A textbook agent perceives and acts. Agentic means steps, tools, and revising its own work."
@@ -440,9 +440,9 @@
       "type": "mcq",
       "stem": "A search problem formulation includes which five items?",
       "choices": {
-        "A": "PEAS, Turing Test, sensors, actuators, and architecture",
-        "B": "Only heuristic h(n) and f(n)",
-        "C": "MRV, LCV, AC-3, and min-conflicts",
+        "A": "PEAS, the Turing Test, sensors, actuators, and the agent architecture of a reflex agent",
+        "B": "Only the heuristic h(n) and the evaluation f(n), with no goal test",
+        "C": "MRV, LCV, the degree heuristic, AC-3, and min-conflicts",
         "D": "States/initial state, actions, successor function, goal test, and path cost"
       },
       "answer": "D",
@@ -482,9 +482,9 @@
       "type": "mcq",
       "stem": "In the vacuum world example, how many possible states are listed, and which are goal states?",
       "choices": {
-        "A": "4 states; states 1 and 2 are goals",
-        "B": "2 states; only state 8 is a goal",
-        "C": "Infinite states; any clean square is a goal",
+        "A": "4 states in total, and states 1 and 2 are the two goal states",
+        "B": "2 states in total, and only state 8 counts as a goal state",
+        "C": "Infinitely many states, and any square that is clean counts as a goal",
         "D": "8 possible states; states 7 and 8 are goal states"
       },
       "answer": "D",
@@ -541,10 +541,10 @@
       "type": "mcq",
       "stem": "After expanding Arad in the Romania tree-search example, the frontier becomes:",
       "choices": {
-        "A": "(Bucharest)",
-        "B": "(Fagaras, Pitesti)",
+        "A": "(Bucharest), the goal, placed on the frontier before Arad's neighbours",
+        "B": "(Fagaras, Pitesti), the two cities on the far side of the map",
         "C": "(Sibiu, Timisoara, Zerind)",
-        "D": "(Arad only)"
+        "D": "(Arad only), the city just expanded, left waiting on the frontier"
       },
       "answer": "C",
       "explanation": "Frontier (Sibiu, Timisoara, Zerind)"
@@ -586,10 +586,10 @@
       "type": "mcq",
       "stem": "Which claim matches what was said about search in week 2?",
       "choices": {
-        "A": "The exam asks you to derive the time and space formulas from scratch",
-        "B": "Search matters only for mazes. Training a model is not a search problem",
+        "A": "The exam asks you to derive the time and space formulas from scratch, and fitting a model is not treated as search at all in this course",
+        "B": "Search matters only for mazes. Training a model is a different problem and is not a search over parameters",
         "C": "Fitting a model is a search for parameters that reduce a loss, and you will not be asked to derive the complexity formulas",
-        "D": "The complexity bounds are not worth knowing, because search is unused after week 2"
+        "D": "The complexity bounds are not worth knowing, because search is unused once machine learning starts in week 5"
       },
       "answer": "C",
       "explanation": "Fitting a model is a search over parameters that reduce a loss. Know the bounds, such as BFS time and space O(b^d). Do not expect to derive them."
@@ -617,9 +617,9 @@
       "type": "mcq",
       "stem": "BFS finds the shortest path in terms of number of transitions. Relative to least cost paths when costs differ, BFS:",
       "choices": {
-        "A": "Always finds the least cost path",
-        "B": "Is identical to A* with any heuristic",
-        "C": "Is identical to DFS with loops",
+        "A": "Always returns a least-cost path, even when the step costs differ",
+        "B": "Is the same algorithm as A* for every heuristic, including an inadmissible one",
+        "C": "Is the same algorithm as DFS once loops are left in the graph",
         "D": "Does not find the least cost path in general"
       },
       "answer": "D",
@@ -648,10 +648,10 @@
       "type": "mcq",
       "stem": "UCS completeness and optimality conditions stated include:",
       "choices": {
-        "A": "Never complete; never optimal",
-        "B": "Complete only if h is admissible",
+        "A": "Never complete on a finite graph, and never optimal for positive costs",
+        "B": "Complete only when h is admissible, and optimal only for greedy search",
         "C": "Complete if each step has minimal cost >= epsilon; optimal yes",
-        "D": "Optimal only for greedy best-first"
+        "D": "Optimal only when it is run as greedy best-first search"
       },
       "tags": [
         "red"
@@ -682,10 +682,10 @@
       "type": "mcq",
       "stem": "DFS properties as summarised: complete? optimal? space?",
       "choices": {
-        "A": "Yes; yes; O(bd)",
+        "A": "Yes, it is complete; yes, it is optimal; space is O(bd)",
         "B": "No (fails in infinite-depth/loops); No; O(bm) linear space",
-        "C": "Yes always; Yes; exponential space only",
-        "D": "Complete like BFS; Optimal like UCS; O(1) space"
+        "C": "Yes, always complete; yes, optimal; space is exponential only",
+        "D": "Complete in the same cases as BFS; optimal in the same cases as UCS; space O(1)"
       },
       "tags": [
         "red"
@@ -699,10 +699,10 @@
       "type": "mcq",
       "stem": "Depth-limited search is:",
       "choices": {
-        "A": "BFS with a cost limit",
+        "A": "Breadth-first search with a limit on path cost",
         "B": "DFS with depth limit l (nodes at depth l have no successors)",
-        "C": "A* with inconsistent heuristics",
-        "D": "UCS without a priority queue"
+        "C": "A* running with a heuristic that fails consistency",
+        "D": "Uniform-cost search with the priority queue removed and with no path costs stored"
       },
       "answer": "B",
       "explanation": "DFS with depth limit l"
@@ -714,9 +714,9 @@
       "stem": "Iterative-deepening search (IDS) works by:",
       "choices": {
         "A": "Keeping increasing the depth limit l until a solution is found",
-        "B": "Expanding only by heuristic h(n)",
-        "C": "Randomly restarting hill climbing",
-        "D": "Enforcing arc consistency with AC-3"
+        "B": "Expanding the frontier in order of the heuristic h(n) alone",
+        "C": "Restarting hill climbing from a new random state after each failure",
+        "D": "Running AC-3 on the frontier until every arc is consistent"
       },
       "tags": [
         "red"
@@ -778,9 +778,9 @@
       "type": "mcq",
       "stem": "Completeness and optimality, as the slides define those two words, ask whether:",
       "choices": {
-        "A": "The frontier is a stack, and whether memory is linear",
-        "B": "The heuristic is consistent, and whether gamma equals 1",
-        "C": "The agent has sensors, and whether a test set was used",
+        "A": "Whether the frontier is a stack, and whether memory stays linear in depth",
+        "B": "Whether the heuristic is consistent, and whether the discount gamma equals 1 for every reward",
+        "C": "Whether the agent has sensors, and whether a held-out test set was used",
         "D": "A solution is found whenever one exists, and whether that solution is a lowest-cost one"
       },
       "tags": [
@@ -843,10 +843,10 @@
       "type": "mcq",
       "stem": "A heuristic evaluation function is intended to:",
       "choices": {
-        "A": "Replace the goal test entirely",
-        "B": "Store only the explored set",
+        "A": "Replace the goal test, so a node is a goal when h(n) is small",
+        "B": "Store the explored set, and nothing else about the path",
         "C": "Estimate how far a state is from a goal (or cost to reach the goal)",
-        "D": "Guarantee DFS completeness"
+        "D": "Make depth-first search complete on graphs that contain loops and on infinite trees"
       },
       "answer": "C",
       "explanation": "Heuristic estimates distance/cost to goal"
@@ -889,9 +889,9 @@
       "stem": "Which move rule defines Gaschnig's relaxed 8-puzzle heuristic?",
       "choices": {
         "A": "Any tile may move directly into the blank, even when it is not adjacent",
-        "B": "Any tile may move to any square without using the blank",
-        "C": "A tile may move only when adjacent to the blank",
-        "D": "Every misplaced tile costs its Manhattan distance"
+        "B": "Any tile may move to any square, and the blank is not used at all",
+        "C": "A tile may move only when it is adjacent to the blank",
+        "D": "Every misplaced tile is charged its Manhattan distance to the goal square"
       },
       "answer": "A",
       "explanation": "Gaschnig allows any tile to move directly into the blank."
@@ -917,9 +917,9 @@
       "stem": "Properties of greedy best-first search include:",
       "choices": {
         "A": "Not complete in general and not optimal; with repeated-state checking it is complete on a finite graph",
-        "B": "Always complete and always optimal",
-        "C": "Same guarantees as A* with any h",
-        "D": "Linear space like IDS always"
+        "B": "Always complete on infinite graphs, always optimal for unequal step costs, and linear in memory on every tree",
+        "C": "The same completeness and optimality guarantees as A*, for any h",
+        "D": "Linear space in the same way as iterative deepening, on every graph"
       },
       "answer": "A",
       "explanation": "Greedy search can loop and can choose an expensive path because it uses h alone. Repeated-state checking makes it complete on a finite graph, but not optimal."
@@ -944,10 +944,10 @@
       "type": "mcq",
       "stem": "In A*, g(n) and h(n) mean respectively:",
       "choices": {
-        "A": "Estimated cost to goal; cost so far",
+        "A": "Estimated cost from n to a goal; exact cost already paid to reach n",
         "B": "Cost so far to reach n; estimated cost to goal from n",
-        "C": "Branching factor; depth",
-        "D": "Learning rate; batch size"
+        "C": "The branching factor b; the depth of the shallowest goal",
+        "D": "The learning rate; the number of examples in a batch"
       },
       "answer": "B",
       "explanation": "g so far; h estimate to goal"
@@ -959,9 +959,9 @@
       "stem": "A heuristic h(n) is admissible if:",
       "choices": {
         "A": "h(n) <= h*(n) for every n (never overestimates)",
-        "B": "h(n) >= h*(n) for every n",
-        "C": "h(n) = 0 only at non-goals",
-        "D": "h(n) always equals Manhattan distance"
+        "B": "h(n) is at least h*(n) for every n, so it may overestimate",
+        "C": "h(n) is 0 only at non-goals, and positive at every goal",
+        "D": "h(n) is Manhattan distance for every problem, including Romania"
       },
       "tags": [
         "red"
@@ -1006,10 +1006,10 @@
       "type": "mcq",
       "stem": "If h is consistent, then along any path f is:",
       "choices": {
-        "A": "Strictly decreasing",
+        "A": "Strictly decreasing, so each step has a smaller f than the last",
         "B": "Non-decreasing (monotonic)",
-        "C": "Always equal to zero",
-        "D": "Independent of g"
+        "C": "Always equal to zero, because consistency forces h to cancel g",
+        "D": "Independent of g, so only the heuristic can change f"
       },
       "answer": "B",
       "explanation": "f non-decreasing along paths"
@@ -1082,10 +1082,10 @@
       "type": "mcq",
       "stem": "From S the direct edge to the goal costs 5. The path S to A to the goal costs 1 + 3 = 4. The heuristic sets h(A) = 6, so f(A) = 7, while f on the direct goal is 5. What does A* do?",
       "choices": {
-        "A": "It returns the path of cost 4, because 4 is the true cheaper cost",
+        "A": "It returns the path of cost 4, because 4 is the true cheaper cost and f is ignored",
         "B": "It expands the direct goal first and returns cost 5. The heuristic overestimated the remaining cost from A, which is really 3",
-        "C": "It refuses to expand either node until h is consistent",
-        "D": "It returns both paths and averages the costs"
+        "C": "It refuses to expand either node until the heuristic has been replaced by a consistent one and both f-values have been recomputed",
+        "D": "It returns both paths and reports the average of the two path costs"
       },
       "answer": "B",
       "explanation": "A* returns cost 5. h(A) = 6 overestimates the true remaining cost, which is 3, so f(A) = 7 loses to the direct edge."
@@ -1127,9 +1127,9 @@
       "type": "mcq",
       "stem": "On the best-first search slide, what do g(n) and f(n) do?",
       "choices": {
-        "A": "g(n) is the cost still to pay, and f(n) is the branching factor",
-        "B": "Both count how many nodes are stored",
-        "C": "g(n) is the heuristic, and f(n) is the depth limit",
+        "A": "g(n) is the cost still to pay from n to the goal, and f(n) is the branching factor at that depth of the tree",
+        "B": "Both g(n) and f(n) count how many nodes are stored on the frontier",
+        "C": "g(n) is the heuristic estimate, and f(n) is the depth limit",
         "D": "g(n) measures the path cost so far to reach n, and f(n) estimates the total path cost of a path through n"
       },
       "tags": [
@@ -1162,9 +1162,9 @@
       "stem": "Which relaxed 8-puzzle rules match h1 and h2?",
       "choices": {
         "A": "A tile may move anywhere, and that relaxation gives h1. A tile may move to any adjacent square, and that relaxation gives h2",
-        "B": "A tile may move only into the blank for h1, and may not move for h2",
+        "B": "A tile may move only into the blank under h1, even from the far side of the board, and a tile may not move at all under h2, blank or not",
         "C": "Both heuristics keep the real rule that a tile must be next to the blank",
-        "D": "h1 is Manhattan distance and h2 counts misplaced tiles"
+        "D": "h1 is Manhattan distance, and h2 is the count of misplaced tiles"
       },
       "tags": [
         "red"
@@ -1196,9 +1196,9 @@
       "stem": "Greedy best-first search expands which node, and which property row matches the slides?",
       "choices": {
         "A": "The node that appears closest to the goal. Complete? No. Time? O(bm). Space? O(bm). Optimal? No",
-        "B": "The least g-cost node. Complete? Yes. Optimal? Yes",
-        "C": "The deepest node. Complete? Yes. Space? O(bd)",
-        "D": "The node with the largest f(n). Complete? Yes. Optimal? Yes"
+        "B": "The node with the least g so far. Complete? Yes. Time? O(b^(C*/e)). Space? O(b^m). Optimal? Yes. Goal test at generation.",
+        "C": "The deepest node on the frontier. Complete? Yes. Time? O(b^m). Space? O(bd)",
+        "D": "The node with the largest f(n). Complete? Yes. Time? O(bm). Optimal? Yes"
       },
       "tags": [
         "red"
@@ -1213,9 +1213,9 @@
       "stem": "A key difference of local search / optimisation versus earlier path-finding search is that we care mainly about:",
       "choices": {
         "A": "The description of the final configuration X*, not how we got there",
-        "B": "The full sequence of actions to the goal",
-        "C": "Completeness of BFS only",
-        "D": "PEAS sensors only"
+        "B": "The full sequence of actions that led from the start to the goal state",
+        "C": "Whether breadth-first search is complete on that same problem",
+        "D": "The sensors listed in the PEAS description of the agent"
       },
       "answer": "A",
       "explanation": "Care about final configuration, not path"
@@ -1226,10 +1226,10 @@
       "type": "mcq",
       "stem": "For N-Queens local search, the evaluation function is:",
       "choices": {
-        "A": "Straight-line distance to Bucharest",
+        "A": "Straight-line distance from the current board to Bucharest",
         "B": "Number of pairs of attacking queens (direct and indirect)",
-        "C": "Mean squared error",
-        "D": "Number of misplaced tiles only"
+        "C": "Mean squared error between the board and a target board",
+        "D": "The number of misplaced tiles, counted once per queen"
       },
       "answer": "B",
       "explanation": "Attacking queen pairs"
@@ -1268,9 +1268,9 @@
       "type": "mcq",
       "stem": "Hill climbing is described as:",
       "choices": {
-        "A": "An uninformed complete optimal search like UCS",
-        "B": "Softmax multi-class classification",
-        "C": "Arc consistency propagation",
+        "A": "An uninformed search that is complete and optimal in the same cases as UCS",
+        "B": "The softmax layer that turns class scores into a probability distribution",
+        "C": "The arc-consistency procedure that revises domains in a CSP",
         "D": "A greedy local search that moves to the highest-valued neighbour"
       },
       "answer": "D",
@@ -1283,9 +1283,9 @@
       "stem": "In the hill-climb pseudocode, when is the current state returned?",
       "choices": {
         "A": "When the best neighbour is not better than current",
-        "B": "When the frontier is a FIFO queue",
-        "C": "When h(n) is inconsistent",
-        "D": "When AC-3 returns true"
+        "B": "When the frontier is a FIFO queue and the shallowest node is a goal",
+        "C": "When h(n) fails the consistency test along the current path",
+        "D": "When AC-3 returns true and every arc has been revised"
       },
       "answer": "A",
       "explanation": "Stop when no better neighbour"
@@ -1310,10 +1310,10 @@
       "type": "mcq",
       "stem": "Steepest-ascent hill climbing on 8-queens from random starts: success rate stated is:",
       "choices": {
-        "A": "Solves 86%; stuck 14%",
-        "B": "Always 100% success",
+        "A": "Solves about 86 percent of random starts, and is stuck on 14 percent",
+        "B": "Succeeds on every random start, so the stuck rate is 0",
         "C": "Solves 14%; stuck 86% of the time",
-        "D": "Success exactly 50%"
+        "D": "Succeeds on exactly half of the random starts"
       },
       "answer": "C",
       "explanation": "14% solve; stuck 86%"
@@ -1325,9 +1325,9 @@
       "stem": "How does stochastic hill climbing differ from steepest-ascent hill climbing in the N-queens illustration?",
       "choices": {
         "A": "It samples among improving neighbours, often favouring larger improvements, instead of deterministically taking the best one",
-        "B": "It stores every frontier layer in a FIFO queue",
-        "C": "It guarantees the global optimum by testing every configuration",
-        "D": "It replaces the evaluation function with A* path cost"
+        "B": "It keeps every frontier layer in a FIFO queue and expands the oldest node",
+        "C": "It guarantees the global optimum by testing every queen placement in the state space, and it does not return until that scan is finished",
+        "D": "It drops the queen evaluation and orders neighbours by A* path cost"
       },
       "answer": "A",
       "explanation": "Stochastic hill climbing samples among improving neighbours instead of always selecting the steepest improvement."
@@ -1338,9 +1338,9 @@
       "type": "mcq",
       "stem": "Approximate size of the 8-queens state space given in the slides is:",
       "choices": {
-        "A": "8 states",
-        "B": "256 only (4-queens)",
-        "C": "Infinite continuous",
+        "A": "8 states, one for each queen",
+        "B": "256 states, the figure given for 4-queens",
+        "C": "An infinite continuous space of queen coordinates",
         "D": "About 17 million (8^8)"
       },
       "answer": "D",
@@ -1353,9 +1353,9 @@
       "stem": "Allowing sideways moves (with a limit) is intended mainly to:",
       "choices": {
         "A": "Escape from a shoulder / plateau",
-        "B": "Guarantee A* admissibility",
-        "C": "Enforce MRV variable ordering",
-        "D": "Compute softmax probabilities"
+        "B": "Make an A* heuristic admissible after it has overestimated",
+        "C": "Choose the CSP variable with the fewest legal values left",
+        "D": "Turn a vector of class scores into probabilities"
       },
       "tags": [
         "red"
@@ -1383,9 +1383,9 @@
       "type": "mcq",
       "stem": "With that sideways limit, average steps become approximately:",
       "choices": {
-        "A": "4 success, 3 failure",
-        "B": "1 step always",
-        "C": "3,644,035 nodes",
+        "A": "About 4 steps when it succeeds, and 3 steps when it fails",
+        "B": "Exactly 1 step on every random start",
+        "C": "About 3,644,035 nodes, the figure for a different search",
         "D": "21 steps for success, 64 for failure"
       },
       "answer": "D",
@@ -1412,9 +1412,9 @@
       "stem": "Random-restart hill climbing does which of the following?",
       "choices": {
         "A": "A series of hill-climbing searches from random initial states until a goal is found",
-        "B": "One climb from a fixed start only",
-        "C": "Expands by lowest f = g + h globally",
-        "D": "Runs AC-3 as a preprocessor only"
+        "B": "A single climb from one fixed start, with no further restarts and no sideways moves allowed",
+        "C": "A global expansion ordered by lowest f, which is g plus h",
+        "D": "A preprocessing pass of AC-3, and then one climb"
       },
       "answer": "A",
       "explanation": "Restart from random starts"
@@ -1425,10 +1425,10 @@
       "type": "mcq",
       "stem": "For 8-queens with p = 0.14 success, expected number of restarts is about:",
       "choices": {
-        "A": "0.14",
-        "B": "94",
+        "A": "0.14 restarts, the success probability itself",
+        "B": "94 restarts, one for each percent that is not a success",
         "C": "1/p, roughly 7 restarts",
-        "D": "100 sideways moves"
+        "D": "100 restarts, the cap used for sideways moves"
       },
       "answer": "C",
       "explanation": "Expected restarts 1/p ~ 7"
@@ -1467,10 +1467,10 @@
       "type": "mcq",
       "stem": "Why introduce local search after A*, as the lecture framed it?",
       "choices": {
-        "A": "A* is incomplete on every finite map, so it cannot be used",
+        "A": "A* is incomplete on every finite map, so a later method has to replace it",
         "B": "Scoring every generated state fails when the frontier is huge. Local search looks only at neighbours, and completeness is what you give up",
-        "C": "Local search is optimal whenever A* is not",
-        "D": "Local search stores the whole path and the whole frontier"
+        "C": "Local search is optimal on the problems where A* is not optimal",
+        "D": "Local search keeps the whole path and the whole frontier, so it uses more memory than A* on the same map and is the method you use when the frontier is huge"
       },
       "answer": "B",
       "explanation": "A huge frontier is what fails. Local search only scores neighbours, and completeness is the cost."
@@ -1481,10 +1481,10 @@
       "type": "mcq",
       "stem": "For TSP local search move operators, the slides note that:",
       "choices": {
-        "A": "4-opt is always best despite cost",
+        "A": "4-opt is the move to use on every instance, and its extra cost can be ignored on large instances",
         "B": "3-opt is better than 2-opt; 4-opt is not substantially better given extra computation",
-        "C": "Only 1-opt is used",
-        "D": "Random restart never helps TSP"
+        "C": "Only 1-opt moves are defined, and 2-opt is not used",
+        "D": "Random restart does not help TSP, so a single climb is enough"
       },
       "answer": "B",
       "explanation": "3-opt > 2-opt; 4-opt not worth cost"
@@ -1577,9 +1577,9 @@
       "type": "mcq",
       "stem": "Map-colouring domains and adjacency constraint are:",
       "choices": {
-        "A": "Domains {0,1}; same colours required",
-        "B": "Infinite integers; no constraints",
-        "C": "Continuous times only",
+        "A": "Domains are {0, 1}, and adjacent regions are required to share a colour",
+        "B": "Domains are the integers, and the map has no adjacency constraint",
+        "C": "Domains are continuous clock times, and colour is not used",
         "D": "Di = {red, green, blue}; adjacent regions different colours"
       },
       "answer": "D",
@@ -1678,10 +1678,10 @@
       "type": "mcq",
       "stem": "Backtracking search is described as:",
       "choices": {
-        "A": "Breadth-first search for CSPs",
-        "B": "A* with Manhattan heuristics",
+        "A": "Breadth-first search applied to a constraint satisfaction problem",
+        "B": "A* with Manhattan distance, used to colour the map",
         "C": "Depth-first search for CSPs with single-variable assignments",
-        "D": "Stochastic gradient descent"
+        "D": "Stochastic gradient descent on a loss over the colours"
       },
       "answer": "C",
       "explanation": "DFS-style backtracking"
@@ -1706,10 +1706,10 @@
       "type": "mcq",
       "stem": "The Degree Heuristic (DH) is used mainly as:",
       "choices": {
-        "A": "A replacement for LCV always",
-        "B": "Arc consistency revision only",
+        "A": "A replacement that is used instead of LCV on every value choice and on every variable ordering",
+        "B": "The revision step inside arc consistency, applied to one arc",
         "C": "A tie-breaker under MRV: pick the unassigned variable in the largest number of constraints",
-        "D": "Softmax temperature"
+        "D": "The temperature parameter inside a softmax"
       },
       "answer": "C",
       "explanation": "MRV tie-break by degree"
@@ -1721,9 +1721,9 @@
       "stem": "Least Constraining Value (LCV) chooses the value that:",
       "choices": {
         "A": "Rules out the fewest values in the remaining variables",
-        "B": "Rules out the most values in remaining variables",
-        "C": "Maximises attacking queens",
-        "D": "Minimises g(n) only"
+        "B": "Rules out the most values in the domains of the remaining variables",
+        "C": "Maximises the number of pairs of queens that attack each other",
+        "D": "Minimises g(n), the path cost of the current assignment"
       },
       "answer": "A",
       "explanation": "Least pruning of others' values"
@@ -1734,10 +1734,10 @@
       "type": "mcq",
       "stem": "Which comparison between backtracking and min-conflicts matches the lecture?",
       "choices": {
-        "A": "Backtracking starts with a complete conflicting assignment, while min-conflicts builds a partial assignment",
+        "A": "Backtracking starts from a complete assignment that already has conflicts, while min-conflicts builds a partial assignment one variable at a time from the empty assignment",
         "B": "MRV, degree, and LCV make backtracking feasible for around 1000 queens, while min-conflicts can handle much larger n-queens instances with high probability",
-        "C": "Min-conflicts is complete and must prove that no solution exists",
-        "D": "Both methods expand nodes in increasing A* f-cost"
+        "C": "Min-conflicts is complete, so it must prove that no solution exists before it stops",
+        "D": "Both methods expand nodes in order of increasing A* f-cost"
       },
       "answer": "B",
       "explanation": "Backtracking builds a legal partial assignment. Min-conflicts starts complete and repairs conflicts, and scales much further on n-queens with high probability."
@@ -1749,9 +1749,9 @@
       "stem": "Forward checking mainly:",
       "choices": {
         "A": "Tracks remaining legal values for unassigned variables and fails when a domain is empty",
-        "B": "Expands deepest nodes first without domains",
-        "C": "Guarantees optimality of greedy search",
-        "D": "Learns perceptron weights"
+        "B": "Expands the deepest node first and does not keep domains",
+        "C": "Gives greedy best-first search an optimality guarantee",
+        "D": "Updates the weights of a perceptron from the violated constraints on each conflict it sees"
       },
       "answer": "A",
       "explanation": "Domain wipeout detects failure"
@@ -1779,10 +1779,10 @@
       "type": "mcq",
       "stem": "Compared with forward checking, arc consistency:",
       "choices": {
-        "A": "Detects fewer failures",
+        "A": "Detects fewer failures than forward checking on the same assignment",
         "B": "Detects failure earlier than forward checking",
-        "C": "Cannot be run as a preprocessor",
-        "D": "Ignores binary constraints"
+        "C": "Cannot be run before search as a preprocessor",
+        "D": "Ignores binary constraints and revises unary constraints only"
       },
       "answer": "B",
       "explanation": "AC detects earlier than FC"
@@ -1793,10 +1793,10 @@
       "type": "mcq",
       "stem": "AC-3 maintains a queue of arcs and, after revising (X,Y) and X loses a value:",
       "choices": {
-        "A": "Deletes the entire CSP",
+        "A": "Deletes the CSP and starts a new one with empty domains",
         "B": "Enqueues (Z,X) for neighbours Z of X (except Y)",
-        "C": "Switches to BFS automatically",
-        "D": "Sets all domains to empty"
+        "C": "Switches the search from backtracking to breadth-first search",
+        "D": "Sets every domain to empty, including variables already assigned"
       },
       "answer": "B",
       "explanation": "Requeue neighbour arcs (Z,X)"
@@ -1807,10 +1807,10 @@
       "type": "mcq",
       "stem": "Min-conflicts for CSPs selects a value that:",
       "choices": {
-        "A": "Maximises the number of violated constraints",
-        "B": "Is the MRV variable",
+        "A": "Maximises the number of constraints the chosen value violates",
+        "B": "Is the variable chosen by MRV, rather than a value of that variable",
         "C": "Violates the fewest constraints (hill-climb on number of violations)",
-        "D": "Is always the first domain value"
+        "D": "Is always the first value listed in the domain, with no count of conflicts"
       },
       "tags": [
         "red"
@@ -1824,10 +1824,10 @@
       "type": "mcq",
       "stem": "What did he say about MRV and arc consistency in the exam?",
       "choices": {
-        "A": "You must recite the algorithms word for word. The definitions will not be printed",
+        "A": "You must recite MRV and arc consistency word for word. The definitions will not be printed on the paper for either algorithm",
         "B": "If a question needs MRV, the definition will be on the paper. Know what the heuristic is for, not a memorised script",
-        "C": "MRV is not in this course",
-        "D": "Arc consistency is the same algorithm as A*"
+        "C": "MRV is not in this course, so a question cannot ask what it is for",
+        "D": "Arc consistency is the same algorithm as A*, with domains in place of path costs"
       },
       "answer": "B",
       "explanation": "The definition will be printed. MRV picks the variable with the fewest legal values. Degree breaks ties. LCV orders the values."
@@ -1934,10 +1934,10 @@
       "type": "mcq",
       "stem": "In the house-price notation, a training example (xi, yi) pairs:",
       "choices": {
-        "A": "Heuristic and path cost",
+        "A": "A heuristic value paired with the path cost of the same node in Romania",
         "B": "Input feature(s) (e.g., living area) with target (e.g., price)",
-        "C": "Variable and domain colour",
-        "D": "State and action only"
+        "C": "A CSP variable paired with one colour from its domain",
+        "D": "A state paired with the action taken in that state"
       },
       "answer": "B",
       "explanation": "Feature xi with target yi"
@@ -1993,9 +1993,9 @@
       "type": "mcq",
       "stem": "One-nearest-neighbour classification (`k = 1`) chooses:",
       "choices": {
-        "A": "The mean of all labels in the training set",
-        "B": "Softmax over all classes always",
-        "C": "The variable with fewest legal values",
+        "A": "The mean of every label in the training set, ignoring distance",
+        "B": "A softmax over all classes, with no neighbour lookup",
+        "C": "The CSP variable that currently has the fewest legal values",
         "D": "The class of the nearest data point to the input"
       },
       "answer": "D",
@@ -2008,9 +2008,9 @@
       "stem": "A k-NN classifier performs well in two dimensions but poorly after many irrelevant features are added. What is the best explanation and response?",
       "choices": {
         "A": "The curse of dimensionality makes distances less informative; select features and choose `k` with validation or cross-validation",
-        "B": "k-NN becomes a linear classifier; increase the test-set size",
-        "C": "More dimensions make every neighbour identical; set `k=1` using test accuracy",
-        "D": "Lazy learning cannot use numeric inputs; replace Euclidean distance with entropy"
+        "B": "k-NN has become a linear classifier, so the fix is a larger test set",
+        "C": "Extra dimensions make every neighbour identical, so set k to 1 by the accuracy on the test set and do not hold out a validation set",
+        "D": "Lazy learning cannot take numeric inputs, so replace Euclidean distance with entropy"
       },
       "answer": "A",
       "explanation": "Extra dimensions weaken distance contrast; validate feature choices and `k` without touching the test set."
@@ -2067,9 +2067,9 @@
       "stem": "Semi-supervised learning combines:",
       "choices": {
         "A": "A small amount of labeled data with a large amount of unlabeled data",
-        "B": "Only rewards and punishments",
-        "C": "Only BFS and DFS",
-        "D": "Only admissible heuristics"
+        "B": "Only rewards and punishments from interaction, with no input features",
+        "C": "Only breadth-first search and depth-first search",
+        "D": "Only heuristics that never overestimate the remaining cost"
       },
       "answer": "A",
       "explanation": "Few labels + many unlabeled"
@@ -2080,10 +2080,10 @@
       "type": "mcq",
       "stem": "In reinforcement learning, the agent learns by:",
       "choices": {
-        "A": "Memorising labeled (x,y) pairs only",
-        "B": "Colouring maps with MRV",
+        "A": "Memorising labelled (x, y) pairs, with no environment and no reward",
+        "B": "Colouring a map with MRV, degree, and least-constraining value",
         "C": "Interacting with an environment and receiving positive/negative rewards",
-        "D": "Computing closed-form linear regression only"
+        "D": "Computing the closed-form linear regression solution and then stopping without a test"
       },
       "answer": "C",
       "explanation": "Act, then reward/punish"
@@ -2094,9 +2094,9 @@
       "type": "mcq",
       "stem": "In the taxi RL tip example, the tip mainly gives:",
       "choices": {
-        "A": "An immediate supervised label for every steering angle",
-        "B": "A consistent heuristic for A*",
-        "C": "Arc consistency for SA",
+        "A": "An immediate supervised label for every steering angle, starting from the first action of the trip",
+        "B": "A consistent heuristic that A* can use for the same route",
+        "C": "Arc consistency for the South Australia variable on the map",
         "D": "Delayed indication that something was done wrong/great; credit assignment is the agent's problem"
       },
       "answer": "D",
@@ -2125,10 +2125,10 @@
       "type": "mcq",
       "stem": "Ockham's razor, as used in the slides, says to prefer:",
       "choices": {
-        "A": "The most complex consistent hypothesis",
+        "A": "The most complex hypothesis that is still consistent with the sample",
         "B": "The simplest hypothesis among competing ones (fewest assumptions)",
-        "C": "Always an inconsistent hypothesis",
-        "D": "Softmax over polynomials"
+        "C": "An inconsistent hypothesis, even when a consistent one exists",
+        "D": "A softmax taken over a family of polynomials"
       },
       "tags": [
         "red"
@@ -2157,9 +2157,9 @@
       "stem": "In Dietterich's trade-off, what usually happens to generalisation error E as hypothesis-space complexity c(H) increases from very low to very high while the data size is fixed?",
       "choices": {
         "A": "E can first fall as underfitting is reduced, then rise as the model gains enough capacity to fit noise",
-        "B": "E must fall continuously to zero",
-        "C": "E cannot change because only the training set matters",
-        "D": "E rises continuously from the simplest model"
+        "B": "E must fall continuously to zero as c(H) grows",
+        "C": "E cannot change, because only the training error is allowed to matter once the sample is fixed in advance",
+        "D": "E rises continuously, starting from the simplest hypothesis space"
       },
       "answer": "A",
       "explanation": "Too little capacity underfits. More capacity can reduce that error, but excessive capacity can fit noise and raise generalisation error."
@@ -2235,9 +2235,9 @@
       "type": "mcq",
       "stem": "In the simplified house-price linear regression model, predicted price is:",
       "choices": {
-        "A": "A product of all features with no bias",
-        "B": "Softmax over 10 digit classes",
-        "C": "Number of attacking queens",
+        "A": "A product of the features for beds, baths, garage, and land, with the bias term left out",
+        "B": "A softmax over the 10 digit classes",
+        "C": "The number of pairs of queens that attack each other",
         "D": "A weighted sum of features (#beds, #baths, #garage, #land) plus bias b"
       },
       "tags": [
@@ -2280,9 +2280,9 @@
       "type": "mcq",
       "stem": "Training loss for linear regression in the slides is Mean Squared Error (MSE):",
       "choices": {
-        "A": "Average of absolute errors only",
-        "B": "Number of misclassified points only",
-        "C": "Path cost g(n)",
+        "A": "The average of the absolute residuals, with no square and no division by n",
+        "B": "The number of points whose predicted class is wrong",
+        "C": "The path cost g(n) of the current search node",
         "D": "(1/n) sum of squared residuals between yi and predictions"
       },
       "answer": "D",
@@ -2294,9 +2294,9 @@
       "type": "mcq",
       "stem": "Parameters for linear regression are learned by:",
       "choices": {
-        "A": "Maximising MSE",
-        "B": "Expanding the shallowest node",
-        "C": "Choosing MRV variables",
+        "A": "Maximising the training MSE over w and b",
+        "B": "Expanding the shallowest node on a FIFO frontier",
+        "C": "Choosing the variable with the fewest legal values",
         "D": "Minimising the training loss (arg min over w, b)"
       },
       "answer": "D",
@@ -2322,9 +2322,9 @@
       "type": "mcq",
       "stem": "After folding bias into weights, the closed-form linear regression solution is:",
       "choices": {
-        "A": "w* = X y",
-        "B": "w* = softplus(X)",
-        "C": "w* = 0 always",
+        "A": "w* = (X^T X) X^T y",
+        "B": "w* = softplus(X^T X)",
+        "C": "w* = 0 * (X^T X)^{-1} X^T y",
         "D": "w* = (X^T X)^{-1} X^T y"
       },
       "answer": "D",
@@ -2336,9 +2336,9 @@
       "type": "mcq",
       "stem": "Closed-form linear regression may be problematic because:",
       "choices": {
-        "A": "Loss is never convex",
-        "B": "Gradients cannot be defined for MSE",
-        "C": "It requires AC-3 first",
+        "A": "The loss is never convex, so the formula cannot be a minimum",
+        "B": "Gradients of MSE are undefined, so the normal equations cannot be derived from the residuals",
+        "C": "The formula can be used only after AC-3 has been run",
         "D": "It may not work for large datasets; other models lack closed form, so GD is used"
       },
       "answer": "D",
@@ -2395,9 +2395,9 @@
       "type": "mcq",
       "stem": "For seismic earthquake vs explosion data, a linear decision boundary example given is equivalent to:",
       "choices": {
-        "A": "Softmax with 1000 ImageNet classes",
-        "B": "h2 Manhattan = 18",
-        "C": "SA != green only",
+        "A": "A softmax over the 1000 ImageNet classes",
+        "B": "The 8-puzzle value h2(S) = 18",
+        "C": "The single constraint that SA is not green on the map",
         "D": "A linear separator such as 1.7 x1 - x2 - 4.7 = 0"
       },
       "answer": "D",
@@ -2409,10 +2409,10 @@
       "type": "mcq",
       "stem": "A perceptron combines a linear score with:",
       "choices": {
-        "A": "Softmax over many classes",
+        "A": "A softmax that spreads one linear score across many classes at the same time",
         "B": "A hard threshold / sign activation (e.g., +1 if score >= 0 else -1)",
-        "C": "Only MSE regression output",
-        "D": "No weights"
+        "C": "An MSE regression output, with no threshold",
+        "D": "No weights at all, so the score is the raw input"
       },
       "answer": "B",
       "explanation": "Hard threshold / sign activation"
@@ -2423,10 +2423,10 @@
       "type": "mcq",
       "stem": "Why is plain gradient descent awkward for the classical perceptron threshold loss?",
       "choices": {
-        "A": "MSE is undefined",
+        "A": "MSE itself is undefined for a perceptron",
         "B": "The sign/step activation has gradient 0 almost everywhere (undefined at 0)",
-        "C": "Closed form always exists for perceptrons",
-        "D": "Learning rate cannot be used in any update rule"
+        "C": "A closed form always exists, so no update rule is required for separable data",
+        "D": "A learning rate cannot appear in any perceptron update"
       },
       "answer": "B",
       "explanation": "Step/sign gradient vanishing/undefined"
@@ -2451,10 +2451,10 @@
       "type": "mcq",
       "stem": "The Perceptron Convergence Theorem states that if the training set is linearly separable, then:",
       "choices": {
-        "A": "The algorithm may cycle forever",
-        "B": "Softmax is required",
+        "A": "The algorithm may cycle forever, even when a separator exists in the training set",
+        "B": "A softmax is required before the finite-step claim applies",
         "C": "It converges to a linear separator in a finite number of iterations",
-        "D": "Consistency of heuristics is required"
+        "D": "The heuristic must be consistent before the updates can stop"
       },
       "answer": "C",
       "explanation": "Finite convergence if linearly separable"
@@ -2479,10 +2479,10 @@
       "type": "mcq",
       "stem": "For logistic regression binary decisions, a common threshold on g(z) is:",
       "choices": {
-        "A": "0.0 always meaning class 1",
-        "B": "18 like Manhattan h2",
+        "A": "0.0, and a score of 0.0 is always read as class 1",
+        "B": "18, the same cutoff used for the Manhattan heuristic h2",
         "C": "0.5 (e.g., >= 0.5 -> class 1, else class 0)",
-        "D": "Branching factor b"
+        "D": "The branching factor b of the search problem"
       },
       "tags": [
         "red"
@@ -2513,10 +2513,10 @@
       "type": "mcq",
       "stem": "The training set is not linearly separable. What did the lecture say about still running the perceptron?",
       "choices": {
-        "A": "The convergence theorem still promises a unique best line within one pass",
+        "A": "The convergence theorem still promises a unique best line, and that line arrives within one pass even when the data are not separable",
         "B": "You can run the update with a step limit, such as 100 steps. You may get a usable line, and you do not get a guarantee",
-        "C": "The update is illegal unless the data are separable",
-        "D": "Non-separable data should be solved with uniform-cost search"
+        "C": "The update is illegal on non-separable data, so the algorithm must not be run",
+        "D": "Non-separable data should be handed to uniform-cost search instead of a weight update"
       },
       "answer": "B",
       "explanation": "If the data are not separable, cap the updates, for example at about 100 steps. There is no guarantee of a best line."
@@ -2528,9 +2528,9 @@
       "stem": "Which three claims match the perceptron slide?",
       "choices": {
         "A": "Inputs are feature values, each feature has a weight, and the sum is the hypothesis function",
-        "B": "Inputs are rewards, each feature has a depth limit, and the sum is h(n)",
-        "C": "Inputs are class labels, there is no weight, and there is no sum",
-        "D": "Inputs are CPT rows, each feature is a parent, and the sum is a joint probability"
+        "B": "Inputs are rewards, each feature has a depth limit, and the sum is the heuristic h(n)",
+        "C": "Inputs are the class labels, there is no weight, and there is no sum",
+        "D": "Inputs are rows of a CPT, each feature is a parent, and the sum is a joint probability of the parents"
       },
       "tags": [
         "red"
@@ -2558,10 +2558,10 @@
       "type": "mcq",
       "stem": "Why can a single perceptron not learn XOR (Minsky and Papert, 1969)?",
       "choices": {
-        "A": "XOR requires real-valued regression outputs",
-        "B": "XOR has too many free parameters for gradient descent",
+        "A": "XOR needs real-valued regression outputs, and a perceptron only emits a class",
+        "B": "XOR has too many free parameters for gradient descent to fit",
         "C": "The positive and negative examples are not linearly separable",
-        "D": "The step activation is undefined for binary inputs"
+        "D": "The step activation is undefined on binary inputs, so the unit cannot fire"
       },
       "answer": "C",
       "explanation": "Single perceptron needs linear separability; XOR is not."
@@ -2642,9 +2642,9 @@
       "type": "mcq",
       "stem": "For sigmoid backprop, when node j is an output node, the error term delta_j is defined as:",
       "choices": {
-        "A": "delta_j = (z_j - y_j)",
-        "B": "delta_j = y_j (z_j - y_j)",
-        "C": "delta_j = (1 - y_j) (z_j - y_j)",
+        "A": "delta_j = (z_j - y_j), with the sigmoid derivative left out",
+        "B": "delta_j = y_j (z_j - y_j), with the (1 - y_j) factor left out",
+        "C": "delta_j = (1 - y_j) (z_j - y_j), with the y_j factor left out",
         "D": "delta_j = y_j (1 - y_j) (z_j - y_j)"
       },
       "tags": [
@@ -2690,9 +2690,9 @@
       "type": "mcq",
       "stem": "When you back-propagate, in what order do you use the weights?",
       "choices": {
-        "A": "Overwrite each weight as soon as its delta is known, then use the new weight for the units behind it",
-        "B": "Update the first layer first, then send the error backward",
-        "C": "Skip the deltas and change every weight by the learning rate alone",
+        "A": "Overwrite each weight as soon as its delta is known, then use that new weight for the units behind it on the backward pass before the forward pass is stored",
+        "B": "Update the first layer first, and only then send the error backward through the later layers",
+        "C": "Skip the deltas and add the learning rate, unchanged, to every weight",
         "D": "Compute the deltas from the weights used on the forward pass, then change the weights. A hidden unit inherits its delta from the units it feeds"
       },
       "answer": "D",
@@ -2732,10 +2732,10 @@
       "type": "mcq",
       "stem": "What did the lecture say a hidden unit does, and why a feed-forward net is a poor fit for a long sentence?",
       "choices": {
-        "A": "Each hidden unit must be given a name you can interpret, or the layer is invalid. A feed-forward net is the right model for a long sentence",
-        "B": "Hidden units only copy the input. Recurrent nets are developed in full in this lecture",
+        "A": "Each hidden unit must be given a name you can interpret, or the layer is invalid. A feed-forward net is the model the lecture recommends for a long sentence and the name has to be written on the slide before training",
+        "B": "Hidden units only copy the input through to the next layer. Recurrent nets are derived in full in this lecture",
         "C": "You often cannot name a hidden unit. It remaps the inputs so a later linear cut can work. Early tokens can disappear in a deep feed-forward stack. Recurrent nets were the contrast, and they are not developed here",
-        "D": "OR and XOR are both impossible once a hidden layer is added"
+        "D": "OR and XOR are both impossible once a hidden layer has been added to the perceptron"
       },
       "answer": "C",
       "explanation": "A hidden unit remaps inputs even if you cannot name it. A feed-forward stack can lose early tokens. Recurrent nets were named and not developed."
@@ -2746,9 +2746,9 @@
       "type": "mcq",
       "stem": "Boolean OR on two bits, compared with XOR:",
       "choices": {
-        "A": "Neither pattern can be separated by one straight line",
+        "A": "Neither pattern can be separated by one straight line, so both need a hidden layer before any weights are chosen",
         "B": "OR can be separated by one straight line. XOR cannot, which is why a hidden layer is introduced",
-        "C": "XOR can be separated by one line, and OR cannot",
+        "C": "XOR can be separated by one straight line, and OR cannot",
         "D": "Both become separable once a single perceptron is given a bias term"
       },
       "answer": "B",
@@ -2775,9 +2775,9 @@
       "stem": "Rumelhart et al. (1986) suggested adding a momentum term. Which update form matches the lecture?",
       "choices": {
         "A": "w_ij(t+1) = w_ij(t) + eta * delta_j * x_i + eta * (w_ij(t) - w_ij(t-1))",
-        "B": "w_ij(t+1) = w_ij(t) - eta * delta_j * x_i only",
-        "C": "w_ij(t+1) = eta * (w_ij(t) + w_ij(t-1))",
-        "D": "w_ij(t+1) = w_ij(t) / (1 + eta)"
+        "B": "w_ij(t+1) = w_ij(t) - eta * delta_j * x_i, with no momentum term",
+        "C": "w_ij(t+1) = eta * (w_ij(t) + w_ij(t-1)), with the current weight replaced by the step size",
+        "D": "w_ij(t+1) = w_ij(t) / (1 + eta), with no delta and no previous step"
       },
       "answer": "A",
       "explanation": "Momentum adds eta (w(t)-w(t-1)) term as written."
@@ -2788,10 +2788,10 @@
       "type": "mcq",
       "stem": "A stated benefit of adding a momentum term is that:",
       "choices": {
-        "A": "VC-dimension becomes exactly 3",
+        "A": "The VC-dimension of the network becomes exactly 3",
         "B": "convergence is faster and training is more stable",
-        "C": "XOR becomes linearly separable",
-        "D": "softmax is no longer needed for multiclass"
+        "C": "XOR becomes linearly separable because of the extra term",
+        "D": "Softmax is no longer needed when there are several classes"
       },
       "answer": "B",
       "explanation": "Faster convergence and more stable training."
@@ -2803,9 +2803,9 @@
       "stem": "The squared-error loss for a 3-input, 2-output network with no hidden layer is written (up to the factor 1/2) using which idea?",
       "choices": {
         "A": "Sum of squared differences between targets and predictions",
-        "B": "Cross-entropy of softmax probabilities only",
-        "C": "Absolute deviation of weights from zero",
-        "D": "Classification error rate on the validation set"
+        "B": "The cross-entropy of a softmax, and no squared gap",
+        "C": "The absolute deviation of the weights from zero",
+        "D": "The classification error rate on the validation set alone is enough"
       },
       "answer": "A",
       "explanation": "L2 uses squared target-vs-prediction errors."
@@ -2847,10 +2847,10 @@
       "type": "mcq",
       "stem": "In the loan-default story, all 5 people who defaulted wore blue shirts. What is the lecture's warning?",
       "choices": {
-        "A": "Blue shirts cause default, so use shirt colour as a hard rule",
+        "A": "Blue shirts cause default, so shirt colour should be used as a hard rule",
         "B": "A model may treat a spurious signal as a strong predictive feature",
-        "C": "Validation sets must contain only blue-shirt applicants",
-        "D": "Test error always equals training error on such data"
+        "C": "The validation set must contain only applicants in blue shirts",
+        "D": "Test error always equals training error when a spurious feature is present"
       },
       "answer": "B",
       "explanation": "Spurious blue-shirt signal may be treated as predictive."
@@ -2861,10 +2861,10 @@
       "type": "mcq",
       "stem": "After fitting a model, a student adds the validation rows to the training data and then quotes the old validation score as held-out performance. What is wrong?",
       "choices": {
-        "A": "Nothing; a score stays independent after its rows are used for fitting",
+        "A": "Nothing is wrong: a score stays independent after its rows have been used for fitting",
         "B": "Those rows are no longer held out, so the old validation score is not an independent performance estimate",
-        "C": "Validation rows may only be used for unsupervised learning",
-        "D": "The student should tune on the test set instead"
+        "C": "Validation rows may be used only for unsupervised learning, and never to fit or to score a labelled model afterwards",
+        "D": "The student should tune the model on the test set and keep the validation set unused"
       },
       "answer": "B",
       "explanation": "Once validation rows are used to fit the weights, their old score is no longer held out. A separate test set is needed for the final estimate."
@@ -2890,9 +2890,9 @@
       "stem": "Underfitting is described as:",
       "choices": {
         "A": "training error too high (and test error high too), often because the model is too simple",
-        "B": "training error low and validation error rising from memorising noise",
-        "C": "always caused by dropout rate 0.5",
-        "D": "solved only by increasing VC-dimension without bound"
+        "B": "Training error low, and validation error rising, because the model is memorising noise in the weights",
+        "C": "Always the result of setting the dropout rate to 0.5",
+        "D": "Solved only by increasing the VC-dimension without a bound"
       },
       "answer": "A",
       "explanation": "Underfitting: high training error, model too simple."
@@ -2931,10 +2931,10 @@
       "type": "mcq",
       "stem": "A one-hidden-layer network has d inputs, m hidden units, and k outputs. Including biases, how many parameters does it have?",
       "choices": {
-        "A": "`d + m + k`",
+        "A": "(d + 1) + (m + 1) + (k + 1)",
         "B": "`(d + 1)m + (m + 1)k`",
-        "C": "`dmk`",
-        "D": "`d^m + m^k`"
+        "C": "(d + 1) * m * (m + 1) * k",
+        "D": "(d + 1)^m + (m + 1)^k"
       },
       "answer": "B",
       "explanation": "Input-to-hidden parameters are `dm + m` and hidden-to-output parameters are `mk + k`, giving `(d+1)m + (m+1)k`."
@@ -2973,10 +2973,10 @@
       "type": "mcq",
       "stem": "A listed practical limitation of VC-dimension for deep learning is that:",
       "choices": {
-        "A": "it is illegal to compute for linear models",
-        "B": "it replaces the need for a validation set",
+        "A": "It is illegal to compute the VC-dimension of a linear model or a neural net",
+        "B": "It removes the need for a validation set",
         "C": "the bounds are often too loose and hard to compute for deep nets",
-        "D": "it forces dropout rates below 0.1"
+        "D": "It forces every dropout rate to stay below 0.1"
       },
       "answer": "C",
       "explanation": "Bounds loose; hard to compute for deep nets; rarely used in practice."
@@ -2987,10 +2987,10 @@
       "type": "mcq",
       "stem": "Which set of techniques is listed under regularisation?",
       "choices": {
-        "A": "Softmax, ReLU, sigmoid, tanh",
+        "A": "Softmax, ReLU, sigmoid, and tanh",
         "B": "Dropout, weight decay, early stopping, data augmentation",
-        "C": "K-fold, VC-dim, residual blocks only",
-        "D": "Q-learning, TD learning, epsilon-greedy"
+        "C": "K-fold cross-validation, VC-dimension, and residual blocks only",
+        "D": "Q-learning, temporal-difference learning, and epsilon-greedy"
       },
       "answer": "B",
       "explanation": "Dropout, weight decay, early stopping, data augmentation."
@@ -3001,10 +3001,10 @@
       "type": "mcq",
       "stem": "Early stopping monitors validation performance and typically:",
       "choices": {
-        "A": "stops when training loss first becomes zero",
-        "B": "always trains for a fixed 1000 epochs regardless of validation",
+        "A": "Stops at the first epoch whose training loss is zero",
+        "B": "Always runs for a fixed 1000 epochs, and ignores the validation curve",
         "C": "stops near the point where validation loss stops improving (often with a patience window)",
-        "D": "deletes the validation set after the first epoch"
+        "D": "Deletes the validation set after the first epoch and then keeps training on the training loss"
       },
       "answer": "C",
       "explanation": "Stop when validation stops improving (patience / best checkpoint)."
@@ -3016,9 +3016,9 @@
       "stem": "In squared-norm regularisation as a soft constraint, lambda = 0 means:",
       "choices": {
         "A": "no regularisation effect from that term",
-        "B": "infinite penalty and w* -> 0",
-        "C": "dropout is forced to 1.0",
-        "D": "residual connections are disabled"
+        "B": "An infinite penalty, so the fitted weights are driven to 0",
+        "C": "Dropout forced on, with drop probability 1.0",
+        "D": "Residual connections switched off for the rest of training"
       },
       "answer": "A",
       "explanation": "lambda = 0 removes the regularisation effect."
@@ -3043,10 +3043,10 @@
       "type": "mcq",
       "stem": "The weight-decay style update in the lecture is:",
       "choices": {
-        "A": "w_{t+1} = w_t + eta * lambda * w_t",
-        "B": "w_{t+1} = w_t / (1 + lambda) only",
+        "A": "w_{t+1} = w_t + eta * lambda * w_t, so the weight grows with lambda",
+        "B": "w_{t+1} = w_t / (1 + lambda), with the gradient term left out",
         "C": "w_{t+1} = (1 - eta lambda) w_t - eta * (partial ell / partial w_t)",
-        "D": "w_{t+1} = eta * partial ell / partial w_t with no decay factor"
+        "D": "w_{t+1} = eta * partial ell / partial w_t, with no (1 - eta lambda) factor"
       },
       "answer": "C",
       "explanation": "(1 - eta lambda) w_t minus eta times loss gradient."
@@ -3057,10 +3057,10 @@
       "type": "mcq",
       "stem": "In inverted dropout with drop probability `p=0.25`, what happens to a surviving activation during training and at inference?",
       "choices": {
-        "A": "Multiply it by 0.25 during training and drop it at inference",
+        "A": "Multiply a surviving unit by 0.25 during training, and drop it at inference",
         "B": "Divide it by 0.75 during training; use all units with no dropout scaling at inference",
-        "C": "Leave it unchanged during training and divide it by 0.75 at inference",
-        "D": "Divide it by 0.25 in both phases"
+        "C": "Leave a surviving unit unchanged during training, and divide it by 0.75 at inference time",
+        "D": "Divide a surviving unit by 0.25 both during training and at inference"
       },
       "answer": "B",
       "explanation": "Inverted dropout scales kept training activations by `1/(1-p)` and uses the full unscaled network at inference."
@@ -3099,10 +3099,10 @@
       "type": "mcq",
       "stem": "Which remark about residual connections matches the lecture summary?",
       "choices": {
-        "A": "RC is the same thing as L2 weight decay",
-        "B": "RC always increases VC-dimension by exactly 3",
+        "A": "A residual connection is the same mechanism as L2 weight decay",
+        "B": "A residual connection always raises the VC-dimension by exactly 3",
         "C": "RC improves optimisation dynamics; it is not itself a regularisation method",
-        "D": "RC replaces the need for a nonlinear activation"
+        "D": "A residual connection removes the need for a non-linear activation in the block"
       },
       "answer": "C",
       "explanation": "RC helps optimisation; not a regulariser."
@@ -3113,10 +3113,10 @@
       "type": "mcq",
       "stem": "What was the lecture's reason for a residual connection?",
       "choices": {
-        "A": "It penalises large weights to reduce capacity",
+        "A": "It penalises large weights, which is how capacity is reduced",
         "B": "It preserves a short identity path for information and gradients",
-        "C": "It removes the need for non-linear activations",
-        "D": "It randomly drops hidden units during training"
+        "C": "It removes the need for a non-linear activation in the hidden layers",
+        "D": "It randomly drops hidden units during training, which is dropout"
       },
       "answer": "B",
       "explanation": "The identity path lets information and gradients bypass several transformations. It is an optimisation device, not weight decay or dropout."
@@ -3189,10 +3189,10 @@
       "type": "mcq",
       "stem": "If no examples are left, the algorithm returns:",
       "choices": {
-        "A": "a random class from {Yes, No}",
+        "A": "A class drawn at random from {Yes, No}",
         "B": "the common (plurality) class of examples in the parent node",
-        "C": "the attribute with highest information gain",
-        "D": "\"unknown\" and stops the whole tree"
+        "C": "The attribute whose information gain is highest at the parent",
+        "D": "The label \"unknown\", and the rest of the tree is abandoned"
       },
       "answer": "B",
       "explanation": "No examples: parent plurality class."
@@ -3203,10 +3203,10 @@
       "type": "mcq",
       "stem": "If no attributes are left but both positive and negative examples remain, return:",
       "choices": {
-        "A": "the attribute Type",
-        "B": "a new synthetic attribute",
+        "A": "The attribute Type, even though no attributes remain",
+        "B": "A new synthetic attribute invented for the leftover rows",
         "C": "the common class of the remaining examples",
-        "D": "the opposite of the parent plurality"
+        "D": "The opposite of the plurality class stored at the parent"
       },
       "answer": "C",
       "explanation": "No attributes left: plurality of remaining examples."
@@ -3231,10 +3231,10 @@
       "type": "mcq",
       "stem": "Splitting on Type in that example is described as:",
       "choices": {
-        "A": "perfect: all-positive and all-negative subsets",
+        "A": "A perfect split: one child is all positive and the other is all negative",
         "B": "bringing us no nearer to separating positive and negative examples",
-        "C": "always having higher IG than Patrons",
-        "D": "removing the need for information gain"
+        "C": "A split that always has higher information gain than Patrons",
+        "D": "A split that removes any need to compute information gain"
       },
       "answer": "B",
       "explanation": "Type split is \"really useless\" / no nearer to separation."
@@ -3273,9 +3273,9 @@
       "type": "mcq",
       "stem": "A learning curve is intended to show how predictive performance changes as more training data is used. Which procedure is valid?",
       "choices": {
-        "A": "Train once on all rows, then plot training accuracy several times",
+        "A": "Train once on all of the rows, then plot that same training accuracy against several training-set sizes",
         "B": "Train on increasingly large training subsets and evaluate every model on the same held-out test set",
-        "C": "Move difficult test rows into training after each point",
+        "C": "Move the difficult test rows into the training set after each point on the curve",
         "D": "Use a different target label for each training-set size"
       },
       "answer": "B",
@@ -3287,10 +3287,10 @@
       "type": "mcq",
       "stem": "Two remaining attributes tie for the largest information gain. What should the learner do?",
       "choices": {
-        "A": "Claim that both must generate the same tree",
+        "A": "Claim that both attributes must generate the same tree, so either may be stored without a tie rule",
         "B": "Apply a stated tie rule, fixed for reproducibility or random if variation is intended",
-        "C": "Add their information gains and split on both simultaneously",
-        "D": "Return a leaf even when the stopping rule permits a split"
+        "C": "Add the two information gains and split on both attributes at the same node",
+        "D": "Return a leaf even though the stopping rule still permits a split"
       },
       "answer": "B",
       "explanation": "A stated tie rule determines which equally scored attribute is selected."
@@ -3357,9 +3357,9 @@
       "type": "mcq",
       "stem": "Decision-tree pruning is presented as a way to combat:",
       "choices": {
-        "A": "underfitting only",
-        "B": "missing Bayes net CPTs",
-        "C": "the need for a training set",
+        "A": "Underfitting only, by adding nodes until the training error falls",
+        "B": "Missing conditional probability tables in a Bayes net",
+        "C": "The need for a training set, which pruning is said to remove",
         "D": "overfitting by eliminating nodes that are not clearly relevant"
       },
       "answer": "D",
@@ -3399,10 +3399,10 @@
       "type": "mcq",
       "stem": "What did he say to do about missing values in a decision-tree data set?",
       "choices": {
-        "A": "Missing values make ID3 undefined, so the algorithm cannot run",
+        "A": "Missing values make ID3 undefined, so the algorithm cannot be run",
         "B": "Drop the incomplete rows, or fill them in when dropping would throw away too much of the set",
-        "C": "Treat every missing value as a new class and split on it first",
-        "D": "Ignore them, because a classification tree requires a continuous target"
+        "C": "Treat every missing entry as a new class, and split on that class first",
+        "D": "Ignore them, because a classification tree requires a continuous target such as price to predict"
       },
       "answer": "B",
       "explanation": "Drop incomplete rows, or fill them when dropping would throw away too much."
@@ -3413,10 +3413,10 @@
       "type": "mcq",
       "stem": "A decision tree, as defined on the slides, is:",
       "choices": {
-        "A": "A policy that maps each MDP state to an action",
+        "A": "A policy that maps each state of an MDP to one action",
         "B": "A function from a vector of attribute values to one output. An internal node tests one attribute, the branches are labelled with that attribute's values, and a leaf states the output",
-        "C": "A Bayes net whose leaves store a single CPT for the whole graph",
-        "D": "A linear sum of feature weights with a hard threshold"
+        "C": "A Bayes net whose leaves store one conditional table for the whole graph and the root has no conditional table of its own, and an internal node is a random variable with one conditional table",
+        "D": "A linear sum of feature weights, passed through a hard threshold"
       },
       "tags": [
         "red"
@@ -3430,10 +3430,10 @@
       "type": "mcq",
       "stem": "A random variable is described as:",
       "choices": {
-        "A": "a fixed constant with no uncertainty",
-        "B": "always a continuous real number in [0, 1]",
+        "A": "A fixed constant, with no uncertainty left about its value",
+        "B": "Always a continuous real number lying in the interval [0, 1] only",
         "C": "some aspect of the world about which we may have uncertainty",
-        "D": "synonymous with a CPT row sum"
+        "D": "Another name for a row of a conditional probability table"
       },
       "answer": "C",
       "explanation": "RV = uncertain aspect of the world."
@@ -3514,10 +3514,10 @@
       "type": "mcq",
       "stem": "In Bayes net graphical notation, absence of an arc encodes:",
       "choices": {
-        "A": "that the variables are always observed",
-        "B": "that probabilities must sum to 2",
+        "A": "That the two variables are always observed",
+        "B": "That the probabilities on those variables must sum to 2",
         "C": "conditional independence structure (no direct influence claimed)",
-        "D": "that those nodes share one CPT"
+        "D": "That the two nodes share a single conditional probability table of Alarm"
       },
       "answer": "C",
       "explanation": "Missing arc encodes CI / no direct influence."
@@ -3584,10 +3584,10 @@
       "type": "mcq",
       "stem": "The lecture computes P(b, not e, a, not j, not m) as the product:",
       "choices": {
-        "A": "P(b) + P(e) + P(a) + P(j) + P(m)",
-        "B": "P(j|a) P(m|a) only",
+        "A": "P(b) + P(e) + P(a) + P(j) + P(m), a sum rather than a product",
+        "B": "P(j|a) P(m|a) only, with the parents of Alarm left out",
         "C": "P(b) P(not e) P(a|b,not e) P(not j|a) P(not m|a)",
-        "D": "P(B) P(E) with Alarm ignored"
+        "D": "P(B) P(E), with Alarm, John, and Mary left out of the product"
       },
       "answer": "C",
       "explanation": "Factorisation into local conditionals as on the slide."
@@ -3598,9 +3598,9 @@
       "type": "mcq",
       "stem": "That product evaluates numerically to:",
       "choices": {
-        "A": "0.28",
-        "B": "0.001",
-        "C": "0.94",
+        "A": "0.0002800",
+        "B": "0.001000",
+        "C": "0.940000",
         "D": "0.000028"
       },
       "answer": "D",
@@ -3643,7 +3643,7 @@
         "A": "P(X1,...,Xn) = product_i P(Xi | Parents(Xi))",
         "B": "P(X1,...,Xn) = sum_i P(Xi | Parents(Xi))",
         "C": "P(X1,...,Xn) = max_i P(Xi)",
-        "D": "joints cannot be recovered from CPTs"
+        "D": "The joint cannot be recovered from the local conditional tables"
       },
       "answer": "A",
       "explanation": "Joint = product of P(Xi | Parents(Xi))."
@@ -3696,9 +3696,9 @@
       "type": "mcq",
       "stem": "Factoring repeated subexpressions (as in rewriting uwy+... as (u+v)(w+x)(y+z)) motivates:",
       "choices": {
-        "A": "that exact inference is always impossible",
-        "B": "that conditional independence never helps",
-        "C": "that the Alarm network has no local CPTs",
+        "A": "That exact inference is always impossible once a sum appears in the network at all",
+        "B": "That conditional independence never reduces the work",
+        "C": "That the Alarm network has no local conditional tables",
         "D": "that smarter organisation of sums/products can reduce work versus naive expansion"
       },
       "tags": [
@@ -3762,9 +3762,9 @@
       "stem": "In reinforcement learning versus a known MDP, the new twist is that:",
       "choices": {
         "A": "T and/or R are unknown, so the agent must try actions and observe outcomes",
-        "B": "T and R are known exactly in closed form",
-        "C": "there are no states or actions",
-        "D": "rewards are never observed"
+        "B": "T and R are known in closed form, so no trial is required",
+        "C": "There are no states and no actions left in the problem",
+        "D": "Rewards are never observed, so the return cannot be computed from any visit"
       },
       "answer": "A",
       "explanation": "RL: unknown T/R; must sample experience."
@@ -3775,10 +3775,10 @@
       "type": "mcq",
       "stem": "Exploration versus exploitation means:",
       "choices": {
-        "A": "only storing the MDP model offline",
+        "A": "Only storing the MDP model offline, with no choice at decision time and no reward term in Q values",
         "B": "trying unknown actions to gain information versus using what you already know to gain reward",
-        "C": "deleting the Q-table after every episode",
-        "D": "setting gamma = 0 always"
+        "C": "Deleting the Q-table at the end of every episode",
+        "D": "Setting the discount gamma to 0 for the whole run"
       },
       "tags": [
         "red"
@@ -3792,9 +3792,9 @@
       "type": "mcq",
       "stem": "Model-based RL (as in the lecture) roughly:",
       "choices": {
-        "A": "never estimates T or R",
-        "B": "updates only a linear feature approximator with no counts",
-        "C": "requires knowing the optimal policy in advance",
+        "A": "Never estimates T or R, and never builds a model",
+        "B": "Updates only a linear feature approximator, and keeps no counts of visits to the states so far",
+        "C": "Requires the optimal policy to be known before learning starts",
         "D": "learns an approximate MDP from experience, then solves values as if that model were correct"
       },
       "answer": "D",
@@ -3848,10 +3848,10 @@
       "type": "mcq",
       "stem": "Direct evaluation estimates V^pi(s) by:",
       "choices": {
-        "A": "solving Bellman equations with known T and R",
+        "A": "Solving the Bellman equations with known T and known R",
         "B": "averaging observed cumulative discounted returns from visits to s",
-        "C": "maximising Q with epsilon-greedy from the start",
-        "D": "counting only the first reward of each episode"
+        "C": "Maximising Q with epsilon-greedy from the first episode",
+        "D": "Averaging only the first reward of each episode, with later rewards dropped"
       },
       "answer": "B",
       "explanation": "Average sampled returns from each state."
@@ -3876,10 +3876,10 @@
       "type": "mcq",
       "stem": "Temporal-difference (TD) learning updates V(s) when?",
       "choices": {
-        "A": "only after the entire dataset is collected offline with no interaction",
-        "B": "only when the agent reaches a terminal state, never mid-episode",
+        "A": "Only after the whole dataset has been collected offline, with no further interaction",
+        "B": "Only when the agent reaches a terminal state, and never in the middle of an episode",
         "C": "after each experienced transition (s, a, s', r), moving V(s) toward a sample backup",
-        "D": "only when T(s,a,s') is known exactly"
+        "D": "Only when the transition probability T(s, a, s') is already known exactly"
       },
       "answer": "C",
       "explanation": "Update V after every transition sample."
@@ -3947,9 +3947,9 @@
       "stem": "Q-learning is called off-policy because:",
       "choices": {
         "A": "it can converge to the optimal Q even if behaviour is suboptimal (with enough exploration and suitable alpha)",
-        "B": "it only works if you always act optimally during learning",
-        "C": "it never uses rewards",
-        "D": "it requires a known transition model T"
+        "B": "It only converges if the agent acts optimally on every step of learning",
+        "C": "It never uses the rewards, so the behaviour policy cannot matter",
+        "D": "It requires a known transition model T, and the behaviour policy has to be optimal on every update or the Q-values are invalid"
       },
       "tags": [
         "red"
@@ -3963,10 +3963,10 @@
       "type": "mcq",
       "stem": "Epsilon-greedy exploration means: with probability epsilon act randomly, and with probability 1-epsilon:",
       "choices": {
-        "A": "exit the episode immediately",
+        "A": "Leave the episode immediately, with no action taken",
         "B": "act according to the current (greedy) policy",
-        "C": "set all Q-values to zero",
-        "D": "sample from the true optimal policy oracle"
+        "C": "Set every Q-value to zero and then act at random",
+        "D": "Sample the action from a true optimal-policy oracle"
       },
       "answer": "B",
       "explanation": "With prob 1-eps follow current greedy policy."
@@ -3977,9 +3977,9 @@
       "type": "mcq",
       "stem": "A problem with keeping epsilon fixed (random exploration forever) is:",
       "choices": {
-        "A": "you never explore at all",
-        "B": "Q-learning becomes on-policy only",
-        "C": "gamma must be set greater than 1",
+        "A": "The agent never explores, because epsilon stays positive",
+        "B": "Q-learning becomes an on-policy method for the rest of training and stays that way",
+        "C": "The discount gamma must be set above 1",
         "D": "you keep thrashing with random actions even after learning is done"
       },
       "answer": "D",
@@ -4021,8 +4021,8 @@
       "choices": {
         "A": "A start state, and possibly a terminal state",
         "B": "A labelled pair (x, y) for every state",
-        "C": "A constraint graph over map colours",
-        "D": "An admissible heuristic h(n)"
+        "C": "A constraint graph whose variables are the colours of a map",
+        "D": "An admissible heuristic h(n) for the remaining cost"
       },
       "tags": [
         "red"
@@ -4036,8 +4036,8 @@
       "type": "mcq",
       "stem": "The reinforcement-learning twist on the slides is that the agent:",
       "choices": {
-        "A": "Is given T and R and must not try actions",
-        "B": "Receives a supervised label for every action",
+        "A": "Is given T and R in full, and must not try actions in the environment while it learns",
+        "B": "Receives a supervised label for every action it might take",
         "C": "Plans offline with breadth-first search and never acts",
         "D": "Does not know T or R, and must act so as to maximise expected rewards"
       },
@@ -4073,7 +4073,7 @@
         "A": "Both methods learn a labelled training set and then stop",
         "B": "Passive learning learns the optimal policy. Q-learning learns no values",
         "C": "Passive learning learns the state values. Q-learning learns the optimal policy and values",
-        "D": "Passive learning learns T exactly. Q-learning learns only the start state"
+        "D": "Passive learning learns T exactly. Q-learning learns only the start state and never a policy"
       },
       "tags": [
         "red"
@@ -4130,9 +4130,9 @@
       "stem": "Why does the hand trace keep both an open list and a closed list?",
       "choices": {
         "A": "The open list holds generated nodes waiting for expansion; the closed list records expanded states so repeats can be rejected",
-        "B": "The open list stores only goals; the closed list stores only failures",
-        "C": "The open list is for BFS and the closed list is for DFS",
-        "D": "Both lists store the same nodes to provide a backup"
+        "B": "The open list stores only goals, and the closed list stores only dead ends",
+        "C": "The open list is the frontier for BFS only, and the closed list is the frontier for DFS only, and the two lists are never used together",
+        "D": "Both lists store the same nodes, and the second copy is only a backup"
       },
       "answer": "A",
       "explanation": "Open is the frontier; closed records expanded states for repeated-state checking."
@@ -4143,10 +4143,10 @@
       "type": "mcq",
       "stem": "A generated child has a state already represented on the open list. What should graph search do in the lab trace?",
       "choices": {
-        "A": "Add it again because its node object is different",
-        "B": "Move the matching open node to the closed list",
+        "A": "Add the child again, because the new node object is not the same Python object sitting on the open list",
+        "B": "Move the matching open node onto the closed list without expanding it",
         "C": "Treat it as a repeated-state dead end unless the algorithm has a defined cheaper-path replacement rule",
-        "D": "Return it as a solution"
+        "D": "Return that child immediately, and treat the repeated state as a solution"
       },
       "answer": "C",
       "explanation": "Reject a repeated state unless the algorithm explicitly replaces an existing frontier path with a cheaper one."
@@ -4171,10 +4171,10 @@
       "type": "mcq",
       "stem": "Why can the DFS maze program return a valid path that is longer than another available path?",
       "choices": {
-        "A": "DFS orders nodes by heuristic value",
+        "A": "DFS orders the frontier by a heuristic, so a longer path can look better",
         "B": "DFS follows the newest branch first and has no optimality guarantee",
-        "C": "DFS ignores walls",
-        "D": "DFS stops before testing the goal"
+        "C": "DFS ignores walls, so the route it returns need not be a legal path",
+        "D": "DFS stops before the goal test, so the path is cut off early"
       },
       "answer": "B",
       "explanation": "DFS follows one newest branch and does not guarantee a shortest or cheapest route."
@@ -4186,9 +4186,9 @@
       "stem": "What information is used to reconstruct the route after the maze goal is found?",
       "choices": {
         "A": "Parent pointers and the action stored in each search node",
-        "B": "The final closed-list size only",
-        "C": "The image pixels in `maze.png`",
-        "D": "The branching factor and maximum depth"
+        "B": "Only the number of states on the closed list at the moment the goal is expanded",
+        "C": "The pixel values in `maze.png`, read back from the goal cell",
+        "D": "The branching factor and the maximum depth, with no parent stored"
       },
       "answer": "A",
       "explanation": "Parent pointers and stored actions recover the route from goal to start."
@@ -4213,10 +4213,10 @@
       "type": "mcq",
       "stem": "If DFS adds legal actions in the opposite order, what is the most likely effect?",
       "choices": {
-        "A": "It becomes BFS",
+        "A": "The search becomes breadth-first, because reversing the action order changes the frontier from a stack to a queue",
         "B": "It can follow a different first branch and return a different valid route",
-        "C": "It becomes optimal for unequal step costs",
-        "D": "Its frontier becomes a priority queue"
+        "C": "The search becomes optimal for unequal step costs",
+        "D": "The frontier changes from a stack into a priority queue"
       },
       "answer": "B",
       "explanation": "DFS action order changes which branch is followed first."
@@ -4284,9 +4284,9 @@
       "stem": "Why can BFS return a more expensive route than UCS on the lab's weighted graph?",
       "choices": {
         "A": "BFS minimises edge count, while UCS minimises accumulated path cost",
-        "B": "BFS uses `h` but UCS does not",
-        "C": "BFS cannot represent a goal",
-        "D": "UCS always chooses the deepest node"
+        "B": "BFS consults a heuristic h, and UCS does not",
+        "C": "BFS has no way to represent the goal on a weighted graph",
+        "D": "UCS always expands the deepest node, so its path is longer than the BFS route"
       },
       "answer": "A",
       "explanation": "BFS minimises steps; UCS minimises the sum of edge costs."
@@ -4325,10 +4325,10 @@
       "type": "mcq",
       "stem": "Why should UCS and A* agree on the optimal path cost when the supplied A* heuristic satisfies the required condition?",
       "choices": {
-        "A": "Both order solely by depth",
-        "B": "Both ignore the real edge costs",
+        "A": "Both algorithms order the frontier by depth alone",
+        "B": "Both algorithms ignore the real edge costs and order the frontier by h alone, never by g",
         "C": "A* may change the expansion order but its valid heuristic preserves optimality",
-        "D": "A* becomes identical to DFS"
+        "D": "A* becomes the same algorithm as depth-first search"
       },
       "answer": "C",
       "explanation": "A valid A* heuristic changes expansion order without losing the optimality guarantee."
@@ -4395,10 +4395,10 @@
       "type": "mcq",
       "stem": "When calculating Gaschnig's heuristic, the blank is already in its goal square but tiles remain misplaced. What is the next step?",
       "choices": {
-        "A": "Stop with heuristic 0",
-        "B": "Move the blank outside the board",
+        "A": "Stop and report heuristic 0, because the blank is already home",
+        "B": "Move the blank off the board, then count the tiles left behind",
         "C": "Swap the blank with any misplaced tile and continue",
-        "D": "Add every Manhattan distance at once"
+        "D": "Add every tile's Manhattan distance in one step and stop"
       },
       "answer": "C",
       "explanation": "Move any misplaced tile into the goal-position blank, then continue the swaps."
@@ -4423,10 +4423,10 @@
       "type": "mcq",
       "stem": "Why is the exact solution cost of a relaxed puzzle admissible for the original puzzle?",
       "choices": {
-        "A": "The relaxation adds extra restrictions",
+        "A": "The relaxation adds restrictions, so its solution is a harder problem",
         "B": "Every real solution is allowed in the easier problem, so the easier optimum cannot exceed the real optimum",
-        "C": "It always equals the real solution cost",
-        "D": "It is calculated after reaching the goal"
+        "C": "The relaxed cost always equals the real solution cost",
+        "D": "The relaxed cost is computed only after the real goal has been reached and the search has already been stopped"
       },
       "answer": "B",
       "explanation": "Relaxation adds legal moves, so its optimum cannot cost more than the real optimum."
@@ -4438,9 +4438,9 @@
       "stem": "Gaschnig's heuristic dominates misplaced tiles because:",
       "choices": {
         "A": "`h3(n) >= h1(n)` for every state, and both are admissible",
-        "B": "`h3` always equals Manhattan distance",
-        "C": "`h1` can overestimate while `h3` cannot",
-        "D": "`h3` ignores the blank"
+        "B": "`h3` equals Manhattan distance at every state",
+        "C": "`h1` is allowed to overestimate, while `h3` is not at any state",
+        "D": "`h3` ignores the blank, and `h1` does not"
       },
       "answer": "A",
       "explanation": "Gaschnig is at least misplaced tiles on every state, with both admissible."
@@ -4466,9 +4466,9 @@
       "stem": "Why is adding two admissible heuristics not automatically admissible?",
       "choices": {
         "A": "Their sum can exceed the true remaining cost by counting some work twice",
-        "B": "Admissible heuristics cannot be arithmetic values",
-        "C": "Addition always produces a value smaller than each input",
-        "D": "A* accepts only one named heuristic"
+        "B": "An admissible heuristic is not a number, so two of them cannot be added in the usual way",
+        "C": "The sum is always smaller than each of the two inputs",
+        "D": "A* is allowed to take only one named heuristic"
       },
       "answer": "A",
       "explanation": "A sum can count the same required work twice and overestimate."
@@ -4494,9 +4494,9 @@
       "stem": "A student observes `h3 > h1` on one board and claims this proves dominance. What is missing?",
       "choices": {
         "A": "A proof that the inequality holds for every state, supplied by the relaxation relationship",
-        "B": "A larger value on that one board",
-        "C": "A proof that both heuristics overestimate",
-        "D": "A DFS trace"
+        "B": "A larger value of `h3` on that one board is already the proof",
+        "C": "A proof that both heuristics overestimate the true remaining cost, using that one board as the only case",
+        "D": "A depth-first trace of the same board"
       },
       "answer": "A",
       "explanation": "Dominance is an all-states claim, proved here by the relaxation relationship."
@@ -4507,10 +4507,10 @@
       "type": "mcq",
       "stem": "Which is a complete CSP formulation for Australian map colouring?",
       "choices": {
-        "A": "States are colours, with no variables",
+        "A": "The states are the colours, and the formulation has no variables",
         "B": "Variables are regions, domains are colours, and constraints require adjacent regions to differ",
-        "C": "Variables are search depths, and the goal is a shortest path",
-        "D": "Variables are edges, and every edge must have the same colour"
+        "C": "The variables are search depths, and the goal is a shortest path",
+        "D": "The variables are the edges, and every edge must receive the same colour as the regions next door"
       },
       "answer": "B",
       "explanation": "Regions are variables, colours are domains, and borders create not-equal constraints."
@@ -4521,10 +4521,10 @@
       "type": "mcq",
       "stem": "Plain backtracking assigns `WA=red`, then later finds that every value for a deeper variable fails. What must it do next?",
       "choices": {
-        "A": "Keep the failed assignment and change the goal",
+        "A": "Keep the failed assignment and change the goal test instead",
         "B": "Return the partial assignment as a solution",
         "C": "Undo the most recent choice and try its next value",
-        "D": "Restart with BFS"
+        "D": "Abandon backtracking and restart the same problem with BFS"
       },
       "answer": "C",
       "explanation": "Backtracking undoes the latest failed choice and tries another value."
@@ -4536,9 +4536,9 @@
       "stem": "Under MRV, unassigned variable X has one legal value and Y has three. Which variable is selected?",
       "choices": {
         "A": "X, because it is most likely to fail soon",
-        "B": "Y, because it has more choices",
-        "C": "Whichever has the smallest name",
-        "D": "Both are assigned simultaneously"
+        "B": "Y, because a larger domain gives more choices",
+        "C": "Whichever variable has the alphabetically smallest name",
+        "D": "Both X and Y, assigned in the same step"
       },
       "answer": "A",
       "explanation": "MRV selects X to expose failure as early as possible."
@@ -4549,10 +4549,10 @@
       "type": "mcq",
       "stem": "Two variables tie under MRV. Variable X constrains four unassigned neighbours and Y constrains two. What does the degree tie-break choose?",
       "choices": {
-        "A": "Y, because it is less connected",
+        "A": "Y, because it is connected to fewer unassigned neighbours",
         "B": "X, because it constrains more remaining variables",
-        "C": "Either value of Y",
-        "D": "The variable with the largest domain"
+        "C": "Either value of Y, because the tie is about values rather than variables",
+        "D": "The variable whose domain is largest"
       },
       "answer": "B",
       "explanation": "The degree tie-break chooses the variable constraining more unassigned neighbours."
@@ -4578,9 +4578,9 @@
       "stem": "After assigning `SA=red`, what does forward checking do first?",
       "choices": {
         "A": "Removes red from each unassigned neighbour's domain",
-        "B": "Assigns red to every neighbour",
-        "C": "Restores every deleted colour",
-        "D": "Checks only Tasmania"
+        "B": "Assigns red to every neighbour of SA",
+        "C": "Puts every deleted colour back into the domains",
+        "D": "Checks Tasmania only, because Tasmania has no neighbour"
       },
       "answer": "A",
       "explanation": "Forward checking removes red from every unassigned neighbour of SA."
@@ -4620,9 +4620,9 @@
       "stem": "Which limitation separates forward checking from AC-3?",
       "choices": {
         "A": "Forward checking updates immediate unassigned neighbours but may miss conflicts between two unassigned domains",
-        "B": "Forward checking cannot detect an empty domain",
-        "C": "AC-3 never removes values",
-        "D": "AC-3 applies only after a complete assignment"
+        "B": "Forward checking cannot notice an empty domain until every variable has already been assigned and search has failed",
+        "C": "AC-3 never deletes a value from a domain",
+        "D": "AC-3 is applied only after every variable has been assigned"
       },
       "answer": "A",
       "explanation": "Forward checking can miss conflicts entirely between unassigned variables; AC-3 propagates them."
@@ -4647,10 +4647,10 @@
       "type": "mcq",
       "stem": "A bank trains a model on historical loan records that include income, credit score, and a known default/no-default label. Which learning type best fits this scenario?",
       "choices": {
-        "A": "Unsupervised clustering",
-        "B": "Reinforcement learning",
+        "A": "Unsupervised clustering, because the default label should be ignored",
+        "B": "Reinforcement learning, because a later default is a reward",
         "C": "Supervised classification",
-        "D": "Semi-supervised learning"
+        "D": "Semi-supervised learning, because most of the labels should be dropped"
       },
       "answer": "C",
       "explanation": "Labelled default outcomes make supervised classification."
@@ -4787,10 +4787,10 @@
       "type": "mcq",
       "stem": "A high training R-squared alone does not guarantee good deployment performance mainly because:",
       "choices": {
-        "A": "R-squared cannot be computed for regression",
+        "A": "R-squared cannot be computed for a regression model",
         "B": "It measures fit to training data and can hide poor generalisation or overfitting",
-        "C": "Linear models never overfit",
-        "D": "R-squared always equals test accuracy"
+        "C": "A linear model is incapable of overfitting",
+        "D": "R-squared is the same number as accuracy on the test set for every fit that is reported"
       },
       "answer": "B",
       "explanation": "Training fit can overstate generalisation."
@@ -4830,9 +4830,9 @@
       "stem": "If training data include hot days with high cooling loads, a purely linear decreasing temperature model will tend to:",
       "choices": {
         "A": "Underestimate energy on very hot days and overestimate on mild days relative to the true U-shape",
-        "B": "Always achieve R-squared = 1",
-        "C": "Convert the problem into classification automatically",
-        "D": "Make the intercept zero"
+        "B": "Hit R-squared of 1 on the hot days and on the mild days",
+        "C": "Turn the energy task into a classification problem on its own with two classes called hot and mild",
+        "D": "Force the intercept to 0 and leave the slope unchanged"
       },
       "answer": "A",
       "explanation": "Linear heating-only slope misfits hot and mild regimes."
@@ -4857,10 +4857,10 @@
       "type": "mcq",
       "stem": "Good generalisation for the energy model means:",
       "choices": {
-        "A": "Perfect memorisation of every training row",
+        "A": "A perfect copy of every training row, including the unusual days",
         "B": "Accurate predictions on new temperature/occupancy conditions not seen in training",
-        "C": "R-squared exactly equal to 1 on training data only",
-        "D": "Using unsupervised clustering instead of regression"
+        "C": "An R-squared of exactly 1 on the training data, with new days unchecked after deployment",
+        "D": "A switch from regression to unsupervised clustering"
       },
       "answer": "B",
       "explanation": "Useful predictions on unseen future conditions."
@@ -4871,10 +4871,10 @@
       "type": "mcq",
       "stem": "Overfitting in the energy context is best described as:",
       "choices": {
-        "A": "Learning the general temperature-consumption relationship",
+        "A": "Learning the general relationship between temperature and consumption across the year",
         "B": "Fitting training quirks (for example an unusual winter) so future forecasts degrade",
-        "C": "Using a held-out test set before deployment",
-        "D": "Choosing regression instead of classification"
+        "C": "Holding out a test set before the model is deployed",
+        "D": "Choosing regression rather than classification for the energy task"
       },
       "answer": "B",
       "explanation": "Memorising training quirks harms future forecasts."
@@ -4886,9 +4886,9 @@
       "stem": "Labelling only a few hundred clinical cases is often insufficient for a reliable fully supervised diagnostic classifier because:",
       "choices": {
         "A": "Expert labels are expensive and scarce relative to the complexity of the task",
-        "B": "Semi-supervised learning is illegal in healthcare",
-        "C": "Unlabelled data always destroys accuracy",
-        "D": "Classification cannot use continuous features"
+        "B": "Semi-supervised learning is not permitted on clinical data",
+        "C": "Any pool of unlabelled scans will reduce accuracy",
+        "D": "A classifier cannot take a continuous feature such as a lab measurement or a count"
       },
       "answer": "A",
       "explanation": "Expert labels are scarce and costly relative to need."
@@ -4899,10 +4899,10 @@
       "type": "mcq",
       "stem": "Reinforcement learning differs from supervised learning primarily because:",
       "choices": {
-        "A": "It never uses numeric rewards",
-        "B": "It can only solve clustering problems",
+        "A": "Reinforcement learning never uses a numeric reward",
+        "B": "Reinforcement learning can only solve clustering problems",
         "C": "The learning signal comes from consequences of the agent's own actions in an environment, not labelled input-output pairs",
-        "D": "It requires R-squared to be above 0.9"
+        "D": "Reinforcement learning requires R-squared above 0.9 before an update is applied to the weights and the environment is treated as a labelled table"
       },
       "answer": "C",
       "explanation": "Learning from action consequences, not labelled pairs."
@@ -4913,10 +4913,10 @@
       "type": "mcq",
       "stem": "A practical fix when linearity fails for temperature and energy is to:",
       "choices": {
-        "A": "Discard all outdoor temperature features",
-        "B": "Switch from regression to unsupervised learning only",
+        "A": "Drop outdoor temperature and fit the model on the other features that remain in the design matrix and no new column is built",
+        "B": "Leave regression and use only an unsupervised method",
         "C": "Use a more flexible model (for example polynomial or piecewise) or engineer heating and cooling degree-day features",
-        "D": "Set the coefficient to zero and keep only the intercept"
+        "D": "Set the temperature coefficient to 0 and keep the intercept"
       },
       "answer": "C",
       "explanation": "More flexible models or heating/cooling features."
@@ -4927,10 +4927,10 @@
       "type": "mcq",
       "stem": "Linear regression is unsuitable as a direct probability model for binary classification mainly because:",
       "choices": {
-        "A": "It cannot use continuous features",
-        "B": "It always produces discrete labels only",
+        "A": "It cannot take a continuous feature such as income or a score or a count of rooms",
+        "B": "It emits a discrete label and cannot emit a real number",
         "C": "Its output is an unbounded real number, not constrained to (0, 1)",
-        "D": "It cannot be trained with gradient methods"
+        "D": "It cannot be fitted by gradient descent"
       },
       "answer": "C",
       "explanation": "Linear outputs are unbounded, not probabilities in (0,1)."
@@ -4941,10 +4941,10 @@
       "type": "mcq",
       "stem": "Logistic regression obtains a probability by:",
       "choices": {
-        "A": "Thresholding the linear score with a hard step at zero only",
+        "A": "Thresholding the linear score with a hard step at zero",
         "B": "Passing the linear score z = w*x + b through the sigmoid 1 / (1 + e^(-z))",
-        "C": "Clustering positive and negative examples",
-        "D": "Computing Manhattan distance to the decision boundary"
+        "C": "Clustering the positive examples and the negative examples",
+        "D": "Computing Manhattan distance from the point to the decision boundary in feature space"
       },
       "answer": "B",
       "explanation": "Sigmoid squashes z into (0,1) probability."
@@ -4985,8 +4985,8 @@
       "choices": {
         "A": "Every feature is binary",
         "B": "There exists a hyperplane that perfectly separates positive from negative examples",
-        "C": "The classes have equal size",
-        "D": "R-squared exceeds 0.9"
+        "C": "The two classes contain the same number of rows in the training table, whatever the features are",
+        "D": "R-squared on the training set is above 0.9"
       },
       "answer": "B",
       "explanation": "Perfect separating hyperplane exists."
@@ -5011,9 +5011,9 @@
       "type": "mcq",
       "stem": "If data are not linearly separable, the classical perceptron typically:",
       "choices": {
-        "A": "Still converges to zero training error",
-        "B": "Automatically becomes a multilayer network",
-        "C": "Maximises R-squared",
+        "A": "Still reaches zero training error in a finite number of updates",
+        "B": "Turns itself into a multilayer network and then separates the data with that extra layer",
+        "C": "Maximises R-squared and reports that value as the separator",
         "D": "Cycles through weight updates without settling on a perfect separator"
       },
       "answer": "D",
@@ -5025,10 +5025,10 @@
       "type": "mcq",
       "stem": "Minsky and Papert's classic result highlighted that a single-layer perceptron cannot learn:",
       "choices": {
-        "A": "Linearly separable AND",
-        "B": "Linearly separable OR",
+        "A": "AND, even though AND is linearly separable by one line",
+        "B": "OR, even though OR is linearly separable",
         "C": "The XOR function, which is not linearly separable",
-        "D": "Threshold functions of one feature"
+        "D": "A threshold on a single feature"
       },
       "answer": "C",
       "explanation": "XOR is not linearly separable."
@@ -5109,10 +5109,10 @@
       "type": "mcq",
       "stem": "Later in the same trace, after updating on the y=0 mistake at x=[2,3,1], the final weights become:",
       "choices": {
-        "A": "[1.5, 1, -0.5]",
-        "B": "[0, 0, -1]",
+        "A": "[1.5, 1.0, -0.5]",
+        "B": "[0.0, 0.0, -1.0]",
         "C": "[0.5, -0.5, -1]",
-        "D": "[2, 3, 1]"
+        "D": "[2.0, 3.0, 1.0]"
       },
       "answer": "C",
       "explanation": "Final weights [0.5,-0.5,-1]."
@@ -5137,10 +5137,10 @@
       "type": "mcq",
       "stem": "A key reason logistic regression is preferred over the perceptron in many applications is that:",
       "choices": {
-        "A": "It cannot use gradient descent",
+        "A": "Logistic regression cannot be trained by gradient descent",
         "B": "Probabilistic outputs support calibrated decisions, thresholds, and composable downstream use",
-        "C": "It never uses a linear score z = w*x + b",
-        "D": "It is guaranteed to solve XOR with one layer"
+        "C": "Logistic regression never forms the linear score z = w*x + b at any weight vector that gets learned",
+        "D": "One layer of logistic regression is guaranteed to solve XOR"
       },
       "answer": "B",
       "explanation": "Probabilities support nuanced decisions."
@@ -5180,9 +5180,9 @@
       "stem": "If two scripts receive perceptron labels \"not profitable\" but logistic outputs 0.12 and 0.48, the practical advantage is:",
       "choices": {
         "A": "The borderline 0.48 case can be prioritised for human review while 0.12 is a clearer reject",
-        "B": "Both scripts are identical under any threshold",
-        "C": "Perceptron probabilities are more informative",
-        "D": "Logistic regression cannot use a 0.5 threshold"
+        "B": "The two scripts are the same call under every threshold, including 0.5",
+        "C": "The perceptron's class label is a more informative probability than 0.12 or 0.48 on this pair of scripts",
+        "D": "Logistic regression is not allowed to use a threshold of 0.5"
       },
       "answer": "A",
       "explanation": "Borderline probability invites review."
@@ -5277,9 +5277,9 @@
       "type": "mcq",
       "stem": "Using L = (1/2) * (o - y)^2 with o = 1.625 and y = 1.0, the loss equals:",
       "choices": {
-        "A": "0.625",
+        "A": "0.62500000",
         "B": "0.390625",
-        "C": "1.625",
+        "C": "1.6250000",
         "D": "0.1953125"
       },
       "answer": "D",
@@ -5292,9 +5292,9 @@
       "stem": "Why does the lab use the 1/2 factor in half squared error?",
       "choices": {
         "A": "It simplifies the derivative so the factor of 2 from squaring cancels cleanly",
-        "B": "It changes which network is optimal at convergence in every case",
-        "C": "It forces ReLU to stay positive",
-        "D": "It converts regression into classification"
+        "B": "It changes which network is optimal when training has converged for this lab network",
+        "C": "It forces every ReLU unit to stay positive",
+        "D": "It turns the regression loss into a classification loss"
       },
       "answer": "A",
       "explanation": "Cancels the 2 from the square for a clean gradient."
@@ -5319,10 +5319,10 @@
       "type": "mcq",
       "stem": "A positive gradient for a weight means gradient descent should:",
       "choices": {
-        "A": "Increase the weight to reduce loss",
+        "A": "Increase that weight, because the gradient says the loss falls that way",
         "B": "Decrease the weight (move opposite the gradient)",
-        "C": "Set the weight to zero",
-        "D": "Replace ReLU with sigmoid immediately"
+        "C": "Set that weight to zero before the next forward pass",
+        "D": "Replace the ReLU with a sigmoid before the next update"
       },
       "answer": "B",
       "explanation": "Descend opposite the gradient."
@@ -5333,10 +5333,10 @@
       "type": "mcq",
       "stem": "Why do none of hidden neuron 2's weights receive an update for this example when a2 = 0 from ReLU(z2) with z2 < 0?",
       "choices": {
-        "A": "Because the learning rate is zero",
-        "B": "Because MSE cannot train hidden layers",
+        "A": "The learning rate is zero, so no hidden weight can move",
+        "B": "Mean squared error cannot send a gradient through a hidden layer, so the ReLU weights on neuron 2 stay put",
         "C": "Because ReLU's derivative is 0 for negative inputs, so backpropagated gradient through that unit is zero",
-        "D": "Because a2 was positive"
+        "D": "a2 was positive, so the ReLU blocked the update"
       },
       "answer": "C",
       "explanation": "ReLU derivative 0 kills gradient to that unit."
@@ -5348,9 +5348,9 @@
       "stem": "The dying ReLU problem refers to:",
       "choices": {
         "A": "Units that stay inactive (negative pre-activations) so outputs and gradients remain zero and weights stop learning",
-        "B": "Sigmoid saturating near 0.5",
-        "C": "Softmax probabilities summing to 1",
-        "D": "Linear output layers only"
+        "B": "Sigmoid units sitting near 0.5, where the slope is small",
+        "C": "Softmax outputs that already add up to 1",
+        "D": "A linear output layer has no activation that can saturate, and a hidden ReLU cannot stay at zero or stop learning weights"
       },
       "answer": "A",
       "explanation": "Persistently inactive units stop learning."
@@ -5361,10 +5361,10 @@
       "type": "mcq",
       "stem": "Leaky ReLU and ELU were motivated partly by:",
       "choices": {
-        "A": "Removing all non-linearity",
-        "B": "Guaranteeing linear separability of XOR",
+        "A": "Removing the non-linearity so the network stays a linear map from input to output with no bend in the map",
+        "B": "Making XOR linearly separable with a single layer",
         "C": "Allowing a small non-zero gradient for negative inputs so units are less likely to die permanently",
-        "D": "Replacing MSE with R-squared"
+        "D": "Replacing mean squared error with R-squared"
       },
       "answer": "C",
       "explanation": "Small negative-side gradients reduce dying."
@@ -5375,10 +5375,10 @@
       "type": "mcq",
       "stem": "In the forward pass, ReLU(z) = max(0, z). If z is positive, ReLU:",
       "choices": {
-        "A": "Outputs zero",
+        "A": "Returns 0",
         "B": "Passes z through unchanged",
-        "C": "Outputs sigmoid(z)",
-        "D": "Outputs 1 always"
+        "C": "Returns the sigmoid of z",
+        "D": "Returns 1 for every positive z"
       },
       "answer": "B",
       "explanation": "Positive z passed through."
@@ -5389,10 +5389,10 @@
       "type": "mcq",
       "stem": "Hidden neuron 2 being \"switched off\" for the example means:",
       "choices": {
-        "A": "Its weights are deleted from the network permanently after one zero",
+        "A": "Its weights are removed from the network after a single zero activation and are not restored later",
         "B": "It contributed a2 = 0 to the output and, for that step, learns nothing via backprop through ReLU",
-        "C": "The output layer cannot use a1",
-        "D": "The loss must be exactly zero"
+        "C": "The output layer is no longer allowed to use the other hidden unit",
+        "D": "The loss on this example has to be exactly zero"
       },
       "answer": "B",
       "explanation": "Zero activation and zero local gradient this step."
@@ -5445,9 +5445,9 @@
       "type": "mcq",
       "stem": "The loss value 0.1953125 measures:",
       "choices": {
-        "A": "Classification accuracy",
-        "B": "The ReLU derivative",
-        "C": "The learning rate",
+        "A": "Classification accuracy on this example",
+        "B": "The derivative of the ReLU at the output neuron on this step",
+        "C": "The learning rate used for the update",
         "D": "The cost of the prediction error under half squared error"
       },
       "answer": "D",
@@ -5473,10 +5473,10 @@
       "type": "mcq",
       "stem": "A takeaway linking Labs 7 and later multilayer training is that:",
       "choices": {
-        "A": "Single-layer perceptrons always beat MLPs on XOR",
+        "A": "A single-layer perceptron beats a multilayer net on XOR",
         "B": "Manual gradient derivation does not scale; inactive ReLUs also show why activation choice affects learning",
-        "C": "MSE requires sklearn",
-        "D": "Dying ReLU only occurs with softmax outputs"
+        "C": "Mean squared error can be trained only through sklearn",
+        "D": "A ReLU dies only when the output activation is a softmax, and a hidden ReLU in this network cannot die at all"
       },
       "answer": "B",
       "explanation": "Activation choice and scaling of manual grads both matter."
@@ -5488,9 +5488,9 @@
       "stem": "For the XOR dataset in the lab, the four inputs and targets are arranged so that:",
       "choices": {
         "A": "Targets are 0,1,1,0 for inputs (0,0),(0,1),(1,0),(1,1)",
-        "B": "Targets equal the OR of the two bits",
-        "C": "Targets are all 1",
-        "D": "Targets equal the AND of the two bits"
+        "B": "The targets are the OR of the two input bits",
+        "C": "The targets are 1 for every input pair",
+        "D": "The targets are the AND of the two input bits, in the order (0,0), (0,1), (1,0), (1,1)"
       },
       "answer": "A",
       "explanation": "Classic XOR targets 0,1,1,0."
@@ -5543,9 +5543,9 @@
       "type": "mcq",
       "stem": "Biases may start at zero because:",
       "choices": {
-        "A": "Biases also suffer the same symmetry collapse as shared weights",
-        "B": "Autograd forbids non-zero biases",
-        "C": "Sigmoid requires bias = 1",
+        "A": "A bias suffers the same symmetry collapse as a shared initial weight across the hidden units of the layer here",
+        "B": "Autograd rejects a bias that does not start at zero",
+        "C": "The sigmoid used in the lab requires every bias to start at 1",
         "D": "Each unit has its own bias, so zero is a neutral start and does not force identical hidden features by itself"
       },
       "answer": "D",
@@ -5571,10 +5571,10 @@
       "type": "mcq",
       "stem": "If W1 were incorrectly shaped (4, 2) for X @ W1 with X shaped (4, 2), NumPy would:",
       "choices": {
-        "A": "Silently transpose and train correctly",
-        "B": "Broadcast to (4, 4) automatically",
+        "A": "Quietly transpose W1 and then train the XOR net correctly",
+        "B": "Broadcast the product to shape (4, 4) and continue",
         "C": "Raise a dimension mismatch / ValueError on the matmul",
-        "D": "Reduce XOR to a perceptron"
+        "D": "Drop the hidden layer and train a perceptron instead"
       },
       "answer": "C",
       "explanation": "Inner dimensions mismatch."
@@ -5585,10 +5585,10 @@
       "type": "mcq",
       "stem": "The sigmoid derivative used in the lab, given sigmoid output s, is:",
       "choices": {
-        "A": "s^2",
-        "B": "1 - s",
+        "A": "`s * s`",
+        "B": "`(1 - s) * s^0`",
         "C": "s * (1 - s)",
-        "D": "log(s)"
+        "D": "`log(s) * s^0`"
       },
       "answer": "C",
       "explanation": "s(1-s)."
@@ -5600,9 +5600,9 @@
       "stem": "Which implementation choice matches the supplied XOR lab?",
       "choices": {
         "A": "Create `grad(compute_loss)` once outside the loop, use seed 42, learning rate 0.5, and 10,000 epochs",
-        "B": "Recreate the gradient function after every parameter update and use no random seed",
-        "C": "Update parameters inside `compute_loss`",
-        "D": "Initialise every hidden weight to the same value"
+        "B": "Build a fresh gradient function after every update, and do not set a random seed or an epoch count before the loop",
+        "C": "Apply the parameter update inside `compute_loss`",
+        "D": "Start every hidden weight at the same value"
       },
       "answer": "A",
       "explanation": "Those seed, learning-rate, epoch, and gradient-function choices match the supplied lab."
@@ -5655,10 +5655,10 @@
       "type": "mcq",
       "stem": "grad(compute_loss) from autograd returns a function that:",
       "choices": {
-        "A": "Only prints shapes",
-        "B": "Updates weights in place inside compute_loss",
+        "A": "Prints the parameter shapes and does not differentiate the loss with respect to W1 and W2",
+        "B": "Writes new weights inside `compute_loss` as it runs",
         "C": "Computes gradients of the scalar loss w.r.t. params via reverse-mode AD / chain rule",
-        "D": "Trains sklearn models"
+        "D": "Fits a sklearn model on the same loss"
       },
       "answer": "C",
       "explanation": "Reverse-mode gradients of loss w.r.t. params."
@@ -5669,10 +5669,10 @@
       "type": "mcq",
       "stem": "Why must compute_loss be a pure function of params for autograd?",
       "choices": {
-        "A": "Pure functions train faster on GPUs only",
+        "A": "A pure function is required only because it trains faster on a GPU in this lab",
         "B": "In-place modification of params can corrupt the computational graph",
-        "C": "Autograd requires sklearn callbacks",
-        "D": "MSE forbids closures"
+        "C": "Autograd will not run unless a sklearn callback is supplied",
+        "D": "Mean squared error forbids a closure over the parameters"
       },
       "answer": "B",
       "explanation": "In-place params updates corrupt the autograd graph."
@@ -5711,10 +5711,10 @@
       "type": "mcq",
       "stem": "A two-layer network with hidden sigmoid units can learn XOR, whereas a single-layer perceptron cannot, primarily because:",
       "choices": {
-        "A": "XOR is linearly separable",
-        "B": "MSE is undefined for XOR",
+        "A": "XOR is linearly separable once the loss is mean squared error",
+        "B": "Mean squared error is undefined for the XOR targets",
         "C": "Hidden non-linear units allow a non-linear decision boundary",
-        "D": "Autograd invents new labels"
+        "D": "Autograd changes the XOR targets into linearly separable labels"
       },
       "answer": "C",
       "explanation": "Non-linear hidden layer enables XOR."
@@ -5739,10 +5739,10 @@
       "type": "mcq",
       "stem": "Oscillating or increasing XOR training loss often indicates:",
       "choices": {
-        "A": "Learning rate exactly zero",
-        "B": "Too many hidden units always",
+        "A": "The learning rate is exactly zero, so the loss is free to rise",
+        "B": "There are always too many hidden units",
         "C": "Learning rate too high (overshooting)",
-        "D": "Targets were continuous house prices"
+        "D": "The targets were continuous house prices rather than XOR bits"
       },
       "answer": "C",
       "explanation": "LR too high causes oscillation/rise."
@@ -5781,9 +5781,9 @@
       "type": "mcq",
       "stem": "Which features are used as inputs in the five-house training set?",
       "choices": {
-        "A": "Price, suburb, and year built only",
-        "B": "Latitude, longitude, and R-squared",
-        "C": "Softmax logits only",
+        "A": "Price, suburb, and the year the house was built",
+        "B": "Latitude, longitude, and the R-squared of the sale",
+        "C": "The logits of a softmax, and no house feature",
         "D": "Furniture, Nr rooms, and New kitchen"
       },
       "answer": "D",
@@ -5795,10 +5795,10 @@
       "type": "mcq",
       "stem": "In a decision tree, leaf nodes represent:",
       "choices": {
-        "A": "Tests on a feature",
+        "A": "The feature test that sends an example down a branch",
         "B": "Final class predictions for examples that reach that leaf",
-        "C": "Information gain formulas",
-        "D": "AC-3 arcs"
+        "C": "The information-gain formula used to choose the next test at the node",
+        "D": "The arcs revised by AC-3"
       },
       "answer": "B",
       "explanation": "Leaf = predicted class."
@@ -5823,10 +5823,10 @@
       "type": "mcq",
       "stem": "Entropy H = 0 for a subset means:",
       "choices": {
-        "A": "Maximum uncertainty (half Yes, half No)",
-        "B": "Information gain is undefined",
+        "A": "The subset is as mixed as it can be, half Yes and half No",
+        "B": "Information gain at that subset cannot be computed",
         "C": "The subset is pure (all examples share one class)",
-        "D": "The feature must be Furniture"
+        "D": "The feature that was tested must have been Furniture"
       },
       "answer": "C",
       "explanation": "Pure set, no uncertainty."
@@ -5838,9 +5838,9 @@
       "stem": "Why can information gain distinguish candidate splits that tie on classification error?",
       "choices": {
         "A": "Entropy measures how mixed each child remains, while classification error keeps only each child's majority mistake count",
-        "B": "Information gain ignores child sizes",
-        "C": "Classification error uses logarithms but entropy does not",
-        "D": "Information gain always chooses the attribute with the most values"
+        "B": "Information gain ignores the number of examples in each child",
+        "C": "Classification error uses a logarithm, and entropy does not",
+        "D": "Information gain always selects the attribute that has the most distinct values at that node, ignoring how mixed the children are"
       },
       "answer": "A",
       "explanation": "Entropy retains within-child mixture information that majority error discards."
@@ -5893,10 +5893,10 @@
       "type": "mcq",
       "stem": "How can a decision tree use a continuous attribute such as temperature?",
       "choices": {
-        "A": "It cannot; every tree input must be binary before training",
-        "B": "It creates one branch for every real number",
+        "A": "It cannot. Every input has to be binary before ID3 starts",
+        "B": "It opens one branch for every real value the temperature sensor can return, with no threshold",
         "C": "It evaluates candidate thresholds such as `temperature <= 18.5` and keeps the best split",
-        "D": "It replaces information gain with gradient descent"
+        "D": "It drops information gain and splits by gradient descent"
       },
       "answer": "C",
       "explanation": "Tree learners can search sorted candidate thresholds and use the best binary split."
@@ -5950,9 +5950,9 @@
       "stem": "On the impure Nr rooms = 3 subset, the next split chosen is:",
       "choices": {
         "A": "Furniture",
-        "B": "Nr rooms again",
+        "B": "Nr rooms, tested a second time",
         "C": "New kitchen (IG about 0.918)",
-        "D": "Softmax"
+        "D": "A softmax over the remaining labels"
       },
       "answer": "C",
       "explanation": "New kitchen IG ~= 0.918 on S3."
@@ -5963,10 +5963,10 @@
       "type": "mcq",
       "stem": "Furniture does not appear in the final tree because:",
       "choices": {
-        "A": "It was never provided in the dataset",
-        "B": "ID3 forbids binary features",
+        "A": "Furniture was not a column in the training set",
+        "B": "ID3 is not allowed to test a binary feature",
         "C": "It had lower IG at the relevant nodes and was never selected",
-        "D": "Entropy cannot be computed for Furniture"
+        "D": "Entropy cannot be computed for the Furniture column in this table"
       },
       "answer": "C",
       "explanation": "Never selected due to low IG."
@@ -6005,9 +6005,9 @@
       "type": "mcq",
       "stem": "ID3 is a greedy algorithm, which means:",
       "choices": {
-        "A": "It guarantees the globally smallest possible tree",
-        "B": "It always uses Furniture first",
-        "C": "It solves CSPs with AC-3",
+        "A": "It returns a tree of globally minimal size",
+        "B": "It tests Furniture at the root on every data set, including the five-house table",
+        "C": "It solves the split by running AC-3",
         "D": "It makes the locally best IG choice at each node without full lookahead"
       },
       "answer": "D",
@@ -6019,9 +6019,9 @@
       "type": "mcq",
       "stem": "A new house H1 with Nr rooms = 4 is classified Yes because:",
       "choices": {
-        "A": "Furniture must be Yes",
-        "B": "H(S) equals 0",
-        "C": "Softmax outputs 4",
+        "A": "Furniture is Yes, which is enough to decide the class of the house and the other features are ignored",
+        "B": "The entropy of the training set is 0",
+        "C": "A softmax outputs the number 4",
         "D": "The Nr rooms = 4 branch leads directly to a Yes leaf; other features on that path are not tested"
       },
       "answer": "D",
@@ -6034,9 +6034,9 @@
       "stem": "Interpretability of decision trees is highlighted because:",
       "choices": {
         "A": "Each prediction follows an explicit sequence of feature tests to a leaf",
-        "B": "Predictions cannot be explained",
-        "C": "They require autograd",
-        "D": "They only work for XOR"
+        "B": "A prediction cannot be explained from the tree",
+        "C": "A prediction requires autograd through the tests at the leaf that was reached",
+        "D": "A tree can classify only the XOR pattern"
       },
       "answer": "A",
       "explanation": "Transparent feature-test path."
@@ -6075,10 +6075,10 @@
       "type": "mcq",
       "stem": "Why are E and M independent before any evidence is observed?",
       "choices": {
-        "A": "They have equal prior probabilities",
-        "B": "Every pair of root variables is independent in any graph",
+        "A": "E and M have the same prior, so they are independent",
+        "B": "Every pair of root variables is independent, in every graph including this one too",
         "C": "Their only path is `E -> S <- M`, which is blocked at the unobserved collider S",
-        "D": "B is unobserved"
+        "D": "B is unobserved, and that is what blocks the path"
       },
       "answer": "C",
       "explanation": "The unobserved collider S blocks the only path between E and M."
@@ -6117,10 +6117,10 @@
       "type": "mcq",
       "stem": "The lab obtains `P(+b)=0.19`. Which calculation gives `P(+m|+b)`?",
       "choices": {
-        "A": "`0.19/0.1 = 1.9`",
-        "B": "`0.1*0.19 = 0.019`",
+        "A": "`0.19/0.10 = 1.9000`",
+        "B": "`0.10*0.19 = 0.0190`",
         "C": "`(0.1*1.0)/0.19 = 0.5263`",
-        "D": "`0.1/1.0 = 0.1`"
+        "D": "`0.10000/1.0000 = 0.10000`"
       },
       "answer": "C",
       "explanation": "Bayes' rule gives `(0.1*1.0)/0.19=0.5263`."
@@ -6131,9 +6131,9 @@
       "type": "mcq",
       "stem": "The lab calculates `P(+s)=0.4` and `P(+e,+s)=0.328`. What is `P(+e|+s)`?",
       "choices": {
-        "A": "0.3280",
-        "B": "0.4000",
-        "C": "0.7462",
+        "A": "0.328000",
+        "B": "0.400000",
+        "C": "`0.328*0.400 = 0.7462`",
         "D": "`0.328/0.4 = 0.8200`"
       },
       "answer": "D",
@@ -6159,10 +6159,10 @@
       "type": "mcq",
       "stem": "Which statement matches the d-separation results?",
       "choices": {
-        "A": "`E` and `B` are dependent with no evidence and independent given `S`",
+        "A": "`E` and `B` are dependent when nothing is observed, and independent once `S` is known in the lab graph",
         "B": "`E` and `B` are independent with no evidence, but observing collider `S` opens their path",
-        "C": "`S` and `B` remain dependent after conditioning on common cause `M`",
-        "D": "Observing any variable blocks every path through it"
+        "C": "`S` and `B` stay dependent after you condition on their common cause `M`",
+        "D": "Observing a variable blocks every path that passes through it"
       },
       "answer": "B",
       "explanation": "The collider blocks the path until S, or its descendant, is observed."
@@ -6229,9 +6229,9 @@
       "type": "mcq",
       "stem": "Before the fourth sample, `Q(A,right)=1.0`, `Q(B,left)=0`, and `Q(B,right)=-0.5`. What does `(A,right,B,4)` produce?",
       "choices": {
-        "A": "2.0",
-        "B": "4.0",
-        "C": "1.5",
+        "A": "`0.5*2.0 + 0.5*(2+0) = 2.0`",
+        "B": "`0.5*4.0 + 0.5*(4+0) = 4.0`",
+        "C": "`0.5 * 1.0 + 0.5 * (2 + 1) = 1.5`",
         "D": "`0.5*1.0 + 0.5*(4+0) = 2.5`"
       },
       "answer": "D",
@@ -6257,10 +6257,10 @@
       "type": "mcq",
       "stem": "Why does the extracted policy choose left at B?",
       "choices": {
-        "A": "Left was sampled more often",
+        "A": "Left was the action sampled most often from B",
         "B": "`Q(B,left)=0` is greater than the learned `Q(B,right)=-0.5`",
-        "C": "Negative Q values are deleted",
-        "D": "The transition model forces left"
+        "C": "A negative Q-value is deleted, so right is no longer available",
+        "D": "The transition model allows only the left action from B"
       },
       "answer": "B",
       "explanation": "The initial estimate 0 for left exceeds the learned -0.5 for right."
@@ -6285,10 +6285,10 @@
       "type": "mcq",
       "stem": "An oracle supplies `V*(s)` but no transition or reward model. Why is that insufficient to choose an optimal action directly?",
       "choices": {
-        "A": "State values are always negative",
-        "B": "`V*` applies only to terminal states",
+        "A": "Every state value is negative, so the action with the larger value is the worse one",
+        "B": "`V*` is defined only on terminal states",
         "C": "Action choice needs one-step lookahead through `T` and `R`",
-        "D": "`V*` contains too many entries"
+        "D": "`V*` stores too many numbers to read an action off"
       },
       "answer": "C",
       "explanation": "Acting from `V*` needs expected one-step outcomes computed from T and R."
@@ -6313,10 +6313,10 @@
       "type": "mcq",
       "stem": "Which methods contain enough information at convergence to extract an optimal policy without separately being given T and R?",
       "choices": {
-        "A": "Direct evaluation and TD state-value learning",
+        "A": "Direct evaluation and temporal-difference learning of state values",
         "B": "Model-based learning of T and R, and Q-learning",
-        "C": "Direct evaluation only",
-        "D": "Every method that estimates V"
+        "C": "Direct evaluation on its own",
+        "D": "Every method that estimates a state-value function V"
       },
       "answer": "B",
       "explanation": "A learned model can plan, and Q values already store action-specific lookahead."
@@ -6370,9 +6370,9 @@
       "stem": "IDS finds an optimal maze path under equal step costs because:",
       "choices": {
         "A": "It exhausts shallower depths before deeper ones, so the first goal found has minimal depth/cost",
-        "B": "It uses an inadmissible heuristic",
-        "C": "It expands every state only once like Dijkstra on graphs with zero costs",
-        "D": "It ignores walls"
+        "B": "It uses a heuristic that overestimates, and the first goal is still shallowest",
+        "C": "It expands every state once, like Dijkstra on a graph whose edge costs are zero and walls do not matter",
+        "D": "It ignores walls, so the first route it draws is the shortest"
       },
       "answer": "A",
       "explanation": "Iterative deepening optimality under equal costs."
@@ -6398,9 +6398,9 @@
       "stem": "Manhattan distance h(n) = |dr| + |dc| is admissible here because:",
       "choices": {
         "A": "Each move changes one coordinate by one at cost 1, so true remaining cost is at least |dr|+|dc|",
-        "B": "Walls always shorten paths",
-        "C": "It overestimates when no walls exist",
-        "D": "IDS forbids heuristics"
+        "B": "Walls can only shorten a path, so the grid distance remains a lower bound on the true remaining cost",
+        "C": "The distance overestimates on an open grid with no walls",
+        "D": "Iterative deepening is not allowed to use a heuristic"
       },
       "answer": "A",
       "explanation": "Lower bound on remaining moves."
@@ -6425,10 +6425,10 @@
       "type": "mcq",
       "stem": "Consistency (monotonicity) of Manhattan distance on this grid supports that:",
       "choices": {
-        "A": "A* may need to re-expand a state infinitely often",
+        "A": "A* may have to re-expand the same state without a finite bound",
         "B": "When A* first expands a node, it has found an optimal path to that state (with the usual conditions)",
-        "C": "IDS becomes incomplete",
-        "D": "Heuristics must be zero"
+        "C": "Iterative deepening is no longer complete on the maze",
+        "D": "Every admissible heuristic on the maze has to be identically zero including Manhattan distance on open cells"
       },
       "answer": "B",
       "explanation": "Consistency supports optimal expansion property."
@@ -6439,9 +6439,9 @@
       "type": "mcq",
       "stem": "IDA* differs from IDS by using:",
       "choices": {
-        "A": "Breadth-first expansion only",
-        "B": "No heuristic",
-        "C": "Random restarts only",
+        "A": "A breadth-first expansion order, with no change to the bound across iterations of IDA*",
+        "B": "A search that does not use a heuristic at all",
+        "C": "A sequence of random restarts, with no cost bound",
         "D": "An f-cost bound (g+h) that increases across iterations, instead of a pure depth bound"
       },
       "answer": "D",
@@ -6454,9 +6454,9 @@
       "stem": "If the destination is fully blocked/unreachable, a correct solver should:",
       "choices": {
         "A": "Report no solution (and still terminate)",
-        "B": "Loop forever",
-        "C": "Ignore walls",
-        "D": "Return a path through walls"
+        "B": "Keep searching, and never return",
+        "C": "Ignore the walls and walk through the blocked cells",
+        "D": "Return a path that steps through the walls"
       },
       "answer": "A",
       "explanation": "Print/report no solution and halt."
@@ -6467,10 +6467,10 @@
       "type": "mcq",
       "stem": "Compared with IDS on long optimal paths, A* with a good heuristic typically:",
       "choices": {
-        "A": "Explores far more states",
-        "B": "Uses strictly less theoretical completeness",
+        "A": "Expands many more states than iterative deepening",
+        "B": "Gives up completeness in exchange for the heuristic",
         "C": "Explores fewer states by focusing search using h(n)",
-        "D": "Cannot be optimal"
+        "D": "Cannot return an optimal path once a heuristic is used"
       },
       "answer": "C",
       "explanation": "Heuristic guidance reduces expansions."
@@ -6481,10 +6481,10 @@
       "type": "mcq",
       "stem": "In the crossword CSP formulation, variables are:",
       "choices": {
-        "A": "Individual letter cells only with no slots",
-        "B": "Softmax class logits",
+        "A": "The individual letter cells, and no across or down slot is a variable",
+        "B": "The logits of a softmax over the alphabet",
         "C": "Word slots (maximal across/down sequences) to be filled with words",
-        "D": "Maze cells A and B"
+        "D": "The maze cells named A and B"
       },
       "answer": "C",
       "explanation": "Slots as CSP variables."
@@ -6496,9 +6496,9 @@
       "stem": "enforce_node_consistency primarily ensures:",
       "choices": {
         "A": "Domain words have length matching the slot length",
-        "B": "Arc consistency between all pairs",
-        "C": "MRV tie breaking",
-        "D": "Manhattan admissibility"
+        "B": "That every pair of variables is already arc consistent",
+        "C": "That MRV ties are broken before search starts",
+        "D": "That Manhattan distance on the maze is admissible"
       },
       "answer": "A",
       "explanation": "Unary length filtering."
@@ -6509,10 +6509,10 @@
       "type": "mcq",
       "stem": "revise(x, y) makes x arc-consistent with y by:",
       "choices": {
-        "A": "Adding random words to x",
-        "B": "Deleting variable y",
+        "A": "Adding words to the domain of x until a support appears in y that could overlap the slot",
+        "B": "Deleting the variable y from the CSP",
         "C": "Removing values from x that have no supporting value in y under the binary constraint",
-        "D": "Computing information gain"
+        "D": "Scoring the overlap by information gain"
       },
       "answer": "C",
       "explanation": "Delete unsupported values from x."
@@ -6538,9 +6538,9 @@
       "stem": "MRV (minimum remaining values) selects the unassigned variable that:",
       "choices": {
         "A": "Has the fewest remaining legal values (fail-first)",
-        "B": "Has the largest domain",
-        "C": "Appears first alphabetically always",
-        "D": "Has zero neighbours"
+        "B": "Has the largest domain still left",
+        "C": "Comes first in alphabetical order, whatever its domain size",
+        "D": "Has no neighbours left in the constraint graph"
       },
       "answer": "A",
       "explanation": "Fewest remaining values first."
@@ -6551,10 +6551,10 @@
       "type": "mcq",
       "stem": "The degree heuristic, used to break MRV ties, prefers the variable that:",
       "choices": {
-        "A": "Has the fewest constraints",
-        "B": "Has the longest word length only",
+        "A": "Is involved in the fewest constraints",
+        "B": "Has the longest word length, and nothing else",
         "C": "Participates in the most constraints with still-unassigned variables",
-        "D": "Maximises information gain"
+        "D": "Maximises information gain on the remaining letters of the slot being filled"
       },
       "answer": "C",
       "explanation": "Most constraining variable on ties."
@@ -6580,9 +6580,9 @@
       "stem": "Node consistency is a unary filter; arc consistency is about:",
       "choices": {
         "A": "Binary constraints between pairs of variables (for example overlapping letters)",
-        "B": "Single-variable length checks only",
-        "C": "Softmax normalisation",
-        "D": "Equal step costs in mazes"
+        "B": "A second unary check, again on the length of a single slot and nothing pairwise between slots",
+        "C": "Dividing a vector by its sum so the entries add to 1",
+        "D": "The equal step costs that make maze IDS optimal"
       },
       "answer": "A",
       "explanation": "Pairwise/binary constraint support."
@@ -6593,10 +6593,10 @@
       "type": "mcq",
       "stem": "assignment_complete returns true when:",
       "choices": {
-        "A": "At least one variable is assigned",
-        "B": "AC-3 has never run",
+        "A": "At least one crossword variable has a word assigned",
+        "B": "AC-3 has not been called",
         "C": "Every crossword variable has an assigned value",
-        "D": "Domains are empty"
+        "D": "Every domain has been emptied"
       },
       "answer": "C",
       "explanation": "All variables assigned."
@@ -6622,9 +6622,9 @@
       "stem": "Backtracking search for the crossword:",
       "choices": {
         "A": "Tries values, recurses, and undoes on failure until a full satisfying assignment or exhaustion",
-        "B": "Never undoes assignments",
-        "C": "Is identical to A* maze search",
-        "D": "Requires PyTorch"
+        "B": "Assigns values and never takes an assignment back on failure or when a domain empties during search",
+        "C": "Is the same procedure as A* on the maze",
+        "D": "Cannot run unless PyTorch is installed"
       },
       "answer": "A",
       "explanation": "Standard chronological backtracking."
@@ -6649,10 +6649,10 @@
       "type": "mcq",
       "stem": "Equal step costs in the maze are important because they justify:",
       "choices": {
-        "A": "Using an inconsistent heuristic only",
+        "A": "Using a heuristic that fails consistency",
         "B": "Treating fewer moves as cheaper and supporting IDS optimality arguments",
-        "C": "Forbidding A*",
-        "D": "Setting h(n) = infinity"
+        "C": "Leaving A* out of the solver",
+        "D": "Setting h(n) to infinity on every open cell that the search has not expanded"
       },
       "answer": "B",
       "explanation": "Cost = depth; IDS optimality applies."
@@ -6663,10 +6663,10 @@
       "type": "mcq",
       "stem": "A transferable exam contrast: informed maze search uses heuristics over path cost, while crossword solving uses:",
       "choices": {
-        "A": "The same Manhattan heuristic on letters",
-        "B": "Only unsupervised clustering",
+        "A": "The same Manhattan distance, now measured on letters",
+        "B": "Only an unsupervised clustering of the word list",
         "C": "Constraint propagation and variable/value ordering heuristics (AC-3, MRV, degree, LCV)",
-        "D": "Dying ReLU analysis"
+        "D": "An analysis of ReLU units that have stopped updating in the maze rather than on the word slots"
       },
       "answer": "C",
       "explanation": "CSP inference and ordering heuristics."
@@ -6733,10 +6733,10 @@
       "type": "mcq",
       "stem": "The deepest required style of model is:",
       "choices": {
-        "A": "784-10 only",
+        "A": "784-10, a single linear map from the pixels to 10 logits, with no hidden layer in the brief",
         "B": "784-30-30-10, including a residual variant connecting the first hidden layer to the second",
-        "C": "A convolutional ResNet-50 from torchvision",
-        "D": "A decision tree over pixels"
+        "C": "A convolutional ResNet-50 loaded from torchvision",
+        "D": "A decision tree whose tests are individual pixels"
       },
       "answer": "B",
       "explanation": "784-30-30-10 with residual option."
@@ -6747,10 +6747,10 @@
       "type": "mcq",
       "stem": "Which libraries are explicitly not allowed for implementing the learning algorithms?",
       "choices": {
-        "A": "NumPy and autograd",
-        "B": "matplotlib for plots",
+        "A": "NumPy and autograd, which must not appear in the training loop",
+        "B": "matplotlib, which must not be used for the plots",
         "C": "sklearn, PyTorch, and TensorFlow",
-        "D": "The Python standard library"
+        "D": "The Python standard library, which must not be imported"
       },
       "answer": "C",
       "explanation": "No sklearn/pytorch/tensorflow for algorithms."
@@ -6775,10 +6775,10 @@
       "type": "mcq",
       "stem": "Softmax converts logits into:",
       "choices": {
-        "A": "Unbounded scores",
-        "B": "Binary Rent labels",
+        "A": "Unbounded scores, one per class, with no normalisation across the ten classes",
+        "B": "A binary label for the Rent class",
         "C": "Class probabilities that are positive and sum to 1 across the 10 classes",
-        "D": "Manhattan distances"
+        "D": "Manhattan distances from the logits to the label"
       },
       "answer": "C",
       "explanation": "Normalised class probabilities."
@@ -6789,10 +6789,10 @@
       "type": "mcq",
       "stem": "Cross-entropy loss for classification primarily penalises:",
       "choices": {
-        "A": "High probability on the correct class",
-        "B": "R-squared below 0.9",
+        "A": "A high probability on the correct class being predicted",
+        "B": "An R-squared below 0.9",
         "C": "Low probability assigned to the correct class",
-        "D": "Batch size equal to 4"
+        "D": "A batch size of 4"
       },
       "answer": "C",
       "explanation": "Penalises low correct-class probability."
@@ -6859,10 +6859,10 @@
       "type": "mcq",
       "stem": "For the residual 784-30-30-10 model, hidden widths must match because:",
       "choices": {
-        "A": "Softmax requires square matrices",
+        "A": "Softmax is only defined for square matrices",
         "B": "Element-wise residual addition needs identical shapes for h1 and h2_raw",
-        "C": "Autograd forbids unequal widths in all MLPs",
-        "D": "Fashion-MNIST has 30 classes"
+        "C": "Autograd refuses an MLP whose hidden layers differ in width",
+        "D": "Fashion-MNIST has 30 classes, so both hidden layers must be 30 wide each"
       },
       "answer": "B",
       "explanation": "Residual add needs matching widths."
@@ -6873,10 +6873,10 @@
       "type": "mcq",
       "stem": "A residual connection in this assignment adds:",
       "choices": {
-        "A": "Raw pixels to the logits",
-        "B": "Learning rate to batch size",
+        "A": "The raw pixels added onto the logits",
+        "B": "The learning rate added onto the batch size",
         "C": "The first hidden activation to the second hidden activation (skip path)",
-        "D": "Validation accuracy to test accuracy"
+        "D": "Validation accuracy added onto test accuracy in the report table of results"
       },
       "answer": "C",
       "explanation": "h2 = h2_raw + h1 when enabled."
@@ -6971,9 +6971,9 @@
       "type": "mcq",
       "stem": "A learning rate that is far too large may cause:",
       "choices": {
-        "A": "Guaranteed maximum test accuracy",
-        "B": "Node inconsistency in CSPs",
-        "C": "Admissible heuristics to become inconsistent",
+        "A": "A guarantee of the highest test accuracy the model can reach on Fashion-MNIST",
+        "B": "A node-consistency failure in the crossword CSP",
+        "C": "An admissible heuristic becoming inconsistent",
         "D": "Unstable training (oscillation, overflow, NaN loss, collapsed accuracy)"
       },
       "answer": "D",
@@ -6999,9 +6999,9 @@
       "type": "mcq",
       "stem": "Autograd is used in this assignment to:",
       "choices": {
-        "A": "Replace NumPy entirely for data loading",
-        "B": "Train with sklearn under the hood",
-        "C": "Enforce AC-3",
+        "A": "Replace NumPy when the Fashion-MNIST images and labels are loaded from disk into arrays",
+        "B": "Fit the network through sklearn",
+        "C": "Run AC-3 on the parameter vector",
         "D": "Automatically differentiate the loss w.r.t. flattened parameters for GD updates"
       },
       "answer": "D",
@@ -7071,7 +7071,7 @@
       "choices": {
         "A": "`ThreeLayerMLP.get_params`",
         "B": "`TwoLayerMLP.get_params`",
-        "C": "Both MLP `get_params` methods",
+        "C": "Both of the MLP `get_params` methods, which the starter file already contains",
         "D": "`LinearClassifier.get_params`, which concatenates `W` then `b`"
       },
       "answer": "D",
@@ -7098,9 +7098,9 @@
       "stem": "The submitted cross-entropy adds `1e-12` inside the logarithm in order to:",
       "choices": {
         "A": "Prevent `log(0)` if a probability underflows to zero",
-        "B": "Convert logits into a one-hot vector",
-        "C": "Increase the learning rate by `1e-12`",
-        "D": "Make the ten class probabilities sum to 10"
+        "B": "Turn the logits into a one-hot vector",
+        "C": "Raise the learning rate by `1e-12`",
+        "D": "Make the ten class probabilities add up to 10 rather than 1"
       },
       "answer": "A",
       "explanation": "Avoid `log(0)` after underflow."
@@ -7111,10 +7111,10 @@
       "type": "mcq",
       "stem": "For the MLPs, softmax is applied:",
       "choices": {
-        "A": "Inside `forward`, before the logits are returned",
-        "B": "Only on the test set",
+        "A": "Inside `forward`, before the logits are returned to the caller",
+        "B": "Only when the test set is scored, and not in the loss",
         "C": "In `predict` and in the loss, not inside `forward`",
-        "D": "To the hidden sigmoid activations"
+        "D": "To the sigmoid outputs of the hidden layers"
       },
       "answer": "C",
       "explanation": "Softmax is in `predict` and the loss."
@@ -7125,9 +7125,9 @@
       "type": "mcq",
       "stem": "`best_epoch` stored in the training history is:",
       "choices": {
-        "A": "Always 20",
-        "B": "A one-based epoch number",
-        "C": "The test-set epoch with the lowest loss",
+        "A": "Always epoch 20, regardless of the validation curve",
+        "B": "A one-based epoch number, already aligned with the printed epoch on the plot",
+        "C": "The test-set epoch whose loss was lowest",
         "D": "A zero-based index; the printed epoch and the plot use `best_epoch + 1`"
       },
       "answer": "D",
@@ -7195,9 +7195,9 @@
       "type": "mcq",
       "stem": "Loss oscillates but remains finite and sometimes improves. How should the run be described?",
       "choices": {
-        "A": "Converged smoothly",
+        "A": "A run that has converged smoothly",
         "B": "Finite but unstable or overshooting, not the same as numerical overflow",
-        "C": "Guaranteed to give the best test result",
+        "C": "A run that is guaranteed to produce the best test result among the runs you compare",
         "D": "Evidence that the learning rate is too small"
       },
       "answer": "B",
@@ -7224,9 +7224,9 @@
       "stem": "One deep model stays near chance on the 10 percent dataset while another trains. What can be concluded from that run alone?",
       "choices": {
         "A": "The failed configuration did not train successfully under those settings; the run alone does not prove that all deeper models fail on small data",
-        "B": "Depth can never work with Fashion-MNIST",
-        "C": "Residual connections always guarantee the best test accuracy",
-        "D": "Every model with the same number of layers will fail under every learning rate"
+        "B": "Depth cannot work on Fashion-MNIST",
+        "C": "A residual connection always produces the best test accuracy",
+        "D": "Every model with that depth will fail at every learning rate and on every subset of the training data including the full training set you are given"
       },
       "answer": "A",
       "explanation": "A failed run is evidence about that configuration and run. It does not establish a universal rule about depth."
@@ -7238,9 +7238,9 @@
       "stem": "Why can reducing the training set from full data to 10 percent increase variance in the measured result?",
       "choices": {
         "A": "Fewer examples make the fitted parameters and selected checkpoint more sensitive to which rows were sampled",
-        "B": "Sampling variance is unchanged because the examples still come from Fashion-MNIST",
-        "C": "Fewer examples force every optimiser to reach the same parameter values",
-        "D": "The validation result becomes deterministic when the training set is smaller"
+        "B": "The variance does not change, because the rows are still Fashion-MNIST images rather than a new sample of images",
+        "C": "Fewer rows force every optimiser to the same parameter vector",
+        "D": "The validation score becomes deterministic once the training set is smaller"
       },
       "answer": "A",
       "explanation": "With fewer examples, sampling differences have more influence, so repeated runs can vary more."
@@ -7279,10 +7279,10 @@
       "type": "mcq",
       "stem": "On the full dataset with 20 fixed epochs, batch size 1 compared with batch size 16:",
       "choices": {
-        "A": "Makes the same number of parameter updates",
+        "A": "Makes the same number of parameter updates as batch size 16",
         "B": "Makes 16 times as many parameter updates and is usually slower in wall time",
-        "C": "Makes one-sixteenth as many updates because each batch contains fewer rows",
-        "D": "Makes an update count determined only by the model's hidden width"
+        "C": "Makes one-sixteenth as many updates, because each batch holds fewer rows than batch size 16",
+        "D": "Makes an update count that depends only on the hidden width"
       },
       "answer": "B",
       "explanation": "For the same examples and epochs, batch size 1 performs one update per example, while batch size 16 performs about one update per 16 examples."
@@ -7322,9 +7322,9 @@
       "stem": "Why are the 50 percent and 10 percent training sets useful in the assignment?",
       "choices": {
         "A": "They test how model performance and stability change when fewer training examples are available",
-        "B": "They isolate the effect of batch size while holding the number of training examples fixed",
-        "C": "They allow validation and test rows to be added to training without leakage",
-        "D": "They test whether reducing the training rows also reduces the input dimension"
+        "B": "They hold the training-set size fixed and vary only the batch size",
+        "C": "They let validation rows and test rows be added to training",
+        "D": "They check whether fewer training rows also shrink the input dimension from 784 inputs per image"
       },
       "answer": "A",
       "explanation": "Pruned datasets expose data-efficiency and stability differences that may be hidden with the full training set."
@@ -7336,9 +7336,9 @@
       "stem": "`forward` returns logits rather than probabilities. Where should softmax be applied?",
       "choices": {
         "A": "When probabilities are required by prediction or cross-entropy",
-        "B": "Before every hidden affine transformation",
+        "B": "Before every hidden affine map",
         "C": "Inside `get_params`, so the flattened weights sum to 1",
-        "D": "After converting the class label to a probability"
+        "D": "After the class label has been turned into a probability of 1 over the classes"
       },
       "answer": "A",
       "explanation": "The model's affine output is logits. Apply softmax only where class probabilities are needed; a combined cross-entropy implementation may consume logits directly."
@@ -7350,9 +7350,9 @@
       "stem": "Why should the loss function avoid changing parameters in place while autograd is tracing it?",
       "choices": {
         "A": "Mutation can corrupt the computational graph used to compute the gradient",
-        "B": "Mutation guarantees that every gradient is zero",
-        "C": "Mutation changes cross-entropy into mean squared error",
-        "D": "Mutation prevents the forward pass from producing logits"
+        "B": "An in-place change forces every gradient to zero",
+        "C": "An in-place change replaces cross-entropy with mean squared error during the trace",
+        "D": "An in-place change stops `forward` from returning logits"
       },
       "answer": "A",
       "explanation": "Autograd needs the forward operations and saved values unchanged so it can apply the chain rule correctly."
@@ -7405,10 +7405,10 @@
       "type": "mcq",
       "stem": "Iterative deepening runs depth-limited search with limit 0, then 1, then 2, and so on, until a goal is found. Which statement is correct?",
       "choices": {
-        "A": "It stores every generated layer, so its memory matches breadth-first search",
-        "B": "It is optimal for unequal positive step costs, because the first goal found has the smallest g",
+        "A": "It keeps every generated layer, so the memory matches breadth-first search",
+        "B": "It is optimal for unequal positive step costs, because the first goal has the smallest g and the later layers do not matter to the memory bound once the goal depth has been passed",
         "C": "Regenerating shallow nodes costs only a small factor, because most nodes are in the last layer and that layer is generated once. Memory is O(bd), as in depth-first search",
-        "D": "It is incomplete, because a finite depth limit can never reach a goal"
+        "D": "It is incomplete, because a finite depth limit can never reach a goal that sits deeper"
       },
       "answer": "C",
       "explanation": "The last layer dominates the node count and is generated only once, so the repeated shallow work is a small factor. The stored frontier is a depth-first path, O(bd). Unequal step costs remove the optimality claim."
@@ -7419,9 +7419,9 @@
       "type": "mcq",
       "stem": "A heuristic h never exceeds the true remaining cost to a goal. On at least one edge, h(n) > cost(n, n') + h(n'). A* may be run as tree search, or as graph search that drops repeated states. Which conclusion follows?",
       "choices": {
-        "A": "h is consistent, so both tree search and graph search are optimal",
-        "B": "h is inadmissible, so neither version is optimal",
-        "C": "h is consistent but not admissible, so only graph search is optimal",
+        "A": "h is consistent, so tree-search A* and graph-search A* are both optimal on every edge in the tree and in the graph",
+        "B": "h is inadmissible, so neither tree search nor graph search is optimal",
+        "C": "h is consistent but not admissible, so only graph-search A* is optimal",
         "D": "h is admissible but not consistent. Tree-search A* is optimal. Graph-search A* is not guaranteed to be optimal"
       },
       "answer": "D",
@@ -7434,8 +7434,8 @@
       "stem": "h1 and h2 are both admissible, and h2(n) >= h1(n) for every node, with h2 not identical to h1. For A* on the same problem, which claim holds?",
       "choices": {
         "A": "A* with h2 expands no more nodes than A* with h1, except possibly some nodes whose f equals the optimal cost, and h2 is still admissible",
-        "B": "h2 is inadmissible, because a larger heuristic must overestimate somewhere",
-        "C": "A* with h1 expands fewer nodes, because a smaller heuristic is more accurate",
+        "B": "h2 is inadmissible, because a larger heuristic has to overestimate at some node",
+        "C": "A* with h1 expands fewer nodes than A* with h2, because the smaller heuristic is treated as the more accurate one at every node it expands",
         "D": "h2 is inconsistent, because dominance breaks the triangle inequality"
       },
       "answer": "A",
@@ -7447,9 +7447,9 @@
       "type": "mcq",
       "stem": "For the 8-puzzle, consider the relaxation that keeps \"move to an adjacent square\" and drops \"the destination must be blank\". The exact cost of that relaxed puzzle is used as h. Which heuristic is that, and why is it admissible?",
       "choices": {
-        "A": "The number of misplaced tiles. It is admissible because each wrong tile costs at least one move",
+        "A": "The number of misplaced tiles. It is admissible because each tile that is off its goal square costs at least one move, and tiles that are already correct cost nothing",
         "B": "Manhattan distance. It is admissible because every legal solution of the real puzzle is also a solution of the relaxed puzzle, so the relaxed cost is a lower bound",
-        "C": "The path cost g. It is admissible because g is exact",
+        "C": "The path cost g. It is admissible because g is an exact cost rather than an estimate",
         "D": "The true remaining solution length. A* then expands only the goal"
       },
       "answer": "B",
@@ -7643,9 +7643,9 @@
       "type": "mcq",
       "stem": "The VC dimension of a classifier family is the size of the largest set of points that family can shatter: for every way of labelling those points, some classifier in the family labels them perfectly. In this course a perceptron in the plane has VC dimension 3. Which reading matches that definition?",
       "choices": {
-        "A": "Any training set of 3 points is memorised, so the test error on those points is zero, and this is how you choose a learning rate",
+        "A": "Any training set of 3 points is memorised, so the test error on those points is zero, and that is how the learning rate is chosen for the perceptron in the plane",
         "B": "The gap between training error and test error is 3 percent",
-        "C": "XOR is linearly separable, because a VC dimension of 3 is only a bound on training time",
+        "C": "XOR is linearly separable, because a VC dimension of 3 only bounds the training time",
         "D": "Three points that are not on one pathological line can receive every labelling from some perceptron, and four points in an XOR arrangement cannot be shattered"
       },
       "answer": "D",
