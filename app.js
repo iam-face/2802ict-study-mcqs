@@ -8,6 +8,7 @@ const state = {
   mode: "all",
   n: 20,
   quiz: [],
+  quizTitle: "",
   answers: {},
   index: 0,
 };
@@ -25,6 +26,14 @@ function questionType(question) {
 
 function lettersFor(question) {
   return questionType(question) === "tf" ? ["T", "F"] : ["A", "B", "C", "D"];
+}
+
+function isRed(question) {
+  return Array.isArray(question.tags) && question.tags.includes("red");
+}
+
+function redQuestions() {
+  return state.bank.questions.filter(isRed);
 }
 
 function pool() {
@@ -95,6 +104,7 @@ function saveSession() {
     mode: state.mode,
     n: state.n,
     quizIds: state.quiz.map((question) => question.id),
+    quizTitle: state.quizTitle,
     answers: state.answers,
     index: state.index,
   };
@@ -113,6 +123,7 @@ function restoreSession() {
     state.types = new Set(Array.isArray(saved.types) && saved.types.length ? saved.types : ["mcq", "tf"]);
     state.mode = ["all", "random", "balanced"].includes(saved.mode) ? saved.mode : "all";
     state.n = Number.isFinite(saved.n) ? saved.n : 20;
+    state.quizTitle = saved.quizTitle || "";
     state.answers = saved.answers || {};
     state.index = saved.index || 0;
     const byId = new Map(state.bank.questions.map((question) => [question.id, question]));
@@ -149,6 +160,34 @@ function startQuiz() {
     chosen = shuffle([...mcqs, ...trueFalse]);
   }
   state.quiz = chosen;
+  state.quizTitle = "";
+  state.answers = {};
+  state.index = 0;
+  state.screen = "quiz";
+  saveSession();
+  render();
+}
+
+function startRedQuiz() {
+  const order = new Map(state.bank.sections.map((section, index) => [section.id, index]));
+  const chosen = redQuestions().slice().sort((a, b) => {
+    const bySection = (order.get(a.sectionId) || 0) - (order.get(b.sectionId) || 0);
+    if (bySection) {
+      return bySection;
+    }
+    if (a.id < b.id) {
+      return -1;
+    }
+    if (a.id > b.id) {
+      return 1;
+    }
+    return 0;
+  });
+  if (!chosen.length) {
+    return;
+  }
+  state.quiz = chosen;
+  state.quizTitle = "Red items";
   state.answers = {};
   state.index = 0;
   state.screen = "quiz";
@@ -167,6 +206,7 @@ function retrySame() {
 function newSetup() {
   state.screen = "setup";
   state.quiz = [];
+  state.quizTitle = "";
   state.answers = {};
   state.index = 0;
   saveSession();
@@ -261,6 +301,12 @@ function renderSetup() {
 
   app.innerHTML = `
     <h1>2802ICT Study MCQs</h1>
+    <h2>Red items</h2>
+    <div class="card">
+      <p>Questions on the phrases printed in red on the lecture slides. Lecture 8 has no red text.</p>
+      <p class="meta">${redQuestions().length} questions, in lecture order.</p>
+      <button type="button" class="primary" id="start-red" ${redQuestions().length ? "" : "disabled"}>Start red items quiz</button>
+    </div>
     <aside class="disclaimer">
       <p>This is an unofficial revision aid made by a student. It is not affiliated with, endorsed by, or provided by Griffith University, the 2802ICT convenor, or the teaching team.</p>
       <p>The questions and answers were drafted with AI from the author's own notes. They can be wrong, incomplete, or out of date. Check anything you rely on against the lectures, labs, and assignment briefs.</p>
@@ -294,6 +340,7 @@ function renderSetup() {
     </div>
   `;
 
+  app.querySelector("#start-red").addEventListener("click", startRedQuiz);
   app.querySelector("#select-all").addEventListener("click", () => {
     state.selected = new Set(state.bank.sections.map((section) => section.id));
     saveSession();
@@ -386,7 +433,7 @@ function renderQuiz() {
     <div class="quiz-toolbar">
       <button type="button" class="danger" id="cancel">Cancel quiz</button>
     </div>
-    <p class="meta">${escapeHtml(sectionTitle(question.sectionId))} | ${escapeHtml(question.id)}</p>
+    <p class="meta">${state.quizTitle ? `${escapeHtml(state.quizTitle)} | ` : ""}${escapeHtml(sectionTitle(question.sectionId))} | ${escapeHtml(question.id)}</p>
     <p class="meta">Question ${state.index + 1} of ${total}</p>
     <div class="progress" aria-hidden="true"><span style="width:${width}%"></span></div>
     <div class="card">
@@ -434,7 +481,7 @@ function renderResults() {
     return `
       <article class="card review ${ok ? "correct" : "incorrect"}">
         <div class="badge">${ok ? "Correct" : "Incorrect"}</div>
-        <p class="meta">${escapeHtml(sectionTitle(question.sectionId))} | ${escapeHtml(question.id)}</p>
+        <p class="meta">${state.quizTitle ? `${escapeHtml(state.quizTitle)} | ` : ""}${escapeHtml(sectionTitle(question.sectionId))} | ${escapeHtml(question.id)}</p>
         <p>${escapeHtml(question.stem)}</p>
         <ul>${choices}</ul>
         <p>Your answer: <span class="yours">${escapeHtml(shownAnswer(question, yours))}</span>. Correct answer: <span class="key">${escapeHtml(shownAnswer(question, question.answer))}</span>.</p>
@@ -447,7 +494,7 @@ function renderResults() {
   const percent = total ? Math.round((correct / total) * 100) : 0;
 
   app.innerHTML = `
-    <h1>Results</h1>
+    <h1>${state.quizTitle ? escapeHtml(state.quizTitle) : "Results"}</h1>
     <p class="score">${correct} / ${total}</p>
     <p class="lede">${percent}% correct. ${total - correct} incorrect.</p>
     <div class="row-actions">

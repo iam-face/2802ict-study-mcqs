@@ -413,6 +413,23 @@
       "explanation": "A textbook agent perceives and acts. Agentic means steps, tools, and revising its own work."
     },
     {
+      "id": "L1-Q21",
+      "sectionId": "L1",
+      "type": "mcq",
+      "stem": "The introduction slides print one sentence in red about academic integrity. What does it say?",
+      "choices": {
+        "A": "Misconduct is waived if the program still runs",
+        "B": "Only textbook code is reported, and assignment code is not",
+        "C": "You will be reported to the University for academic integrity misconduct",
+        "D": "Red sentences are optional background and are not part of the course rules"
+      },
+      "tags": [
+        "red"
+      ],
+      "answer": "C",
+      "explanation": "The red sentence says academic integrity misconduct is reported to the University."
+    },
+    {
       "id": "L2-Q01",
       "sectionId": "L2",
       "type": "mcq",
@@ -507,6 +524,9 @@
         "C": "The order of node expansion",
         "D": "The sigmoid threshold 0.5"
       },
+      "tags": [
+        "red"
+      ],
       "answer": "C",
       "explanation": "Strategy = expansion order"
     },
@@ -549,6 +569,9 @@
         "C": "Complete for DFS only; optimal for greedy search",
         "D": "Complete when the branching factor is finite and a solution exists at a finite depth; optimal when all step costs are equal"
       },
+      "tags": [
+        "red"
+      ],
       "answer": "D",
       "explanation": "With finite branching, BFS eventually reaches any goal at a finite depth. It returns a shallowest goal, which is cheapest only when every step has the same cost."
     },
@@ -577,6 +600,9 @@
         "C": "It expands deepest nodes first",
         "D": "Space is the bigger problem (than time)"
       },
+      "tags": [
+        "red"
+      ],
       "answer": "D",
       "explanation": "Space bigger problem than time"
     },
@@ -605,6 +631,9 @@
         "C": "It expands by lowest h(n) only",
         "D": "Frontier is a priority queue ordered by path cost g; goal test when selected for expansion"
       },
+      "tags": [
+        "red"
+      ],
       "answer": "D",
       "explanation": "Priority by g; goal test on expand"
     },
@@ -619,6 +648,9 @@
         "C": "Complete if each step has minimal cost >= epsilon; optimal yes",
         "D": "Optimal only for greedy best-first"
       },
+      "tags": [
+        "red"
+      ],
       "answer": "C",
       "explanation": "Complete if step cost >= epsilon; optimal"
     },
@@ -633,6 +665,9 @@
         "C": "Priority queue by f = g + h",
         "D": "Set with no order"
       },
+      "tags": [
+        "red"
+      ],
       "answer": "B",
       "explanation": "LIFO stack"
     },
@@ -647,6 +682,9 @@
         "C": "Yes always; Yes; exponential space only",
         "D": "Complete like BFS; Optimal like UCS; O(1) space"
       },
+      "tags": [
+        "red"
+      ],
       "answer": "B",
       "explanation": "Incomplete in general; not optimal; O(bm) space"
     },
@@ -675,6 +713,9 @@
         "C": "Randomly restarting hill climbing",
         "D": "Enforcing arc consistency with AC-3"
       },
+      "tags": [
+        "red"
+      ],
       "answer": "A",
       "explanation": "Increase l until solution found"
     },
@@ -691,6 +732,91 @@
       },
       "answer": "C",
       "explanation": "BFS for short solutions; DFS if many; IDS linear space"
+    },
+    {
+      "id": "L2-Q21",
+      "sectionId": "L2",
+      "type": "mcq",
+      "stem": "The depth-limited search slide marks which implementation in red?",
+      "choices": {
+        "A": "A recursive implementation",
+        "B": "A FIFO queue that stores every depth at once",
+        "C": "A priority queue ordered by h(n)",
+        "D": "Beam search with a fixed width"
+      },
+      "tags": [
+        "red"
+      ],
+      "answer": "A",
+      "explanation": "Depth-limited search is presented with a recursive implementation."
+    },
+    {
+      "id": "L2-Q22",
+      "sectionId": "L2",
+      "type": "mcq",
+      "stem": "The title slide prints a reading instruction in red. Which reading is it?",
+      "choices": {
+        "A": "AIMA Chapter 1, pages 1-30",
+        "B": "AIMA Chapter 3, pages 64-91",
+        "C": "AIMA Chapter 4, pages 120-129",
+        "D": "AIMA section 21.1 only"
+      },
+      "tags": [
+        "red"
+      ],
+      "answer": "B",
+      "explanation": "The red reading line is AIMA Chapter 3, pages 64-91."
+    },
+    {
+      "id": "L2-Q23",
+      "sectionId": "L2",
+      "type": "mcq",
+      "stem": "Completeness and optimality, as the slides define those two words, ask whether:",
+      "choices": {
+        "A": "The frontier is a stack, and whether memory is linear",
+        "B": "The heuristic is consistent, and whether gamma equals 1",
+        "C": "The agent has sensors, and whether a test set was used",
+        "D": "A solution is found whenever one exists, and whether that solution is a lowest-cost one"
+      },
+      "tags": [
+        "red"
+      ],
+      "answer": "D",
+      "explanation": "Completeness asks whether a solution is found whenever one exists. Optimality asks whether that solution is a lowest-cost one."
+    },
+    {
+      "id": "L2-Q24",
+      "sectionId": "L2",
+      "type": "mcq",
+      "stem": "The UCS property slide marks which time and space bounds?",
+      "choices": {
+        "A": "O(bm) for time and O(bm) for space",
+        "B": "O(b^(C*/epsilon)) for time and the same bound for space, where C* is the optimal path cost",
+        "C": "O(b^d) for time and O(1) for space",
+        "D": "Constant time once the heuristic is admissible"
+      },
+      "tags": [
+        "red"
+      ],
+      "answer": "B",
+      "explanation": "UCS time and space are both O(b^(C*/epsilon)). C* is the optimal path cost and epsilon is the smallest step cost."
+    },
+    {
+      "id": "L2-Q25",
+      "sectionId": "L2",
+      "type": "mcq",
+      "stem": "The DFS property slide marks which time bound?",
+      "choices": {
+        "A": "O(b^d)",
+        "B": "O(bm)",
+        "C": "O(b^(C*/epsilon))",
+        "D": "O(1)"
+      },
+      "tags": [
+        "red"
+      ],
+      "answer": "B",
+      "explanation": "The DFS property slide marks time as O(bm)."
     },
     {
       "id": "L3-Q01",
@@ -745,6 +871,9 @@
         "C": "f(n) = h(n) (estimate of cost from n to goal)",
         "D": "f(n) = number of attacking queens"
       },
+      "tags": [
+        "red"
+      ],
       "answer": "C",
       "explanation": "Greedy uses h(n)"
     },
@@ -829,6 +958,9 @@
         "C": "h(n) = 0 only at non-goals",
         "D": "h(n) always equals Manhattan distance"
       },
+      "tags": [
+        "red"
+      ],
       "answer": "A",
       "explanation": "Never overestimates h*"
     },
@@ -857,6 +989,9 @@
         "C": "g(n) = h(n)",
         "D": "f(n) decreases along every path"
       },
+      "tags": [
+        "red"
+      ],
       "answer": "B",
       "explanation": "Triangle inequality form of consistency"
     },
@@ -899,6 +1034,9 @@
         "C": "h1(S) = 4 and h2(S) = 4",
         "D": "h1(S) = 8 and h2(S) = 18"
       },
+      "tags": [
+        "red"
+      ],
       "answer": "D",
       "explanation": "h1=8, h2=18"
     },
@@ -927,6 +1065,9 @@
         "C": "h2 dominates h1 and is better for search",
         "D": "A* becomes incomplete"
       },
+      "tags": [
+        "red"
+      ],
       "answer": "C",
       "explanation": "Larger admissible heuristic dominates"
     },
@@ -955,6 +1096,9 @@
         "C": "Random restarts of hill climbing",
         "D": "Softmax cross-entropy"
       },
+      "tags": [
+        "red"
+      ],
       "answer": "A",
       "explanation": "Relaxed-problem exact costs"
     },
@@ -971,6 +1115,91 @@
       },
       "answer": "B",
       "explanation": "RBFS compares a branch's backed-up score with its best alternative; SMA* forgets a worst leaf and records its score for possible regeneration."
+    },
+    {
+      "id": "L3-Q21",
+      "sectionId": "L3",
+      "type": "mcq",
+      "stem": "On the best-first search slide, what do g(n) and f(n) do?",
+      "choices": {
+        "A": "g(n) is the cost still to pay, and f(n) is the branching factor",
+        "B": "Both count how many nodes are stored",
+        "C": "g(n) is the heuristic, and f(n) is the depth limit",
+        "D": "g(n) measures the path cost so far to reach n, and f(n) estimates the total path cost of a path through n"
+      },
+      "tags": [
+        "red"
+      ],
+      "answer": "D",
+      "explanation": "g(n) measures cost already paid to reach n. f(n) estimates the cost of a whole path through n."
+    },
+    {
+      "id": "L3-Q22",
+      "sectionId": "L3",
+      "type": "mcq",
+      "stem": "When is A* optimal, according to the admissibility theorem on the slides?",
+      "choices": {
+        "A": "Whenever repeated nodes are checked, even if h overestimates",
+        "B": "When h is admissible and A* does not check repeated nodes",
+        "C": "When the frontier is a stack and h is greedy",
+        "D": "For every search that expands the deepest node"
+      },
+      "tags": [
+        "red"
+      ],
+      "answer": "B",
+      "explanation": "If h is admissible, A* that does not check repeated nodes is optimal."
+    },
+    {
+      "id": "L3-Q23",
+      "sectionId": "L3",
+      "type": "mcq",
+      "stem": "Which relaxed 8-puzzle rules match h1 and h2?",
+      "choices": {
+        "A": "A tile may move anywhere, and that relaxation gives h1. A tile may move to any adjacent square, and that relaxation gives h2",
+        "B": "A tile may move only into the blank for h1, and may not move for h2",
+        "C": "Both heuristics keep the real rule that a tile must be next to the blank",
+        "D": "h1 is Manhattan distance and h2 counts misplaced tiles"
+      },
+      "tags": [
+        "red"
+      ],
+      "answer": "A",
+      "explanation": "Moving anywhere is the relaxation behind misplaced tiles. Moving to any adjacent square is the relaxation behind Manhattan distance."
+    },
+    {
+      "id": "L3-Q24",
+      "sectionId": "L3",
+      "type": "mcq",
+      "stem": "Which property row matches A* on the slides?",
+      "choices": {
+        "A": "Complete? No. Time? O(bm). Space? O(bm). Optimal? No",
+        "B": "Complete? Yes. Time? O(bd). Space? O(bd). Optimal? Only when h is 0",
+        "C": "Complete? Yes. Time? Exponential. Space? Exponential. Optimal? Yes",
+        "D": "Complete? Yes. Time? Linear. Space? Constant. Optimal? No"
+      },
+      "tags": [
+        "red"
+      ],
+      "answer": "C",
+      "explanation": "The A* slide marks complete, exponential time, exponential space, and optimal."
+    },
+    {
+      "id": "L3-Q25",
+      "sectionId": "L3",
+      "type": "mcq",
+      "stem": "Greedy best-first search expands which node, and which property row matches the slides?",
+      "choices": {
+        "A": "The node that appears closest to the goal. Complete? No. Time? O(bm). Space? O(bm). Optimal? No",
+        "B": "The least g-cost node. Complete? Yes. Optimal? Yes",
+        "C": "The deepest node. Complete? Yes. Space? O(bd)",
+        "D": "The node with the largest f(n). Complete? Yes. Optimal? Yes"
+      },
+      "tags": [
+        "red"
+      ],
+      "answer": "A",
+      "explanation": "Greedy search expands the node that appears closest to the goal, and the slide marks it incomplete, O(bm) time, O(bm) space, and not optimal."
     },
     {
       "id": "L4A-Q01",
@@ -1123,6 +1352,9 @@
         "C": "Enforce MRV variable ordering",
         "D": "Compute softmax probabilities"
       },
+      "tags": [
+        "red"
+      ],
       "answer": "A",
       "explanation": "Escape shoulders/plateaus"
     },
@@ -1253,6 +1485,57 @@
       "explanation": "3-opt > 2-opt; 4-opt not worth cost"
     },
     {
+      "id": "L4A-Q21",
+      "sectionId": "L4A",
+      "type": "mcq",
+      "stem": "Which design issue is printed in red on the local-search slides?",
+      "choices": {
+        "A": "Choosing a FIFO frontier for breadth-first search",
+        "B": "Defining a suitable neighbourhood relation",
+        "C": "Proving that VC-dimension equals 3",
+        "D": "Setting a softmax temperature"
+      },
+      "tags": [
+        "red"
+      ],
+      "answer": "B",
+      "explanation": "The red sentence says a key design issue is a suitable neighbourhood relation."
+    },
+    {
+      "id": "L4A-Q22",
+      "sectionId": "L4A",
+      "type": "mcq",
+      "stem": "What do the slides conclude about random-restart hill climbing on 8-queens?",
+      "choices": {
+        "A": "It fails once the state space exceeds 100 states",
+        "B": "It is optimal only when the heuristic is consistent",
+        "C": "It removes the need to define a neighbourhood",
+        "D": "It is very effective for 8-queens"
+      },
+      "tags": [
+        "red"
+      ],
+      "answer": "D",
+      "explanation": "The slide says random-restart hill climbing is very effective for 8-queens."
+    },
+    {
+      "id": "L4A-Q23",
+      "sectionId": "L4A",
+      "type": "mcq",
+      "stem": "Sideways moves can leave a shoulder. The slides then mark \"Problem?\" What is that problem?",
+      "choices": {
+        "A": "Sideways moves make an admissible heuristic overestimate",
+        "B": "Sideways moves delete the constraint graph",
+        "C": "With no cap, sideways moves can wander a flat plateau without end",
+        "D": "Sideways moves force every MDP state to be terminal"
+      },
+      "tags": [
+        "red"
+      ],
+      "answer": "C",
+      "explanation": "Sideways moves leave a shoulder. With no limit they can walk a flat plateau forever, which is why the lecture caps a run at 100 sideways moves."
+    },
+    {
       "id": "L4B-Q01",
       "sectionId": "L4B",
       "type": "mcq",
@@ -1263,6 +1546,9 @@
         "C": "Variables Xi with values from domains Di, plus constraints",
         "D": "Only PEAS sensors"
       },
+      "tags": [
+        "red"
+      ],
       "answer": "C",
       "explanation": "Variables, domains, constraints"
     },
@@ -1319,6 +1605,9 @@
         "C": "Nodes are heuristics; arcs are losses",
         "D": "Nodes are actions; arcs are path costs"
       },
+      "tags": [
+        "red"
+      ],
       "answer": "B",
       "explanation": "Variables=nodes; constraints=arcs"
     },
@@ -1473,6 +1762,9 @@
         "C": "X is assigned before Y in MRV",
         "D": "For every value x of X there is some allowed y of Y"
       },
+      "tags": [
+        "red"
+      ],
       "answer": "D",
       "explanation": "Every x has supporting y"
     },
@@ -1515,6 +1807,9 @@
         "C": "Violates the fewest constraints (hill-climb on number of violations)",
         "D": "Is always the first domain value"
       },
+      "tags": [
+        "red"
+      ],
       "answer": "C",
       "explanation": "Min-conflicts value choice"
     },
@@ -1531,6 +1826,57 @@
       },
       "answer": "B",
       "explanation": "The definition will be printed. MRV picks the variable with the fewest legal values. Degree breaks ties. LCV orders the values."
+    },
+    {
+      "id": "L4B-Q21",
+      "sectionId": "L4B",
+      "type": "mcq",
+      "stem": "The CSP slides describe a CSP as which kind of language, and what does that allow?",
+      "choices": {
+        "A": "A formal representation language, which allows general-purpose algorithms with more power than standard search",
+        "B": "A heuristic that replaces every constraint",
+        "C": "A supervised training set with no variables",
+        "D": "An off-policy update for Q-values"
+      },
+      "tags": [
+        "red"
+      ],
+      "answer": "A",
+      "explanation": "A CSP is given as a formal representation language that supports general-purpose algorithms stronger than ordinary search."
+    },
+    {
+      "id": "L4B-Q22",
+      "sectionId": "L4B",
+      "type": "mcq",
+      "stem": "A binary CSP, as defined on the slides, is one in which:",
+      "choices": {
+        "A": "Every variable has a domain of size two",
+        "B": "The constraint graph has exactly two nodes",
+        "C": "Each constraint relates two variables",
+        "D": "Search stops after two assignments"
+      },
+      "tags": [
+        "red"
+      ],
+      "answer": "C",
+      "explanation": "In a binary CSP each constraint relates two variables."
+    },
+    {
+      "id": "L4B-Q23",
+      "sectionId": "L4B",
+      "type": "mcq",
+      "stem": "To apply local search to a CSP, the operators:",
+      "choices": {
+        "A": "Expand a FIFO frontier of partial paths",
+        "B": "Reassign values to variables",
+        "C": "Delete the constraint graph before search",
+        "D": "Replace the constraints with h(n) and ignore the domains"
+      },
+      "tags": [
+        "red"
+      ],
+      "answer": "B",
+      "explanation": "Local search on a CSP reassigns variable values, starting from a complete assignment that may still violate constraints."
     },
     {
       "id": "L5-Q01",
@@ -1571,6 +1917,9 @@
         "C": "Only maximising delayed rewards",
         "D": "Association rules without targets"
       },
+      "tags": [
+        "red"
+      ],
       "answer": "A",
       "explanation": "Learn input->output from labelled pairs"
     },
@@ -1599,6 +1948,9 @@
         "C": "Both require no labels",
         "D": "Both are identical to reinforcement learning"
       },
+      "tags": [
+        "red"
+      ],
       "answer": "B",
       "explanation": "Continuous vs discrete targets"
     },
@@ -1683,6 +2035,9 @@
         "C": "Grouping similar instances without output labels",
         "D": "Enforcing SA != WA"
       },
+      "tags": [
+        "red"
+      ],
       "answer": "C",
       "explanation": "Group similar unlabelled instances"
     },
@@ -1753,6 +2108,9 @@
         "C": "Ignores all unseen data",
         "D": "Correctly predicts y on a test set distinct from training"
       },
+      "tags": [
+        "red"
+      ],
       "answer": "D",
       "explanation": "Good predictions on held-out test set"
     },
@@ -1767,6 +2125,9 @@
         "C": "Always an inconsistent hypothesis",
         "D": "Softmax over polynomials"
       },
+      "tags": [
+        "red"
+      ],
       "answer": "B",
       "explanation": "Prefer simplest competing hypothesis"
     },
@@ -1813,6 +2174,57 @@
       "explanation": "Fits training too closely; poor generalisation"
     },
     {
+      "id": "L5-Q21",
+      "sectionId": "L5",
+      "type": "mcq",
+      "stem": "On the evaluation slides, learning is a search through what?",
+      "choices": {
+        "A": "The frontier of a breadth-first search",
+        "B": "The colours of a map-colouring CSP",
+        "C": "The test set alone",
+        "D": "The hypothesis space"
+      },
+      "tags": [
+        "red"
+      ],
+      "answer": "D",
+      "explanation": "The evaluation slides call learning a search through the hypothesis space."
+    },
+    {
+      "id": "L5-Q22",
+      "sectionId": "L5",
+      "type": "mcq",
+      "stem": "Association (rule) learning, listed with the unsupervised methods, looks for:",
+      "choices": {
+        "A": "A label y for every input x",
+        "B": "Co-occurrence rules, with no predefined class",
+        "C": "A policy that maximises one delayed reward and then stops",
+        "D": "The shortest path in an unweighted graph"
+      },
+      "tags": [
+        "red"
+      ],
+      "answer": "B",
+      "explanation": "Association (rule) learning finds co-occurrence rules and has no predefined class."
+    },
+    {
+      "id": "L5-Q23",
+      "sectionId": "L5",
+      "type": "mcq",
+      "stem": "The reinforcement-learning slide says the agent learns to act in a way that:",
+      "choices": {
+        "A": "Minimises cross-entropy on labelled pairs",
+        "B": "Finds one consistent colouring of a map",
+        "C": "Maximises the future rewards it receives from a series of reinforcements",
+        "D": "Stores every state on a FIFO frontier"
+      },
+      "tags": [
+        "red"
+      ],
+      "answer": "C",
+      "explanation": "The agent learns to act so as to maximise future rewards from a series of reinforcements."
+    },
+    {
       "id": "L6-Q01",
       "sectionId": "L6",
       "type": "mcq",
@@ -1823,6 +2235,9 @@
         "C": "Number of attacking queens",
         "D": "A weighted sum of features (#beds, #baths, #garage, #land) plus bias b"
       },
+      "tags": [
+        "red"
+      ],
       "answer": "D",
       "explanation": "Weighted sum of house features + bias"
     },
@@ -1935,6 +2350,9 @@
         "C": "w_t = w_{t-1} * eta only",
         "D": "w_t = argmax_i o_i"
       },
+      "tags": [
+        "red"
+      ],
       "answer": "A",
       "explanation": "Descend: subtract eta * gradient"
     },
@@ -2061,6 +2479,9 @@
         "C": "0.5 (e.g., >= 0.5 -> class 1, else class 0)",
         "D": "Branching factor b"
       },
+      "tags": [
+        "red"
+      ],
       "answer": "C",
       "explanation": "Threshold 0.5 for binary decision"
     },
@@ -2075,6 +2496,9 @@
         "C": "This course develops convolutional nets for ImageNet and does not use softmax",
         "D": "Softmax is for several classes, with cross-entropy. MNIST and Fashion-MNIST have 10 classes. ImageNet, about 1000 classes, was his example of a problem that wants a convolutional net, which this course does not develop"
       },
+      "tags": [
+        "red"
+      ],
       "answer": "D",
       "explanation": "Softmax plus cross-entropy is the multi-class head. MNIST and Fashion-MNIST are 10 classes. ImageNet, about 1000 classes, was the convolutional-net example, and that architecture is not developed here. Recurrent nets were the matching remark for language."
     },
@@ -2091,6 +2515,23 @@
       },
       "answer": "B",
       "explanation": "If the data are not separable, cap the updates, for example at about 100 steps. There is no guarantee of a best line."
+    },
+    {
+      "id": "L6-Q21",
+      "sectionId": "L6",
+      "type": "mcq",
+      "stem": "Which three claims match the perceptron slide?",
+      "choices": {
+        "A": "Inputs are feature values, each feature has a weight, and the sum is the hypothesis function",
+        "B": "Inputs are rewards, each feature has a depth limit, and the sum is h(n)",
+        "C": "Inputs are class labels, there is no weight, and there is no sum",
+        "D": "Inputs are CPT rows, each feature is a parent, and the sum is a joint probability"
+      },
+      "tags": [
+        "red"
+      ],
+      "answer": "A",
+      "explanation": "The perceptron slide marks feature values, a weight on each feature, and the sum as the hypothesis function."
     },
     {
       "id": "L7-Q01",
@@ -2201,6 +2642,9 @@
         "C": "delta_j = (1 - y_j) (z_j - y_j)",
         "D": "delta_j = y_j (1 - y_j) (z_j - y_j)"
       },
+      "tags": [
+        "red"
+      ],
       "answer": "D",
       "explanation": "Output delta_j = y_j(1-y_j)(z_j - y_j)."
     },
@@ -2215,6 +2659,9 @@
         "C": "eta * y_j * sum_k delta'_k",
         "D": "y_j (1 - y_j) sum_k delta'_k w'_k"
       },
+      "tags": [
+        "red"
+      ],
       "answer": "D",
       "explanation": "Hidden delta uses y_j(1-y_j) times weighted later deltas."
     },
@@ -2371,6 +2818,23 @@
       },
       "answer": "B",
       "explanation": "ReLU is max(0, z), a comparison, so it is cheap next to a sigmoid. Tanh outputs in (-1, 1)."
+    },
+    {
+      "id": "L7-Q21",
+      "sectionId": "L7",
+      "type": "mcq",
+      "stem": "The back-propagation description on the slides says the method:",
+      "choices": {
+        "A": "Sees one example and then freezes every weight",
+        "B": "Changes a weight only when the classification is already correct",
+        "C": "Solves the weights in one closed form from the test set",
+        "D": "Takes training examples and, for each example, modifies the weights to reduce the error between the network's classification and the actual classification"
+      },
+      "tags": [
+        "red"
+      ],
+      "answer": "D",
+      "explanation": "Back-propagation is given training examples and changes weights to reduce the error between the network's classification and the true classification."
     },
     {
       "id": "L8-Q01",
@@ -2663,6 +3127,9 @@
         "C": "true/positive or false/negative",
         "D": "an unordered set of clusters"
       },
+      "tags": [
+        "red"
+      ],
       "answer": "C",
       "explanation": "Binary classification: positive/true vs negative/false."
     },
@@ -2691,6 +3158,9 @@
         "C": "the \"best\" attribute for the current node, then creating a child per value",
         "D": "only numeric attributes with infinite domains"
       },
+      "tags": [
+        "red"
+      ],
       "answer": "C",
       "explanation": "Pick best attribute; child per value; recurse."
     },
@@ -2931,6 +3401,23 @@
       },
       "answer": "B",
       "explanation": "Drop incomplete rows, or fill them when dropping would throw away too much."
+    },
+    {
+      "id": "L9-Q21",
+      "sectionId": "L9",
+      "type": "mcq",
+      "stem": "A decision tree, as defined on the slides, is:",
+      "choices": {
+        "A": "A policy that maps each MDP state to an action",
+        "B": "A function from a vector of attribute values to one output. An internal node tests one attribute, the branches are labelled with that attribute's values, and a leaf states the output",
+        "C": "A Bayes net whose leaves store a single CPT for the whole graph",
+        "D": "A linear sum of feature weights with a hard threshold"
+      },
+      "tags": [
+        "red"
+      ],
+      "answer": "B",
+      "explanation": "A decision tree maps an attribute vector to one output. Internal nodes test an attribute, branches carry the values, and leaves state the output."
     },
     {
       "id": "L10-Q01",
@@ -3209,8 +3696,28 @@
         "C": "that the Alarm network has no local CPTs",
         "D": "that smarter organisation of sums/products can reduce work versus naive expansion"
       },
+      "tags": [
+        "red"
+      ],
       "answer": "D",
       "explanation": "Factoring shared subexpressions cuts arithmetic work."
+    },
+    {
+      "id": "L10-Q21",
+      "sectionId": "L10",
+      "type": "mcq",
+      "stem": "The syntax slide equates a Bayes net with:",
+      "choices": {
+        "A": "One joint table and no graph",
+        "B": "The graph alone, with the conditional probabilities left out",
+        "C": "Topology (the graph) plus local conditional probabilities",
+        "D": "A set of actions and a reward function"
+      },
+      "tags": [
+        "red"
+      ],
+      "answer": "C",
+      "explanation": "A Bayes net is the graph plus the local conditional probabilities."
     },
     {
       "id": "L11-Q01",
@@ -3223,6 +3730,9 @@
         "C": "a Bayes net CPT over attributes only",
         "D": "T(s, a, s') = P(s'|s,a) and R(s, a, s')"
       },
+      "tags": [
+        "red"
+      ],
       "answer": "D",
       "explanation": "MDP needs T(s,a,s') and R(s,a,s')."
     },
@@ -3265,6 +3775,9 @@
         "C": "deleting the Q-table after every episode",
         "D": "setting gamma = 0 always"
       },
+      "tags": [
+        "red"
+      ],
       "answer": "B",
       "explanation": "Explore for info vs exploit known good actions."
     },
@@ -3433,6 +3946,9 @@
         "C": "it never uses rewards",
         "D": "it requires a known transition model T"
       },
+      "tags": [
+        "red"
+      ],
       "answer": "A",
       "explanation": "Off-policy: optimal Q despite suboptimal behaviour (with caveats)."
     },
@@ -3491,6 +4007,74 @@
       },
       "answer": "D",
       "explanation": "A Bayes net represents uncertain variables and their dependencies. An MDP adds choices, action-dependent state transitions, rewards, and repeated decisions over time."
+    },
+    {
+      "id": "L11-Q21",
+      "sectionId": "L11",
+      "type": "mcq",
+      "stem": "Besides states, actions, a transition function, and a reward function, the MDP definition includes:",
+      "choices": {
+        "A": "A start state, and possibly a terminal state",
+        "B": "A labelled pair (x, y) for every state",
+        "C": "A constraint graph over map colours",
+        "D": "An admissible heuristic h(n)"
+      },
+      "tags": [
+        "red"
+      ],
+      "answer": "A",
+      "explanation": "An MDP also has a start state and possibly a terminal state."
+    },
+    {
+      "id": "L11-Q22",
+      "sectionId": "L11",
+      "type": "mcq",
+      "stem": "The reinforcement-learning twist on the slides is that the agent:",
+      "choices": {
+        "A": "Is given T and R and must not try actions",
+        "B": "Receives a supervised label for every action",
+        "C": "Plans offline with breadth-first search and never acts",
+        "D": "Does not know T or R, and must act so as to maximise expected rewards"
+      },
+      "tags": [
+        "red"
+      ],
+      "answer": "D",
+      "explanation": "Reinforcement learning keeps the MDP but does not know T or R, and the agent acts to maximise expected reward."
+    },
+    {
+      "id": "L11-Q23",
+      "sectionId": "L11",
+      "type": "mcq",
+      "stem": "Which pair matches the slide definitions of sampling and generalisation?",
+      "choices": {
+        "A": "Sampling means try an unknown action once. Generalisation means ignore every other state",
+        "B": "Sampling means repeat many times to get a good estimate. Generalisation means a lesson from one state may apply in other states",
+        "C": "Sampling means always take the greedy action. Generalisation means keep a separate value for every state and never share it",
+        "D": "Both words are another name for exploitation"
+      },
+      "tags": [
+        "red"
+      ],
+      "answer": "B",
+      "explanation": "Sampling repeats an outcome often enough to estimate it. Generalisation carries a lesson from one state into others."
+    },
+    {
+      "id": "L11-Q24",
+      "sectionId": "L11",
+      "type": "mcq",
+      "stem": "The slides give different goals for passive reinforcement learning and for Q-learning. Those goals are:",
+      "choices": {
+        "A": "Both methods learn a labelled training set and then stop",
+        "B": "Passive learning learns the optimal policy. Q-learning learns no values",
+        "C": "Passive learning learns the state values. Q-learning learns the optimal policy and values",
+        "D": "Passive learning learns T exactly. Q-learning learns only the start state"
+      },
+      "tags": [
+        "red"
+      ],
+      "answer": "C",
+      "explanation": "Passive learning learns state values under a fixed policy. Q-learning learns the optimal policy and values."
     },
     {
       "id": "Lab2-Q01",
@@ -7565,6 +8149,9 @@
         "T": "True",
         "F": "False"
       },
+      "tags": [
+        "red"
+      ],
       "answer": "T",
       "explanation": "A solution is complete and consistent."
     },
@@ -7709,6 +8296,9 @@
         "T": "True",
         "F": "False"
       },
+      "tags": [
+        "red"
+      ],
       "answer": "T",
       "explanation": "Consistent means every training pair is fit."
     },

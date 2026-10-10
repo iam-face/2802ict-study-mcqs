@@ -41,8 +41,8 @@ SECTION_META = [
     ("EX", "Final exam drill", "exam"),
 ]
 
-Q_HEAD = re.compile(r"^### ([A-Za-z0-9]+-Q\d+)\s*$")
-T_HEAD = re.compile(r"^### ([A-Za-z0-9]+-T\d+)\s*$")
+Q_HEAD = re.compile(r"^### ([A-Za-z0-9]+-Q\d+)(?:\s+red)?\s*$")
+T_HEAD = re.compile(r"^### ([A-Za-z0-9]+-T\d+)(?:\s+red)?\s*$")
 EX_T_HEAD = re.compile(r"^### (EX-T\d+)\s*$")
 CHOICE = re.compile(r"^([A-D])\.\s+(.*)$")
 ANSWER = re.compile(r"^\*\*([A-Za-z0-9]+-Q\d+):\*\*\s+([A-D])\.\s+(.*)$")
@@ -100,6 +100,8 @@ def parse(text: str) -> dict:
                 "stem": "",
                 "choices": {"A": "", "B": "", "C": "", "D": ""},
             }
+            if line.endswith(" red"):
+                current["tags"] = ["red"]
             choice_letter = None
             continue
 
@@ -192,6 +194,8 @@ def parse_tf(text: str) -> list[dict]:
                 "stem": "",
                 "choices": {"T": "True", "F": "False"},
             }
+            if line.endswith(" red"):
+                current["tags"] = ["red"]
             continue
         if current is None or not line.strip() or line.startswith("#") or line.strip() == "---":
             continue
@@ -322,7 +326,8 @@ def main() -> None:
     for question in data["questions"]:
         tally = counts.setdefault(question["sectionId"], [0, 0])
         tally[0 if question["type"] == "mcq" else 1] += 1
-    print(f"Wrote {len(data['questions'])} questions to {OUTPUT}")
+    red = sum(1 for question in data["questions"] if "red" in question.get("tags", []))
+    print(f"Wrote {len(data['questions'])} questions to {OUTPUT} ({red} red)")
     for section in data["sections"]:
         mcq, tf = counts.get(section["id"], [0, 0])
         print(f"  {section['id']}: {mcq} mcq, {tf} tf  {section['title']}")
