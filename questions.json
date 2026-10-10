@@ -1,6 +1,11 @@
 {
   "sections": [
     {
+      "id": "RED",
+      "title": "Red items",
+      "kind": "red"
+    },
+    {
       "id": "L1",
       "title": "Lecture 1: Introduction",
       "kind": "lecture"

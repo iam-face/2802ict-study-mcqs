@@ -13,6 +13,7 @@ OUTPUT = ROOT / "questions.json"
 
 # Section ids in source order. Titles fill from ## headers when present.
 SECTION_META = [
+    ("RED", "Red items", "red"),
     ("L1", "Lecture 1: Introduction", "lecture"),
     ("L2", "Lecture 2: Uninformed Search", "lecture"),
     ("L3", "Lecture 3: Informed Search", "lecture"),
@@ -229,7 +230,7 @@ def parse_tf(text: str) -> list[dict]:
         tally = balance.setdefault(question["sectionId"], [0, 0])
         tally[0 if question["answer"] == "T" else 1] += 1
     for sid, _, kind in SECTION_META:
-        if kind == "exam":
+        if kind in ("exam", "red"):
             continue
         count = per_section.get(sid, 0)
         if count != 10:
