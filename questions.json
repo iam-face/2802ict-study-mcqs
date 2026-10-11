@@ -2,7 +2,7 @@
   "sections": [
     {
       "id": "RED",
-      "title": "Red items",
+      "title": "Highlighted items",
       "kind": "red"
     },
     {
@@ -824,6 +824,40 @@
       "explanation": "The DFS property slide marks time as O(bm)."
     },
     {
+      "id": "L2-Q26",
+      "sectionId": "L2",
+      "type": "mcq",
+      "stem": "A search node, on the uninformed-search slides, is a data structure that stores which four things?",
+      "choices": {
+        "A": "A state, a parent, the action applied to the parent, and the path cost from the initial state",
+        "B": "The frontier order, the closed list, the goal test, and the branching factor of the current tree",
+        "C": "Performance, environment, actuators, and sensors, which is the PEAS list for an agent",
+        "D": "A variable, its domain, one binary constraint, and a complete consistent assignment"
+      },
+      "tags": [
+        "blue"
+      ],
+      "answer": "A",
+      "explanation": "A node stores the state, the parent, the action that produced it, and the path cost from the initial state."
+    },
+    {
+      "id": "L2-Q27",
+      "sectionId": "L2",
+      "type": "mcq",
+      "stem": "On the formal-definition slide, a state and a search problem are:",
+      "choices": {
+        "A": "A state is one action in the action list. The problem is only the pair made by a frontier and a closed list",
+        "B": "A state is an exact configuration of the agent and the world. The problem is the 5-tuple S0, A, T, G, C",
+        "C": "A state is the heuristic value h(n). The problem is the pair f(n) and g(n) used by A* on a graph",
+        "D": "A state is a leaf label in a tree. The problem is a decision tree built from the Play Golf attributes"
+      },
+      "tags": [
+        "blue"
+      ],
+      "answer": "B",
+      "explanation": "A state is a configuration of the agent and the world. The formal problem is the 5-tuple S0, A, T, G, C."
+    },
+    {
       "id": "L3-Q01",
       "sectionId": "L3",
       "type": "mcq",
@@ -1150,7 +1184,8 @@
         "D": "For every search that expands the deepest node"
       },
       "tags": [
-        "red"
+        "red",
+        "blue"
       ],
       "answer": "B",
       "explanation": "If h is admissible, A* that does not check repeated nodes is optimal."
@@ -1207,6 +1242,40 @@
       "explanation": "Greedy search expands the node that appears closest to the goal, and the slide marks it incomplete, O(bm) time, O(bm) space, and not optimal."
     },
     {
+      "id": "L3-Q26",
+      "sectionId": "L3",
+      "type": "mcq",
+      "stem": "The optimality slide for A* that checks repeated nodes says:",
+      "choices": {
+        "A": "Admissibility of h is enough on its own, so a consistent heuristic is never required once repeated nodes are dropped",
+        "B": "Consistency of h makes A* incomplete on a graph, so repeated nodes have to stay in the search tree",
+        "C": "If h is consistent, A* is optimal when repeated nodes are checked. Admissibility alone does not give that guarantee",
+        "D": "If h is consistent, A* expands the deepest unexpanded node and stores only the nodes on the current path"
+      },
+      "tags": [
+        "blue"
+      ],
+      "answer": "C",
+      "explanation": "Consistency is the condition given for A* when repeated nodes are checked. Admissibility is the condition for A* without that check."
+    },
+    {
+      "id": "L3-Q27",
+      "sectionId": "L3",
+      "type": "mcq",
+      "stem": "On the Romania example, the heuristic hSLD(n) is:",
+      "choices": {
+        "A": "The straight-line distance from n to Bucharest, and it does not overestimate the road distance",
+        "B": "The path cost g(n) already paid along the roads that were used to reach the current node",
+        "C": "The number of misplaced tiles on the 8-puzzle start state, which the Romania slide sets at 8",
+        "D": "The Manhattan distance on a grid maze, ignoring every wall between the agent and the goal cell"
+      },
+      "tags": [
+        "blue"
+      ],
+      "answer": "A",
+      "explanation": "hSLD(n) is straight-line distance to Bucharest, and the slide says it does not overestimate road distance."
+    },
+    {
       "id": "L4A-Q01",
       "sectionId": "L4A",
       "type": "mcq",
@@ -1217,6 +1286,9 @@
         "C": "Whether breadth-first search is complete on that same problem",
         "D": "The sensors listed in the PEAS description of the agent"
       },
+      "tags": [
+        "blue"
+      ],
       "answer": "A",
       "explanation": "Care about final configuration, not path"
     },
@@ -1245,6 +1317,9 @@
         "C": "Configurations reachable from X in one \"move\"",
         "D": "The Turing Test interlocutor"
       },
+      "tags": [
+        "blue"
+      ],
       "answer": "C",
       "explanation": "One-move neighbourhood"
     },
@@ -1315,6 +1390,9 @@
         "C": "Solves 14%; stuck 86% of the time",
         "D": "Succeeds on exactly half of the random starts"
       },
+      "tags": [
+        "blue"
+      ],
       "answer": "C",
       "explanation": "14% solve; stuck 86%"
     },
@@ -1388,6 +1466,9 @@
         "C": "About 3,644,035 nodes, the figure for a different search",
         "D": "21 steps for success, 64 for failure"
       },
+      "tags": [
+        "blue"
+      ],
       "answer": "D",
       "explanation": "~21 success / ~64 failure steps"
     },
@@ -1430,6 +1511,9 @@
         "C": "1/p, roughly 7 restarts",
         "D": "100 restarts, the cap used for sideways moves"
       },
+      "tags": [
+        "blue"
+      ],
       "answer": "C",
       "explanation": "Expected restarts 1/p ~ 7"
     },
@@ -1556,6 +1640,40 @@
       ],
       "answer": "C",
       "explanation": "Variables, domains, constraints"
+    },
+    {
+      "id": "L4A-Q24",
+      "sectionId": "L4A",
+      "type": "mcq",
+      "stem": "The local-search slides give which account of why every configuration is not enumerated?",
+      "choices": {
+        "A": "Breadth-first search stores only the nodes that lie on the current path, so listing out every configuration stays cheap",
+        "B": "Eval(X) is free to compute for every neighbour, and a closed form always supplies the maximum",
+        "C": "The neighbourhood of X is empty for every start, so hill climbing has no move that it can consider",
+        "D": "The set of configurations is too large to list, Eval may be expensive, and no efficient algorithm finds the maximum"
+      },
+      "tags": [
+        "blue"
+      ],
+      "answer": "D",
+      "explanation": "The slide lists a configuration set too large to enumerate, an evaluation that may be expensive, and no efficient algorithm for the maximum."
+    },
+    {
+      "id": "L4A-Q25",
+      "sectionId": "L4A",
+      "type": "mcq",
+      "stem": "The challenge stated for local search, and the 8-queens global solution, are:",
+      "choices": {
+        "A": "Store the whole path that reached X*. A global solution is any board whose h is greater than 0",
+        "B": "Reach a global optimum through a sequence of local moves. For 8-queens a global solution has h = 0",
+        "C": "Expand the node with the least g. A global solution is the first goal that breadth-first search generates",
+        "D": "Revise every arc with AC-3. A global solution is a colouring that still has one region uncoloured"
+      },
+      "tags": [
+        "blue"
+      ],
+      "answer": "B",
+      "explanation": "Local search tries to get a global optimum from local moves. On 8-queens the global solution is h = 0."
     },
     {
       "id": "L4B-Q02",
@@ -1939,6 +2057,9 @@
         "C": "A CSP variable paired with one colour from its domain",
         "D": "A state paired with the action taken in that state"
       },
+      "tags": [
+        "blue"
+      ],
       "answer": "B",
       "explanation": "Feature xi with target yi"
     },
@@ -2041,7 +2162,8 @@
         "D": "Enforcing SA != WA"
       },
       "tags": [
-        "red"
+        "red",
+        "blue"
       ],
       "answer": "C",
       "explanation": "Group similar unlabelled instances"
@@ -2071,6 +2193,9 @@
         "C": "Only breadth-first search and depth-first search",
         "D": "Only heuristics that never overestimate the remaining cost"
       },
+      "tags": [
+        "blue"
+      ],
       "answer": "A",
       "explanation": "Few labels + many unlabeled"
     },
@@ -2247,6 +2372,40 @@
       "explanation": "Weighted sum of house features + bias"
     },
     {
+      "id": "L5-Q24",
+      "sectionId": "L5",
+      "type": "mcq",
+      "stem": "On the three-tasks slide, classification and regression are distinguished by the kind of output:",
+      "choices": {
+        "A": "Classification predicts a number. Regression predicts a category label",
+        "B": "Both predict a delayed reward, and neither of them uses an input feature",
+        "C": "Classification predicts a category. Regression predicts a numerical value",
+        "D": "Classification clusters rows that have no labels. Regression is a map-colouring CSP"
+      },
+      "tags": [
+        "blue"
+      ],
+      "answer": "C",
+      "explanation": "The slide marks classification as categorical data and regression as numerical data."
+    },
+    {
+      "id": "L5-Q25",
+      "sectionId": "L5",
+      "type": "mcq",
+      "stem": "In the supervised-learning notation on the slides, the function h is called:",
+      "choices": {
+        "A": "A hypothesis: the function that maps an input feature vector to a predicted output",
+        "B": "A heuristic: the estimate of remaining cost that A* adds to the path cost g(n)",
+        "C": "A hidden unit: the middle layer that a feed-forward net computes before the output",
+        "D": "A conditional table: the local probability distribution stored at one Bayes net node"
+      },
+      "tags": [
+        "blue"
+      ],
+      "answer": "A",
+      "explanation": "The supervised slide says the function h is traditionally called a hypothesis."
+    },
+    {
       "id": "L6-Q02",
       "sectionId": "L6",
       "type": "mcq",
@@ -2386,6 +2545,9 @@
         "C": "Exactly n variables of a CSP",
         "D": "32-512 depending on hardware"
       },
+      "tags": [
+        "blue"
+      ],
       "answer": "D",
       "explanation": "Typical batches 32-512"
     },
@@ -2533,10 +2695,45 @@
         "D": "Inputs are rows of a CPT, each feature is a parent, and the sum is a joint probability of the parents"
       },
       "tags": [
-        "red"
+        "red",
+        "blue"
       ],
       "answer": "A",
       "explanation": "The perceptron slide marks feature values, a weight on each feature, and the sum as the hypothesis function."
+    },
+    {
+      "id": "L6-Q22",
+      "sectionId": "L6",
+      "type": "mcq",
+      "stem": "On the perceptron weight-update slide, case I (predict +1, true class -1) and the compact form are:",
+      "choices": {
+        "A": "Case I adds the input feature vector, so w' = w + f. The compact form written on that slide is w' = w - y_hat * f",
+        "B": "Case I subtracts the input, so w' = w - f. The compact form is w' = w + y_hat * f, and y_hat is the true class",
+        "C": "Case I sets every weight to zero. The compact form drops the old weight vector and sets w' equal to f",
+        "D": "Case I multiplies by the step size only. The compact form on the slide is w' = eta * f, with no true class"
+      },
+      "tags": [
+        "blue"
+      ],
+      "answer": "B",
+      "explanation": "Predicting +1 when the true class is -1 uses w' = w - f. The compact update is w' = w + y_hat * f."
+    },
+    {
+      "id": "L6-Q23",
+      "sectionId": "L6",
+      "type": "mcq",
+      "stem": "The logistic-regression slide defines that model as:",
+      "choices": {
+        "A": "A hard threshold on a linear score, with the output left as +1 or -1 and with no squash",
+        "B": "A softmax over 10 classes, applied to a single continuous target such as a house price",
+        "C": "Mean squared error on a linear score, with the prediction allowed to fall outside 0 and 1",
+        "D": "A linear function squashed by the logistic function, so the output lies between 0 and 1"
+      },
+      "tags": [
+        "blue"
+      ],
+      "answer": "D",
+      "explanation": "The slide defines logistic regression as a linear function squashed by the logistic function."
     },
     {
       "id": "L7-Q01",
@@ -2648,7 +2845,8 @@
         "D": "delta_j = y_j (1 - y_j) (z_j - y_j)"
       },
       "tags": [
-        "red"
+        "red",
+        "blue"
       ],
       "answer": "D",
       "explanation": "Output delta_j = y_j(1-y_j)(z_j - y_j)."
@@ -2695,6 +2893,9 @@
         "C": "Skip the deltas and add the learning rate, unchanged, to every weight",
         "D": "Compute the deltas from the weights used on the forward pass, then change the weights. A hidden unit inherits its delta from the units it feeds"
       },
+      "tags": [
+        "blue"
+      ],
       "answer": "D",
       "explanation": "Compute deltas from the forward-pass weights, then change the weights. A hidden delta is inherited from the units it feeds."
     },
@@ -3264,6 +3465,9 @@
         "C": "maximises the number of values regardless of purity",
         "D": "always prefers Type over Patrons"
       },
+      "tags": [
+        "blue"
+      ],
       "answer": "A",
       "explanation": "Choose attribute with largest IG."
     },
@@ -3617,6 +3821,9 @@
         "C": "(d - 1) * d1 * d2 * ... * dk",
         "D": "n * d^k for that one table only, always"
       },
+      "tags": [
+        "blue"
+      ],
       "answer": "C",
       "explanation": "Free params (d-1) d1...dk per CPT."
     },
@@ -3645,6 +3852,9 @@
         "C": "P(X1,...,Xn) = max_i P(Xi)",
         "D": "The joint cannot be recovered from the local conditional tables"
       },
+      "tags": [
+        "blue"
+      ],
       "answer": "A",
       "explanation": "Joint = product of P(Xi | Parents(Xi))."
     },
@@ -3659,6 +3869,9 @@
         "C": "only its children",
         "D": "a random subset of nodes"
       },
+      "tags": [
+        "blue"
+      ],
       "answer": "A",
       "explanation": "Independent of non-descendants given parents."
     },
@@ -3781,7 +3994,8 @@
         "D": "Setting the discount gamma to 0 for the whole run"
       },
       "tags": [
-        "red"
+        "red",
+        "blue"
       ],
       "answer": "B",
       "explanation": "Explore for info vs exploit known good actions."
@@ -3853,6 +4067,9 @@
         "C": "Maximising Q with epsilon-greedy from the first episode",
         "D": "Averaging only the first reward of each episode, with later rewards dropped"
       },
+      "tags": [
+        "blue"
+      ],
       "answer": "B",
       "explanation": "Average sampled returns from each state."
     },
@@ -4080,6 +4297,108 @@
       ],
       "answer": "C",
       "explanation": "Passive learning learns state values under a fixed policy. Q-learning learns the optimal policy and values."
+    },
+    {
+      "id": "L7-Q22",
+      "sectionId": "L7",
+      "type": "mcq",
+      "stem": "In the forward pass through one hidden unit, the slide's order is:",
+      "choices": {
+        "A": "A weighted sum of each previous layer's outputs, plus the unit bias, then a nonlinear activation",
+        "B": "A nonlinear activation of the raw inputs first, then a weighted sum, with the bias left out of the unit",
+        "C": "A delta for every unit before any output is computed, and the weights are changed before the pass",
+        "D": "A copy of the target written straight onto the output unit, with no weight applied to the inputs"
+      },
+      "tags": [
+        "blue"
+      ],
+      "answer": "A",
+      "explanation": "The forward-pass slide forms the weighted sum, adds the bias, then applies the nonlinear activation."
+    },
+    {
+      "id": "L7-Q23",
+      "sectionId": "L7",
+      "type": "mcq",
+      "stem": "On the back-propagation slide, eta is described as:",
+      "choices": {
+        "A": "The number of hidden units, and it has to be larger than the number of inputs",
+        "B": "The momentum term, which replaces the learning rate on every weight update",
+        "C": "The learning rate, also called the gain or the step size, with 0 < eta < 1",
+        "D": "The output gap z - y, which is stored only on the units in the input layer"
+      },
+      "tags": [
+        "blue"
+      ],
+      "answer": "C",
+      "explanation": "eta is the learning rate, also called the gain or step size, and the slide restricts it to the open interval from 0 to 1."
+    },
+    {
+      "id": "L9-Q22",
+      "sectionId": "L9",
+      "type": "mcq",
+      "stem": "Entropy, as the decision-tree slides use that word, measures:",
+      "choices": {
+        "A": "The path cost already paid from the root of the tree down to the current leaf",
+        "B": "The uncertainty of a random variable, which is the quantity a split is meant to reduce",
+        "C": "The count of attributes that have not yet been tested anywhere in the decision tree",
+        "D": "The depth limit used when iterative deepening search is run on the same training table"
+      },
+      "tags": [
+        "blue"
+      ],
+      "answer": "B",
+      "explanation": "The entropy slide says entropy measures the uncertainty of a random variable."
+    },
+    {
+      "id": "L10-Q22",
+      "sectionId": "L10",
+      "type": "mcq",
+      "stem": "An event, and marginalisation, are described as:",
+      "choices": {
+        "A": "An event is a set of outcomes. Marginalisation sums out the variables that are not being kept",
+        "B": "An event is one row of a conditional table. Marginalisation multiplies a variable by each of its parents",
+        "C": "An event is a missing arc. Marginalisation adds one extra parent to every node in the graph",
+        "D": "An event is the full joint. Marginalisation is refused, because every variable has to stay in the sum"
+      },
+      "tags": [
+        "blue"
+      ],
+      "answer": "A",
+      "explanation": "An event is a set of outcomes. A marginal keeps some variables and sums the others out."
+    },
+    {
+      "id": "L10-Q23",
+      "sectionId": "L10",
+      "type": "mcq",
+      "stem": "The inference slide says that computing a probability from a Bayes net means:",
+      "choices": {
+        "A": "One lookup in a single conditional probability table, and the work stays linear in the number of nodes",
+        "B": "A depth-first walk over the whole graph, storing only the nodes that lie on the current path",
+        "C": "Hill climbing on the number of violated constraints inside one complete assignment",
+        "D": "Sums of products of the local numbers, and a naive sum contains exponentially many products"
+      },
+      "tags": [
+        "blue"
+      ],
+      "answer": "D",
+      "explanation": "Inference is described as sums of products, and the slide flags exponentially many products as the problem."
+    },
+    {
+      "id": "L11-Q25",
+      "sectionId": "L11",
+      "type": "mcq",
+      "stem": "On the definition slide, Q(s, a) and V(s) are:",
+      "choices": {
+        "A": "Q(s, a) is the reward collected from one sample. V(s) is the transition probability T(s, a, s')",
+        "B": "Q(s, a) is the value of following one fixed policy. V(s) is the number of times state s has been visited",
+        "C": "Q(s, a) is the value of taking a in s and then acting optimally. V(s) is the maximum of those Q-values",
+        "D": "Q(s, a) is the start state written on the MDP. V(s) is the terminal reward drawn on the episode diagram"
+      },
+      "tags": [
+        "blue"
+      ],
+      "answer": "C",
+      "explanation": "Q(s, a) is the value of action a in s followed by optimal behaviour. V(s) is the max over those optimal Q-values."
     },
     {
       "id": "Lab2-Q01",

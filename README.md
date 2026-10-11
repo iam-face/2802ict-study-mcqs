@@ -1,6 +1,6 @@
 # 2802ICT Study MCQ quiz
 
-Static quiz for the 796 objective questions in `../Study MCQs.md` and `../Study TF.md`. It includes lecture, lab, workshop, assignment, and final-exam-drill sections, plus a Red items section. It runs in the browser only. There is no account and no saved history beyond the current tab session (a refresh keeps the sitting you are in).
+Static quiz for the objective questions in `../Study MCQs.md` and `../Study TF.md`. It includes lecture, lab, workshop, assignment, and final-exam-drill sections, plus a Highlighted items section. It runs in the browser only. There is no account and no saved history beyond the current tab session (a refresh keeps the sitting you are in).
 
 ## Use it locally
 
@@ -14,7 +14,7 @@ Open `http://localhost:8080/`. Loading `index.html` as a file will fail, because
 
 ## Quiz
 
-1. Tick the sections to practise. Red items is the phrases printed in red on the lecture slides. Those questions also sit inside their lectures, and a question is not repeated if both are ticked. Select all and Clear apply to every section.
+1. Tick the sections to practise. Highlighted items is the phrases printed in red or in blue on the lecture slides. Those questions also sit inside their lectures, and a question is not repeated if both are ticked. Select all and Clear apply to every section.
 2. Tick multiple choice, true/false, or both. Counts next to each section follow that filter.
 3. Choose every question, a random sample, or balanced objective practice. Balanced practice draws 10 multiple-choice and 10 true/false questions across the selected sections.
 4. Choose one answer. The quiz locks it, reports whether it is correct, and shows the correct answer and rationale before enabling Next.

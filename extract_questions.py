@@ -13,7 +13,7 @@ OUTPUT = ROOT / "questions.json"
 
 # Section ids in source order. Titles fill from ## headers when present.
 SECTION_META = [
-    ("RED", "Red items", "red"),
+    ("RED", "Highlighted items", "red"),
     ("L1", "Lecture 1: Introduction", "lecture"),
     ("L2", "Lecture 2: Uninformed Search", "lecture"),
     ("L3", "Lecture 3: Informed Search", "lecture"),
@@ -42,8 +42,8 @@ SECTION_META = [
     ("EX", "Final exam drill", "exam"),
 ]
 
-Q_HEAD = re.compile(r"^### ([A-Za-z0-9]+-Q\d+)(?:\s+red)?\s*$")
-T_HEAD = re.compile(r"^### ([A-Za-z0-9]+-T\d+)(?:\s+red)?\s*$")
+Q_HEAD = re.compile(r"^### ([A-Za-z0-9]+-Q\d+)((?:\s+(?:red|blue))*)\s*$")
+T_HEAD = re.compile(r"^### ([A-Za-z0-9]+-T\d+)((?:\s+(?:red|blue))*)\s*$")
 EX_T_HEAD = re.compile(r"^### (EX-T\d+)\s*$")
 CHOICE = re.compile(r"^([A-D])\.\s+(.*)$")
 ANSWER = re.compile(r"^\*\*([A-Za-z0-9]+-Q\d+):\*\*\s+([A-D])\.\s+(.*)$")
@@ -101,8 +101,9 @@ def parse(text: str) -> dict:
                 "stem": "",
                 "choices": {"A": "", "B": "", "C": "", "D": ""},
             }
-            if line.endswith(" red"):
-                current["tags"] = ["red"]
+            tags = re.findall(r"red|blue", head.group(2))
+            if tags:
+                current["tags"] = tags
             choice_letter = None
             continue
 
@@ -195,8 +196,9 @@ def parse_tf(text: str) -> list[dict]:
                 "stem": "",
                 "choices": {"T": "True", "F": "False"},
             }
-            if line.endswith(" red"):
-                current["tags"] = ["red"]
+            tags = re.findall(r"red|blue", head.group(2))
+            if tags:
+                current["tags"] = tags
             continue
         if current is None or not line.strip() or line.startswith("#") or line.strip() == "---":
             continue
@@ -327,8 +329,12 @@ def main() -> None:
     for question in data["questions"]:
         tally = counts.setdefault(question["sectionId"], [0, 0])
         tally[0 if question["type"] == "mcq" else 1] += 1
-    red = sum(1 for question in data["questions"] if "red" in question.get("tags", []))
-    print(f"Wrote {len(data['questions'])} questions to {OUTPUT} ({red} red)")
+    highlighted = sum(
+        1
+        for question in data["questions"]
+        if "red" in question.get("tags", []) or "blue" in question.get("tags", [])
+    )
+    print(f"Wrote {len(data['questions'])} questions to {OUTPUT} ({highlighted} highlighted)")
     for section in data["sections"]:
         mcq, tf = counts.get(section["id"], [0, 0])
         print(f"  {section['id']}: {mcq} mcq, {tf} tf  {section['title']}")

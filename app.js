@@ -27,8 +27,9 @@ function lettersFor(question) {
   return questionType(question) === "tf" ? ["T", "F"] : ["A", "B", "C", "D"];
 }
 
-function isRed(question) {
-  return Array.isArray(question.tags) && question.tags.includes("red");
+function isHighlighted(question) {
+  const tags = question.tags;
+  return Array.isArray(tags) && (tags.includes("red") || tags.includes("blue"));
 }
 
 function sectionCount(section) {
@@ -37,7 +38,7 @@ function sectionCount(section) {
       return false;
     }
     if (section.id === "RED") {
-      return isRed(question);
+      return isHighlighted(question);
     }
     return question.sectionId === section.id;
   }).length;
@@ -51,7 +52,7 @@ function pool() {
     if (state.selected.has(question.sectionId)) {
       return true;
     }
-    return state.selected.has("RED") && isRed(question);
+    return state.selected.has("RED") && isHighlighted(question);
   });
 }
 
@@ -263,7 +264,7 @@ function escapeHtml(value) {
 
 function renderSetup() {
   const groups = [
-    ["red", "Red items"],
+    ["red", "Highlighted items"],
     ["exam", "Exam drill"],
     ["lecture", "Lectures"],
     ["lab", "Labs"],
