@@ -7938,15 +7938,15 @@
       "id": "EX-Q17",
       "sectionId": "EX",
       "type": "mcq",
-      "stem": "A Bayes net's joint probability is the product of one local conditional per node. For one assignment the factors are P(B) = 0.001, P(not E) = 0.998, P(A | B, not E) = 0.94, P(not J | A) = 0.1, and P(not M | A) = 0.3. What is that joint probability, rounded to six decimal places?",
+      "stem": "A Bayes net's joint probability is the product of one local conditional per node. For one assignment the factors are `P(B) = 0.10`, `P(not E) = 0.80`, `P(A | B, not E) = 0.50`, `P(not J | A) = 0.50`, and `P(not M | A) = 0.50`. What is that joint probability?",
       "choices": {
-        "A": "0.000028",
-        "B": "0.000281",
-        "C": "0.002814",
-        "D": "0.028144"
+        "A": "`0.01`",
+        "B": "`0.10`",
+        "C": "`0.02`",
+        "D": "`0.001`"
       },
       "answer": "A",
-      "explanation": "0.001 * 0.998 * 0.94 * 0.1 * 0.3 = 0.0000281436, which rounds to 0.000028."
+      "explanation": "`0.10 * 0.80 * 0.50 * 0.50 * 0.50 = 0.01`. The expression has one local factor for each node."
     },
     {
       "id": "EX-Q18",
@@ -8092,29 +8092,29 @@
       "id": "EX2-Q07",
       "sectionId": "EX2",
       "type": "mcq",
-      "stem": "Logistic regression computes `z = w . x + b`, then `p = 1/(1 + e^(-z))`, and predicts class 1 when `p >= 0.5`. For one input, `z = ln(3)`. Which conclusion is correct?",
+      "stem": "Logistic regression computes `z = w . x + b`, then `p = 1/(1 + e^(-z))`, and predicts class 1 when `p >= 0.5`. For one input, the supplied value is `e^(-z) = 1/3`. Which conclusion is correct?",
       "choices": {
-        "A": "`p = 0.25`, and the sigmoid makes the decision boundary non-linear",
-        "B": "`p = 0.75`, and the decision boundary remains the hyperplane `z = 0`",
-        "C": "`p = 3`, and the class boundary is the curved graph of the sigmoid",
-        "D": "`p = 0.50`, and logistic regression discards the original linear score"
+        "A": "`p = 0.25`, class 0, and the sigmoid makes the decision boundary non-linear",
+        "B": "`p = 0.75`, class 1, and the decision boundary remains the hyperplane `z = 0`",
+        "C": "`p = 3`, class 1, and the class boundary is the curved graph of the sigmoid",
+        "D": "`p = 0.50`, class 1, and logistic regression discards the original linear score"
       },
       "answer": "B",
-      "explanation": "`e^(-ln(3)) = 1/3`, so the probability is `1/(1+1/3) = 0.75`. Squashing does not bend the boundary `z = 0`."
+      "explanation": "The supplied value gives `p = 1/(1+1/3) = 3/4 = 0.75`, so the class is 1. Squashing does not bend the boundary `z = 0`."
     },
     {
       "id": "EX2-Q08",
       "sectionId": "EX2",
       "type": "mcq",
-      "stem": "A sigmoid hidden unit has activation `y_h = 0.4`. It feeds two output units through forward-pass weights `0.7` and `-0.6`. Their stored deltas are `0.3` and `-0.2`. The supplied hidden-delta rule is: `delta_h = y_h(1-y_h) * sum_k(delta_k * w_hk)` No weights have yet changed. Which procedure is correct?",
+      "stem": "A sigmoid hidden unit has activation `y_h = 0.5`. It feeds two output units through forward-pass weights `0.5` and `-0.5`. Their stored deltas are `0.4` and `-0.4`. The supplied hidden-delta rule is: `delta_h = y_h(1-y_h) * sum_k(delta_k * w_hk)` No weights have yet changed. Which procedure is correct?",
       "choices": {
-        "A": "Store `delta_h = 0.33`, then update every weight together",
-        "B": "Store `delta_h = 0.24`, then update all of the outgoing weights first",
-        "C": "Update the outgoing weights, then store `delta_h = 0.0792`",
-        "D": "Store `delta_h = 0.0792` from the old weights, then update weights"
+        "A": "Store `delta_h = 0.40`, then update every weight together",
+        "B": "Store `delta_h = 0.25`, then update all of the outgoing weights first",
+        "C": "Update the outgoing weights, then store `delta_h = 0.10`",
+        "D": "Store `delta_h = 0.10` from the old weights, then update weights"
       },
       "answer": "D",
-      "explanation": "The weighted downstream sum is `0.3*0.7 + (-0.2)*(-0.6) = 0.33`; multiplying by `0.4*0.6` gives `0.0792`. Deltas use forward-pass weights."
+      "explanation": "The weighted downstream sum is `0.4*0.5 + (-0.4)*(-0.5) = 0.4`; multiplying by `0.5*0.5` gives `0.10`. Deltas use forward-pass weights."
     },
     {
       "id": "EX2-Q09",
@@ -8134,15 +8134,15 @@
       "id": "EX2-Q10",
       "sectionId": "EX2",
       "type": "mcq",
-      "stem": "Direct policy evaluation follows a fixed policy and averages the discounted returns observed from each state. With `gamma = 0.6`, three visits to state `K` produce these reward sequences from `K` to termination: - `[3, 2]` - `[-2, 4]` - `[1, 0, 5]` What is the direct-evaluation estimate of `V(K)`?",
+      "stem": "Direct policy evaluation follows a fixed policy and averages the discounted returns observed from each state. With `gamma = 0.5`, three visits to state `K` produce these reward sequences from `K` to termination: - `[3, 2]` - `[-2, 4]` - `[1, 0, 4]` What is the direct-evaluation estimate of `V(K)`?",
       "choices": {
-        "A": "`4.33`",
-        "B": "`2.80`",
-        "C": "`2.47`",
-        "D": "`0.67`"
+        "A": "`4`",
+        "B": "`3`",
+        "C": "`2`",
+        "D": "`1`"
       },
       "answer": "C",
-      "explanation": "The returns are `4.2`, `0.4`, and `2.8`; their mean is approximately `2.47`."
+      "explanation": "The returns are `3 + 0.5*2 = 4`, `-2 + 0.5*4 = 0`, and `1 + 0.5*0 + 0.25*4 = 2`. Their mean is `2`."
     },
     {
       "id": "EX3-Q01",
@@ -8246,15 +8246,15 @@
       "id": "EX3-Q08",
       "sectionId": "EX3",
       "type": "mcq",
-      "stem": "A hidden sigmoid unit receives `x = [2, -1, 0.5]`, has weights `[0.4, -0.6, 1.2]`, and bias `-0.3`. Use `a = 1 / (1 + exp(-z))`. What are its pre-activation and activation?",
+      "stem": "A hidden sigmoid unit receives `x = [2, -1, 0.5]`, has weights `[0.4, -0.6, 1.2]`, and bias `-0.3`. Use `a = 1 / (1 + exp(-z))`. What is its pre-activation, and what can be concluded about its activation without evaluating an exponential?",
       "choices": {
-        "A": "`z = 1.1`, `a` is about `0.750`",
-        "B": "`z = 1.7`, `a` is about `0.846`",
-        "C": "`z = -1.7`, `a` is about `0.154`",
-        "D": "`z = 1.7`, `a = 1.700`"
+        "A": "`z = 1.1`, so `0 < a < 0.5`",
+        "B": "`z = 1.7`, so `0.5 < a < 1`",
+        "C": "`z = -1.7`, so `0.5 < a < 1`",
+        "D": "`z = 1.7`, so `a = 1.7`"
       },
       "answer": "B",
-      "explanation": "`z = 0.4(2) + (-0.6)(-1) + 1.2(0.5) - 0.3 = 1.7`. Therefore `sigmoid(1.7)` is about `0.846`."
+      "explanation": "`z = 0.4(2) + (-0.6)(-1) + 1.2(0.5) - 0.3 = 1.7`. A positive finite input to the sigmoid produces an activation between `0.5` and `1`."
     },
     {
       "id": "EX3-Q09",
@@ -8358,15 +8358,15 @@
       "id": "EX4-Q06",
       "sectionId": "EX4",
       "type": "mcq",
-      "stem": "A regression model makes predictions `2.5`, `-1.0`, and `4.0` for targets `1.0`, `1.0`, and `4.5`. Using `MSE = (1/n) * sum((prediction - target)^2)`, what is the MSE?",
+      "stem": "A regression model makes predictions `2`, `-1`, and `4` for targets `1`, `1`, and `3`. Using `MSE = (1/n) * sum((prediction - target)^2)`, what is the MSE?",
       "choices": {
-        "A": "`6.500`",
-        "B": "`1.472`",
-        "C": "`2.167`",
-        "D": "`0.333`"
+        "A": "`6`",
+        "B": "`3`",
+        "C": "`2`",
+        "D": "`1`"
       },
       "answer": "C",
-      "explanation": "The squared errors are `2.25`, `4`, and `0.25`; their mean is `6.5/3 = 2.167`."
+      "explanation": "The squared errors are `1`, `4`, and `1`; their mean is `6/3 = 2`."
     },
     {
       "id": "EX4-Q07",
@@ -8470,15 +8470,15 @@
       "id": "EX5-Q04",
       "sectionId": "EX5",
       "type": "mcq",
-      "stem": "Without sideways moves, the lecture reports that one steepest-ascent run solves 8-queens with probability `p = 0.14`. For independent random starts, the expected number of runs up to and including the first success is `1/p`. What are the expected numbers of runs and failed runs?",
+      "stem": "Independent random-restart runs succeed with probability `p = 0.25`. The expected number of runs up to and including the first success is `1/p`. What are the expected numbers of runs and failed runs?",
       "choices": {
-        "A": "About `6.14` runs and `7.14` failed runs",
-        "B": "About `7.14` runs and `7.14` failed runs",
-        "C": "About `7.14` runs and `6.14` failed runs",
-        "D": "About `14.00` runs and `13.00` failed runs"
+        "A": "`3` runs and `4` failed runs",
+        "B": "`4` runs and `4` failed runs",
+        "C": "`4` runs and `3` failed runs",
+        "D": "`5` runs and `4` failed runs"
       },
       "answer": "C",
-      "explanation": "The expected run count is `1/0.14 = 7.14`. Exactly one of those runs succeeds, so the expected failed-run count is `7.14 - 1 = 6.14`."
+      "explanation": "The expected run count is `1/0.25 = 4`. Exactly one run succeeds, so the expected failed-run count is `4 - 1 = 3`."
     },
     {
       "id": "EX5-Q05",
