@@ -1,6 +1,6 @@
 # 2802ICT Study MCQ quiz
 
-Static quiz for the objective questions in `../Study MCQs.md` and `../Study TF.md`. It includes lecture, lab, workshop, assignment, and final-exam-drill sections, plus a Highlighted items section. It runs in the browser only. There is no account and no saved history beyond the current tab session (a refresh keeps the sitting you are in).
+Static quiz for the objective questions in `../Study MCQs.md` and `../Study TF.md`. It includes lecture, lab, workshop, assignment, and five final-exam-drill sections, plus a Highlighted items section. It runs in the browser only. There is no account and no saved history beyond the current tab session (a refresh keeps the sitting you are in).
 
 ## Use it locally
 
@@ -22,7 +22,7 @@ Open `http://localhost:8080/`. Loading `index.html` as a file will fail, because
 6. The results page still shows the overall score and a review of every answer.
 7. Retry same set keeps the questions and order. New setup returns to the section list.
 
-The Exam drill is the more applied readiness set: 21 multiple choice and 22 true/false.
+Exam drill 1 is an extended readiness bank with 21 multiple choice and 22 true/false questions. Exam drills 2 to 5 follow the stated objective-paper layout with 10 multiple choice and 10 true/false questions each. Their two longer-response prompts remain in `../Study MCQs.md`.
 
 ## Update the question bank
 

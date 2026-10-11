@@ -132,7 +132,27 @@
     },
     {
       "id": "EX",
-      "title": "Final exam drill",
+      "title": "Final exam drill 1 (extended)",
+      "kind": "exam"
+    },
+    {
+      "id": "EX2",
+      "title": "Final exam drill 2",
+      "kind": "exam"
+    },
+    {
+      "id": "EX3",
+      "title": "Final exam drill 3",
+      "kind": "exam"
+    },
+    {
+      "id": "EX4",
+      "title": "Final exam drill 4",
+      "kind": "exam"
+    },
+    {
+      "id": "EX5",
+      "title": "Final exam drill 5",
       "kind": "exam"
     }
   ],
@@ -7985,6 +8005,566 @@
       "explanation": "`revise` deletes unsupported values from the domain of `x` in place. It returns true when that domain changed and false when it did not. AC-3 uses the boolean to decide whether neighbouring arcs go back on the queue."
     },
     {
+      "id": "EX2-Q01",
+      "sectionId": "EX2",
+      "type": "mcq",
+      "stem": "An autonomous greenhouse cart collects plant samples. Which PEAS specification is correctly classified and uses measurable performance criteria?",
+      "choices": {
+        "A": "Performance: sample coverage, collisions, and energy per sample; Environment: aisles, plants, and workers; Actuators: wheels, sampler, and radio; Sensors: cameras, proximity detectors, and chemical probes",
+        "B": "Performance: be intelligent and understand every crop under all conditions; Environment: aisles, plants, and workers; Actuators: wheels, sampler, and radio; Sensors: cameras, proximity detectors, and chemical probes",
+        "C": "Performance: sample coverage, collisions, and energy per sample; Environment: aisles, plants, and workers; Actuators: cameras and chemical probes; Sensors: wheels, sampler, and radio",
+        "D": "Performance: sample coverage, collisions, and energy per sample; Environment: wheels, sampler, and radio; Actuators: aisles, plants, and workers; Sensors: cameras and chemical probes"
+      },
+      "answer": "A",
+      "explanation": "Its performance criteria can be scored, and the environment, actuators, and sensors are assigned to their correct PEAS roles."
+    },
+    {
+      "id": "EX2-Q02",
+      "sectionId": "EX2",
+      "type": "mcq",
+      "stem": "A delivery robot must collect parcels P and Q and return to its dock. A world configuration records the robot's location and the set of uncollected parcels. Which description correctly distinguishes the search problem from a search node?",
+      "choices": {
+        "A": "A state stores its parent and path cost, while a node is only the robot's location; `C` generates successors and `T` totals the route cost",
+        "B": "`S0` is the root node object, `A` is the set of generated nodes, `T` is the frontier, `G` is the cheapest node, and `C` is the final route",
+        "C": "`S0` is the initial configuration, `A(s)` gives legal actions, `T` gives the resulting configuration, `G` tests completion, and `C` gives a step cost; a node also stores its parent, incoming action, and path cost",
+        "D": "`S0` is the initial configuration, `G` generates all legal actions from it, `A` tests completion, `T` stores parent pointers and incoming actions for every generated node, and `C` estimates the remaining cost to the goal"
+      },
+      "answer": "C",
+      "explanation": "A state is a world configuration. A node records that state plus the parent, incoming action, and accumulated path cost."
+    },
+    {
+      "id": "EX2-Q03",
+      "sectionId": "EX2",
+      "type": "mcq",
+      "stem": "Consider the weighted graph below. Children are generated alphabetically, repeated frontier states are not duplicated, and goals are tested when removed from the frontier. UCS replaces a frontier entry if a cheaper path to its state is found. - `S -> A` costs 1 - `S -> B` costs 4 - `A -> G` costs 8 - `B -> C` costs 1 - `C -> G` costs 1 Which trace is correct?",
+      "choices": {
+        "A": "BFS removes `S, A, G` and returns `S-A-G` with cost 9",
+        "B": "BFS removes `S, A, B, G` by depth and returns `S-B-C-G` with cost 6",
+        "C": "UCS removes `S, A, G` and returns `S-A-G` with cost 9",
+        "D": "UCS removes `S, A, B, C, G` and returns `S-B-C-G` with cost 6"
+      },
+      "answer": "D",
+      "explanation": "BFS reaches the depth-two goal for cost 9. UCS replaces that frontier route with the later cost-6 route through `B` and `C`."
+    },
+    {
+      "id": "EX2-Q04",
+      "sectionId": "EX2",
+      "type": "mcq",
+      "stem": "A heuristic is consistent when every directed edge `n -> n'` satisfies `h(n) <= cost(n,n') + h(n')`. Heuristic values are `h(S)=5`, `h(A)=4`, `h(B)=2`, and `h(G)=0`. Edges are: - `S -> A` costs 2 - `S -> B` costs 2 - `A -> G` costs 4 - `B -> G` costs 3 Which edge violates consistency?",
+      "choices": {
+        "A": "`S -> A`",
+        "B": "`S -> B`",
+        "C": "`A -> G`",
+        "D": "`B -> G`"
+      },
+      "answer": "B",
+      "explanation": "On `S -> B`, consistency would require `5 <= 2 + 2`, which is false."
+    },
+    {
+      "id": "EX2-Q05",
+      "sectionId": "EX2",
+      "type": "mcq",
+      "stem": "A local-search problem minimises `Eval`. The known global minimum is 0. Hill climbing stops at configuration `X`, where `Eval(X)=2` and no one-move neighbour has a lower score. An independent random start reaches a global minimum with probability `p > 0`. Which conclusion is sound?",
+      "choices": {
+        "A": "`X` is only locally optimal; after `k` restarts, failure has probability `(1-p)^k`, so no finite `k` guarantees success",
+        "B": "`X` is globally optimal because no one-move neighbour is better; the remote score 0 does not affect that conclusion",
+        "C": "Random restart cannot help because every climb uses the same neighbourhood; every start must reach the same local optimum",
+        "D": "Since `p > 0`, at least one of any finite number of restarts is guaranteed to reach a global optimum"
+      },
+      "answer": "A",
+      "explanation": "A one-move optimum need not be global. Independent restarts reduce failure probability to `(1-p)^k` but do not provide a finite guarantee."
+    },
+    {
+      "id": "EX2-Q06",
+      "sectionId": "EX2",
+      "type": "mcq",
+      "stem": "A battery-monitoring system uses the same sensor inputs for two targets. Target I is the remaining operating time in hours. Target II is whether the battery will fail before its next scheduled inspection. Which classification is correct?",
+      "choices": {
+        "A": "Both targets are regression because both concern operating time",
+        "B": "Both targets are classification because both concern one battery",
+        "C": "Target I is regression, while Target II is binary classification",
+        "D": "Target I is classification, while Target II is regression"
+      },
+      "answer": "C",
+      "explanation": "Remaining hours is continuous, while failure before inspection is a discrete yes/no label."
+    },
+    {
+      "id": "EX2-Q07",
+      "sectionId": "EX2",
+      "type": "mcq",
+      "stem": "Logistic regression computes `z = w . x + b`, then `p = 1/(1 + e^(-z))`, and predicts class 1 when `p >= 0.5`. For one input, `z = ln(3)`. Which conclusion is correct?",
+      "choices": {
+        "A": "`p = 0.25`, and the sigmoid makes the decision boundary non-linear",
+        "B": "`p = 0.75`, and the decision boundary remains the hyperplane `z = 0`",
+        "C": "`p = 3`, and the class boundary is the curved graph of the sigmoid",
+        "D": "`p = 0.50`, and logistic regression discards the original linear score"
+      },
+      "answer": "B",
+      "explanation": "`e^(-ln(3)) = 1/3`, so the probability is `1/(1+1/3) = 0.75`. Squashing does not bend the boundary `z = 0`."
+    },
+    {
+      "id": "EX2-Q08",
+      "sectionId": "EX2",
+      "type": "mcq",
+      "stem": "A sigmoid hidden unit has activation `y_h = 0.4`. It feeds two output units through forward-pass weights `0.7` and `-0.6`. Their stored deltas are `0.3` and `-0.2`. The supplied hidden-delta rule is: `delta_h = y_h(1-y_h) * sum_k(delta_k * w_hk)` No weights have yet changed. Which procedure is correct?",
+      "choices": {
+        "A": "Store `delta_h = 0.33`, then update every weight together",
+        "B": "Store `delta_h = 0.24`, then update all of the outgoing weights first",
+        "C": "Update the outgoing weights, then store `delta_h = 0.0792`",
+        "D": "Store `delta_h = 0.0792` from the old weights, then update weights"
+      },
+      "answer": "D",
+      "explanation": "The weighted downstream sum is `0.3*0.7 + (-0.2)*(-0.6) = 0.33`; multiplying by `0.4*0.6` gives `0.0792`. Deltas use forward-pass weights."
+    },
+    {
+      "id": "EX2-Q09",
+      "sectionId": "EX2",
+      "type": "mcq",
+      "stem": "A joint distribution contains: - `P(windy, dry) = 0.18` - `P(windy, wet) = 0.27` - `P(calm, dry) = 0.35` - `P(calm, wet) = 0.20` What are `P(windy or dry)` and the marginal `P(dry)`?",
+      "choices": {
+        "A": "`0.80` and `0.53`",
+        "B": "`0.98` and `0.53`",
+        "C": "`0.45` and `0.35`",
+        "D": "`0.62` and `0.80`"
+      },
+      "answer": "A",
+      "explanation": "The union contains the first three outcomes, totalling `0.80`. Marginalising over wind gives `P(dry) = 0.18 + 0.35 = 0.53`."
+    },
+    {
+      "id": "EX2-Q10",
+      "sectionId": "EX2",
+      "type": "mcq",
+      "stem": "Direct policy evaluation follows a fixed policy and averages the discounted returns observed from each state. With `gamma = 0.6`, three visits to state `K` produce these reward sequences from `K` to termination: - `[3, 2]` - `[-2, 4]` - `[1, 0, 5]` What is the direct-evaluation estimate of `V(K)`?",
+      "choices": {
+        "A": "`4.33`",
+        "B": "`2.80`",
+        "C": "`2.47`",
+        "D": "`0.67`"
+      },
+      "answer": "C",
+      "explanation": "The returns are `4.2`, `0.4`, and `2.8`; their mean is approximately `2.47`."
+    },
+    {
+      "id": "EX3-Q01",
+      "sectionId": "EX3",
+      "type": "mcq",
+      "stem": "Four systems are described: - P is judged by whether its internal reasoning matches human reasoning. - Q derives conclusions using formal logic. - R chooses the action with the best expected outcome given its evidence. - S is judged by a text-only imitation game. Which mapping is correct?",
+      "choices": {
+        "A": "P acts humanly; Q thinks humanly; R thinks rationally; S acts rationally",
+        "B": "P thinks rationally; Q acts rationally; R acts humanly; S thinks humanly",
+        "C": "P acts rationally; Q acts humanly; R thinks humanly; S thinks rationally",
+        "D": "P thinks humanly; Q thinks rationally; R acts rationally; S acts humanly"
+      },
+      "answer": "D",
+      "explanation": "P matches human thought, Q follows laws of thought, R maximises expected performance, and S uses the acting-human Turing Test criterion."
+    },
+    {
+      "id": "EX3-Q02",
+      "sectionId": "EX3",
+      "type": "mcq",
+      "stem": "A route planner reaches world state K through two different action sequences. Which description is correct?",
+      "choices": {
+        "A": "The state-space graph has one vertex for K, while the search tree may have two nodes containing K. Each node also stores its parent, producing action, and path cost.",
+        "B": "The state-space graph must have two vertices for K because each route has a different cost. A search-tree node stores only the state, while the lower-cost graph vertex replaces the other one.",
+        "C": "The search tree merges both routes into one node, while the state-space graph copies K once for each route. Parent pointers belong to states.",
+        "D": "State-space graphs and search trees contain the same objects. Graph search only changes the frontier ordering."
+      },
+      "answer": "A",
+      "explanation": "A state is one world configuration. Separate search-tree nodes can contain that state because nodes record different paths using state, parent, action, and path cost."
+    },
+    {
+      "id": "EX3-Q03",
+      "sectionId": "EX3",
+      "type": "mcq",
+      "stem": "The shallowest goal is at depth 7, every action has equal cost, and the branching factor is finite. Compare depth-limited search with limit 6 against iterative deepening starting at limit 0.",
+      "choices": {
+        "A": "Depth-limited search is complete because it examines every node through depth 6. Iterative deepening needs seven runs.",
+        "B": "Iterative deepening retains the complete frontier between all successive limits, so its memory grows to the same order as breadth-first search.",
+        "C": "Depth-limited search cannot reach the goal. Iterative deepening restarts at each limit and first reaches it on its eighth run, with limit 7.",
+        "D": "Both methods first reach the goal at limit 6 because the root is not counted in the depth."
+      },
+      "answer": "C",
+      "explanation": "Limit 6 excludes a goal at depth 7. Iterative deepening runs limits 0 through 7, restarting each time, so limit 7 is its eighth run."
+    },
+    {
+      "id": "EX3-Q04",
+      "sectionId": "EX3",
+      "type": "mcq",
+      "stem": "Use this 8-puzzle state and goal. Start: `2 3 1 / 4 5 6 / 7 8 _`. Goal: `1 2 3 / 4 5 6 / 7 8 _`. Which relaxation and exact relaxed cost describe Gaschnig's heuristic?",
+      "choices": {
+        "A": "Drop both movement conditions. Three misplaced tiles can jump directly to their goals without using the blank, so the exact relaxed cost is 3.",
+        "B": "Keep the blank requirement but drop adjacency. Repeated direct swaps with the blank solve the relaxed puzzle in 4 moves.",
+        "C": "Keep adjacency but drop the blank requirement. The relaxed cost is 4 because this is Gaschnig's rule.",
+        "D": "Keep both real movement conditions. The exact real-puzzle solution cost is 3."
+      },
+      "answer": "B",
+      "explanation": "Gaschnig keeps the requirement that a tile moves into the blank but removes adjacency. The three-tile cycle requires four direct blank swaps."
+    },
+    {
+      "id": "EX3-Q05",
+      "sectionId": "EX3",
+      "type": "mcq",
+      "stem": "With a limit of 100 consecutive sideways moves, the reported 8-queens success probability is 0.94 per independently chosen random start. What is the probability that at least one of the next two climbs succeeds?",
+      "choices": {
+        "A": "0.8836",
+        "B": "0.9400",
+        "C": "0.9964",
+        "D": "1.8800"
+      },
+      "answer": "C",
+      "explanation": "One climb fails with probability `0.06`. Both fail with probability `0.06^2 = 0.0036`, so at least one succeeds with probability `1 - 0.0036 = 0.9964`."
+    },
+    {
+      "id": "EX3-Q06",
+      "sectionId": "EX3",
+      "type": "mcq",
+      "stem": "A complete graph-colouring assignment uses `{red, green, blue}`. Variable X must differ from each of its five neighbours. X is currently red, while its neighbours are assigned `red, red, green, green, blue`. Min-conflicts has selected X for reassignment. Which value should it choose?",
+      "choices": {
+        "A": "Keep red, leaving two violated constraints",
+        "B": "Choose red, because changing a complete assignment is illegal",
+        "C": "Choose green, leaving two violated constraints",
+        "D": "Choose blue, leaving one violated constraint"
+      },
+      "answer": "D",
+      "explanation": "Red and green each conflict with two neighbours. Blue conflicts with one, so it minimises the remaining violations."
+    },
+    {
+      "id": "EX3-Q07",
+      "sectionId": "EX3",
+      "type": "mcq",
+      "stem": "Use the slide's `{-1, +1}` perceptron rule. A score of at least 0 predicts `+1`. Case I predicts `+1` for a true `-1` and subtracts the feature vector. Case II predicts `-1` for a true `+1` and adds the feature vector. Start with `w = [3, -2]`. 1. Present `f1 = [1, 1]` with true class `-1`. 2. Then present `f2 = [2, 2]` with true class `+1`. What is the final weight vector?",
+      "choices": {
+        "A": "`[4, -1]`",
+        "B": "`[0, -5]`",
+        "C": "`[6, 1]`",
+        "D": "`[2, -3]`"
+      },
+      "answer": "A",
+      "explanation": "The first score is 1, so Case I gives `[3,-2] - [1,1] = [2,-3]`. The second score is -2, so Case II gives `[2,-3] + [2,2] = [4,-1]`."
+    },
+    {
+      "id": "EX3-Q08",
+      "sectionId": "EX3",
+      "type": "mcq",
+      "stem": "A hidden sigmoid unit receives `x = [2, -1, 0.5]`, has weights `[0.4, -0.6, 1.2]`, and bias `-0.3`. Use `a = 1 / (1 + exp(-z))`. What are its pre-activation and activation?",
+      "choices": {
+        "A": "`z = 1.1`, `a` is about `0.750`",
+        "B": "`z = 1.7`, `a` is about `0.846`",
+        "C": "`z = -1.7`, `a` is about `0.154`",
+        "D": "`z = 1.7`, `a = 1.700`"
+      },
+      "answer": "B",
+      "explanation": "`z = 0.4(2) + (-0.6)(-1) + 1.2(0.5) - 0.3 = 1.7`. Therefore `sigmoid(1.7)` is about `0.846`."
+    },
+    {
+      "id": "EX3-Q09",
+      "sectionId": "EX3",
+      "type": "mcq",
+      "stem": "Two pipelines are tuned using the same training and validation sets. The team evaluates both finalists on the test set, selects the one with the higher test accuracy, and reports that accuracy as its final estimate. Which assessment is correct?",
+      "choices": {
+        "A": "The test set has become selection data. An independent final estimate requires a fresh untouched test set.",
+        "B": "The estimate remains independent because each finalist was tested only once.",
+        "C": "Averaging the two test accuracies removes the selection bias.",
+        "D": "The team should fit both pipelines on every row of the test set, then report their validation accuracy as an independent final estimate."
+      },
+      "answer": "A",
+      "explanation": "Choosing between pipelines after viewing test results uses test information for model selection. The reported winner's score is no longer an independent estimate."
+    },
+    {
+      "id": "EX3-Q10",
+      "sectionId": "EX3",
+      "type": "mcq",
+      "stem": "Two recursive ID3 calls reach different stopping cases: - Branch U receives no examples. Its parent node's plurality class is No. - Branch V receives three Yes and two No examples, but no attributes remain. What leaves should ID3 return?",
+      "choices": {
+        "A": "U returns Yes; V returns No",
+        "B": "U returns No; V returns Yes",
+        "C": "U returns No; V returns No",
+        "D": "U returns Yes; V returns Yes"
+      },
+      "answer": "B",
+      "explanation": "An empty subset uses the parent plurality class, No. Mixed examples with no remaining attributes use their own plurality class, Yes."
+    },
+    {
+      "id": "EX4-Q01",
+      "sectionId": "EX4",
+      "type": "mcq",
+      "stem": "For a delivery robot, which statement correctly relates the architecture, program, and agent function?",
+      "choices": {
+        "A": "The architecture is the route-planning code, while the program is the robot's motors and cameras",
+        "B": "The agent function is the physical robot body, while the architecture maps percepts to actions",
+        "C": "The architecture is the physical platform, the program computes behaviour, and the agent function maps perceived history to an action",
+        "D": "The program is the delivery environment outside the robot, and the agent function is only the numeric performance score used to judge each completed trip"
+      },
+      "answer": "C",
+      "explanation": "The architecture is the physical body, the program runs on it, and the agent function is the percept-to-action mapping that the program implements."
+    },
+    {
+      "id": "EX4-Q02",
+      "sectionId": "EX4",
+      "type": "mcq",
+      "stem": "A vacuum agent's state records only its room and omits which rooms are dirty. Why is that state representation inadequate?",
+      "choices": {
+        "A": "Two situations requiring different actions can look identical to the search, so the transition or goal reasoning cannot distinguish them",
+        "B": "A state must contain the entire search tree, including every node already generated, and the omitted dirt status can then be recovered from the parent pointers",
+        "C": "The omission changes breadth-first search into depth-first search by removing the frontier queue",
+        "D": "A state is required to contain the heuristic `h`, even when the search method is uninformed"
+      },
+      "answer": "A",
+      "explanation": "If dirt status is omitted, physically different situations collapse to one represented state even though they require different actions and goal decisions."
+    },
+    {
+      "id": "EX4-Q03",
+      "sectionId": "EX4",
+      "type": "mcq",
+      "stem": "Greedy best-first search orders its frontier only by `h` and tests a goal when selected. Edges and costs are: - `S -> A: 7`, `S -> B: 2` - `A -> G: 7` - `B -> C: 2`, `C -> G: 2` Heuristic values are `h(A)=1`, `h(B)=4`, `h(C)=2`, and `h(G)=0`. What happens?",
+      "choices": {
+        "A": "It expands `S, B, C, G` and returns cost 6",
+        "B": "It expands `S, A, G` and returns cost 14",
+        "C": "It expands `S, A, B, C, G` and returns cost 6",
+        "D": "It cannot proceed because the heuristic is not admissible"
+      },
+      "answer": "B",
+      "explanation": "Greedy search follows the smallest `h`, ignores `g`, and returns the cost-14 route although a cost-6 route exists."
+    },
+    {
+      "id": "EX4-Q04",
+      "sectionId": "EX4",
+      "type": "mcq",
+      "stem": "For the 8-puzzle, Manhattan distance sums each numbered tile's horizontal and vertical distance from its goal square and excludes the blank. Start: `1 3 6 / 5 _ 2 / 4 7 8`. Goal: `1 2 3 / 4 5 6 / 7 8 _`. What is the Manhattan distance?",
+      "choices": {
+        "A": "`6`",
+        "B": "`7`",
+        "C": "`9`",
+        "D": "`8`"
+      },
+      "answer": "D",
+      "explanation": "The tile distances are `1 + 1 + 1 + 2 + 1 + 1 + 1 = 8`. The blank is not included."
+    },
+    {
+      "id": "EX4-Q05",
+      "sectionId": "EX4",
+      "type": "mcq",
+      "stem": "After assigning `P = red`, two unassigned variables have domains `Q = {blue}` and `R = {blue}`. The constraints include `P != Q` and `Q != R`. What distinguishes forward checking from arc consistency here? For this question, arc `X -> Y` is consistent when every remaining value of `X` has a supporting value in `Y`.",
+      "choices": {
+        "A": "Both fail because singleton domains count as assignments",
+        "B": "Forward checking leaves them; arc consistency deletes the unsupported singleton",
+        "C": "Forward checking immediately empties `R`; arc consistency waits until another variable receives an assignment",
+        "D": "Neither fails because both variables retain one value"
+      },
+      "answer": "B",
+      "explanation": "Forward checking only reacts to the new assignment, while arc consistency detects that the singleton values cannot support each other."
+    },
+    {
+      "id": "EX4-Q06",
+      "sectionId": "EX4",
+      "type": "mcq",
+      "stem": "A regression model makes predictions `2.5`, `-1.0`, and `4.0` for targets `1.0`, `1.0`, and `4.5`. Using `MSE = (1/n) * sum((prediction - target)^2)`, what is the MSE?",
+      "choices": {
+        "A": "`6.500`",
+        "B": "`1.472`",
+        "C": "`2.167`",
+        "D": "`0.333`"
+      },
+      "answer": "C",
+      "explanation": "The squared errors are `2.25`, `4`, and `0.25`; their mean is `6.5/3 = 2.167`."
+    },
+    {
+      "id": "EX4-Q07",
+      "sectionId": "EX4",
+      "type": "mcq",
+      "stem": "Inverted dropout uses drop probability `p = 0.25`. A surviving hidden activation would normally equal `6`. What value is passed onward during training, and what happens at inference?",
+      "choices": {
+        "A": "Training passes `8`; inference uses the original `6` with all units active",
+        "B": "Training passes `4.5`; inference uses the original `6` with all units active",
+        "C": "Training passes `6`; inference scales it to `8` after enabling every unit",
+        "D": "Training passes `8`; inference also passes `8` after disabling dropout"
+      },
+      "answer": "A",
+      "explanation": "Inverted dropout divides a kept activation by `1-p`, so `6/0.75 = 8`; inference uses all units without scaling."
+    },
+    {
+      "id": "EX4-Q08",
+      "sectionId": "EX4",
+      "type": "mcq",
+      "stem": "A decision tree has perfect training accuracy, but replacing one deep subtree by a majority-class leaf leaves validation accuracy unchanged. Which action best matches post-pruning?",
+      "choices": {
+        "A": "Keep the subtree because perfect training accuracy is the only criterion used after fitting",
+        "B": "Add another split beneath every leaf so the validation set can be classified separately",
+        "C": "Replace the whole tree with the training-set majority class instead, regardless of its validation performance",
+        "D": "Replace that subtree with the leaf because the simpler tree does not reduce validation performance"
+      },
+      "answer": "D",
+      "explanation": "Post-pruning removes a subtree when the simpler replacement does not hurt validation performance."
+    },
+    {
+      "id": "EX4-Q09",
+      "sectionId": "EX4",
+      "type": "mcq",
+      "stem": "A Bayes net has edges `P -> R`, `Q -> R`, `R -> U`, and `Q -> V`. Which statement satisfies both topological-order and local-independence semantics?",
+      "choices": {
+        "A": "`R, P, Q, U, V` is topological because children precede their parents",
+        "B": "`Q, P, R, V, U` is topological, and `U` is independent of `P` and `Q` given `R`",
+        "C": "`P, R, Q, U, V` is topological, and `R` is independent of parent `Q`",
+        "D": "Every ordering is topological, and a missing arc means unconditional independence"
+      },
+      "answer": "B",
+      "explanation": "Every parent precedes its child, and a node is independent of its non-descendants given its parents."
+    },
+    {
+      "id": "EX4-Q10",
+      "sectionId": "EX4",
+      "type": "mcq",
+      "stem": "An agent has just observed transition `(s, a, s', r)`. Which comparison between TD policy evaluation and Q-learning is correct?",
+      "choices": {
+        "A": "TD moves `V(s)` toward `r + gamma*V(s')`; Q-learning moves `Q(s,a)` toward `r + gamma*max Q(s',a')`",
+        "B": "TD learns an optimal action directly; Q-learning only evaluates a fixed policy",
+        "C": "TD requires the full known transition probabilities for every state; Q-learning requires a complete known reward table",
+        "D": "TD and Q-learning use the behaviour policy's next action in the same target"
+      },
+      "answer": "A",
+      "explanation": "TD evaluates a fixed policy with state values; Q-learning learns action values using the best next action."
+    },
+    {
+      "id": "EX5-Q01",
+      "sectionId": "EX5",
+      "type": "mcq",
+      "stem": "A rescue drone diverts after its camera detects debris and its weather feed predicts worsening wind. The original landing area later clears, so the diversion takes longer. Which interpretation is correct?",
+      "choices": {
+        "A": "The drone was irrational because rational action must produce the best outcome in hindsight; time is an actuator.",
+        "B": "The drone may have acted rationally from its available information; safety and time are performance measures, while the feeds are sensors.",
+        "C": "The drone was rational only if the environment was fully observable; safety and time belong under sensors.",
+        "D": "The drone was irrational because uncertain forecasts can never support rational action; the diversion command and its longer route are both part of the environment."
+      },
+      "answer": "B",
+      "explanation": "Rationality uses the best expected result given available information. Safety and time score performance; percept feeds are sensors."
+    },
+    {
+      "id": "EX5-Q02",
+      "sectionId": "EX5",
+      "type": "mcq",
+      "stem": "A finitely branching search tree has a goal reached directly from `S` at cost 1.25. Another branch is infinite: its successive step costs are `1/2, 1/4, 1/8, ...`, so every node on that branch has path cost below 1. What does this show about uniform-cost search?",
+      "choices": {
+        "A": "It is complete because every individual step cost is strictly positive, even when the costs approach zero.",
+        "B": "It is complete because the infinite branch has a bounded total cost, so UCS eventually exhausts that branch.",
+        "C": "It is incomplete only because the example has infinite branching, which violates the finite-branching condition.",
+        "D": "Completeness is not guaranteed because no common `epsilon > 0` bounds every step cost from below."
+      },
+      "answer": "D",
+      "explanation": "Positive costs are insufficient when they approach zero. UCS completeness requires every step cost to be at least one common `epsilon > 0`."
+    },
+    {
+      "id": "EX5-Q03",
+      "sectionId": "EX5",
+      "type": "mcq",
+      "stem": "A* orders its frontier by increasing `f = g + h`, breaking an `f` tie by smaller `h`. The frontier contains: - `P`: `g = 5`, `h = 4` - `Q`: `g = 4`, `h = 6` - `R`: `g = 7`, `h = 1` - `S`: `g = 2`, `h = 6` Which two nodes are selected next, in order?",
+      "choices": {
+        "A": "`R`, then `S`",
+        "B": "`S`, then `R`",
+        "C": "`P`, then `Q`",
+        "D": "`Q`, then `P`"
+      },
+      "answer": "A",
+      "explanation": "The `f` values are 9, 10, 8, and 8. The smaller-`h` tie-break selects `R` before `S`."
+    },
+    {
+      "id": "EX5-Q04",
+      "sectionId": "EX5",
+      "type": "mcq",
+      "stem": "Without sideways moves, the lecture reports that one steepest-ascent run solves 8-queens with probability `p = 0.14`. For independent random starts, the expected number of runs up to and including the first success is `1/p`. What are the expected numbers of runs and failed runs?",
+      "choices": {
+        "A": "About `6.14` runs and `7.14` failed runs",
+        "B": "About `7.14` runs and `7.14` failed runs",
+        "C": "About `7.14` runs and `6.14` failed runs",
+        "D": "About `14.00` runs and `13.00` failed runs"
+      },
+      "answer": "C",
+      "explanation": "The expected run count is `1/0.14 = 7.14`. Exactly one of those runs succeeds, so the expected failed-run count is `7.14 - 1 = 6.14`."
+    },
+    {
+      "id": "EX5-Q05",
+      "sectionId": "EX5",
+      "type": "mcq",
+      "stem": "For Assignment 1's crossword, which partial assignment should `consistent` accept?",
+      "choices": {
+        "A": "Every assigned word has the right length and overlaps match, but two different slots use the same word because duplicate use is allowed",
+        "B": "Every assigned word has the right length, assigned words are distinct, and assigned neighbours agree at each overlap",
+        "C": "Assigned words are distinct, but one word is too short and another disagrees with its neighbour at an overlap",
+        "D": "Every variable has a value, but word lengths and overlap letters are checked later by AC-3"
+      },
+      "answer": "B",
+      "explanation": "`consistent` checks assigned words for correct length, all-different, and matching letters at every assigned overlap. The assignment may still be partial."
+    },
+    {
+      "id": "EX5-Q06",
+      "sectionId": "EX5",
+      "type": "mcq",
+      "stem": "A supervised clothing dataset stores a flattened image and its known clothing category in each row. Which notation is correct?",
+      "choices": {
+        "A": "`xi` is the model's weights, `yi` is its loss, and `h` selects a mini-batch.",
+        "B": "`xi` is the target category, `yi` is the image, and `h` is the test set.",
+        "C": "`(xi, yi)` is one complete validation setting for selecting hyperparameters, and `h` is the entire training collection.",
+        "D": "`(xi, yi)` is one training pair, with input `xi`, target `yi`, and hypothesis `h`."
+      },
+      "answer": "D",
+      "explanation": "A training pair is `(xi, yi)`, and the hypothesis `h` maps inputs to predicted outputs."
+    },
+    {
+      "id": "EX5-Q07",
+      "sectionId": "EX5",
+      "type": "mcq",
+      "stem": "Training with mini-batch size `b = 256` fits on one GPU but exceeds the memory of a smaller device. Which interpretation matches the lecture?",
+      "choices": {
+        "A": "`b` counts samples in a batch; 32 to 512 is a common hardware-dependent range, so a smaller `b` may fit.",
+        "B": "`b` counts retained features; 32 to 512 is required on all hardware, so features must be removed.",
+        "C": "`b` counts training epochs; 32 to 512 is a fixed convergence condition, so the device must run fewer models.",
+        "D": "`b` is the search branching factor; 32 to 512 limits generated successors, so the frontier must be pruned."
+      },
+      "answer": "A",
+      "explanation": "Here `b` is the number of samples in a mini-batch. The stated 32 to 512 range depends on available hardware."
+    },
+    {
+      "id": "EX5-Q08",
+      "sectionId": "EX5",
+      "type": "mcq",
+      "stem": "A perceptron training set contains two rows with identical feature vectors but opposite class labels. Which conclusion follows?",
+      "choices": {
+        "A": "The convergence theorem guarantees a unique separator because repeated feature vectors reduce the hypothesis space.",
+        "B": "The perceptron must converge after one epoch because the two updates cancel and restore the initial weights.",
+        "C": "The set is not linearly separable, so finite convergence is not guaranteed and the updates may continue cycling.",
+        "D": "A smaller positive learning rate makes the set separable, so convergence follows once the steps become sufficiently small."
+      },
+      "answer": "C",
+      "explanation": "Identical inputs cannot receive opposite labels from one deterministic linear separator, so the theorem's separability assumption fails."
+    },
+    {
+      "id": "EX5-Q09",
+      "sectionId": "EX5",
+      "type": "mcq",
+      "stem": "For softmax probabilities `p` and a one-hot target `y`, the supplied output-logit gradient is `dL/do_i = p_i - y_i`. If `p = [0.7, 0.2, 0.1]` and the true class is the second class, what is the gradient?",
+      "choices": {
+        "A": "`[-0.3, 0.2, 0.1]`",
+        "B": "`[0.7, 0.2, -0.9]`",
+        "C": "`[0.7, -0.8, 0.1]`",
+        "D": "`[0.3, 0.8, 0.9]`"
+      },
+      "answer": "C",
+      "explanation": "The one-hot target is `[0,1,0]`, so `p-y = [0.7,0.2-1,0.1] = [0.7,-0.8,0.1]`."
+    },
+    {
+      "id": "EX5-Q10",
+      "sectionId": "EX5",
+      "type": "mcq",
+      "stem": "A back-propagation weight update is `w' = w + eta * delta_j * y_i`. Here `w = 0.30`, `eta = 0.20`, `delta_j = -0.50`, and `y_i = 0.40`. What is the updated weight, and what does `eta` represent?",
+      "choices": {
+        "A": "`0.26`; `eta` is the learning rate, also called the gain or step size",
+        "B": "`0.34`; `eta` is the output target supplied to hidden unit `j`",
+        "C": "`-0.04`; `eta` is the activation from the previous layer",
+        "D": "`0.40`; `eta` itself is the number of samples in the current mini-batch"
+      },
+      "answer": "A",
+      "explanation": "The change is `0.20*(-0.50)*0.40 = -0.04`, giving `0.26`. `eta` controls the update step size."
+    },
+    {
       "id": "L1-T01",
       "sectionId": "L1",
       "type": "tf",
@@ -11253,6 +11833,486 @@
       },
       "answer": "F",
       "explanation": "He said a correct value from a correct expansion is full marks. A shorter factorisation is encouraged and is not required."
+    },
+    {
+      "id": "EX2-T01",
+      "sectionId": "EX2",
+      "type": "tf",
+      "stem": "Symbolic AI normally learns opaque numeric weights from raw data, whereas subsymbolic AI normally applies readable hand-written rules.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "Symbolic AI uses explicit rules. Subsymbolic learning stores numeric weights and is commonly less interpretable."
+    },
+    {
+      "id": "EX2-T02",
+      "sectionId": "EX2",
+      "type": "tf",
+      "stem": "When its fixed memory is full, SMA* can discard a worst leaf, back up that leaf's best score to its parent, and regenerate the branch later if it becomes promising.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "SMA* uses backed-up scores so a forgotten branch can be reconsidered and regenerated."
+    },
+    {
+      "id": "EX2-T03",
+      "sectionId": "EX2",
+      "type": "tf",
+      "stem": "If AC-3 finishes with every domain non-empty and every arc consistent, the CSP is guaranteed to have a complete consistent assignment.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "Arc consistency guarantees pairwise support only. An arc-consistent CSP can still have no complete solution."
+    },
+    {
+      "id": "EX2-T04",
+      "sectionId": "EX2",
+      "type": "tf",
+      "stem": "k-nearest neighbour does little fitting during training and performs much of its work during prediction; a value of `k` should be selected with validation data rather than the test set.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "k-NN is a lazy learner, and selecting `k` from test results would leak test information into model selection."
+    },
+    {
+      "id": "EX2-T05",
+      "sectionId": "EX2",
+      "type": "tf",
+      "stem": "The normal equation provides a closed-form solution for logistic regression, whereas ordinary linear regression must always be trained by gradient descent.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "Linear regression has the normal-equation solution under the stated conditions. Logistic regression normally uses gradient descent."
+    },
+    {
+      "id": "EX2-T06",
+      "sectionId": "EX2",
+      "type": "tf",
+      "stem": "The universal approximation result guarantees that gradient descent will find the required one-hidden-layer network and that the fitted network will generalise to unseen data.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "Universal approximation is an existence result, not a guarantee about optimisation or generalisation."
+    },
+    {
+      "id": "EX2-T07",
+      "sectionId": "EX2",
+      "type": "tf",
+      "stem": "Unsupervised learning can build an internal representation such as clusters or extracted features without target labels.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Unsupervised learning has no target labels and can organise the inputs into clusters or learn useful features."
+    },
+    {
+      "id": "EX2-T08",
+      "sectionId": "EX2",
+      "type": "tf",
+      "stem": "For XOR, either input can have zero information gain at the root even though both inputs together determine the label, so an ID3 variant that stops whenever the best gain is zero can miss the interaction.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "XOR is a pure interaction: either feature alone can reveal no label information even though the pair is sufficient."
+    },
+    {
+      "id": "EX2-T09",
+      "sectionId": "EX2",
+      "type": "tf",
+      "stem": "In a collider `X -> Z <- Y`, observing `Z` keeps the path blocked and therefore preserves the marginal independence of `X` and `Y`.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "An unobserved collider blocks the path. Observing the collider opens it and can make its causes dependent."
+    },
+    {
+      "id": "EX2-T10",
+      "sectionId": "EX2",
+      "type": "tf",
+      "stem": "In Assignment 2, flattening parameters in one order and restoring them in another can apply gradient slices to the wrong matrices or biases.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Flattening and restoration must use the same order so each value and gradient returns to its intended parameter."
+    },
+    {
+      "id": "EX3-T01",
+      "sectionId": "EX3",
+      "type": "tf",
+      "stem": "True or false: Symbolic AI can apply readable, hand-written rules without a training set, but those rules can be brittle on unexpected inputs.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Explicit symbolic rules are readable and need no fitted training set, but their fixed coverage makes them brittle."
+    },
+    {
+      "id": "EX3-T02",
+      "sectionId": "EX3",
+      "type": "tf",
+      "stem": "True or false: The pointwise maximum of two admissible heuristics remains admissible, even when neither heuristic dominates the other on every state.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Each heuristic is a lower bound on the true remaining cost, so their maximum is also a lower bound."
+    },
+    {
+      "id": "EX3-T03",
+      "sectionId": "EX3",
+      "type": "tf",
+      "stem": "True or false: Forward checking after assigning `X` removes inconsistent values from every pair of unassigned variables, so running AC-3 cannot prune anything further.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "Forward checking only prunes neighbours of the newly assigned variable. AC-3 can also propagate support losses between unassigned variables."
+    },
+    {
+      "id": "EX3-T04",
+      "sectionId": "EX3",
+      "type": "tf",
+      "stem": "True or false: Standardising feature scales can change a k-nearest-neighbour prediction because an unscaled large-magnitude feature may dominate Euclidean distance.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Euclidean distance is sensitive to scale, so a large numeric range can dominate the neighbour calculation."
+    },
+    {
+      "id": "EX3-T05",
+      "sectionId": "EX3",
+      "type": "tf",
+      "stem": "True or false: In `k`-fold cross-validation, each fold is trained as the model while the other `k-1` folds are used only for evaluation.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "Each fold takes its turn as the held-out evaluation fold, while the other `k-1` folds train the model."
+    },
+    {
+      "id": "EX3-T06",
+      "sectionId": "EX3",
+      "type": "tf",
+      "stem": "True or false: Softmax turns one score per class into positive probabilities that sum to 1, and the predicted class is the one with the largest score.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Softmax produces a probability distribution without changing which class score is largest."
+    },
+    {
+      "id": "EX3-T07",
+      "sectionId": "EX3",
+      "type": "tf",
+      "stem": "True or false: In a `784-30-10` MLP, `W2` has shape `(784, 10)` because it connects the original pixels directly to the 10 output logits.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "`W2` maps 30 hidden activations to 10 logits, so its shape is `(30, 10)`, not `(784, 10)`."
+    },
+    {
+      "id": "EX3-T08",
+      "sectionId": "EX3",
+      "type": "tf",
+      "stem": "True or false: On either a chain `X -> Z -> Y` or a fork `X <- Z -> Y`, observing the middle variable `Z` blocks that path between `X` and `Y`.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Conditioning on the middle variable blocks a chain or fork because it accounts for the information that could otherwise pass along that path."
+    },
+    {
+      "id": "EX3-T09",
+      "sectionId": "EX3",
+      "type": "tf",
+      "stem": "True or false: ID3 should keep splitting a node after every remaining training row has the same class, because another attribute might increase information gain.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "If all remaining examples have the same class, ID3 returns that class as a leaf. There is no classification uncertainty left to reduce."
+    },
+    {
+      "id": "EX3-T10",
+      "sectionId": "EX3",
+      "type": "tf",
+      "stem": "True or false: A policy is a fixed sequence of actions, so it cannot prescribe different actions after the agent reaches different states.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "A policy maps states to actions. A plan is a fixed action sequence that does not branch on the state reached."
+    },
+    {
+      "id": "EX4-T01",
+      "sectionId": "EX4",
+      "type": "tf",
+      "stem": "Graph search should detect repeated nodes by comparing node-object identity rather than the state represented by each node.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "Repeated-state checking compares represented states, not distinct node objects."
+    },
+    {
+      "id": "EX4-T02",
+      "sectionId": "EX4",
+      "type": "tf",
+      "stem": "For breadth-first search, storing the frontier is usually the practical limitation because the number of stored nodes grows exponentially with goal depth.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "The exponentially large stored frontier is the usual practical problem for BFS."
+    },
+    {
+      "id": "EX4-T03",
+      "sectionId": "EX4",
+      "type": "tf",
+      "stem": "Once an evaluation function has been chosen, changing a local-search neighbourhood cannot change which configurations the algorithm can reach.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "The neighbourhood determines available moves and can change reachability and performance."
+    },
+    {
+      "id": "EX4-T04",
+      "sectionId": "EX4",
+      "type": "tf",
+      "stem": "A plateau and a shoulder are equivalent because neither has an uphill exit that could be reached by a sequence of sideways moves.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "A shoulder is a flat region that has an uphill exit reachable through sideways moves. A plateau need not have such an exit."
+    },
+    {
+      "id": "EX4-T05",
+      "sectionId": "EX4",
+      "type": "tf",
+      "stem": "Semi-supervised learning can use a small labelled set together with a larger unlabelled set.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Semi-supervised learning combines characteristics of supervised and unsupervised learning."
+    },
+    {
+      "id": "EX4-T06",
+      "sectionId": "EX4",
+      "type": "tf",
+      "stem": "For `sigmoid(z) = 1/(1+exp(-z))`, every negative value of `z` produces an output greater than `0.5`.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "A negative input produces a sigmoid output below `0.5`."
+    },
+    {
+      "id": "EX4-T07",
+      "sectionId": "EX4",
+      "type": "tf",
+      "stem": "In a decision tree, an internal node tests an attribute, its outgoing branches represent attribute values, and a leaf specifies an output.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "These are the course's highlighted structural components of a decision tree."
+    },
+    {
+      "id": "EX4-T08",
+      "sectionId": "EX4",
+      "type": "tf",
+      "stem": "Marginalising a joint distribution to a subset of its variables requires summing over the values of the discarded variables.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Marginalisation sums out every variable not retained in the requested distribution."
+    },
+    {
+      "id": "EX4-T09",
+      "sectionId": "EX4",
+      "type": "tf",
+      "stem": "The Markov property allows the next-state distribution to depend on unrecorded details of the complete history.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "Relevant history must be represented in the current state for the process to be Markov."
+    },
+    {
+      "id": "EX4-T10",
+      "sectionId": "EX4",
+      "type": "tf",
+      "stem": "Approximate Q-learning can generalise across states through shared features, but an inadequate feature representation can force states needing different values to appear similar.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Shared features provide generalisation, but poor features can incorrectly merge distinct situations."
+    },
+    {
+      "id": "EX5-T01",
+      "sectionId": "EX5",
+      "type": "tf",
+      "stem": "Depth-first graph search with repeated-state checking is complete on a finite state space, but it is still not guaranteed to return a cheapest solution.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Repeated-state checking prevents an infinite revisit in a finite state space, but DFS still returns the first goal on its chosen branch rather than a cheapest goal."
+    },
+    {
+      "id": "EX5-T02",
+      "sectionId": "EX5",
+      "type": "tf",
+      "stem": "IDA* controls memory by repeating depth-limited search with limits `0, 1, 2, ...`, exactly as ordinary iterative deepening does.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "IDA* raises an `f`-cost bound. Ordinary iterative deepening raises a depth limit."
+    },
+    {
+      "id": "EX5-T03",
+      "sectionId": "EX5",
+      "type": "tf",
+      "stem": "Local search may discard the route taken through the configuration space because its output is the final configuration `X*`, not a path to `X*`.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Local search seeks the final configuration `X*`. Unlike path-finding search, it need not retain the sequence of moves used to reach it."
+    },
+    {
+      "id": "EX5-T04",
+      "sectionId": "EX5",
+      "type": "tf",
+      "stem": "Reducing the number of training examples makes sampling differences less influential, so repeated runs should become less variable.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "With fewer examples, differences between samples and random runs have more influence, so variation generally increases."
+    },
+    {
+      "id": "EX5-T05",
+      "sectionId": "EX5",
+      "type": "tf",
+      "stem": "Class-preserving data augmentation should change a training example's target label whenever it transforms the input.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "A class-preserving transformation changes the input while retaining its original target label."
+    },
+    {
+      "id": "EX5-T06",
+      "sectionId": "EX5",
+      "type": "tf",
+      "stem": "At a decision-tree node, ID3 selects the available attribute with the largest information gain, even though this greedy choice does not guarantee the smallest possible tree.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "ID3 greedily chooses the largest information gain at the current node without guaranteeing a globally smallest tree."
+    },
+    {
+      "id": "EX5-T07",
+      "sectionId": "EX5",
+      "type": "tf",
+      "stem": "Exact Bayes-net inference can require sums of products of local CPT entries, and a naive expansion may contain exponentially many products.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Inference sums products of local probabilities, and naive enumeration may have exponentially many terms."
+    },
+    {
+      "id": "EX5-T08",
+      "sectionId": "EX5",
+      "type": "tf",
+      "stem": "A missing arc between two Bayes-net variables guarantees that they are marginally independent under every possible evidence set.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "A missing arc encodes conditional independence through the graph structure. Other active paths or observed colliders can still make the variables dependent."
+    },
+    {
+      "id": "EX5-T09",
+      "sectionId": "EX5",
+      "type": "tf",
+      "stem": "In Assignment 2's residual model, the skip addition requires the two hidden vectors to have the same width.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Residual addition is element by element, so both hidden vectors must have the same width."
+    },
+    {
+      "id": "EX5-T10",
+      "sectionId": "EX5",
+      "type": "tf",
+      "stem": "On the Romania map, straight-line distance to Bucharest can exceed the shortest road distance because a road can be shorter than the straight line between its endpoints.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "A straight line is the shortest possible distance between two points, so road distance cannot be smaller. This makes the straight-line heuristic admissible."
     }
   ]
 }

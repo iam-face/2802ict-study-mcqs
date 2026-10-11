@@ -265,7 +265,7 @@ function escapeHtml(value) {
 function renderSetup() {
   const groups = [
     ["red", "Highlighted items"],
-    ["exam", "Exam drill"],
+    ["exam", "Exam drills"],
     ["lecture", "Lectures"],
     ["lab", "Labs"],
     ["assignment", "Assignments"],
@@ -293,7 +293,7 @@ function renderSetup() {
       <p>This is an unofficial revision aid made by a student. It is not affiliated with, endorsed by, or provided by Griffith University, the 2802ICT convenor, or the teaching team.</p>
       <p>The questions and answers were drafted with AI from the author's own notes. They can be wrong, incomplete, or out of date. Check anything you rely on against the lectures, labs, and assignment briefs.</p>
     </aside>
-    <p class="lede">Practise one topic at a time, then use a balanced session or the final exam drill to check whether you can apply it. Each answer is explained immediately, and the overall score appears at the end.</p>
+    <p class="lede">Practise one topic at a time, then use a balanced session or one of the five final exam drills to check whether you can apply it. Each answer is explained immediately, and the overall score appears at the end.</p>
     <div class="row-actions">
       <button type="button" id="select-all">Select all</button>
       <button type="button" id="clear-all">Clear</button>

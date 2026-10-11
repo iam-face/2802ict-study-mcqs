@@ -39,12 +39,16 @@ SECTION_META = [
     ("Lab11", "Workshop Week 11: Q-learning", "lab"),
     ("A1", "Assignment 1", "assignment"),
     ("A2", "Assignment 2", "assignment"),
-    ("EX", "Final exam drill", "exam"),
+    ("EX", "Final exam drill 1 (extended)", "exam"),
+    ("EX2", "Final exam drill 2", "exam"),
+    ("EX3", "Final exam drill 3", "exam"),
+    ("EX4", "Final exam drill 4", "exam"),
+    ("EX5", "Final exam drill 5", "exam"),
 ]
 
 Q_HEAD = re.compile(r"^### ([A-Za-z0-9]+-Q\d+)((?:\s+(?:red|blue))*)\s*$")
 T_HEAD = re.compile(r"^### ([A-Za-z0-9]+-T\d+)((?:\s+(?:red|blue))*)\s*$")
-EX_T_HEAD = re.compile(r"^### (EX-T\d+)\s*$")
+EX_T_HEAD = re.compile(r"^### (EX(?:[2-5])?-T\d+)\s*$")
 CHOICE = re.compile(r"^([A-D])\.\s+(.*)$")
 ANSWER = re.compile(r"^\*\*([A-Za-z0-9]+-Q\d+):\*\*\s+([A-D])\.\s+(.*)$")
 TF_ANSWER = re.compile(r"^\*\*([A-Za-z0-9]+-T\d+):\*\*\s+([TF])\.\s+(.*)$")
@@ -244,7 +248,7 @@ def parse_tf(text: str) -> list[dict]:
 
 
 def parse_exam_tf(text: str) -> list[dict]:
-    """True/false items for the exam drill live in Study MCQs.md, not Study TF.md."""
+    """True/false items for exam drills live in Study MCQs.md, not Study TF.md."""
     body, _, appendix = text.partition("# Appendix: Answers")
     if not appendix:
         raise SystemExit("Appendix heading not found")
@@ -267,9 +271,10 @@ def parse_exam_tf(text: str) -> list[dict]:
         if head:
             flush()
             qid = head.group(1)
+            sid = section_id_from_qid(qid)
             current = {
                 "id": qid,
-                "sectionId": "EX",
+                "sectionId": sid,
                 "type": "tf",
                 "stem": "",
                 "choices": {"T": "True", "F": "False"},
@@ -287,12 +292,9 @@ def parse_exam_tf(text: str) -> list[dict]:
     answers: dict[str, tuple[str, str]] = {}
     for raw in appendix.splitlines():
         match = TF_ANSWER.match(raw.strip())
-        if not match or not match.group(1).startswith("EX-"):
+        if not match or not re.match(r"^EX(?:[2-5])?-T", match.group(1)):
             continue
         answers[match.group(1)] = (match.group(2), match.group(3).strip())
-
-    if len(questions) != 22:
-        raise SystemExit(f"Exam drill has {len(questions)} true/false items, expected 22")
 
     for question in questions:
         found = answers.get(question["id"])
@@ -305,9 +307,20 @@ def parse_exam_tf(text: str) -> list[dict]:
     if extra:
         raise SystemExit(f"Exam true/false answers without questions: {sorted(extra)}")
 
-    trues = sum(1 for question in questions if question["answer"] == "T")
-    if trues != 11:
-        raise SystemExit(f"Exam true/false balance is {trues} true and {len(questions) - trues} false")
+    expected = {"EX": 22, "EX2": 10, "EX3": 10, "EX4": 10, "EX5": 10}
+    for sid, expected_count in expected.items():
+        section_questions = [question for question in questions if question["sectionId"] == sid]
+        if len(section_questions) != expected_count:
+            raise SystemExit(
+                f"{sid} has {len(section_questions)} true/false items, expected {expected_count}"
+            )
+        trues = sum(question["answer"] == "T" for question in section_questions)
+        expected_true = expected_count // 2
+        if trues != expected_true:
+            raise SystemExit(
+                f"{sid} true/false balance is {trues} true and "
+                f"{expected_count - trues} false"
+            )
     return questions
 
 
