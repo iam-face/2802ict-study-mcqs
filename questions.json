@@ -154,6 +154,121 @@
       "id": "EX5",
       "title": "Final exam drill 5",
       "kind": "exam"
+    },
+    {
+      "id": "APL1",
+      "title": "Applied: Lecture 1 Agents",
+      "kind": "applied"
+    },
+    {
+      "id": "APL2",
+      "title": "Applied: Lecture 2 Uninformed search",
+      "kind": "applied"
+    },
+    {
+      "id": "APL3",
+      "title": "Applied: Lecture 3 Informed search",
+      "kind": "applied"
+    },
+    {
+      "id": "APL4A",
+      "title": "Applied: Lecture 4 Local search",
+      "kind": "applied"
+    },
+    {
+      "id": "APL4B",
+      "title": "Applied: Lecture 4 CSPs",
+      "kind": "applied"
+    },
+    {
+      "id": "APL5",
+      "title": "Applied: Lecture 5 Learning",
+      "kind": "applied"
+    },
+    {
+      "id": "APL6",
+      "title": "Applied: Lecture 6 Linear models",
+      "kind": "applied"
+    },
+    {
+      "id": "APL7",
+      "title": "Applied: Lecture 7 Neural networks",
+      "kind": "applied"
+    },
+    {
+      "id": "APL8",
+      "title": "Applied: Lecture 8 Model selection",
+      "kind": "applied"
+    },
+    {
+      "id": "APL9",
+      "title": "Applied: Lecture 9 Decision trees",
+      "kind": "applied"
+    },
+    {
+      "id": "APL10",
+      "title": "Applied: Lecture 10 Bayes nets",
+      "kind": "applied"
+    },
+    {
+      "id": "APL11",
+      "title": "Applied: Lecture 11 MDPs and RL",
+      "kind": "applied"
+    },
+    {
+      "id": "AP2",
+      "title": "Applied: Lab 2 Search traces",
+      "kind": "applied"
+    },
+    {
+      "id": "AP3A",
+      "title": "Applied: Lab 3.1 Weighted search",
+      "kind": "applied"
+    },
+    {
+      "id": "AP3B",
+      "title": "Applied: Lab 3.2 Puzzle heuristics",
+      "kind": "applied"
+    },
+    {
+      "id": "AP4",
+      "title": "Applied: Lab 4 CSPs",
+      "kind": "applied"
+    },
+    {
+      "id": "AP5",
+      "title": "Applied: Lab 5 Learning and regression",
+      "kind": "applied"
+    },
+    {
+      "id": "AP6",
+      "title": "Applied: Lab 6 Linear models",
+      "kind": "applied"
+    },
+    {
+      "id": "AP7",
+      "title": "Applied: Lab 7 Multilayer network",
+      "kind": "applied"
+    },
+    {
+      "id": "AP8",
+      "title": "Applied: Lab 8 XOR network",
+      "kind": "applied"
+    },
+    {
+      "id": "AP9",
+      "title": "Applied: Lab 9 Decision trees",
+      "kind": "applied"
+    },
+    {
+      "id": "AP10",
+      "title": "Applied: Lab 10 Bayes nets",
+      "kind": "applied"
+    },
+    {
+      "id": "AP11",
+      "title": "Applied: Workshop 11 Q-learning",
+      "kind": "applied"
     }
   ],
   "questions": [
@@ -8288,15 +8403,15 @@
       "id": "EX4-Q01",
       "sectionId": "EX4",
       "type": "mcq",
-      "stem": "For a delivery robot, which statement correctly relates the architecture, program, and agent function?",
+      "stem": "The delivery robot's cameras fail, so the program receives no image, while the motors can still turn. Which statement matches the course distinction?",
       "choices": {
-        "A": "The architecture is the route-planning code, while the program is the robot's motors and cameras",
-        "B": "The agent function is the physical robot body, while the architecture maps percepts to actions",
-        "C": "The architecture is the physical platform, the program computes behaviour, and the agent function maps perceived history to an action",
-        "D": "The program is the delivery environment outside the robot, and the agent function is only the numeric performance score used to judge each completed trip"
+        "A": "The architecture is the route-planning code, and the program is the motors and cameras",
+        "B": "The agent function is the physical body, and the architecture is the mapping the code was written to implement",
+        "C": "The architecture is the physical platform, including cameras and motors. The program maps the percept history to actions. The agent function is that mapping",
+        "D": "The program is the street outside the robot, and the agent function is only the score given after the trip"
       },
       "answer": "C",
-      "explanation": "The architecture is the physical body, the program runs on it, and the agent function is the percept-to-action mapping that the program implements."
+      "explanation": "The cameras and motors are parts of the platform. The program is what maps percepts to actions when it receives them. A dead camera changes the percept, which does not swap those three roles."
     },
     {
       "id": "EX4-Q02",
@@ -8498,29 +8613,29 @@
       "id": "EX5-Q06",
       "sectionId": "EX5",
       "type": "mcq",
-      "stem": "A supervised clothing dataset stores a flattened image and its known clothing category in each row. Which notation is correct?",
+      "stem": "One row stores the image of a coat and the label coat. The function being fitted maps images to labels. Which claim matches the course notation?",
       "choices": {
-        "A": "`xi` is the model's weights, `yi` is its loss, and `h` selects a mini-batch.",
-        "B": "`xi` is the target category, `yi` is the image, and `h` is the test set.",
-        "C": "`(xi, yi)` is one complete validation setting for selecting hyperparameters, and `h` is the entire training collection.",
-        "D": "`(xi, yi)` is one training pair, with input `xi`, target `yi`, and hypothesis `h`."
+        "A": "yi is the image and xi is the label, so h is trained to reconstruct pixels from the class name",
+        "B": "xi is the image, yi is the label coat, and h is the function fitted to those pairs",
+        "C": "h is the test set, and (xi, yi) is a pair of hyperparameters",
+        "D": "xi is the weight vector and yi is the loss on that image"
       },
-      "answer": "D",
-      "explanation": "A training pair is `(xi, yi)`, and the hypothesis `h` maps inputs to predicted outputs."
+      "answer": "B",
+      "explanation": "xi is the coat image, yi is the coat label, and h maps images to labels. The loss and the weights are not that pair."
     },
     {
       "id": "EX5-Q07",
       "sectionId": "EX5",
       "type": "mcq",
-      "stem": "Training with mini-batch size `b = 256` fits on one GPU but exceeds the memory of a smaller device. Which interpretation matches the lecture?",
+      "stem": "The training set has 3200 rows and the batch size stays at 32. The learning rate is raised from 0.001 to 1.0. What changes?",
       "choices": {
-        "A": "`b` counts samples in a batch; 32 to 512 is a common hardware-dependent range, so a smaller `b` may fit.",
-        "B": "`b` counts retained features; 32 to 512 is required on all hardware, so features must be removed.",
-        "C": "`b` counts training epochs; 32 to 512 is a fixed convergence condition, so the device must run fewer models.",
-        "D": "`b` is the search branching factor; 32 to 512 limits generated successors, so the frontier must be pruned."
+        "A": "The number of updates in the epoch rises above 100, because a larger learning rate creates more mini-batches",
+        "B": "The epoch still makes 100 updates. The larger learning rate changes the step length, which can make the loss oscillate",
+        "C": "The batch size grows during the epoch until it matches the learning rate",
+        "D": "Training is forced to stop after one pass, because the learning rate is now 1.0"
       },
-      "answer": "A",
-      "explanation": "Here `b` is the number of samples in a mini-batch. The stated 32 to 512 range depends on available hardware."
+      "answer": "B",
+      "explanation": "Updates per epoch are 3200 / 32 = 100. The learning rate scales each step. It does not change how many batches the epoch contains, and a step of size 1.0 can make the loss swing."
     },
     {
       "id": "EX5-Q08",
@@ -11574,121 +11689,121 @@
       "id": "EX-T01",
       "sectionId": "EX",
       "type": "tf",
-      "stem": "A hypothesis is consistent when it matches every training pair. Among consistent hypotheses, Ockham's razor prefers the one with fewer assumptions. A hypothesis can be consistent and still be a poor predictor on new data.",
+      "stem": "Hypothesis A matches all 8 training rows and uses 14 rules. Hypothesis B matches all 8 training rows and uses 2 rules. Ockham's razor, as used in this course, prefers B among these consistent hypotheses. B can still predict new rows badly.",
       "choices": {
         "T": "True",
         "F": "False"
       },
       "answer": "T",
-      "explanation": "Consistency is a training-set property. Ockham then prefers the simpler consistent hypothesis. A curve through every noisy point can still fail on the next point."
+      "explanation": "Both hypotheses match every training row, so both are consistent. Ockham then prefers the one with fewer rules. Matching the training rows does not guarantee the next row."
     },
     {
       "id": "EX-T02",
       "sectionId": "EX",
       "type": "tf",
-      "stem": "Every consistent heuristic is admissible. Consistency is the further requirement used to guarantee that A* graph search is optimal.",
+      "stem": "Every edge satisfies h(n) <= cost(n, n') + h(n'). At one node h(n) = 4 and the true remaining cost is 6. The heuristic is admissible. That same edge inequality is the extra condition graph-search A* uses for optimality.",
       "choices": {
         "T": "True",
         "F": "False"
       },
       "answer": "T",
-      "explanation": "The triangle inequality implies the heuristic never overestimates, so consistency is the stronger condition. Graph search needs that stronger condition."
+      "explanation": "Consistency on every edge implies admissibility, and 4 is below the true remaining cost 6. Graph-search A* needs the edge inequality, not admissibility alone."
     },
     {
       "id": "EX-T03",
       "sectionId": "EX",
       "type": "tf",
-      "stem": "Iterative deepening uses O(bd) memory. When every step cost is equal, it is optimal.",
+      "stem": "Every step costs 1. Iterative deepening first finds a goal at depth 4. Another goal sits at depth 6. The depth-4 goal is a cheapest goal, and the search stores one depth-first path rather than the whole breadth-first frontier.",
       "choices": {
         "T": "True",
         "F": "False"
       },
       "answer": "T",
-      "explanation": "Iterative deepening stores one depth-first path, O(bd), and with equal step costs the first goal it reaches is a shallowest, hence cheapest, goal."
+      "explanation": "Equal step costs make the shallowest goal a cheapest goal. Iterative deepening finds that goal at depth 4 and stores one path, the same memory pattern as depth-first search."
     },
     {
       "id": "EX-T04",
       "sectionId": "EX",
       "type": "tf",
-      "stem": "A CSP solution is an assignment that gives every variable a value and breaks no constraint. A partial assignment that breaks nothing is not yet a solution.",
+      "stem": "X = 1 and Y = 2 satisfies X != Y, and both variables have values. That assignment is a CSP solution. The assignment X = 1 with Y still unassigned is not a solution, even though the assigned value breaks nothing yet.",
       "choices": {
         "T": "True",
         "F": "False"
       },
       "answer": "T",
-      "explanation": "The course definition requires both words: complete, and consistent. A legal partial assignment is unfinished."
+      "explanation": "A solution assigns every variable and breaks no constraint. X = 1 with Y unassigned is only a partial assignment."
     },
     {
       "id": "EX-T05",
       "sectionId": "EX",
       "type": "tf",
-      "stem": "In CSP backtracking, minimum remaining values and the degree heuristic choose the next variable. Least constraining value chooses the next value for the variable already chosen.",
+      "stem": "X has 1 value left and is constrained with 1 other unassigned variable. Y has 1 value left and is constrained with 4 other unassigned variables. Minimum remaining values ties, so the degree heuristic selects Y. Least constraining value is not the rule that selects the variable.",
       "choices": {
         "T": "True",
         "F": "False"
       },
       "answer": "T",
-      "explanation": "Minimum remaining values, with degree as the tie break, selects the variable. Least constraining value orders the values of that variable."
+      "explanation": "The remaining domains are the same size, so degree breaks the tie toward Y. Least constraining value orders values after the variable has been chosen."
     },
     {
       "id": "EX-T06",
       "sectionId": "EX",
       "type": "tf",
-      "stem": "If the training set is linearly separable, the perceptron reaches some separating weights after a finite number of updates. That theorem does not promise that one pass is enough, and it does not promise a unique separator.",
+      "stem": "Two labelled points are linearly separable. After one pass the perceptron still misclassifies one of them. The convergence theorem still allows a later pass to reach a separator. It does not say that this one pass was enough, and it does not say the separator is unique.",
       "choices": {
         "T": "True",
         "F": "False"
       },
       "answer": "T",
-      "explanation": "Separability gives finite convergence to some separator. It does not give one-epoch convergence or a unique line."
+      "explanation": "Separability promises some finite sequence of updates, not success on the first pass and not a unique set of weights."
     },
     {
       "id": "EX-T07",
       "sectionId": "EX",
       "type": "tf",
-      "stem": "For a sigmoid output s, the local derivative factor s(1 - s) is at most 0.25. Stacking several sigmoid layers can therefore make the gradient that reaches the earliest layer very small.",
+      "stem": "A sigmoid unit outputs 0.5, so its local factor is 0.25. A second sigmoid unit also outputs 0.5. The product of the two local factors on this example is 0.0625.",
       "choices": {
         "T": "True",
         "F": "False"
       },
       "answer": "T",
-      "explanation": "s(1 - s) peaks at 0.25 when s = 0.5, and is near 0 when s is near 0 or 1. Each sigmoid layer can multiply the backward signal by at most 1/4."
+      "explanation": "s(1 - s) at s = 0.5 is 0.25. Two such factors multiply to 0.0625, which is the shrinking the early layers see when every sigmoid on the path is in that region."
     },
     {
       "id": "EX-T08",
       "sectionId": "EX",
       "type": "tf",
-      "stem": "In a Bayes net, once a variable's parents are known, that variable is conditionally independent of its non-descendants.",
+      "stem": "The only path is Rain -> Wet <- Sprinkler, and Wet is not observed. That collider path is blocked, so Rain and Sprinkler are independent in this net.",
       "choices": {
         "T": "True",
         "F": "False"
       },
       "answer": "T",
-      "explanation": "That is the local independence claim that lets the joint equal the product of P(variable | its parents)."
+      "explanation": "An unobserved collider blocks its path. With no other path, Rain and Sprinkler are independent until Wet is observed."
     },
     {
       "id": "EX-T09",
       "sectionId": "EX",
       "type": "tf",
-      "stem": "If ID3 has no attributes left and the remaining examples still contain both class labels, it returns the majority class of those remaining examples.",
+      "stem": "Three rows remain, with labels Yes, Yes, and No, and no attributes remain. ID3 returns Yes for that branch.",
       "choices": {
         "T": "True",
         "F": "False"
       },
       "answer": "T",
-      "explanation": "Mixed labels with no attribute left are labelled by the majority of the rows still at that node. An empty set of rows would instead use the parent's majority."
+      "explanation": "Two of the three remaining labels are Yes, and no attribute is left, so the leaf is Yes."
     },
     {
       "id": "EX-T10",
       "sectionId": "EX",
       "type": "tf",
-      "stem": "The Q-learning target is r + gamma * max over a' of Q(s', a'). It uses the best next action in the table, not whichever action the behaviour policy takes in s'.",
+      "stem": "Q(s', left) = 1 and Q(s', right) = 5. The behaviour policy selected left in s'. The Q-learning target still uses 5.",
       "choices": {
         "T": "True",
         "F": "False"
       },
       "answer": "T",
-      "explanation": "The max is what makes the update off-policy. The action actually taken in s' is not the action inside the target."
+      "explanation": "The target uses the larger next action value, 5. The behaviour policy's choice of left does not replace that max."
     },
     {
       "id": "EX-T11",
@@ -11754,13 +11869,13 @@
       "id": "EX-T16",
       "sectionId": "EX",
       "type": "tf",
-      "stem": "Full gradient descent steps on a mini-batch of 32 to 512 rows. Stochastic gradient descent waits until the gradient has been computed on every training row, then steps once.",
+      "stem": "The training set has 3200 rows and the batch size is 32. One epoch therefore performs 100 updates. Full gradient descent on the same set performs one update per epoch. Describing the 100-update procedure as full gradient descent is correct.",
       "choices": {
         "T": "True",
         "F": "False"
       },
       "answer": "F",
-      "explanation": "The two methods are swapped. Full gradient descent uses every training row for one step. A mini-batch of 32 to 512 is stochastic gradient descent, as the slides use that term."
+      "explanation": "3200 / 32 = 100 updates, and that count does not depend on the learning rate. Full gradient descent takes one step from the whole training set. The 100-update epoch is mini-batch gradient descent."
     },
     {
       "id": "EX-T17",
@@ -11814,49 +11929,49 @@
       "id": "EX-T21",
       "sectionId": "EX",
       "type": "tf",
-      "stem": "If an information-gain calculation appears on the exam, it is a simple case and the entropy and gain formulas are given. You are not expected to memorise those formulas or to compute a large table.",
+      "stem": "Parent entropy is 1. One split makes two equal-sized children, each with entropy 0, so its gain is 1. A competing split has gain 0.2. ID3 selects the first split.",
       "choices": {
         "T": "True",
         "F": "False"
       },
       "answer": "T",
-      "explanation": "He said a gain calculation, if one appears, is simple and the formula is supplied. Memorising the formula is not the task."
+      "explanation": "Gain is parent entropy minus the weighted child entropy. The pure split has gain 1 - 0 = 1, which beats 0.2."
     },
     {
       "id": "EX-T22",
       "sectionId": "EX",
       "type": "tf",
-      "stem": "A Bayes-net probability is marked down when the value is correct but the working uses a longer expansion than the shortest factorisation.",
+      "stem": "P(A) = 0.2, P(B|A) = 0.5, and P(C|B) = 0.5. The joint P(A, B, C) equals 0.2 + 0.5 + 0.5 = 1.2.",
       "choices": {
         "T": "True",
         "F": "False"
       },
       "answer": "F",
-      "explanation": "He said a correct value from a correct expansion is full marks. A shorter factorisation is encouraged and is not required."
+      "explanation": "The chain rule multiplies the factors: 0.2 * 0.5 * 0.5 = 0.05. Adding them is not a joint probability."
     },
     {
       "id": "EX2-T01",
       "sectionId": "EX2",
       "type": "tf",
-      "stem": "Symbolic AI normally learns opaque numeric weights from raw data, whereas subsymbolic AI normally applies readable hand-written rules.",
+      "stem": "A chess program selects moves by searching a hand-written evaluation of legal positions, and a person can read those rules. The program is subsymbolic because the evaluation is a number.",
       "choices": {
         "T": "True",
         "F": "False"
       },
       "answer": "F",
-      "explanation": "Symbolic AI uses explicit rules. Subsymbolic learning stores numeric weights and is commonly less interpretable."
+      "explanation": "Readable hand-written rules are the symbolic pattern in this course. A numeric evaluation does not make the program subsymbolic."
     },
     {
       "id": "EX2-T02",
       "sectionId": "EX2",
       "type": "tf",
-      "stem": "When its fixed memory is full, SMA* can discard a worst leaf, back up that leaf's best score to its parent, and regenerate the branch later if it becomes promising.",
+      "stem": "SMA* has filled its memory and drops the leaf with the worst backed-up score. It records nothing about that leaf, so the branch can never be regenerated even if every remaining branch later looks worse.",
       "choices": {
         "T": "True",
         "F": "False"
       },
-      "answer": "T",
-      "explanation": "SMA* uses backed-up scores so a forgotten branch can be reconsidered and regenerated."
+      "answer": "F",
+      "explanation": "SMA* writes the dropped leaf's best score onto the parent. That backed-up value is what allows the branch to be regenerated later."
     },
     {
       "id": "EX2-T03",
@@ -11910,13 +12025,13 @@
       "id": "EX2-T07",
       "sectionId": "EX2",
       "type": "tf",
-      "stem": "Unsupervised learning can build an internal representation such as clusters or extracted features without target labels.",
+      "stem": "500 spectra are stored with no category column. An algorithm groups them into 8 clusters. That grouping is unsupervised learning. Naming a cluster afterwards does not turn the grouping step into supervised learning.",
       "choices": {
         "T": "True",
         "F": "False"
       },
       "answer": "T",
-      "explanation": "Unsupervised learning has no target labels and can organise the inputs into clusters or learn useful features."
+      "explanation": "The grouping step had no category targets, so it is unsupervised. A name attached later is not a training label for that step."
     },
     {
       "id": "EX2-T08",
@@ -11958,25 +12073,25 @@
       "id": "EX3-T01",
       "sectionId": "EX3",
       "type": "tf",
-      "stem": "True or false: Symbolic AI can apply readable, hand-written rules without a training set, but those rules can be brittle on unexpected inputs.",
+      "stem": "True or false: The diagnosis rules were written by hand and there is no training set. A case whose symptom combination matches no rule produces no conclusion. That failure is the brittleness of symbolic rules.",
       "choices": {
         "T": "True",
         "F": "False"
       },
       "answer": "T",
-      "explanation": "Explicit symbolic rules are readable and need no fitted training set, but their fixed coverage makes them brittle."
+      "explanation": "The rules were not fitted from examples. Missing an unlisted symptom combination is the brittleness the lecture names for symbolic rules."
     },
     {
       "id": "EX3-T02",
       "sectionId": "EX3",
       "type": "tf",
-      "stem": "True or false: The pointwise maximum of two admissible heuristics remains admissible, even when neither heuristic dominates the other on every state.",
+      "stem": "True or false: h1(n) = 3 and h2(n) = 4 are both admissible, and on other nodes h1 is sometimes the larger one. h3(n) = max(h1(n), h2(n)) is admissible on every node. Dominance of one heuristic over the other is not required for that claim.",
       "choices": {
         "T": "True",
         "F": "False"
       },
       "answer": "T",
-      "explanation": "Each heuristic is a lower bound on the true remaining cost, so their maximum is also a lower bound."
+      "explanation": "The max of two lower bounds is still a lower bound, including at nodes where h1 is the larger input. Neither heuristic has to win at every node."
     },
     {
       "id": "EX3-T03",
@@ -12018,13 +12133,13 @@
       "id": "EX3-T06",
       "sectionId": "EX3",
       "type": "tf",
-      "stem": "True or false: Softmax turns one score per class into positive probabilities that sum to 1, and the predicted class is the one with the largest score.",
+      "stem": "True or false: The class scores are 2, 0, and -1. Softmax makes them positive and summing to 1. The predicted class is the third, because softmax reverses the ranking.",
       "choices": {
         "T": "True",
         "F": "False"
       },
-      "answer": "T",
-      "explanation": "Softmax produces a probability distribution without changing which class score is largest."
+      "answer": "F",
+      "explanation": "Softmax keeps the order of the scores. The largest score is 2, so the first class is predicted. The outputs sum to 1 and stay positive, which does not reverse the ranking."
     },
     {
       "id": "EX3-T07",
@@ -12042,13 +12157,13 @@
       "id": "EX3-T08",
       "sectionId": "EX3",
       "type": "tf",
-      "stem": "True or false: On either a chain `X -> Z -> Y` or a fork `X <- Z -> Y`, observing the middle variable `Z` blocks that path between `X` and `Y`.",
+      "stem": "True or false: The net is only the chain X -> Z -> Y, and Z is observed. That path between X and Y is blocked.",
       "choices": {
         "T": "True",
         "F": "False"
       },
       "answer": "T",
-      "explanation": "Conditioning on the middle variable blocks a chain or fork because it accounts for the information that could otherwise pass along that path."
+      "explanation": "Z is the middle of the only chain. Observing it blocks that path. X and Y do not stay connected through Z once Z is known."
     },
     {
       "id": "EX3-T09",
@@ -12090,13 +12205,13 @@
       "id": "EX4-T02",
       "sectionId": "EX4",
       "type": "tf",
-      "stem": "For breadth-first search, storing the frontier is usually the practical limitation because the number of stored nodes grows exponentially with goal depth.",
+      "stem": "The shallowest goal is deep and every node has many children. Breadth-first search must store a frontier that grows by about the branching factor at each depth. Running out of memory for that frontier is the usual practical failure, even though a goal at finite depth would eventually be selected.",
       "choices": {
         "T": "True",
         "F": "False"
       },
       "answer": "T",
-      "explanation": "The exponentially large stored frontier is the usual practical problem for BFS."
+      "explanation": "The frontier, not the goal test, is what grows with depth. A finite-depth goal is still reachable in principle. Memory for the stored layer is the usual reason BFS stops being practical."
     },
     {
       "id": "EX4-T03",
@@ -12126,13 +12241,13 @@
       "id": "EX4-T05",
       "sectionId": "EX4",
       "type": "tf",
-      "stem": "Semi-supervised learning can use a small labelled set together with a larger unlabelled set.",
+      "stem": "40 labelled recordings and 2000 unlabelled recordings from the same sensors are both used to fit the model. That is semi-supervised learning.",
       "choices": {
         "T": "True",
         "F": "False"
       },
       "answer": "T",
-      "explanation": "Semi-supervised learning combines characteristics of supervised and unsupervised learning."
+      "explanation": "Both the labelled recordings and the unlabelled recordings are used. Using only the 40 labels would be supervised. Ignoring the labels would be unsupervised."
     },
     {
       "id": "EX4-T06",
@@ -12150,25 +12265,25 @@
       "id": "EX4-T07",
       "sectionId": "EX4",
       "type": "tf",
-      "stem": "In a decision tree, an internal node tests an attribute, its outgoing branches represent attribute values, and a leaf specifies an output.",
+      "stem": "A node contains 6 Yes and 4 No. It tests Colour. The branch Colour = red contains 4 rows, all No. That branch must stay an internal node and test another attribute, because the parent was mixed.",
       "choices": {
         "T": "True",
         "F": "False"
       },
-      "answer": "T",
-      "explanation": "These are the course's highlighted structural components of a decision tree."
+      "answer": "F",
+      "explanation": "The red branch is pure No, so ID3 makes it a leaf. A mixed parent does not force every child to keep splitting."
     },
     {
       "id": "EX4-T08",
       "sectionId": "EX4",
       "type": "tf",
-      "stem": "Marginalising a joint distribution to a subset of its variables requires summing over the values of the discarded variables.",
+      "stem": "P(a, b) = 0.2 and P(a, not b) = 0.1. Marginalising out b gives P(a) = 0.3.",
       "choices": {
         "T": "True",
         "F": "False"
       },
       "answer": "T",
-      "explanation": "Marginalisation sums out every variable not retained in the requested distribution."
+      "explanation": "The two cells in which a is true sum to 0.2 + 0.1 = 0.3. That sum is P(a)."
     },
     {
       "id": "EX4-T09",
@@ -12210,25 +12325,25 @@
       "id": "EX5-T02",
       "sectionId": "EX5",
       "type": "tf",
-      "stem": "IDA* controls memory by repeating depth-limited search with limits `0, 1, 2, ...`, exactly as ordinary iterative deepening does.",
+      "stem": "The current IDA* cutoff keeps nodes with f <= 20. Nodes that missed it have f = 24, 31, and 22. The next cutoff is 21, because IDA* raises its limit by 1 in the same way iterative deepening raises depth.",
       "choices": {
         "T": "True",
         "F": "False"
       },
       "answer": "F",
-      "explanation": "IDA* raises an `f`-cost bound. Ordinary iterative deepening raises a depth limit."
+      "explanation": "The next cutoff is the smallest f that exceeded 20, which is 22. Adding 1 would be iterative deepening's depth rule, not IDA*."
     },
     {
       "id": "EX5-T03",
       "sectionId": "EX5",
       "type": "tf",
-      "stem": "Local search may discard the route taken through the configuration space because its output is the final configuration `X*`, not a path to `X*`.",
+      "stem": "The 8-queens climb returns a board with 0 attacking pairs. The sequence of queen moves used to reach that board is not part of the answer local search was asked to return.",
       "choices": {
         "T": "True",
         "F": "False"
       },
       "answer": "T",
-      "explanation": "Local search seeks the final configuration `X*`. Unlike path-finding search, it need not retain the sequence of moves used to reach it."
+      "explanation": "The required output is the board with no attacking pairs. Local search does not return the path that reached it."
     },
     {
       "id": "EX5-T04",
@@ -12258,25 +12373,25 @@
       "id": "EX5-T06",
       "sectionId": "EX5",
       "type": "tf",
-      "stem": "At a decision-tree node, ID3 selects the available attribute with the largest information gain, even though this greedy choice does not guarantee the smallest possible tree.",
+      "stem": "Attribute A has gain 0.4 and attribute B has gain 0.1. ID3 tests A at this node. A different choice of root could still produce a smaller tree, because the gain rule does not compare complete trees.",
       "choices": {
         "T": "True",
         "F": "False"
       },
       "answer": "T",
-      "explanation": "ID3 greedily chooses the largest information gain at the current node without guaranteeing a globally smallest tree."
+      "explanation": "Gain 0.4 beats gain 0.1 at this node, so A is tested now. That choice does not search the trees that would have started with B."
     },
     {
       "id": "EX5-T07",
       "sectionId": "EX5",
       "type": "tf",
-      "stem": "Exact Bayes-net inference can require sums of products of local CPT entries, and a naive expansion may contain exponentially many products.",
+      "stem": "One query sums over 10 other binary variables, so a naive expansion can contain 2^10 products. That query is still a single conditional-probability-table lookup, because every Bayes-net question is one row of one table.",
       "choices": {
         "T": "True",
         "F": "False"
       },
-      "answer": "T",
-      "explanation": "Inference sums products of local probabilities, and naive enumeration may have exponentially many terms."
+      "answer": "F",
+      "explanation": "Summing over 10 binary variables can produce 1024 products. That is not one row of one table. A single CPT row is the local factor for one node given its parents."
     },
     {
       "id": "EX5-T08",
@@ -12313,6 +12428,3666 @@
       },
       "answer": "F",
       "explanation": "A straight line is the shortest possible distance between two points, so road distance cannot be smaller. This makes the straight-line heuristic admissible."
+    },
+    {
+      "id": "APL1-Q01",
+      "sectionId": "APL1",
+      "type": "mcq",
+      "stem": "A sample-collection cart is scored after each run. Which performance measure can be scored from the log?",
+      "choices": {
+        "A": "The cart understands every crop",
+        "B": "The cart is intelligent",
+        "C": "Collisions per 100 metres, and samples collected per hour",
+        "D": "The cart has a well designed architecture"
+      },
+      "answer": "C",
+      "explanation": "Collisions and samples per hour can be counted from the log. Understanding and intelligence cannot."
+    },
+    {
+      "id": "APL1-Q02",
+      "sectionId": "APL1",
+      "type": "mcq",
+      "stem": "The same cart lists cameras under Actuators and the wheels under Sensors. What should be changed?",
+      "choices": {
+        "A": "Move both into Performance, because they are hardware",
+        "B": "List cameras as sensors and wheels as actuators",
+        "C": "List both as the environment the cart drives through",
+        "D": "Drop both, because PEAS uses only the performance measure"
+      },
+      "answer": "B",
+      "explanation": "Cameras supply percepts. Wheels change the cart's position. Those are sensors and actuators."
+    },
+    {
+      "id": "APL1-Q03",
+      "sectionId": "APL1",
+      "type": "mcq",
+      "stem": "A chess program searches legal moves with a hand-written evaluation a person can read. It was not fitted from labelled games. Which description matches?",
+      "choices": {
+        "A": "Subsymbolic, because the evaluation is a number",
+        "B": "Supervised learning, because the opponent's moves are labels",
+        "C": "Symbolic, because the behaviour comes from readable rules",
+        "D": "Reinforcement learning, because the game ends with a winner"
+      },
+      "answer": "C",
+      "explanation": "Rules that were written and can be read are the symbolic case in this course. A numeric score does not change that."
+    },
+    {
+      "id": "APL1-Q04",
+      "sectionId": "APL1",
+      "type": "mcq",
+      "stem": "A network maps a camera image to a steering command. The weights are not a set of rules a person can read off. Training used a large set of labelled images. Which limitation applies?",
+      "choices": {
+        "A": "The network cannot take an image as input",
+        "B": "The decision is opaque, and the fit depended on a large labelled set",
+        "C": "The network can only represent unary constraints",
+        "D": "The network is required to copy human mistakes"
+      },
+      "answer": "B",
+      "explanation": "Opacity and the demand for many examples are the subsymbolic limits from the lecture. An image input is allowed."
+    },
+    {
+      "id": "APL1-Q05",
+      "sectionId": "APL1",
+      "type": "mcq",
+      "stem": "A diagnosis system is marked by how closely its intermediate reasoning matches a clinician's notes. It is not marked by a logic proof or by patient outcomes alone. Which approach is that?",
+      "choices": {
+        "A": "Thinking humanly",
+        "B": "Acting rationally",
+        "C": "Thinking rationally",
+        "D": "Acting humanly"
+      },
+      "answer": "A",
+      "explanation": "Comparing the system's reasoning steps with a person's is the thinking-humanly approach."
+    },
+    {
+      "id": "APL1-Q06",
+      "sectionId": "APL1",
+      "type": "mcq",
+      "stem": "A heater turns on when the sensor readings make the expected cost of leaving it off larger than the cost of running it. It is not trying to imitate a person. Which approach is that?",
+      "choices": {
+        "A": "Acting humanly",
+        "B": "Thinking humanly",
+        "C": "Acting rationally",
+        "D": "Thinking rationally, because any numerical comparison is a syllogism"
+      },
+      "answer": "C",
+      "explanation": "The controller selects the action with the better expected outcome from the readings it has. That is acting rationally."
+    },
+    {
+      "id": "APL1-Q07",
+      "sectionId": "APL1",
+      "type": "mcq",
+      "stem": "A shopping agent receives HTML, scripts, and JSON. It sends form fills, button clicks, and redirects. Which PEAS assignment is right?",
+      "choices": {
+        "A": "HTML and JSON are actuators. Clicks and redirects are sensors",
+        "B": "HTML and JSON are sensors. Clicks and redirects are actuators",
+        "C": "Both groups are performance measures",
+        "D": "Both groups are the environment, so the agent has no sensors"
+      },
+      "answer": "B",
+      "explanation": "Incoming page content is perceived. Clicks and redirects are actions the agent sends."
+    },
+    {
+      "id": "APL1-Q08",
+      "sectionId": "APL1",
+      "type": "mcq",
+      "stem": "The cart's camera showed debris, so it took a longer route. The aisle was clear afterwards. Which judgement matches the course?",
+      "choices": {
+        "A": "The cart was irrational, because a rational action must be best in hindsight",
+        "B": "The cart may have been rational given the camera reading it had. The longer route does not by itself prove otherwise",
+        "C": "The cart was rational only if the aisle was fully observable",
+        "D": "The cart was irrational, because an uncertain camera reading cannot support a rational action"
+      },
+      "answer": "B",
+      "explanation": "Rationality uses the information available when the action was chosen. The later clear aisle is hindsight."
+    },
+    {
+      "id": "APL2-Q01",
+      "sectionId": "APL2",
+      "type": "mcq",
+      "stem": "Two nodes both contain room B with the same dirt set. They have different parents and different path costs. How many states is that?",
+      "choices": {
+        "A": "Two states, because the parents differ",
+        "B": "One state, stored in two nodes",
+        "C": "No state, until the parent pointer is included in the state",
+        "D": "Three states, because the path cost is a third component of the world"
+      },
+      "answer": "B",
+      "explanation": "The state is the room plus the dirt set. Parent and path cost are stored on the node."
+    },
+    {
+      "id": "APL2-Q02",
+      "sectionId": "APL2",
+      "type": "mcq",
+      "stem": "Breadth-first search keeps the open list from front to back as [P, Q]. Expanding P generates X then Y, and both are appended in that order. What is the open list, and which node is expanded next?",
+      "choices": {
+        "A": "[Y, X, Q], and Y is next",
+        "B": "[Q, X, Y], and Q is next",
+        "C": "[X, Y, Q], and X is next",
+        "D": "[Q, Y, X], and Y is next"
+      },
+      "answer": "B",
+      "explanation": "Children join the back of a FIFO list. Q was already at the front, so Q is expanded next."
+    },
+    {
+      "id": "APL2-Q03",
+      "sectionId": "APL2",
+      "type": "mcq",
+      "stem": "Depth-first search uses a stack whose top is written first: [P, Q]. Expanding P generates X then Y and pushes in that order, so Y is pushed last. What is expanded next?",
+      "choices": {
+        "A": "Q",
+        "B": "X",
+        "C": "Y",
+        "D": "The goal, because a generated child is accepted before it is pushed"
+      },
+      "answer": "C",
+      "explanation": "The last push is the next pop. Y sits above X and Q."
+    },
+    {
+      "id": "APL2-Q04",
+      "sectionId": "APL2",
+      "type": "mcq",
+      "stem": "Every step cost is positive, and the costs are not all equal. Breadth-first search returns a 2-step path of cost 9. A 3-step path costs 4. Which claim holds?",
+      "choices": {
+        "A": "Breadth-first search is optimal on this graph because it returned a solution",
+        "B": "Breadth-first search can still be complete here and return a path that is not cheapest",
+        "C": "Breadth-first search expands by g, so it returns the cost-4 path",
+        "D": "Breadth-first search is incomplete whenever two step costs differ"
+      },
+      "answer": "B",
+      "explanation": "Layer order minimises the number of steps. A longer path can cost less when step costs differ. Completeness does not require optimality."
+    },
+    {
+      "id": "APL2-Q05",
+      "sectionId": "APL2",
+      "type": "mcq",
+      "stem": "Uniform-cost search has generated a goal with g = 8. Another frontier node has g = 3 and has not been expanded. What should the search do?",
+      "choices": {
+        "A": "Return the goal now, because a goal node exists",
+        "B": "Leave the goal on the frontier until it is selected for expansion",
+        "C": "Discard the goal, because a cheaper node is still present",
+        "D": "Switch to breadth-first search, because a goal has been generated"
+      },
+      "answer": "B",
+      "explanation": "Uniform-cost search tests the goal when the node is selected. The g = 3 node may lead to a cheaper goal."
+    },
+    {
+      "id": "APL2-Q06",
+      "sectionId": "APL2",
+      "type": "mcq",
+      "stem": "The shallowest goal is at depth 4. Depth-limited search is run with limit 3. What happens?",
+      "choices": {
+        "A": "It returns that goal, because the limit is only a memory hint",
+        "B": "It returns that goal on the third expansion",
+        "C": "It is optimal for unequal costs, because the limit removes expensive paths",
+        "D": "It cannot reach that goal. Iterative deepening reaches it when the limit becomes 4"
+      },
+      "answer": "D",
+      "explanation": "A limit of 3 does not generate depth 4. The following iterative-deepening round uses limit 4."
+    },
+    {
+      "id": "APL2-Q07",
+      "sectionId": "APL2",
+      "type": "mcq",
+      "stem": "Every step costs 1. Iterative deepening finds a goal at depth 2. Another goal is at depth 5. Which result follows?",
+      "choices": {
+        "A": "It returns the depth-2 goal, and it does not keep the breadth-first frontier between rounds",
+        "B": "It returns the depth-5 goal, because later rounds replace earlier goals",
+        "C": "It is incomplete, because each round discards the previous search tree",
+        "D": "It returns the depth-2 goal only when the step costs are unequal"
+      },
+      "answer": "A",
+      "explanation": "Equal step costs make the shallowest goal a cheapest goal. Each round is a new depth-limited search, so the breadth-first layer is not stored."
+    },
+    {
+      "id": "APL2-Q08",
+      "sectionId": "APL2",
+      "type": "mcq",
+      "stem": "One edge from S reaches a goal at cost 1.25. Another branch is infinite, with step costs 1/2, 1/4, 1/8, and so on, so every node on that branch has path cost below 1. Branching is finite. What follows for uniform-cost search?",
+      "choices": {
+        "A": "It is complete, because every individual step cost is positive",
+        "B": "It is complete, because the infinite branch has a bounded total and is eventually exhausted",
+        "C": "Completeness is not guaranteed, because no single epsilon > 0 lower-bounds every step cost",
+        "D": "It is incomplete only because the branching factor is infinite"
+      },
+      "answer": "C",
+      "explanation": "The proof needs one positive lower bound on every step. Costs that shrink toward 0 do not give one, so a node cheaper than 1.25 can always remain."
+    },
+    {
+      "id": "APL3-Q01",
+      "sectionId": "APL3",
+      "type": "mcq",
+      "stem": "h(n) = 0 for every node. The frontier holds A with g = 5, B with g = 3, and C with g = 8. Which node does A* expand next?",
+      "choices": {
+        "A": "C, because a zero heuristic expands the largest path cost",
+        "B": "A, because A was generated before B",
+        "C": "B, because f(n) = g(n) when h is 0, so the smallest path cost is next",
+        "D": "None. Every f value is equal, so A* stops without expanding"
+      },
+      "answer": "C",
+      "explanation": "f(B) = 3, f(A) = 5, and f(C) = 8. Ordering by g alone is uniform-cost search."
+    },
+    {
+      "id": "APL3-Q02",
+      "sectionId": "APL3",
+      "type": "mcq",
+      "stem": "The true remaining cost from A to a goal is 3. The heuristic sets h(A) = 5. Which conclusion follows?",
+      "choices": {
+        "A": "h is admissible at A, because a heuristic may exceed the true cost by 2",
+        "B": "h is not admissible at A, so tree-search A* is not guaranteed to be optimal",
+        "C": "h is consistent at A, because 5 is larger than 3",
+        "D": "A* ignores h(A) once any goal has been generated"
+      },
+      "answer": "B",
+      "explanation": "Admissible means h(A) is at most 3. The value 5 is already an overestimate."
+    },
+    {
+      "id": "APL3-Q03",
+      "sectionId": "APL3",
+      "type": "mcq",
+      "stem": "Graph search has closed state n' on a path with g(n') = 9. A later path reaches the same state with g = 6. h is admissible, and the edge into n' breaks h(n) <= cost(n, n') + h(n'). What can happen?",
+      "choices": {
+        "A": "Graph search can keep the closed g = 9 path and never expand the g = 6 path",
+        "B": "Admissibility forces graph search to reopen n'",
+        "C": "Graph search replaces a closed path whenever a smaller g appears, and no extra rule is required",
+        "D": "Tree search is the version that drops the repeated state"
+      },
+      "answer": "A",
+      "explanation": "Consistency is what makes the first closure optimal. An admissible heuristic that breaks the edge test can lose the cheaper path."
+    },
+    {
+      "id": "APL3-Q04",
+      "sectionId": "APL3",
+      "type": "mcq",
+      "stem": "Start: 2 3 1 / 4 5 6 / 7 8 blank. Goal: 1 2 3 / 4 5 6 / 7 8 blank. Tiles 4, 5, 6, 7, and 8 are already home. What are the misplaced-tile count and the Manhattan distance? The blank is not counted.",
+      "choices": {
+        "A": "8 and 18",
+        "B": "4 and 3",
+        "C": "3 and 3",
+        "D": "3 and 4"
+      },
+      "answer": "D",
+      "explanation": "Tiles 1, 2, and 3 are off their squares, so the misplaced count is 3. Their Manhattan distances are 2, 1, and 1, which sum to 4."
+    },
+    {
+      "id": "APL3-Q05",
+      "sectionId": "APL3",
+      "type": "mcq",
+      "stem": "h1 and h2 are both admissible. At this node h1 = 2, h2 = 5, and the true remaining cost is 6. On other nodes h1 is sometimes larger than h2. Which claim holds?",
+      "choices": {
+        "A": "h2 is admissible here. A larger admissible value is not automatically an overestimate",
+        "B": "h2 is inadmissible because 5 is greater than 2",
+        "C": "h2 is inconsistent because 5 is greater than 2",
+        "D": "A* with h2 must expand more nodes than A* with h1 at every node"
+      },
+      "answer": "A",
+      "explanation": "5 is still below the true cost 6. One admissible heuristic may exceed another without exceeding the true cost."
+    },
+    {
+      "id": "APL3-Q06",
+      "sectionId": "APL3",
+      "type": "mcq",
+      "stem": "Greedy best-first search orders the frontier by h only and tests a goal when the node is selected. From S the children are A with h = 1 and path cost 9, and B with h = 3 and path cost 2. A leads directly to G at an extra cost 9. B leads through C to G at an extra cost 4. Which path is returned?",
+      "choices": {
+        "A": "S-B-C-G, cost 6, because that path has the smaller g",
+        "B": "S-A-G, cost 18, because A has the smaller h",
+        "C": "S-A-B-C-G, because greedy expands every generated node",
+        "D": "No path. Greedy cannot start when one heuristic value is larger than another"
+      },
+      "answer": "B",
+      "explanation": "After S, the smallest h is A. Greedy follows A to G and never uses the cheaper route through B."
+    },
+    {
+      "id": "APL3-Q07",
+      "sectionId": "APL3",
+      "type": "mcq",
+      "stem": "The IDA* cutoff keeps nodes with f <= 20. No goal has been selected. Nodes that exceeded the cutoff have f = 24, 31, and 22. What is the next cutoff?",
+      "choices": {
+        "A": "21",
+        "B": "31",
+        "C": "22",
+        "D": "24"
+      },
+      "answer": "C",
+      "explanation": "The next cutoff is the smallest f that was strictly above 20. That value is 22, not one more than the old limit."
+    },
+    {
+      "id": "APL3-Q08",
+      "sectionId": "APL3",
+      "type": "mcq",
+      "stem": "A relaxation of the 8-puzzle keeps 'move to an adjacent square' and drops 'the destination must be blank'. The exact cost of that relaxed puzzle is used as h. Which heuristic is that, and why may A* use it?",
+      "choices": {
+        "A": "Manhattan distance. Every legal solution of the real puzzle solves the relaxed puzzle, so the relaxed cost does not exceed the real cost",
+        "B": "Misplaced tiles. Each tile may jump straight to its goal square",
+        "C": "Gaschnig's heuristic. Any tile may swap with the blank from any distance",
+        "D": "The path cost g. It is admissible because it has already been paid"
+      },
+      "answer": "A",
+      "explanation": "Dropping only the blank precondition prices each tile by Manhattan distance. A real solution is still a relaxed solution, so h does not overestimate."
+    },
+    {
+      "id": "APL4A-Q01",
+      "sectionId": "APL4A",
+      "type": "mcq",
+      "stem": "Eval is minimised. The search stops at X where Eval(X) = 2 and every one-move neighbour scores at least 2. A different configuration scores 0. What is X?",
+      "choices": {
+        "A": "A global minimum, because no neighbour is better",
+        "B": "A local minimum. The remote score of 0 shows it is not global",
+        "C": "A shoulder, because a sideways move is required to exist",
+        "D": "A ridge, because the score is positive"
+      },
+      "answer": "B",
+      "explanation": "No neighbour improves on 2, so X is locally optimal. The configuration that scores 0 is better, so X is not global."
+    },
+    {
+      "id": "APL4A-Q02",
+      "sectionId": "APL4A",
+      "type": "mcq",
+      "stem": "Each independent restart succeeds with probability 0.1. The expected number of runs up to and including the first success is 1/p. How many runs is that, and how many of them are failures?",
+      "choices": {
+        "A": "10 runs, of which 9 are failures",
+        "B": "9 runs, of which 10 are failures",
+        "C": "10 runs, of which 10 are failures",
+        "D": "1 run, of which 0.1 is a failure"
+      },
+      "answer": "A",
+      "explanation": "1/0.1 = 10 runs in expectation. One of those is the success, so the expected failure count is 9."
+    },
+    {
+      "id": "APL4A-Q03",
+      "sectionId": "APL4A",
+      "type": "mcq",
+      "stem": "Sideways moves are allowed with no cap. The current region is flat: every neighbour has the same score, and none is uphill. What follows?",
+      "choices": {
+        "A": "The search is guaranteed to find an exit, because sideways moves explore the flat region",
+        "B": "A plateau need not have an uphill exit, and an uncapped sideways walk can loop",
+        "C": "The region is a shoulder, and every shoulder has an exit by definition",
+        "D": "Sideways moves are illegal, so the search has already failed"
+      },
+      "answer": "B",
+      "explanation": "A plateau can be flat with no improving exit. Without a cap, sideways moves can also repeat forever."
+    },
+    {
+      "id": "APL4A-Q04",
+      "sectionId": "APL4A",
+      "type": "mcq",
+      "stem": "8-queens local search scores a board by the number of attacking pairs. It returns a board whose score is 0. What is the required output?",
+      "choices": {
+        "A": "The sequence of queen moves from the random start",
+        "B": "The board itself. The move sequence is not the objective",
+        "C": "The first board whose score increased",
+        "D": "Any board whose score equals the score of the start state"
+      },
+      "answer": "B",
+      "explanation": "Local search returns the configuration. A score of 0 means no queens attack, which is the solution."
+    },
+    {
+      "id": "APL4A-Q05",
+      "sectionId": "APL4A",
+      "type": "mcq",
+      "stem": "Each climb succeeds with probability 0.5, independently. What is the probability that at least one of the next two climbs succeeds?",
+      "choices": {
+        "A": "0.25",
+        "B": "0.50",
+        "C": "0.75",
+        "D": "1.00"
+      },
+      "answer": "C",
+      "explanation": "Both fail with probability 0.5 * 0.5 = 0.25. At least one succeeds with probability 1 - 0.25 = 0.75."
+    },
+    {
+      "id": "APL4A-Q06",
+      "sectionId": "APL4A",
+      "type": "mcq",
+      "stem": "The evaluation function stays fixed. The neighbourhood changes from 'move one queen inside its column' to 'swap the columns of two queens'. What can change?",
+      "choices": {
+        "A": "Nothing. The evaluation alone decides which configurations are one move apart",
+        "B": "Which positions are local optima, because the neighbourhood decides the one-move neighbours",
+        "C": "The path cost of the route, which is the value local search returns",
+        "D": "Nothing about reachability. Every start then reaches the global minimum"
+      },
+      "answer": "B",
+      "explanation": "A different neighbourhood changes the neighbours that are compared. A position can be locally optimal under one move set and not under the other."
+    },
+    {
+      "id": "APL4A-Q07",
+      "sectionId": "APL4A",
+      "type": "mcq",
+      "stem": "From the current board, three successive sideways moves stay flat, and the next move then improves the score. There is no improving move from the current board itself. Which landscape feature is this?",
+      "choices": {
+        "A": "A plateau with no exit",
+        "B": "A shoulder",
+        "C": "A global minimum, because the current score is locally best",
+        "D": "A ridge that forbids sideways moves"
+      },
+      "answer": "B",
+      "explanation": "A flat stretch that reaches an uphill move by sideways steps is a shoulder. A plateau need not have that exit."
+    },
+    {
+      "id": "APL4A-Q08",
+      "sectionId": "APL4A",
+      "type": "mcq",
+      "stem": "A successful climb takes 6 steps and a failed climb takes 2. Each climb succeeds with probability 0.25. The expected number of failures before the first success is (1 - 0.25) / 0.25. What is the expected number of steps?",
+      "choices": {
+        "A": "6",
+        "B": "8",
+        "C": "12",
+        "D": "24"
+      },
+      "answer": "C",
+      "explanation": "Expected failures are 0.75 / 0.25 = 3. Steps are 1 * 6 + 3 * 2 = 12."
+    },
+    {
+      "id": "APL4B-Q01",
+      "sectionId": "APL4B",
+      "type": "mcq",
+      "stem": "Domain of X is {red, blue}. Domain of Y is {red}. The only constraint is X != Y. Revising arc X -> Y deletes any value of X that has no support in Y. What is the domain of X afterwards?",
+      "choices": {
+        "A": "{red}",
+        "B": "{blue}",
+        "C": "empty, so this constraint proves the CSP has no solution",
+        "D": "{red, blue}, because the revision deletes values from Y"
+      },
+      "answer": "B",
+      "explanation": "blue != red, so blue is supported. red has no different value in Y, so red is deleted."
+    },
+    {
+      "id": "APL4B-Q02",
+      "sectionId": "APL4B",
+      "type": "mcq",
+      "stem": "X has 1 value left. Y has 3 values left. Which variable does backtracking select next, and which heuristic does the work?",
+      "choices": {
+        "A": "Y, because the degree heuristic prefers the larger domain",
+        "B": "X, because minimum remaining values selects the smaller domain. Degree is not consulted",
+        "C": "Y, because least constraining value selects the variable",
+        "D": "Either, because both domains are non-empty"
+      },
+      "answer": "B",
+      "explanation": "Minimum remaining values compares 1 with 3 and selects X. Degree is the tie-break, and there is no tie."
+    },
+    {
+      "id": "APL4B-Q03",
+      "sectionId": "APL4B",
+      "type": "mcq",
+      "stem": "W has just been assigned red. Forward checking has reduced the unassigned neighbours to X = {green} and Y = {green}. There is also a constraint X != Y. What can arc consistency still delete?",
+      "choices": {
+        "A": "Nothing. Singleton domains already count as assignments",
+        "B": "green from X, because X = green has no support in Y",
+        "C": "red, by putting it back into X",
+        "D": "Only values of W, because W is the assigned variable"
+      },
+      "answer": "B",
+      "explanation": "Forward checking reacted to W. It did not check X against Y. X = green conflicts with the only remaining value of Y."
+    },
+    {
+      "id": "APL4B-Q04",
+      "sectionId": "APL4B",
+      "type": "mcq",
+      "stem": "Min-conflicts has selected variable X in a complete assignment. Red currently violates 3 constraints, green violates 1, and blue violates 0. Which value should it choose?",
+      "choices": {
+        "A": "red",
+        "B": "green",
+        "C": "blue",
+        "D": "Any of the three, because every complete assignment is already legal"
+      },
+      "answer": "C",
+      "explanation": "Blue leaves 0 violations, which is the minimum. A complete assignment may still be changed."
+    },
+    {
+      "id": "APL4B-Q05",
+      "sectionId": "APL4B",
+      "type": "mcq",
+      "stem": "The only constraint is X != Y. The current assignment is X = 1, and Y is still unassigned. Is this a solution?",
+      "choices": {
+        "A": "Yes, because the assigned value breaks nothing so far",
+        "B": "No, because Y has no value yet",
+        "C": "Yes, because a solution may omit variables that have not failed a check",
+        "D": "No, because a binary constraint is not checked until both variables are assigned, so X = 1 is illegal"
+      },
+      "answer": "B",
+      "explanation": "A solution assigns every variable and satisfies the constraints. This assignment is only partial."
+    },
+    {
+      "id": "APL4B-Q06",
+      "sectionId": "APL4B",
+      "type": "mcq",
+      "stem": "Variable X is already chosen. Value red would delete 3 values from unassigned neighbours. Value blue would delete 1. Which value does least constraining value try first?",
+      "choices": {
+        "A": "red, because deleting more values makes the failure appear sooner",
+        "B": "blue, because it deletes fewer values from unassigned neighbours",
+        "C": "red, because minimum remaining values orders values",
+        "D": "Either. Least constraining value orders the variables, not the values"
+      },
+      "answer": "B",
+      "explanation": "Least constraining value orders the values of the chosen variable and prefers the value that rules out less."
+    },
+    {
+      "id": "APL4B-Q07",
+      "sectionId": "APL4B",
+      "type": "mcq",
+      "stem": "Giving WA red and then NT green produces the same assignment as the reverse order. The search tree contains both orders as nodes. How many distinct CSP states is that pair?",
+      "choices": {
+        "A": "Two states, because the order of assignment differs",
+        "B": "One state. The tree can still hold two nodes for the two orders",
+        "C": "One node, because a CSP state and a search node are the same object",
+        "D": "No state, until every region has a colour"
+      },
+      "answer": "B",
+      "explanation": "The state is the assignment of values, and that assignment is commutative. The tree records the order in separate nodes."
+    },
+    {
+      "id": "APL4B-Q08",
+      "sectionId": "APL4B",
+      "type": "mcq",
+      "stem": "AC-3 finishes with every domain non-empty and every arc consistent. Does a solution necessarily exist?",
+      "choices": {
+        "A": "Yes. Arc consistency constructs the solution",
+        "B": "Not necessarily. Pairwise support can remain when no complete assignment exists",
+        "C": "Yes, but only when every domain has size 1",
+        "D": "No. Arc consistency always empties a domain on a solvable problem"
+      },
+      "answer": "B",
+      "explanation": "Arc consistency gives each value a support in each neighbour. That does not build a complete assignment."
+    },
+    {
+      "id": "APL5-Q01",
+      "sectionId": "APL5",
+      "type": "mcq",
+      "stem": "One model predicts next hour's energy use in kWh. Another predicts whether that use will exceed a tariff band. Which types are these?",
+      "choices": {
+        "A": "kWh is regression. Exceeding the band is classification",
+        "B": "Both are classification, because both concern energy",
+        "C": "kWh is classification, because the band is mentioned in the same brief",
+        "D": "Exceeding the band is regression, because it is computed from kWh"
+      },
+      "answer": "A",
+      "explanation": "A real-valued quantity is regression. A yes-or-no band is classification, even when the inputs match."
+    },
+    {
+      "id": "APL5-Q02",
+      "sectionId": "APL5",
+      "type": "mcq",
+      "stem": "Training loss is low. Validation loss is much higher, and the gap grows as training continues. Which diagnosis fits?",
+      "choices": {
+        "A": "High bias. The model is underfitting both sets",
+        "B": "High variance. The model is overfitting the training rows",
+        "C": "Use the test set to choose the next architecture, which removes the gap",
+        "D": "The model has no capacity, so validation loss cannot exceed training loss"
+      },
+      "answer": "B",
+      "explanation": "A growing gap, with training still improving relative to validation, is overfitting."
+    },
+    {
+      "id": "APL5-Q03",
+      "sectionId": "APL5",
+      "type": "mcq",
+      "stem": "Training error and validation error are both high, and they stay close to each other. Which diagnosis fits?",
+      "choices": {
+        "A": "Overfitting, because both errors are high",
+        "B": "Underfitting. The model is not fitting the training rows",
+        "C": "Test-set leakage, which raises both errors",
+        "D": "Early stopping, because validation is already the curve to restore"
+      },
+      "answer": "B",
+      "explanation": "Underfitting shows up as high error on the data the model is allowed to fit, not only on held-out rows."
+    },
+    {
+      "id": "APL5-Q04",
+      "sectionId": "APL5",
+      "type": "mcq",
+      "stem": "Two pipelines are compared on the same test set. The team keeps the one with the higher test accuracy and reports that accuracy. What has happened?",
+      "choices": {
+        "A": "The test set was used for selection, so the reported number is no longer an untouched estimate",
+        "B": "One look at each pipeline leaves the test set independent",
+        "C": "Averaging the two test scores removes the selection effect",
+        "D": "Both pipelines should be refit on the test rows, and the old validation score reported as the final estimate"
+      },
+      "answer": "A",
+      "explanation": "Choosing after seeing test scores spends the test set. A fresh untouched set would be needed for a new estimate."
+    },
+    {
+      "id": "APL5-Q05",
+      "sectionId": "APL5",
+      "type": "mcq",
+      "stem": "k for a nearest-neighbour model is chosen as the value with the highest accuracy on the test set. What is wrong?",
+      "choices": {
+        "A": "Nothing. The test set is the right place to choose k",
+        "B": "k is a modelling choice and should be made on validation data. The test score of the chosen k is then not an independent estimate",
+        "C": "Nearest neighbours has no choice that can be tuned",
+        "D": "The stored training rows are ignored at prediction time, so the test set must select k"
+      },
+      "answer": "B",
+      "explanation": "Selecting k is model selection. Doing it on the test set leaks that choice into the reported score."
+    },
+    {
+      "id": "APL5-Q06",
+      "sectionId": "APL5",
+      "type": "mcq",
+      "stem": "A fit uses 40 labelled recordings and 2000 unlabelled recordings from the same sensors. Which setting is that?",
+      "choices": {
+        "A": "Supervised only, because some labels exist",
+        "B": "Unsupervised only, because most rows have no labels",
+        "C": "Semi-supervised",
+        "D": "Reinforcement learning, because the unlabelled rows act as rewards"
+      },
+      "answer": "C",
+      "explanation": "Both labelled and unlabelled rows from the same features are used. That is the semi-supervised setting."
+    },
+    {
+      "id": "APL5-Q07",
+      "sectionId": "APL5",
+      "type": "mcq",
+      "stem": "A controller receives +1 or -1 after each action. It is not given pairs of the correct action. Which setting is that?",
+      "choices": {
+        "A": "Supervised classification",
+        "B": "Unsupervised clustering",
+        "C": "Reinforcement learning",
+        "D": "Semi-supervised learning, because the reward is a class label"
+      },
+      "answer": "C",
+      "explanation": "A reward signal without an input-output label of the correct action is reinforcement learning."
+    },
+    {
+      "id": "APL5-Q08",
+      "sectionId": "APL5",
+      "type": "mcq",
+      "stem": "Overlapping windows from the same machines were split at random into training and test. Accuracy on that test split was high. Accuracy on entirely new machines was much lower. What went wrong?",
+      "choices": {
+        "A": "Near-copies of the same machine appeared on both sides, so the test score overstated performance on new machines",
+        "B": "The training accuracy was too low to support deployment",
+        "C": "Random window splits are required, and the drop on new machines is ordinary variance",
+        "D": "The test windows should have been added to training before the deployment comparison"
+      },
+      "answer": "A",
+      "explanation": "Windows from one machine share noise and operating conditions. A random split does not test unseen machines."
+    },
+    {
+      "id": "APL6-Q01",
+      "sectionId": "APL6",
+      "type": "mcq",
+      "stem": "Predict 1 when w \u00b7 x >= 0, otherwise 0. Update only on a mistake: w <- w + alpha * (y - y_hat) * x. Now w = [2, -1, 1], x = [1, 2, 1], y = 0, and alpha = 1. The third component is the bias feature, which is 1. What is w afterwards?",
+      "choices": {
+        "A": "[2, -1, 1]",
+        "B": "[1, -3, 0]",
+        "C": "[3, 1, 2]",
+        "D": "[0, -5, -1]"
+      },
+      "answer": "B",
+      "explanation": "The score is 2 - 2 + 1 = 1, so the prediction is 1 and the label 0 is a mistake. Subtracting x leaves [1, -3, 0]."
+    },
+    {
+      "id": "APL6-Q02",
+      "sectionId": "APL6",
+      "type": "mcq",
+      "stem": "A regression model predicts 3 and 0 for targets 1 and 0. MSE = (1/n) * sum((prediction - target)^2). What is the MSE?",
+      "choices": {
+        "A": "4",
+        "B": "2",
+        "C": "1",
+        "D": "8"
+      },
+      "answer": "B",
+      "explanation": "The squared errors are 4 and 0. Their mean over n = 2 is 2."
+    },
+    {
+      "id": "APL6-Q03",
+      "sectionId": "APL6",
+      "type": "mcq",
+      "stem": "Logistic regression uses p = 1 / (1 + e^(-z)) and predicts class 1 when p >= 0.5. For this input, e^(-z) = 3. Which conclusion is correct?",
+      "choices": {
+        "A": "p = 0.25 and the class is 0. The boundary in input space is still the hyperplane z = 0",
+        "B": "p = 0.75 and the class is 1",
+        "C": "p = 3 and the class is 1",
+        "D": "p = 0.25 and the class is 0, because the decision boundary is the curve of the sigmoid"
+      },
+      "answer": "A",
+      "explanation": "p = 1 / (1 + 3) = 0.25, so the class is 0. The sigmoid squashes z. It does not move the boundary off z = 0."
+    },
+    {
+      "id": "APL6-Q04",
+      "sectionId": "APL6",
+      "type": "mcq",
+      "stem": "A perceptron training set has two rows with the same feature vector and opposite class labels. Which conclusion follows?",
+      "choices": {
+        "A": "The convergence theorem guarantees a separator, because the repeated vector shrinks the hypothesis space",
+        "B": "The set is not linearly separable, so finite convergence is not guaranteed",
+        "C": "A smaller positive learning rate makes the two rows separable",
+        "D": "One epoch cancels the two updates, and training then stops"
+      },
+      "answer": "B",
+      "explanation": "One linear threshold cannot give two labels to the same point. The separability assumption of the theorem fails."
+    },
+    {
+      "id": "APL6-Q05",
+      "sectionId": "APL6",
+      "type": "mcq",
+      "stem": "Which training claim matches ordinary least-squares linear regression, when the design is full rank, and logistic regression as used in this course?",
+      "choices": {
+        "A": "Both are solved by the normal equation",
+        "B": "Linear regression can use the normal equation. Logistic regression is trained by gradient methods",
+        "C": "Logistic regression uses the normal equation. Linear regression cannot",
+        "D": "Neither method can take a gradient step"
+      },
+      "answer": "B",
+      "explanation": "The squared-error linear model has the closed form under the stated conditions. Logistic regression does not use that same closed form here."
+    },
+    {
+      "id": "APL6-Q06",
+      "sectionId": "APL6",
+      "type": "mcq",
+      "stem": "Softmax is applied to the class scores 2, 0, and -1. Which class is predicted?",
+      "choices": {
+        "A": "The third, because softmax reverses the ranking",
+        "B": "The first, because softmax preserves which score is largest",
+        "C": "All three, because the outputs sum to 1",
+        "D": "None, until the scores have been normalised to integers"
+      },
+      "answer": "B",
+      "explanation": "The largest score remains the largest probability. That score is 2, the first class."
+    },
+    {
+      "id": "APL6-Q07",
+      "sectionId": "APL6",
+      "type": "mcq",
+      "stem": "The supplied output-logit gradient is dL/do_i = p_i - y_i. The probabilities are p = [0.5, 0.4, 0.1] and the true class is the first class. What is the gradient?",
+      "choices": {
+        "A": "[-0.5, 0.4, 0.1]",
+        "B": "[0.5, 0.4, 0.1]",
+        "C": "[-0.5, -0.6, 0.1]",
+        "D": "[0.5, -0.4, -0.1]"
+      },
+      "answer": "A",
+      "explanation": "The one-hot target is [1, 0, 0]. Subtracting it from p gives [-0.5, 0.4, 0.1]."
+    },
+    {
+      "id": "APL6-Q08",
+      "sectionId": "APL6",
+      "type": "mcq",
+      "stem": "Use the {-1, +1} perceptron. A score of at least 0 predicts +1. A wrong prediction of -1 on a true +1 adds the feature vector. Start with w = [1, -2] and present x = [1, 1] with label +1. What is w afterwards?",
+      "choices": {
+        "A": "[1, -2]",
+        "B": "[0, -3]",
+        "C": "[2, -1]",
+        "D": "[2, -3]"
+      },
+      "answer": "C",
+      "explanation": "The score is 1 - 2 = -1, so the prediction is -1 and the label +1 is a mistake. Adding x gives [2, -1]."
+    },
+    {
+      "id": "APL7-Q01",
+      "sectionId": "APL7",
+      "type": "mcq",
+      "stem": "A hidden unit uses ReLU. Its pre-activation is z = 2, so the local derivative is 1. A downstream gradient of 0.4 reaches this unit. What factor passes back to the incoming weights on this example?",
+      "choices": {
+        "A": "0, because ReLU blocks every positive pre-activation",
+        "B": "0.4, because the local derivative is 1",
+        "C": "2, because the pre-activation replaces the gradient",
+        "D": "Undefined, because ReLU has no derivative on positive inputs"
+      },
+      "answer": "B",
+      "explanation": "For z > 0 the ReLU derivative is 1, so the downstream gradient 0.4 is passed through."
+    },
+    {
+      "id": "APL7-Q02",
+      "sectionId": "APL7",
+      "type": "mcq",
+      "stem": "A second hidden unit uses ReLU with pre-activation z = -0.2. A downstream gradient of 0.4 is waiting. What reaches the weights that feed this unit?",
+      "choices": {
+        "A": "0.4",
+        "B": "-0.2",
+        "C": "0",
+        "D": "0.4 * -0.2"
+      },
+      "answer": "C",
+      "explanation": "ReLU(-0.2) = 0 and the local derivative is 0, so the incoming weights receive no gradient on this example."
+    },
+    {
+      "id": "APL7-Q03",
+      "sectionId": "APL7",
+      "type": "mcq",
+      "stem": "A network computes h = W1 x + b1 and then y = W2 h + b2, with no non-linearity between the layers. Can this network represent XOR?",
+      "choices": {
+        "A": "Yes. The product of two matrices is a non-linear map",
+        "B": "No. y is still an affine function of x, and XOR is not linearly separable",
+        "C": "Yes, because the parameter count is larger than one linear layer",
+        "D": "No, because the matrices fail to commute, which deletes the hidden layer"
+      },
+      "answer": "B",
+      "explanation": "W2 (W1 x + b1) + b2 is one affine map. XOR needs a bend that this stack does not have."
+    },
+    {
+      "id": "APL7-Q04",
+      "sectionId": "APL7",
+      "type": "mcq",
+      "stem": "A network has 784 inputs, 30 hidden units, and 10 logits. The lab layout uses h @ W, so a matrix's first dimension is the incoming width. What are the shapes of W1 and W2?",
+      "choices": {
+        "A": "W1 is (784, 30) and W2 is (30, 10)",
+        "B": "W1 is (30, 784) and W2 is (784, 10)",
+        "C": "W1 is (784, 10) and W2 is (10, 30)",
+        "D": "W2 is (784, 10), because the second matrix connects pixels to classes"
+      },
+      "answer": "A",
+      "explanation": "W1 maps pixels to the hidden layer. W2 maps the 30 hidden units to 10 logits. It does not see the 784 pixels directly."
+    },
+    {
+      "id": "APL7-Q05",
+      "sectionId": "APL7",
+      "type": "mcq",
+      "stem": "Two sigmoid units on the same backward path each output 0.5. The local factor of a sigmoid is s(1 - s). What is the product of the two local factors?",
+      "choices": {
+        "A": "0.5",
+        "B": "0.25",
+        "C": "0.0625",
+        "D": "1, because the largest value of s(1 - s) is 1"
+      },
+      "answer": "C",
+      "explanation": "Each factor is 0.25. The product is 0.0625, which is how stacked sigmoids shrink the early-layer gradient."
+    },
+    {
+      "id": "APL7-Q06",
+      "sectionId": "APL7",
+      "type": "mcq",
+      "stem": "A sigmoid unit has weights [1, -1], bias 0, and input [1, 3]. Its pre-activation is z = w \u00b7 x + b, and a = 1 / (1 + exp(-z)). What follows without evaluating the exponential?",
+      "choices": {
+        "A": "z = -2, so 0 < a < 0.5",
+        "B": "z = -2, so 0.5 < a < 1",
+        "C": "z = 4, so a = 4",
+        "D": "z = 2, so 0.5 < a < 1"
+      },
+      "answer": "A",
+      "explanation": "z = 1 - 3 = -2. A negative finite input to the sigmoid lands strictly between 0 and 0.5."
+    },
+    {
+      "id": "APL7-Q07",
+      "sectionId": "APL7",
+      "type": "mcq",
+      "stem": "One update uses w' = w + eta * delta_j * y_i. Here w = 1.0, eta = 0.5, delta_j = -0.4, and y_i = 0.5. What is the updated weight, and what is eta?",
+      "choices": {
+        "A": "0.9. eta is the learning rate",
+        "B": "1.1. eta is the target for unit j",
+        "C": "0.6. eta is the activation from the previous layer",
+        "D": "0.5. eta is the number of rows in the mini-batch"
+      },
+      "answer": "A",
+      "explanation": "The step is 0.5 * -0.4 * 0.5 = -0.1, so the weight moves from 1.0 to 0.9. eta scales that step."
+    },
+    {
+      "id": "APL7-Q08",
+      "sectionId": "APL7",
+      "type": "mcq",
+      "stem": "A sigmoid hidden unit has activation y_h = 0.5 and one outgoing weight 2. The downstream delta is 0.4. The rule is delta_h = y_h(1 - y_h) * (delta * w), using the forward-pass weight. No weight has been updated yet. What should be stored?",
+      "choices": {
+        "A": "0.20, from the current forward-pass weight, before that weight changes",
+        "B": "0.80, because the sigmoid factor is not part of the hidden delta",
+        "C": "0.10, using y_h and omitting (1 - y_h)",
+        "D": "Update the outgoing weight first, then compute the delta from the new weight"
+      },
+      "answer": "A",
+      "explanation": "The weighted delta is 0.4 * 2 = 0.8. Times 0.5 * 0.5 it is 0.2. The forward-pass weight is the one in that product."
+    },
+    {
+      "id": "APL8-Q01",
+      "sectionId": "APL8",
+      "type": "mcq",
+      "stem": "Early stopping keeps the weights from the best validation epoch. Patience is 3: stop after 3 epochs with no improvement, then restore the saved weights. Validation loss was best at epoch 10 and rose at epochs 11, 12, and 13. Training loss is still falling. What should happen at epoch 13?",
+      "choices": {
+        "A": "Keep training. Three worse epochs are still inside a patience of 3",
+        "B": "Stop and restore the epoch-10 weights. Training loss is not the signal",
+        "C": "Stop and keep the epoch-13 weights, because training loss fell",
+        "D": "Add the validation rows to the training set and report the old validation score as the test score"
+      },
+      "answer": "B",
+      "explanation": "Epochs 11, 12, and 13 are three epochs without improvement. Patience is used up, and the checkpoint is epoch 10."
+    },
+    {
+      "id": "APL8-Q02",
+      "sectionId": "APL8",
+      "type": "mcq",
+      "stem": "Soft weight decay uses w <- (1 - eta * lambda) * w - eta * (data-loss gradient), with eta * lambda < 1. Here eta = 0.5, lambda = 0.2, the data-loss gradient is 2, and the weight is 4. What is the updated weight?",
+      "choices": {
+        "A": "2.6",
+        "B": "3.6",
+        "C": "3",
+        "D": "4"
+      },
+      "answer": "A",
+      "explanation": "(1 - 0.5 * 0.2) * 4 - 0.5 * 2 = 0.9 * 4 - 1 = 2.6. Dropping the decay factor or the data gradient gives the other figures."
+    },
+    {
+      "id": "APL8-Q03",
+      "sectionId": "APL8",
+      "type": "mcq",
+      "stem": "Inverted dropout uses drop probability p = 0.5. A surviving hidden activation would otherwise equal 6. What is passed onward during training, and what happens at inference?",
+      "choices": {
+        "A": "Training passes 12. Inference uses the original 6 with every unit active",
+        "B": "Training passes 3. Inference uses the original 6",
+        "C": "Training passes 6. Inference scales it to 12",
+        "D": "Training and inference both pass 12"
+      },
+      "answer": "A",
+      "explanation": "A kept unit is divided by 1 - p, so 6 / 0.5 = 12 during training. Inference runs every unit and does not apply that scale."
+    },
+    {
+      "id": "APL8-Q04",
+      "sectionId": "APL8",
+      "type": "mcq",
+      "stem": "One round of 5-fold cross-validation is about to start. Which split is correct?",
+      "choices": {
+        "A": "That fold trains the model. The other four folds only evaluate it",
+        "B": "That fold is held out for evaluation. The other four folds train the model",
+        "C": "All five folds train, and the fold index only changes the random seed",
+        "D": "The test set is one of the five folds, so no separate validation step is used"
+      },
+      "answer": "B",
+      "explanation": "Each fold takes a turn as the evaluation set. The remaining folds are the training rows for that turn."
+    },
+    {
+      "id": "APL8-Q05",
+      "sectionId": "APL8",
+      "type": "mcq",
+      "stem": "A block computes y = F(x) + x. Someone proposes it as a regulariser, in the same role as weight decay, to shrink a train-validation gap. Which conclusion matches the course?",
+      "choices": {
+        "A": "The skip penalises large weights, so it is a regulariser",
+        "B": "The skip keeps a path whose local derivative contribution is 1. That is an optimisation effect. Weight decay is what penalises large weights",
+        "C": "The skip deletes hidden units, so it is dropout",
+        "D": "The skip removes the need for a loss, so the gap cannot grow"
+      },
+      "answer": "B",
+      "explanation": "The identity path helps the gradient. It does not add the weight penalty that weight decay adds."
+    },
+    {
+      "id": "APL8-Q06",
+      "sectionId": "APL8",
+      "type": "mcq",
+      "stem": "Training loss is falling and validation loss is rising. Which response matches the methods in this course?",
+      "choices": {
+        "A": "Early stopping can restore the better validation checkpoint, and weight decay can be strengthened. A residual connection is not the regulariser added for this gap",
+        "B": "Train longer, because the lowest training loss selects the weights",
+        "C": "Add a residual connection to shrink the gap, and stop consulting the validation set",
+        "D": "Pick the epoch with the lowest training loss and call that early stopping"
+      },
+      "answer": "A",
+      "explanation": "The rising validation curve is the overfitting signal. Early stopping and weight decay address it. The residual path does not."
+    },
+    {
+      "id": "APL8-Q07",
+      "sectionId": "APL8",
+      "type": "mcq",
+      "stem": "A training image of a shirt is flipped, and the flip does not change the clothing class. What should happen to the label?",
+      "choices": {
+        "A": "The label must change, because the pixels changed",
+        "B": "The label stays shirt. The new image is extra training data of the same class",
+        "C": "The flipped image is added to the test set so the estimate includes it",
+        "D": "Augmentation is applied only to the validation set"
+      },
+      "answer": "B",
+      "explanation": "Class-preserving augmentation edits the input and keeps the target. The new row is training data."
+    },
+    {
+      "id": "APL8-Q08",
+      "sectionId": "APL8",
+      "type": "mcq",
+      "stem": "Feature columns are to be normalised. Where may the mean and scale be computed?",
+      "choices": {
+        "A": "On the training rows only, then applied to validation and test",
+        "B": "On the test rows, then applied back to training so the scale matches deployment",
+        "C": "On the whole file before it is split",
+        "D": "Separately on the test set, and that test mean may also be used to choose the model"
+      },
+      "answer": "A",
+      "explanation": "Statistics fitted on validation or test rows leak those rows into the preprocessing. The training split is the place to fit them."
+    },
+    {
+      "id": "APL9-Q01",
+      "sectionId": "APL9",
+      "type": "mcq",
+      "stem": "Information gain is parent entropy minus the size-weighted average of the child entropies. The parent entropy is 1. Split A makes two equal children that each have entropy 1. Split B makes two equal children that each have entropy 0.5. Which split should ID3 pick?",
+      "choices": {
+        "A": "A, with gain 1",
+        "B": "A, with gain 0",
+        "C": "B, with gain 0.5",
+        "D": "B, with gain 0"
+      },
+      "answer": "C",
+      "explanation": "Gain(A) = 1 - 1 = 0. Gain(B) = 1 - 0.5 = 0.5. The larger gain is B."
+    },
+    {
+      "id": "APL9-Q02",
+      "sectionId": "APL9",
+      "type": "mcq",
+      "stem": "Branch U receives no examples. Its parent plurality class is Yes. Branch V receives four No and one Yes, and no attributes remain. What leaves should ID3 return?",
+      "choices": {
+        "A": "U returns Yes, and V returns Yes",
+        "B": "U returns Yes, and V returns No",
+        "C": "U returns No, and V returns No",
+        "D": "U returns No, and V returns Yes"
+      },
+      "answer": "B",
+      "explanation": "An empty branch uses the parent plurality, Yes. A mixed branch with no attributes left uses its own majority, No."
+    },
+    {
+      "id": "APL9-Q03",
+      "sectionId": "APL9",
+      "type": "mcq",
+      "stem": "Every remaining row at a node has class Yes. Attributes are still unused. What should ID3 do?",
+      "choices": {
+        "A": "Test another attribute, because its gain might be positive",
+        "B": "Return Yes as a leaf",
+        "C": "Keep testing until no attributes remain, even though the node is pure",
+        "D": "Return the parent majority, and ignore the Yes rows"
+      },
+      "answer": "B",
+      "explanation": "A pure node has no class mixture left to reduce. ID3 stops and labels it Yes."
+    },
+    {
+      "id": "APL9-Q04",
+      "sectionId": "APL9",
+      "type": "mcq",
+      "stem": "A student-identifier attribute splits the training rows into pure singletons. Its raw information gain is larger than every other attribute. What should you conclude?",
+      "choices": {
+        "A": "It should be the root, because pure children are the goal of ID3",
+        "B": "It memorises identities. Raw gain rewards the many values. Gain ratio is the correction named in the course",
+        "C": "The entropy of a singleton is 1, so the gain is 0",
+        "D": "ID3 cannot test an attribute with more than two values"
+      },
+      "answer": "B",
+      "explanation": "A unique identifier looks perfect under raw gain and does not generalise. Gain ratio penalises attributes with many values."
+    },
+    {
+      "id": "APL9-Q05",
+      "sectionId": "APL9",
+      "type": "mcq",
+      "stem": "A fitted tree has perfect training accuracy. Replacing one deep subtree by a majority-class leaf leaves validation accuracy unchanged. What does post-pruning do?",
+      "choices": {
+        "A": "Keep the subtree, because training accuracy is the criterion used after fitting",
+        "B": "Replace that subtree with the leaf",
+        "C": "Replace the whole tree by the training-set majority, whatever validation does",
+        "D": "Add another split under the leaf so validation rows get their own test"
+      },
+      "answer": "B",
+      "explanation": "Post-pruning removes complexity that does not help validation. An unchanged validation score permits the leaf."
+    },
+    {
+      "id": "APL9-Q06",
+      "sectionId": "APL9",
+      "type": "mcq",
+      "stem": "At the root, each attribute alone has information gain 0. The two attributes together determine the label, as in XOR. An ID3 variant stops when the best gain is 0. What can happen?",
+      "choices": {
+        "A": "It still builds the interaction deeper down, because gain 0 means the attribute is useful later",
+        "B": "It can stop at the root and miss the interaction",
+        "C": "It is forced to test both attributes at the root",
+        "D": "It switches from classification to regression"
+      },
+      "answer": "B",
+      "explanation": "A zero-gain stop never creates the second level where the interaction would appear."
+    },
+    {
+      "id": "APL9-Q07",
+      "sectionId": "APL9",
+      "type": "mcq",
+      "stem": "Use IG(S, X) = H(S) - sum (|S_x| / |S|) H(S_x). The parent entropy is supplied as 0.811. A split makes two children of 4 rows each. One child is pure, so its entropy is 0. The other has entropy 1. What is the gain?",
+      "choices": {
+        "A": "0.811",
+        "B": "0.500",
+        "C": "0.311",
+        "D": "1"
+      },
+      "answer": "C",
+      "explanation": "The weighted child entropy is 0.5 * 0 + 0.5 * 1 = 0.5. Gain is 0.811 - 0.5 = 0.311."
+    },
+    {
+      "id": "APL9-Q08",
+      "sectionId": "APL9",
+      "type": "mcq",
+      "stem": "At this node attribute A has gain 0.4 and attribute B has gain 0.1. ID3 tests A. Does that guarantee the smallest possible tree?",
+      "choices": {
+        "A": "Yes. The largest gain builds the smallest tree",
+        "B": "No. The rule does not compare complete trees that start with B",
+        "C": "Yes, because 0.4 is the parent entropy",
+        "D": "No. ID3 should test B, because the smaller gain builds the smaller tree"
+      },
+      "answer": "B",
+      "explanation": "The choice is greedy at this node. A tree rooted at B is not scored."
+    },
+    {
+      "id": "APL10-Q01",
+      "sectionId": "APL10",
+      "type": "mcq",
+      "stem": "A Bayes-net node is binary and has two binary parents. Its conditional probability table has one distribution per parent assignment, and each distribution sums to 1. How many free parameters does the table have?",
+      "choices": {
+        "A": "2",
+        "B": "3",
+        "C": "4",
+        "D": "8"
+      },
+      "answer": "C",
+      "explanation": "Two binary parents give 4 rows. Each binary row has 1 free number, so the table has 4 free parameters."
+    },
+    {
+      "id": "APL10-Q02",
+      "sectionId": "APL10",
+      "type": "mcq",
+      "stem": "A chain uses the factors P(A) = 0.5, P(B | A) = 0.5, and P(C | B) = 0.4. What is the joint probability P(A, B, C)?",
+      "choices": {
+        "A": "0.10",
+        "B": "1.40",
+        "C": "0.40",
+        "D": "0.05"
+      },
+      "answer": "A",
+      "explanation": "The joint is the product 0.5 * 0.5 * 0.4 = 0.10. Adding the factors is not the chain rule."
+    },
+    {
+      "id": "APL10-Q03",
+      "sectionId": "APL10",
+      "type": "mcq",
+      "stem": "The joint table is P(a, b) = 0.10, P(a, not b) = 0.20, P(not a, b) = 0.30, and P(not a, not b) = 0.40. What are P(a or b) and P(a)?",
+      "choices": {
+        "A": "0.60 and 0.30",
+        "B": "0.90 and 0.40",
+        "C": "0.10 and 0.40",
+        "D": "1.00 and 0.30"
+      },
+      "answer": "A",
+      "explanation": "P(a or b) = 1 - P(not a, not b) = 0.60. P(a) = 0.10 + 0.20 = 0.30."
+    },
+    {
+      "id": "APL10-Q04",
+      "sectionId": "APL10",
+      "type": "mcq",
+      "stem": "The only path is the chain X -> Z -> Y, and Z is observed. What happens to that path?",
+      "choices": {
+        "A": "Observing Z blocks it",
+        "B": "Observing Z opens it, which is the chain rule for dependence",
+        "C": "The path stays open, because only a collider is blocked by observation",
+        "D": "The path is removed from the graph, so every other path is blocked as well"
+      },
+      "answer": "A",
+      "explanation": "A chain is blocked by conditioning on its middle variable. This net has no other path."
+    },
+    {
+      "id": "APL10-Q05",
+      "sectionId": "APL10",
+      "type": "mcq",
+      "stem": "The only path is the collider X -> Z <- Y, and Z is observed. X and Y were independent before that observation. What can the observation do?",
+      "choices": {
+        "A": "Keep the path blocked, so X and Y stay independent",
+        "B": "Open the path, so X and Y can become dependent",
+        "C": "Delete Z, which guarantees independence no matter what else is observed",
+        "D": "Block the path. A collider is blocked only when its centre is observed"
+      },
+      "answer": "B",
+      "explanation": "An unobserved collider blocks the path. Observing the centre opens it and can induce dependence."
+    },
+    {
+      "id": "APL10-Q06",
+      "sectionId": "APL10",
+      "type": "mcq",
+      "stem": "The edges are A -> C and B -> C, and there are no other edges. Which statement is correct?",
+      "choices": {
+        "A": "A, C, B is a topological order",
+        "B": "A, B, C is a topological order, and A and B are independent before C is observed",
+        "C": "C, A, B is a topological order, because the child may be named first",
+        "D": "A and B are dependent before any observation, because both point at C"
+      },
+      "answer": "B",
+      "explanation": "Both parents precede C, so A, B, C is topological. The collider is blocked while C is hidden, so A and B are marginally independent."
+    },
+    {
+      "id": "APL10-Q07",
+      "sectionId": "APL10",
+      "type": "mcq",
+      "stem": "One query sums a product over 10 other binary variables. A naive expansion therefore contains 2^10 products. Which conclusion matches exact inference in this course?",
+      "choices": {
+        "A": "The query is one row of one conditional probability table, so the sum is avoided",
+        "B": "The naive sum can contain 1024 products. Exact inference is not in general a single-row lookup",
+        "C": "A chain of 10 nodes makes every query one multiplication, including this sum",
+        "D": "A Bayes net cannot contain 10 hidden variables, so the count is irrelevant"
+      },
+      "answer": "B",
+      "explanation": "Each hidden binary variable doubles a naive enumeration. Reading one local table does not perform that sum."
+    },
+    {
+      "id": "APL10-Q08",
+      "sectionId": "APL10",
+      "type": "mcq",
+      "stem": "P(a, b) = 0.2 and P(a, not b) = 0.1. Marginalising out b, what is P(a)?",
+      "choices": {
+        "A": "0.3",
+        "B": "0.2",
+        "C": "0.1",
+        "D": "0.02"
+      },
+      "answer": "A",
+      "explanation": "The two cells in which a is true are added: 0.2 + 0.1 = 0.3."
+    },
+    {
+      "id": "APL11-Q01",
+      "sectionId": "APL11",
+      "type": "mcq",
+      "stem": "Q(s, a) <- (1 - alpha) * Q(s, a) + alpha * [r + gamma * max over a' of Q(s', a')]. Use alpha = 0.4 and gamma = 0.5. Before the update, Q(s, a) = 1. The sample has r = 2. Q(s', good) = 4 and Q(s', bad) = 0. The behaviour policy took bad. What is Q(s, a) afterwards?",
+      "choices": {
+        "A": "1.4",
+        "B": "2.2",
+        "C": "4.0",
+        "D": "0.6"
+      },
+      "answer": "B",
+      "explanation": "The max is 4, so the target is 2 + 0.5 * 4 = 4. The new value is 0.6 * 1 + 0.4 * 4 = 2.2. Using the behaviour action instead produces 1.4."
+    },
+    {
+      "id": "APL11-Q02",
+      "sectionId": "APL11",
+      "type": "mcq",
+      "stem": "The discount is gamma = 0.8. From now on every step returns reward +1, and the process never ends. The return is the sum from t = 0 to infinity of (gamma^t) * 1. What is that return?",
+      "choices": {
+        "A": "It is infinite",
+        "B": "0.8",
+        "C": "5",
+        "D": "1"
+      },
+      "answer": "C",
+      "explanation": "The infinite geometric sum equals 1 / (1 - 0.8) = 5."
+    },
+    {
+      "id": "APL11-Q03",
+      "sectionId": "APL11",
+      "type": "mcq",
+      "stem": "The discount is gamma = 1. From now on every step returns reward +1 forever. What is the return?",
+      "choices": {
+        "A": "1",
+        "B": "It is infinite",
+        "C": "0",
+        "D": "gamma itself, which is a probability"
+      },
+      "answer": "B",
+      "explanation": "The sum 1 + 1 + 1 + ... does not converge when gamma is 1. The closed form 1 / (1 - gamma) needs gamma below 1."
+    },
+    {
+      "id": "APL11-Q04",
+      "sectionId": "APL11",
+      "type": "mcq",
+      "stem": "One transition has r = 1 and gamma = 1. The sampled next state has V(s') = 3. In the same next state the best Q value is 4 and the behaviour action's Q value is 0. Which targets are correct?",
+      "choices": {
+        "A": "TD policy evaluation targets 4. Q-learning targets 5",
+        "B": "TD policy evaluation targets 5. Q-learning targets 4",
+        "C": "Both target 1, because gamma is ignored once a sample exists",
+        "D": "Both target 0, because the behaviour action's value is 0"
+      },
+      "answer": "A",
+      "explanation": "TD uses r + gamma * V(s') = 4. Q-learning uses r + gamma * max Q = 5. The behaviour value 0 is not either target."
+    },
+    {
+      "id": "APL11-Q05",
+      "sectionId": "APL11",
+      "type": "mcq",
+      "stem": "Direct policy evaluation uses gamma = 0.5. Two visits to K produce the reward sequences [2, 2] and [6, -6], each ending at termination. What is the direct-evaluation estimate of V(K)?",
+      "choices": {
+        "A": "2",
+        "B": "3",
+        "C": "4",
+        "D": "6"
+      },
+      "answer": "B",
+      "explanation": "The returns are 2 + 0.5 * 2 = 3 and 6 + 0.5 * (-6) = 3. Their mean is 3."
+    },
+    {
+      "id": "APL11-Q06",
+      "sectionId": "APL11",
+      "type": "mcq",
+      "stem": "The agent reaches a state that was not the next entry on a fixed action list. A mapping from the current state to an action is available. Which description matches the course?",
+      "choices": {
+        "A": "A policy is the fixed list, so it has no action for a state that was not next",
+        "B": "A policy maps the current state to an action. A plan is the fixed list",
+        "C": "A policy and a plan are the same object",
+        "D": "A plan branches on the state, and a policy cannot"
+      },
+      "answer": "B",
+      "explanation": "The state-to-action mapping is the policy. The fixed sequence is the plan."
+    },
+    {
+      "id": "APL11-Q07",
+      "sectionId": "APL11",
+      "type": "mcq",
+      "stem": "Approximate Q-learning represents two states with the same features. Those states need different optimal values. What can the linear approximation do?",
+      "choices": {
+        "A": "Give them different values, because the weights are stored once per state",
+        "B": "Give them the same value. A feature set that cannot tell them apart forces that",
+        "C": "Store a separate table entry per state, so the features are ignored",
+        "D": "Ignore shared features, because approximate Q-learning does not generalise"
+      },
+      "answer": "B",
+      "explanation": "Identical features produce identical approximated values. The table version could have stored two numbers. The features cannot."
+    },
+    {
+      "id": "APL11-Q08",
+      "sectionId": "APL11",
+      "type": "mcq",
+      "stem": "In state s the table has Q(s, right) = 5 and Q(s, left) = 1. From the first episode the behaviour policy always picks right. What is the risk?",
+      "choices": {
+        "A": "There is no risk. Q-learning is off-policy, so the behaviour must be greedy",
+        "B": "Left may still be undervalued. Exploration sometimes has to try the non-greedy action",
+        "C": "The agent must pick left, because off-policy learning uses the worst action",
+        "D": "The max inside the target already explores, so the behaviour policy should be greedy immediately"
+      },
+      "answer": "B",
+      "explanation": "The target max does not try the action. If the behaviour never selects left, that action's sample is never collected."
+    },
+    {
+      "id": "AP2-Q01",
+      "sectionId": "AP2",
+      "type": "mcq",
+      "stem": "A three-room vacuum state says the agent is in B, room A is dirty, and rooms B and C are clean. Which description is enough for the search?",
+      "choices": {
+        "A": "The agent's room only",
+        "B": "The rooms that have ever been visited",
+        "C": "The agent's room plus the clean or dirty status of A, B, and C",
+        "D": "The current order of the open list"
+      },
+      "answer": "C",
+      "explanation": "Two situations with the same room and different dirt need different actions. The dirt status has to be in the state."
+    },
+    {
+      "id": "AP2-Q02",
+      "sectionId": "AP2",
+      "type": "mcq",
+      "stem": "In the lab vacuum world the goal is that A, B, and C are all clean. The agent is in C, A is still dirty, and B and C are clean. Does the goal test succeed?",
+      "choices": {
+        "A": "Yes, because the agent has reached room C",
+        "B": "No, because A is still dirty",
+        "C": "Yes, because two of the three rooms are clean",
+        "D": "Only if the agent then returns to A before the test is allowed"
+      },
+      "answer": "B",
+      "explanation": "The goal is every room clean. The agent's room does not replace that test, and a dirty room fails it."
+    },
+    {
+      "id": "AP2-Q03",
+      "sectionId": "AP2",
+      "type": "mcq",
+      "stem": "The BFS open list from front to back is [P, Q]. Expanding P generates X then Y. What is the next open list?",
+      "choices": {
+        "A": "[Y, X, Q]",
+        "B": "[Q, X, Y]",
+        "C": "[X, Y, Q]",
+        "D": "[Q, Y, X]"
+      },
+      "answer": "B",
+      "explanation": "BFS takes P from the front and appends X and Y at the back, leaving Q in front."
+    },
+    {
+      "id": "AP2-Q04",
+      "sectionId": "AP2",
+      "type": "mcq",
+      "stem": "A generated child has a state that is already on the open list. The trace is graph search, and this algorithm has no cheaper-path replacement rule. What should the trace do?",
+      "choices": {
+        "A": "Add the child again, because the new node object is a different Python object",
+        "B": "Move the matching open node onto the closed list without expanding it",
+        "C": "Reject the child as a repeated state",
+        "D": "Return the child immediately, because a repeated state is a goal"
+      },
+      "answer": "C",
+      "explanation": "Graph search in the lab trace keeps one copy of a state that is already waiting. A new object with the same state is not a new state."
+    },
+    {
+      "id": "AP2-Q05",
+      "sectionId": "AP2",
+      "type": "mcq",
+      "stem": "The maze frontier is a stack. After a node is expanded, its most recently pushed child is the next node expanded. Which search is running?",
+      "choices": {
+        "A": "Breadth-first search",
+        "B": "Uniform-cost search",
+        "C": "Greedy best-first search",
+        "D": "Depth-first search"
+      },
+      "answer": "D",
+      "explanation": "A stack expands the newest child next. That is depth-first search, including the maze program that uses a stack."
+    },
+    {
+      "id": "AP2-Q06",
+      "sectionId": "AP2",
+      "type": "mcq",
+      "stem": "The closed list already contains the state of a newly generated child. What does the lab graph search do with that child?",
+      "choices": {
+        "A": "It does not add the child, because the state has already been expanded",
+        "B": "It adds the child at the front, because a closed state is due for expansion again",
+        "C": "It returns the child as the goal",
+        "D": "It deletes the closed entry and keeps only the new child"
+      },
+      "answer": "A",
+      "explanation": "The closed list records expanded states so a repeat is not expanded again."
+    },
+    {
+      "id": "AP3A-Q01",
+      "sectionId": "AP3A",
+      "type": "mcq",
+      "stem": "Uniform-cost search orders by g. The frontier holds A with g = 4, B with g = 2, and C with g = 5. Which node is expanded next?",
+      "choices": {
+        "A": "A",
+        "B": "B",
+        "C": "C",
+        "D": "A and B together, because the search expands a whole layer"
+      },
+      "answer": "B",
+      "explanation": "The smallest path cost is 2, so B is next."
+    },
+    {
+      "id": "AP3A-Q02",
+      "sectionId": "AP3A",
+      "type": "mcq",
+      "stem": "Step costs differ. Uniform-cost search has generated a goal with g = 8, and a frontier node with g = 3 is still unexpanded. What does the trace do?",
+      "choices": {
+        "A": "Return the goal, because generation is the goal test",
+        "B": "Keep the goal on the frontier until it is selected",
+        "C": "Discard the goal",
+        "D": "Return the g = 3 node, because the smaller g must be a goal"
+      },
+      "answer": "B",
+      "explanation": "The goal test is on selection. The cheaper open node is expanded first and may lead somewhere better."
+    },
+    {
+      "id": "AP3A-Q03",
+      "sectionId": "AP3A",
+      "type": "mcq",
+      "stem": "Edges are S->A cost 1, S->B cost 5, A->G cost 6, and B->G cost 1. G is generated twice, and uniform-cost search replaces a frontier state when a cheaper path appears. Children of S are generated A then B. Which path is returned?",
+      "choices": {
+        "A": "S-B-G, cost 6",
+        "B": "S-A-G, cost 7",
+        "C": "S-A-B-G, cost 7",
+        "D": "No path, because G is generated twice and the search fails"
+      },
+      "answer": "A",
+      "explanation": "A is expanded first and puts G on the frontier at cost 7. B is then expanded and replaces that frontier entry with cost 6. Selecting G returns S-B-G."
+    },
+    {
+      "id": "AP3A-Q04",
+      "sectionId": "AP3A",
+      "type": "mcq",
+      "stem": "The same graph is searched by breadth-first search, which does not replace a frontier state with a later path. Children of S are generated A then B. G is first generated from A. Which path is returned?",
+      "choices": {
+        "A": "S-B-G, cost 6, because breadth-first search orders by g",
+        "B": "S-A-B-G",
+        "C": "S-A-G, cost 7",
+        "D": "Both goals, because the two routes have the same depth"
+      },
+      "answer": "C",
+      "explanation": "Both routes have depth 2, and the first G generated is the one through A. Without a replacement rule that copy is the one selected."
+    },
+    {
+      "id": "AP3A-Q05",
+      "sectionId": "AP3A",
+      "type": "mcq",
+      "stem": "Greedy search on this graph orders by h only. h(A) = 1, h(B) = 4, h(G) = 0. Edge costs are S->A 7, A->G 7, S->B 2, B->G 2. What is returned?",
+      "choices": {
+        "A": "S-B-G, cost 4",
+        "B": "S-A-B-G, cost 11",
+        "C": "Nothing, because h(B) is larger than h(A) and the heuristic is inconsistent",
+        "D": "S-A-G, cost 14"
+      },
+      "answer": "D",
+      "explanation": "From S the smaller h is A. Greedy then steps to G. The cheaper route through B is not selected."
+    },
+    {
+      "id": "AP3A-Q06",
+      "sectionId": "AP3A",
+      "type": "mcq",
+      "stem": "A* uses f = g + h. The frontier is P with g = 5 and h = 4, Q with g = 4 and h = 6, and R with g = 7 and h = 1. There is no tie. Which node is expanded next?",
+      "choices": {
+        "A": "P, because f(P) = 9",
+        "B": "Q, because its g is the smallest",
+        "C": "R, because f(R) = 8",
+        "D": "Q and R together, because their f values match"
+      },
+      "answer": "C",
+      "explanation": "f(P) = 9, f(Q) = 10, and f(R) = 8. A* expands the smallest f, which is R."
+    },
+    {
+      "id": "AP3B-Q01",
+      "sectionId": "AP3B",
+      "type": "mcq",
+      "stem": "Start: 1 2 3 / 4 5 6 / 7 blank 8. Goal: 1 2 3 / 4 5 6 / 7 8 blank. Manhattan distance ignores the blank. What is it?",
+      "choices": {
+        "A": "1",
+        "B": "2",
+        "C": "0",
+        "D": "8"
+      },
+      "answer": "A",
+      "explanation": "Tile 8 is one square away from home. Every other numbered tile is already home."
+    },
+    {
+      "id": "AP3B-Q02",
+      "sectionId": "AP3B",
+      "type": "mcq",
+      "stem": "On that same board, what is the misplaced-tile count, again ignoring the blank?",
+      "choices": {
+        "A": "1",
+        "B": "2",
+        "C": "0",
+        "D": "7"
+      },
+      "answer": "A",
+      "explanation": "Only tile 8 is off its goal square. The blank is not a tile in this heuristic."
+    },
+    {
+      "id": "AP3B-Q03",
+      "sectionId": "AP3B",
+      "type": "mcq",
+      "stem": "A different board is 2 3 1 / 4 5 6 / 7 8 blank, with goal 1 2 3 / 4 5 6 / 7 8 blank. Misplaced tiles score 3 and Manhattan distance scores 4. Which claim about A* is right?",
+      "choices": {
+        "A": "Misplaced tiles dominate Manhattan distance, so A* expands no more nodes with misplaced tiles",
+        "B": "Manhattan distance is inadmissible, because 4 is greater than 3",
+        "C": "The two heuristics are equal on this board, so dominance does not apply",
+        "D": "Manhattan distance dominates misplaced tiles here, and both can stay admissible"
+      },
+      "answer": "D",
+      "explanation": "4 is at least 3 at this node, which is the dominance direction. A larger admissible heuristic is still a lower bound if it never exceeds the true cost."
+    },
+    {
+      "id": "AP3B-Q04",
+      "sectionId": "AP3B",
+      "type": "mcq",
+      "stem": "The relaxation lets any tile move directly into the blank, even from the far side of the board, and it still requires the destination to be the blank. Which heuristic's relaxed puzzle is that?",
+      "choices": {
+        "A": "Misplaced tiles, which also drop the blank requirement",
+        "B": "Gaschnig's heuristic",
+        "C": "Manhattan distance, which drops the blank and keeps adjacency",
+        "D": "g(n), which is the cost already paid"
+      },
+      "answer": "B",
+      "explanation": "Keeping the blank as the only legal destination, and dropping adjacency, is Gaschnig's relaxation."
+    },
+    {
+      "id": "AP3B-Q05",
+      "sectionId": "AP3B",
+      "type": "mcq",
+      "stem": "h1 is the misplaced-tile count and h2 is Manhattan distance. Both are admissible, and h2(n) >= h1(n) for every node on this family of boards. Which search expands no more nodes, except possibly where f equals the optimal cost?",
+      "choices": {
+        "A": "A* with h1",
+        "B": "Greedy search with h1",
+        "C": "A* with h2",
+        "D": "Breadth-first search, because both heuristics are admissible"
+      },
+      "answer": "C",
+      "explanation": "The larger admissible heuristic is more informed. A* with Manhattan distance expands no more nodes than A* with misplaced tiles, aside from ties on the optimal contour."
+    },
+    {
+      "id": "AP3B-Q06",
+      "sectionId": "AP3B",
+      "type": "mcq",
+      "stem": "h(A) = 6 and the true cheapest remaining cost from A is 3. The rest of the heuristic never overestimates. May this h be used as an admissible heuristic for the puzzle?",
+      "choices": {
+        "A": "Yes. One node may overestimate if the others do not",
+        "B": "No. Admissibility fails at A, so the A* guarantee does not apply",
+        "C": "Yes, because 6 is the Manhattan distance of some other board",
+        "D": "No, because a heuristic has to equal the true cost at every node"
+      },
+      "answer": "B",
+      "explanation": "A single overestimate is enough to lose admissibility. A* tree search is then not guaranteed optimal."
+    },
+    {
+      "id": "AP4-Q01",
+      "sectionId": "AP4",
+      "type": "mcq",
+      "stem": "Domain of X is {1, 2} and domain of Y is {2}. The constraint is X != Y. Revising X -> Y deletes unsupported values of X. What remains for X?",
+      "choices": {
+        "A": "{2}",
+        "B": "{1}",
+        "C": "The empty set",
+        "D": "{1, 2}"
+      },
+      "answer": "B",
+      "explanation": "1 differs from 2, so it stays. 2 has no support in Y."
+    },
+    {
+      "id": "AP4-Q02",
+      "sectionId": "AP4",
+      "type": "mcq",
+      "stem": "X and Y each have 2 values left. X is constrained with 3 other unassigned variables. Y is constrained with 1. Which variable is selected?",
+      "choices": {
+        "A": "Y, because least constraining value prefers fewer constraints",
+        "B": "Y, because the smaller degree fails sooner",
+        "C": "Either. Degree is used only when the domain sizes differ",
+        "D": "X. Minimum remaining values ties, and degree then prefers more constraints on unassigned variables"
+      },
+      "answer": "D",
+      "explanation": "The domains match, so degree breaks the tie toward X."
+    },
+    {
+      "id": "AP4-Q03",
+      "sectionId": "AP4",
+      "type": "mcq",
+      "stem": "After assigning P = red, forward checking leaves Q = {blue} and R = {blue}. The constraints include Q != R. Arc consistency on Q -> R is then run. What happens?",
+      "choices": {
+        "A": "blue is deleted from Q, because it has no support in R",
+        "B": "Both domains stay, because forward checking already finished the problem",
+        "C": "red is written back into Q",
+        "D": "R is assigned blue, because a singleton domain is a search decision"
+      },
+      "answer": "A",
+      "explanation": "Q = blue conflicts with the only value left for R. Forward checking did not look at that pair."
+    },
+    {
+      "id": "AP4-Q04",
+      "sectionId": "AP4",
+      "type": "mcq",
+      "stem": "Min-conflicts is recolouring X. Red conflicts with 2 neighbours, green conflicts with 2, and blue conflicts with 1. Which colour is chosen?",
+      "choices": {
+        "A": "red",
+        "B": "green",
+        "C": "blue",
+        "D": "The current colour, because a complete colouring cannot change"
+      },
+      "answer": "C",
+      "explanation": "Blue leaves one conflict, which is fewer than two."
+    },
+    {
+      "id": "AP4-Q05",
+      "sectionId": "AP4",
+      "type": "mcq",
+      "stem": "A crossword partial assignment gives every filled slot a word of the right length, uses no word twice, and matches every overlap between filled slots. One slot is still empty. What should consistent return?",
+      "choices": {
+        "A": "False, because a partial assignment is illegal",
+        "B": "True. The checks that apply to assigned slots all pass",
+        "C": "False, because duplicate words are allowed and this assignment forbids them",
+        "D": "True only after every slot has a word"
+      },
+      "answer": "B",
+      "explanation": "consistent checks the assignment it has been given. Empty slots do not make the filled slots inconsistent."
+    },
+    {
+      "id": "AP4-Q06",
+      "sectionId": "AP4",
+      "type": "mcq",
+      "stem": "revise(x, y) is the Assignment 1 operation used by the lab-style arc check. It deletes values of x that have no support in y. Which contract matches?",
+      "choices": {
+        "A": "It edits the domain of x in place and returns whether that domain changed",
+        "B": "It returns a new domain and leaves the stored domain of x unchanged",
+        "C": "It deletes values from y and returns how many were removed",
+        "D": "It returns true only when the domain of x becomes empty"
+      },
+      "answer": "A",
+      "explanation": "The boolean tells AC-3 whether neighbouring arcs must be queued again. An empty domain is a later failure, not the only true return."
+    },
+    {
+      "id": "AP5-Q01",
+      "sectionId": "AP5",
+      "type": "mcq",
+      "stem": "Historical loan rows include income, a credit score, and a known default or no-default label. A model is trained to predict that label. Which setting is this?",
+      "choices": {
+        "A": "Unsupervised clustering, because the label should be ignored",
+        "B": "Reinforcement learning, because a later default is a reward",
+        "C": "Supervised classification",
+        "D": "Semi-supervised learning, because most labels should be dropped"
+      },
+      "answer": "C",
+      "explanation": "The target is a known discrete label on every training row. That is supervised classification."
+    },
+    {
+      "id": "AP5-Q02",
+      "sectionId": "AP5",
+      "type": "mcq",
+      "stem": "The energy lab predicts a continuous energy reading. Two rows have squared errors 4 and 0. MSE is the mean of those squared errors. Which claim is right?",
+      "choices": {
+        "A": "This is regression, and the MSE is 2",
+        "B": "This is classification, because energy is treated as a high or low band by default",
+        "C": "The MSE is 4, because the errors are summed and not averaged",
+        "D": "The target should be replaced by a reward before training"
+      },
+      "answer": "A",
+      "explanation": "A real-valued energy target is regression. The mean of 4 and 0 is 2."
+    },
+    {
+      "id": "AP5-Q03",
+      "sectionId": "AP5",
+      "type": "mcq",
+      "stem": "Viewing histories have no viewer-type label. The task groups users by those histories. Which setting is that?",
+      "choices": {
+        "A": "Supervised classification",
+        "B": "Supervised regression",
+        "C": "Reinforcement learning",
+        "D": "Unsupervised clustering"
+      },
+      "answer": "D",
+      "explanation": "There is no target label. Grouping the inputs is unsupervised."
+    },
+    {
+      "id": "AP5-Q04",
+      "sectionId": "AP5",
+      "type": "mcq",
+      "stem": "A controller changes resource allocations and afterwards receives an energy signal. It is not shown the correct allocation. Which setting matches?",
+      "choices": {
+        "A": "Reinforcement learning",
+        "B": "Supervised regression on labelled logs of the correct allocation",
+        "C": "Unsupervised clustering of the allocations",
+        "D": "Classification, because energy is a class label"
+      },
+      "answer": "A",
+      "explanation": "The signal evaluates the action. It is not a target allocation, so the setting is reinforcement learning."
+    },
+    {
+      "id": "AP5-Q05",
+      "sectionId": "AP5",
+      "type": "mcq",
+      "stem": "The energy model fits the training rows closely, and validation error is much larger and still rising. What should the next modelling choice use?",
+      "choices": {
+        "A": "The test rows, choosing the architecture with the smaller test error and reporting that error",
+        "B": "The validation rows. The test rows stay untouched until the choice is finished",
+        "C": "The training error only, because validation noise should be ignored",
+        "D": "A mixture of test and validation rows, then the training error as the final estimate"
+      },
+      "answer": "B",
+      "explanation": "The gap is overfitting. Validation is where the next attempt is chosen. The test set is not part of that choice."
+    },
+    {
+      "id": "AP5-Q06",
+      "sectionId": "AP5",
+      "type": "mcq",
+      "stem": "A few hundred labelled patient rows and a large unlabelled pool from the same measurements are both used in the fit. Which setting is that?",
+      "choices": {
+        "A": "Supervised only",
+        "B": "Unsupervised only",
+        "C": "Semi-supervised",
+        "D": "Reinforcement learning, with the unlabelled rows as rewards"
+      },
+      "answer": "C",
+      "explanation": "Labels and unlabelled rows from the same features are used together."
+    },
+    {
+      "id": "AP6-Q01",
+      "sectionId": "AP6",
+      "type": "mcq",
+      "stem": "A linear score is used directly as the probability of a binary class, and the score equals 3 on one row. Why is that unsuitable?",
+      "choices": {
+        "A": "A linear score cannot accept a continuous feature",
+        "B": "The score is already confined to (0, 1)",
+        "C": "A probability has to lie in (0, 1), and 3 does not",
+        "D": "Linear regression cannot be trained by gradient descent, so the score is undefined"
+      },
+      "answer": "C",
+      "explanation": "The lab passes the linear score through a sigmoid when the output is meant to be a probability."
+    },
+    {
+      "id": "AP6-Q02",
+      "sectionId": "AP6",
+      "type": "mcq",
+      "stem": "Logistic regression has z = -2. Using p = 1 / (1 + e^(-z)), which statement is true without a calculator?",
+      "choices": {
+        "A": "p is above 0.5, so the class is 1",
+        "B": "p is below 0.5, so the class is 0 if the threshold is 0.5",
+        "C": "p = -2",
+        "D": "p = 1, because a negative score saturates the sigmoid"
+      },
+      "answer": "B",
+      "explanation": "A negative z puts the sigmoid strictly below 0.5."
+    },
+    {
+      "id": "AP6-Q03",
+      "sectionId": "AP6",
+      "type": "mcq",
+      "stem": "e^(-z) = 1. Logistic regression predicts class 1 when p >= 0.5. What is p, and which class is predicted?",
+      "choices": {
+        "A": "p = 0.5, and the class is 1",
+        "B": "p = 0.5, and the class is 0, because the sigmoid is at its floor",
+        "C": "p = 1, and the class is 1",
+        "D": "p = 0, and the class is 0"
+      },
+      "answer": "A",
+      "explanation": "p = 1 / (1 + 1) = 0.5, which meets the threshold for class 1."
+    },
+    {
+      "id": "AP6-Q04",
+      "sectionId": "AP6",
+      "type": "mcq",
+      "stem": "A 0/1 perceptron predicts 1 when w \u00b7 x >= 0, and on a mistake uses w <- w + alpha * (y - y_hat) * x. w = [1, 0], x = [1, 1], y = 0, and alpha = 1. What is w afterwards?",
+      "choices": {
+        "A": "[1, 0]",
+        "B": "[0, -1]",
+        "C": "[2, 1]",
+        "D": "[1, -1]"
+      },
+      "answer": "B",
+      "explanation": "The score is 1, so the prediction is 1 and the label is wrong. Subtracting x leaves [0, -1]."
+    },
+    {
+      "id": "AP6-Q05",
+      "sectionId": "AP6",
+      "type": "mcq",
+      "stem": "Two training rows have the same features and opposite labels. What can be concluded about the perceptron?",
+      "choices": {
+        "A": "A small enough learning rate separates them",
+        "B": "The normal equation separates them",
+        "C": "They are separable, so training stops after one epoch",
+        "D": "They are not linearly separable, so the convergence theorem does not promise a stopping time"
+      },
+      "answer": "D",
+      "explanation": "One threshold cannot give two labels to one point."
+    },
+    {
+      "id": "AP6-Q06",
+      "sectionId": "AP6",
+      "type": "mcq",
+      "stem": "Softmax scores are 1, 3, and 0. Which class is predicted?",
+      "choices": {
+        "A": "The third class, and the outputs need not sum to 1",
+        "B": "The second class. The outputs are positive and sum to 1",
+        "C": "The first class, because softmax reverses the scores",
+        "D": "All three classes, because each output is a probability"
+      },
+      "answer": "B",
+      "explanation": "The largest score is 3. Softmax keeps that argmax and turns the scores into a distribution."
+    },
+    {
+      "id": "AP7-Q01",
+      "sectionId": "AP7",
+      "type": "mcq",
+      "stem": "A hidden unit uses x = (1, -1), weights (2, 1), and bias 0.5. The pre-activation is the weighted sum plus the bias. What is z?",
+      "choices": {
+        "A": "0.5",
+        "B": "1.5",
+        "C": "2.5",
+        "D": "-0.5"
+      },
+      "answer": "B",
+      "explanation": "2 * 1 + 1 * (-1) + 0.5 = 1.5."
+    },
+    {
+      "id": "AP7-Q02",
+      "sectionId": "AP7",
+      "type": "mcq",
+      "stem": "That unit uses ReLU, and z = 1.5. What is the activation?",
+      "choices": {
+        "A": "0",
+        "B": "-1.5",
+        "C": "1.5",
+        "D": "0.5"
+      },
+      "answer": "C",
+      "explanation": "ReLU leaves a positive pre-activation unchanged."
+    },
+    {
+      "id": "AP7-Q03",
+      "sectionId": "AP7",
+      "type": "mcq",
+      "stem": "A second hidden unit has z = -2 and uses ReLU. What is its activation, and what is its local derivative on this example?",
+      "choices": {
+        "A": "Activation 0 and local derivative 0",
+        "B": "Activation -2 and local derivative 1",
+        "C": "Activation 0 and local derivative 1",
+        "D": "Activation -2 and local derivative 0"
+      },
+      "answer": "A",
+      "explanation": "Negative inputs are mapped to 0, and the backward factor on that side is 0."
+    },
+    {
+      "id": "AP7-Q04",
+      "sectionId": "AP7",
+      "type": "mcq",
+      "stem": "The network has 784 inputs, 30 hidden units, and 10 logits, with matrices applied on the right of a row vector. Which shapes use the hidden layer?",
+      "choices": {
+        "A": "W1 is (784, 10) and W2 is (10, 30)",
+        "B": "W2 is (784, 10), connecting pixels directly to logits",
+        "C": "W1 is (30, 10) and W2 is (784, 30)",
+        "D": "W1 is (784, 30) and W2 is (30, 10)"
+      },
+      "answer": "D",
+      "explanation": "The hidden width is the output width of W1 and the input width of W2."
+    },
+    {
+      "id": "AP7-Q05",
+      "sectionId": "AP7",
+      "type": "mcq",
+      "stem": "Hidden activations are h = [0, 2], the output weights are 3 and 4, and the output bias is 1. The output is linear. What is the logit?",
+      "choices": {
+        "A": "1",
+        "B": "9",
+        "C": "7",
+        "D": "0"
+      },
+      "answer": "B",
+      "explanation": "0 * 3 + 2 * 4 + 1 = 9."
+    },
+    {
+      "id": "AP7-Q06",
+      "sectionId": "AP7",
+      "type": "mcq",
+      "stem": "The same network has no non-linearity, and the target problem is XOR. What follows?",
+      "choices": {
+        "A": "The hidden layer separates XOR, because there are two weight matrices",
+        "B": "XOR is separated, because a ReLU was initialised even though it is not applied",
+        "C": "The map from input to output is affine, so XOR is not represented",
+        "D": "XOR is represented, because the bias terms are non-linear"
+      },
+      "answer": "C",
+      "explanation": "Without the non-linearity the two layers collapse to one affine function."
+    },
+    {
+      "id": "AP8-Q01",
+      "sectionId": "AP8",
+      "type": "mcq",
+      "stem": "The XOR targets, in the order (0,0), (0,1), (1,0), (1,1), are which labels?",
+      "choices": {
+        "A": "0, 1, 1, 0",
+        "B": "0, 1, 1, 1",
+        "C": "0, 0, 0, 1",
+        "D": "1, 1, 1, 0"
+      },
+      "answer": "A",
+      "explanation": "The mixed inputs are the positive class and the matched inputs are the negative class."
+    },
+    {
+      "id": "AP8-Q02",
+      "sectionId": "AP8",
+      "type": "mcq",
+      "stem": "A single linear threshold is fitted to those four XOR rows. What happens?",
+      "choices": {
+        "A": "The perceptron convergence theorem supplies a separator after one epoch",
+        "B": "Linear regression's normal equation returns probabilities that separate the rows",
+        "C": "No linear threshold labels all four rows, so finite perceptron convergence is not guaranteed",
+        "D": "Raising the learning rate makes the four rows linearly separable"
+      },
+      "answer": "C",
+      "explanation": "XOR is not linearly separable. The convergence theorem needs separability."
+    },
+    {
+      "id": "AP8-Q03",
+      "sectionId": "AP8",
+      "type": "mcq",
+      "stem": "The lab uses 2 inputs and a hidden width of 4, with the matrix on the right of the input row, then one logit. Which shapes match?",
+      "choices": {
+        "A": "W1 is (4, 2) and W2 is (2, 1)",
+        "B": "W1 is (2, 4) and W2 is (4, 1)",
+        "C": "W1 is (4, 1) and W2 is (1, 2)",
+        "D": "W1 is (2, 1) and W2 is (1, 4)"
+      },
+      "answer": "B",
+      "explanation": "Right-multiplication takes W1 from 2 to 4 and W2 from 4 to 1."
+    },
+    {
+      "id": "AP8-Q04",
+      "sectionId": "AP8",
+      "type": "mcq",
+      "stem": "A hidden ReLU has pre-activation -1 on input (1, 1), whose XOR target is 0. What does this unit contribute to the backward pass on this row?",
+      "choices": {
+        "A": "A local derivative of 1, so the incoming weights are updated",
+        "B": "An activation of -1, which is compared with the target 0",
+        "C": "A local derivative of 1, because the target is 0",
+        "D": "Activation 0 and local derivative 0, so its incoming weights get no gradient from this row"
+      },
+      "answer": "D",
+      "explanation": "The negative pre-activation is the off side of ReLU."
+    },
+    {
+      "id": "AP8-Q05",
+      "sectionId": "AP8",
+      "type": "mcq",
+      "stem": "Hidden activation h = [1, 0, 0, 0], output weights [0.5, 0.5, 0.5, 0.5], and output bias 0. The output unit is linear. What is the logit?",
+      "choices": {
+        "A": "0.5",
+        "B": "2",
+        "C": "0",
+        "D": "1"
+      },
+      "answer": "A",
+      "explanation": "Only the first hidden unit is on: 1 * 0.5 = 0.5."
+    },
+    {
+      "id": "AP8-Q06",
+      "sectionId": "AP8",
+      "type": "mcq",
+      "stem": "The four XOR rows are fitted, and a fifth row copies input (1, 0) but labels it 0 instead of 1. What does the fifth row show?",
+      "choices": {
+        "A": "The network has failed XOR, because the original training loss can still fall",
+        "B": "The enlarged set is not a function of the input, so no model can be correct on every row",
+        "C": "ReLU would label both copies of (1, 0) correctly",
+        "D": "Early stopping should restore the weights that fit the contradictory label"
+      },
+      "answer": "B",
+      "explanation": "One input now has two targets. No hypothesis can match both."
+    },
+    {
+      "id": "AP9-Q01",
+      "sectionId": "AP9",
+      "type": "mcq",
+      "stem": "The rent lab predicts Yes or No from attributes such as furniture, number of rooms, and a new kitchen. Which learning task is that?",
+      "choices": {
+        "A": "Unsupervised clustering of houses",
+        "B": "Supervised classification",
+        "C": "Reinforcement learning, because rent is a reward",
+        "D": "Linear regression of the rent amount, with no class label"
+      },
+      "answer": "B",
+      "explanation": "The target is a discrete Yes or No on labelled rows."
+    },
+    {
+      "id": "AP9-Q02",
+      "sectionId": "AP9",
+      "type": "mcq",
+      "stem": "Parent entropy is 1. A new-kitchen split makes two children of equal size. One child is pure, entropy 0. The other has entropy 1. What is the information gain?",
+      "choices": {
+        "A": "1",
+        "B": "0",
+        "C": "0.5",
+        "D": "0.811"
+      },
+      "answer": "C",
+      "explanation": "Weighted child entropy is 0.5 * 0 + 0.5 * 1 = 0.5. Gain is 1 - 0.5 = 0.5."
+    },
+    {
+      "id": "AP9-Q03",
+      "sectionId": "AP9",
+      "type": "mcq",
+      "stem": "A branch of the rent tree receives no rows. The parent plurality class is No. What leaf is returned?",
+      "choices": {
+        "A": "No",
+        "B": "Yes",
+        "C": "The branch is deleted and the parent is split again",
+        "D": "The branch keeps testing rooms, because an empty set has undefined entropy"
+      },
+      "answer": "A",
+      "explanation": "An empty branch uses the parent plurality class."
+    },
+    {
+      "id": "AP9-Q04",
+      "sectionId": "AP9",
+      "type": "mcq",
+      "stem": "Another branch has three Yes and one No, and no attributes remain. What leaf is returned?",
+      "choices": {
+        "A": "No",
+        "B": "The parent class, whatever it was",
+        "C": "Yes, but only if the parent was Yes",
+        "D": "Yes"
+      },
+      "answer": "D",
+      "explanation": "No attributes remain and the rows are mixed, so the leaf is the majority of those rows, which is Yes."
+    },
+    {
+      "id": "AP9-Q05",
+      "sectionId": "AP9",
+      "type": "mcq",
+      "stem": "Furniture splits the training rows into many nearly pure groups, one per rare furniture combination, and its raw gain beats number of rooms. Validation accuracy falls. What is the likely problem?",
+      "choices": {
+        "A": "Information gain cannot score a two-valued attribute such as a new kitchen",
+        "B": "The many-valued attribute memorises training combinations. Gain ratio is the correction named in the course",
+        "C": "ID3 should have stopped because a pure child has entropy 1",
+        "D": "The tree should keep the furniture split, because raw gain is the validation criterion"
+      },
+      "answer": "B",
+      "explanation": "Raw gain favours attributes with many values. A rare combination that isolates rows does not travel well to new houses."
+    },
+    {
+      "id": "AP9-Q06",
+      "sectionId": "AP9",
+      "type": "mcq",
+      "stem": "Replacing a deep rent subtree with the majority class leaves validation accuracy unchanged and lowers training accuracy from 100 percent. What should post-pruning do?",
+      "choices": {
+        "A": "Keep the subtree so training accuracy stays perfect",
+        "B": "Grow another furniture test under the new leaf",
+        "C": "Keep the leaf",
+        "D": "Move the validation houses into the training set and rebuild"
+      },
+      "answer": "C",
+      "explanation": "Validation did not get worse, so the simpler leaf is kept."
+    },
+    {
+      "id": "AP10-Q01",
+      "sectionId": "AP10",
+      "type": "mcq",
+      "stem": "E and M are roots, S has parents E and M, and B has parent M. Which factorisation matches the graph?",
+      "choices": {
+        "A": "P(E) P(M) P(S | E, M) P(B | M)",
+        "B": "P(E | S) P(M | B) P(S) P(B)",
+        "C": "P(E, M) P(S, B)",
+        "D": "P(E | M) P(M | S) P(S | B) P(B | E)"
+      },
+      "answer": "A",
+      "explanation": "Each node contributes one factor conditioned only on its parents. E and M have none."
+    },
+    {
+      "id": "AP10-Q02",
+      "sectionId": "AP10",
+      "type": "mcq",
+      "stem": "E, M, S, and B are binary. E and M are roots, S has two parents, and B has one parent. How many free parameters does this factorisation have?",
+      "choices": {
+        "A": "4",
+        "B": "8",
+        "C": "15",
+        "D": "16"
+      },
+      "answer": "B",
+      "explanation": "The counts are 1 + 1 + 4 + 2 = 8. A full joint table of four binary variables has 15 free numbers."
+    },
+    {
+      "id": "AP10-Q03",
+      "sectionId": "AP10",
+      "type": "mcq",
+      "stem": "For one assignment, P(E) = 0.5, P(M) = 0.5, P(S | E, M) = 0.8, and P(B | M) = 0.4. What is that joint probability?",
+      "choices": {
+        "A": "2.2",
+        "B": "0.80",
+        "C": "0.08",
+        "D": "0.40"
+      },
+      "answer": "C",
+      "explanation": "The product is 0.5 * 0.5 * 0.8 * 0.4 = 0.08."
+    },
+    {
+      "id": "AP10-Q04",
+      "sectionId": "AP10",
+      "type": "mcq",
+      "stem": "No evidence has been observed. E and M are both roots, and the only way they meet is as parents of S. Are E and M independent?",
+      "choices": {
+        "A": "Yes. The collider at S is blocked while S is unobserved",
+        "B": "No. Sharing a child makes them dependent before any evidence",
+        "C": "Yes, but only after S is observed",
+        "D": "No, because every pair of roots is dependent"
+      },
+      "answer": "A",
+      "explanation": "An unobserved collider blocks the path. E and M are marginally independent in this graph."
+    },
+    {
+      "id": "AP10-Q05",
+      "sectionId": "AP10",
+      "type": "mcq",
+      "stem": "S is now observed. What can that do to E and M?",
+      "choices": {
+        "A": "Nothing. Roots stay independent under every observation",
+        "B": "It blocks the path, which is the chain case",
+        "C": "It deletes S, so the factor P(S | E, M) is removed from every query",
+        "D": "It can make E and M dependent, because observing the collider opens the path"
+      },
+      "answer": "D",
+      "explanation": "Conditioning on S opens E -> S <- M."
+    },
+    {
+      "id": "AP10-Q06",
+      "sectionId": "AP10",
+      "type": "mcq",
+      "stem": "B's only parent is M. M is observed, and E is not a parent of B. There is no direct edge between E and B. Which independence is the local one?",
+      "choices": {
+        "A": "B is independent of M once E is known",
+        "B": "B is independent of E once M is known, if no other open path remains",
+        "C": "B is independent of M with no evidence, because B has a parent",
+        "D": "E and B are independent only when both are observed"
+      },
+      "answer": "B",
+      "explanation": "Given its parent M, B is conditionally independent of non-descendants such as E, provided the rest of the graph does not open another path. Here the path runs through M."
+    },
+    {
+      "id": "AP11-Q01",
+      "sectionId": "AP11",
+      "type": "mcq",
+      "stem": "All Q values start at 0. alpha = 0.5 and gamma = 1. The sample is (A, right, B, 4), and every action value in B is still 0. What is Q(A, right) afterwards?",
+      "choices": {
+        "A": "0.5",
+        "B": "2",
+        "C": "4",
+        "D": "1"
+      },
+      "answer": "B",
+      "explanation": "The target is 4 + 1 * 0 = 4. From 0, one half-step gives 0.5 * 0 + 0.5 * 4 = 2."
+    },
+    {
+      "id": "AP11-Q02",
+      "sectionId": "AP11",
+      "type": "mcq",
+      "stem": "Q(C, left) = 1 and Q(C, right) = 0. gamma = 1. The sample is (B, right, C, -2). What is the Q-learning target?",
+      "choices": {
+        "A": "-1",
+        "B": "-2",
+        "C": "1",
+        "D": "-3"
+      },
+      "answer": "A",
+      "explanation": "The max at C is 1, so the target is -2 + 1 * 1 = -1. The min would be the wrong reduction."
+    },
+    {
+      "id": "AP11-Q03",
+      "sectionId": "AP11",
+      "type": "mcq",
+      "stem": "alpha = 0.5, the old Q(B, right) = 0, and the target is -1. What is the updated value?",
+      "choices": {
+        "A": "0",
+        "B": "-1",
+        "C": "-0.5",
+        "D": "0.5"
+      },
+      "answer": "C",
+      "explanation": "0.5 * 0 + 0.5 * (-1) = -0.5."
+    },
+    {
+      "id": "AP11-Q04",
+      "sectionId": "AP11",
+      "type": "mcq",
+      "stem": "The behaviour policy reached C by the action right, where Q(C, right) = 0, while Q(C, left) = 1. Which value belongs in the Q-learning target?",
+      "choices": {
+        "A": "0, because right was the action taken",
+        "B": "0, because gamma discards the next state",
+        "C": "The average of 0 and 1",
+        "D": "1, the larger action value"
+      },
+      "answer": "D",
+      "explanation": "The target uses the max. The behaviour action is how the sample was collected, not the value inside the max."
+    },
+    {
+      "id": "AP11-Q05",
+      "sectionId": "AP11",
+      "type": "mcq",
+      "stem": "Direct evaluation uses gamma = 0.5. One visit to K returns the rewards [2, 2] and then terminates. What return is recorded for that visit?",
+      "choices": {
+        "A": "2",
+        "B": "3",
+        "C": "4",
+        "D": "1"
+      },
+      "answer": "B",
+      "explanation": "The return is 2 + 0.5 * 2 = 3. Termination contributes no further reward."
+    },
+    {
+      "id": "AP11-Q06",
+      "sectionId": "AP11",
+      "type": "mcq",
+      "stem": "Q(A, right) = 2 and Q(A, left) = 0. The agent must pick an action in A and sometimes tries left even though right is greedy. Why?",
+      "choices": {
+        "A": "Left may be undervalued because it has not been tried. Exploitation alone would never collect that sample",
+        "B": "Q-learning requires the worst action, so left is mandatory on every step",
+        "C": "The max in the target already tried left, so the behaviour policy can stay on right forever",
+        "D": "gamma = 1 means the larger action is illegal"
+      },
+      "answer": "A",
+      "explanation": "Exploration visits the non-greedy action so its Q entry can move. The target max does not generate that visit."
+    },
+    {
+      "id": "APL1-T01",
+      "sectionId": "APL1",
+      "type": "tf",
+      "stem": "On this cart, wheels, a sampler, and a radio are actuators. Cameras and proximity detectors are sensors.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Actuators change the world or send signals out. Cameras and proximity detectors supply percepts."
+    },
+    {
+      "id": "APL1-T02",
+      "sectionId": "APL1",
+      "type": "tf",
+      "stem": "Writing 'be intelligent' as the performance measure is enough, because a marker can score it directly from the run log.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "A performance measure has to be something the log can score, such as collisions or samples per hour."
+    },
+    {
+      "id": "APL1-T03",
+      "sectionId": "APL1",
+      "type": "tf",
+      "stem": "The readable hand-written chess evaluation is subsymbolic, because it outputs a number.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "Hand-written rules a person can read are symbolic here. A numeric output does not make them subsymbolic."
+    },
+    {
+      "id": "APL1-T04",
+      "sectionId": "APL1",
+      "type": "tf",
+      "stem": "Matching a clinician's reasoning steps is thinking humanly. Matching only whether a text conversation sounds human is acting humanly.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "The first compares internal reasoning with a person. The second is the imitation-game criterion."
+    },
+    {
+      "id": "APL1-T05",
+      "sectionId": "APL1",
+      "type": "tf",
+      "stem": "The cart was irrational because the diversion took longer than the route that later turned out to be clear.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "The longer outcome is hindsight. Rationality is judged from the camera reading available at the time."
+    },
+    {
+      "id": "APL1-T06",
+      "sectionId": "APL1",
+      "type": "tf",
+      "stem": "HTML arriving at the shopping agent is a sensor stream. A button click the agent sends is an actuator.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "The page contents are percepts. The click is an action."
+    },
+    {
+      "id": "APL2-T01",
+      "sectionId": "APL2",
+      "type": "tf",
+      "stem": "Uniform-cost search with positive unequal costs leaves a generated goal of g = 8 on the frontier while a node of g = 3 is still unexpanded.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "The goal test waits until selection. Expanding the cheaper open node might produce a better goal."
+    },
+    {
+      "id": "APL2-T02",
+      "sectionId": "APL2",
+      "type": "tf",
+      "stem": "Two nodes that share room B and the same dirt set are two states, because their parent pointers differ.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "Those nodes store one state. The parent pointer is part of the node, not part of the state."
+    },
+    {
+      "id": "APL2-T03",
+      "sectionId": "APL2",
+      "type": "tf",
+      "stem": "Breadth-first search returns a cheapest path whenever every step cost is positive, including when those costs differ.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "Positive costs are not enough. If a 3-step path costs less than a 2-step path, breadth-first search can return the dearer one."
+    },
+    {
+      "id": "APL2-T04",
+      "sectionId": "APL2",
+      "type": "tf",
+      "stem": "A stack whose top is Y, then X, then Q expands Y next. That is depth-first order.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Depth-first search pops the most recently pushed node. Y is on top."
+    },
+    {
+      "id": "APL2-T05",
+      "sectionId": "APL2",
+      "type": "tf",
+      "stem": "Depth-limited search with limit 3 returns a goal whose shallowest occurrence is at depth 4, because it still generates the children of every depth-3 node.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "The depth limit stops generation at depth 3. The depth-4 goal is not produced."
+    },
+    {
+      "id": "APL2-T06",
+      "sectionId": "APL2",
+      "type": "tf",
+      "stem": "On an infinite branch with step costs 1/2, 1/4, 1/8, and so on, uniform-cost search has no common epsilon > 0, so completeness is not guaranteed even though every single step is positive.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Each step is positive, but the costs have no single positive floor. The completeness condition asks for that floor."
+    },
+    {
+      "id": "APL3-T01",
+      "sectionId": "APL3",
+      "type": "tf",
+      "stem": "With h = 0 at every node, A* next expands the frontier node whose g is 3 when the other frontier path costs are 5 and 8.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "f equals g. The node with g = 3 has the smallest f."
+    },
+    {
+      "id": "APL3-T02",
+      "sectionId": "APL3",
+      "type": "tf",
+      "stem": "h(A) = 5 and the true remaining cost from A is 3, so h is admissible at A and tree-search A* remains optimal.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "5 is greater than 3, so h overestimates at A. Admissibility fails, and the tree-search guarantee goes with it."
+    },
+    {
+      "id": "APL3-T03",
+      "sectionId": "APL3",
+      "type": "tf",
+      "stem": "An admissible heuristic is enough for graph-search A* to keep the cheaper of two paths after it closes a repeated state.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "Graph search needs consistency. An admissible heuristic that breaks the edge inequality can close a state on a worse path."
+    },
+    {
+      "id": "APL3-T04",
+      "sectionId": "APL3",
+      "type": "tf",
+      "stem": "On the board 2 3 1 / 4 5 6 / 7 8 blank, with goal 1 2 3 / 4 5 6 / 7 8 blank, the misplaced-tile heuristic is 3 and the Manhattan distance is 4.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Three tiles are homeward by distances 2, 1, and 1. The other numbered tiles are already home, and the blank is ignored."
+    },
+    {
+      "id": "APL3-T05",
+      "sectionId": "APL3",
+      "type": "tf",
+      "stem": "An IDA* cutoff of f <= 20 moves next to 21, because the limit increases by 1 at every round.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "If the smallest f above 20 is 22, the next cutoff is 22. Adding 1 is the depth rule used by ordinary iterative deepening."
+    },
+    {
+      "id": "APL3-T06",
+      "sectionId": "APL3",
+      "type": "tf",
+      "stem": "From S, greedy search sees h(A) = 1 with path cost 9 and h(B) = 3 with path cost 2. It expands A and can return a cost-18 path while a cost-6 route through B exists.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Greedy orders by h alone. A looks closer, so the cheaper route through B is not the one selected first."
+    },
+    {
+      "id": "APL4A-T01",
+      "sectionId": "APL4A",
+      "type": "tf",
+      "stem": "With success probability 0.1, the expected number of climbs up to and including the first success is 10.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "The expectation 1/p equals 10. That count includes the successful climb."
+    },
+    {
+      "id": "APL4A-T02",
+      "sectionId": "APL4A",
+      "type": "tf",
+      "stem": "A local optimum is the best configuration in the whole space, so a random restart cannot improve on it.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "Local means no one-move neighbour is better. Another basin can still contain a better configuration."
+    },
+    {
+      "id": "APL4A-T03",
+      "sectionId": "APL4A",
+      "type": "tf",
+      "stem": "Allowing unlimited sideways moves guarantees an exit from every plateau.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "A plateau may have no uphill exit. An uncapped sideways walk can also loop on the flat region."
+    },
+    {
+      "id": "APL4A-T04",
+      "sectionId": "APL4A",
+      "type": "tf",
+      "stem": "8-queens local search is finished when it returns a board with no attacking pairs. The sequence of moves is not the required output.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "The objective is the configuration. Path-finding search is the setting that returns a route."
+    },
+    {
+      "id": "APL4A-T05",
+      "sectionId": "APL4A",
+      "type": "tf",
+      "stem": "Once the evaluation function is chosen, changing the neighbourhood cannot change which configurations are local optima.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "Local optimality is defined against the neighbours the neighbourhood generates. A new move set can add an improving neighbour."
+    },
+    {
+      "id": "APL4A-T06",
+      "sectionId": "APL4A",
+      "type": "tf",
+      "stem": "A region that is flat for several moves and then has an uphill exit is a shoulder. A flat region with no such exit is a plateau.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "The exit reachable by sideways moves is what makes the shoulder different from a plateau."
+    },
+    {
+      "id": "APL4B-T01",
+      "sectionId": "APL4B",
+      "type": "tf",
+      "stem": "X has domain {red, blue}, Y has domain {red}, and X != Y. After X is revised against Y, the domain of X is {blue}.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "red has no support in Y. blue differs from red, so it remains."
+    },
+    {
+      "id": "APL4B-T02",
+      "sectionId": "APL4B",
+      "type": "tf",
+      "stem": "AC-3 ending with non-empty domains proves that the CSP has a complete consistent assignment.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "Non-empty arc-consistent domains guarantee pairwise support only. A complete assignment can still fail to exist."
+    },
+    {
+      "id": "APL4B-T03",
+      "sectionId": "APL4B",
+      "type": "tf",
+      "stem": "Least constraining value selects the next variable. Minimum remaining values selects the next value.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "Minimum remaining values, with degree as a tie-break, selects the variable. Least constraining value then orders that variable's values."
+    },
+    {
+      "id": "APL4B-T04",
+      "sectionId": "APL4B",
+      "type": "tf",
+      "stem": "Forward checking after assigning W does not by itself delete a value from an unassigned variable that conflicts only with another unassigned variable.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Forward checking looks at neighbours of the assigned variable. A conflict between two unassigned variables is left for later propagation."
+    },
+    {
+      "id": "APL4B-T05",
+      "sectionId": "APL4B",
+      "type": "tf",
+      "stem": "Arc X -> Y is consistent when every remaining value of Y has a supporting value in X.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "The arc is read from X to Y as a check on X. Every remaining value of X needs a support in Y."
+    },
+    {
+      "id": "APL4B-T06",
+      "sectionId": "APL4B",
+      "type": "tf",
+      "stem": "Min-conflicts should choose a colour that violates 0 constraints when the current colour violates 2, even though the assignment is already complete.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "The current complete assignment can be illegal. The chosen variable is reassigned to a minimum-conflict value."
+    },
+    {
+      "id": "APL5-T01",
+      "sectionId": "APL5",
+      "type": "tf",
+      "stem": "Low training loss and a much higher validation loss, with the gap still growing, is overfitting.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "The model keeps fitting the training rows while the held-out loss gets worse. That gap is the overfitting signal."
+    },
+    {
+      "id": "APL5-T02",
+      "sectionId": "APL5",
+      "type": "tf",
+      "stem": "A target that is a real number of hours is a classification target, because the hours fall into a range.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "Predicting the number of hours is regression. A range becomes classification only when the target is which band the value falls in."
+    },
+    {
+      "id": "APL5-T03",
+      "sectionId": "APL5",
+      "type": "tf",
+      "stem": "Choosing the model with the highest test accuracy, then reporting that accuracy, keeps the test set independent.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "The choice used the test labels. The winning score is no longer an estimate from data that played no role in selection."
+    },
+    {
+      "id": "APL5-T04",
+      "sectionId": "APL5",
+      "type": "tf",
+      "stem": "Using 40 labelled recordings together with a large unlabelled set from the same sensors is semi-supervised learning.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "The fit uses both kinds of rows. Labels alone would be supervised. Unlabelled rows alone would be unsupervised."
+    },
+    {
+      "id": "APL5-T05",
+      "sectionId": "APL5",
+      "type": "tf",
+      "stem": "k-nearest neighbour finishes its fitting while the training file is read, and prediction does not depend on the stored training rows.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "The training rows are stored and the neighbour search happens at prediction time. That is why the method is called lazy."
+    },
+    {
+      "id": "APL5-T06",
+      "sectionId": "APL5",
+      "type": "tf",
+      "stem": "A reward after each move, with no correct-action label, is reinforcement learning.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "The feedback is a reward, not a target action. That is the reinforcement-learning setting."
+    },
+    {
+      "id": "APL6-T01",
+      "sectionId": "APL6",
+      "type": "tf",
+      "stem": "Predictions 3 and 0 for targets 1 and 0 give squared errors 4 and 0, so the MSE over those two rows is 2.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "The mean of 4 and 0 is 2."
+    },
+    {
+      "id": "APL6-T02",
+      "sectionId": "APL6",
+      "type": "tf",
+      "stem": "Two identical feature vectors with opposite labels are linearly separable, so the perceptron convergence theorem applies.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "No single linear threshold can label one point in two ways. The theorem's separability condition fails."
+    },
+    {
+      "id": "APL6-T03",
+      "sectionId": "APL6",
+      "type": "tf",
+      "stem": "For logistic regression, e^(-z) = 3 gives p = 0.75 and class 1.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "p = 1 / (1 + 3) = 0.25, which is below 0.5, so the predicted class is 0."
+    },
+    {
+      "id": "APL6-T04",
+      "sectionId": "APL6",
+      "type": "tf",
+      "stem": "Softmax on the scores 2, 0, and -1 assigns the highest probability to the first score.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Softmax keeps the order. The first score is the largest, so it stays the predicted class."
+    },
+    {
+      "id": "APL6-T05",
+      "sectionId": "APL6",
+      "type": "tf",
+      "stem": "In this course the normal equation is the closed form for logistic regression, and ordinary linear regression must be trained by gradient descent.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "The normal equation belongs to linear least squares under the stated conditions. Logistic regression is trained by gradient methods here."
+    },
+    {
+      "id": "APL6-T06",
+      "sectionId": "APL6",
+      "type": "tf",
+      "stem": "A {-1, +1} perceptron that predicts -1 for a true +1 should add the feature vector.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "The false negative case moves the weights toward the positive example by adding x."
+    },
+    {
+      "id": "APL7-T01",
+      "sectionId": "APL7",
+      "type": "tf",
+      "stem": "A ReLU with pre-activation -0.2 has output 0 and local derivative 0, so the gradient into that unit is 0 on this example.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "The negative side of ReLU blocks the backward signal. The downstream gradient is multiplied by 0."
+    },
+    {
+      "id": "APL7-T02",
+      "sectionId": "APL7",
+      "type": "tf",
+      "stem": "Two linear layers with no hidden non-linearity can separate XOR, because the product of two matrices is non-linear.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "The composition is still affine. XOR is not linearly separable, so this stack cannot represent it."
+    },
+    {
+      "id": "APL7-T03",
+      "sectionId": "APL7",
+      "type": "tf",
+      "stem": "In a 784-30-10 network that uses h @ W2, W2 has shape (30, 10). It does not connect the 784 pixels directly to the 10 logits.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "The second matrix sees the 30 hidden activations. A shape of (784, 10) would skip that layer."
+    },
+    {
+      "id": "APL7-T04",
+      "sectionId": "APL7",
+      "type": "tf",
+      "stem": "A sigmoid output of 0.5 has local factor s(1 - s) = 1, so stacking sigmoid layers does not shrink the gradient.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "s(1 - s) at 0.5 is 0.25, not 1. Two such layers contribute 0.0625 together."
+    },
+    {
+      "id": "APL7-T05",
+      "sectionId": "APL7",
+      "type": "tf",
+      "stem": "A negative pre-activation into a sigmoid produces an activation above 0.5.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "The sigmoid is below 0.5 for every negative finite input, and it crosses 0.5 only at z = 0."
+    },
+    {
+      "id": "APL7-T06",
+      "sectionId": "APL7",
+      "type": "tf",
+      "stem": "The hidden delta is computed from the weights used on the forward pass. Those outgoing weights are not updated before the delta is stored.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "The chain rule uses the weights that produced the forward activations. Updating them first would use a different product."
+    },
+    {
+      "id": "APL8-T01",
+      "sectionId": "APL8",
+      "type": "tf",
+      "stem": "With eta = 0.5, lambda = 0.2, data gradient 2, and weight 4, one soft weight-decay step produces 2.6.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "The decay factor is 1 - 0.1 = 0.9. Then 0.9 * 4 - 1 = 2.6."
+    },
+    {
+      "id": "APL8-T02",
+      "sectionId": "APL8",
+      "type": "tf",
+      "stem": "Early stopping restores the weights from the epoch with the lowest training loss.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "The checkpoint is the best validation epoch. Training loss can keep falling after that point."
+    },
+    {
+      "id": "APL8-T03",
+      "sectionId": "APL8",
+      "type": "tf",
+      "stem": "A residual connection is a regulariser in the same family as dropout and weight decay, because the skip penalises large weights.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "The skip is an optimisation path. Weight decay is the update that penalises large weights."
+    },
+    {
+      "id": "APL8-T04",
+      "sectionId": "APL8",
+      "type": "tf",
+      "stem": "In 5-fold cross-validation, each fold is held out once for evaluation while the other four fit the model.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "The held-out fold scores that round. It is not the fold that trains."
+    },
+    {
+      "id": "APL8-T05",
+      "sectionId": "APL8",
+      "type": "tf",
+      "stem": "Inverted dropout with p = 0.5 passes a surviving activation of 6 through unchanged during training, and divides by 0.5 only at inference.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "The scale 6 / 0.5 = 12 is applied to kept units during training. Inference uses every unit without that division."
+    },
+    {
+      "id": "APL8-T06",
+      "sectionId": "APL8",
+      "type": "tf",
+      "stem": "A class-preserving flip of a training image keeps the original label.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "The transformation changes pixels and leaves the class alone. The new image is not a reason to relabel or to move the row into the test set."
+    },
+    {
+      "id": "APL9-T01",
+      "sectionId": "APL9",
+      "type": "tf",
+      "stem": "An empty branch uses the parent plurality class. A mixed branch with no attributes left uses the majority of the rows on that branch.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "The empty branch has no rows of its own, so it borrows the parent. The mixed branch votes with the rows it still holds."
+    },
+    {
+      "id": "APL9-T02",
+      "sectionId": "APL9",
+      "type": "tf",
+      "stem": "A split into two equal children that are each as mixed as the parent has information gain 1 when the parent entropy is 1.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "The children also have entropy 1, so the gain is 1 - 1 = 0."
+    },
+    {
+      "id": "APL9-T03",
+      "sectionId": "APL9",
+      "type": "tf",
+      "stem": "ID3 should keep testing attributes after every remaining row has the same class.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "A pure node is a leaf. There is no remaining mixture for another test to reduce."
+    },
+    {
+      "id": "APL9-T04",
+      "sectionId": "APL9",
+      "type": "tf",
+      "stem": "A unique row identifier can have huge raw gain and still be a bad root, because the tree memorises identities.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Pure singletons maximise raw gain and fail on a new identifier. Gain ratio is the correction for many-valued attributes."
+    },
+    {
+      "id": "APL9-T05",
+      "sectionId": "APL9",
+      "type": "tf",
+      "stem": "If replacing a subtree with a leaf does not change validation accuracy, post-pruning keeps the subtree so that training accuracy stays perfect.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "An unchanged validation score is a reason to keep the simpler leaf. Training accuracy is not the pruning criterion."
+    },
+    {
+      "id": "APL9-T06",
+      "sectionId": "APL9",
+      "type": "tf",
+      "stem": "Attribute A has gain 0.4 and attribute B has gain 0.1, so ID3 tests A now, without claiming that every tree rooted at B is larger.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "The comparison is local. It does not search the alternative trees."
+    },
+    {
+      "id": "APL10-T01",
+      "sectionId": "APL10",
+      "type": "tf",
+      "stem": "P(A) = 0.5, P(B | A) = 0.5, and P(C | B) = 0.4. The chain-rule joint P(A, B, C) is 0.1.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "The factors multiply. 0.5 * 0.5 * 0.4 = 0.1."
+    },
+    {
+      "id": "APL10-T02",
+      "sectionId": "APL10",
+      "type": "tf",
+      "stem": "A binary node with two binary parents has 2 free parameters, because each parent adds one.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "Two binary parents give 4 conditioning cases, and each binary distribution contributes 1 free number, so there are 4."
+    },
+    {
+      "id": "APL10-T03",
+      "sectionId": "APL10",
+      "type": "tf",
+      "stem": "On the chain X -> Z -> Y, observing Z opens the path and makes X and Y dependent through it.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "Observing the middle of a chain blocks that path."
+    },
+    {
+      "id": "APL10-T04",
+      "sectionId": "APL10",
+      "type": "tf",
+      "stem": "On the collider X -> Z <- Y with no other path, observing Z can make X and Y dependent.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "The observation opens the collider. Dependence can appear even though the path was blocked before."
+    },
+    {
+      "id": "APL10-T05",
+      "sectionId": "APL10",
+      "type": "tf",
+      "stem": "P(a, b) = 0.10 and P(a, not b) = 0.20. Marginalising out b gives P(a) = 0.40.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "The two cells sum to 0.30, not 0.40."
+    },
+    {
+      "id": "APL10-T06",
+      "sectionId": "APL10",
+      "type": "tf",
+      "stem": "P(a or b) equals 0.60 when P(not a, not b) = 0.40, because the complement of 'a or b' is the single cell where both are false.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "1 - 0.40 = 0.60. That is the union, not a product of the marginals."
+    },
+    {
+      "id": "APL11-T01",
+      "sectionId": "APL11",
+      "type": "tf",
+      "stem": "With gamma = 0.8 and reward +1 at every future step, the infinite return is 5.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "1 / (1 - 0.8) = 5. The discount is low enough for the sum to converge."
+    },
+    {
+      "id": "APL11-T02",
+      "sectionId": "APL11",
+      "type": "tf",
+      "stem": "The behaviour policy took the action whose Q value is 0. The Q-learning target uses 0 rather than the max, which is 4.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "The target uses the max. The action that collected the sample does not replace it."
+    },
+    {
+      "id": "APL11-T03",
+      "sectionId": "APL11",
+      "type": "tf",
+      "stem": "With gamma = 1 and reward +1 forever, the return is 1.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "Every term is +1 and none of them shrink. The sum does not converge."
+    },
+    {
+      "id": "APL11-T04",
+      "sectionId": "APL11",
+      "type": "tf",
+      "stem": "TD policy evaluation forms the target r + gamma * V(s') from the sampled next state. It does not need the transition model T.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "The sample stands in for the unknown sum over next states. T is not required for that update."
+    },
+    {
+      "id": "APL11-T05",
+      "sectionId": "APL11",
+      "type": "tf",
+      "stem": "A policy is a fixed sequence of actions, so it cannot name different actions in different states.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "That fixed sequence is a plan. A policy maps the state it is in to an action."
+    },
+    {
+      "id": "APL11-T06",
+      "sectionId": "APL11",
+      "type": "tf",
+      "stem": "If two states share exactly the same features, approximate Q-learning gives them the same approximated value.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "The value is a function of the features. Identical features cannot produce two different linear values."
+    },
+    {
+      "id": "AP2-T01",
+      "sectionId": "AP2",
+      "type": "tf",
+      "stem": "BFS appends the children of P, generated as X then Y, to the back of [P, Q], and the next open list is [Q, X, Y].",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "The front after removing P is Q. X and Y wait behind it."
+    },
+    {
+      "id": "AP2-T02",
+      "sectionId": "AP2",
+      "type": "tf",
+      "stem": "The vacuum goal test succeeds as soon as the agent enters room C, even if A is still dirty.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "Room C is not the goal. All three rooms have to be clean."
+    },
+    {
+      "id": "AP2-T03",
+      "sectionId": "AP2",
+      "type": "tf",
+      "stem": "A stack frontier that next expands the newest child is depth-first search.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Last in, first out is the depth-first order. A queue would have expanded the oldest waiting node."
+    },
+    {
+      "id": "AP2-T04",
+      "sectionId": "AP2",
+      "type": "tf",
+      "stem": "Graph search adds a second open-list node whenever the new Python object differs, even if the state matches a node already waiting.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "The repeat check compares states. A new object with a state that is already open is rejected when there is no cheaper-path rule."
+    },
+    {
+      "id": "AP3A-T01",
+      "sectionId": "AP3A",
+      "type": "tf",
+      "stem": "On the graph with S->A cost 1, A->G cost 6, S->B cost 5, and B->G cost 1, uniform-cost search that replaces a dearer frontier copy returns S-B-G at cost 6.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "G is first queued at cost 7 through A, then replaced by cost 6 through B before it is selected."
+    },
+    {
+      "id": "AP3A-T02",
+      "sectionId": "AP3A",
+      "type": "tf",
+      "stem": "Breadth-first search on that same graph returns the cost-6 path, because both routes have depth 2 and the cheaper one is preferred.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "Depth 2 does not consult cost. The first generated G, through A, is the one returned when repeats are not replaced."
+    },
+    {
+      "id": "AP3A-T03",
+      "sectionId": "AP3A",
+      "type": "tf",
+      "stem": "Greedy search with h(A) = 1 and h(B) = 4 expands A before B, so it can return the cost-14 route while a cost-4 route exists.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "The ordering key is h. Path cost is not consulted, so the cheap route through B waits."
+    },
+    {
+      "id": "AP3A-T04",
+      "sectionId": "AP3A",
+      "type": "tf",
+      "stem": "A generated goal of cost 8 is returned immediately when another frontier node still has g = 3.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "Uniform-cost search waits until the goal is selected. The g = 3 node comes off the frontier first."
+    },
+    {
+      "id": "AP3B-T01",
+      "sectionId": "AP3B",
+      "type": "tf",
+      "stem": "On 1 2 3 / 4 5 6 / 7 blank 8, with the blank's goal at the bottom right, both the misplaced-tile count and the Manhattan distance equal 1.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Tile 8 is the only numbered tile off its square, and it is one step away. The blank is not counted."
+    },
+    {
+      "id": "AP3B-T02",
+      "sectionId": "AP3B",
+      "type": "tf",
+      "stem": "On 2 3 1 / 4 5 6 / 7 8 blank, Manhattan distance is inadmissible because it is 4 while the misplaced-tile count is 3.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "4 can still be a lower bound. Being larger than another admissible heuristic does not by itself overestimate the true cost."
+    },
+    {
+      "id": "AP3B-T03",
+      "sectionId": "AP3B",
+      "type": "tf",
+      "stem": "If h(A) = 6 and the true remaining cost from A is 3, this heuristic is not admissible.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "6 is greater than 3 at A. Admissibility has to hold at every node."
+    },
+    {
+      "id": "AP3B-T04",
+      "sectionId": "AP3B",
+      "type": "tf",
+      "stem": "A* with the misplaced-tile heuristic expands no more nodes than A* with Manhattan distance when Manhattan dominates and both are admissible.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "The more informed admissible heuristic is Manhattan distance. It is the one that expands no more nodes, aside from ties on the optimal contour."
+    },
+    {
+      "id": "AP4-T01",
+      "sectionId": "AP4",
+      "type": "tf",
+      "stem": "With X in {1, 2}, Y in {2}, and X != Y, revising X against Y leaves X = {1}.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Only 1 is compatible with Y = 2."
+    },
+    {
+      "id": "AP4-T02",
+      "sectionId": "AP4",
+      "type": "tf",
+      "stem": "Forward checking after assigning P has already enforced Q != R, so arc consistency cannot delete blue from Q when both domains are {blue}.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "Forward checking pruned neighbours of P. The conflict between Q and R is still there for AC-3."
+    },
+    {
+      "id": "AP4-T03",
+      "sectionId": "AP4",
+      "type": "tf",
+      "stem": "Least constraining value tries blue before red when blue deletes 1 neighbour value and red deletes 3.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "The value that rules out fewer remaining values is tried first."
+    },
+    {
+      "id": "AP4-T04",
+      "sectionId": "AP4",
+      "type": "tf",
+      "stem": "AC-3 with every domain still non-empty has proved that a complete colouring exists.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "Pairwise support can hold when the variables still have no complete consistent assignment."
+    },
+    {
+      "id": "AP5-T01",
+      "sectionId": "AP5",
+      "type": "tf",
+      "stem": "Predicting a continuous energy value, with squared errors 4 and 0 on two rows, gives an MSE of 2.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "The average of 4 and 0 is 2, and the target is numeric, so the task is regression."
+    },
+    {
+      "id": "AP5-T02",
+      "sectionId": "AP5",
+      "type": "tf",
+      "stem": "Loan default or no-default, when every training row already carries that label, is unsupervised clustering.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "The label is the target. Predicting it is supervised classification."
+    },
+    {
+      "id": "AP5-T03",
+      "sectionId": "AP5",
+      "type": "tf",
+      "stem": "Choosing the energy model on validation error, and only then scoring the chosen model once on test data, keeps that test estimate independent of the choice.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "The test rows did not vote for the model."
+    },
+    {
+      "id": "AP5-T04",
+      "sectionId": "AP5",
+      "type": "tf",
+      "stem": "A controller that only receives an energy signal after each allocation, with no correct-allocation label, is supervised regression.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "The signal is a reward for the action. The setting is reinforcement learning."
+    },
+    {
+      "id": "AP6-T01",
+      "sectionId": "AP6",
+      "type": "tf",
+      "stem": "A linear score of 3 cannot be used as a class probability, and a sigmoid of a negative z lies below 0.5.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Probabilities sit in (0, 1). The sigmoid is below one half on the negative side."
+    },
+    {
+      "id": "AP6-T02",
+      "sectionId": "AP6",
+      "type": "tf",
+      "stem": "e^(-z) = 1 gives logistic probability 1 and class 0.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "The probability is 1/2. With the threshold p >= 0.5 the class is 1."
+    },
+    {
+      "id": "AP6-T03",
+      "sectionId": "AP6",
+      "type": "tf",
+      "stem": "w = [1, 0], x = [1, 1], y = 0, and alpha = 1 produce updated weights [0, -1] under the 0/1 perceptron rule.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "The score is 1, the prediction is wrong, and subtracting x changes [1, 0] into [0, -1]."
+    },
+    {
+      "id": "AP6-T04",
+      "sectionId": "AP6",
+      "type": "tf",
+      "stem": "Softmax on scores 1, 3, and 0 predicts the first class, because normalisation reverses the order.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "The second score is the largest and stays the predicted class."
+    },
+    {
+      "id": "AP7-T01",
+      "sectionId": "AP7",
+      "type": "tf",
+      "stem": "x = (1, -1), weights (2, 1), and bias 0.5 give pre-activation 1.5, and ReLU leaves that value unchanged.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "The weighted sum is 1.5, and ReLU(1.5) = 1.5."
+    },
+    {
+      "id": "AP7-T02",
+      "sectionId": "AP7",
+      "type": "tf",
+      "stem": "A hidden unit with pre-activation -2 and a ReLU activation passes a local derivative of 1 on this example.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "The unit outputs 0 and the local derivative is 0."
+    },
+    {
+      "id": "AP7-T03",
+      "sectionId": "AP7",
+      "type": "tf",
+      "stem": "With h = [0, 2], output weights 3 and 4, and output bias 1, the linear logit is 9.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Only the second hidden unit is active: 2 * 4 + 1 = 9."
+    },
+    {
+      "id": "AP7-T04",
+      "sectionId": "AP7",
+      "type": "tf",
+      "stem": "Removing the hidden non-linearity still leaves an XOR solution, because W1 and W2 remain separate matrices.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "The composition is affine. XOR is not in that family."
+    },
+    {
+      "id": "AP8-T01",
+      "sectionId": "AP8",
+      "type": "tf",
+      "stem": "The rows (0,0), (0,1), (1,0), (1,1) with labels 0, 1, 1, 0 are not linearly separable.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "The positive rows are not on one side of a line that excludes the negative rows."
+    },
+    {
+      "id": "AP8-T02",
+      "sectionId": "AP8",
+      "type": "tf",
+      "stem": "For a 2-input, 4-hidden network with right-multiplication, W1 has shape (4, 2) and W2 has shape (2, 1).",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "Those shapes are transposed. W1 is (2, 4) and W2 is (4, 1)."
+    },
+    {
+      "id": "AP8-T03",
+      "sectionId": "AP8",
+      "type": "tf",
+      "stem": "A ReLU hidden unit with pre-activation -1 contributes activation 0 and local derivative 0 on that row.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "The unit is off, and the backward pass is blocked there for this row."
+    },
+    {
+      "id": "AP8-T04",
+      "sectionId": "AP8",
+      "type": "tf",
+      "stem": "Adding a second copy of input (1, 0) with the opposite XOR label gives the perceptron more evidence for a linear separator.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "The copies disagree. No function can match both labels."
+    },
+    {
+      "id": "AP9-T01",
+      "sectionId": "AP9",
+      "type": "tf",
+      "stem": "A new-kitchen split with parent entropy 1, equal child sizes, child entropies 0 and 1, has information gain 0.5.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "The weighted child entropy is 0.5, and 1 - 0.5 = 0.5."
+    },
+    {
+      "id": "AP9-T02",
+      "sectionId": "AP9",
+      "type": "tf",
+      "stem": "An empty rent branch whose parent plurality is No returns Yes, because an empty set is treated as the opposite class.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "The empty branch returns the parent plurality, No."
+    },
+    {
+      "id": "AP9-T03",
+      "sectionId": "AP9",
+      "type": "tf",
+      "stem": "Three Yes rows and one No row, with no attributes left, produce a Yes leaf.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "The majority of the remaining rows is Yes."
+    },
+    {
+      "id": "AP9-T04",
+      "sectionId": "AP9",
+      "type": "tf",
+      "stem": "A furniture attribute with a separate value for almost every training house should be preferred whenever its raw gain is the largest.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "That split memorises houses. Gain ratio exists because raw gain rewards attributes with many values."
+    },
+    {
+      "id": "AP10-T01",
+      "sectionId": "AP10",
+      "type": "tf",
+      "stem": "With the edges E, M, E -> S, M -> S, and M -> B, the joint factorisation is P(E) P(M) P(S | E, M) P(B | M).",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "One local factor per node, using only that node's parents."
+    },
+    {
+      "id": "AP10-T02",
+      "sectionId": "AP10",
+      "type": "tf",
+      "stem": "Those four binary nodes need 15 free parameters in the factorised network, the same count as the full joint table.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "The factorised count is 1 + 1 + 4 + 2 = 8. The full joint has 15 free numbers."
+    },
+    {
+      "id": "AP10-T03",
+      "sectionId": "AP10",
+      "type": "tf",
+      "stem": "P(E) = 0.5, P(M) = 0.5, P(S | E, M) = 0.8, and P(B | M) = 0.4 multiply to a joint of 0.08.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "0.5 * 0.5 * 0.8 * 0.4 = 0.08."
+    },
+    {
+      "id": "AP10-T04",
+      "sectionId": "AP10",
+      "type": "tf",
+      "stem": "Observing S leaves E and M independent, because S is a child rather than a parent.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "S is the centre of a collider. Observing it opens the path between E and M."
+    },
+    {
+      "id": "AP11-T01",
+      "sectionId": "AP11",
+      "type": "tf",
+      "stem": "From Q = 0, alpha = 0.5, gamma = 1, and sample (A, right, B, 4) with every value in B still 0, Q(A, right) becomes 2.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Target 4, then half of the way from 0 is 2."
+    },
+    {
+      "id": "AP11-T02",
+      "sectionId": "AP11",
+      "type": "tf",
+      "stem": "Q(C, left) = 1, Q(C, right) = 0, and reward -2 give a Q-learning target of -2, because the behaviour action was right.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "The target is -2 + max(1, 0) = -1. The behaviour action does not replace the max."
+    },
+    {
+      "id": "AP11-T03",
+      "sectionId": "AP11",
+      "type": "tf",
+      "stem": "alpha = 0.5, old value 0, and target -1 produce an updated Q value of -0.5.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "T",
+      "explanation": "Half of -1 is -0.5."
+    },
+    {
+      "id": "AP11-T04",
+      "sectionId": "AP11",
+      "type": "tf",
+      "stem": "Once Q(A, right) = 2 and Q(A, left) = 0, the agent should take right on every future step, because the max in the target explores left by itself.",
+      "choices": {
+        "T": "True",
+        "F": "False"
+      },
+      "answer": "F",
+      "explanation": "The max does not visit left. If the behaviour never selects left, that entry stays unsampled."
     }
   ]
 }

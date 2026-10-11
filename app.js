@@ -1,4 +1,4 @@
-const STORAGE_KEY = "mcq-quiz-session";
+const STORAGE_KEY = "mcq-quiz-session-v2";
 
 const state = {
   bank: null,
@@ -124,10 +124,18 @@ function saveSession() {
   sessionStorage.setItem(STORAGE_KEY, JSON.stringify(payload));
 }
 
+function defaultSelected() {
+  return new Set(
+    state.bank.sections
+      .filter((section) => section.kind === "applied" || section.kind === "exam")
+      .map((section) => section.id)
+  );
+}
+
 function restoreSession() {
   const raw = sessionStorage.getItem(STORAGE_KEY);
   if (!raw) {
-    state.selected = new Set(state.bank.sections.map((section) => section.id));
+    state.selected = defaultSelected();
     return;
   }
   try {
@@ -151,7 +159,7 @@ function restoreSession() {
       state.index = Math.min(state.index, state.quiz.length - 1);
     }
   } catch (err) {
-    state.selected = new Set(state.bank.sections.map((section) => section.id));
+    state.selected = defaultSelected();
   }
 }
 
@@ -264,11 +272,12 @@ function escapeHtml(value) {
 
 function renderSetup() {
   const groups = [
-    ["red", "Highlighted items"],
+    ["applied", "Applied practice"],
     ["exam", "Exam drills"],
-    ["lecture", "Lectures"],
-    ["lab", "Labs"],
-    ["assignment", "Assignments"],
+    ["lecture", "Recall: lectures"],
+    ["lab", "Recall: labs"],
+    ["assignment", "Recall: assignments"],
+    ["red", "Highlighted items"],
   ];
   const available = pool().length;
   const availableMcq = pool().filter((question) => questionType(question) === "mcq").length;
@@ -293,8 +302,9 @@ function renderSetup() {
       <p>This is an unofficial revision aid made by a student. It is not affiliated with, endorsed by, or provided by Griffith University, the 2802ICT convenor, or the teaching team.</p>
       <p>The questions and answers were drafted with AI from the author's own notes. They can be wrong, incomplete, or out of date. Check anything you rely on against the lectures, labs, and assignment briefs.</p>
     </aside>
-    <p class="lede">Practise one topic at a time, then use a balanced session or one of the five final exam drills to check whether you can apply it. Each answer is explained immediately, and the overall score appears at the end.</p>
+    <p class="lede">The ticked sections are applied practice and the exam drills. Each item asks for a one-step consequence, a small calculation, or the next action of a procedure. The recall banks stay available if you want a familiarity pass. Each answer is explained immediately, and the overall score appears at the end.</p>
     <div class="row-actions">
+      <button type="button" id="select-applied">Applied and drills</button>
       <button type="button" id="select-all">Select all</button>
       <button type="button" id="clear-all">Clear</button>
     </div>
@@ -322,6 +332,11 @@ function renderSetup() {
     </div>
   `;
 
+  app.querySelector("#select-applied").addEventListener("click", () => {
+    state.selected = defaultSelected();
+    saveSession();
+    render();
+  });
   app.querySelector("#select-all").addEventListener("click", () => {
     state.selected = new Set(state.bank.sections.map((section) => section.id));
     saveSession();

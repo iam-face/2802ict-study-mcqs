@@ -9,6 +9,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 SOURCE = ROOT.parent / "Study MCQs.md"
 TF_SOURCE = ROOT.parent / "Study TF.md"
+APPLIED_SOURCE = ROOT.parent / "Study Applied.md"
 OUTPUT = ROOT / "questions.json"
 
 # Section ids in source order. Titles fill from ## headers when present.
@@ -44,6 +45,29 @@ SECTION_META = [
     ("EX3", "Final exam drill 3", "exam"),
     ("EX4", "Final exam drill 4", "exam"),
     ("EX5", "Final exam drill 5", "exam"),
+    ("APL1", "Applied: Lecture 1 Agents", "applied"),
+    ("APL2", "Applied: Lecture 2 Uninformed search", "applied"),
+    ("APL3", "Applied: Lecture 3 Informed search", "applied"),
+    ("APL4A", "Applied: Lecture 4 Local search", "applied"),
+    ("APL4B", "Applied: Lecture 4 CSPs", "applied"),
+    ("APL5", "Applied: Lecture 5 Learning", "applied"),
+    ("APL6", "Applied: Lecture 6 Linear models", "applied"),
+    ("APL7", "Applied: Lecture 7 Neural networks", "applied"),
+    ("APL8", "Applied: Lecture 8 Model selection", "applied"),
+    ("APL9", "Applied: Lecture 9 Decision trees", "applied"),
+    ("APL10", "Applied: Lecture 10 Bayes nets", "applied"),
+    ("APL11", "Applied: Lecture 11 MDPs and RL", "applied"),
+    ("AP2", "Applied: Lab 2 Search traces", "applied"),
+    ("AP3A", "Applied: Lab 3.1 Weighted search", "applied"),
+    ("AP3B", "Applied: Lab 3.2 Puzzle heuristics", "applied"),
+    ("AP4", "Applied: Lab 4 CSPs", "applied"),
+    ("AP5", "Applied: Lab 5 Learning and regression", "applied"),
+    ("AP6", "Applied: Lab 6 Linear models", "applied"),
+    ("AP7", "Applied: Lab 7 Multilayer network", "applied"),
+    ("AP8", "Applied: Lab 8 XOR network", "applied"),
+    ("AP9", "Applied: Lab 9 Decision trees", "applied"),
+    ("AP10", "Applied: Lab 10 Bayes nets", "applied"),
+    ("AP11", "Applied: Workshop 11 Q-learning", "applied"),
 ]
 
 Q_HEAD = re.compile(r"^### ([A-Za-z0-9]+-Q\d+)((?:\s+(?:red|blue))*)\s*$")
@@ -236,7 +260,7 @@ def parse_tf(text: str) -> list[dict]:
         tally = balance.setdefault(question["sectionId"], [0, 0])
         tally[0 if question["answer"] == "T" else 1] += 1
     for sid, _, kind in SECTION_META:
-        if kind in ("exam", "red"):
+        if kind in ("exam", "red", "applied"):
             continue
         count = per_section.get(sid, 0)
         if count != 10:
@@ -315,7 +339,8 @@ def parse_exam_tf(text: str) -> list[dict]:
                 f"{sid} has {len(section_questions)} true/false items, expected {expected_count}"
             )
         trues = sum(question["answer"] == "T" for question in section_questions)
-        expected_true = expected_count // 2
+        # Drills 2 to 5 use 4 true and 6 false so a paper is not a list of true definitions.
+        expected_true = 11 if sid == "EX" else 4
         if trues != expected_true:
             raise SystemExit(
                 f"{sid} true/false balance is {trues} true and "
@@ -324,19 +349,120 @@ def parse_exam_tf(text: str) -> list[dict]:
     return questions
 
 
+def parse_applied_tf(text: str) -> list[dict]:
+    """Applied true/false items live in Study Applied.md beside the applied MCQs."""
+    body, _, appendix = text.partition("# Appendix: Answers")
+    if not appendix:
+        raise SystemExit("Applied appendix heading not found")
+
+    applied_ids = {sid for sid, _, kind in SECTION_META if kind == "applied"}
+    questions: list[dict] = []
+    current: dict | None = None
+
+    def flush() -> None:
+        nonlocal current
+        if current is None:
+            return
+        if not current["stem"].strip():
+            raise SystemExit(f"{current['id']} has empty stem")
+        questions.append(current)
+        current = None
+
+    for raw in body.splitlines():
+        line = raw.rstrip()
+        head = T_HEAD.match(line)
+        if head:
+            flush()
+            qid = head.group(1)
+            sid = section_id_from_qid(qid)
+            if sid not in applied_ids:
+                raise SystemExit(f"Unexpected applied true/false id {qid}")
+            current = {
+                "id": qid,
+                "sectionId": sid,
+                "type": "tf",
+                "stem": "",
+                "choices": {"T": "True", "F": "False"},
+            }
+            continue
+        if current is None or not line.strip() or line.startswith("#") or line.strip() == "---":
+            if current is not None and (line.startswith("#") or line.strip() == "---"):
+                flush()
+            continue
+        stem = current["stem"]
+        current["stem"] = (stem + " " + line.strip()).strip() if stem else line.strip()
+
+    flush()
+
+    answers: dict[str, tuple[str, str]] = {}
+    for raw in appendix.splitlines():
+        match = TF_ANSWER.match(raw.strip())
+        if not match:
+            continue
+        sid = section_id_from_qid(match.group(1))
+        if sid not in applied_ids:
+            continue
+        answers[match.group(1)] = (match.group(2), match.group(3).strip())
+
+    for question in questions:
+        found = answers.get(question["id"])
+        if not found:
+            raise SystemExit(f"No appendix answer for {question['id']}")
+        question["answer"] = found[0]
+        question["explanation"] = found[1]
+
+    extra = set(answers) - {q["id"] for q in questions}
+    if extra:
+        raise SystemExit(f"Applied true/false answers without questions: {sorted(extra)}")
+    return questions
+
+
+def check_applied(questions: list[dict]) -> None:
+    lecture = {sid for sid, _, kind in SECTION_META if kind == "applied" and sid.startswith("APL")}
+    expected = {}
+    for sid, _, kind in SECTION_META:
+        if kind != "applied":
+            continue
+        if sid in lecture:
+            expected[sid] = (8, 6, 3)
+        else:
+            expected[sid] = (6, 4, 2)
+    by_section: dict[str, list[dict]] = {}
+    for question in questions:
+        by_section.setdefault(question["sectionId"], []).append(question)
+    for sid, (mcq_n, tf_n, true_n) in expected.items():
+        items = by_section.get(sid, [])
+        mcq = [q for q in items if q["type"] == "mcq"]
+        tf = [q for q in items if q["type"] == "tf"]
+        if len(mcq) != mcq_n or len(tf) != tf_n:
+            raise SystemExit(f"{sid} has {len(mcq)} mcq and {len(tf)} tf, expected {mcq_n} and {tf_n}")
+        trues = sum(q["answer"] == "T" for q in tf)
+        if trues != true_n:
+            raise SystemExit(f"{sid} true/false balance is {trues} true, expected {true_n}")
+
+
 def main() -> None:
     source_text = SOURCE.read_text(encoding="utf-8")
     data = parse(source_text)
     tf_questions = parse_tf(TF_SOURCE.read_text(encoding="utf-8"))
     exam_tf = parse_exam_tf(source_text)
+    applied_text = APPLIED_SOURCE.read_text(encoding="utf-8")
+    applied_mcq = parse(applied_text)["questions"]
+    applied_tf = parse_applied_tf(applied_text)
+    check_applied(applied_mcq + applied_tf)
     mcq_ids = {question["id"] for question in data["questions"]}
     overlap = mcq_ids & {question["id"] for question in tf_questions}
     overlap |= mcq_ids & {question["id"] for question in exam_tf}
     overlap |= {question["id"] for question in tf_questions} & {question["id"] for question in exam_tf}
+    applied_ids = {question["id"] for question in applied_mcq} | {question["id"] for question in applied_tf}
+    overlap |= applied_ids & (mcq_ids | {question["id"] for question in tf_questions} | {question["id"] for question in exam_tf})
+    overlap |= {question["id"] for question in applied_mcq} & {question["id"] for question in applied_tf}
     if overlap:
         raise SystemExit(f"Duplicate ids: {sorted(overlap)}")
     data["questions"].extend(tf_questions)
     data["questions"].extend(exam_tf)
+    data["questions"].extend(applied_mcq)
+    data["questions"].extend(applied_tf)
     OUTPUT.write_text(json.dumps(data, indent=2, ensure_ascii=True) + "\n", encoding="utf-8")
     counts: dict[str, list[int]] = {}
     for question in data["questions"]:
